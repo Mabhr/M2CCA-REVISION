@@ -67,27 +67,51 @@ def main() -> None:
             print(f'! {course_id}: {html_path} introuvable')
             continue
         html_text = html_path.read_text()
-        # Thèmes (icône + label)
-        themes_arr = []
-        json_path = ROOT / 'data' / f'{course_id}.json'
-        if json_path.exists():
-            themes_arr = json.loads(json_path.read_text()).get('themes', [])
+        # Données du cours : thèmes, flashcards, quiz
+        json_path = ROOT / 'data' / (Path(c['url']).stem + '.json')
+        course_data = json.loads(json_path.read_text()) if json_path.exists() else {}
+        themes_arr = course_data.get('themes', [])
         theme_labels = {t['id']: f"{t.get('icon', '')} {t['label']}".strip() for t in themes_arr}
+        meta = {
+            'cId': course_id,
+            'cT': c.get('title', course_id),
+            'cI': c.get('icon', '📘'),
+            'cU': c.get('url'),
+        }
 
         chaps = extract_chapters(html_text)
         for chap in chaps:
             out.append({
-                'cId': course_id,
-                'cT': c.get('title', course_id),
-                'cI': c.get('icon', '📘'),
-                'cU': c.get('url'),
-                'i': chap['idx'],
-                't': chap['title'],
-                'th': chap['theme'],
-                'thL': theme_labels.get(chap['theme'], chap['theme']),
+                **meta, 'k': 'cours', 'i': chap['idx'], 't': chap['title'],
+                'th': chap['theme'], 'thL': theme_labels.get(chap['theme'], chap['theme']),
                 'x': chap['text'],
             })
-        print(f'{course_id}: {len(chaps)} chapitres')
+
+        flashcards = course_data.get('flashcards', [])
+        for fc in flashcards:
+            q = (fc.get('q') or '').strip()
+            a = (fc.get('a') or '').strip()
+            th = fc.get('theme', '')
+            out.append({
+                **meta, 'k': 'flash', 'i': 0, 't': q,
+                'th': th, 'thL': theme_labels.get(th, ''),
+                'x': re.sub(r'\s+', ' ', f'{q} — {a}').strip(),
+            })
+
+        quizz = course_data.get('quizQuestions', [])
+        for qz in quizz:
+            q = (qz.get('q') or '').strip()
+            th = qz.get('theme', '')
+            extra = ''
+            if qz.get('type') == 'tf':
+                extra = ' ' + ' '.join((af.get('t') or '') for af in qz.get('aff', []))
+            out.append({
+                **meta, 'k': 'quiz', 'i': 0, 't': q,
+                'th': th, 'thL': theme_labels.get(th, ''),
+                'x': re.sub(r'\s+', ' ', q + extra).strip(),
+            })
+
+        print(f'{course_id}: {len(chaps)} chapitres, {len(flashcards)} flashcards, {len(quizz)} quiz')
 
     # Sérialisation compacte
     payload = json.dumps(out, ensure_ascii=False, separators=(',', ':'))
@@ -109,7 +133,7 @@ def main() -> None:
         new = html.replace(marker, block + '\n\n' + marker, 1)
     INDEX_HTML.write_text(new)
     total_chars = sum(len(c['x']) for c in out)
-    print(f'\n✓ Index embarqué dans index.html : {len(out)} chapitres, {total_chars:,} caractères ({len(payload):,} octets JSON)')
+    print(f'\n✓ Index embarqué dans index.html : {len(out)} entrées, {total_chars:,} caractères ({len(payload):,} octets JSON)')
 
 
 if __name__ == '__main__':
