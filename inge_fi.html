@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
-<link rel="stylesheet" href="shared.css?v=202605212000">
+<link rel="stylesheet" href="shared.css?v=202605212100">
 </head>
 <body>
 
@@ -36,7 +36,7 @@
   </div>
 </div>
 
-<script src="engine.js?v=202605212000"></script>
+<script src="engine.js?v=202605212100"></script>
 <script>
 /* ═══════ FALLBACK DATA (file://) ═══════ */
 const FALLBACK = {
@@ -2804,11 +2804,213 @@ function getSynthHTML() {
 `;
 }
 
+/* ═══════ SCHÉMAS (repères visuels) ═══════ */
+function getSchemasHTML() {
+  return `
+  <div class="schema-intro">📊 Repères visuels des notions structurantes du cours. Ces schémas reformulent <strong>visuellement</strong> ce qui est écrit dans les chapitres — le cours rédigé reste la référence.</div>
+
+  <div class="schema-theme">💰 Coût du capital</div>
+
+  <div class="schema-card">
+    <div class="schema-title">Le CMPC, une moyenne pondérée</div>
+    <div class="schema-viz">
+      <div class="sch-bar">
+        <div class="sch-bar-seg sch-seg-cp"><span>Capitaux propres</span><strong>Rcp</strong></div>
+        <div class="sch-bar-seg sch-seg-dette"><span>Dette</span><strong>Rd × (1 − IS)</strong></div>
+      </div>
+      <div class="sch-bar-legend"><span>poids Vcp / (Vcp+Vd)</span><span>poids Vd / (Vcp+Vd)</span></div>
+      <div class="sch-formula">CMPC = Rcp × Vcp/(Vcp+Vd) + Rd × (1 − IS) × Vd/(Vcp+Vd)</div>
+    </div>
+    <div class="schema-note">Le coût du capital pondère le coût de chaque source de financement par son poids dans le total. Il sert de taux d'actualisation de la VAN : si la VAN est positive, le projet est retenu.</div>
+  </div>
+
+  <div class="schema-card">
+    <div class="schema-title">Les deux composantes du risque</div>
+    <div class="schema-viz">
+      <div class="sch-eq">Risque total = risque systémique + risque spécifique</div>
+      <div class="sch-duo">
+        <div class="sch-duo-box">
+          <h4>Risque systémique</h4>
+          <span class="sch-tag tag-neu">Risque de marché</span>
+          <span class="sch-tag tag-no">Non diversifiable</span>
+          <span class="sch-tag tag-ok">Rémunéré</span>
+        </div>
+        <div class="sch-duo-box">
+          <h4>Risque spécifique</h4>
+          <span class="sch-tag tag-neu">Lié au secteur</span>
+          <span class="sch-tag tag-ok">Diversifiable</span>
+          <span class="sch-tag tag-no">Non rémunéré</span>
+        </div>
+      </div>
+    </div>
+    <div class="schema-note">Le risque spécifique se dilue dans un portefeuille diversifié : il n'est donc pas rémunéré. Le MEDAF ne rémunère que le risque systémique, mesuré par le béta.</div>
+  </div>
+
+  <div class="schema-card">
+    <div class="schema-title">Lire le béta</div>
+    <div class="schema-viz">
+      <div class="sch-gauge">
+        <div class="sch-gauge-zone" style="background:var(--green-bg)"><strong>β &lt; 1</strong>Titre défensif : il atténue les variations du marché</div>
+        <div class="sch-gauge-zone" style="background:var(--bg3)"><strong>β = 1</strong>Le titre réplique le marché</div>
+        <div class="sch-gauge-zone" style="background:var(--red-bg)"><strong>β &gt; 1</strong>Titre agressif : il amplifie les variations</div>
+      </div>
+    </div>
+    <div class="schema-note">Le béta mesure la sensibilité du titre aux variations du marché. Plus il est élevé, plus le titre est risqué — et plus la rentabilité exigée (via le MEDAF) est forte.</div>
+  </div>
+
+  <div class="schema-card">
+    <div class="schema-title">Le MEDAF : la droite de marché</div>
+    <div class="schema-viz">
+      <svg viewBox="0 0 360 215" class="sch-svg" role="img" aria-label="Droite de marché du MEDAF">
+        <line x1="55" y1="185" x2="340" y2="185" stroke="var(--border)" stroke-width="1.5"/>
+        <line x1="55" y1="185" x2="55" y2="22" stroke="var(--border)" stroke-width="1.5"/>
+        <line x1="55" y1="158" x2="305" y2="50" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="55" cy="158" r="4.5" fill="var(--copper)"/>
+        <text x="48" y="162" text-anchor="end" fill="var(--text2)" font-size="12" font-family="JetBrains Mono, monospace">Rf</text>
+        <line x1="180" y1="104" x2="180" y2="185" stroke="var(--text3)" stroke-width="1" stroke-dasharray="3 3"/>
+        <line x1="180" y1="104" x2="55" y2="104" stroke="var(--text3)" stroke-width="1" stroke-dasharray="3 3"/>
+        <circle cx="180" cy="104" r="4.5" fill="var(--accent3)"/>
+        <text x="186" y="100" fill="var(--text2)" font-size="11" font-family="JetBrains Mono, monospace">E(Rm)</text>
+        <text x="180" y="201" text-anchor="middle" fill="var(--text3)" font-size="11" font-family="JetBrains Mono, monospace">β = 1</text>
+        <text x="325" y="201" text-anchor="middle" fill="var(--text3)" font-size="12">β</text>
+        <text x="58" y="16" fill="var(--text3)" font-size="11">Rentabilité exigée</text>
+      </svg>
+      <div class="sch-formula">Rcp = Rf + β × (E(Rm) − Rf)</div>
+    </div>
+    <div class="schema-note">La rentabilité exigée croît linéairement avec le béta. À β = 0 elle vaut le taux sans risque Rf ; la pente de la droite est la prime de risque du marché, E(Rm) − Rf.</div>
+  </div>
+
+  <div class="schema-card">
+    <div class="schema-title">Désendetter et réendetter le béta</div>
+    <div class="schema-viz">
+      <div class="sch-flow">
+        <div class="sch-flow-box">β endetté<br><small>βcp — risque marché + financier</small></div>
+        <div class="sch-flow-op"><span>⇄</span><span>× ou ÷ [1 + (D/CP)(1−IS)]</span></div>
+        <div class="sch-flow-box">β désendetté<br><small>βa — risque de marché seul</small></div>
+      </div>
+      <div class="sch-substeps-label">Béta d'une société non cotée — méthode en 3 étapes :</div>
+      <div class="sch-steps">
+        <div class="sch-step"><span class="sch-step-num">1</span><span class="sch-step-txt">Désendetter le béta d'entreprises cotées comparables avec leur structure financière.</span></div>
+        <div class="sch-step"><span class="sch-step-num">2</span><span class="sch-step-txt">Faire la moyenne des bétas désendettés obtenus.</span></div>
+        <div class="sch-step"><span class="sch-step-num">3</span><span class="sch-step-txt">Réendetter ce béta moyen avec la structure financière de la société non cotée.</span></div>
+      </div>
+    </div>
+    <div class="schema-note">Le béta désendetté (béta de l'actif économique) ne reflète que le risque de marché. On le réendette pour intégrer le risque financier propre à la structure de la société étudiée.</div>
+  </div>
+
+  <div class="schema-theme">📈 Marchés de capitaux</div>
+
+  <div class="schema-card">
+    <div class="schema-title">Obligation : la relation prix / taux est inverse</div>
+    <div class="schema-viz">
+      <svg viewBox="0 0 360 215" class="sch-svg" role="img" aria-label="Relation inverse entre le prix et le taux d'une obligation">
+        <line x1="55" y1="185" x2="340" y2="185" stroke="var(--border)" stroke-width="1.5"/>
+        <line x1="55" y1="185" x2="55" y2="22" stroke="var(--border)" stroke-width="1.5"/>
+        <path d="M 65 45 Q 120 150 330 172" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+        <line x1="55" y1="129" x2="159" y2="129" stroke="var(--text3)" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="48" y="133" text-anchor="end" fill="var(--text2)" font-size="11" font-family="JetBrains Mono, monospace">100%</text>
+        <line x1="159" y1="129" x2="159" y2="185" stroke="var(--text3)" stroke-width="1" stroke-dasharray="3 3"/>
+        <circle cx="159" cy="129" r="4.5" fill="var(--copper)"/>
+        <text x="159" y="201" text-anchor="middle" fill="var(--text3)" font-size="10.5" font-family="JetBrains Mono, monospace">taux nominal</text>
+        <text x="322" y="201" text-anchor="middle" fill="var(--text3)" font-size="12">taux</text>
+        <text x="58" y="16" fill="var(--text3)" font-size="11">Cours (%)</text>
+      </svg>
+    </div>
+    <div class="schema-note">Quand le taux de marché passe au-dessus du taux nominal, le cours descend sous 100 % ; quand il passe en dessous, le cours dépasse 100 %. À l'émission au pair, le cours vaut 100 %.</div>
+  </div>
+
+  <div class="schema-card">
+    <div class="schema-title">Les 3 modes de remboursement obligataire</div>
+    <div class="schema-viz">
+      <div class="sch-cols3">
+        <div class="sch-mode">
+          <h4>In fine</h4>
+          <div class="sch-annuity"><i style="height:24%"></i><i style="height:24%"></i><i style="height:24%"></i><i style="height:100%"></i></div>
+          <small>Coupons seuls, capital remboursé en une fois à l'échéance</small>
+        </div>
+        <div class="sch-mode">
+          <h4>Annuités constantes</h4>
+          <div class="sch-annuity"><i style="height:70%"></i><i style="height:70%"></i><i style="height:70%"></i><i style="height:70%"></i></div>
+          <small>Annuité fixe : capital croissant, intérêts décroissants</small>
+        </div>
+        <div class="sch-mode">
+          <h4>Amortissement constant</h4>
+          <div class="sch-annuity"><i style="height:100%"></i><i style="height:82%"></i><i style="height:64%"></i><i style="height:46%"></i></div>
+          <small>Même fraction de capital (C/n) chaque année : annuités dégressives</small>
+        </div>
+      </div>
+    </div>
+    <div class="schema-note">Chaque barre représente le profil de l'annuité (capital + intérêts) versée année après année.</div>
+  </div>
+
+  <div class="schema-theme">🔀 Produits dérivés</div>
+
+  <div class="schema-card">
+    <div class="schema-title">CAP, FLOOR, COLLAR : le tunnel de taux</div>
+    <div class="schema-viz">
+      <div class="sch-tunnel">
+        <div class="sch-tunnel-band sch-band-top">Hausse au-dessus du plafond → le CAP plafonne le coût</div>
+        <div class="sch-tunnel-line">CAP — taux plafond</div>
+        <div class="sch-tunnel-band sch-band-mid">TUNNEL : le coût réel d'endettement évolue dans cette zone</div>
+        <div class="sch-tunnel-line">FLOOR — taux plancher</div>
+        <div class="sch-tunnel-band sch-band-bot">Baisse sous le plancher → le FLOOR vendu limite le gain</div>
+      </div>
+    </div>
+    <div class="schema-note">Un COLLAR emprunteur combine l'achat d'un CAP et la vente d'un FLOOR : la prime encaissée réduit la prime versée, et le coût d'endettement reste borné entre le plancher et le plafond.</div>
+  </div>
+
+  <div class="schema-card">
+    <div class="schema-title">La chambre de compensation : le « rideau »</div>
+    <div class="schema-viz">
+      <div class="sch-flow">
+        <div class="sch-flow-box">Acheteur</div>
+        <div class="sch-flow-op"><span>→</span></div>
+        <div class="sch-flow-box sch-flow-pivot">Chambre de compensation<br><small>LCH ClearNet — contrepartie unique</small></div>
+        <div class="sch-flow-op"><span>→</span></div>
+        <div class="sch-flow-box">Vendeur</div>
+      </div>
+    </div>
+    <div class="schema-note">Sur le marché organisé, la chambre s'interpose comme contrepartie unique : elle garantit l'anonymat et supprime le risque de contrepartie, via le dépôt de garantie et l'appel de marge quotidien.</div>
+  </div>
+
+  <div class="schema-theme">🌱 Critères extra-financiers</div>
+
+  <div class="schema-card">
+    <div class="schema-title">Les 3 Scopes d'émissions de gaz à effet de serre</div>
+    <div class="schema-viz">
+      <div class="sch-scopes">
+        <div class="sch-scope sch-scope-1"><strong>Scope 1 — Émissions directes</strong><small>Sources fixes et mobiles de combustion, procédés, émissions fugitives, terres</small></div>
+        <div class="sch-scope sch-scope-2"><strong>Scope 2 — Émissions indirectes liées à l'énergie achetée</strong><small>Électricité, chaleur, vapeur, froid</small></div>
+        <div class="sch-scope sch-scope-3"><strong>Scope 3 — Autres émissions indirectes</strong><small>Chaîne de valeur amont et aval : achats, transport, usage et fin de vie des produits…</small></div>
+      </div>
+    </div>
+    <div class="schema-note">Le bilan des émissions se structure en 3 périmètres. Le Scope 3, le plus large, couvre toute la chaîne de valeur, en amont comme en aval.</div>
+  </div>
+
+  <div class="schema-card">
+    <div class="schema-title">La théorie du Donut (Kate Raworth, 2010)</div>
+    <div class="schema-viz">
+      <svg viewBox="0 0 240 240" class="sch-svg sch-svg-donut" role="img" aria-label="Théorie du Donut">
+        <circle cx="120" cy="120" r="100" fill="var(--green-bg)" stroke="var(--red)" stroke-width="2.5"/>
+        <circle cx="120" cy="120" r="52" fill="var(--bg)" stroke="var(--orange)" stroke-width="2.5"/>
+      </svg>
+      <div class="sch-legend">
+        <div class="sch-legend-row"><span class="sch-dot" style="background:var(--red)"></span> Plafond environnemental — limites planétaires à ne pas dépasser</div>
+        <div class="sch-legend-row"><span class="sch-dot" style="background:var(--green)"></span> L'espace juste et sûr où l'humanité satisfait ses besoins</div>
+        <div class="sch-legend-row"><span class="sch-dot" style="background:var(--orange)"></span> Plancher social — besoins de base de tout être humain</div>
+      </div>
+    </div>
+    <div class="schema-note">Entre le plancher social et le plafond environnemental se trouve l'espace où l'humanité peut satisfaire ses besoins en respectant les écosystèmes et le climat.</div>
+  </div>
+  `;
+}
+
 /* ═══════ TABS ═══════ */
 const TABS = [
   { id:'checklist', label:'✅ Checklist', prog:10 },
   { id:'cours',     label:'📖 Cours',     prog:25 },
   { id:'synth',     label:'📝 Synthèse',  prog:40 },
+  { id:'schemas',   label:'📊 Schémas',   prog:48 },
   { id:'flash',     label:'⚡ Flashcards', prog:55 },
   { id:'quiz',      label:'🎯 Quiz',      prog:70 },
   { id:'examen',    label:'📝 Examen blanc', prog:85 },
@@ -2915,6 +3117,7 @@ function renderTab(id) {
     if (window._pendingCoursJump) { window._pendingCoursJump(); window._pendingCoursJump = null; }
   }
   else if (id === 'synth') root.innerHTML = header + `<div class="fade-up fade-up-stagger">${getSynthHTML()}</div>`;
+  else if (id === 'schemas') root.innerHTML = header + `<div class="fade-up fade-up-stagger">${getSchemasHTML()}</div>`;
   else if (id === 'flash') { root.innerHTML = header + renderFlash(); bindFlash(); }
   else if (id === 'quiz')  { root.innerHTML = header + renderQuizSetup(); }
   else if (id === 'annales'){ root.innerHTML = header + `<div class="fade-up fade-up-stagger">${getAnnalesHTML()}</div>`; }
