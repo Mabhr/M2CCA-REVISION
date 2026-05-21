@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
-<link rel="stylesheet" href="shared.css?v=202605212100">
+<link rel="stylesheet" href="shared.css?v=202605212300">
 </head>
 <body>
 
@@ -36,7 +36,7 @@
   </div>
 </div>
 
-<script src="engine.js?v=202605212100"></script>
+<script src="engine.js?v=202605212300"></script>
 <script>
 /* ═══════ FALLBACK DATA (file://) ═══════ */
 const FALLBACK = {
@@ -1899,11 +1899,91 @@ function getSynthHTML() {
 </div>
 `;
 }
+/* ═══════ SCHÉMAS (repères visuels) ═══════ */
+function getSchemasHTML() {
+  return `
+  <div class="schema-intro">📊 Repères visuels des notions structurantes du cours. Ces schémas reformulent <strong>visuellement</strong> ce qui est écrit dans les chapitres — le cours rédigé reste la référence.</div>
+
+  <div class="schema-theme">🌍 Fondamentaux</div>
+  <div class="schema-card">
+    <div class="schema-title">Les 3 piliers du développement durable</div>
+    <div class="schema-viz">
+      <svg viewBox="0 0 300 262" class="sch-svg" style="max-width:300px" role="img" aria-label="Les 3 piliers du développement durable">
+        <circle cx="113" cy="106" r="78" fill="rgba(61,114,180,0.2)" stroke="var(--accent)" stroke-width="2"/>
+        <circle cx="187" cy="106" r="78" fill="rgba(90,145,104,0.2)" stroke="var(--green)" stroke-width="2"/>
+        <circle cx="150" cy="171" r="78" fill="rgba(200,131,70,0.2)" stroke="var(--copper)" stroke-width="2"/>
+        <text x="58" y="58" text-anchor="middle" fill="var(--accent3)" font-size="12" font-weight="bold">Économique</text>
+        <text x="242" y="58" text-anchor="middle" fill="var(--green)" font-size="12" font-weight="bold">Social</text>
+        <text x="150" y="250" text-anchor="middle" fill="var(--copper)" font-size="12" font-weight="bold">Écologique</text>
+        <text x="150" y="132" text-anchor="middle" fill="var(--text)" font-size="11.5" font-weight="bold">Durable</text>
+      </svg>
+      <div class="sch-legend">
+        <div class="sch-legend-row"><span class="sch-dot" style="background:var(--accent3)"></span> Économique + Social = <strong>&nbsp;Équitable</strong></div>
+        <div class="sch-legend-row"><span class="sch-dot" style="background:var(--green)"></span> Économique + Écologique = <strong>&nbsp;Viable</strong></div>
+        <div class="sch-legend-row"><span class="sch-dot" style="background:var(--copper)"></span> Social + Écologique = <strong>&nbsp;Vivable</strong></div>
+      </div>
+    </div>
+    <div class="schema-note">Le développement durable se situe à l'intersection des 3 piliers. Leurs recouvrements deux à deux définissent l'équitable, le viable et le vivable ; au centre des trois, le durable.</div>
+  </div>
+  <div class="schema-card">
+    <div class="schema-title">La norme ISO 26000 — structure</div>
+    <div class="schema-viz"><div class="sch-duo">
+      <div class="sch-duo-box"><h4>7 principes</h4><span class="sch-tag tag-neu">Redevabilité</span><span class="sch-tag tag-neu">Transparence</span><span class="sch-tag tag-neu">Comportement éthique</span><span class="sch-tag tag-neu">Intérêts des parties prenantes</span><span class="sch-tag tag-neu">Légalité</span><span class="sch-tag tag-neu">Normes internationales</span><span class="sch-tag tag-neu">Droits de l'Homme</span></div>
+      <div class="sch-duo-box"><h4>7 questions centrales</h4><span class="sch-tag tag-ok">Gouvernance (au centre)</span><span class="sch-tag tag-neu">Droits de l'Homme</span><span class="sch-tag tag-neu">Conditions de travail</span><span class="sch-tag tag-neu">Environnement</span><span class="sch-tag tag-neu">Loyauté des pratiques</span><span class="sch-tag tag-neu">Consommateurs</span><span class="sch-tag tag-neu">Communautés &amp; développement local</span></div>
+    </div></div>
+    <div class="schema-note">L'ISO 26000 (2010) donne les lignes directrices de la RSE. Norme volontaire et non certifiable, elle s'articule autour de 7 principes et de 7 questions centrales organisées autour de la gouvernance.</div>
+  </div>
+  <div class="schema-card">
+    <div class="schema-title">La performance globale</div>
+    <div class="schema-viz"><div class="sch-cols3">
+      <div class="sch-mode"><h4>Social</h4><small>Capital humain, diversité, droits humains, gouvernance éthique.</small></div>
+      <div class="sch-mode"><h4>Économique</h4><small>Résilience du modèle, innovation responsable, valeur partagée.</small></div>
+      <div class="sch-mode"><h4>Environnement</h4><small>Décarbonation, ressources naturelles, biodiversité, économie circulaire.</small></div>
+    </div></div>
+    <div class="schema-note">Performance financière + performance extra-financière = performance globale, dont les 3 piliers sont interdépendants.</div>
+  </div>
+  <div class="schema-theme">📋 Cadre réglementaire</div>
+  <div class="schema-card">
+    <div class="schema-title">Chronologie réglementaire de la RSE</div>
+    <div class="schema-viz"><div class="sch-tl">
+      <div class="sch-tl-item"><div class="sch-tl-date">2001</div><div class="sch-tl-label"><strong>Loi NRE</strong> — entrée du reporting extra-financier dans le droit français.</div></div>
+      <div class="sch-tl-item"><div class="sch-tl-date">2009 / 2010</div><div class="sch-tl-label"><strong>Dispositif Grenelle</strong> — renforcement du reporting extra-financier.</div></div>
+      <div class="sch-tl-item"><div class="sch-tl-date">2017</div><div class="sch-tl-label"><strong>DPEF</strong> (directive NFRD) et <strong>loi sur le devoir de vigilance</strong>.</div></div>
+      <div class="sch-tl-item"><div class="sch-tl-date">2019</div><div class="sch-tl-label"><strong>Loi PACTE</strong> — raison d'être, société à mission.</div></div>
+      <div class="sch-tl-item"><div class="sch-tl-date">2022</div><div class="sch-tl-label"><strong>CSRD</strong> — reporting standardisé, 12 ESRS, double matérialité.</div></div>
+    </div></div>
+    <div class="schema-note">Le cadre se durcit progressivement, du reporting volontaire vers un reporting de durabilité standardisé et audité.</div>
+  </div>
+  <div class="schema-theme">⚙️ Démarche RSE</div>
+  <div class="schema-card">
+    <div class="schema-title">La démarche RSE en 6 étapes</div>
+    <div class="schema-viz"><div class="sch-steps">
+      <div class="sch-step"><span class="sch-step-num">1</span><span class="sch-step-txt">Déterminer ses enjeux RSE (analyse de matérialité, parties prenantes).</span></div>
+      <div class="sch-step"><span class="sch-step-num">2</span><span class="sch-step-txt">Identifier sa gouvernance RSE.</span></div>
+      <div class="sch-step"><span class="sch-step-num">3</span><span class="sch-step-txt">Constituer sa politique et ses objectifs.</span></div>
+      <div class="sch-step"><span class="sch-step-num">4</span><span class="sch-step-txt">Déterminer ses actions RSE (plan d'actions).</span></div>
+      <div class="sch-step"><span class="sch-step-num">5</span><span class="sch-step-txt">Mesurer sa performance à l'aide d'indicateurs.</span></div>
+      <div class="sch-step"><span class="sch-step-num">6</span><span class="sch-step-txt">Communiquer sur sa démarche (reporting).</span></div>
+    </div></div>
+    <div class="schema-note">La démarche part des enjeux et aboutit au reporting, dans une logique d'amélioration continue.</div>
+  </div>
+  <div class="schema-card">
+    <div class="schema-title">La double matérialité</div>
+    <div class="schema-viz"><div class="sch-duo">
+      <div class="sch-duo-box"><h4>Matérialité financière</h4><p style="font-size:.78rem;color:var(--text3)">Risques et opportunités que l'enjeu RSE fait peser sur la performance financière de l'entreprise.</p><span class="sch-tag tag-neu">L'extérieur → l'entreprise</span></div>
+      <div class="sch-duo-box"><h4>Matérialité d'impact</h4><p style="font-size:.78rem;color:var(--text3)">Effets de l'activité de l'entreprise sur l'environnement et les tiers.</p><span class="sch-tag tag-neu">L'entreprise → l'extérieur</span></div>
+    </div></div>
+    <div class="schema-note">Introduite par la CSRD, la double matérialité combine les deux perspectives. Un enjeu est matériel dès qu'il est significatif du point de vue de l'impact OU du point de vue financier.</div>
+  </div>
+  `;
+}
+
 /* ═══════ TABS ═══════ */
 const TABS = [
   { id:'checklist', label:'✅ Checklist', prog:10 },
   { id:'cours',     label:'📖 Cours',     prog:25 },
   { id:'synth',     label:'📝 Synthèse',  prog:40 },
+  { id:'schemas',   label:'📊 Schémas',   prog:48 },
   { id:'flash',     label:'⚡ Flashcards', prog:55 },
   { id:'quiz',      label:'🎯 Quiz',      prog:70 },
   { id:'examen',    label:'📝 Examen blanc', prog:85 },
@@ -2011,6 +2091,7 @@ function renderTab(id) {
     if (window._pendingCoursJump) { window._pendingCoursJump(); window._pendingCoursJump = null; }
   }
   else if (id === 'synth') root.innerHTML = header + `<div class="fade-up fade-up-stagger">${getSynthHTML()}</div>`;
+  else if (id === 'schemas') root.innerHTML = header + `<div class="fade-up fade-up-stagger">${getSchemasHTML()}</div>`;
   else if (id === 'flash') { root.innerHTML = header + renderFlash(); bindFlash(); }
   else if (id === 'quiz')  { root.innerHTML = header + renderQuizSetup(); }
   else if (id === 'annales'){ root.innerHTML = header + `<div class="fade-up fade-up-stagger">${getAnnalesHTML()}</div>`; }

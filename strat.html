@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
-<link rel="stylesheet" href="shared.css?v=202605212100">
+<link rel="stylesheet" href="shared.css?v=202605212300">
 </head>
 <body>
 
@@ -53,7 +53,7 @@ window.addEventListener('unhandledrejection', (ev) => {
 });
 </script>
 <!-- engine.js : helpers communs (state, shuffle, loadJSON, confetti, ripple, scroll-spy, SRS) -->
-<script src="engine.js?v=202605212100"></script>
+<script src="engine.js?v=202605212300"></script>
 <script>
 /* ═══════ FALLBACK DATA (file://) ═══════ */
 const FALLBACK = {
@@ -3141,11 +3141,88 @@ function getSynthHTML() {
 `;
 }
 
+/* ═══════ SCHÉMAS (repères visuels) ═══════ */
+function getSchemasHTML() {
+  return `
+  <div class="schema-intro">📊 Repères visuels des notions structurantes du cours. Ces schémas reformulent <strong>visuellement</strong> ce qui est écrit dans les chapitres — le cours rédigé reste la référence.</div>
+
+  <div class="schema-theme">💡 Business Models</div>
+  <div class="schema-card">
+    <div class="schema-title">Le Business Model Canvas — les 9 blocs</div>
+    <div class="schema-viz"><div class="sch-bmc">
+      <div class="bmc-p"><b>Partenaires clés</b>Comment ?</div>
+      <div class="bmc-a"><b>Activités clés</b>Comment ?</div>
+      <div class="bmc-k"><b>Ressources clés</b>Comment ?</div>
+      <div class="bmc-v"><b>Proposition de valeur</b>Quoi ?</div>
+      <div class="bmc-r"><b>Relations client</b>Qui ?</div>
+      <div class="bmc-c"><b>Canaux</b>Qui ?</div>
+      <div class="bmc-s"><b>Segments de clientèle</b>Qui ?</div>
+      <div class="bmc-co"><b>Structure des coûts</b>Combien ?</div>
+      <div class="bmc-re"><b>Flux de revenus</b>Combien ?</div>
+    </div></div>
+    <div class="schema-note">Les 9 blocs répondent à 4 questions : Comment ? (partenaires, activités, ressources) · Quoi ? (proposition de valeur) · Qui ? (relations, canaux, segments) · Combien ? (coûts, revenus).</div>
+  </div>
+  <div class="schema-card">
+    <div class="schema-title">Les 3 composantes du Business Model (Strategor)</div>
+    <div class="schema-viz"><div class="sch-steps">
+      <div class="sch-step"><span class="sch-step-num">1</span><span class="sch-step-txt"><strong>Proposition de valeur</strong> — pertinente et attractive pour le client : elle génère les revenus.</span></div>
+      <div class="sch-step"><span class="sch-step-num">2</span><span class="sch-step-txt"><strong>Architecture de valeur</strong> — le cadre organisationnel qui délivre la proposition : elle génère les coûts et les capitaux engagés.</span></div>
+      <div class="sch-step"><span class="sch-step-num">3</span><span class="sch-step-txt"><strong>Équation économique</strong> — vérifie que la valeur créée dépasse les ressources mobilisées.</span></div>
+    </div></div>
+    <div class="schema-note">Un Business Model est viable lorsque l'équation économique est positive : valeur créée &gt; ressources mobilisées.</div>
+  </div>
+  <div class="schema-theme">🎯 Stratégies concurrentielles</div>
+  <div class="schema-card">
+    <div class="schema-title">Les 4 stratégies concurrentielles</div>
+    <div class="schema-viz"><div class="sch-matrix">
+      <div class="sch-mx-y">Valeur perçue +&nbsp;&nbsp;→&nbsp;&nbsp;Valeur perçue −</div>
+      <div class="sch-mx-q"><strong>Changement radical</strong>Coûts bas + valeur haute (rupture)</div>
+      <div class="sch-mx-q"><strong>Différenciation par le haut</strong>Coûts élevés, valeur supérieure</div>
+      <div class="sch-mx-q"><strong>Domination par les coûts<br>/ low cost</strong>Coûts bas, valeur standard ou réduite</div>
+      <div class="sch-mx-q" style="opacity:.6"><strong>Position non tenable</strong>Coûts élevés + valeur faible</div>
+      <div class="sch-mx-x">Coûts bas&nbsp;&nbsp;←→&nbsp;&nbsp;Coûts élevés</div>
+    </div></div>
+    <div class="schema-note">L'entreprise surperforme si l'écart « valeur créée − coûts engagés » dépasse celui des concurrents. La position coûts élevés + valeur faible est non tenable (enlisement dans la voie médiane).</div>
+  </div>
+  <div class="schema-theme">🌐 Plateformes</div>
+  <div class="schema-card">
+    <div class="schema-title">Le marché biface</div>
+    <div class="schema-viz"><div class="sch-flow">
+      <div class="sch-flow-box">Face A<br><small>1ʳᵉ catégorie de clients</small></div>
+      <div class="sch-flow-op"><span>⇄</span><span>effets de réseau croisés</span></div>
+      <div class="sch-flow-box sch-flow-pivot">Plateforme<br><small>opérateur pivot</small></div>
+      <div class="sch-flow-op"><span>⇄</span><span>effets de réseau croisés</span></div>
+      <div class="sch-flow-box">Face B<br><small>2ᵉ catégorie de clients</small></div>
+    </div></div>
+    <div class="schema-note">Un marché biface fait coexister deux types de clients distincts mais interdépendants : chaque face valorise l'autre. D'où des effets de momentum puissants et une course à la taille critique.</div>
+  </div>
+  <div class="schema-card">
+    <div class="schema-title">Les 3 révolutions industrielles</div>
+    <div class="schema-viz"><div class="sch-tl">
+      <div class="sch-tl-item"><div class="sch-tl-date">1776 – 1860</div><div class="sch-tl-label"><strong>1ʳᵉ révolution</strong> — machine à vapeur, fer, acier, réseau ferroviaire → la firme hiérarchique intégrée.</div></div>
+      <div class="sch-tl-item"><div class="sch-tl-date">1880 – 1920</div><div class="sch-tl-label"><strong>2ᵉ révolution</strong> — électricité, moteur à explosion, pétrole, réseau électrique → taylorisme, fordisme, marketing.</div></div>
+      <div class="sch-tl-item"><div class="sch-tl-date">1971 – …</div><div class="sch-tl-label"><strong>3ᵉ révolution</strong> — informatique, électronique, réseau numérique → production à la demande, plateformes, ubérisation.</div></div>
+    </div></div>
+    <div class="schema-note">Chaque révolution technologique fait émerger un nouveau modèle organisationnel dominant.</div>
+  </div>
+  <div class="schema-theme">🏛️ Corporate Strategy</div>
+  <div class="schema-card">
+    <div class="schema-title">Corporate strategy vs Business strategy</div>
+    <div class="schema-viz"><div class="sch-duo">
+      <div class="sch-duo-box"><h4>Corporate strategy</h4><span class="sch-tag tag-neu">Niveau siège social</span><span class="sch-tag tag-neu">Portefeuille d'activités</span><span class="sch-tag tag-neu">Allocation des ressources</span><span class="sch-tag tag-neu">(Dé)croissance</span></div>
+      <div class="sch-duo-box"><h4>Business strategy</h4><span class="sch-tag tag-neu">Niveau du domaine d'activité (DAS)</span><span class="sch-tag tag-ok">Avantage concurrentiel</span><span class="sch-tag tag-neu">Où, comment, exécuter ?</span></div>
+    </div></div>
+    <div class="schema-note">La corporate strategy gère le portefeuille d'activités au niveau du groupe ; la business strategy crée ou cultive un avantage concurrentiel sur chaque activité.</div>
+  </div>
+  `;
+}
+
 /* ═══════ TABS ═══════ */
 const TABS = [
   { id:'checklist', label:'✅ Checklist', prog:10 },
   { id:'cours',     label:'📖 Cours',     prog:25 },
   { id:'synth',     label:'📝 Synthèse',  prog:40 },
+  { id:'schemas',   label:'📊 Schémas',   prog:48 },
   { id:'flash',     label:'⚡ Flashcards', prog:55 },
   { id:'quiz',      label:'🎯 Quiz',      prog:70 },
   { id:'examen',    label:'📝 Examen blanc', prog:85 },
@@ -3252,6 +3329,7 @@ function renderTab(id) {
     if (window._pendingCoursJump) { window._pendingCoursJump(); window._pendingCoursJump = null; }
   }
   else if (id === 'synth') root.innerHTML = header + `<div class="fade-up fade-up-stagger">${getSynthHTML()}</div>`;
+  else if (id === 'schemas') root.innerHTML = header + `<div class="fade-up fade-up-stagger">${getSchemasHTML()}</div>`;
   else if (id === 'flash') { root.innerHTML = header + renderFlash(); bindFlash(); }
   else if (id === 'quiz')  { root.innerHTML = header + renderQuizSetup(); }
   else if (id === 'annales'){ root.innerHTML = header + `<div class="fade-up fade-up-stagger">${getAnnalesHTML()}</div>`; }

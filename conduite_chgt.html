@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
-<link rel="stylesheet" href="shared.css?v=202605212100">
+<link rel="stylesheet" href="shared.css?v=202605212300">
 </head>
 <body>
 
@@ -36,7 +36,7 @@
   </div>
 </div>
 
-<script src="engine.js?v=202605212100"></script>
+<script src="engine.js?v=202605212300"></script>
 <script>
 /* ═══════ FALLBACK DATA (file://) ═══════ */
 const FALLBACK = {
@@ -2278,11 +2278,92 @@ function getSynthHTML() {
 `;
 }
 
+/* ═══════ SCHÉMAS (repères visuels) ═══════ */
+function getSchemasHTML() {
+  return `
+  <div class="schema-intro">📊 Repères visuels des notions structurantes du cours. Ces schémas reformulent <strong>visuellement</strong> ce qui est écrit dans les chapitres — le cours rédigé reste la référence.</div>
+
+  <div class="schema-theme">🔄 Processus du changement</div>
+  <div class="schema-card">
+    <div class="schema-title">Le modèle de Kurt Lewin — 3 phases</div>
+    <div class="schema-viz"><div class="sch-flow">
+      <div class="sch-flow-box">Décristallisation<br><small>Préparer, remettre en cause l'existant</small></div>
+      <div class="sch-flow-op"><span>→</span></div>
+      <div class="sch-flow-box sch-flow-pivot">Changement<br><small>Modifier tâches, structure, comportements</small></div>
+      <div class="sch-flow-op"><span>→</span></div>
+      <div class="sch-flow-box">Cristallisation<br><small>Renforcer, évaluer, suivre</small></div>
+    </div></div>
+    <div class="schema-note">Lewin modélise le changement en trois temps : il faut « dégeler » l'équilibre existant avant de pouvoir le transformer, puis le « regeler » sur le nouvel état souhaité.</div>
+  </div>
+  <div class="schema-card">
+    <div class="schema-title">Les 4 leviers contre la résistance</div>
+    <div class="schema-viz"><div class="sch-grid4">
+      <div class="sch-g4cell"><h4>Communiquer</h4><p>Éliminer les craintes liées à l'incertitude, expliquer le but visé.</p></div>
+      <div class="sch-g4cell"><h4>Faire participer</h4><p>Créer un sentiment d'engagement, de la planification à la réalisation.</p></div>
+      <div class="sch-g4cell"><h4>Soutenir</h4><p>Assurer confiance et crédibilité, accompagner ceux en difficulté.</p></div>
+      <div class="sch-g4cell"><h4>Négocier</h4><p>Harmoniser les objectifs, éliminer les conflits avec les buts personnels.</p></div>
+    </div></div>
+    <div class="schema-note">La loi de Le Chatelier : toute modification de l'équilibre fait naître des forces qui s'y opposent. Ces 4 leviers réduisent ces résistances.</div>
+  </div>
+  <div class="schema-theme">👥 Acteurs face au changement</div>
+  <div class="schema-card">
+    <div class="schema-title">Les 3 comportements face au changement (10-80-10)</div>
+    <div class="schema-viz">
+      <div class="sch-bar">
+        <div class="sch-bar-seg" style="flex:15;background:linear-gradient(135deg,var(--green),#477452)"><span>Proactifs</span><strong>10–20 %</strong></div>
+        <div class="sch-bar-seg" style="flex:70;background:linear-gradient(135deg,var(--accent),#2d5d9a)"><span>Passifs</span><strong>60–80 %</strong></div>
+        <div class="sch-bar-seg" style="flex:15;background:linear-gradient(135deg,var(--red),#8a3d30)"><span>Opposants</span><strong>10–20 %</strong></div>
+      </div>
+      <div class="sch-bar-legend"><span>Les utiliser</span><span>Les rassurer</span><span>Les laisser s'isoler</span></div>
+    </div>
+    <div class="schema-note">Face à tout changement : une minorité de proactifs (prescripteurs), une large majorité de passifs en attente de résultats, une minorité d'opposants.</div>
+  </div>
+  <div class="schema-theme">🧭 Démarche &amp; pilotage</div>
+  <div class="schema-card">
+    <div class="schema-title">La démarche de changement en 8 étapes (Besombes)</div>
+    <div class="schema-viz"><div class="sch-steps">
+      <div class="sch-step"><span class="sch-step-num">1</span><span class="sch-step-txt"><strong>Amorcer</strong> — définir une stratégie / politique.</span></div>
+      <div class="sch-step"><span class="sch-step-num">2</span><span class="sch-step-txt"><strong>Analyser l'existant</strong> — diagnostic.</span></div>
+      <div class="sch-step"><span class="sch-step-num">3</span><span class="sch-step-txt"><strong>Définir le nouveau cadre</strong> — innover, objectifs opérationnels.</span></div>
+      <div class="sch-step"><span class="sch-step-num">4</span><span class="sch-step-txt"><strong>Mobiliser</strong> — sensibiliser, former.</span></div>
+      <div class="sch-step"><span class="sch-step-num">5</span><span class="sch-step-txt"><strong>Élaborer les plans d'actions</strong> — hiérarchiser, planifier.</span></div>
+      <div class="sch-step"><span class="sch-step-num">6</span><span class="sch-step-txt"><strong>Mettre en œuvre</strong> — déployer, contrôler les dérives.</span></div>
+      <div class="sch-step"><span class="sch-step-num">7</span><span class="sch-step-txt"><strong>Mesurer et évaluer</strong> — constater les écarts, corriger.</span></div>
+      <div class="sch-step"><span class="sch-step-num">8</span><span class="sch-step-txt"><strong>S'améliorer</strong> — boucler la démarche, fixer de nouveaux objectifs.</span></div>
+    </div></div>
+    <div class="schema-note">Durée moyenne d'une démarche : environ 2 ans — ni trop, ni trop peu.</div>
+  </div>
+  <div class="schema-card">
+    <div class="schema-title">La méthode RACI — 4 rôles par activité</div>
+    <div class="schema-viz"><div class="sch-grid4">
+      <div class="sch-g4cell"><h4><span class="sch-g4num">R</span>Responsable</h4><p>Un et un seul. Donne son approbation, assume la responsabilité globale.</p></div>
+      <div class="sch-g4cell"><h4><span class="sch-g4num">A</span>Acteur</h4><p>De 1 à n. Réalise les activités.</p></div>
+      <div class="sch-g4cell"><h4><span class="sch-g4num">C</span>Contribution</h4><p>Dispose d'une information ou expertise, sans autorité.</p></div>
+      <div class="sch-g4cell"><h4><span class="sch-g4num">I</span>Information</h4><p>Informé sans intervention, généralement impacté indirectement.</p></div>
+    </div></div>
+    <div class="schema-note">Le RACI clarifie qui fait quoi pour chaque activité d'un projet de changement.</div>
+  </div>
+  <div class="schema-theme">👤 Équipe &amp; management</div>
+  <div class="schema-card">
+    <div class="schema-title">Le continuum directif → délégatif</div>
+    <div class="schema-viz">
+      <div class="sch-eq">De l'autorité du responsable&nbsp;&nbsp;→&nbsp;&nbsp;à la liberté d'action du groupe</div>
+      <div class="sch-gauge">
+        <div class="sch-gauge-zone" style="background:var(--red-bg)"><strong>Directif</strong>Autorité · Information · Explicatif · Consultation</div>
+        <div class="sch-gauge-zone" style="background:var(--green-bg)"><strong>Délégatif</strong>Concertation · Négociation · Implicatif</div>
+      </div>
+    </div>
+    <div class="schema-note">Le comportement managérial s'inscrit sur un continuum : plus on va vers la droite, plus le responsable lâche de l'autorité au profit de l'autonomie du groupe.</div>
+  </div>
+  `;
+}
+
 /* ═══════ TABS ═══════ */
 const TABS = [
   { id:'checklist', label:'✅ Checklist', prog:10 },
   { id:'cours',     label:'📖 Cours',     prog:20 },
   { id:'synth',     label:'📝 Synthèse',  prog:35 },
+  { id:'schemas',   label:'📊 Schémas',   prog:48 },
   { id:'flash',     label:'⚡ Flashcards', prog:50 },
   { id:'quiz',      label:'🎯 Quiz',      prog:65 },
   { id:'sujets',    label:'🗂 Sujets-types', prog:78 },
@@ -2390,6 +2471,7 @@ function renderTab(id) {
     if (window._pendingCoursJump) { window._pendingCoursJump(); window._pendingCoursJump = null; }
   }
   else if (id === 'synth') root.innerHTML = header + `<div class="fade-up fade-up-stagger">${getSynthHTML()}</div>`;
+  else if (id === 'schemas') root.innerHTML = header + `<div class="fade-up fade-up-stagger">${getSchemasHTML()}</div>`;
   else if (id === 'flash') { root.innerHTML = header + renderFlash(); bindFlash(); }
   else if (id === 'quiz')  { root.innerHTML = header + renderQuizSetup(); }
   else if (id === 'annales'){ root.innerHTML = header + `<div class="fade-up fade-up-stagger">${getAnnalesHTML()}</div>`; }

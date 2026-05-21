@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
-<link rel="stylesheet" href="shared.css?v=202605212100">
+<link rel="stylesheet" href="shared.css?v=202605212300">
 </head>
 <body>
 
@@ -36,7 +36,7 @@
   </div>
 </div>
 
-<script src="engine.js?v=202605212100"></script>
+<script src="engine.js?v=202605212300"></script>
 <script>
 /* ═══════ FALLBACK DATA (file://) ═══════ */
 const FALLBACK = {
@@ -4459,11 +4459,85 @@ function getSynthHTML() {
 `;
 }
 
+/* ═══════ SCHÉMAS (repères visuels) ═══════ */
+function getSchemasHTML() {
+  return `
+  <div class="schema-intro">📊 Repères visuels des notions structurantes du cours. Ces schémas reformulent <strong>visuellement</strong> ce qui est écrit dans les chapitres — le cours rédigé reste la référence.</div>
+
+  <div class="schema-theme">🏛️ Gouvernance des SI</div>
+  <div class="schema-card">
+    <div class="schema-title">COBIT — les 4 domaines</div>
+    <div class="schema-viz"><div class="sch-grid4">
+      <div class="sch-g4cell"><h4><span class="sch-g4num">PO</span>Planifier &amp; Organiser</h4><p>Définir la stratégie et l'organisation du SI.</p></div>
+      <div class="sch-g4cell"><h4><span class="sch-g4num">AI</span>Acquérir &amp; Implémenter</h4><p>Acquérir et mettre en place les solutions.</p></div>
+      <div class="sch-g4cell"><h4><span class="sch-g4num">DS</span>Délivrer &amp; Supporter</h4><p>Assurer la livraison et le support des services.</p></div>
+      <div class="sch-g4cell"><h4><span class="sch-g4num">SE</span>Surveiller &amp; Évaluer</h4><p>Mesurer et contrôler la performance.</p></div>
+    </div></div>
+    <div class="schema-note">COBIT est le référentiel ISACA de gouvernance et d'audit des SI. Ses 4 domaines évaluent l'information selon 7 critères : efficacité, efficience, confidentialité, intégrité, disponibilité, conformité, fiabilité.</div>
+  </div>
+  <div class="schema-card">
+    <div class="schema-title">CMMI — les 5 niveaux de maturité</div>
+    <div class="schema-viz"><div class="sch-stairs">
+      <div class="sch-stair" style="height:56px;background:linear-gradient(180deg,#6b7686,#566072)"><strong>1</strong><span>Initial</span></div>
+      <div class="sch-stair" style="height:72px;background:linear-gradient(180deg,#5c8fd1,#3d72b4)"><strong>2</strong><span>Discipliné</span></div>
+      <div class="sch-stair" style="height:88px;background:linear-gradient(180deg,#3d72b4,#2d5d9a)"><strong>3</strong><span>Ajusté</span></div>
+      <div class="sch-stair" style="height:104px;background:linear-gradient(180deg,#4d9aa8,#3a7a86)"><strong>4</strong><span>Géré quantitativement</span></div>
+      <div class="sch-stair" style="height:120px;background:linear-gradient(180deg,#5a9168,#477452)"><strong>5</strong><span>En optimisation</span></div>
+    </div></div>
+    <div class="schema-note">La maturité progresse par empilement : un niveau supérieur stable suppose que les niveaux inférieurs le sont aussi.</div>
+  </div>
+  <div class="schema-card">
+    <div class="schema-title">Le Balanced Scorecard — les 4 axes</div>
+    <div class="schema-viz"><div class="sch-grid4">
+      <div class="sch-g4cell"><h4>Axe Financier</h4><p>Résultats, rentabilité.</p></div>
+      <div class="sch-g4cell"><h4>Axe Client</h4><p>Satisfaction, parts de marché.</p></div>
+      <div class="sch-g4cell"><h4>Axe Innovation / Apprentissage</h4><p>R&amp;D, formation.</p></div>
+      <div class="sch-g4cell"><h4>Axe Processus internes</h4><p>Efficacité, qualité.</p></div>
+    </div></div>
+    <div class="schema-note">Le BSC de Kaplan-Norton traduit la stratégie en indicateurs (KPI) mesurables selon ces 4 axes.</div>
+  </div>
+  <div class="schema-theme">📋 Audit des SI</div>
+  <div class="schema-card">
+    <div class="schema-title">Le risque d'audit — 3 composantes</div>
+    <div class="schema-viz"><div class="sch-steps">
+      <div class="sch-step"><span class="sch-step-num">1</span><span class="sch-step-txt"><strong>Risque inhérent</strong> — possibilité qu'une anomalie significative se produise, indépendamment du contrôle interne.</span></div>
+      <div class="sch-step"><span class="sch-step-num">2</span><span class="sch-step-txt"><strong>Risque lié au contrôle</strong> — risque que le contrôle interne ne prévienne ni ne détecte cette anomalie.</span></div>
+      <div class="sch-step"><span class="sch-step-num">3</span><span class="sch-step-txt"><strong>Risque de non-détection</strong> — propre à la mission : risque que le commissaire aux comptes ne détecte pas l'anomalie.</span></div>
+    </div></div>
+    <div class="schema-note">Risque inhérent et risque lié au contrôle forment le risque d'anomalies significatives. Le risque de non-détection est le plus important pour le CAC.</div>
+  </div>
+  <div class="schema-theme">🔒 Sécurité des SI</div>
+  <div class="schema-card">
+    <div class="schema-title">L'équation du risque</div>
+    <div class="schema-viz">
+      <div class="sch-flow">
+        <div class="sch-flow-box">Menace<br><small>Source du risque</small></div>
+        <div class="sch-flow-op"><span>×</span></div>
+        <div class="sch-flow-box">Vulnérabilité<br><small>Faille du système</small></div>
+        <div class="sch-flow-op"><span>×</span></div>
+        <div class="sch-flow-box">Impact<br><small>Conséquence</small></div>
+      </div>
+      <div class="sch-formula">Risque = Menace × Vulnérabilité × Impact</div>
+    </div>
+    <div class="schema-note">Menace et vulnérabilité forment la cause du risque ; l'impact en est la sévérité. Le risque zéro n'existe pas. La sécurité d'un bien s'évalue selon les critères DIC — Disponibilité, Intégrité, Confidentialité — complétés par la Preuve.</div>
+  </div>
+  <div class="schema-card">
+    <div class="schema-title">Chiffrement symétrique et asymétrique</div>
+    <div class="schema-viz"><div class="sch-duo">
+      <div class="sch-duo-box"><h4>Symétrique</h4><span class="sch-tag tag-neu">Une seule clé</span><span class="sch-tag tag-ok">Rapide</span><span class="sch-tag tag-no">Échange des clés délicat</span></div>
+      <div class="sch-duo-box"><h4>Asymétrique</h4><span class="sch-tag tag-neu">Paire publique / privée</span><span class="sch-tag tag-ok">Confidentialité + identité</span><span class="sch-tag tag-no">~1000× plus lent</span></div>
+    </div></div>
+    <div class="schema-note">Le chiffrement symétrique utilise la même clé pour chiffrer et déchiffrer. L'asymétrique repose sur une paire de clés : un message chiffré par l'une ne se déchiffre que par l'autre.</div>
+  </div>
+  `;
+}
+
 /* ═══════ TABS ═══════ */
 const TABS = [
   { id:'checklist', label:'✅ Checklist', prog:10 },
   { id:'cours',     label:'📖 Cours',     prog:25 },
   { id:'synth',     label:'📝 Synthèse',  prog:40 },
+  { id:'schemas',   label:'📊 Schémas',   prog:48 },
   { id:'flash',     label:'⚡ Flashcards', prog:55 },
   { id:'quiz',      label:'🎯 Quiz',      prog:70 },
   { id:'examen',    label:'📝 Examen blanc', prog:85 },
@@ -4570,6 +4644,7 @@ function renderTab(id) {
     if (window._pendingCoursJump) { window._pendingCoursJump(); window._pendingCoursJump = null; }
   }
   else if (id === 'synth') root.innerHTML = header + `<div class="fade-up fade-up-stagger">${getSynthHTML()}</div>`;
+  else if (id === 'schemas') root.innerHTML = header + `<div class="fade-up fade-up-stagger">${getSchemasHTML()}</div>`;
   else if (id === 'flash') { root.innerHTML = header + renderFlash(); bindFlash(); }
   else if (id === 'quiz')  { root.innerHTML = header + renderQuizSetup(); }
   else if (id === 'annales'){ root.innerHTML = header + `<div class="fade-up fade-up-stagger">${getAnnalesHTML()}</div>`; }
