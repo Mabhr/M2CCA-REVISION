@@ -48,7 +48,38 @@ function loadQuizScores(key) {
 function saveQuizScore(key, score, total) {
   const scores = loadQuizScores(key);
   scores.unshift({ score, total, date: Date.now() });
-  localStorage.setItem(key, JSON.stringify(scores.slice(0, 5)));
+  localStorage.setItem(key, JSON.stringify(scores.slice(0, 20)));
+}
+
+/* Mini-courbe SVG de l'évolution des scores de quiz (du plus ancien au plus récent). */
+function sparklineHTML(scores) {
+  if (!scores || scores.length < 2) {
+    return '<div class="quiz-spark-empty">Fais au moins 2 quiz pour voir ta courbe de progression.</div>';
+  }
+  const pts = scores.slice().reverse().map(s => s.total ? Math.round(s.score / s.total * 100) : 0);
+  const W = 260, H = 54, pad = 6;
+  const stepX = (W - 2 * pad) / (pts.length - 1);
+  const xy = pts.map((p, i) => [pad + i * stepX, pad + (1 - p / 100) * (H - 2 * pad)]);
+  const path = xy.map((c, i) => (i ? 'L' : 'M') + c[0].toFixed(1) + ' ' + c[1].toFixed(1)).join(' ');
+  const area = path + ' L' + xy[xy.length - 1][0].toFixed(1) + ' ' + (H - pad)
+    + ' L' + pad + ' ' + (H - pad) + ' Z';
+  const dots = xy.map(c => '<circle cx="' + c[0].toFixed(1) + '" cy="' + c[1].toFixed(1)
+    + '" r="2.6" fill="var(--accent3)"/>').join('');
+  const delta = pts[pts.length - 1] - pts[0];
+  const trend = delta > 0 ? '↗ +' + delta + ' pts' : (delta < 0 ? '↘ ' + delta + ' pts' : '→ stable');
+  const trendCol = delta > 0 ? 'var(--green)' : (delta < 0 ? 'var(--red)' : 'var(--text3)');
+  const midY = (pad + (H - 2 * pad) * 0.5).toFixed(1);
+  return '<div class="quiz-spark">'
+    + '<svg viewBox="0 0 ' + W + ' ' + H + '" class="quiz-spark-svg" aria-label="Courbe des scores de quiz">'
+    + '<line x1="' + pad + '" y1="' + midY + '" x2="' + (W - pad) + '" y2="' + midY
+    + '" stroke="var(--border)" stroke-width="1" stroke-dasharray="3 3"/>'
+    + '<path d="' + area + '" fill="rgba(61,114,180,0.12)"/>'
+    + '<path d="' + path + '" fill="none" stroke="var(--accent)" stroke-width="2" '
+    + 'stroke-linejoin="round" stroke-linecap="round"/>'
+    + dots + '</svg>'
+    + '<div class="quiz-spark-lbl">' + pts.length + ' parties · '
+    + '<span style="color:' + trendCol + '">' + trend + '</span> depuis le début</div>'
+    + '</div>';
 }
 
 /* ═══════ PROGRESSION PAR COURS (agrégat lu par l'accueil) ═══════ */
