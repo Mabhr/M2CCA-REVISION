@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
-<link rel="stylesheet" href="shared.css?v=202605180400">
+<link rel="stylesheet" href="shared.css?v=202605212000">
 </head>
 <body>
 
@@ -36,7 +36,7 @@
   </div>
 </div>
 
-<script src="engine.js?v=202605180400"></script>
+<script src="engine.js?v=202605212000"></script>
 <script>
 /* ═══════ FALLBACK DATA (file://) ═══════ */
 const FALLBACK = {
@@ -1843,6 +1843,15 @@ function getFilteredQuizQuestions() {
 }
 function setFcTheme(id) { fcTheme = id; switchTab('flash'); }
 function setQuizTheme(id) { quizTheme = id; switchTab('quiz'); }
+function setQuizCount(n) {
+  quizCount = n;
+  document.querySelectorAll('.quiz-count-btn').forEach(b => b.classList.toggle('active', Number(b.dataset.n) === n));
+  const p = document.querySelector('.quiz-setup p');
+  if (p) {
+    const fq = getFilteredQuizQuestions();
+    p.textContent = Math.min(quizCount, fq.length) + ' questions tirées au sort sur ' + fq.length + (quizTheme !== 'all' ? ' (thème filtré)' : '');
+  }
+}
 function setCoursTheme(id) { coursTheme = id; applyCoursFilter(); renderCoursPills(); }
 function applyCoursFilter() {
   document.querySelectorAll('.course-chapter').forEach(el => {
@@ -2185,6 +2194,7 @@ function fcKeyHandler(e) {
 let quizState = null;
 let timerInterval = null;
 let timeLeft = 30;
+let quizCount = 20;
 
 function renderQuizSetup() {
   const scores = loadQuizScores(DATA.quizKey).slice(0, 3);
@@ -2199,7 +2209,7 @@ function renderQuizSetup() {
       }).join('');
 
   const filteredQuiz = getFilteredQuizQuestions();
-  const quizSize = Math.min(20, filteredQuiz.length);
+  const quizSize = Math.min(quizCount, filteredQuiz.length);
   return `
   <div class="fade-up">
     ${themeSelectorHTML('quiz')}
@@ -2207,6 +2217,12 @@ function renderQuizSetup() {
       <div style="font-size:2rem;margin-bottom:0.5rem">🎯</div>
       <h3>Quiz — ${DATA.title}</h3>
       <p>${quizSize} questions tirées au sort sur ${filteredQuiz.length}${quizTheme !== 'all' ? ' (thème filtré)' : ''}</p>
+      <div class="quiz-count">
+        <span class="quiz-count-label">Nombre de questions</span>
+        <div class="quiz-count-opts">
+          ${[5, 10, 20].map(n => `<button class="quiz-count-btn${quizCount === n ? ' active' : ''}" data-n="${n}" onclick="setQuizCount(${n})">${n}</button>`).join('')}
+        </div>
+      </div>
       <div class="quiz-history">
         <div class="quiz-history-title">Scores récents</div>
         ${histHTML}
@@ -2233,7 +2249,7 @@ function startQuiz() {
   const timerOn = timerEl ? !!timerEl._timerOn : false;
   const pool = getFilteredQuizQuestions();
   quizState = {
-    questions: shuffle([...pool]).slice(0, Math.min(20, pool.length)).map(quizShuffleQuestion),
+    questions: shuffle([...pool]).slice(0, Math.min(quizCount, pool.length)).map(quizShuffleQuestion),
     current: 0,
     answers: [],
     timerEnabled: timerOn,
