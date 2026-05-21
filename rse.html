@@ -2140,7 +2140,7 @@ function renderQuizQuestion() {
     </div>
     ${timerBar}
     <div class="quiz-global-bar"><div class="quiz-global-fill" style="width:${Math.round((qi/total)*100)}%"></div></div>
-    <div class="quiz-card" id="quizCard">
+    <div class="quiz-card" id="quizCard">${q.type === 'tf' ? '' : `
       <div class="quiz-q-num">Q${qi + 1}</div>
       <div class="quiz-q-text">${q.q}</div>
       <div class="quiz-options" id="quizOpts">
@@ -2149,11 +2149,12 @@ function renderQuizQuestion() {
             <div class="opt-letter">${letters[i]}</div>
             <span>${opt}</span>
           </button>`).join('')}
-      </div>
+      </div>`}
     </div>
   </div>`;
 
   // Attach ripples
+  if (q.type === 'tf') renderTFQuestionInline(document.getElementById('quizCard'), q, qi, quizState);
   document.querySelectorAll('.quiz-option').forEach(attachRipple);
 
   if (quizState.timerEnabled) startQuestionTimer(qi);

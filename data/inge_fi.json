@@ -690,8 +690,16 @@
       "theme": "derives",
       "srcChap": 8,
       "src": "Chapitre 2 (notes de cours)",
-      "q": "Le marché organisé et la chambre de compensation",
-      "a": "Sur un marché organisé, les contreparties ne négocient pas entre elles : elles placent des ordres dont la confrontation dégage un prix.\n\nUne entreprise de marché (Euronext) fixe les règles et habilite les intervenants ; l'AMF est l'autorité de tutelle. Le carnet d'ordres public garantit l'égalité des intervenants, et la concentration des ordres assure la liquidité.\n\nLa chambre de compensation (LCH ClearNet) est la contrepartie unique : elle sert de « rideau » garantissant l'anonymat et supprime le risque de contrepartie."
+      "q": "Le marché organisé : fonctionnement",
+      "a": "Sur un marché organisé, les contreparties ne négocient pas directement entre elles : elles placent des ordres dont la confrontation dégage un prix.\n\nUne entreprise de marché (Euronext) fixe les règles et habilite les intervenants ; l'AMF est l'autorité de tutelle. Le carnet d'ordres public garantit l'égalité des intervenants, et la concentration des ordres assure la liquidité."
+    },
+    {
+      "id": "fc51b",
+      "theme": "derives",
+      "srcChap": 8,
+      "src": "Chapitre 2 (notes de cours)",
+      "q": "La chambre de compensation",
+      "a": "La chambre de compensation (LCH ClearNet) est la contrepartie unique sur un marché organisé : elle sert de « rideau » entre les deux parties, garantit l'anonymat et supprime le risque de contrepartie."
     },
     {
       "id": "fc52",
@@ -738,8 +746,16 @@
       "theme": "esg",
       "srcChap": 9,
       "src": "Chapitre 7 (notes de cours)",
-      "q": "Développement durable et RSE",
-      "a": "Développement durable (Rapport Brundtland) : répondre aux besoins actuels sans compromettre la capacité des générations futures à répondre aux leurs.\n\nLa RSE intègre les enjeux sociaux et climatiques dans la politique de l'entreprise, en respectant la législation et les aspirations des parties prenantes.\n\nLes lois Grenelle imposent pour la première fois aux entreprises cotées la publication d'un rapport RSE avec les comptes annuels."
+      "q": "Le développement durable : définition",
+      "a": "Le développement durable (Rapport Brundtland) consiste à répondre aux besoins actuels sans compromettre la capacité des générations futures à répondre aux leurs."
+    },
+    {
+      "id": "fc57b",
+      "theme": "esg",
+      "srcChap": 9,
+      "src": "Chapitre 7 (notes de cours)",
+      "q": "La RSE : définition et lois Grenelle",
+      "a": "La RSE intègre les enjeux sociaux et climatiques dans la politique de l'entreprise, en respectant la législation et les aspirations des parties prenantes.\n\nLes lois Grenelle imposent pour la première fois aux entreprises cotées la publication d'un rapport RSE avec les comptes annuels."
     },
     {
       "id": "fc58",
@@ -810,8 +826,16 @@
       "theme": "esg",
       "srcChap": 9,
       "src": "Directive Omnibus",
-      "q": "Omnibus : conséquences sur la CS3D et la Taxonomie",
-      "a": "CS3D :\n• Devoir de vigilance limité aux partenaires directs (sans le reste de la chaîne de valeur).\n• Évaluations tous les 5 ans, au lieu d'annuelles.\n• Suppression des sanctions financières proportionnelles au chiffre d'affaires.\n\nTaxonomie :\n• Réduction d'environ 70 % des obligations de reporting.\n• Introduction d'un seuil de matérialité financière.\n• Possibilité pour les banques d'exclure de leur Green Asset Ratio les actifs d'entreprises sorties du champ de la CSRD."
+      "q": "Omnibus : conséquences sur la CS3D",
+      "a": "• Devoir de vigilance limité aux partenaires directs (sans le reste de la chaîne de valeur).\n• Évaluations tous les 5 ans, au lieu d'annuelles.\n• Suppression des sanctions financières proportionnelles au chiffre d'affaires."
+    },
+    {
+      "id": "fc66b",
+      "theme": "esg",
+      "srcChap": 9,
+      "src": "Directive Omnibus",
+      "q": "Omnibus : conséquences sur la Taxonomie",
+      "a": "• Réduction d'environ 70 % des obligations de reporting.\n• Introduction d'un seuil de matérialité financière.\n• Possibilité pour les banques d'exclure de leur Green Asset Ratio les actifs d'entreprises sorties du champ de la CSRD."
     },
     {
       "id": "fc67",
@@ -1675,6 +1699,238 @@
       "c": 1,
       "e": "L'opposition entre performance financière et RSE est un faux débat : la RSE peut créer de la valeur (croissance du CA, optimisation des investissements).",
       "src": "Chapitre 7",
+      "srcChap": 9
+    },
+    {
+      "q": "Sur le coût du capital et le risque :",
+      "type": "tf",
+      "theme": "cout_capital",
+      "aff": [
+        {
+          "t": "Le risque systémique peut être diversifié dans un portefeuille.",
+          "c": false,
+          "e": "Le risque systémique (risque de marché) n'est pas diversifiable : c'est pour cela qu'il est rémunéré. C'est le risque spécifique qui se diversifie."
+        },
+        {
+          "t": "Un titre dont le béta est inférieur à 1 amplifie les variations du marché.",
+          "c": false,
+          "e": "Un β < 1 désigne un titre défensif qui atténue les variations du marché. C'est β > 1 qui les amplifie."
+        },
+        {
+          "t": "Le MEDAF ne rémunère que le risque systémique.",
+          "c": true,
+          "e": "Le MEDAF ne rémunère que le risque systémique, mesuré par le béta ; le risque spécifique, diversifiable, n'est pas rémunéré."
+        },
+        {
+          "t": "Dans le CMPC, le coût de la dette est retenu net d'impôt, soit Rd × (1 − IS).",
+          "c": true,
+          "e": "Les intérêts d'emprunt sont déductibles du résultat imposable : on retient donc le coût de la dette net d'impôt, Rd × (1 − IS)."
+        }
+      ],
+      "src": "Chapitres 1-2",
+      "srcChap": 2
+    },
+    {
+      "q": "Sur le béta :",
+      "type": "tf",
+      "theme": "cout_capital",
+      "aff": [
+        {
+          "t": "Le béta de l'actif économique est aussi appelé béta désendetté.",
+          "c": true,
+          "e": "Le béta de l'actif économique (béta désendetté, béta de l'activité ou béta sectoriel) ne reflète que le risque de marché, indépendamment de la structure financière."
+        },
+        {
+          "t": "Le béta d'une société non cotée se lit directement sur sa droite de régression.",
+          "c": false,
+          "e": "Une société non cotée n'a pas de droite de régression : son béta se reconstruit en 3 étapes — désendetter des comparables cotés, faire la moyenne, puis réendetter."
+        },
+        {
+          "t": "Pour réendetter un béta : β endetté = β désendetté × [1 + (D/CP) × (1 − IS)].",
+          "c": true,
+          "e": "C'est la formule de réendettement du béta ; le désendettement est l'opération inverse."
+        },
+        {
+          "t": "La prime d'illiquidité corrige un problème de trésorerie de la société.",
+          "c": false,
+          "e": "La prime d'illiquidité n'a rien à voir avec la trésorerie : elle tient à la difficulté de céder les titres d'une société non cotée. On l'ajoute au Rcp obtenu par le MEDAF."
+        }
+      ],
+      "src": "Chapitre 2",
+      "srcChap": 2
+    },
+    {
+      "q": "Sur le marché obligataire :",
+      "type": "tf",
+      "theme": "marches_fi",
+      "aff": [
+        {
+          "t": "La relation entre le prix d'une obligation et le taux de marché est inverse.",
+          "c": true,
+          "e": "Quand le taux de marché monte, le cours de l'obligation baisse, et inversement."
+        },
+        {
+          "t": "Si le taux de marché passe au-dessus du taux nominal, le cours de l'obligation dépasse 100 %.",
+          "c": false,
+          "e": "C'est l'inverse : si le taux de marché dépasse le taux nominal, le cours descend sous 100 %."
+        },
+        {
+          "t": "Le cours au pied du coupon est la cotation publiée, hors coupon couru.",
+          "c": true,
+          "e": "Le cours au pied du coupon est la valeur de l'obligation hors coupon couru. Prix d'acquisition réel = cours au pied du coupon + coupon couru."
+        },
+        {
+          "t": "À la duration, une variation des taux n'a aucune incidence sur la valeur du placement obligataire.",
+          "c": true,
+          "e": "La duration est la durée de détention pour laquelle une variation des taux est neutre : le portefeuille est alors « immunisé »."
+        }
+      ],
+      "src": "Chapitre 4",
+      "srcChap": 4
+    },
+    {
+      "q": "Sur la Bourse et l'introduction en Bourse :",
+      "type": "tf",
+      "theme": "marches_fi",
+      "aff": [
+        {
+          "t": "Le prix d'équilibre lors d'une cotation est celui qui maximise le volume d'échange.",
+          "c": true,
+          "e": "Le carnet d'ordres dégage le prix qui permet le volume d'échange maximum."
+        },
+        {
+          "t": "C'est l'AMF qui décide du marché d'admission d'une société.",
+          "c": false,
+          "e": "C'est Euronext qui décide du marché d'admission ; l'AMF, elle, autorise l'introduction."
+        },
+        {
+          "t": "Dans un placement garanti, l'établissement financier doit acheter lui-même les titres s'il ne trouve pas preneur.",
+          "c": true,
+          "e": "Le placement garanti (diffusion directe) place les titres auprès d'investisseurs restreints ; l'établissement les achète lui-même à défaut de preneur."
+        },
+        {
+          "t": "À l'achat, la règle du prix exécute en premier l'ordre à la limite la plus basse.",
+          "c": false,
+          "e": "À l'achat, l'ordre à la limite la plus élevée est exécuté en premier ; à la vente, c'est la limite la plus basse."
+        }
+      ],
+      "src": "Chapitre 5",
+      "srcChap": 5
+    },
+    {
+      "q": "Sur les produits dérivés et la couverture :",
+      "type": "tf",
+      "theme": "derives",
+      "aff": [
+        {
+          "t": "Le FRA oblige les parties à mettre effectivement en place le prêt.",
+          "c": false,
+          "e": "Le FRA n'oblige pas à mettre en place le prêt : seul le différentiel d'intérêts est échangé. C'est le Forward/Forward qui impose la mise en place effective."
+        },
+        {
+          "t": "Le CAP garantit à un emprunteur un taux d'intérêt maximum.",
+          "c": true,
+          "e": "Le CAP garantit un taux plafond à l'emprunteur, tout en lui laissant profiter d'une baisse des taux."
+        },
+        {
+          "t": "Un exportateur qui craint une baisse de la devise achète un CALL.",
+          "c": false,
+          "e": "L'exportateur achète un PUT (cours plancher garanti). C'est l'importateur, craignant une hausse de la devise, qui achète un CALL."
+        },
+        {
+          "t": "Sur le marché de gré à gré, il existe un risque de contrepartie.",
+          "c": true,
+          "e": "Le marché de gré à gré repose sur la confiance, sans garantie : il comporte un risque de contrepartie (non-paiement ou non-livraison)."
+        }
+      ],
+      "src": "Chapitres 6-7",
+      "srcChap": 6
+    },
+    {
+      "q": "Sur le marché organisé et les options :",
+      "type": "tf",
+      "theme": "derives",
+      "aff": [
+        {
+          "t": "La chambre de compensation supprime le risque de contrepartie.",
+          "c": true,
+          "e": "La chambre de compensation s'interpose comme contrepartie unique et supprime le risque de contrepartie, via le dépôt de garantie et l'appel de marge."
+        },
+        {
+          "t": "L'appel de marge consiste à déposer un pourcentage du contrat dès la transmission de l'ordre.",
+          "c": false,
+          "e": "Cela, c'est le dépôt de garantie. L'appel de marge est la réévaluation quotidienne de la position : si elle est perdante, l'opérateur a 24 h pour reconstituer la marge."
+        },
+        {
+          "t": "Une option donne à son détenteur l'obligation d'acheter ou de vendre le sous-jacent.",
+          "c": false,
+          "e": "Une option donne le droit, mais non l'obligation, d'acheter (call) ou de vendre (put). Seul le vendeur de l'option est tenu de s'exécuter."
+        },
+        {
+          "t": "LCH ClearNet est la chambre de compensation.",
+          "c": true,
+          "e": "LCH ClearNet est la chambre de compensation : la contrepartie unique qui sert de « rideau » entre les parties."
+        }
+      ],
+      "src": "Chapitres 7-8",
+      "srcChap": 8
+    },
+    {
+      "q": "Sur l'économie verte et le bilan carbone :",
+      "type": "tf",
+      "theme": "esg",
+      "aff": [
+        {
+          "t": "La théorie du Donut a été développée par Kate Raworth en 2010.",
+          "c": true,
+          "e": "L'économiste anglaise Kate Raworth a développé la théorie du Donut en 2010."
+        },
+        {
+          "t": "Les limites planétaires constituent le plancher de la théorie du Donut.",
+          "c": false,
+          "e": "Les limites planétaires sont le plafond (à ne pas dépasser pour préserver les écosystèmes). Les limites sociales constituent le plancher (besoins de base)."
+        },
+        {
+          "t": "Le Scope 1 correspond aux émissions directes de l'entreprise.",
+          "c": true,
+          "e": "Le Scope 1 regroupe les émissions directes : sources fixes et mobiles de combustion, procédés, émissions fugitives, émissions issues des terres."
+        },
+        {
+          "t": "Le Scope 2 couvre les émissions de la chaîne de valeur amont et aval.",
+          "c": false,
+          "e": "La chaîne de valeur amont et aval relève du Scope 3. Le Scope 2 couvre les émissions indirectes liées à l'énergie achetée (électricité, chaleur, vapeur, froid)."
+        }
+      ],
+      "src": "Chapitre 9",
+      "srcChap": 9
+    },
+    {
+      "q": "Sur la CSRD et la directive Omnibus :",
+      "type": "tf",
+      "theme": "esg",
+      "aff": [
+        {
+          "t": "La directive Omnibus consolide la CSRD, le règlement Taxonomie et la CS3D.",
+          "c": true,
+          "e": "La directive Omnibus consolide et simplifie ces trois textes en une seule proposition."
+        },
+        {
+          "t": "La directive Omnibus supprime la double matérialité de la CSRD.",
+          "c": false,
+          "e": "La double matérialité (impact et financière) est maintenue par la directive Omnibus."
+        },
+        {
+          "t": "Les ESRS sont les normes de reporting de la CSRD.",
+          "c": true,
+          "e": "Les ESRS (European Sustainability Reporting Standards) sont les normes de reporting prévues par la CSRD."
+        },
+        {
+          "t": "Il existe 12 normes ESRS.",
+          "c": true,
+          "e": "Les ESRS comptent 12 normes : 2 transversales, 5 environnementales, 4 sociales, 1 de gouvernance."
+        }
+      ],
+      "src": "Chapitre 9",
       "srcChap": 9
     }
   ],
