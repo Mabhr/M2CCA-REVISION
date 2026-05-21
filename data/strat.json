@@ -1,0 +1,1467 @@
+{
+  "title": "Management stratégique",
+  "subtitle": "Stratégie, Business Models & Plateformes numériques",
+  "quizKey": "m2cca_quiz_strat",
+  "checklistItems": [
+    {
+      "id": "s1",
+      "label": "Définir la stratégie — Chandler & Strategor"
+    },
+    {
+      "id": "s2",
+      "label": "Les 4 formes de valeur (économique, perçue, actionnariale, parties prenantes)"
+    },
+    {
+      "id": "s3",
+      "label": "Le diagnostic stratégique : analyse externe & interne (SWOT)"
+    },
+    {
+      "id": "s4",
+      "label": "Stratégie adaptative (Outside→Inside) vs intentionnelle (Inside→Outside)"
+    },
+    {
+      "id": "s5",
+      "label": "L'avantage concurrentiel selon Porter"
+    },
+    {
+      "id": "s6",
+      "label": "Les 4 stratégies concurrentielles de Porter"
+    },
+    {
+      "id": "s7",
+      "label": "Ressources vs Compétences — les 3 piliers VIP"
+    },
+    {
+      "id": "s8",
+      "label": "Stratégie corporate vs stratégie business (DAS)"
+    },
+    {
+      "id": "s9",
+      "label": "Les acteurs du processus stratégique et leurs rôles"
+    },
+    {
+      "id": "s10",
+      "label": "Cas Tarkett (2019-2022) & Michelin (2013-2020)"
+    },
+    {
+      "id": "s11",
+      "label": "Définition du Business Model — Osterwalder & Pigneur"
+    },
+    {
+      "id": "s12",
+      "label": "Les 3 composantes du BM selon Strategor"
+    },
+    {
+      "id": "s13",
+      "label": "Les 9 blocs du Business Model Canvas"
+    },
+    {
+      "id": "s14",
+      "label": "Les 4 critères d'évaluation d'un BM (cohérence, robustesse, flexibilité, scalabilité)"
+    },
+    {
+      "id": "s15",
+      "label": "Scalabilité : levier opérationnel, ratio coût/revenu marginal, intensité capitalistique"
+    },
+    {
+      "id": "s16",
+      "label": "ROCE — Return on Capital Employed"
+    },
+    {
+      "id": "s17",
+      "label": "Définition et rôle de l'opérateur pivot d'une plateforme"
+    },
+    {
+      "id": "s18",
+      "label": "Plateforme d'innovation vs plateforme de transaction (exemples)"
+    },
+    {
+      "id": "s19",
+      "label": "Les 6 mécanismes clés des plateformes (Benavent, 2016)"
+    },
+    {
+      "id": "s20",
+      "label": "Loi de Metcalfe & logique de longue traîne "
+    },
+    {
+      "id": "s21",
+      "label": "Marchés bifaces : effets croisés, spirales, stratégies typiques"
+    },
+    {
+      "id": "s22",
+      "label": "Le modèle des 5 forces de Porter et ses limites"
+    },
+    {
+      "id": "s23",
+      "label": "La notion d'écosystème d'affaires (ESA)"
+    },
+    {
+      "id": "s24",
+      "label": "Le triangle des registres relationnels (Koenig) : concurrence, alliance, entente"
+    },
+    {
+      "id": "s25",
+      "label": "Mouvements offensifs radicaux : guerres de prix, prolifération, préemption"
+    },
+    {
+      "id": "s26",
+      "label": "Les manœuvres de contrôle des ressources (actifs critiques et spécialisés)"
+    },
+    {
+      "id": "s27",
+      "label": "Les mouvements défensifs (rétorsion, dispersion / dépréciation)"
+    },
+    {
+      "id": "s28",
+      "label": "Mouvements concurrentiels complexes (offensifs et défensifs collectifs)"
+    },
+    {
+      "id": "s29",
+      "label": "La concurrence multipoints"
+    },
+    {
+      "id": "s30",
+      "label": "Les alliances : facteurs de recours et avantages"
+    },
+    {
+      "id": "s31",
+      "label": "Les 3 types d'alliances : complémentaire, co-intégration, pseudo-concentration"
+    },
+    {
+      "id": "s32",
+      "label": "Les ententes : incitations et 4 types (Baumard)"
+    },
+    {
+      "id": "s33",
+      "label": "L'évolution de la gouvernance : familiale, managériale, actionnariale"
+    },
+    {
+      "id": "s34",
+      "label": "Les acteurs financiers : fonds de pension, d'investissement, activistes"
+    },
+    {
+      "id": "s35",
+      "label": "Les parties prenantes : internes, interfaces, externes"
+    },
+    {
+      "id": "s36",
+      "label": "Les mécanismes de contrôle des dirigeants (internes et externes)"
+    },
+    {
+      "id": "s37",
+      "label": "La matrice pouvoir / intérêt des parties prenantes"
+    },
+    {
+      "id": "s38",
+      "label": "Les matrices de portefeuille (BCG, McKinsey, ADL) et le modèle MACS"
+    }
+  ],
+  "flashcards": [
+    {
+      "q": "Définition de la stratégie selon Alfred Chandler (1962)",
+      "a": "Détermination des objectifs à long terme d'une entreprise et adoption des actions et allocations de ressources nécessaires pour les atteindre.",
+      "theme": "corporate",
+      "src": "Intro",
+      "srcChap": 1
+    },
+    {
+      "q": "Définition de « faire de la stratégie » selon Strategor",
+      "a": "Pour une équipe dirigeante : choisir les activités à réaliser à moyen/long terme et allouer les ressources de manière à atteindre un niveau de performance satisfaisant, avec l'objectif de créer de la valeur pour les parties prenantes.",
+      "theme": "concurrentielle",
+      "src": "Intro",
+      "srcChap": 1
+    },
+    {
+      "q": "Quelles sont les 4 formes de valeur ?",
+      "a": "1) Valeur économique : richesse créée par les activités sur une période\n2) Valeur perçue : perception du client vis-à-vis des éléments d'une prestation (fonctionnalités, marque, services)\n3) Valeur actionnariale : richesse créée par l'entreprise pour ses actionnaires\n4) Valeur parties prenantes : caractéristiques rendant l'entreprise appréciable et digne de confiance pour ses parties prenantes",
+      "theme": "corporate"
+    },
+    {
+      "q": "Qu'est-ce que le diagnostic stratégique ?",
+      "a": "Travail d'anticipation articulant deux dimensions :\n• Analyse externe (hors entreprise) : Opportunités & Menaces → Facteurs Clés de Succès (« ce qu'il faut faire »)\n• Analyse interne (dans l'entreprise) : Forces & Faiblesses → Capacités stratégiques (« ce que l'on sait faire »)",
+      "theme": "concurrentielle"
+    },
+    {
+      "q": "Stratégie adaptative vs stratégie intentionnelle",
+      "a": "Adaptative (Outside → Inside) : analyser les évolutions de l'environnement → détecter un marché attractif → déterminer le positionnement → allouer les ressources nécessaires\n\nIntentionnelle (Inside → Outside) : identifier les ressources et compétences clés → trouver les marchés où les exploiter → analyser les spécificités du marché",
+      "theme": "concurrentielle"
+    },
+    {
+      "q": "Définition de l'avantage concurrentiel (Porter)",
+      "a": "Avantage distinctif d'une entreprise par rapport à la concurrence, fondé sur des ressources et/ou compétences qui constituent un facteur de succès décisif dans le secteur. Il est toujours relatif, contextuel et non éternel. Source : possession de ressources rares ou de compétences distinctives.",
+      "theme": "concurrentielle"
+    },
+    {
+      "q": "Les 4 stratégies concurrentielles de Porter",
+      "a": "1) Différenciation forte : coûts + / valeur ++ → tenable\n2) Domination par les coûts : coûts -- / valeur = → tenable\n3) Faible différenciation : coûts - / valeur - → NON tenable\n4) Changements radicaux : coûts = / valeur +++ → tenable\n\nPrincipe : l'entreprise surperforme si l'écart valeur créée - coûts engagés est supérieur à celui de ses concurrents.",
+      "theme": "concurrentielle"
+    },
+    {
+      "q": "Ressources vs Compétences",
+      "a": "Ressources = « ce que l'on a » :\n• Actifs tangibles : individus, usines, bâtiments, capitaux, machines, terrains\n• Actifs intangibles : marque, brevet\n\nCompétences = « ce que l'on sait faire » :\n• Expertise, expérience, savoir-faire qui transforment les actifs en prestations créatrices de valeur",
+      "theme": "business_models"
+    },
+    {
+      "q": "Que signifie le mnémotechnique VIP en stratégie ?",
+      "a": "V = Créer de la Valeur (pour le client, les actionnaires, les parties prenantes)\nI = Se protéger de l'Imitation via l'avantage concurrentiel\nP = Choisir le Périmètre des activités (quoi faire ? comment le faire ?)\n\nCes 3 piliers fondamentaux constituent les fondements de toute stratégie d'entreprise.",
+      "theme": "concurrentielle"
+    },
+    {
+      "q": "Stratégie corporate vs stratégie business",
+      "a": "Corporate (niveau siège social) :\n• Relations avec les parties prenantes\n• Gestion du portefeuille d'activités\n• Allocation des ressources\n• Modalités de croissance/décroissance\n\nBusiness (niveau Domaine d'Activité Stratégique) :\n• Créer ou cultiver un avantage concurrentiel sur chaque activité\n• 3 questions : Où concourir ? Comment concourir ? Comment exécuter ?",
+      "theme": "corporate"
+    },
+    {
+      "q": "Définition du Business Model selon Osterwalder & Pigneur (2011)",
+      "a": "« Un Business Model décrit les principes selon lesquels une organisation crée, délivre et capture de la valeur. Un BM peut être représenté par 9 blocs décrivant l'économie d'une entreprise, la façon dont elle envisage de gagner de l'argent : clients, offre, infrastructure et viabilité financière. »",
+      "theme": "business_models",
+      "src": "P1",
+      "srcChap": 4
+    },
+    {
+      "q": "Les 3 composantes du Business Model selon Strategor",
+      "a": "1) Proposition de valeur : doit être pertinente et attractive pour le client → génère les revenus (en type et en quantité)\n2) Architecture de valeur : cadre organisationnel permettant de délivrer la proposition → génère les coûts et les capitaux engagés\n3) Équation économique de valeur : vérifie que les éléments du BM permettent de créer de la valeur (valeur créée > ressources mobilisées)",
+      "theme": "business_models",
+      "src": "Intro",
+      "srcChap": 1
+    },
+    {
+      "q": "Les 9 blocs du Business Model Canvas",
+      "a": "Comment ? → Partenaires clés, Activités clés, Ressources clés\nQuoi ? → Proposition de valeur\nQui ? → Relations client, Segments de clientèle, Canaux\nCombien ? → Structure des coûts, Flux de revenus\n\nChaque bloc répond à une question fondamentale sur la logique économique de l'entreprise.",
+      "theme": "business_models",
+      "src": "P1",
+      "srcChap": 4
+    },
+    {
+      "q": "Les 4 critères d'évaluation d'un Business Model",
+      "a": "1) Cohérence : interne (alignement des 9 blocs entre eux) + externe (adéquation avec l'environnement de marché)\n2) Robustesse : résistance aux tentatives d'imitation par les concurrents (ressources rares, barrières à l'entrée, effets de réseau)\n3) Flexibilité : capacité à intégrer des innovations et à faire évoluer le BM\n4) Scalabilité : capacité à augmenter le volume d'activité sans hausse proportionnelle des coûts",
+      "theme": "business_models",
+      "src": "P1",
+      "srcChap": 4
+    },
+    {
+      "q": "Comment mesurer la scalabilité d'un Business Model ?",
+      "a": "Indicateur 1 — Levier opérationnel = Marge sur coûts variables / Résultat d'exploitation\nEx : levier de 6 → +1% du CA génère +6% du résultat d'exploitation\n\nIndicateur 2 — Ratio coût marginal / revenu marginal :\n• Proche de 0 = très scalable (coût quasi nul pour servir un client supplémentaire)\n• Proche de 1 = aucune scalabilité\n\nEx : Netflix → coût marginal d'un abonné supplémentaire ≈ 0",
+      "theme": "business_models",
+      "src": "P1",
+      "srcChap": 4
+    },
+    {
+      "q": "Le ROCE (Return on Capital Employed)",
+      "a": "ROCE = Résultat opérationnel / Capitaux engagés (Actifs fixes + Besoin en Fonds de Roulement)\n\nMesure l'efficacité de l'utilisation du capital investi.\n• Élevé : éditeurs de logiciels, plateformes numériques\n• Limité : industries lourdes (automobile, construction navale)\n\nÀ distinguer du ROE = Résultat net / Capitaux propres",
+      "theme": "business_models",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "Le ratio d'intensité capitalistique",
+      "a": "= (Actifs fixes bruts + BFR) / Chiffre d'affaires\n\nMesure la quantité de capital nécessaire pour générer 1€ de CA.\n• Faible = modèle économe en capital (services numériques, plateformes) → forte scalabilité\n• Élevé = capital intensif (distribution d'énergie, traitement de l'eau, industrie lourde) → scalabilité limitée",
+      "theme": "business_models",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "Définition d'une plateforme numérique",
+      "a": "Dispositif de coordination contrôlé par un opérateur pivot (chef d'orchestre/conducteur) qui met en relation au moins deux catégories d'agents : offreurs et demandeurs d'un bien, d'une technologie ou d'un service.\n\n2 caractéristiques clés :\n1. Chaque groupe d'intervenants peut être « client » de la plateforme\n2. La plateforme permet un lien direct entre offreurs et demandeurs",
+      "theme": "plateformes",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "Plateforme d'innovation vs plateforme de transaction",
+      "a": "Plateforme d'innovation : base technologique sur laquelle d'autres entreprises développent des innovations complémentaires\n→ Exemples : iOS (Apple), Android (Google), consoles de jeux vidéo\n\nPlateforme de transaction : intermédiaire pour des échanges directs de produits, services ou informations\n→ Exemples : Airbnb, Uber, eBay, Twitter, Instagram, Leboncoin",
+      "theme": "plateformes",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "Les 6 mécanismes clés des plateformes (Benavent, 2016)",
+      "a": "1) Externalités de réseau — Loi de Metcalfe (valeur ∝ n²)\n2) Crowdsourcing — les utilisateurs fournissent capital et travail\n3) Longue traîne — somme des niches > best-sellers \n4) Appariement (matching) — science du rapprochement offreurs/demandeurs\n5) Marchés de réputation — systèmes de notation pour créer la confiance\n6) Marchés bifaces/multifaces — 2 types de clients interdépendants avec effets croisés",
+      "theme": "plateformes",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "La loi de Metcalfe et les externalités de réseau",
+      "a": "« La valeur globale d'un réseau augmente comme le carré du nombre de ses membres (n²). »\n\nPrincipes :\n• La valeur d'une prestation n'est pas liée à ses caractéristiques intrinsèques mais à l'usage que les autres en font\n• Le dernier arrivé apporte plus de valeur que le membre précédent\n• Exemple : réseau téléphonique → chaque nouvel abonné multiplie les connexions possibles pour tous",
+      "theme": "plateformes",
+      "src": "P1",
+      "srcChap": 4
+    },
+    {
+      "q": "Le crowdsourcing dans les plateformes",
+      "a": "Une part significative du capital productif et du travail nécessaire à certains services est fournie par les utilisateurs, réduisant les besoins en capital de l'opérateur.\n\nCaractéristiques :\n• Seule une fraction d'utilisateurs alimente régulièrement la plateforme\n• Cette fraction suffit à satisfaire la diversité de la très large majorité\n• Impératif : motiver et rémunérer ces contributeurs (monétairement ou symboliquement)",
+      "theme": "plateformes",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "La longue traîne",
+      "a": "« Économie de variété » : avec le numérique, les stocks ne sont plus un problème.\n\nLa somme des ventes de produits rarement demandés individuellement (les niches) peut représenter une part substantielle du CA, parfois supérieure aux best-sellers.\n\nCondition nécessaire : capacité d'agrégation de l'offre et d'association d'une demande spécifique à une offre singulière (moteurs de recherche, filtres, recommandations, indexation).",
+      "theme": "business_models",
+      "src": "P1",
+      "srcChap": 4
+    },
+    {
+      "q": "L'appariement (matching) dans les plateformes",
+      "a": "Science permettant le rapprochement optimal d'offreurs et demandeurs naturellement compatibles.\n\nDéfis à surmonter :\n• L'offre est hétérogène\n• Les informations ne sont pas toujours à jour\n• Certaines demandes trop spécifiques restent sans réponse\n\nOutils : algorithmes, moteurs de recherche, systèmes de filtres et de recommandation",
+      "theme": "plateformes",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "Les marchés de réputation dans les plateformes",
+      "a": "Objectif : créer les conditions de confiance entre des acteurs qui :\n• Ne se connaissent pas\n• Ne voient pas le produit\n• N'ont pas toutes les informations utiles à la décision\n\nSolution : systèmes de notation, collecte et présentation d'avis qui :\n• Favorisent les échanges individuels\n• Augmentent l'attractivité de la plateforme\n\n« La réputation est tout » dans les économies de plateforme.",
+      "theme": "plateformes",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "Les marchés bifaces (two-sided markets)",
+      "a": "Coexistence de deux types de clients distincts mais interdépendants pour un produit ou service.\n\nCaractéristiques :\n• Effets de réseaux croisés (chaque face valorise l'autre)\n• Effets de momentum puissants (spirales de succès ou d'échec)\n• Formation de structures oligopolistiques ou monopolistiques\n• Course à la taille critique (mass market)",
+      "theme": "plateformes"
+    },
+    {
+      "q": "Les 4 erreurs typiques des plateformes (Cusumano et al., 2022)",
+      "a": "1) Pricing : mal choisir qui subventionner et qui doit payer → fragilise le BM et ralentit le développement\n2) Méfiance : échouer à créer les conditions de confiance entre les acteurs de la plateforme\n3) Timing : arriver trop tard (réseau concurrent déjà capté) ou trop tôt (écosystème absent)\n4) Orgueil : croire la partie gagnée une fois que le marché bascule → les concurrents exploitent les difficultés",
+      "theme": "plateformes",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "Les stratégies typiques sur les marchés bifaces",
+      "a": "1) Prendre en charge une face (la subventionner pour attirer l'autre)\n2) Combiner face gratuite/peu contributive et face payante/très contributive\n3) Transformer une face historiquement payante en face gratuite pour déstabiliser les acteurs en place (ex : Google Maps)\n4) Verrouiller les positions via l'ajout de nouvelles fonctionnalités (lock-in)",
+      "theme": "plateformes"
+    },
+    {
+      "q": "Pourquoi l'avantage concurrentiel n'est-il jamais éternel ?",
+      "a": "• Peu d'entreprises s'imposent durablement par la seule efficacité opérationnelle\n• Les entreprises ont tendance à s'imiter mutuellement\n• Les bonnes pratiques se diffusent rapidement dans les secteurs\n• L'innovation érode tout avantage concurrentiel\n\n→ La stratégie doit donc anticiper et renouveler continuellement ses sources d'avantage (Porter : « Strategy is to define, build and defend a competitive advantage. »)",
+      "theme": "concurrentielle"
+    },
+    {
+      "q": "Les 3 révolutions industrielles et leurs modèles organisationnels",
+      "a": "1re révolution (1776-1860) : machine à vapeur, fer, acier → réseau ferroviaire → firme hiérarchique intégrée\n\n2e révolution (1880-1920) : électricité, moteur à explosion, pétrole → réseau électrique → taylorisme, fordisme, marketing\n\n3e révolution (1971-...) : informatique, électronique, biotechnologies → réseau numérique → production à la demande, plateformes, ubérisation",
+      "theme": "plateformes",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "Rôle de l'opérateur pivot d'une plateforme",
+      "a": "L'opérateur doit :\n1. Fournir des outils de coordination pour inciter les offreurs à produire du contenu et les demandeurs à se connecter (interface, outils de gestion, paiement sécurisé...)\n2. Rendre la plateforme aussi attractive que possible pour générer trafic et volumes d'échanges\n3. Établir un Business Model permettant de se rémunérer sur la mise à disposition et/ou la mise en relation (publicité, commission, abonnement...)",
+      "theme": "plateformes",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "Les coûts fixes vs coûts variables dans un Business Model",
+      "a": "Coûts fixes (loyers, salaires, amortissements d'équipements...) : restent constants quel que soit le niveau d'activité\n\nCoûts variables (matières premières, consommables, commissions...) : évoluent proportionnellement au volume d'activité\n\nLe rapport coûts fixes/coûts variables détermine le levier opérationnel et la résilience financière du modèle.",
+      "theme": "business_models",
+      "src": "P1",
+      "srcChap": 4
+    },
+    {
+      "q": "Économies d'échelle vs économies de champ",
+      "a": "Économies d'échelle : réduction du coût unitaire lorsque le volume d'activité augmente (répartition des coûts fixes sur plus d'unités)\n\nÉconomies de champ : mutualisation des coûts entre plusieurs activités ou lignes de produits (ressources et capacités partagées entre plusieurs productions)",
+      "theme": "business_models"
+    },
+    {
+      "q": "Signaux de forte scalabilité dans le Business Model Canvas",
+      "a": "• Structure des coûts : coûts fixes dominants, coût marginal faible\n• Ressources clés : intellectuelles et digitales (pas de limite physique)\n• Activités clés : plateforme et réseau\n• Proposition de valeur : reproductible et immatérielle\n• Sources de revenus : récurrentes et automatisées\n• Partenaires clés : réseau étendu avec forte externalisation",
+      "theme": "business_models",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "Les acteurs du processus stratégique et leurs rôles",
+      "a": "• Membres du CA : réflexion stratégique (mais biais opérationnel fréquent)\n• Administrateurs non-exécutifs : rôle consultatif, contrôle et discussion des orientations\n• Direction de la stratégie : collecte/analyse info, outils, projets spéciaux — soutient sans décider\n• Managers intermédiaires : propositions, débats permanents — meilleure connaissance du terrain\n• Consultants stratégiques : analyse, options, transfert de compétences (contribution controversée)",
+      "theme": "business_models"
+    },
+    {
+      "q": "Cas Tarkett — Plan 2019-2022",
+      "a": "Contexte : forte hausse des matières premières, concurrence asiatique, ralentissement russe\n\nObjectifs :\n• Marge EBITDA ajustée > 12% en 2022 (vs 9% en 2018)\n• Croissance sur marchés ciblés supérieure à la croissance moyenne du PIB\n\nMoyens :\n• Réduction des coûts de 120M€ via restructuration (25%) et productivité (75%)\n• Fermeture de 2 usines (Canada et Pays-Bas) — refonte industrielle\n• Arrêt des grandes acquisitions en 2019",
+      "theme": "business_models",
+      "src": "Intro",
+      "srcChap": 1
+    },
+    {
+      "q": "Cas BIC — Plan stratégique « Horizon » (2020)",
+      "a": "Dirigé par Gonzalve Bich (petit-fils du fondateur) :\n\nRecentrage sur le cœur de métier : stylos, briquets, rasoirs\n(Cessions : BIC Sport → Tahe Outdoors, BIC Graphic → fonds HIG)\n\nObjectifs : croissance ~5%/an, 200M€ de cash-flow net/an\n\nAcquisition Rocketbook : carnets réutilisables + stylo effaçable + app smartphone → premiers pas dans l'écriture digitale\n\nExtension vers marchés adjacents (coloring adulte, Bodymark tattoo markers)",
+      "theme": "corporate"
+    },
+    {
+      "q": "Qu'est-ce que l'avantage parental (parental advantage) ?",
+      "a": "Avantage créé par le groupe (siège social) au profit de ses filiales, au-delà de ce que les filiales pourraient obtenir seules.\n\nSources : marque forte, réseau de distribution mondial, expertise industrielle, économies d'échelle, accès au financement, ressources partagées.\n\nEx : BIC apporte à Rocketbook sa marque mondiale, son réseau de distribution dans 160 pays et ses ressources industrielles et marketing.",
+      "theme": "corporate",
+      "src": "P3",
+      "srcChap": 17
+    },
+    {
+      "q": "Revendeur vs Plateforme — différences clés",
+      "a": "Revendeur (ex : Carrefour, Fnac) :\n• Achète et revend les actifs/produits\n• Client final unique\n• Revenu : marge commerciale\n• Risque : stocks\n\nPlateforme (ex : eBay, Airbnb) :\n• Ne détient pas les actifs\n• Deux faces : offreurs + demandeurs\n• Revenu : commission, abonnement, publicité\n• Risque : adoption et masse critique",
+      "theme": "plateformes",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "Les questions clés de la stratégie business (DAS)",
+      "a": "3 questions fondamentales au niveau opérationnel :\n1. Où concourir ? → choix des marchés, zones géographiques, segments\n2. Comment concourir ? → source d'avantage concurrentiel (coûts, différenciation...)\n3. Comment exécuter ? → allocation des ressources, organisation, processus\n\nL'objectif est de créer ou cultiver un avantage concurrentiel durable sur chaque DAS.",
+      "theme": "concurrentielle"
+    },
+    {
+      "q": "Stratégie adaptative vs stratégie intentionnelle",
+      "a": "Deux logiques opposées de construction stratégique (Strategor) :\n\nSTRATÉGIE ADAPTATIVE (Outside-In)\n① Analyser les évolutions de l'environnement pour détecter un marché attractif\n② Déterminer un positionnement concurrentiel pertinent\n③ Déterminer et allouer les ressources nécessaires\n→ L'entreprise S'ADAPTE à l'environnement\n\nSTRATÉGIE INTENTIONNELLE (Inside-Out)\n① Identifier les ressources et compétences clés (capacité stratégique)\n② Repérer les marchés où elles pourraient être utilisées\n③ Analyser le marché pour y entrer de manière cohérente\n→ L'entreprise EXPLOITE AU MIEUX ses ressources et compétences\n\nLa plupart des entreprises combinent les deux : pivot ressources internes ET opportunités externes.",
+      "theme": "concurrentielle",
+      "src": "Intro",
+      "srcChap": 1
+    },
+    {
+      "q": "Business Strategy vs Corporate Strategy",
+      "a": "Deux niveaux distincts de la stratégie :\n\nBUSINESS STRATEGY (Stratégie d'activité)\n• Domaine : une activité, un domaine d'activités stratégiques (DAS)\n• Objectif : créer ou cultiver un AVANTAGE CONCURRENTIEL\n• Outils : matrices de Porter, analyse concurrentielle, segmentation\n• Décideur : direction de la BU\n\nCORPORATE STRATEGY (Stratégie d'entreprise/de groupe)\n• Domaine : portefeuille d'activités, allocations de ressources entre BU\n• Objectifs : gérer le portefeuille, choisir les modalités de (dé)croissance, gérer les parties prenantes\n• Outils : matrices de portefeuille (BCG, ADL), évaluations stratégiques\n• Décideur : direction générale\n\nExemple BIC : Corporate strategy = recentrage sur 3 piliers (stylos, briquets, rasoirs) + acquisition Rocketbook.",
+      "theme": "corporate",
+      "src": "P3",
+      "srcChap": 17
+    },
+    {
+      "q": "Les 4 stratégies concurrentielles génériques (Strategor)",
+      "o": "",
+      "a": "Sur deux dimensions (Coûts vs Valeur perçue) :\n\n① DOMINATION PAR LES COÛTS — coûts plus bas, valeur standard. Volume, économies d'échelle. Ex : Lidl, Ryanair.\n\n② DIFFÉRENCIATION PAR LE HAUT — coûts plus élevés, valeur supérieure. Premium, qualité. Ex : Apple, Hermès.\n\n③ DIFFÉRENCIATION PAR LE BAS (low cost / hardiscount) — coûts plus bas, valeur réduite mais ACCEPTABLE pour un segment. Ex : Renault Dacia, Easyjet.\n\n④ CHANGEMENT RADICAL (stratégie de rupture) — coûts plus bas ET valeur plus haute simultanément. Disruption. Ex : Nintendo Wii, Tesla initialement.\n\nPositions non tenables : coûts élevés + valeur faible. Risque d'enlisement dans la voie médiane (Porter).",
+      "theme": "concurrentielle",
+      "src": "Intro",
+      "srcChap": 1
+    },
+    {
+      "q": "L'avantage parental — concept clé de la diversification",
+      "a": "Concept central de la Corporate Strategy. Un AVANTAGE PARENTAL existe quand une maison-mère (parent) ajoute plus de valeur à une filiale (enfant) que ne le feraient :\n• La filiale en autonomie\n• Un autre parent (autre groupe)\n\nSources de l'avantage parental :\n① Apport de COMPÉTENCES (savoir-faire transférable)\n② Apport de RESSOURCES (financières, R&D, marque, distribution)\n③ Apport de RELATIONS (réseau, parties prenantes, partenaires)\n④ ARBITRAGE entre BU (allocation optimale du capital)\n⑤ COORDINATION (synergies inter-BU)\n\nExemple BIC + Rocketbook : marque, distribution (présence en GSA, papeterie), industrialisation, capacité financière. Sans BIC, Rocketbook resterait une PME ; avec, elle peut accélérer.\n\nRisque : si le parent n'apporte rien, il DÉTRUIT de la valeur (parent destruction).",
+      "theme": "corporate",
+      "src": "P3",
+      "srcChap": 17
+    },
+    {
+      "q": "Modalités de croissance / décroissance",
+      "a": "Trois grandes voies de (dé)croissance (Corporate Strategy) :\n\nCROISSANCE INTERNE (organique)\n• Développement par ressources propres\n• Lent mais maîtrisé\n• Risque limité\n\nCROISSANCE EXTERNE\n• Fusions et acquisitions (M&A)\n• Rapide, accès immédiat à un marché ou des compétences\n• Coûteuse, risquée (intégration, valorisation, dilution)\n• Ex : BIC rachète Rocketbook\n\nCROISSANCE CONTRACTUELLE (partenariats, alliances)\n• Joint ventures, licences, franchises, accords commerciaux\n• Compromis entre risque et vitesse\n• Préserve l'indépendance\n\nDans l'autre sens : DÉCROISSANCE par CESSION (vente de filiale, ex BIC Sport vendu à Tahe Outdoors) ou SCISSION (séparation en plusieurs entités cotées).",
+      "theme": "corporate",
+      "src": "P2",
+      "srcChap": 9
+    },
+    {
+      "q": "Stratégie de différenciation par le bas (low cost)",
+      "a": "Réduire ET les coûts ET la valeur perçue par rapport à l'offre de référence. Différence fondamentale avec la domination par les coûts : on assume une OFFRE DÉGRADÉE ciblant un segment qui accepte le compromis.\n\nClés du low cost :\n• Élimination de tout ce qui n'est pas valorisé par le segment cible (services additionnels, options)\n• Standardisation extrême (peu de gammes)\n• Modèle économique simplifié (auto-service, online)\n• Capacité industrielle dédiée\n\nExemples emblématiques :\n• Renault Logan/Dacia (projet Kwid)\n• Easyjet/Ryanair\n• Hardiscount (Lidl, Aldi originels)\n• Operating systems open source\n\nLe consommateur perçoit l'offre comme inférieure mais ACCEPTABLE — c'est ce qui distingue le low cost de la domination par les coûts.",
+      "theme": "concurrentielle"
+    },
+    {
+      "q": "La définition canonique de la stratégie (Chandler)",
+      "a": "Alfred Chandler (1972, in Stratégique) :\n\n« La stratégie est la détermination des buts et objectifs à long terme d'une entreprise et l'adoption des actions et des allocations de ressources nécessaires pour atteindre ces buts. »\n\nÉléments constitutifs :\n• Buts/finalités (vision, raison d'être)\n• Objectifs (mesurables, datés)\n• Actions (manœuvres stratégiques)\n• Allocation de ressources (humaines, financières, matérielles)\n\nElle doit susciter l'ADHÉSION des principales parties prenantes :\n• Actionnaires (rendement)\n• Salariés (sens, conditions)\n• Clients (offre)\n• Institutions financières (solvabilité)\n• Pouvoirs publics (conformité)",
+      "theme": "corporate",
+      "src": "Intro",
+      "srcChap": 1
+    },
+    {
+      "q": "La scalabilité d'un Business Model",
+      "a": "Capacité d'un BM à croître sans augmenter proportionnellement les coûts. Critère clé pour les plateformes et la tech.\n\nDeux indicateurs financiers :\n\n① LEVIER OPÉRATIONNEL\n= Marge sur coût variable / Résultat d'exploitation\nUn levier de 6 : +1% CA → +6% RE\nÉlevé pour les BM à forts coûts fixes (logiciels, plateformes)\n\n② RATIO COÛT MARGINAL / REVENU MARGINAL\nProche de 0 dans un modèle parfaitement scalable\nLogiciel : coût quasi nul pour servir un client supplémentaire\nIndustrie traditionnelle : ratio plus élevé (matières, main-d'œuvre)\n\nUn BM scalable peut générer une croissance exponentielle de la valeur. C'est pourquoi les investisseurs valorisent fortement les BM scalables.",
+      "theme": "business_models",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "Plan stratégique — exemple Bic 'Horizon' (2020-2022)",
+      "a": "Exemple concret de plan stratégique structuré :\n\nDIAGNOSTIC :\n• Croissance qui marque le pas\n• Triple contrainte : moins de fumeurs, mode de la barbe, baisse de l'écriture manuscrite\n• Concurrence digitale (Dollar Shave Club, pure players)\n• Volatilité des matières premières\n\nFINALITÉ : Réinventer Bic pour redevenir un champion mondial agile et innovant en 2022\n\nOBJECTIFS QUANTIFIÉS :\n• Croissance annuelle du CA ~5%\n• ≥ 200M€ de flux nets de trésorerie/an\n• 100M€ d'investissements/an\n\nLEVIERS :\n• Recentrage sur 3 piliers (stylos, briquets, rasoirs)\n• Élargissement par segments adjacents (Rocketbook, Bodymark, coloriage adultes)\n• Rationalisation des gammes\n\nGouvernance familiale (Gonzalve Bich) → vision long terme.",
+      "theme": "corporate",
+      "src": "P3",
+      "srcChap": 17
+    }
+  ],
+  "quizQuestions": [
+    {
+      "q": "Selon Alfred Chandler, la stratégie est :",
+      "o": [
+        "Un plan marketing annuel",
+        "La détermination des objectifs à long terme et l'allocation des ressources nécessaires",
+        "Une analyse de la concurrence",
+        "Un outil de communication externe"
+      ],
+      "c": 1,
+      "e": "Chandler (1962) définit la stratégie comme la détermination des objectifs à long terme d'une entreprise et l'adoption des actions et allocations de ressources nécessaires pour les atteindre.",
+      "theme": "corporate",
+      "src": "Intro",
+      "srcChap": 1
+    },
+    {
+      "q": "Selon Strategor, « faire de la stratégie » consiste à :",
+      "o": [
+        "Réduire les coûts de l'entreprise",
+        "Choisir les activités et allouer les ressources pour créer de la valeur pour les parties prenantes",
+        "Analyser les états financiers",
+        "Établir un organigramme détaillé"
+      ],
+      "c": 1,
+      "e": "Strategor : choisir les activités à réaliser à moyen/long terme et allouer les ressources pour atteindre un niveau de performance satisfaisant et créer de la valeur pour les parties prenantes.",
+      "theme": "concurrentielle",
+      "src": "Intro",
+      "srcChap": 1
+    },
+    {
+      "q": "La valeur perçue correspond à :",
+      "o": [
+        "La richesse créée par les activités de l'entreprise",
+        "La perception du client vis-à-vis des éléments d'une prestation",
+        "La richesse créée pour les actionnaires",
+        "Le résultat net de l'exercice"
+      ],
+      "c": 1,
+      "e": "La valeur perçue = perception que le client a des éléments d'une prestation (fonctionnalités, marque, services associés). C'est une valeur subjective.",
+      "theme": "business_models"
+    },
+    {
+      "q": "La valeur actionnariale désigne :",
+      "o": [
+        "Les caractéristiques rendant l'entreprise appréciable pour ses parties prenantes",
+        "La richesse créée par l'entreprise pour ses actionnaires",
+        "Le dividende versé sur l'exercice",
+        "La valeur comptable des fonds propres"
+      ],
+      "c": 1,
+      "e": "La valeur actionnariale est spécifiquement la richesse créée par l'entreprise pour ses actionnaires, à distinguer de la valeur parties prenantes (plus large) et de la valeur économique.",
+      "theme": "corporate"
+    },
+    {
+      "q": "Le diagnostic stratégique articule :",
+      "o": [
+        "Analyse financière et analyse marketing",
+        "Analyse externe (opportunités/menaces) et analyse interne (forces/faiblesses)",
+        "Audit social et audit comptable",
+        "Plan de financement et plan d'action commercial"
+      ],
+      "c": 1,
+      "e": "Diagnostic stratégique : analyse externe → Opportunités & Menaces → Facteurs Clés de Succès ; analyse interne → Forces & Faiblesses → Capacités stratégiques.",
+      "theme": "concurrentielle"
+    },
+    {
+      "q": "La stratégie adaptative (Outside → Inside) démarre par :",
+      "o": [
+        "L'identification des ressources et compétences clés",
+        "L'analyse des évolutions de l'environnement pour détecter un marché attractif",
+        "La définition de la mission de l'entreprise",
+        "Le calcul du ROCE"
+      ],
+      "c": 1,
+      "e": "La logique adaptative part de l'environnement extérieur : analyser → détecter marché attractif → déterminer positionnement concurrentiel → allouer les ressources nécessaires.",
+      "theme": "concurrentielle"
+    },
+    {
+      "q": "La stratégie intentionnelle (Inside → Outside) part de :",
+      "o": [
+        "L'analyse du marché cible",
+        "L'identification des ressources et compétences distinctives de l'entreprise",
+        "L'étude des concurrents",
+        "Les préférences des actionnaires"
+      ],
+      "c": 1,
+      "e": "La logique intentionnelle part de l'intérieur : identifier ressources/compétences clés → trouver les marchés où les exploiter → analyser les spécificités de ce marché.",
+      "theme": "concurrentielle"
+    },
+    {
+      "q": "Selon Porter, l'avantage concurrentiel provient de :",
+      "o": [
+        "Uniquement de prix bas",
+        "Des ressources et compétences qui constituent un facteur de succès décisif dans le secteur",
+        "De la seule taille de l'entreprise",
+        "Exclusivement de la notoriété de la marque"
+      ],
+      "c": 1,
+      "e": "Porter : avantage distinctif fondé sur des ressources/compétences constituant un facteur de succès décisif dans le secteur. Il est toujours relatif, contextuel et non éternel.",
+      "theme": "concurrentielle"
+    },
+    {
+      "q": "Laquelle de ces stratégies Porter qualifie-t-il de « non tenable » ?",
+      "o": [
+        "Différenciation forte",
+        "Domination par les coûts",
+        "Faible différenciation",
+        "Changements radicaux"
+      ],
+      "c": 2,
+      "e": "La faible différenciation (coûts légèrement inférieurs, valeur légèrement inférieure) n'est pas tenable : elle ne justifie ni les sacrifices en valeur perçue ni les économies attendues en coûts.",
+      "theme": "concurrentielle"
+    },
+    {
+      "q": "Les ressources d'une entreprise correspondent à :",
+      "o": [
+        "Ce qu'elle sait faire (expertise, savoir-faire)",
+        "Ce qu'elle possède (actifs tangibles et intangibles)",
+        "Ses capacités organisationnelles uniquement",
+        "Ses brevets et marques exclusivement"
+      ],
+      "c": 1,
+      "e": "Ressources = « ce que l'on a » : actifs tangibles (usines, machines, personnes, capital) et intangibles (marque, brevet). Les compétences = « ce que l'on sait faire ».",
+      "theme": "business_models"
+    },
+    {
+      "q": "Le mnémotechnique VIP signifie :",
+      "o": [
+        "Vision, Innovation, Performance",
+        "Créer de la Valeur, se protéger de l'Imitation, choisir le Périmètre",
+        "Valeur, Investissement, Productivité",
+        "Ventes, Image, Profit"
+      ],
+      "c": 1,
+      "e": "VIP = Valeur (créer de la valeur pour les parties prenantes), Imitation (se protéger via l'avantage concurrentiel), Périmètre (choisir les activités à réaliser).",
+      "theme": "concurrentielle"
+    },
+    {
+      "q": "La stratégie corporate (niveau siège) porte sur :",
+      "o": [
+        "L'avantage concurrentiel sur chaque DAS",
+        "La gestion du portefeuille d'activités, l'allocation des ressources et les relations avec les parties prenantes",
+        "Le plan marketing de l'entreprise",
+        "La politique de prix produit"
+      ],
+      "c": 1,
+      "e": "Stratégie corporate : relations parties prenantes, gestion du portefeuille d'activités, allocation des ressources entre DAS, modalités de croissance/décroissance.",
+      "theme": "corporate"
+    },
+    {
+      "q": "La Direction de la Stratégie dans une grande entreprise a pour rôle de :",
+      "o": [
+        "Décider seule des orientations stratégiques",
+        "Soutenir la réflexion stratégique sans décider : collecter, analyser, outiller",
+        "Remplacer le conseil d'administration",
+        "Gérer les opérations courantes"
+      ],
+      "c": 1,
+      "e": "La Direction de la Stratégie n'a pas de pouvoir décisionnel : elle soutient le processus, collecte et analyse l'information, fournit des outils et des compétences mobilisables sur des projets spéciaux.",
+      "theme": "business_models"
+    },
+    {
+      "q": "Le plan Tarkett 2019-2022 avait pour objectif principal :",
+      "o": [
+        "De multiplier les acquisitions internationales",
+        "De restaurer la rentabilité avec une marge EBITDA ajustée supérieure à 12%",
+        "D'entrer sur de nouveaux marchés asiatiques",
+        "D'augmenter les effectifs de 20%"
+      ],
+      "c": 1,
+      "e": "Tarkett visait à restaurer la rentabilité (contexte : hausse matières premières, concurrence asiatique). Objectif : marge EBITDA ajustée > 12% en 2022 (vs 9% en 2018), via 120M€ de réductions de coûts.",
+      "theme": "business_models",
+      "src": "Intro",
+      "srcChap": 1
+    },
+    {
+      "q": "La valeur parties prenantes désigne :",
+      "o": [
+        "Le bénéfice net de l'exercice",
+        "Les caractéristiques rendant l'entreprise appréciable et digne de confiance pour ses parties prenantes",
+        "La valeur boursière de l'action",
+        "Les dividendes cumulés sur 5 ans"
+      ],
+      "c": 1,
+      "e": "Valeur parties prenantes (stakeholder value) = caractéristiques rendant l'entreprise appréciable et digne de confiance par l'ensemble de ses parties prenantes (au-delà des seuls actionnaires).",
+      "theme": "business_models"
+    },
+    {
+      "q": "Selon Michelin (plan 2013-2020), l'ambition « Industrie responsable » visait :",
+      "o": [
+        "Une réduction des coûts de 25%",
+        "Une réduction de l'empreinte environnementale des sites de 50% via 38% d'amélioration de l'efficacité énergétique",
+        "Une suppression de 10 000 emplois",
+        "Un doublement du ROCE"
+      ],
+      "c": 1,
+      "e": "Michelin 2020 : -50% d'empreinte environnementale (MEF) via notamment +38% d'efficacité énergétique vs 2010. Exemple de stratégie articulant performance financière et responsabilité environnementale.",
+      "theme": "business_models",
+      "src": "Intro",
+      "srcChap": 1
+    },
+    {
+      "q": "Selon Osterwalder & Pigneur, un Business Model décrit :",
+      "o": [
+        "Le plan comptable de l'entreprise",
+        "Les principes selon lesquels une organisation crée, délivre et capture la valeur",
+        "La structure organisationnelle de l'entreprise",
+        "Le portefeuille de produits de l'entreprise"
+      ],
+      "c": 1,
+      "e": "Osterwalder (2011) : le BM décrit les principes selon lesquels une organisation crée, délivre et capture la valeur, représenté par 9 blocs (clients, offre, infrastructure, viabilité financière).",
+      "theme": "business_models",
+      "src": "P1",
+      "srcChap": 4
+    },
+    {
+      "q": "La proposition de valeur dans le BM (Strategor) doit être :",
+      "o": [
+        "Uniquement rentable pour l'entreprise",
+        "Pertinente et attractive pour le client",
+        "Simple et standardisée à l'extrême",
+        "Coûteuse à produire pour signaler la qualité"
+      ],
+      "c": 1,
+      "e": "La proposition de valeur doit être pertinente (répond à un vrai besoin du client) et attractive (le client la perçoit positivement). Elle génère les revenus du modèle.",
+      "theme": "business_models",
+      "src": "Intro",
+      "srcChap": 1
+    },
+    {
+      "q": "L'architecture de valeur du BM génère principalement :",
+      "o": [
+        "Les revenus de l'entreprise",
+        "Les coûts et les capitaux engagés",
+        "La notoriété de la marque",
+        "Des économies fiscales"
+      ],
+      "c": 1,
+      "e": "L'architecture de valeur = cadre organisationnel permettant de délivrer la proposition. Elle génère les coûts (fixes et variables) et les capitaux engagés (actifs + BFR).",
+      "theme": "business_models"
+    },
+    {
+      "q": "Dans le Canvas d'Osterwalder, à quelle dimension appartient la « Proposition de valeur » ?",
+      "o": [
+        "Comment ?",
+        "Quoi ?",
+        "Qui ?",
+        "Combien ?"
+      ],
+      "c": 1,
+      "e": "La proposition de valeur répond à « Quoi ? » : quelle valeur créons-nous pour nos clients ? C'est le cœur du BM autour duquel s'articulent les 8 autres blocs.",
+      "theme": "business_models",
+      "src": "P1",
+      "srcChap": 4
+    },
+    {
+      "q": "Les « Partenaires clés », « Activités clés » et « Ressources clés » répondent à :",
+      "o": [
+        "Quoi ?",
+        "Qui ?",
+        "Comment ?",
+        "Combien ?"
+      ],
+      "c": 2,
+      "e": "Ces 3 blocs répondent à « Comment ? » : comment l'entreprise délivre-t-elle sa proposition de valeur ? Ils décrivent l'infrastructure opérationnelle du modèle.",
+      "theme": "business_models"
+    },
+    {
+      "q": "Les « Segments de clientèle », « Relations client » et « Canaux » répondent à :",
+      "o": [
+        "Comment ?",
+        "Quoi ?",
+        "Qui ?",
+        "Combien ?"
+      ],
+      "c": 2,
+      "e": "Ces 3 blocs répondent à « Qui ? » : pour qui crée-t-on de la valeur, comment interagit-on avec les clients et par quels canaux les atteint-on ?",
+      "theme": "business_models"
+    },
+    {
+      "q": "La cohérence d'un BM inclut :",
+      "o": [
+        "Uniquement la cohérence interne entre les 9 blocs",
+        "La cohérence interne (alignement des blocs) ET externe (adéquation avec l'environnement)",
+        "L'alignement avec les pratiques concurrentes",
+        "La conformité réglementaire uniquement"
+      ],
+      "c": 1,
+      "e": "La cohérence est double : interne (les 9 blocs sont alignés entre eux) et externe (le BM est adapté à l'environnement de marché : concurrence, technologie, réglementation).",
+      "theme": "business_models"
+    },
+    {
+      "q": "La flexibilité d'un BM correspond à :",
+      "o": [
+        "La capacité à baisser les prix rapidement",
+        "La capacité à intégrer des innovations et à évoluer sans tout reconstruire",
+        "La résistance aux tentatives d'imitation",
+        "La croissance sans coûts proportionnels"
+      ],
+      "c": 1,
+      "e": "Flexibilité = capacité à intégrer des innovations et à faire évoluer le BM. Un BM flexible peut se transformer sans perdre sa cohérence globale.",
+      "theme": "business_models"
+    },
+    {
+      "q": "Un modèle très scalable présente :",
+      "o": [
+        "Des coûts variables dominants",
+        "Un ratio coût marginal/revenu marginal proche de 0",
+        "Une très forte intensité capitalistique",
+        "Des coûts fixes quasi nuls"
+      ],
+      "c": 1,
+      "e": "Scalabilité élevée = coût marginal quasi nul → chaque unité supplémentaire ne coûte presque rien à produire. Ratio coût marginal/revenu marginal ≈ 0 (ex : Netflix, logiciels, plateformes).",
+      "theme": "business_models",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "Le ratio d'intensité capitalistique mesure :",
+      "o": [
+        "La rentabilité des capitaux investis",
+        "La quantité de capital nécessaire pour générer 1€ de chiffre d'affaires",
+        "Le taux de croissance de l'entreprise",
+        "Le niveau d'endettement"
+      ],
+      "c": 1,
+      "e": "Ratio d'intensité capitalistique = (Actifs fixes bruts + BFR) / CA. Faible = modèle économe (plateformes, logiciels) ; élevé = modèle capital intensif (énergie, industrie lourde).",
+      "theme": "plateformes",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "Le ROCE se calcule comme :",
+      "o": [
+        "Résultat net / Capitaux propres",
+        "Résultat opérationnel / Capitaux engagés (actifs fixes + BFR)",
+        "Marge brute / Chiffre d'affaires",
+        "Bénéfice / Nombre d'actions en circulation"
+      ],
+      "c": 1,
+      "e": "ROCE (Return on Capital Employed) = Résultat opérationnel / Capitaux engagés. Il mesure l'efficacité de l'utilisation du capital investi, à distinguer du ROE (résultat net / capitaux propres).",
+      "theme": "business_models"
+    },
+    {
+      "q": "Le levier opérationnel de 6 signifie que :",
+      "o": [
+        "Les coûts fixes représentent 6% du CA",
+        "Une hausse de 1% du CA génère une hausse de 6% du résultat d'exploitation",
+        "La marge brute est de 6%",
+        "Il y a 6 fois plus de coûts variables que de coûts fixes"
+      ],
+      "c": 1,
+      "e": "Levier opérationnel = MCV / Résultat d'exploitation. Un levier de 6 : +1% de CA → +6% du REX. C'est un signal d'amplification : les variations de CA se répercutent amplifiées sur le résultat.",
+      "theme": "business_models"
+    },
+    {
+      "q": "Les économies d'échelle permettent de :",
+      "o": [
+        "Diversifier l'offre de produits",
+        "Réduire le coût unitaire lorsque le volume d'activité augmente",
+        "Financer les dépenses de R&D",
+        "Augmenter les prix de vente"
+      ],
+      "c": 1,
+      "e": "Économies d'échelle : les coûts fixes étant répartis sur un volume plus important d'unités, le coût unitaire diminue à mesure que l'activité augmente.",
+      "theme": "business_models"
+    },
+    {
+      "q": "Qu'est-ce qu'une plateforme numérique ?",
+      "o": [
+        "Un site web d'entreprise classique",
+        "Un dispositif de coordination piloté par un opérateur pivot mettant en relation offreurs et demandeurs",
+        "Un logiciel de gestion interne",
+        "Un réseau social d'entreprise"
+      ],
+      "c": 1,
+      "e": "Plateforme = dispositif de coordination piloté par un opérateur pivot qui met en relation au moins 2 catégories d'agents (offreurs et demandeurs) avec un lien direct entre eux.",
+      "theme": "plateformes",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "Quelle révolution industrielle correspond à l'émergence des plateformes numériques ?",
+      "o": [
+        "La 1re révolution (machine à vapeur)",
+        "La 2e révolution (électricité, fordisme)",
+        "La 3e révolution (informatique, numérique)",
+        "Une 4e révolution post-numérique"
+      ],
+      "c": 2,
+      "e": "3e révolution industrielle (1971-...) : informatique, électronique → exploitation du réseau numérique → émergence de la production à la demande et des plateformes numériques (ubérisation).",
+      "theme": "plateformes",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "Airbnb et Uber sont des exemples de :",
+      "o": [
+        "Plateformes d'innovation",
+        "Revendeurs intégrés",
+        "Plateformes de transaction",
+        "Marchés de réputation exclusifs"
+      ],
+      "c": 2,
+      "e": "Airbnb et Uber sont des plateformes de transaction : intermédiaires pour des échanges directs entre offreurs (hôtes, conducteurs) et demandeurs (voyageurs, passagers).",
+      "theme": "plateformes",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "iOS d'Apple et Android de Google sont des exemples de :",
+      "o": [
+        "Plateformes de transaction",
+        "Marchés bifaces uniquement",
+        "Plateformes d'innovation",
+        "Revendeurs numériques"
+      ],
+      "c": 2,
+      "e": "iOS et Android = plateformes d'innovation : bases technologiques sur lesquelles des tiers (développeurs d'applications) créent des innovations complémentaires.",
+      "theme": "plateformes",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "Selon Benavent (2016), combien de mécanismes clés caractérisent les plateformes ?",
+      "o": [
+        "4",
+        "5",
+        "6",
+        "8"
+      ],
+      "c": 2,
+      "e": "Benavent (2016) identifie 6 mécanismes : externalités de réseau, crowdsourcing, longue traîne, matching, marchés de réputation, marchés bifaces/multifaces.",
+      "theme": "plateformes",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "La loi de Metcalfe stipule que la valeur d'un réseau :",
+      "o": [
+        "Croît linéairement avec le nombre de membres",
+        "Croît comme le carré du nombre de membres (n²)",
+        "Est constante quelle que soit la taille du réseau",
+        "Décroît après une certaine taille critique"
+      ],
+      "c": 1,
+      "e": "Metcalfe : valeur ∝ n² (carré du nombre de membres). Le dernier arrivé apporte plus de valeur que le membre précédent. La valeur dépend de l'usage que les autres membres font du réseau.",
+      "theme": "plateformes",
+      "src": "P1",
+      "srcChap": 4
+    },
+    {
+      "q": "Le crowdsourcing dans les plateformes signifie que :",
+      "o": [
+        "La plateforme emploie une large foule de salariés",
+        "Une part significative du capital productif et du travail est fournie par les utilisateurs",
+        "Les utilisateurs paient pour accéder à la plateforme",
+        "La plateforme externalise sa production dans des pays à bas coûts"
+      ],
+      "c": 1,
+      "e": "Crowdsourcing : les utilisateurs fournissent capital et travail (contenu, avis, services), réduisant considérablement les besoins en capital de l'opérateur pivot.",
+      "theme": "plateformes",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "La « longue traîne » désigne :",
+      "o": [
+        "Les produits les plus vendus sur la plateforme",
+        "La somme des produits de niche qui peut dépasser en volume les best-sellers",
+        "La durée de vie commerciale d'un produit",
+        "La chaîne logistique d'une entreprise"
+      ],
+      "c": 1,
+      "e": "Longue traîne : avec le numérique, les stocks ne sont plus un problème. La somme des ventes de produits de niche peut dépasser les best-sellers. Économie de variété.",
+      "theme": "plateformes",
+      "src": "P1",
+      "srcChap": 4
+    },
+    {
+      "q": "L'appariement (matching) dans les plateformes consiste à :",
+      "o": [
+        "Fixer les prix entre offreurs et demandeurs",
+        "Rapprocher offreurs et demandeurs naturellement compatibles",
+        "Gérer les litiges entre utilisateurs",
+        "Créer du contenu pour animer la plateforme"
+      ],
+      "c": 1,
+      "e": "Matching = science de l'appariement : processus algorithmique permettant le rapprochement optimal d'offreurs et de demandeurs. Défis : hétérogénéité de l'offre, données non mises à jour.",
+      "theme": "plateformes",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "Les marchés de réputation dans les plateformes visent à :",
+      "o": [
+        "Maximiser les prix pratiqués",
+        "Créer les conditions de confiance entre acteurs qui ne se connaissent pas",
+        "Sélectionner les meilleurs fournisseurs par appel d'offres",
+        "Réguler la concurrence sur la plateforme"
+      ],
+      "c": 1,
+      "e": "Marchés de réputation = systèmes de notation/avis qui créent les conditions de confiance entre acteurs inconnus, sans contact physique et avec information incomplète.",
+      "theme": "plateformes",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "Les marchés bifaces se caractérisent par des effets de réseaux :",
+      "o": [
+        "Directs uniquement (même catégorie)",
+        "Croisés entre deux catégories de clients interdépendantes",
+        "Négatifs (la croissance réduit la valeur)",
+        "Unilatéraux (d'une seule face vers l'autre)"
+      ],
+      "c": 1,
+      "e": "Marchés bifaces : effets de réseaux croisés — chaque face valorise l'autre. Plus il y a d'offreurs, plus la plateforme est attractive pour les demandeurs, et vice versa.",
+      "theme": "plateformes",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "L'erreur de Pricing (Cusumano) dans les plateformes concerne :",
+      "o": [
+        "Le prix du produit final vendu aux consommateurs",
+        "Le mauvais choix de la face à subventionner et de celle qui doit payer",
+        "La politique de remises accordées aux grands comptes",
+        "La fixation des salaires des employés de la plateforme"
+      ],
+      "c": 1,
+      "e": "Erreur de pricing : mal choisir qui bénéficie du service gratuit et qui paie. Un mauvais choix fragilise le BM et ralentit le développement de la masse critique.",
+      "theme": "plateformes",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "L'erreur d'Orgueil (Cusumano) consiste à :",
+      "o": [
+        "Surpayer ses acquisitions stratégiques",
+        "Croire la partie gagnée une fois la masse critique atteinte",
+        "Ignorer complètement la politique de prix",
+        "Entrer trop tôt sur un marché non mature"
+      ],
+      "c": 1,
+      "e": "Orgueil = croire que le marché est définitivement acquis après le basculement. Les concurrents peuvent exploiter les difficultés de gestion de grands réseaux (service dégradé, contrefaçons, bottlenecks).",
+      "theme": "plateformes",
+      "src": "P1 (Cusumano 2022)",
+      "srcChap": 8
+    },
+    {
+      "q": "L'exemple MySpace vs Facebook illustre l'erreur de :",
+      "o": [
+        "Pricing",
+        "Timing",
+        "Orgueil",
+        "Méfiance"
+      ],
+      "c": 2,
+      "e": "MySpace dominait le marché des réseaux sociaux mais a cru la partie gagnée. Facebook a su proposer une expérience supérieure et capter progressivement le réseau — erreur classique d'orgueil.",
+      "theme": "business_models"
+    },
+    {
+      "q": "La stratégie de transformation d'une face payante en face gratuite (ex : Google Maps) est :",
+      "o": [
+        "Une stratégie de verrouillage (lock-in)",
+        "Une stratégie de prise en charge d'une face",
+        "Une face d'appel",
+        "Une stratégie de transformation"
+      ],
+      "c": 3,
+      "e": "Stratégie de transformation : rendre gratuit ce qui était payant pour déstabiliser les acteurs en place et attirer rapidement une masse critique d'utilisateurs.",
+      "theme": "business_models"
+    },
+    {
+      "q": "Arriver « trop tôt » sur un marché de plateforme (erreur de Timing) signifie :",
+      "o": [
+        "Que le réseau concurrent est déjà capté",
+        "Que les supports, partenaires ou usages nécessaires n'existent pas encore",
+        "Que la technologie utilisée est déjà obsolète",
+        "Que les investisseurs refusent de financer"
+      ],
+      "c": 1,
+      "e": "Trop tôt = l'écosystème n'est pas prêt : pas de partenaires, pas d'usages établis, pas de masse critique potentielle. La plateforme arrive avant que les conditions de son succès soient réunies.",
+      "theme": "plateformes",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "Un opérateur pivot d'une plateforme doit principalement :",
+      "o": [
+        "Posséder tous les actifs échangés sur la plateforme",
+        "Coordonner les échanges, attirer les deux faces et construire un modèle d'affaires profitable",
+        "Éliminer toute concurrence sur le marché",
+        "Standardiser et fixer les prix de tous les échanges"
+      ],
+      "c": 1,
+      "e": "L'opérateur pivot coordonne : outils pour les offreurs, attractivité pour les demandeurs, et modèle d'affaires permettant de se rémunérer (publicité, commission, abonnement).",
+      "theme": "plateformes",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "Carrefour vs eBay : quelle est la différence fondamentale ?",
+      "o": [
+        "Carrefour est une plateforme numérique, eBay est un revendeur",
+        "Carrefour est un revendeur (achète et revend), eBay est une plateforme de transaction (met en relation)",
+        "Les deux sont des plateformes de transaction",
+        "Les deux sont des revendeurs intégrés"
+      ],
+      "c": 1,
+      "e": "Carrefour achète les produits et les revend (revendeur, risque stocks). eBay met en relation acheteurs et vendeurs sans détenir les actifs (plateforme de transaction, risque adoption).",
+      "theme": "plateformes",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "La robustesse d'un Business Model évalue :",
+      "o": [
+        "La cohérence interne entre les 9 blocs",
+        "La résistance aux tentatives d'imitation par les concurrents",
+        "La capacité à intégrer des innovations",
+        "La capacité à croître sans coûts proportionnels"
+      ],
+      "c": 1,
+      "e": "Robustesse = résistance aux tentatives d'imitation. Elle repose sur des ressources rares, des brevets, des barrières à l'entrée élevées ou des effets de réseau difficiles à répliquer.",
+      "theme": "business_models",
+      "src": "P1",
+      "srcChap": 4
+    },
+    {
+      "q": "Le cas BIC — Plan « Horizon » 2020 correspond à :",
+      "o": [
+        "Une diversification vers de nouveaux secteurs non liés",
+        "Un recentrage sur le cœur de métier avec extension vers des marchés adjacents",
+        "Une stratégie d'internationalisation agressive",
+        "Une fusion avec un concurrent direct"
+      ],
+      "c": 1,
+      "e": "BIC 'Horizon' : recentrage (cessions BIC Sport, BIC Graphic) + extension vers marchés adjacents (Rocketbook, coloring adulte, Bodymark) — pas de rupture mais évolution progressive du périmètre.",
+      "theme": "corporate"
+    },
+    {
+      "q": "L'avantage parental apporté par BIC à Rocketbook se manifeste principalement via :",
+      "o": [
+        "Un apport de capital uniquement",
+        "La marque mondiale, le réseau de distribution et les ressources industrielles de BIC",
+        "Une fusion des équipes de direction",
+        "Un accès aux marchés financiers"
+      ],
+      "c": 1,
+      "e": "L'avantage parental = ce que le groupe apporte au-delà de ce que la filiale pourrait obtenir seule. Pour Rocketbook : marque mondiale BIC, réseau de distribution dans 160+ pays, expertise industrielle.",
+      "theme": "corporate",
+      "src": "P3",
+      "srcChap": 17
+    },
+    {
+      "q": "Le ratio coût marginal/revenu marginal proche de 1 signifie :",
+      "o": [
+        "Que le modèle est parfaitement scalable",
+        "Qu'il n'y a aucune scalabilité (chaque €€ de revenu supplémentaire coûte ~1€ à produire)",
+        "Que la marge brute est de 100%",
+        "Que le ROCE est maximal"
+      ],
+      "c": 1,
+      "e": "Ratio ≈ 1 = pas de scalabilité : chaque euro de revenu supplémentaire coûte presque un euro à produire. À l'inverse, ratio ≈ 0 = scalabilité maximale (ex : logiciels, plateformes numériques).",
+      "theme": "business_models",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "Les Industries à forte intensité capitalistique présentent généralement :",
+      "o": [
+        "Un ROCE très élevé",
+        "Un ROCE limité car beaucoup de capital pour peu de résultat opérationnel",
+        "Aucun coût fixe significatif",
+        "Une scalabilité maximale"
+      ],
+      "c": 1,
+      "e": "Industries lourdes (automobile, distribution d'énergie, eau) : ROCE limité car énorme capital engagé pour générer le résultat opérationnel. À l'inverse, logiciels et plateformes → ROCE élevé.",
+      "theme": "business_models",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "Dans le Business Model Canvas, « Structure des coûts » et « Flux de revenus » répondent à :",
+      "o": [
+        "Qui ?",
+        "Quoi ?",
+        "Comment ?",
+        "Combien ?"
+      ],
+      "c": 3,
+      "e": "Ces 2 blocs répondent à « Combien ? » : quelle est la logique financière du modèle ? Combien coûte-t-il de le faire fonctionner ? Combien génère-t-il de revenus et comment ?",
+      "theme": "business_models",
+      "src": "P1",
+      "srcChap": 4
+    },
+    {
+      "q": "eBay vs Leboncoin illustre l'erreur de :",
+      "o": [
+        "Timing",
+        "Méfiance",
+        "Orgueil",
+        "Pricing"
+      ],
+      "c": 2,
+      "e": "eBay a dominé le marché mais Leboncoin a exploité ses difficultés (frais élevés, contrefaçons, interface complexe) en proposant un modèle local gratuit et plus simple — erreur d'orgueil d'eBay.",
+      "theme": "business_models"
+    },
+    {
+      "q": "L'équation économique de valeur dans le BM (Strategor) vérifie que :",
+      "o": [
+        "Les coûts sont minimisés",
+        "La valeur créée excède les ressources mobilisées (valeur créée > coûts + capitaux engagés)",
+        "Les revenus dépassent ceux des concurrents",
+        "Le BM est conforme à la réglementation"
+      ],
+      "c": 1,
+      "e": "L'équation économique de valeur vérifie que l'ensemble des éléments du BM permet à l'entreprise pivot de créer de la valeur (valeur créée > ressources mobilisées). C'est la condition de viabilité.",
+      "theme": "business_models",
+      "src": "Intro",
+      "srcChap": 1
+    },
+    {
+      "q": "Combien de blocs composent le Business Model Canvas d'Osterwalder ?",
+      "o": [
+        "5",
+        "7",
+        "9",
+        "12"
+      ],
+      "c": 2,
+      "e": "Le BMC comprend 9 blocs : Partenaires clés, Activités clés, Ressources clés, Proposition de valeur, Relations client, Segments de clientèle, Canaux, Structure des coûts, Flux de revenus.",
+      "theme": "business_models",
+      "src": "P1",
+      "srcChap": 4
+    },
+    {
+      "q": "Une plateforme d'innovation se distingue d'une plateforme de transaction car elle :",
+      "o": [
+        "Facilite des échanges marchands directs",
+        "Sert de base technologique pour que des tiers développent des innovations complémentaires",
+        "Ne génère pas de revenus",
+        "N'a pas d'opérateur pivot"
+      ],
+      "c": 1,
+      "e": "Plateforme d'innovation = base techno sur laquelle des tiers créent des innovations complémentaires (iOS → applications). Plateforme de transaction = intermédiation d'échanges directs (Airbnb, Uber).",
+      "theme": "plateformes",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "La stratégie 'adaptative' part de :",
+      "o": [
+        "Les ressources internes de l'entreprise",
+        "L'analyse de l'environnement pour détecter un marché attractif",
+        "La gouvernance",
+        "La fiscalité"
+      ],
+      "c": 1,
+      "e": "Adaptative (Outside-In) : analyse environnement → positionnement → ressources. Intentionnelle (Inside-Out) : ressources/compétences clés → marchés → mode d'entrée.",
+      "theme": "concurrentielle"
+    },
+    {
+      "q": "Business Strategy concerne :",
+      "o": [
+        "Le portefeuille d'activités de l'entreprise",
+        "Une activité donnée : créer ou cultiver l'avantage concurrentiel",
+        "Les négociations avec les syndicats",
+        "La trésorerie"
+      ],
+      "c": 1,
+      "e": "Business Strategy (stratégie d'activité) : avantage concurrentiel sur un DAS. Corporate Strategy (stratégie de groupe) : portefeuille, modalités de croissance, parties prenantes.",
+      "theme": "corporate"
+    },
+    {
+      "q": "Les 4 stratégies concurrentielles génériques selon Strategor sont :",
+      "o": [
+        "Pénétration · écrémage · différenciation · diversification",
+        "Domination par les coûts · différenciation par le haut · différenciation par le bas · changements radicaux",
+        "Concentration · diversification · internationalisation · partenariat",
+        "Croissance · maturité · déclin · renaissance"
+      ],
+      "c": 1,
+      "e": "Matrice Strategor sur 2 dimensions (coûts vs valeur perçue). Le changement radical = coûts plus bas ET valeur plus haute (disruption à la Tesla, Nintendo Wii).",
+      "theme": "concurrentielle",
+      "src": "Intro",
+      "srcChap": 1
+    },
+    {
+      "q": "L'avantage parental existe quand :",
+      "o": [
+        "L'entreprise est plus rentable que la moyenne du secteur",
+        "La maison-mère ajoute plus de valeur à une filiale que ne le ferait un autre parent ou que la filiale en autonomie",
+        "Les actionnaires sont satisfaits",
+        "La filiale est leader sur son marché"
+      ],
+      "c": 1,
+      "e": "Avantage parental (Corporate Strategy) : sources = compétences, ressources (marque, distribution, finance), relations, arbitrage capital, coordination. Cas BIC + Rocketbook.",
+      "theme": "corporate",
+      "src": "P3",
+      "srcChap": 17
+    },
+    {
+      "q": "Le rachat de Rocketbook par BIC se justifie par :",
+      "o": [
+        "La diversification dans une activité non liée",
+        "L'avantage parental : BIC apporte marque, distribution, industrialisation et capacité financière à Rocketbook",
+        "La pure logique financière",
+        "La défiscalisation"
+      ],
+      "c": 1,
+      "e": "BIC apporte à Rocketbook : marque mondiale, réseau de distribution (papeterie, GSA), capacité industrielle (26 usines), financements. Sans BIC, Rocketbook resterait une PME.",
+      "theme": "corporate"
+    },
+    {
+      "q": "Les 3 modalités de (dé)croissance sont :",
+      "o": [
+        "Verticale · horizontale · diagonale",
+        "Interne (organique) · externe (M&A) · contractuelle (alliances)",
+        "Court terme · moyen terme · long terme",
+        "Volontaire · subie · imposée"
+      ],
+      "c": 1,
+      "e": "Croissance interne (ressources propres), externe (M&A), contractuelle (partenariats). Décroissance : cession (BIC Sport→Tahe), scission.",
+      "theme": "corporate"
+    },
+    {
+      "q": "La différenciation par le bas (low cost) consiste à :",
+      "o": [
+        "Vendre moins cher avec une offre identique",
+        "Réduire ET les coûts ET la valeur perçue, en éliminant ce qui n'est pas valorisé par un segment cible",
+        "Différencier les emballages",
+        "Imiter le leader"
+      ],
+      "c": 1,
+      "e": "Low cost : offre volontairement dégradée mais acceptable pour un segment (Ryanair, Dacia, Lidl originel). Différent de la domination par les coûts qui maintient la valeur standard.",
+      "theme": "concurrentielle"
+    },
+    {
+      "q": "Selon Porter, un avantage concurrentiel :",
+      "o": [
+        "Est définitif dès qu'il est acquis",
+        "N'est jamais éternel, reste relatif et associé à un contexte ; les imitations le diffusent rapidement",
+        "Provient uniquement de la marque",
+        "Ne s'applique qu'aux grandes entreprises"
+      ],
+      "c": 1,
+      "e": "Porter : 'la stratégie c'est définir, construire et défendre un avantage compétitif'. Mais : pas éternel, relatif au contexte, érodé par les imitations et l'innovation des concurrents.",
+      "theme": "concurrentielle"
+    },
+    {
+      "q": "Le levier opérationnel mesure :",
+      "o": [
+        "L'endettement de l'entreprise",
+        "La sensibilité du résultat d'exploitation à une variation du CA (= marge sur coût variable / RE)",
+        "Le ROI sur 5 ans",
+        "Le coût des capitaux propres"
+      ],
+      "c": 1,
+      "e": "Levier opérationnel = MCV / RE. Levier de 6 : +1% CA = +6% RE. Élevé pour les BM à forts coûts fixes (plateformes, logiciels) → fort potentiel mais aussi forte volatilité.",
+      "theme": "business_models",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "La scalabilité d'un Business Model désigne :",
+      "o": [
+        "Sa rentabilité immédiate",
+        "Sa capacité à croître sans augmenter proportionnellement les coûts",
+        "Sa conformité à la CSRD",
+        "Sa flexibilité tarifaire"
+      ],
+      "c": 1,
+      "e": "Scalabilité = croissance sans coûts proportionnels. Indicateurs : levier opérationnel élevé + ratio coût marginal/revenu marginal proche de 0. Critère clé pour les plateformes et la tech.",
+      "theme": "business_models",
+      "src": "P1 (Plateformes)",
+      "srcChap": 6
+    },
+    {
+      "q": "Le 'changement radical' (4ᵉ stratégie générique) :",
+      "o": [
+        "Est impossible en pratique",
+        "Vise à offrir SIMULTANÉMENT une valeur plus haute ET des coûts plus bas (disruption)",
+        "Consiste à licencier",
+        "Concerne uniquement la R&D"
+      ],
+      "c": 1,
+      "e": "Changement radical / stratégie de rupture : combine valeur supérieure et coûts inférieurs. Disruption à la Tesla (initialement), Nintendo Wii, Apple iPhone vs téléphones traditionnels.",
+      "theme": "concurrentielle"
+    }
+  ],
+  "annales": [
+    {
+      "id": "strat_2024_2025",
+      "year": "2024-2025",
+      "name": "Session 1 — Mercredi 11 juin 2025",
+      "duration": "1h00",
+      "format": "Écrit · Aucun document autorisé · 2 sujets au choix",
+      "professor": "A. Tellier",
+      "subject": "VOUS TRAITEREZ AU CHOIX LE SUJET 1 OU LE SUJET 2.",
+      "dossiers": [
+        {
+          "label": "Sujet n°1 — Question de cours (20 points)",
+          "context": "Vous êtes contacté par un ami qui veut créer une plateforme. Son idée est de lancer une application pour smartphone qui permettrait de mettre en relation des personnes âgées et des personnes prêtes à rendre des services de proximité. Grâce à cette application, la personne âgée aurait accès à un réseau d'entraide. Elle pourrait échanger et envoyer une alerte aux personnes de sa communauté virtuelle pour demander de l'aide ou des services (ménage, bricolage…) à d'autres « aidants ». À l'inverse, la personne pourrait se proposer d'être « aidant » pour d'autres qui ont besoin d'une aide.\n\nVotre ami souhaite des conseils sur la stratégie qu'il pourrait déployer.\n\nN.B. Aucune connaissance sur le projet de votre ami n'est nécessaire pour répondre à la question. Vous pouvez appuyer votre réflexion sur des exemples variés.",
+          "items": [
+            {
+              "q": "Après avoir rappelé ce qu'est une plateforme, vous détaillerez les mécanismes sur lesquels il est possible de s'appuyer pour réussir à développer ce type de structure.",
+              "correction": "[Meilleure copie — note 17/20 — Sujet n°1 traité]\n\nLes plateformes sont des dispositifs de coordination de ressources et d'actions, contrôlés par un opérateur privé qui en est le chef d'orchestre. Ces nouveaux modèles d'entreprise sont apparus ces vingt dernières années, avec l'émergence des nouvelles technologies et plus particulièrement d'internet, qui permet de connecter entre elles des individus qui ne se connaissent pas. Pour être qualifié de plateforme, un dispositif doit avoir deux caractéristiques :\n  • Chaque groupe (offreur et demandeur) peut être client de la plateforme\n  • Il permet une mise en relation directe entre les offreurs et les demandeurs\n\nPour mener à bien un projet de développement de plateforme, l'opérateur de la plateforme doit réussir à rendre la plateforme la plus attractive possible, pour inciter les demandeurs à se connecter dessus, mettre en place les conditions nécessaires pour que les offreurs produisent du contenu et que les demandeurs puissent trouver une offre satisfaisante, et enfin définir un business model, c'est-à-dire un ensemble de paramètres permettant de créer, délivrer et capturer de la valeur, pour permettre de rendre le projet de plateforme rentable.\n\nPour atteindre ces objectifs, l'opérateur de la plateforme doit s'appuyer sur 6 mécanismes, décrits par Christophe Benavent en 2016.\n\n─── 1er mécanisme : les externalités de réseau et de standard ───\n\nLa valeur d'une plateforme est surtout liée à son nombre d'usagers. En effet, une plateforme ne comprenant que peu d'usagers, même si elle est très utile, ne sera que très peu utilisée et aura du mal à se développer. C'est sur le principe de la loi de Metcalfe que Benavent fait cette analyse, considérant que la valeur de la plateforme augmente au carré pour chaque nouvel utilisateur. Il s'agira donc, pour une plateforme, de réussir à avoir le plus d'utilisateurs possible pour rendre la plateforme la plus attractive possible.\n\nConcernant les externalités de standard, celles-ci sont liées à un possible changement de plateforme : en effet, il peut être « coûteux » pour un utilisateur utilisant déjà une plateforme de changer pour une nouvelle. Le fait d'être le premier sur un marché peut donc être déterminant pour garder les utilisateurs.\n\n─── 2e mécanisme : le crowdsourcing ───\n\nLe crowdsourcing va consister à faire porter le capital productif et le travail de production sur les usagers. En effet, le modèle de plateforme permet à l'opérateur d'avoir des apports en capital assez faibles, puisque ce sont les offreurs qui vont produire son offre. Pour garder cette dynamique, il faut également inciter les demandeurs à faire des retours, via notamment des systèmes de notation des offreurs, qui permettront aux autres utilisateurs de pouvoir avoir plus de confiance dans les offreurs.\n\n─── 3e mécanisme : les marchés de réputation ───\n\nLe troisième mécanisme est en lien avec le système de notation, car les plateformes sont des marchés de réputation. La plupart des utilisateurs ne se connaissent pas, et donc la confiance entre les utilisateurs, souvent nécessaire pour effectuer un acte d'achat, doit pouvoir être créée. L'opérateur de la plateforme va donc devoir permettre de créer ces conditions, notamment donc par un système de notation et de commentaires.\n\n─── 4e mécanisme : la logique de la longue traîne (économie de la variété) ───\n\nLe modèle des plateformes permet aujourd'hui de ne pas avoir de stocks et donc de proposer une variété de produits beaucoup plus importante qu'un opérateur traditionnel. Dans le cas du sujet, la plateforme va pouvoir proposer une multitude de services, certainement plus que ce que pourrait le faire par exemple une entreprise d'aide à domicile. Toutefois, la multitude des offres impose également de mettre en place des dispositifs pour pouvoir retrouver celle qui correspond au besoin du demandeur. Il peut s'agir de filtres, de moteurs de recherche, qui doivent permettre de faire correspondre une offre spécifique à une demande singulière.\n\n─── 5e mécanisme : la science de l'appariement ───\n\nElle reprend en partie les mécanismes de la logique de la longue traîne, puisqu'il s'agit d'arriver à mettre en relation deux choses qui vont naturellement de pair. La science de l'appariement va donc consister à s'assurer que les offres et les demandes qui vont ensemble puissent se « rencontrer » sur la plateforme.\n\n─── 6e mécanisme : les marchés bifaces voire multifaces ───\n\nCela va consister à trouver les moyens de s'assurer des revenus par plusieurs moyens, et de réussir à faire payer les deux faces du marché, à savoir les offreurs et les demandeurs. Mais il peut être également intéressant d'inviter d'autres types d'acteurs à proposer des offres sur la plateforme (par exemple de la publicité) pour augmenter le nombre de sources de revenus. Pour réussir à attirer à la fois offreurs et demandeurs, l'opérateur de la plateforme peut mettre en place des dispositifs pour attirer une des faces, comme par exemple prendre à sa charge les coûts relatifs à une des faces au démarrage pour les inciter à venir sur la plateforme, ou mettre en place des systèmes freemium, c'est-à-dire gratuit au début puis payant pour avoir plus de fonctionnalités.\n\n─── Les 4 risques majeurs ───\n\n1. Le pricing : la prise en charge des coûts liés à une des faces du marché peut présenter un risque pour l'opérateur. Il faut faire attention à ce que ce mécanisme ne tue pas le business model imaginé au départ.\n\n2. La méfiance entre les utilisateurs : il faudra donc pour l'opérateur mettre en place les conditions de confiance pour éviter ce risque.\n\n3. Le timing : le premier arrivé, si sa plateforme répond parfaitement aux besoins des utilisateurs, aura un avantage considérable par rapport à ses concurrents, notamment à cause des externalités de standard évoquées précédemment. Mais il faut également que le marché soit prêt lors du lancement d'une plateforme, pour que celle-ci ne soit pas délaissée. Un mécanisme important pour se lancer rapidement est le MVP (minimum viable product), qui est un produit ne présentant pas encore toutes les caractéristiques du produit final mais qui permet déjà de faire du chiffre d'affaires et d'avoir des retours utilisateurs pour améliorer son produit.\n\n4. L'orgueil, notamment pour les plateformes déjà installées : comme dans un secteur traditionnel, une entreprise leader sur son marché ne doit pas croire que la bataille est gagnée et qu'elle va le rester toute sa vie. Elle doit donc continuer à innover pour se prémunir d'entrants potentiels et garder à tout prix son avantage concurrentiel.\n\nLes plateformes répondent donc à d'autres logiques que des activités « physiques » que nous avions l'habitude de côtoyer et s'appuient donc sur des mécanismes différents pour garantir à l'opérateur de la plateforme un succès. Ces mécanismes doivent donc être pris en compte pour éviter les quatre risques majeurs que comporte le lancement d'une plateforme."
+            }
+          ]
+        },
+        {
+          "label": "Sujet n°2 — Étude de cas : « La nouvelle stratégie de Bic » (20 points, 5 pts/question)",
+          "context": "BIC est un des leaders mondiaux des articles de papeterie, des briquets et des rasoirs. Depuis plus de 75 ans, l'entreprise fabrique des produits de grande qualité accessibles à tous, partout dans le monde. Cette vocation a permis au Groupe de faire de sa marque, enregistrée dans le monde entier, l'une des plus reconnues.\n\nÀ partir des deux articles suivants, présentés par ordre chronologique, vous répondrez aux questions suivantes.\n\n━━━ TEXTE 1 — « Bic contraint de se réinventer pour affronter l'avenir », Le Figaro Économie, 3 janvier 2020 ━━━\n\nLe groupe a finalisé la cession de sa filiale de sport. Il se concentre désormais sur les stylos, rasoirs et briquets.\n\nBic tire un trait sur ses planches à voile et paddles. Le groupe a finalisé la vente à l'estonien Tahe Outdoors de sa filiale Bic Sport, spécialisée dans les sports de glisse nautique. Il en obtiendra de 6 à 9 millions d'euros en fonction des résultats futurs de son ex-filiale. Avec cette cession, mise en œuvre par Gonzalve Bich, investi il y a un an par son père à la tête du groupe, Bic revient à ses activités historiques : stylos, briquets et rasoirs. Le groupe français, détenu à 44 % par la famille fondatrice, tire un trait final sur ses diversifications. Oubliée l'époque où l'entreprise vendait des téléphones portables dans les bureaux de tabac ; Bic a surtout renoncé à faire des produits promotionnels son quatrième pilier : il a cédé mi-2017 les activités nord-américaines de son ex-division Bic Graphic au fonds américain HIG pour 71 millions d'euros.\n\nUn choix imposé par la force des choses. Depuis deux ans, la croissance de Bic a marqué le pas, notamment dans l'activité rasoirs, bouleversée par la montée en puissance des acteurs en ligne comme Dollar Shave Club (Unilever) qui tirent les prix du marché à la baisse, surtout aux États-Unis. La rentabilité a par ailleurs été affectée par la hausse du coût des matières premières. À cela s'ajoute l'intensification de la concurrence des pays à bas coût. En tant que fabricant de biens de consommation (stylos, briquets, rasoirs), Bic est aussi confronté à un environnement de plus en plus compétitif. Les distributeurs sont aujourd'hui concurrencés par Amazon. Le digital a aussi donné naissance à de nouveaux acteurs, comme les « pure players » du rasage aux États-Unis. De plus, le comportement des consommateurs change, sans parler de la volatilité des matières premières.\n\nLe groupe septuagénaire, qui a réalisé l'an passé 2 milliards d'euros de chiffre d'affaires, est confronté à une triple contrainte : la baisse du nombre de fumeurs dans les pays occidentaux, la mode de la barbe qui incite les hommes à bouder leur rasoir et la désaffection à l'égard de l'écriture manuscrite. Si Bic peut compter sur une marque forte et reconnue mondialement, un puissant réseau de distribution et son intégration industrielle (26 usines), il est en fait à la croisée des chemins. Certes, les pays émergents représentent un tiers de son activité. Mais la volatilité de certaines économies, à l'image du Brésil, a fragilisé le groupe. Bic doit s'atteler à trouver de nouveaux relais de croissance pour l'avenir. « Afin de faire face aux défis et opportunités d'aujourd'hui et de demain, nous devons réinventer Bic », reconnaît aujourd'hui Gonzalve Bich, 40 ans, qui veut imprimer sa marque en modernisant le groupe. Une équipe a été chargée de définir un plan stratégique qui devrait être présenté fin 2020.\n\n━━━ TEXTE 2 — « Le plan stratégique de Gonzalve Bich », Les Echos, 12 novembre 2020 ━━━\n\nÀ la tête de Bic depuis deux ans et demi, Gonzalve Bich, le petit-fils du fondateur, veut relancer la croissance du champion mondial des biens de consommation. À l'occasion de la journée investisseurs mardi, il a présenté les points clés de son plan stratégique baptisé « Horizon ». Le groupe veut atteindre une croissance annuelle du chiffre d'affaires d'environ 5 %. Et de générer, grâce aux économies, « au moins 200 millions d'euros de flux nets de trésorerie par an jusqu'en 2022 ». Le montant des investissements sera en moyenne de 100 millions d'euros par an.\n\n« Monsieur Gonzalve Bich, parlez-nous du plan Horizon… »\n« Afin de faire face aux défis et opportunités d'aujourd'hui et de demain, nous devons réinventer Bic pour redevenir en 2022 un champion mondial des produits de consommation courante, plus agile et plus innovant. C'est l'ambition de ce plan stratégique. Ce projet « Horizon » s'inscrit dans la continuité du plan précédent et ouvre un nouveau chapitre, celui de la croissance, afin de voir comment nous allons élargir le périmètre de nos activités, en allant vers des segments de marché proches des nôtres et en forte croissance. Par exemple dans l'écriture, nous allons continuer à produire et fournir aux consommateurs des stylos de haute qualité à un prix abordable, avec une marque qu'ils connaissent, mais nous allons aussi leur apporter de nouveaux produits et de nouveaux usages. »\n\n« C'est le sens du rachat de Rocketbook, la marque américaine de carnets intelligents ? »\n« Rocketbook s'inscrit dans notre ADN. Ses cahiers, qui s'utilisent avec un stylo effaçable et dont le contenu peut être téléchargé via une application sur smartphone, sont proposés à un prix inférieur à 40 dollars. Et le consommateur fait un achat qui conserve l'aspect manuscrit de l'écriture. Ces cahiers présentent aussi un avantage environnemental car ils sont réutilisables. Ce sont nos premiers pas dans l'écriture digitale. Cette acquisition renforce l'activité Papeterie de BIC avec l'ajout d'un segment de marché très porteur. Les co-fondateurs de Rocketbook, Joe Lemay et Jake Epstein, l'ont reconnu, il y a une grande complémentarité entre BIC et Rocketbook. Nous sommes convaincus que Rocketbook pourra atteindre des niveaux de performances plus élevés en profitant de l'avantage parental offert par le groupe BIC. »\n\n« Sur chaque pilier du groupe, vous allez donc aller sur de nouveaux territoires ? »\n« Nous n'abandonnons pas ce qui a fait la force de notre marque. Nous allons continuer à fabriquer des stylos, des briquets et des rasoirs, mais nous allons étendre notre champ d'action tout en rationalisant nos gammes. Par exemple, dans l'écriture, nous constatons depuis une dizaine d'années que les gens ont envie de déconnecter et de se détendre à travers différentes formes d'activités créatives. Le coloriage pour adultes ou encore les marqueurs de tatouage éphémères Bodymark que nous avons lancé aux États-Unis et en Europe sont un succès. Il y a donc plein d'autres façons d'innover, d'amener de nouvelles solutions pour égayer le quotidien. »",
+          "items": [
+            {
+              "q": "1. À partir du premier texte qui présente les décisions prises sur le portefeuille d'activités, comment peut-on qualifier la stratégie actuelle du groupe Bic ? Justifiez vos propos.",
+              "correction": "[Pas de meilleure copie pour le Sujet n°2 — le candidat a traité le Sujet n°1]"
+            },
+            {
+              "q": "2. Selon vous, s'agit-il d'une stratégie « adaptative » ou « intentionnelle » ? Justifiez vos propos.",
+              "correction": "[Pas de meilleure copie pour le Sujet n°2 — le candidat a traité le Sujet n°1]"
+            },
+            {
+              "q": "3. Quel est d'après vous le mode de gouvernance en vigueur chez Bic ? Justifiez vos propos. En quoi peut-il avoir une influence sur la stratégie ?",
+              "correction": "[Pas de meilleure copie pour le Sujet n°2 — le candidat a traité le Sujet n°1]"
+            },
+            {
+              "q": "4. Le dirigeant du groupe BIC déclare dans le texte 2 : « Nous sommes convaincus que Rocketbook pourra atteindre des niveaux de performances plus élevés en profitant de l'avantage parental offert par le groupe BIC. » Qu'est-ce qu'un avantage parental ? Quelles sont les sources d'un tel avantage ? En quoi cette notion permet-elle de justifier le rachat de Rocketbook ?",
+              "correction": "[Pas de meilleure copie pour le Sujet n°2 — le candidat a traité le Sujet n°1]"
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "Choix de sujet : la majorité des candidats traite le Sujet n°1 (question de cours sur les plateformes) — il est plus structurable. Le Sujet n°2 (étude de cas BIC) demande de mobiliser plusieurs concepts (stratégie adaptative/intentionnelle, gouvernance, avantage parental).",
+        "Pour le Sujet n°1 : structurer autour de Benavent (2016) et ses 6 mécanismes + 4 risques. Mobiliser la loi de Metcalfe, le MVP, l'économie de la variété, les marchés bifaces.",
+        "Définir précisément ce qu'est une plateforme (2 caractéristiques) avant de dérouler les mécanismes.",
+        "Pour le Sujet n°2 (BIC) : qualifier la stratégie de recentrage / focalisation sur métier historique. Le mode de gouvernance familial (44 % par la famille fondatrice) influence la stratégie de long terme.",
+        "Avantage parental (notion de corporate strategy) : valeur ajoutée que le groupe apporte à sa filiale (savoir-faire industriel, réseau de distribution, marque, complémentarités)."
+      ]
+    },
+    {
+      "id": "strat-letaxi-2023",
+      "year": "2023-2024",
+      "name": "Session 2 — Cas LETAXI",
+      "duration": "1h",
+      "format": "Étude de cas · 4 questions · 20 points",
+      "subject": "Letaxi.fr (concurrent français d'Uber). 4 questions :\n\n1) Letaxi est-elle une plateforme ? Pourquoi ? (7 pts)\n2) Dans le développement de Letaxi, qu'est-ce qui peut être décisif ? (7 pts)\n3) Faut-il attendre que l'application soit très élaborée, ou la proposer dès que des fonctions « minimales » seront proposées ? Justifier. (6 pts)\n4) Que penser de la stratégie « Uber des petites villes » ?",
+      "tips": [
+        "Q1 : OUI, plateforme (mise en relation offreurs taxis / demandeurs clients via opérateur pivot Letaxi.fr) — biface, externalités de réseau.",
+        "Q2 : taille de masse critique des deux côtés, qualité de service taxis, expérience utilisateur, partenariats compagnies, position face à Uber (timing).",
+        "Q3 : MVP (Minimum Viable Product) — proposer dès que fonctions minimales pour TESTER, ITÉRER, ATTEINDRE la masse critique. Sinon Uber consolidera.",
+        "Q4 : Stratégie de NICHE (petites villes, segments délaissés par Uber). Crédible si pas d'effet réseau global ; risquée si Uber descend ensuite. Loi de Metcalfe limitée par la géographie."
+      ]
+    },
+    {
+      "id": "strat-ge-2022",
+      "year": "2022-2023",
+      "name": "Étude de cas General Electric",
+      "duration": "1h",
+      "format": "Étude de cas · 4 questions · 5 pts chacune",
+      "subject": "Démantèlement de General Electric (Le Monde 27/06/2021). Scission de la division médicale (65-70 Mds$), cession Baker Hughes (23 Mds$, parapétrolier), réduction massive du portefeuille depuis 2010.\n\n4 questions :\n1) Type de gouvernance chez GE ?\n2) Stratégie déployée + lien avec gouvernance ?\n3) Justification de la scission de GE Healthcare (pourtant rentable) ?\n4) Modèle de gestion de portefeuille adapté ?",
+      "tips": [
+        "Q1 : Gouvernance ACTIONNARIALE (« les actionnaires obtiennent... »). Pression du marché, fonds activistes.",
+        "Q2 : Stratégie de RECENTRAGE / SCISSION (corporate strategy de décroissance interne). Maximisation valeur actionnariale court terme.",
+        "Q3 : Avantage parental NÉGATIF (le conglomérat détruit de la valeur) → la scission permet à GE Healthcare de capter sa pleine valeur de marché. Activité innovante mieux gérée seule.",
+        "Q4 : Matrice BCG ou ADL, mais aussi GROWTH-SHARE → identifier les vaches à lait à céder (rentables mais sans synergie). Approche financière de portefeuille."
+      ]
+    }
+  ],
+  "themes": [
+    {
+      "id": "business_models",
+      "icon": "🧱",
+      "label": "Business Models"
+    },
+    {
+      "id": "plateformes",
+      "icon": "🌐",
+      "label": "Plateformes"
+    },
+    {
+      "id": "concurrentielle",
+      "icon": "⚔️",
+      "label": "Stratégies concurrentielles"
+    },
+    {
+      "id": "corporate",
+      "icon": "🏗️",
+      "label": "Corporate Strategy"
+    }
+  ]
+}

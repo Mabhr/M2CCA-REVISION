@@ -1,0 +1,1801 @@
+{
+  "title": "Ingénierie Financière",
+  "subtitle": "Coût du capital · Marchés de capitaux · Produits dérivés · Critères extra-financiers",
+  "quizKey": "m2cca_quiz_inge_fi",
+  "checklistItems": [
+    {
+      "id": "cc1",
+      "theme": "cout_capital",
+      "label": "Coût du capital : définition et formule du CMPC"
+    },
+    {
+      "id": "cc2",
+      "theme": "cout_capital",
+      "label": "Coût de la dette Rd : taux sans risque (OAT) + spread"
+    },
+    {
+      "id": "cc3",
+      "theme": "cout_capital",
+      "label": "Coût de la dette : détermination par interpolation linéaire (TRI)"
+    },
+    {
+      "id": "cc4",
+      "theme": "cout_capital",
+      "label": "Coût des fonds propres : modèle de Gordon-Shapiro"
+    },
+    {
+      "id": "cc5",
+      "theme": "cout_capital",
+      "label": "Coût des fonds propres : le MEDAF"
+    },
+    {
+      "id": "cc6",
+      "theme": "cout_capital",
+      "label": "Risque systémique vs risque spécifique"
+    },
+    {
+      "id": "cc7",
+      "theme": "cout_capital",
+      "label": "Le béta : définition et interprétation (>1, =1, <1)"
+    },
+    {
+      "id": "cc8",
+      "theme": "cout_capital",
+      "label": "Les 4 facteurs qui influencent le béta"
+    },
+    {
+      "id": "cc9",
+      "theme": "cout_capital",
+      "label": "Béta endetté vs béta désendetté (béta de l'actif économique)"
+    },
+    {
+      "id": "cc10",
+      "theme": "cout_capital",
+      "label": "Désendettement et réendettement du béta (formules)"
+    },
+    {
+      "id": "cc11",
+      "theme": "cout_capital",
+      "label": "Béta d'une société non cotée : méthode en 3 étapes"
+    },
+    {
+      "id": "cc12",
+      "theme": "cout_capital",
+      "label": "Béta par covariance / variance et droite de régression"
+    },
+    {
+      "id": "cc13",
+      "theme": "cout_capital",
+      "label": "Prime d'illiquidité (société non cotée)"
+    },
+    {
+      "id": "cc14",
+      "theme": "cout_capital",
+      "label": "Le CMPC comme taux d'actualisation de la VAN"
+    },
+    {
+      "id": "cc15",
+      "theme": "cout_capital",
+      "label": "Règle d'arrondi (cours P. Robin)"
+    },
+    {
+      "id": "mf1",
+      "theme": "marches_fi",
+      "label": "Le marché monétaire : le NEU CP"
+    },
+    {
+      "id": "mf2",
+      "theme": "marches_fi",
+      "label": "Intérêts précomptés vs post-comptés"
+    },
+    {
+      "id": "mf3",
+      "theme": "marches_fi",
+      "label": "NEU CP : cession avant échéance et rendement réel"
+    },
+    {
+      "id": "mf4",
+      "theme": "marches_fi",
+      "label": "L'emprunt obligataire : vocabulaire (nominal, prix d'émission, taux facial)"
+    },
+    {
+      "id": "mf5",
+      "theme": "marches_fi",
+      "label": "Taux actuariel brut : définition et calcul"
+    },
+    {
+      "id": "mf6",
+      "theme": "marches_fi",
+      "label": "Les 3 modes de remboursement obligataire"
+    },
+    {
+      "id": "mf7",
+      "theme": "marches_fi",
+      "label": "Formule de l'annuité constante : a = C×i / [1 − (1+i)⁻ⁿ]"
+    },
+    {
+      "id": "mf8",
+      "theme": "marches_fi",
+      "label": "Cotation d'une obligation et relation prix / taux"
+    },
+    {
+      "id": "mf9",
+      "theme": "marches_fi",
+      "label": "Coupon couru et cours au pied du coupon"
+    },
+    {
+      "id": "mf10",
+      "theme": "marches_fi",
+      "label": "La duration : définition et effet coupon"
+    },
+    {
+      "id": "mf11",
+      "theme": "marches_fi",
+      "label": "Les 3 déterminants du prix d'une obligation"
+    },
+    {
+      "id": "mf12",
+      "theme": "marches_fi",
+      "label": "Marché des actions : pourquoi s'introduire en Bourse"
+    },
+    {
+      "id": "mf13",
+      "theme": "marches_fi",
+      "label": "Introduction en Bourse : avantages et inconvénients"
+    },
+    {
+      "id": "mf14",
+      "theme": "marches_fi",
+      "label": "Procédures d'introduction (placement garanti, OPO, OPM, OPF, cotation directe)"
+    },
+    {
+      "id": "mf15",
+      "theme": "marches_fi",
+      "label": "Détermination du prix d'équilibre lors d'une cotation"
+    },
+    {
+      "id": "mf16",
+      "theme": "marches_fi",
+      "label": "Cotation en continu et cotation au fixing"
+    },
+    {
+      "id": "mf17",
+      "theme": "marches_fi",
+      "label": "Les ordres de bourse : mentions, types, règles d'exécution"
+    },
+    {
+      "id": "dv1",
+      "theme": "derives",
+      "label": "2 marchés, 3 familles d'instruments, 5 sous-jacents"
+    },
+    {
+      "id": "dv2",
+      "theme": "derives",
+      "label": "Le risque de taux et l'exposition (emprunteur / prêteur)"
+    },
+    {
+      "id": "dv3",
+      "theme": "derives",
+      "label": "Le marché de gré à gré (OTC) et le risque de contrepartie"
+    },
+    {
+      "id": "dv4",
+      "theme": "derives",
+      "label": "Le contrat à terme ferme"
+    },
+    {
+      "id": "dv5",
+      "theme": "derives",
+      "label": "Le swap de taux (différentiel, basis swap, coupon swap)"
+    },
+    {
+      "id": "dv6",
+      "theme": "derives",
+      "label": "Le FRA (Forward Rate Agreement) et sa formule"
+    },
+    {
+      "id": "dv7",
+      "theme": "derives",
+      "label": "Le contrat Forward/Forward et sa formule"
+    },
+    {
+      "id": "dv8",
+      "theme": "derives",
+      "label": "Le CAP : taux plafond"
+    },
+    {
+      "id": "dv9",
+      "theme": "derives",
+      "label": "Le FLOOR : taux plancher"
+    },
+    {
+      "id": "dv10",
+      "theme": "derives",
+      "label": "Le COLLAR : tunnel, emprunteur vs prêteur"
+    },
+    {
+      "id": "dv11",
+      "theme": "derives",
+      "label": "Les options : call et put, européenne vs américaine"
+    },
+    {
+      "id": "dv12",
+      "theme": "derives",
+      "label": "Les déterminants de la valeur d'une option"
+    },
+    {
+      "id": "dv13",
+      "theme": "derives",
+      "label": "Options de change : exportateur et importateur"
+    },
+    {
+      "id": "dv14",
+      "theme": "derives",
+      "label": "Le marché organisé et la chambre de compensation (LCH ClearNet)"
+    },
+    {
+      "id": "dv15",
+      "theme": "derives",
+      "label": "Les futures : dépôt de garantie et appels de marge"
+    },
+    {
+      "id": "es1",
+      "theme": "esg",
+      "label": "L'économie verte et la théorie du Donut"
+    },
+    {
+      "id": "es2",
+      "theme": "esg",
+      "label": "Les 7 principes de la théorie du Donut"
+    },
+    {
+      "id": "es3",
+      "theme": "esg",
+      "label": "Chronologie de la RSE et du développement durable"
+    },
+    {
+      "id": "es4",
+      "theme": "esg",
+      "label": "La RSE : définition et création de valeur"
+    },
+    {
+      "id": "es5",
+      "theme": "esg",
+      "label": "Les 3 Scopes d'émissions de GES"
+    },
+    {
+      "id": "es6",
+      "theme": "esg",
+      "label": "Les postes d'émission des Scopes 1, 2 et 3"
+    },
+    {
+      "id": "es7",
+      "theme": "esg",
+      "label": "NFRD, DPEF, CSRD, ESRS : les sigles"
+    },
+    {
+      "id": "es8",
+      "theme": "esg",
+      "label": "Les 12 normes ESRS"
+    },
+    {
+      "id": "es9",
+      "theme": "esg",
+      "label": "La Directive Omnibus 2025"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fc1",
+      "theme": "cout_capital",
+      "srcChap": 1,
+      "src": "Chapitre 1 (Le coût du capital)",
+      "q": "Que représente le coût du capital ?",
+      "a": "Le coût du capital représente le coût des ressources financières à la disposition de l'entreprise, quelle que soit leur origine (associés et prêteurs externes), au regard du poids de chaque ressource dans l'ensemble. C'est la rentabilité exigée par l'ensemble des apporteurs de fonds. Il se mesure par le CMPC, coût moyen pondéré du capital."
+    },
+    {
+      "id": "fc2",
+      "theme": "cout_capital",
+      "srcChap": 1,
+      "src": "Chapitre 1 (Le coût du capital)",
+      "q": "Formule du CMPC",
+      "a": "CMPC = Rcp × Vcp/(Vcp+Vd) + Rd × (1 − IS) × Vd/(Vcp+Vd).\n\n• Rcp = rentabilité exigée par les actionnaires (coût des fonds propres)\n• Rd = rentabilité attendue par les prêteurs (coût de la dette)\n• Vcp = valeur des capitaux propres\n• Vd = valeur de marché des dettes\n• IS = taux d'impôt sur les sociétés\n\nLe CMPC sert de taux d'actualisation de la VAN : si la VAN est positive, le projet est retenu."
+    },
+    {
+      "id": "fc3",
+      "theme": "cout_capital",
+      "srcChap": 1,
+      "src": "Chapitre 1 (Le coût du capital)",
+      "q": "Le coût de la dette (Rd) : définition",
+      "a": "Rd est la rentabilité attendue par les créanciers. Ce n'est PAS la moyenne des taux d'emprunts passés, mais le taux d'endettement futur auquel l'entreprise pourrait prétendre au regard de son risque à venir."
+    },
+    {
+      "id": "fc4",
+      "theme": "cout_capital",
+      "srcChap": 1,
+      "src": "Chapitre 1 (Le coût du capital)",
+      "q": "Coût de la dette : taux sans risque et spread",
+      "a": "Rd = taux sans risque + spread.\n\n• Le taux sans risque est le taux des OAT (Obligations Assimilables du Trésor), c'est-à-dire le taux d'emprunt à moyen/long terme de l'État.\n• Le spread est le surcoût demandé par le prêteur au regard du risque pris ; il dépend du niveau d'endettement de l'entreprise.\n\nNet d'impôt : Rd × (1 − IS), car les intérêts d'emprunt sont déductibles du résultat imposable."
+    },
+    {
+      "id": "fc5",
+      "theme": "cout_capital",
+      "srcChap": 1,
+      "src": "Applications Chapitre 1 (Application 1)",
+      "q": "Coût de la dette : détermination par interpolation linéaire",
+      "a": "Quand le coût de la dette n'est pas donné, on le détermine comme le TRI qui actualise les flux de la dette (intérêts + remboursement) à sa valeur actuelle.\n\nMéthode : encadrer le taux entre deux valeurs t1 et t2 dont on connaît les sommes actualisées, puis interpoler :\nt = t1 + (t2 − t1) × (Somme(t1) − Valeur cible) / (Somme(t1) − Somme(t2)).\n\nLe taux obtenu (TRI) est ensuite mis net d'IS : Rd × (1 − IS)."
+    },
+    {
+      "id": "fc6",
+      "theme": "cout_capital",
+      "srcChap": 1,
+      "src": "Chapitre 1 (Le coût du capital)",
+      "q": "Gordon-Shapiro : coût des fonds propres",
+      "a": "La valeur d'un actif est la somme actualisée de ses flux futurs. Pour une action détenue à l'infini, la valeur se résume à la somme actualisée des dividendes.\n\n• Dividendes constants : V0 = D1 / R, d'où r = D1 / V0\n• Dividendes croissants au taux g : Rcp = D1 / V0 + g\n\nD1 = premier dividende futur, V0 = cours actuel, g = taux de croissance du dividende."
+    },
+    {
+      "id": "fc7",
+      "theme": "cout_capital",
+      "srcChap": 1,
+      "src": "Chapitre 1 (Le coût du capital)",
+      "q": "Le MEDAF (Modèle d'Équilibre des Actifs Financiers)",
+      "a": "Le MEDAF détermine la rentabilité exigée d'une action compte tenu de son risque de marché :\n\nRcp = Rf + βcp × (E(Rm) − Rf) = Rf + βcp × prime de risque du marché\n\n• Rf = taux sans risque\n• E(Rm) = espérance de rentabilité du marché\n• La prime de risque du marché = E(Rm) − Rf\n\nLe MEDAF fournit une relation linéaire entre la rentabilité d'une action et son risque de marché."
+    },
+    {
+      "id": "fc8",
+      "theme": "cout_capital",
+      "srcChap": 2,
+      "src": "Chapitre 1 (Le coût du capital)",
+      "q": "Risque systémique vs risque spécifique",
+      "a": "Le risque total se décompose en deux éléments :\n\n• Risque systémique (risque de marché) : il ne peut pas être diversifié dans un portefeuille, il est donc RÉMUNÉRÉ.\n• Risque spécifique (lié au secteur d'activité) : il peut être diversifié, il n'est donc PAS rémunéré (à l'investisseur de se débrouiller).\n\nLe MEDAF ne rémunère que le risque systémique, mesuré par le béta."
+    },
+    {
+      "id": "fc9",
+      "theme": "cout_capital",
+      "srcChap": 2,
+      "src": "Chapitre 1 (Le coût du capital)",
+      "q": "Le béta : définition et interprétation",
+      "a": "Le béta mesure la sensibilité du titre aux variations du marché.\n\n• β > 1 : titre plus sensible que le marché, il amplifie les variations\n• β = 1 : le titre réplique les variations du marché\n• β < 1 : titre défensif, il atténue les variations du marché\n\nUn titre à β < 1 a une rentabilité moindre que celle d'un titre plus risqué."
+    },
+    {
+      "id": "fc10",
+      "theme": "cout_capital",
+      "srcChap": 2,
+      "src": "Chapitre 1 (Le coût du capital)",
+      "q": "Les 4 facteurs qui influencent le béta",
+      "a": "A. La structure des coûts : plus la part de charges fixes est élevée (vs charges variables), plus l'entreprise est sensible à la conjoncture.\n\nB. La sensibilité du secteur d'activité à la conjoncture économique.\n\nC. La capacité à déterminer des flux futurs de trésorerie : plus les flux sont volatils, plus le béta augmente.\n\nD. La structure financière : plus l'entreprise est endettée, plus elle génère des charges financières fixes, plus le béta augmente."
+    },
+    {
+      "id": "fc11",
+      "theme": "cout_capital",
+      "srcChap": 2,
+      "src": "Chapitre 1 (Le coût du capital)",
+      "q": "Béta endetté vs béta désendetté",
+      "a": "Le béta des capitaux propres (béta endetté), celui de la formule du MEDAF, intègre le risque de marché ET le risque financier lié à l'endettement.\n\nLe béta de l'actif économique (béta désendetté, ou béta de l'activité ou béta sectoriel) ne reflète QUE le risque de marché, indépendamment de la structure financière."
+    },
+    {
+      "id": "fc12",
+      "theme": "cout_capital",
+      "srcChap": 2,
+      "src": "Chapitre 1 (Le coût du capital)",
+      "q": "Désendettement et réendettement du béta",
+      "a": "β désendetté = β endetté / [1 + (D/CP) × (1 − IS)]\nβ endetté = β désendetté × [1 + (D/CP) × (1 − IS)]\n\nFormule alternative avec béta de la dette :\nβc = βa + (βa − βd) × (D/CP)\nβd = (coût de la dette − taux sans risque) / (E(Rm) − taux sans risque)\n\nIl faut utiliser la même formule pour désendetter et pour réendetter."
+    },
+    {
+      "id": "fc13",
+      "theme": "cout_capital",
+      "srcChap": 2,
+      "src": "Chapitre 1 (Le coût du capital)",
+      "q": "Béta d'une société non cotée : la méthode",
+      "a": "Un titre non coté n'a pas de droite de régression : son béta n'est pas calculable directement. Méthode en 3 étapes :\n\n1. Prendre le béta endetté d'entreprises cotées comparables (idéalement mono-activité) et le DÉSENDETTER avec leur structure financière.\n2. Faire la MOYENNE des bétas désendettés.\n3. RÉENDETTER ce béta moyen avec la structure financière de la société non cotée.\n\nOn calcule ensuite Rcp via le MEDAF."
+    },
+    {
+      "id": "fc14",
+      "theme": "cout_capital",
+      "srcChap": 2,
+      "src": "Chapitre 1 (Le coût du capital)",
+      "q": "Béta : covariance, variance et droite de régression",
+      "a": "β = Covariance(R titre, R marché) / Variance(R marché).\n\nLe béta est la pente (A) de la droite de régression Y = Ax + B, où X = rentabilité du marché (variable explicative) et Y = rentabilité du titre (variable expliquée).\n\nLe coefficient de détermination R² mesure le poids du marché dans la volatilité du titre : plus R² est élevé, plus le marché explique les variations du titre."
+    },
+    {
+      "id": "fc15",
+      "theme": "cout_capital",
+      "srcChap": 2,
+      "src": "Applications Chapitre 1",
+      "q": "Covariance et variance : formules de calcul",
+      "a": "Covariance(R titre, R marché) = Σ p × a × b\navec a = Ra − E(Ra) et b = Rm − E(Rm).\n\nE(Ra) = Σ (Ra × probabilité) = taux de rendement espéré de l'action.\n\nVariance(R marché) = Σ p × b².\n\nPour des séries de données historiques, on raisonne en covariance et variance standard (division par N − 1)."
+    },
+    {
+      "id": "fc16",
+      "theme": "cout_capital",
+      "srcChap": 2,
+      "src": "Chapitre 1 (Application 4)",
+      "q": "La prime d'illiquidité",
+      "a": "Pour une société non cotée, on majore le Rcp obtenu par le MEDAF d'une prime d'illiquidité.\n\nCette notion n'a rien à voir avec un problème de trésorerie : elle tient au fait que céder les titres d'une société non cotée est plus difficile que pour un titre coté sur un marché.\n\nExemple du cours (Application 4) : majoration de 4 points."
+    },
+    {
+      "id": "fc17",
+      "theme": "cout_capital",
+      "srcChap": 1,
+      "src": "Chapitre 1 (Le coût du capital)",
+      "q": "Rentabilité attendue ≠ rentabilité versée",
+      "a": "Le Rcp issu du MEDAF est la rentabilité ATTENDUE par les actionnaires au regard du risque pris. Ce n'est pas forcément la rentabilité qui leur sera effectivement versée.\n\nLe Rcp escompté et la rentabilité financière réellement obtenue par les actionnaires peuvent différer."
+    },
+    {
+      "id": "fc18",
+      "theme": "marches_fi",
+      "srcChap": 3,
+      "src": "Chapitre 2 (Les Marchés de Capitaux)",
+      "q": "Le NEU CP",
+      "a": "Le NEU CP (Negotiable European Commercial Paper) est un titre de créance négociable à court terme émis sur le marché monétaire pour financer un besoin de trésorerie. Les intérêts peuvent être post-comptés ou précomptés."
+    },
+    {
+      "id": "fc19",
+      "theme": "marches_fi",
+      "srcChap": 3,
+      "src": "Chapitre 2 (Les Marchés de Capitaux)",
+      "q": "Intérêts post-comptés vs précomptés",
+      "a": "Intérêts post-comptés : les intérêts s'ajoutent au nominal à l'échéance.\nValeur future = Nominal × (1 + taux × n / 36 000)\n\nIntérêts précomptés : les intérêts sont retenus dès l'émission.\nMontant versé = Nominal / (1 + taux × n / 36 000), et le souscripteur reçoit le nominal à l'échéance.\n\n(n = nombre de jours.)"
+    },
+    {
+      "id": "fc20",
+      "theme": "marches_fi",
+      "srcChap": 3,
+      "src": "Chapitre 2 (Applications)",
+      "q": "NEU CP : cession avant échéance",
+      "a": "Si le porteur cède son titre avant l'échéance, le prix de cession dépend du taux de marché du jour et de la durée restant à courir.\n\nOn compare le montant reçu à la cession avec le montant initialement investi pour déterminer le RENDEMENT RÉEL du placement, qui diffère du taux nominal.\n\nSi les taux ont monté depuis la souscription, la valeur de cession baisse (moins-value possible)."
+    },
+    {
+      "id": "fc21",
+      "theme": "marches_fi",
+      "srcChap": 4,
+      "src": "Chapitre 1 et Chapitre 2",
+      "q": "L'emprunt obligataire : vocabulaire",
+      "a": "• Valeur nominale : valeur de référence du titre, base de calcul du coupon.\n• Prix d'émission : prix payé par le souscripteur (au pair s'il égale le nominal).\n• Prix de remboursement : montant remboursé à l'échéance.\n• Taux nominal (ou facial) : taux servant à calculer le coupon.\n• Date de jouissance : date de départ du calcul des intérêts."
+    },
+    {
+      "id": "fc22",
+      "theme": "marches_fi",
+      "srcChap": 4,
+      "src": "Chapitre 2 (Applications)",
+      "q": "Le taux actuariel brut",
+      "a": "Le taux actuariel brut est le taux qui égalise le prix d'émission (ou le prix de marché) et la somme des flux futurs actualisés (coupons + remboursement).\n\nIl est SUPÉRIEUR au taux nominal lorsqu'il existe une prime d'émission (prix d'émission < valeur nominale).\n\nPrix d'émission : Pe = Vn × i × (1 − (1+i)⁻ⁿ)/i + Pr × (1+i)⁻ⁿ."
+    },
+    {
+      "id": "fc23",
+      "theme": "marches_fi",
+      "srcChap": 4,
+      "src": "Chapitre 1 (Les Marchés de Capitaux)",
+      "q": "Les 3 modes de remboursement obligataire",
+      "a": "1. IN FINE : seuls les coupons sont versés chaque année ; le capital est remboursé en totalité à l'échéance.\n\n2. ANNUITÉS CONSTANTES : chaque annuité (intérêts + capital) est identique. La part de capital croît, la part d'intérêts décroît.\n\n3. AMORTISSEMENT CONSTANT : la même fraction de capital (C/n) est remboursée chaque année ; les intérêts diminuent, donc les annuités sont dégressives."
+    },
+    {
+      "id": "fc24",
+      "theme": "marches_fi",
+      "srcChap": 4,
+      "src": "Chapitre 1 (Les Marchés de Capitaux)",
+      "q": "Formule de l'annuité constante",
+      "a": "a = C × i / [1 − (1 + i)⁻ⁿ]\n\n• C = capital emprunté\n• i = taux annuel\n• n = durée\n\nChaque annuité contient une part d'intérêts (calculés sur le capital restant dû, donc décroissants) et une part de capital (croissante)."
+    },
+    {
+      "id": "fc25",
+      "theme": "marches_fi",
+      "srcChap": 4,
+      "src": "Chapitre 2 (Les Marchés de Capitaux)",
+      "q": "Cotation d'une obligation et relation prix / taux",
+      "a": "Une obligation est cotée en pourcentage de sa valeur nominale. Sa valeur = somme des flux futurs actualisés au taux de marché.\n\nRelation INVERSE prix / taux :\n• si le taux de marché passe au-dessus du taux nominal, le cours descend sous 100 %\n• si le taux de marché passe sous le taux nominal, le cours dépasse 100 %\n• à l'émission au pair, le cours vaut 100 %."
+    },
+    {
+      "id": "fc26",
+      "theme": "marches_fi",
+      "srcChap": 4,
+      "src": "Chapitre 2 (Les Marchés de Capitaux)",
+      "q": "Coupon couru et cours au pied du coupon",
+      "a": "Le coupon couru est la fraction de coupon acquise depuis le dernier détachement :\nCc = taux nominal × (nombre de jours écoulés / 365).\n\nLe cours au pied du coupon est la valeur de l'obligation HORS coupon couru : c'est la cotation publiée.\n\nPrix d'acquisition réel = cours au pied du coupon + coupon couru."
+    },
+    {
+      "id": "fc27",
+      "theme": "marches_fi",
+      "srcChap": 4,
+      "src": "Chapitre 2 (notes de cours)",
+      "q": "La duration",
+      "a": "La duration est la durée de détention d'un titre obligataire pour laquelle une variation des taux n'a aucune incidence : le portefeuille est alors dit « immunisé ».\n\nElle se calcule comme la moyenne des dates de flux pondérée par les flux actualisés :\nDuration = Σ (flux actualisé × date) / Σ (flux actualisés).\n\nEffet coupon : une hausse des taux renchérit le replacement des coupons mais fait baisser la valeur du titre, et inversement."
+    },
+    {
+      "id": "fc28",
+      "theme": "marches_fi",
+      "srcChap": 4,
+      "src": "Chapitre 2 (notes de cours)",
+      "q": "Les 3 déterminants du prix d'une obligation",
+      "a": "1. Le taux d'intérêt : relation inverse avec le prix de l'obligation.\n\n2. La valeur du coupon : plus le coupon est faible, plus la valeur du titre est sensible aux variations de taux.\n\n3. La durée de l'emprunt : plus elle est longue, plus le risque de taux est élevé."
+    },
+    {
+      "id": "fc29",
+      "theme": "marches_fi",
+      "srcChap": 5,
+      "src": "Chapitre 2 (notes de cours)",
+      "q": "Pourquoi s'introduire en Bourse ?",
+      "a": "• Lever des fonds par la création de nouveaux titres.\n• Accéder aux marchés de capitaux à moindre coût qu'un emprunt obligataire.\n• Faciliter le départ des actionnaires historiques (volontaire ou non).\n• Bénéficier d'une revalorisation de la société plus proche de la réalité.\n\nÊtre coté est aussi un gage de rigueur (publications, organisation) qui rassure les partenaires extérieurs."
+    },
+    {
+      "id": "fc30",
+      "theme": "marches_fi",
+      "srcChap": 5,
+      "src": "Chapitre 2 (notes) / UE5 dossier 5",
+      "q": "Inconvénients de l'introduction en Bourse",
+      "a": "• Le coût de l'introduction : entre 3 % et 7 % des fonds levés.\n• L'obligation de se dévoiler au regard des concurrents (transparence).\n• Le risque de perte de contrôle de l'entreprise.\n• La pression exercée par le marché en matière de rentabilité."
+    },
+    {
+      "id": "fc31",
+      "theme": "marches_fi",
+      "srcChap": 5,
+      "src": "Chapitre 2 (notes de cours)",
+      "q": "Les procédures d'introduction en Bourse",
+      "a": "• Diffusion directe avec placement garanti : un établissement financier place les titres auprès d'investisseurs restreints, et doit les acheter lui-même s'il ne trouve pas preneur.\n• OPO (Offre à Prix Ouvert) : fourchette de prix annoncée ; procédure la plus utilisée.\n• OPM (Offre à Prix Minimal) : vente aux enchères sur la base d'un prix minimum.\n• OPF (Offre à Prix Ferme) : nombre de titres et prix fixés à l'avance, en privilégiant les particuliers.\n• Cotation directe : comme l'OPM, mais tous les types d'ordres sont acceptés."
+    },
+    {
+      "id": "fc32",
+      "theme": "marches_fi",
+      "srcChap": 5,
+      "src": "Chapitre 2 (Les Marchés de Capitaux)",
+      "q": "La détermination du prix d'équilibre en cotation",
+      "a": "On construit le carnet d'ordres : les demandes sont classées par prix DÉCROISSANT, les offres par prix CROISSANT, avec les quantités cumulées.\n\nLe prix d'équilibre est celui qui permet le VOLUME D'ÉCHANGE MAXIMUM. À ce prix, certains ordres sont servis intégralement, d'autres partiellement."
+    },
+    {
+      "id": "fc33",
+      "theme": "marches_fi",
+      "srcChap": 5,
+      "src": "Chapitre 2 (notes de cours)",
+      "q": "Cotation en continu et cotation au fixing",
+      "a": "Cotation en continu : pré-ouverture (7h15, accumulation des ordres et prix d'ouverture théorique), ouverture (9h00), pré-clôture (17h30), clôture (17h35, prix de clôture).\n\nCotation au fixing (titres moins liquides) : fixing A = deux plages de négociation (matin et après-midi) ; fixing B = une seule séance l'après-midi."
+    },
+    {
+      "id": "fc34",
+      "theme": "marches_fi",
+      "srcChap": 5,
+      "src": "Chapitre 2 (notes de cours)",
+      "q": "Les ordres de bourse : compte et mentions",
+      "a": "Pour passer un ordre, il faut un compte chez un PSI (prestataire de services d'investissement : établissement de crédit ou société d'investissement).\n\nMentions obligatoires de l'ordre : le sens (achat/vente), la codification du titre, le nombre de titres, la durée de validité, les conditions de prix.\n\nDurée de validité : à la journée, durée déterminée (10-15 jours), ou à révocation."
+    },
+    {
+      "id": "fc35",
+      "theme": "marches_fi",
+      "srcChap": 5,
+      "src": "Chapitre 2 (notes de cours)",
+      "q": "Règles d'exécution des ordres de bourse",
+      "a": "Règle du PRIX : à l'achat, l'ordre à la limite la plus élevée est exécuté en premier ; à la vente, l'ordre à la limite la plus basse est exécuté en premier.\n\nRègle de CHRONOLOGIE : à sens et limite identiques, les ordres sont exécutés dans leur ordre exact d'arrivée."
+    },
+    {
+      "id": "fc36",
+      "theme": "derives",
+      "srcChap": 6,
+      "src": "Chapitre 2 (Les Marchés de Capitaux)",
+      "q": "Marchés, familles d'instruments et sous-jacents",
+      "a": "Les instruments de couverture s'échangent sur 2 MARCHÉS : de gré à gré et organisé.\n\nIls relèvent de 3 FAMILLES : contrats d'échange, contrats à terme, contrats d'option.\n\nIls portent sur 5 SOUS-JACENTS : matières premières et marchandises, taux d'intérêt, devises, actions, indices boursiers."
+    },
+    {
+      "id": "fc37",
+      "theme": "derives",
+      "srcChap": 6,
+      "src": "Chapitre 2 (Les Marchés de Capitaux)",
+      "q": "Le risque de taux et l'exposition",
+      "a": "Le risque de taux est une évolution défavorable des taux par rapport à une position initiale.\n\n• Emprunteur à taux variable : une HAUSSE des taux lui est défavorable.\n• Prêteur à taux variable : une BAISSE des taux lui est défavorable.\n• À taux fixe, l'effet est inversé.\n\nFace à un agent qui se couvre se trouve toujours un spéculateur."
+    },
+    {
+      "id": "fc38",
+      "theme": "derives",
+      "srcChap": 6,
+      "src": "Chapitre 2 (notes de cours)",
+      "q": "Le marché de gré à gré (OTC)",
+      "a": "Sur le marché de gré à gré (over the counter), les agents contractent directement entre eux, sans intermédiaire, ce qui permet des produits de couverture SUR MESURE.\n\nLe marché repose sur la confiance (transactions par téléphone ou mail, sans garantie).\n\nEn contrepartie de cette flexibilité, il existe un RISQUE DE CONTREPARTIE : non-paiement ou non-livraison."
+    },
+    {
+      "id": "fc39",
+      "theme": "derives",
+      "srcChap": 6,
+      "src": "Chapitre 2 (notes de cours)",
+      "q": "Le contrat à terme ferme",
+      "a": "Un contrat à terme ferme fixe aujourd'hui les conditions (quantité, prix) d'achat ou de vente d'un sous-jacent dont la transaction aura lieu à une date future.\n\nL'engagement est FERME et DÉFINITIF pour les deux parties : à l'échéance, l'actif est livré et payé, quelles que soient les conditions du marché à cette date."
+    },
+    {
+      "id": "fc40",
+      "theme": "derives",
+      "srcChap": 6,
+      "src": "Chapitre 2 (notes de cours)",
+      "q": "Le swap de taux",
+      "a": "Le swap de taux modifie l'exposition à un risque de taux (ou de change), ou permet de se financer à moindre coût. Les parties se rétrocèdent des intérêts calculés sur un même nominal notionnel mais sur des structures de taux différentes (pas d'échange de capital).\n\n• Basis swap : échange de taux variables sur des références différentes (EURIBOR, LIBOR, TME, TMO, TMB).\n• Coupon swap : conversion d'un taux fixe en taux variable ou inversement.\n\nDurée de 3 mois à 10 ans, montants de 1 à 10 M€."
+    },
+    {
+      "id": "fc41",
+      "theme": "derives",
+      "srcChap": 6,
+      "src": "Chapitre 2 (notes de cours)",
+      "q": "Le FRA (Forward Rate Agreement)",
+      "a": "Le FRA est un contrat de gré à gré qui fixe aujourd'hui un taux d'intérêt pour un emprunt ou un placement futur.\n\nIl n'oblige PAS à mettre en place le prêt : seul le DIFFÉRENTIEL d'intérêts entre le taux garanti et le taux de marché est échangé.\n\nUn emprunteur ACHÈTE un FRA (couverture contre la hausse des taux) ; un prêteur le VEND (couverture contre la baisse)."
+    },
+    {
+      "id": "fc42",
+      "theme": "derives",
+      "srcChap": 6,
+      "src": "Chapitre 2 (Les Marchés de Capitaux)",
+      "q": "Formule du différentiel FRA actualisé",
+      "a": "Le différentiel est calculé en fin de période mais versé en début de période, d'où son actualisation :\n\nDi = [(Tm − Tg) × C × n / 36 000] / [1 + Tm × n / 36 000]\n\n• Tm = taux de marché\n• Tg = taux garanti\n• C = capital notionnel\n• n = durée en jours\n\nSi Tm > Tg, l'acheteur (emprunteur) reçoit le différentiel ; si Tm < Tg, il le verse."
+    },
+    {
+      "id": "fc43",
+      "theme": "derives",
+      "srcChap": 6,
+      "src": "Chapitre 2 / UE5 dossier 1",
+      "q": "Le contrat Forward/Forward",
+      "a": "Le Forward/Forward fixe aujourd'hui le taux d'un emprunt (ou placement) futur, AVEC obligation de mise en place effective du prêt (contrairement au FRA).\n\nIl se décompose en une période d'attente (de la signature au départ de l'emprunt) et une période d'engagement.\n\nLa banque réalise une triple opération : emprunter sur les marchés pour la durée totale, placer pendant la période d'attente, puis prêter au client."
+    },
+    {
+      "id": "fc44",
+      "theme": "derives",
+      "srcChap": 6,
+      "src": "UE5 (annale 13/06/2025)",
+      "q": "Formule du taux Forward/Forward",
+      "a": "T(F/F) = [(T emprunt × durée emprunt) − (T placement × durée placement)] / [durée du prêt × (1 + T placement × durée placement / 36 000)]\n\n• La durée d'emprunt couvre attente + garantie\n• La durée de placement est la période d'attente\n• La durée du prêt est la période garantie"
+    },
+    {
+      "id": "fc45",
+      "theme": "derives",
+      "srcChap": 7,
+      "src": "Chapitre 2 (notes de cours)",
+      "q": "Le CAP",
+      "a": "Le CAP garantit à un emprunteur un taux d'intérêt MAXIMUM (taux plafond), tout en lui permettant de profiter d'une baisse des taux.\n\nMoyennant une prime, l'acheteur acquiert le droit (mais non l'obligation) d'encaisser le différentiel entre le taux de marché et le taux garanti lorsque le marché dépasse le plafond. Le vendeur encaisse la prime et s'exécute si l'option est exercée."
+    },
+    {
+      "id": "fc46",
+      "theme": "derives",
+      "srcChap": 7,
+      "src": "Chapitre 2 (notes de cours)",
+      "q": "Le FLOOR",
+      "a": "Le FLOOR garantit à un prêteur (placeur) un taux de rendement MINIMUM (taux plancher).\n\nMoyennant une prime, l'acheteur encaisse le différentiel entre le taux garanti et le taux de marché lorsque celui-ci passe sous le plancher."
+    },
+    {
+      "id": "fc47",
+      "theme": "derives",
+      "srcChap": 7,
+      "src": "Chapitre 2 (notes de cours)",
+      "q": "Le COLLAR",
+      "a": "Le COLLAR (tunnel) combine l'achat et la vente simultanés de deux contrats, afin de limiter le décaissement de prime : la prime encaissée sur le contrat vendu réduit la prime versée sur le contrat acheté.\n\n• Collar EMPRUNTEUR : achat d'un CAP + vente d'un FLOOR. Le coût d'emprunt est borné entre le plancher et le plafond.\n• Collar PRÊTEUR : vente d'un CAP + achat d'un FLOOR."
+    },
+    {
+      "id": "fc48",
+      "theme": "derives",
+      "srcChap": 7,
+      "src": "Chapitre 2 (notes de cours)",
+      "q": "Les options : call et put",
+      "a": "Une option donne à son détenteur le DROIT, mais non l'obligation, d'acheter (CALL) ou de vendre (PUT) un sous-jacent à un prix d'exercice convenu, moyennant le versement d'une prime.\n\n• Option européenne : exercice à l'échéance uniquement.\n• Option américaine : exercice à tout moment.\n\nLe vendeur encaisse la prime (définitivement acquise) et s'engage fermement à s'exécuter si l'acheteur lève l'option."
+    },
+    {
+      "id": "fc49",
+      "theme": "derives",
+      "srcChap": 7,
+      "src": "Chapitre 2 (Les Marchés de Capitaux)",
+      "q": "Les déterminants de la valeur d'une option",
+      "a": "La valeur (prime) d'une option dépend de cinq paramètres :\n• le cours du sous-jacent\n• le prix d'exercice\n• la volatilité du sous-jacent\n• la durée de vie de l'option\n• le niveau des taux d'intérêt\n\nLa valeur d'une option = valeur intrinsèque + valeur temps."
+    },
+    {
+      "id": "fc50",
+      "theme": "derives",
+      "srcChap": 7,
+      "src": "UE5 dossier 3 / Application 19",
+      "q": "Options de change : exportateur et importateur",
+      "a": "• Un EXPORTATEUR, qui recevra des devises, craint une BAISSE de la devise : il achète un PUT sur la devise (cours plancher garanti).\n• Un IMPORTATEUR, qui devra payer des devises, craint une HAUSSE de la devise : il achète un CALL sur la devise (cours plafond garanti).\n\nDans les deux cas, la prime est versée à l'achat et n'est pas récupérable. Si le marché est plus favorable que l'option, on abandonne l'option."
+    },
+    {
+      "id": "fc51",
+      "theme": "derives",
+      "srcChap": 8,
+      "src": "Chapitre 2 (notes de cours)",
+      "q": "Le marché organisé et la chambre de compensation",
+      "a": "Sur un marché organisé, les contreparties ne négocient pas entre elles : elles placent des ordres dont la confrontation dégage un prix.\n\nUne entreprise de marché (Euronext) fixe les règles et habilite les intervenants ; l'AMF est l'autorité de tutelle. Le carnet d'ordres public garantit l'égalité des intervenants, et la concentration des ordres assure la liquidité.\n\nLa chambre de compensation (LCH ClearNet) est la contrepartie unique : elle sert de « rideau » garantissant l'anonymat et supprime le risque de contrepartie."
+    },
+    {
+      "id": "fc52",
+      "theme": "derives",
+      "srcChap": 8,
+      "src": "Chapitre 2 (notes de cours)",
+      "q": "Dépôt de garantie et appel de marge",
+      "a": "Pour supprimer le risque de contrepartie, la chambre de compensation utilise deux mécanismes :\n\n1. Le DÉPÔT DE GARANTIE : à la transmission d'un ordre, l'opérateur dépose un pourcentage du montant du contrat.\n\n2. L'APPEL DE MARGE : chaque jour, la position est valorisée (cours de compensation). Si elle est perdante, l'opérateur a 24h pour reconstituer la marge, sinon il est éliminé. Si elle est gagnante, le gain peut être retiré ou laissé en dépôt rémunéré."
+    },
+    {
+      "id": "fc53",
+      "theme": "esg",
+      "srcChap": 9,
+      "src": "Chapitre 7 (notes de cours)",
+      "q": "L'économie verte",
+      "a": "Le GIEC alerte de longue date sur le lien fort entre les activités financières et le changement climatique.\n\nL'économie verte implique une refonte des modes de production et de consommation. C'est un concept MULTIDIMENSIONNEL qui ne se résume pas à la fin des émissions de gaz à effet de serre : il renvoie à l'idée d'une société en harmonie avec la nature."
+    },
+    {
+      "id": "fc54",
+      "theme": "esg",
+      "srcChap": 9,
+      "src": "Chapitre 7 (Critères extra-financiers)",
+      "q": "La théorie du Donut",
+      "a": "Développée en 2010 par l'économiste anglaise Kate Raworth pour expliciter ce que peut être l'économie verte.\n\nElle repose sur deux limites :\n• les limites planétaires (plafond) : seuils à ne pas dépasser pour ne pas mettre en danger les écosystèmes et les conditions de vie humaine ;\n• les limites sociales (plancher) : les besoins de base dont tout être humain devrait disposer.\n\nEntre les deux se trouve l'espace où l'humanité peut satisfaire ses besoins tout en respectant les écosystèmes et le climat."
+    },
+    {
+      "id": "fc55",
+      "theme": "esg",
+      "srcChap": 9,
+      "src": "Chapitre 7 (Critères extra-financiers)",
+      "q": "Les 7 principes de la théorie du Donut",
+      "a": "1. Changer de but : ne plus avoir le PIB pour seul indicateur.\n2. Avoir une vision globale : intégrer le social et l'environnement dans la vision économique.\n3. Nourrir et entretenir la nature humaine : l'humain ne domine pas la nature, il en fait partie.\n4. Intégrer l'aspect systémique : tenir compte des interactions complexes.\n5. Concevoir pour distribuer : les inégalités sont un échec du modèle, non une fatalité.\n6. Créer pour régénérer : un modèle régénératif et circulaire.\n7. Être sceptique sur la croissance économique : la croissance ne peut être l'unique but."
+    },
+    {
+      "id": "fc56",
+      "theme": "esg",
+      "srcChap": 9,
+      "src": "Chapitre 7 (Critères extra-financiers)",
+      "q": "Chronologie de la RSE et du développement durable",
+      "a": "1953 Howard Bowen · 1970 Club de Rome · 1987 Rapport Brundtland · 1992 Conférence de Rio · 2000 Pacte Global de l'ONU · 2009/2010 lois Grenelle I et II · 2010 norme ISO 26000 · 2014 (applicable dès 2017) directive NFRD · 2015 Objectifs de Développement Durable de l'ONU · 2016 loi Sapin II · 2017 loi sur le devoir de vigilance · 2019 loi PACTE · 2021 (applicable dès 2024) directive CSRD."
+    },
+    {
+      "id": "fc57",
+      "theme": "esg",
+      "srcChap": 9,
+      "src": "Chapitre 7 (notes de cours)",
+      "q": "Développement durable et RSE",
+      "a": "Développement durable (Rapport Brundtland) : répondre aux besoins actuels sans compromettre la capacité des générations futures à répondre aux leurs.\n\nLa RSE intègre les enjeux sociaux et climatiques dans la politique de l'entreprise, en respectant la législation et les aspirations des parties prenantes.\n\nLes lois Grenelle imposent pour la première fois aux entreprises cotées la publication d'un rapport RSE avec les comptes annuels."
+    },
+    {
+      "id": "fc58",
+      "theme": "esg",
+      "srcChap": 9,
+      "src": "Chapitre 7 (notes de cours)",
+      "q": "RSE et création de valeur",
+      "a": "Pendant longtemps, performance financière et performance environnementale/sociale ont été opposées. De nombreuses études démontrent l'inverse : la RSE peut être créatrice de valeur.\n\n• Croissance du chiffre d'affaires : les clients sont de plus en plus sensibles au développement durable et au respect des ressources naturelles.\n• Optimisation des investissements : des investissements plus durables et moins gourmands en énergie."
+    },
+    {
+      "id": "fc59",
+      "theme": "esg",
+      "srcChap": 9,
+      "src": "Chapitre 7 (Critères extra-financiers)",
+      "q": "Les 3 Scopes d'émissions de GES",
+      "a": "Le bilan des émissions de gaz à effet de serre se structure en 3 périmètres (Scopes) et 23 sous-catégories.\n\n• Scope 1 : émissions DIRECTES, sous le contrôle de l'entreprise.\n• Scope 2 : émissions INDIRECTES liées à l'énergie achetée.\n• Scope 3 : autres émissions indirectes, en amont et en aval de la chaîne de valeur."
+    },
+    {
+      "id": "fc60",
+      "theme": "esg",
+      "srcChap": 9,
+      "src": "Chapitre 7 (Critères extra-financiers)",
+      "q": "Postes d'émission des Scopes 1 et 2",
+      "a": "Scope 1 (5 postes) : sources fixes de combustion, sources mobiles de combustion, émissions directes de procédés, émissions directes fugitives, émissions directes issues des terres et de leur changement d'affectation.\n\nScope 2 (2 postes) : émissions indirectes liées à la consommation d'électricité, émissions indirectes liées à la consommation d'énergie de réseau hors électricité (chaleur, vapeur, froid)."
+    },
+    {
+      "id": "fc61",
+      "theme": "esg",
+      "srcChap": 9,
+      "src": "Chapitre 7 (Critères extra-financiers)",
+      "q": "Postes d'émission du Scope 3",
+      "a": "Le Scope 3 couvre, en amont et en aval : l'énergie non incluse dans les Scopes 1-2, les achats de produits et services, les biens immobilisés, les déchets, le transport de marchandises amont et aval, les déplacements professionnels, les actifs en leasing amont et aval, les investissements, le transport des visiteurs et clients, l'utilisation et la fin de vie des produits vendus, les franchises aval, les déplacements domicile-travail, les autres émissions indirectes."
+    },
+    {
+      "id": "fc62",
+      "theme": "esg",
+      "srcChap": 9,
+      "src": "Chapitre 7 (Critères extra-financiers)",
+      "q": "Les sigles du reporting extra-financier",
+      "a": "• NFRD : Non Financial Reporting Directive\n• DPEF : Déclaration de Performance Extra-Financière\n• KPI : Key Performance Indicator\n• CSRD : Corporate Sustainability Reporting Directive\n• ESRS : European Sustainability Reporting Standards (les normes de reporting de la CSRD)"
+    },
+    {
+      "id": "fc63",
+      "theme": "esg",
+      "srcChap": 9,
+      "src": "Chapitre 7 / CSRD - Checklist des ESRS",
+      "q": "Les 12 normes ESRS",
+      "a": "2 normes TRANSVERSALES : ESRS 1 (exigences générales ; structure en 4 piliers : Gouvernance, Stratégie, Gestion des impacts/risques/opportunités, Mesures et cibles) et ESRS 2 (informations générales).\n\n5 normes ENVIRONNEMENTALES : E1 changement climatique, E2 pollution, E3 ressources aquatiques et marines, E4 biodiversité et écosystèmes, E5 ressources et économie circulaire.\n\n4 normes SOCIALES : S1 effectifs de l'entreprise, S2 travailleurs de la chaîne de valeur, S3 communautés affectées, S4 consommateurs et utilisateurs finals.\n\n1 norme de GOUVERNANCE : G1 conduite des affaires."
+    },
+    {
+      "id": "fc64",
+      "theme": "esg",
+      "srcChap": 9,
+      "src": "Directive Omnibus",
+      "q": "La Directive Omnibus 2025 : objet",
+      "a": "La Directive Omnibus consolide et simplifie trois textes :\n• la CSRD (transparence des entreprises sur leurs impacts environnementaux, sociaux et de gouvernance) ;\n• le règlement Taxonomie (définition des activités durables, pour orienter la finance durable) ;\n• la CS3D (devoir de vigilance et de prévention des impacts négatifs sur les droits humains et l'environnement dans la chaîne de valeur).\n\n« Omnibus » désigne le regroupement de plusieurs révisions de textes en une seule proposition. La simplification a été demandée à la suite du rapport Draghi (charge administrative et coût jugés excessifs)."
+    },
+    {
+      "id": "fc65",
+      "theme": "esg",
+      "srcChap": 9,
+      "src": "Directive Omnibus",
+      "q": "Omnibus : conséquences sur la CSRD",
+      "a": "• Report de l'application : de 2026 à 2028 pour les entreprises initialement concernées.\n• Maintien de la double matérialité.\n• Relèvement des seuils : 1 000 salariés et 50 M€ de CA ou 25 M€ de bilan → réduction d'environ 80 % du nombre d'entreprises concernées.\n• Fin de la collecte de données auprès des fournisseurs non soumis à la CSRD.\n• Abandon des standards sectoriels.\n• Refonte des 12 ESRS (révision des thématiques et réduction probable du nombre de données)."
+    },
+    {
+      "id": "fc66",
+      "theme": "esg",
+      "srcChap": 9,
+      "src": "Directive Omnibus",
+      "q": "Omnibus : conséquences sur la CS3D et la Taxonomie",
+      "a": "CS3D :\n• Devoir de vigilance limité aux partenaires directs (sans le reste de la chaîne de valeur).\n• Évaluations tous les 5 ans, au lieu d'annuelles.\n• Suppression des sanctions financières proportionnelles au chiffre d'affaires.\n\nTaxonomie :\n• Réduction d'environ 70 % des obligations de reporting.\n• Introduction d'un seuil de matérialité financière.\n• Possibilité pour les banques d'exclure de leur Green Asset Ratio les actifs d'entreprises sorties du champ de la CSRD."
+    },
+    {
+      "id": "fc67",
+      "theme": "cout_capital",
+      "srcChap": 1,
+      "src": "UE5 (annale 13/06/2025)",
+      "q": "Règle d'arrondi (consigne du cours P. Robin)",
+      "a": "Consigne explicite de l'annale 2024-2025 (UE5, P. Robin) : toujours arrondir à 2 chiffres après la virgule, AU SUPÉRIEUR.\n\nExemple : 0,21034 → 0,22.\n\nÀ appliquer systématiquement à tous les résultats de calcul."
+    }
+  ],
+  "quizQuestions": [
+    {
+      "q": "Le CMPC représente :",
+      "theme": "cout_capital",
+      "o": [
+        "Le coût de la dette avant impôt",
+        "La rentabilité minimale exigée par l'ensemble des apporteurs de fonds",
+        "Le taux de croissance du dividende",
+        "Le rendement du taux sans risque"
+      ],
+      "c": 1,
+      "e": "Le CMPC est le coût des ressources financières de l'entreprise pondéré par le poids de chaque source. C'est la rentabilité exigée par les apporteurs et le taux d'actualisation de la VAN.",
+      "src": "Chapitre 1",
+      "srcChap": 1
+    },
+    {
+      "q": "Dans la formule du CMPC, Rd est multiplié par (1 − IS) car :",
+      "theme": "cout_capital",
+      "o": [
+        "Les intérêts d'emprunt sont déductibles du résultat imposable",
+        "La dette est sans risque",
+        "Les dividendes sont déductibles",
+        "Le taux d'IS est nul"
+      ],
+      "c": 0,
+      "e": "Les intérêts d'emprunt sont déductibles : le coût de la dette retenu est donc le coût net d'impôt, Rd × (1 − IS).",
+      "src": "Chapitre 1",
+      "srcChap": 1
+    },
+    {
+      "q": "Selon le cours, le coût de la dette Rd se construit à partir :",
+      "theme": "cout_capital",
+      "o": [
+        "De la moyenne des taux d'emprunts passés",
+        "Du taux sans risque (OAT) augmenté du spread",
+        "Du taux de dividende",
+        "Du CMPC sectoriel"
+      ],
+      "c": 1,
+      "e": "Rd n'est pas la moyenne des taux passés mais le taux futur : on part du taux sans risque (OAT) et on ajoute le spread, surcoût lié au risque de l'entreprise.",
+      "src": "Chapitre 1",
+      "srcChap": 1
+    },
+    {
+      "q": "Pour déterminer un coût de la dette non donné, la méthode du cours est :",
+      "theme": "cout_capital",
+      "o": [
+        "La moyenne arithmétique des coupons",
+        "L'interpolation linéaire encadrant le TRI des flux de la dette",
+        "Le MEDAF",
+        "Le modèle de Gordon-Shapiro"
+      ],
+      "c": 1,
+      "e": "On détermine le TRI qui actualise les flux de la dette à sa valeur actuelle, par encadrement entre deux taux puis interpolation linéaire.",
+      "src": "Applications Chapitre 1",
+      "srcChap": 1
+    },
+    {
+      "q": "Selon Gordon-Shapiro, pour des dividendes croissants, Rcp vaut :",
+      "theme": "cout_capital",
+      "o": [
+        "D1 / V0",
+        "D1 / V0 + g",
+        "D1 − g",
+        "V0 / D1"
+      ],
+      "c": 1,
+      "e": "Pour des dividendes croissants au taux g : Rcp = D1 / V0 + g, où D1 est le premier dividende futur et V0 le cours actuel.",
+      "src": "Chapitre 1",
+      "srcChap": 1
+    },
+    {
+      "q": "La formule du MEDAF est :",
+      "theme": "cout_capital",
+      "o": [
+        "Rcp = Rf × β",
+        "Rcp = Rf + βcp × (E(Rm) − Rf)",
+        "Rcp = Rm + Rf × β",
+        "Rcp = D1 / V0 + g"
+      ],
+      "c": 1,
+      "e": "MEDAF : Rcp = Rf + βcp × (E(Rm) − Rf) = Rf + βcp × prime de risque du marché.",
+      "src": "Chapitre 1",
+      "srcChap": 1
+    },
+    {
+      "q": "La prime de risque du marché est égale à :",
+      "theme": "cout_capital",
+      "o": [
+        "Rf − E(Rm)",
+        "E(Rm) − Rf",
+        "β × Rf",
+        "E(Rm) × β"
+      ],
+      "c": 1,
+      "e": "La prime de risque du marché = espérance de rentabilité du marché moins taux sans risque = E(Rm) − Rf.",
+      "src": "Chapitre 1",
+      "srcChap": 1
+    },
+    {
+      "q": "Le risque rémunéré par le MEDAF est :",
+      "theme": "cout_capital",
+      "o": [
+        "Le risque spécifique (sectoriel)",
+        "Le risque systémique (de marché)",
+        "Les deux risques à parts égales",
+        "Aucun des deux"
+      ],
+      "c": 1,
+      "e": "Le risque systémique n'est pas diversifiable : il est rémunéré. Le risque spécifique est diversifiable : il n'est pas rémunéré.",
+      "src": "Chapitre 1",
+      "srcChap": 2
+    },
+    {
+      "q": "Un béta supérieur à 1 signifie que le titre :",
+      "theme": "cout_capital",
+      "o": [
+        "Est sans risque",
+        "Amplifie les variations du marché",
+        "Réplique exactement les variations du marché",
+        "Atténue les variations du marché"
+      ],
+      "c": 1,
+      "e": "β > 1 : le titre est plus sensible que le marché, il amplifie ses variations. β < 1 : titre défensif. β = 1 : le titre réplique le marché.",
+      "src": "Chapitre 1",
+      "srcChap": 2
+    },
+    {
+      "q": "Quel facteur influence le béta selon le cours ?",
+      "theme": "cout_capital",
+      "o": [
+        "Le nombre de salariés",
+        "La structure des coûts (charges fixes / variables)",
+        "La nationalité des actionnaires",
+        "La date de création de l'entreprise"
+      ],
+      "c": 1,
+      "e": "Le cours identifie 4 facteurs : structure des coûts, sensibilité du secteur à la conjoncture, capacité à déterminer les flux futurs, structure financière.",
+      "src": "Chapitre 1",
+      "srcChap": 2
+    },
+    {
+      "q": "Le béta désendetté (béta de l'actif économique) reflète :",
+      "theme": "cout_capital",
+      "o": [
+        "Le risque de marché et le risque financier",
+        "Le seul risque de marché, indépendant de la structure financière",
+        "Le seul risque financier lié à l'endettement",
+        "Aucun risque"
+      ],
+      "c": 1,
+      "e": "Le béta désendetté ne reflète que le risque de marché de l'activité. Le béta endetté ajoute le risque financier lié à l'endettement.",
+      "src": "Chapitre 1",
+      "srcChap": 2
+    },
+    {
+      "q": "Pour passer du béta endetté au béta désendetté, on :",
+      "theme": "cout_capital",
+      "o": [
+        "Multiplie par [1 + (D/CP)(1 − IS)]",
+        "Divise par [1 + (D/CP)(1 − IS)]",
+        "Ajoute le spread",
+        "Soustrait le taux sans risque"
+      ],
+      "c": 1,
+      "e": "β désendetté = β endetté / [1 + (D/CP)(1 − IS)]. On réendette en multipliant par le même facteur.",
+      "src": "Chapitre 1",
+      "srcChap": 2
+    },
+    {
+      "q": "Pour estimer le béta d'une société non cotée, on :",
+      "theme": "cout_capital",
+      "o": [
+        "Calcule directement Cov/Var sur son cours",
+        "Désendette le béta de comparables cotés, on le moyenne, puis on le réendette",
+        "Utilise le taux des OAT",
+        "Retient toujours β = 1"
+      ],
+      "c": 1,
+      "e": "Une société non cotée n'a pas de droite de régression : on prend des comparables cotés, on désendette leur béta, on en fait la moyenne, puis on réendette avec la structure de la société non cotée.",
+      "src": "Chapitre 1",
+      "srcChap": 2
+    },
+    {
+      "q": "Le béta d'une action se calcule comme :",
+      "theme": "cout_capital",
+      "o": [
+        "L'écart-type des rendements de l'action",
+        "Covariance(R titre, R marché) / Variance(R marché)",
+        "Le rendement moyen de l'action",
+        "Le ratio dividende / prix"
+      ],
+      "c": 1,
+      "e": "β = Covariance(R titre, R marché) / Variance(R marché). C'est la pente de la droite de régression du titre sur le marché.",
+      "src": "Chapitre 1",
+      "srcChap": 2
+    },
+    {
+      "q": "La prime d'illiquidité :",
+      "theme": "cout_capital",
+      "o": [
+        "Compense un manque de trésorerie",
+        "Majore le Rcp d'une société non cotée car ses titres sont difficiles à céder",
+        "Réduit le coût de la dette",
+        "S'applique aux sociétés cotées"
+      ],
+      "c": 1,
+      "e": "La prime d'illiquidité n'a rien à voir avec la trésorerie : elle majore le Rcp d'une société non cotée, dont les titres sont difficiles à céder. Exemple du cours : 4 points.",
+      "src": "Chapitre 1",
+      "srcChap": 2
+    },
+    {
+      "q": "Dans une décision d'investissement, le CMPC sert :",
+      "theme": "cout_capital",
+      "o": [
+        "À calculer le dividende",
+        "De taux d'actualisation de la VAN du projet",
+        "À fixer le cours de Bourse",
+        "À calculer l'impôt sur les sociétés"
+      ],
+      "c": 1,
+      "e": "Le CMPC est le taux d'actualisation des flux du projet : si la VAN obtenue est positive, le projet est retenu.",
+      "src": "Chapitre 1",
+      "srcChap": 1
+    },
+    {
+      "q": "Selon la consigne d'arrondi du cours Robin :",
+      "theme": "cout_capital",
+      "o": [
+        "Arrondir à l'entier inférieur",
+        "Arrondir à 2 décimales AU SUPÉRIEUR (0,21034 → 0,22)",
+        "Arrondir à 4 décimales",
+        "Ne pas arrondir"
+      ],
+      "c": 1,
+      "e": "Consigne explicite de l'annale : toujours 2 chiffres après la virgule, au supérieur.",
+      "src": "UE5 (annale)",
+      "srcChap": 1
+    },
+    {
+      "q": "Le NEU CP est :",
+      "theme": "marches_fi",
+      "o": [
+        "Une action",
+        "Un titre de créance négociable à court terme du marché monétaire",
+        "Une obligation à 10 ans",
+        "Un produit dérivé optionnel"
+      ],
+      "c": 1,
+      "e": "Le NEU CP (Negotiable European Commercial Paper) est un titre de créance négociable court terme émis sur le marché monétaire.",
+      "src": "Chapitre 2",
+      "srcChap": 3
+    },
+    {
+      "q": "Avec des intérêts précomptés, le souscripteur d'un NEU CP :",
+      "theme": "marches_fi",
+      "o": [
+        "Reçoit nominal + intérêts à l'échéance",
+        "Verse une somme actualisée et reçoit le nominal à l'échéance",
+        "Ne paie aucun intérêt",
+        "Paie les intérêts chaque mois"
+      ],
+      "c": 1,
+      "e": "Précompté : le montant versé = Nominal / (1 + taux × n / 36 000) ; à l'échéance le souscripteur reçoit le nominal.",
+      "src": "Chapitre 2",
+      "srcChap": 3
+    },
+    {
+      "q": "Lorsque le taux d'intérêt du marché augmente, le prix d'une obligation :",
+      "theme": "marches_fi",
+      "o": [
+        "Augmente",
+        "Diminue",
+        "Reste stable",
+        "Double"
+      ],
+      "c": 1,
+      "e": "Relation inverse prix / taux : une hausse des taux fait baisser la valeur actuelle des flux, donc le prix de l'obligation baisse.",
+      "src": "Chapitre 2",
+      "srcChap": 4
+    },
+    {
+      "q": "Le taux actuariel brut d'une obligation est :",
+      "theme": "marches_fi",
+      "o": [
+        "Le taux nominal de l'obligation",
+        "Le taux qui égalise le prix et la somme des flux futurs actualisés",
+        "Le taux des OAT",
+        "Le taux d'intérêt journalier"
+      ],
+      "c": 1,
+      "e": "Le taux actuariel brut est le taux d'actualisation qui égalise le prix (d'émission ou de marché) et la somme des flux futurs.",
+      "src": "Chapitre 2",
+      "srcChap": 4
+    },
+    {
+      "q": "Le taux actuariel est supérieur au taux nominal lorsque :",
+      "theme": "marches_fi",
+      "o": [
+        "Le prix d'émission dépasse le nominal",
+        "Il existe une prime d'émission (prix d'émission < nominal)",
+        "Le coupon est nul",
+        "L'emprunt est remboursé in fine"
+      ],
+      "c": 1,
+      "e": "Une prime d'émission (prix d'émission inférieur au nominal) ajoute un gain en capital, donc le taux actuariel dépasse le taux nominal.",
+      "src": "Chapitre 2",
+      "srcChap": 4
+    },
+    {
+      "q": "Les 3 modes de remboursement d'un emprunt obligataire sont :",
+      "theme": "marches_fi",
+      "o": [
+        "Linéaire / exponentiel / logarithmique",
+        "In fine / annuités constantes / amortissement constant",
+        "Mensuel / trimestriel / annuel",
+        "Public / privé / mixte"
+      ],
+      "c": 1,
+      "e": "In fine (capital à l'échéance), annuités constantes (annuité fixe), amortissement constant (part de capital constante, annuités dégressives).",
+      "src": "Chapitre 1",
+      "srcChap": 4
+    },
+    {
+      "q": "La formule de l'annuité constante est :",
+      "theme": "marches_fi",
+      "o": [
+        "a = C × i × n",
+        "a = C / n",
+        "a = C × i / [1 − (1 + i)⁻ⁿ]",
+        "a = C × (1 + i)ⁿ"
+      ],
+      "c": 2,
+      "e": "a = C × i / [1 − (1 + i)⁻ⁿ], où C = capital, i = taux, n = durée.",
+      "src": "Chapitre 1",
+      "srcChap": 4
+    },
+    {
+      "q": "Le coupon couru d'une obligation représente :",
+      "theme": "marches_fi",
+      "o": [
+        "Le prix de remboursement final",
+        "La fraction de coupon acquise depuis le dernier détachement",
+        "La prime d'émission",
+        "Le taux actuariel net"
+      ],
+      "c": 1,
+      "e": "Coupon couru = taux nominal × (jours écoulés / 365). L'obligation est cotée au pied du coupon, hors coupon couru.",
+      "src": "Chapitre 2",
+      "srcChap": 4
+    },
+    {
+      "q": "La duration d'une obligation correspond :",
+      "theme": "marches_fi",
+      "o": [
+        "Au taux de coupon annuel",
+        "À la durée de détention qui immunise le portefeuille contre les variations de taux",
+        "À la valeur nominale",
+        "Au nombre de coupons restants"
+      ],
+      "c": 1,
+      "e": "La duration est la durée de détention pour laquelle une variation des taux n'a aucune incidence : le portefeuille est alors immunisé.",
+      "src": "Chapitre 2",
+      "srcChap": 4
+    },
+    {
+      "q": "Parmi les 3 déterminants du prix d'une obligation, le cours retient :",
+      "theme": "marches_fi",
+      "o": [
+        "La couleur de l'émetteur",
+        "Le taux d'intérêt, la valeur du coupon et la durée de l'emprunt",
+        "Le PIB national",
+        "Le nombre d'actionnaires"
+      ],
+      "c": 1,
+      "e": "Les 3 déterminants : le taux d'intérêt (relation inverse), la valeur du coupon (un coupon faible accroît la sensibilité), la durée de l'emprunt.",
+      "src": "Chapitre 2",
+      "srcChap": 4
+    },
+    {
+      "q": "Une raison de s'introduire en Bourse est :",
+      "theme": "marches_fi",
+      "o": [
+        "Augmenter l'impôt sur les sociétés",
+        "Lever des fonds par la création de nouveaux titres",
+        "Réduire la transparence",
+        "Supprimer les actionnaires"
+      ],
+      "c": 1,
+      "e": "L'introduction en Bourse permet de lever des fonds, d'accéder aux marchés de capitaux, de faciliter le départ des actionnaires historiques.",
+      "src": "Chapitre 2",
+      "srcChap": 5
+    },
+    {
+      "q": "Un inconvénient de l'introduction en Bourse est :",
+      "theme": "marches_fi",
+      "o": [
+        "L'accès facilité au capital",
+        "Le coût de l'introduction (3 à 7 % des fonds levés) et la pression du marché",
+        "La hausse de la notoriété",
+        "La revalorisation de la société"
+      ],
+      "c": 1,
+      "e": "Inconvénients : coût de 3 à 7 %, transparence imposée face aux concurrents, risque de perte de contrôle, pression du marché sur la rentabilité.",
+      "src": "Chapitre 2 / UE5",
+      "srcChap": 5
+    },
+    {
+      "q": "La procédure d'introduction par enchères sur la base d'un prix minimum est :",
+      "theme": "marches_fi",
+      "o": [
+        "L'OPF (Offre à Prix Ferme)",
+        "L'OPM (Offre à Prix Minimal)",
+        "Le placement garanti",
+        "La cotation directe"
+      ],
+      "c": 1,
+      "e": "L'OPM se rapproche d'une vente aux enchères sur la base d'un prix minimum.",
+      "src": "Chapitre 2",
+      "srcChap": 5
+    },
+    {
+      "q": "Dans le placement garanti, l'établissement financier :",
+      "theme": "marches_fi",
+      "o": [
+        "Fixe le cours de clôture",
+        "Doit acheter lui-même les titres s'il ne trouve pas preneur",
+        "Interdit aux particuliers de souscrire",
+        "Garantit un dividende aux actionnaires"
+      ],
+      "c": 1,
+      "e": "Dans la diffusion directe avec placement garanti, l'établissement place les titres auprès d'investisseurs restreints et les achète lui-même à défaut de preneur.",
+      "src": "Chapitre 2",
+      "srcChap": 5
+    },
+    {
+      "q": "Le prix d'équilibre lors d'une cotation est celui qui :",
+      "theme": "marches_fi",
+      "o": [
+        "Maximise le volume d'échange",
+        "Minimise le nombre d'ordres",
+        "Correspond toujours au prix le plus élevé demandé",
+        "Est fixé par l'AMF"
+      ],
+      "c": 0,
+      "e": "Le prix d'équilibre est celui qui permet le volume d'échange maximum, à partir du carnet d'ordres.",
+      "src": "Chapitre 2",
+      "srcChap": 5
+    },
+    {
+      "q": "Règle d'exécution des ordres : à l'achat, est exécuté en premier l'ordre :",
+      "theme": "marches_fi",
+      "o": [
+        "À la limite la plus basse",
+        "À la limite la plus élevée",
+        "Le plus récent",
+        "Le plus petit en quantité"
+      ],
+      "c": 1,
+      "e": "Règle du prix : à l'achat, l'ordre à la limite la plus élevée passe en premier ; à la vente, l'ordre à la limite la plus basse. Puis règle de chronologie.",
+      "src": "Chapitre 2",
+      "srcChap": 5
+    },
+    {
+      "q": "Un ordre de bourse doit obligatoirement préciser :",
+      "theme": "marches_fi",
+      "o": [
+        "Le nom du dirigeant de l'émetteur",
+        "Le sens, la codification du titre, le nombre de titres, la durée de validité, les conditions de prix",
+        "Le taux d'IS de l'émetteur",
+        "La note ESG de l'émetteur"
+      ],
+      "c": 1,
+      "e": "Mentions obligatoires d'un ordre : sens, codification du titre, nombre de titres, durée de validité, conditions de prix.",
+      "src": "Chapitre 2",
+      "srcChap": 5
+    },
+    {
+      "q": "Le marché de gré à gré (OTC) se caractérise par :",
+      "theme": "derives",
+      "o": [
+        "Une chambre de compensation obligatoire",
+        "Des contrats sur mesure et un risque de contrepartie",
+        "Des contrats standardisés",
+        "Une cotation publique en continu"
+      ],
+      "c": 1,
+      "e": "Sur le marché de gré à gré, les agents contractent directement, avec des produits sur mesure mais un risque de contrepartie (non-paiement, non-livraison).",
+      "src": "Chapitre 2",
+      "srcChap": 6
+    },
+    {
+      "q": "Un contrat à terme ferme :",
+      "theme": "derives",
+      "o": [
+        "Laisse le choix d'exécuter ou non",
+        "Engage fermement et définitivement les deux parties",
+        "Ne porte que sur des actions",
+        "Est toujours optionnel"
+      ],
+      "c": 1,
+      "e": "Le contrat à terme ferme engage fermement les deux parties : à l'échéance, l'actif est livré et payé quelles que soient les conditions de marché.",
+      "src": "Chapitre 2",
+      "srcChap": 6
+    },
+    {
+      "q": "Le swap de taux :",
+      "theme": "derives",
+      "o": [
+        "Échange des capitaux entre les parties",
+        "Échange des flux d'intérêts sur un nominal notionnel, sans échange de capital",
+        "Supprime tout intérêt",
+        "Se traite sur le marché organisé"
+      ],
+      "c": 1,
+      "e": "Le swap de taux consiste à se rétrocéder des intérêts calculés sur un même nominal notionnel mais sur des structures de taux différentes, sans échange de capital.",
+      "src": "Chapitre 2",
+      "srcChap": 6
+    },
+    {
+      "q": "Un FRA (Forward Rate Agreement) :",
+      "theme": "derives",
+      "o": [
+        "Oblige à mettre en place le prêt",
+        "Fixe un taux futur ; seul le différentiel d'intérêts est échangé (hors-bilan)",
+        "Est une action cotée",
+        "Se négocie sur le marché organisé"
+      ],
+      "c": 1,
+      "e": "Le FRA fixe un taux futur sans obligation de mise en place du prêt : seul le différentiel d'intérêts est versé.",
+      "src": "Chapitre 2",
+      "srcChap": 6
+    },
+    {
+      "q": "La différence entre FRA et Forward/Forward est que :",
+      "theme": "derives",
+      "o": [
+        "Le FRA porte sur des actions",
+        "Le Forward/Forward implique la mise en place effective du prêt, pas le FRA",
+        "Le FRA se traite sur un marché organisé",
+        "Il n'y a aucune différence"
+      ],
+      "c": 1,
+      "e": "Le Forward/Forward implique la mise en place effective du prêt (opération réelle) ; le FRA n'échange que le différentiel d'intérêts.",
+      "src": "Chapitre 2",
+      "srcChap": 6
+    },
+    {
+      "q": "Un CAP est acheté par :",
+      "theme": "derives",
+      "o": [
+        "Un prêteur à taux fixe",
+        "Un emprunteur à taux variable voulant plafonner son taux",
+        "Une banque centrale",
+        "Un actionnaire cherchant un dividende"
+      ],
+      "c": 1,
+      "e": "Le CAP garantit un taux d'emprunt maximum : il est acheté par un emprunteur à taux variable qui craint une hausse des taux.",
+      "src": "Chapitre 2",
+      "srcChap": 7
+    },
+    {
+      "q": "Un FLOOR garantit :",
+      "theme": "derives",
+      "o": [
+        "Un taux d'emprunt maximum",
+        "Un taux de placement minimum à un prêteur",
+        "La valeur d'une action",
+        "Le versement d'un dividende"
+      ],
+      "c": 1,
+      "e": "Le FLOOR garantit un taux de rendement minimum (plancher) à un prêteur / placeur à taux variable.",
+      "src": "Chapitre 2",
+      "srcChap": 7
+    },
+    {
+      "q": "Le collar emprunteur combine :",
+      "theme": "derives",
+      "o": [
+        "Achat d'un CAP + achat d'un FLOOR",
+        "Achat d'un CAP + vente d'un FLOOR",
+        "Vente d'un CAP + vente d'un FLOOR",
+        "Vente d'un CAP + achat d'un FLOOR"
+      ],
+      "c": 1,
+      "e": "Collar emprunteur : achat d'un CAP (protection contre la hausse) + vente d'un FLOOR (qui finance la prime). Le coût est borné entre plancher et plafond.",
+      "src": "Chapitre 2",
+      "srcChap": 7
+    },
+    {
+      "q": "Une option donne à son acheteur :",
+      "theme": "derives",
+      "o": [
+        "L'obligation d'acheter le sous-jacent",
+        "Le droit, non l'obligation, d'acheter (call) ou de vendre (put)",
+        "Une action gratuite",
+        "Un coupon garanti"
+      ],
+      "c": 1,
+      "e": "Une option confère un droit, et non une obligation, d'acheter (call) ou de vendre (put), moyennant une prime.",
+      "src": "Chapitre 2",
+      "srcChap": 7
+    },
+    {
+      "q": "Une option européenne :",
+      "theme": "derives",
+      "o": [
+        "S'exerce à tout moment",
+        "S'exerce uniquement à l'échéance",
+        "N'a pas de prime",
+        "Est interdite en France"
+      ],
+      "c": 1,
+      "e": "L'option européenne s'exerce uniquement à l'échéance ; l'option américaine s'exerce à tout moment.",
+      "src": "Chapitre 2",
+      "srcChap": 7
+    },
+    {
+      "q": "La valeur (prime) d'une option dépend, selon le cours, de :",
+      "theme": "derives",
+      "o": [
+        "La note ESG de l'émetteur",
+        "Le cours du sous-jacent, le prix d'exercice, la volatilité, la durée de vie, le niveau des taux",
+        "Le nombre d'actionnaires",
+        "Le PIB"
+      ],
+      "c": 1,
+      "e": "Les 5 déterminants : cours du sous-jacent, prix d'exercice, volatilité, durée de vie, niveau des taux.",
+      "src": "Chapitre 2",
+      "srcChap": 7
+    },
+    {
+      "q": "Un exportateur qui va recevoir des devises se couvre en :",
+      "theme": "derives",
+      "o": [
+        "Achetant un call sur la devise",
+        "Achetant un put sur la devise",
+        "Vendant un put",
+        "Ne faisant rien"
+      ],
+      "c": 1,
+      "e": "L'exportateur craint une baisse de la devise qu'il recevra : il achète un put (droit de vendre à un cours plancher garanti).",
+      "src": "UE5 dossier 3",
+      "srcChap": 7
+    },
+    {
+      "q": "Un importateur qui devra payer des devises se couvre en :",
+      "theme": "derives",
+      "o": [
+        "Achetant un put sur la devise",
+        "Achetant un call sur la devise",
+        "Vendant un call",
+        "Vendant un put"
+      ],
+      "c": 1,
+      "e": "L'importateur craint une hausse de la devise qu'il devra payer : il achète un call (droit d'acheter à un cours plafond garanti).",
+      "src": "Chapitre 2",
+      "srcChap": 7
+    },
+    {
+      "q": "La chambre de compensation (LCH ClearNet) :",
+      "theme": "derives",
+      "o": [
+        "Fixe le taux directeur",
+        "Est la contrepartie unique et supprime le risque de contrepartie",
+        "Émet des actions",
+        "Note les entreprises"
+      ],
+      "c": 1,
+      "e": "La chambre de compensation s'interpose comme contrepartie unique, garantit l'anonymat et supprime le risque de contrepartie sur le marché organisé.",
+      "src": "Chapitre 2",
+      "srcChap": 8
+    },
+    {
+      "q": "L'appel de marge consiste à :",
+      "theme": "derives",
+      "o": [
+        "Verser un dividende aux actionnaires",
+        "Réévaluer chaque jour la position et reconstituer la marge si elle est perdante",
+        "Payer l'impôt sur les sociétés",
+        "Fixer le prix d'exercice d'une option"
+      ],
+      "c": 1,
+      "e": "Chaque jour, la position est valorisée. Si elle est perdante, l'opérateur a 24h pour reconstituer la marge, sinon il est éliminé.",
+      "src": "Chapitre 2",
+      "srcChap": 8
+    },
+    {
+      "q": "La théorie du Donut a été développée par :",
+      "theme": "esg",
+      "o": [
+        "Milton Friedman",
+        "Kate Raworth, en 2010",
+        "Le GIEC",
+        "L'OCDE"
+      ],
+      "c": 1,
+      "e": "La théorie du Donut a été développée en 2010 par l'économiste anglaise Kate Raworth.",
+      "src": "Chapitre 7",
+      "srcChap": 9
+    },
+    {
+      "q": "La théorie du Donut repose sur :",
+      "theme": "esg",
+      "o": [
+        "Un seul cercle de croissance",
+        "Deux limites : un plancher social et un plafond planétaire",
+        "Le seul critère du PIB",
+        "La croissance illimitée"
+      ],
+      "c": 1,
+      "e": "Le Donut est délimité par les limites sociales (plancher, besoins de base) et les limites planétaires (plafond, écosystèmes).",
+      "src": "Chapitre 7",
+      "srcChap": 9
+    },
+    {
+      "q": "Combien de principes structurent la théorie du Donut ?",
+      "theme": "esg",
+      "o": [
+        "3 principes",
+        "5 principes",
+        "7 principes",
+        "10 principes"
+      ],
+      "c": 2,
+      "e": "La théorie du Donut repose sur 7 principes (changer de but, vision globale, nature humaine, systémique, distribuer, régénérer, scepticisme sur la croissance).",
+      "src": "Chapitre 7",
+      "srcChap": 9
+    },
+    {
+      "q": "Selon le GHG Protocol, les émissions liées à l'électricité achetée relèvent du :",
+      "theme": "esg",
+      "o": [
+        "Scope 1",
+        "Scope 2",
+        "Scope 3 amont",
+        "Scope 3 aval"
+      ],
+      "c": 1,
+      "e": "Scope 1 = émissions directes ; Scope 2 = émissions indirectes liées à l'énergie achetée (électricité, chaleur) ; Scope 3 = autres émissions indirectes.",
+      "src": "Chapitre 7",
+      "srcChap": 9
+    },
+    {
+      "q": "Le Scope 1 correspond aux émissions :",
+      "theme": "esg",
+      "o": [
+        "Directes (combustion, procédés, fugitives, terres)",
+        "Liées à l'électricité achetée",
+        "De la chaîne de valeur amont et aval",
+        "Financières"
+      ],
+      "c": 0,
+      "e": "Le Scope 1 regroupe les émissions directes : sources fixes et mobiles de combustion, procédés, émissions fugitives, émissions issues des terres.",
+      "src": "Chapitre 7",
+      "srcChap": 9
+    },
+    {
+      "q": "Combien de normes ESRS au total ?",
+      "theme": "esg",
+      "o": [
+        "8 normes",
+        "10 normes",
+        "12 normes",
+        "16 normes"
+      ],
+      "c": 2,
+      "e": "12 ESRS : 2 transversales (ESRS 1 et 2) + 5 environnementales (E1-E5) + 4 sociales (S1-S4) + 1 gouvernance (G1).",
+      "src": "Chapitre 7 / CSRD Checklist",
+      "srcChap": 9
+    },
+    {
+      "q": "Les 12 normes ESRS se répartissent en :",
+      "theme": "esg",
+      "o": [
+        "4 E + 4 S + 4 G",
+        "2 transversales + 5 E + 4 S + 1 G",
+        "6 E + 6 S",
+        "12 normes environnementales"
+      ],
+      "c": 1,
+      "e": "2 normes transversales (ESRS 1, ESRS 2), 5 environnementales, 4 sociales, 1 de gouvernance.",
+      "src": "Chapitre 7",
+      "srcChap": 9
+    },
+    {
+      "q": "La Directive Omnibus 2025 vise à :",
+      "theme": "esg",
+      "o": [
+        "Renforcer les sanctions ESG",
+        "Consolider et simplifier la CSRD, la Taxonomie et la CS3D",
+        "Créer une nouvelle taxe carbone",
+        "Supprimer la RSE"
+      ],
+      "c": 1,
+      "e": "L'Omnibus regroupe en une seule proposition la simplification de la CSRD, du règlement Taxonomie et de la CS3D.",
+      "src": "Directive Omnibus",
+      "srcChap": 9
+    },
+    {
+      "q": "Selon l'Omnibus, les seuils CSRD sont relevés à :",
+      "theme": "esg",
+      "o": [
+        "250 salariés / 25 M€ de CA",
+        "500 salariés / 40 M€ de CA",
+        "1 000 salariés et 50 M€ de CA ou 25 M€ de bilan",
+        "5 000 salariés / 100 M€ de CA"
+      ],
+      "c": 2,
+      "e": "Nouveaux seuils : 1 000 salariés et 50 M€ de CA ou 25 M€ de bilan, réduisant d'environ 80 % le nombre d'entreprises concernées.",
+      "src": "Directive Omnibus",
+      "srcChap": 9
+    },
+    {
+      "q": "La simplification Omnibus a été demandée à la suite :",
+      "theme": "esg",
+      "o": [
+        "Du rapport Draghi sur la compétitivité européenne",
+        "D'une décision de l'ONU",
+        "D'un référendum",
+        "De la loi PACTE"
+      ],
+      "c": 0,
+      "e": "Le rapport Draghi a pointé une charge administrative et un coût excessifs, remettant en cause la compétitivité des plus petites structures.",
+      "src": "Directive Omnibus",
+      "srcChap": 9
+    },
+    {
+      "q": "Le rapport qui définit le développement durable est :",
+      "theme": "esg",
+      "o": [
+        "Le rapport Draghi",
+        "Le rapport Brundtland (1987)",
+        "Le Club de Rome",
+        "Le Pacte Global"
+      ],
+      "c": 1,
+      "e": "Le Rapport Brundtland (1987) définit le développement durable : répondre aux besoins actuels sans compromettre ceux des générations futures.",
+      "src": "Chapitre 7",
+      "srcChap": 9
+    },
+    {
+      "q": "Selon le cours, RSE et performance financière :",
+      "theme": "esg",
+      "o": [
+        "Sont toujours opposées",
+        "Ne s'opposent pas : la RSE peut être créatrice de valeur",
+        "La RSE détruit systématiquement de la valeur",
+        "Sont sans lien"
+      ],
+      "c": 1,
+      "e": "L'opposition entre performance financière et RSE est un faux débat : la RSE peut créer de la valeur (croissance du CA, optimisation des investissements).",
+      "src": "Chapitre 7",
+      "srcChap": 9
+    }
+  ],
+  "annales": [
+    {
+      "id": "if_2024_2025",
+      "year": "2024-2025",
+      "name": "Session 1 — Vendredi 13 juin 2025",
+      "duration": "2h00",
+      "format": "Écrit · Plan comptable autorisé · Calculatrice non programmable",
+      "professor": "P. Robin",
+      "subject": "",
+      "dossiers": [
+        {
+          "label": "Premier dossier — Contrat Forward/Forward (4 points)",
+          "context": "Fin 3e trimestre N, le trésorier de la société Passflux constate au regard de ses prévisions un déficit de trésorerie de 200 000 € pour toute l'année N+1. Craignant une remontée des taux futurs il contracte avec sa banque un contrat Forward/Forward sur la base des conditions suivantes :\n\n|                  | Placement | Emprunt |\n| Taux à 3 mois    |  0,50 %   |   1 %   |\n| Taux à 12-18 mois|  1,25 %   |   2 %   |\n\nFormule donnée :\nT F/F = [ (Temprunt × durée emprunt) − (Tplacement × durée placement) ] ÷ [ Durée du prêt (ou garantie) × ( 1 + (Tplacement × durée placement) / 36000 ) ]",
+          "items": [
+            {
+              "q": "a) Expliquer (rédaction ou graphique) la succession des opérations menées par la banque dans le cadre de ce contrat.",
+              "correction": "Le 30/09/N la Banque accepte de prêter à la société Passflux la somme de 200 000 € pour une durée de 1 an soit du 01/01/N+1 au 31/12/N+1.\n\nDans ces conditions la banque va réaliser une triple opération :\n• Emprunter ce jour pour 15 mois la somme sur les marchés (du 01/10/N au 31/12/N+1)\n• Placer cette même somme sur les marchés pendant 3 mois (du 01/10/N au 31/12/N)\n• Récupérer la somme placée et la Prêter pendant 12 mois à la société Passflux (01/01/N+1 au 31/12/N+1)\n\nSchéma :\n    01/10/N ────────► 31/12/N ────────────────────► 31/12/N+1\n    │── Placement par la banque sur les Marchés (0,50 %) ──│\n                              │── Période de prêt à Passflux ──│\n    │────── Emprunt sur les marchés par la banque (2 %) ──────│\n\n(Explication : 2 points)"
+            },
+            {
+              "q": "b) Quel est le taux garanti dans le cadre de ce contrat entre la société Passflux et sa banque.",
+              "correction": "Somme à emprunter le 01/10/N par la banque pour disposer de 200 000 € le 01/01/N+1 :\n    X + (X × 0,005 × 92/360) = 200 000  →  X = 199 744,77 €   (0,5 point)\n\nÀ la fin du contrat la banque devra rembourser :\n    199 744,77 + (199 744,77 × 0,02 × 457/360) = 204 816,07 €   (1 point)\n\nLe taux garanti est donc :\n    200 000 + (200 000 × X × 365/360) = 204 816,07  →  X = 2,375 %   (0,5 point)\n\nOu selon la formule :\n    T F/F = (0,02 × 457 − 0,005 × 92) / [ 365 × (1 + 0,005 × 92 / 360) ]\n    T F/F = 2,375 %   (ou 2 points)"
+            }
+          ]
+        },
+        {
+          "label": "Deuxième dossier — Contrat Collar (4 points)",
+          "context": "L'entreprise Carrousel veut réaliser un Emprunt de 300 000 € sur 4 ans au taux Tam + 0,5 %.\nPour se protéger contre une éventuelle évolution défavorable des taux le trésorier a décidé de se pencher sur un instrument lui permettant de se prémunir contre ce risque : le Collar.\n\nAnnexe 1 — Évolution du Tam sur les périodes :\n|     | N    | N+1 | N+2  | N+3 |\n| Tam | 1,5% | 2 % | 2,5% | 3 % |",
+          "items": [
+            {
+              "q": "a) Quelle est la nature du risque contre lequel le trésorier cherche à se préserver ?",
+              "correction": "Le trésorier cherche à se prémunir contre une hausse du taux d'intérêts. (0,5)"
+            },
+            {
+              "q": "b) Dans ces conditions doit-il :\n    – acheter un collar emprunteur ?\n    – vendre un collar emprunteur ?\n    – acheter un collar prêteur ?\n    – vendre un collar prêteur ?",
+              "correction": "Dans ces conditions il va acheter un collar emprunteur. (0,5)"
+            },
+            {
+              "q": "c) Son banquier lui propose le collar suivant :\n    – achat d'un Cap 3 % contre Tam + 0,5 %, prime 0,40 %\n    – vente d'un Floor 2 % contre Tam + 0,5 %, prime 0,20 %\nRemplissez en annexe 1 le tableau selon les évolutions du Tam proposées.",
+              "correction": "Évolution du Tam :\n|                                |   N    |  N+1   |  N+2  |   N+3   |\n| Tam                            | 1,5 %  | 2 %    | 2,5 % | 3 %     |\n| Tam + 0,5 %  (0,5)             | 2 %    | 2,5 %  | 3 %   | 3,5 %   |\n| Prime versée sur le Cap  (0,5) | 0,4 %  | 0,4 %  | 0,4 % | 0,4 %   |\n| Différentiel reçu sur le Cap (0,5) | 2%<3% = 0 | 2,5%<3% = 0 | 3%=3% = 0 | 3,5%>3% = −0,5 % |\n| Prime reçue sur le Floor  (0,5)| −0,20 %| −0,20 %| −0,20 %| −0,20 % |\n| Différentiel versé sur le Floor (0,5) | 2%=2% = 0 | 2,5%>2% = 0 | 3%>2% = 0 | 3,5%>2% = 0 |\n| Coût réel de l'endettement (0,5) | 2,20 % | 2,70 % | 3,20 % | 3,20 % |\n\nVérification : différentiel prime 0,4 − 0,20 = 0,20 %.\nSoit 2 + 0,20 % = 2,20 % et 3 % + 0,20 % = 3,20 %."
+            }
+          ]
+        },
+        {
+          "label": "Troisième dossier — Les Options (4 points)",
+          "context": "Un exportateur va recevoir dans 90 jours 3 000 000 yens sur la base d'un cours actuel de 1 € = 161,964 JPY.\nCraignant une évolution défavorable du change il cherche à prendre position sur le marché des options.",
+          "items": [
+            {
+              "q": "a) Quelle position doit-il prendre ?",
+              "correction": "Il doit acheter un Put qui lui procurera le droit, mais non l'obligation, de vendre ses Yens à un prix fixé d'avance. (0,75)"
+            },
+            {
+              "q": "Il décide donc de se couvrir sur le marché des options moyennant une prime de 2 % et un prix d'exercice de 160,85 JPY.\nb) Quel sera le montant de la prime versée pour se couvrir ?",
+              "correction": "La prime s'élève à : (3 000 000 / 160,85) × 0,02 = 373,02 €. (0,75)"
+            },
+            {
+              "q": "c) Quel sera le montant net obtenu par notre exportateur 90 jours plus tard si le cours du yen est de 1 € = 159,25 JPY et 1 € = 162,50 JPY ?",
+              "correction": "Hypothèse de 1 € = 159,25 JPY :\nDans ce cas le change s'élève à 3 000 000 / 159,25 = 18 838,30 € sur le marché comptant alors que l'option lui permet d'obtenir 3 000 000 / 160,85 = 18 650,92 €.\nDans ces conditions le montant sur le marché comptant est supérieur à ce que garantit l'option d'où abandon de celle-ci et vente sur le marché comptant.\nLe résultat net est de : 18 838,30 − 373,02 = 18 465,28 €. (1,25)\n\nHypothèse de 1 € = 162,50 JPY :\nDans ce cas le change s'élève à 3 000 000 / 162,50 = 18 461,54 € ce qui est inférieur à ce que garantit l'option (18 650,92 €).\nDans ces conditions on lève l'option pour un résultat net de : 18 650,92 − 373,02 = 18 277,90 €. (1,25)\n\n(Attention si on ne levait pas l'option on obtiendrait un résultat net de 18 461,54 − 373,02 = 18 088,52 € ce qui est moindre !!)"
+            }
+          ]
+        },
+        {
+          "label": "Quatrième Dossier — Le Béta (4 points)",
+          "context": "Vous disposez des rentabilités moyennes du Titre Choups et de celles du CAC pour 5 périodes :\n\n| Périodes | Rentabilité moyenne du titre Choups en % | Rentabilité moyenne du CAC en % |\n|    1     |              1,05 %                       |             1,70 %               |\n|    2     |              0,95 %                       |             0,55 %               |\n|    3     |             −0,65 %                       |            −1,05 %               |\n|    4     |              0,30 %                       |             0,40 %               |\n|    5     |              1,95 %                       |             2,30 %               |",
+          "items": [
+            {
+              "q": "a) Déterminer le Bêta de Choups selon la formule β = COV (RCAC ; RAC) / V(RCAC). Annexe 2.",
+              "correction": "| Périodes | R Choups | R CAC  | RC − RMC | RCAC − RMCAC | (RCAC − RMCAC)² | (RC − RMC) × (RCAC − RMCAC) |\n|    1     |  1,05 %  | 1,70 % |   0,33   |     0,92     |       0,85       |             0,31             |\n|    2     |  0,95 %  | 0,55 % |   0,23   |    −0,55     |       0,31       |            −0,13             |\n|    3     | −0,65 %  |−1,05 % |  −1,37   |    −1,83     |       3,35       |             2,51             |\n|    4     |  0,30 %  | 0,40 % |  −0,42   |    −0,38     |       0,15       |             0,16             |\n|    5     |  1,95 %  | 2,30 % |   1,23   |     1,52     |       2,31       |             1,87             |\n| Moyennes |  0,72    | 0,78   |          |              |       6,97       |             4,98             |\n(Tableau : 1 point)\n\nBéta : (1/4 × 4,98) / (1/4 × 6,97) = 1,245 / 1,743 = 0,72. (1 point)"
+            },
+            {
+              "q": "b) En supposant un Béta de 0,8, déterminer le coût des fonds propres de Choups sur la base d'un taux sans risque de 1,15 % et d'une prime de risque du marché de 2 %.",
+              "correction": "Coût des fonds propres : Rcp = 1,15 % + (0,80 × 2 %) = 2,75 %. (0,5 point)"
+            },
+            {
+              "q": "c) Calculer le coût du capital sur la base d'un coût des capitaux propres de Choups de 3 %, un taux d'endettement net d'IS de 2 %, la valeur de marché des capitaux propres de 4 800 000 € représente 40 % de la valeur globale.",
+              "correction": "VGE = 4 800 000 / 0,40 = 12 000 000.\nVD = VGE − VCP = 12 000 000 − 4 800 000 = 7 200 000. (0,5 point)\n\nCMPC = (3 % × 4 800 / 12 000) + (2 % × 7 200 / 12 000) = 1,2 % + 1,2 % = 2,40 %. (1 point)"
+            }
+          ]
+        },
+        {
+          "label": "Cinquième dossier — L'introduction en bourse (4 points)",
+          "context": "",
+          "items": [
+            {
+              "q": "Dans un développement structuré vous rappellerez les enjeux en termes d'avantages et d'inconvénients d'une introduction en bourse pour une entreprise.",
+              "correction": "Barème : Introduction/conclusion = 1 point. Développement : Avantages : 3 propositions = 3 × 0,5 = 1,5 point. Inconvénients : 3 propositions = 3 × 0,5 = 1,5 point.\n\n─── AVANTAGES ───\n\n1. L'accès au marché : la bourse offre une source de financement alternative pour déployer sa stratégie, réaliser des opérations de croissance externe, procéder à des investissements. C'est souvent la première des motivations.\n\n2. Un facteur de notoriété : Elle met un coup de projecteur sur des compétences, des équipes, des savoir-faire. L'introduction en bourse a été pour nous une étape qui nous a permis de mieux nous faire connaître auprès d'un plus large public.\n\n3. Une plus grande transparence : la bourse contraint les entreprises à plus de clarté dans la stratégie, les publications périodiques des résultats, les échanges avec la communauté financière… J'ai la conviction que cet exercice peut constituer un vecteur de croissance.\n\n4. L'introduction en bourse permet d'apporter les fonds nécessaires à la croissance : au-delà d'un certain besoin de financement, le recours aux investisseurs de type business angels ou fonds d'investissement ne suffit plus.\n\n5. Fluidifier le marché : cela permet également aux investisseurs de départ, business angels, fonds d'investissement, entrepreneurs, collaborateurs rémunérés par des actions… de réaliser une plus-value en revendant tout ou partie de leurs parts.\n\n6. Gagner en crédibilité sur son marché : entrer en bourse, c'est pour beaucoup d'entrepreneurs une forme de consécration, c'est acquérir une crédibilité supérieure : devenir une société cotée, c'est faire partie de l'aristocratie des start-ups.\n\n7. Lever des fonds plus rapidement qu'auprès des acteurs du capital-investissement : une entrée en bourse permet pour une société de lever de l'argent. Il est probable que la création du PEA-PME créera une demande à Paris et qu'une telle levée de fonds soit dans certains cas plus facile (ou moins dilutive) qu'une levée réalisée auprès des fonds de capital investissement.\n\n─── INCONVÉNIENTS ───\n\n1. La complexité : l'introduction en bourse est un processus complexe, coûteux et risqué : il faut généralement faire appel à une banque spécialisée, qui achète les titres avant de les revendre au marché. Or, ces intermédiaires réclament une rémunération conséquente, et de temps à autre — comme cela a été le cas pour Facebook — ils se trompent dans leur estimation de cours d'introduction, ce qui nuit à l'image de l'entreprise.\n\n2. Une exposition qui requiert une très grande discipline : être une société cotée entraîne une série d'obligations d'information auprès du marché boursier : il faut détailler précisément tous les éléments de l'activité dans des communications financières régulières, ce qui impose une grande discipline de gestion et des systèmes d'information exhaustifs. Une société cotée est beaucoup plus exposée et doit être beaucoup plus transparente.\n\n3. Être soumis à « la loi du marché » : être coté, c'est aussi devoir se soumettre aux exigences des analystes, qui peuvent contraindre l'entreprise à changer de stratégie lorsqu'ils estiment que cela leur sera plus profitable. Paradoxalement, alors que l'introduction en bourse permet de lever des fonds supplémentaires, elle peut donc se traduire par une perte d'indépendance stratégique. C'est pour regagner cette indépendance que Dell cherche actuellement à se retirer de la bourse.\n\n4. Une plus grande vulnérabilité face aux OPA : être côté, c'est s'exposer au risque d'OPA. Pour éviter ce risque, l'exigence de performance devient incontournable.\n\n5. Une opération qui requiert beaucoup de temps et de ressources : il faut être conscient qu'une introduction en bourse est un processus qui mobilise beaucoup d'énergie et prend du temps. L'équipe dirigeante est très sollicitée et il faut une organisation particulièrement efficace pour gérer, en plus d'une activité en croissance, les relations avec les partenaires qui vous accompagnent. Je me souviens par exemple avoir passé quelques nuits au bureau sur notre document de référence.\n\n6. Une opération coûteuse : l'entrée en bourse a également un coût en termes de cotation, tenu de compte, honoraires de conseil, recrutement le cas échéant. C'est un point qu'il ne faut surtout pas négliger au moment de se lancer dans l'aventure."
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "Le DOSSIER 5 (IPO) est une question rédactionnelle de 4 pts : intro/conclusion (1 pt) + 3 avantages développés (1,5 pt) + 3 inconvénients développés (1,5 pt). Ne pas faire l'impasse !",
+        "TOUJOURS ARRONDIR À 2 DÉCIMALES AU SUPÉRIEUR (exemple 0,21034 → 0,22). Consigne explicite de l'énoncé.",
+        "Pour le Forward/Forward : décomposer en 3 opérations (emprunt long, placement court, prêt à Passflux) avant de calculer.",
+        "Pour le Collar emprunteur : achat Cap (plafond) + vente Floor (plancher) → on tunnelise le coût d'endettement.",
+        "Pour les options : comparer systématiquement marché comptant vs exercice de l'option pour décider de lever ou abandonner."
+      ]
+    }
+  ],
+  "themes": [
+    {
+      "id": "cout_capital",
+      "icon": "💰",
+      "label": "Coût du capital"
+    },
+    {
+      "id": "marches_fi",
+      "icon": "📈",
+      "label": "Marchés de capitaux"
+    },
+    {
+      "id": "derives",
+      "icon": "🔀",
+      "label": "Produits dérivés"
+    },
+    {
+      "id": "esg",
+      "icon": "🌱",
+      "label": "Critères extra-financiers"
+    }
+  ]
+}

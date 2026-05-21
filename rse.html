@@ -1,0 +1,3021 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSE et CSRD — M2 CCA</title>
+<meta name="description" content="Cours RSE et CSRD M2 CCA — flashcards et quiz.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%2280%22 font-size=%2290%22>🌱</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="shared.css?v=202605180300">
+</head>
+<body>
+
+<div class="blobs">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<nav class="nav">
+  <div class="nav-brand" onclick="window.location.href='index.html'">
+    <div class="nav-logo">M2 CCA</div>
+    <div class="nav-sub">By Mathieu Belloir</div>
+  </div>
+  <div class="nav-tabs" id="navTabs"></div>
+</nav>
+<div class="progress-line"><div class="progress-line-fill" id="progressFill"></div></div>
+
+<div class="main" id="appRoot">
+  <div style="padding:3rem 0;text-align:center;color:var(--text2);font-size:0.9rem">
+    <div style="font-size:2rem;margin-bottom:0.8rem">🌱</div>
+    Chargement du cours…
+  </div>
+</div>
+
+<script src="engine.js?v=202605180300"></script>
+<script>
+/* ═══════ FALLBACK DATA (file://) ═══════ */
+const FALLBACK = {
+  "title": "RSE",
+  "subtitle": "Responsabilité Sociétale des Entreprises · Cours Introduction à la RSE (D. Duheron)",
+  "quizKey": "m2cca_quiz_rse",
+  "checklistItems": [
+    {
+      "id": "rf1",
+      "theme": "fondamentaux",
+      "label": "Développement durable : définition du Rapport Brundtland"
+    },
+    {
+      "id": "rf2",
+      "theme": "fondamentaux",
+      "label": "Les 3 piliers du DD (économique, social, écologique) et leurs intersections"
+    },
+    {
+      "id": "rf3",
+      "theme": "fondamentaux",
+      "label": "Les dates clés du développement durable (1951 → 2017)"
+    },
+    {
+      "id": "rf4",
+      "theme": "fondamentaux",
+      "label": "Le Global Compact : 10 principes et 3 engagements"
+    },
+    {
+      "id": "rf5",
+      "theme": "fondamentaux",
+      "label": "La RSE : définition de la Commission Européenne"
+    },
+    {
+      "id": "rf6",
+      "theme": "fondamentaux",
+      "label": "La RSE comme application du DD à l'entreprise"
+    },
+    {
+      "id": "rf7",
+      "theme": "fondamentaux",
+      "label": "Évolution historique de la RSE (Bowen, Freeman, Capron-Quairel)"
+    },
+    {
+      "id": "rf8",
+      "theme": "fondamentaux",
+      "label": "La performance globale (financière + extra-financière)"
+    },
+    {
+      "id": "rf9",
+      "theme": "fondamentaux",
+      "label": "Les 3 piliers de la performance globale"
+    },
+    {
+      "id": "rf10",
+      "theme": "fondamentaux",
+      "label": "La norme ISO 26000 : caractéristiques (volontaire, 2010, non certifiable)"
+    },
+    {
+      "id": "rf11",
+      "theme": "fondamentaux",
+      "label": "Les 7 principes de responsabilité sociétale (ISO 26000)"
+    },
+    {
+      "id": "rf12",
+      "theme": "fondamentaux",
+      "label": "Les 7 questions centrales de l'ISO 26000"
+    },
+    {
+      "id": "rf13",
+      "theme": "fondamentaux",
+      "label": "La sphère d'influence et les parties prenantes"
+    },
+    {
+      "id": "rr1",
+      "theme": "reglementation",
+      "label": "Loi NRE (2001) : entrée du reporting extra-financier dans le droit"
+    },
+    {
+      "id": "rr2",
+      "theme": "reglementation",
+      "label": "Le dispositif Grenelle"
+    },
+    {
+      "id": "rr3",
+      "theme": "reglementation",
+      "label": "La loi TECV (2015) : transition énergétique"
+    },
+    {
+      "id": "rr4",
+      "theme": "reglementation",
+      "label": "La loi sur le devoir de vigilance (2017)"
+    },
+    {
+      "id": "rr5",
+      "theme": "reglementation",
+      "label": "La DPEF (2017) : NFRD, matérialité, seuils"
+    },
+    {
+      "id": "rr6",
+      "theme": "reglementation",
+      "label": "La loi PACTE (2019) : raison d'être et société à mission"
+    },
+    {
+      "id": "rr7",
+      "theme": "reglementation",
+      "label": "Le Green Deal européen (2019)"
+    },
+    {
+      "id": "rr8",
+      "theme": "reglementation",
+      "label": "La CSRD (2022) et les 12 normes ESRS"
+    },
+    {
+      "id": "rd1",
+      "theme": "demarche",
+      "label": "La démarche RSE en 6 étapes"
+    },
+    {
+      "id": "rd2",
+      "theme": "demarche",
+      "label": "Étape 1 : déterminer ses enjeux RSE"
+    },
+    {
+      "id": "rd3",
+      "theme": "demarche",
+      "label": "L'analyse de matérialité simple"
+    },
+    {
+      "id": "rd4",
+      "theme": "demarche",
+      "label": "L'analyse de double matérialité"
+    },
+    {
+      "id": "rd5",
+      "theme": "demarche",
+      "label": "Matérialité financière et matérialité d'impact"
+    },
+    {
+      "id": "rd6",
+      "theme": "demarche",
+      "label": "Le concept d'IRO (Impacts, Risques, Opportunités)"
+    },
+    {
+      "id": "rd7",
+      "theme": "demarche",
+      "label": "Le rôle des parties prenantes dans l'identification des enjeux"
+    },
+    {
+      "id": "rd8",
+      "theme": "demarche",
+      "label": "Étape 2 : identifier sa gouvernance RSE"
+    },
+    {
+      "id": "rd9",
+      "theme": "demarche",
+      "label": "Étape 3 : politique RSE et objectifs SMART"
+    },
+    {
+      "id": "rd10",
+      "theme": "demarche",
+      "label": "Étape 4 : le plan d'actions RSE"
+    },
+    {
+      "id": "rd11",
+      "theme": "demarche",
+      "label": "Étape 5 : mesurer la performance (indicateurs)"
+    },
+    {
+      "id": "rd12",
+      "theme": "demarche",
+      "label": "Les 3 types d'indicateurs (performance, moyen, impact)"
+    },
+    {
+      "id": "rd13",
+      "theme": "demarche",
+      "label": "Étape 6 : communiquer, le rapport de durabilité"
+    },
+    {
+      "id": "rd14",
+      "theme": "demarche",
+      "label": "EcoVadis : plateforme de notation RSE"
+    },
+    {
+      "id": "ro1",
+      "theme": "opportunites",
+      "label": "Les 6 opportunités d'une démarche RSE"
+    },
+    {
+      "id": "ro2",
+      "theme": "opportunites",
+      "label": "Les opportunités métiers de la RSE"
+    },
+    {
+      "id": "ro3",
+      "theme": "opportunites",
+      "label": "Certifications et labels RSE : définition et rôle"
+    },
+    {
+      "id": "ro4",
+      "theme": "opportunites",
+      "label": "Le label B Corp"
+    },
+    {
+      "id": "ro5",
+      "theme": "opportunites",
+      "label": "Le label LUCIE"
+    },
+    {
+      "id": "ro6",
+      "theme": "opportunites",
+      "label": "Le label Engagé RSE (AFNOR)"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "rfc1",
+      "theme": "fondamentaux",
+      "srcChap": 1,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Le développement durable : définition",
+      "a": "Le développement durable est « un développement qui répond aux besoins du présent sans compromettre la capacité des générations futures à répondre aux leurs » (Rapport Brundtland).\n\nIl s'appuie sur la convergence de 3 composantes : économique, sociale et écologique."
+    },
+    {
+      "id": "rfc2",
+      "theme": "fondamentaux",
+      "srcChap": 1,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Les 3 piliers du développement durable",
+      "a": "Le DD repose sur 3 piliers en intersection :\n• Économique\n• Social (ou sociétal)\n• Écologique (environnemental)\n\nLeurs intersections :\n• Économique + Social = Équitable\n• Économique + Écologique = Viable\n• Social + Écologique = Vivable\n• Au centre des trois = Durable"
+    },
+    {
+      "id": "rfc3",
+      "theme": "fondamentaux",
+      "srcChap": 1,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Les dates clés du développement durable",
+      "a": "1951 : Rapport sur l'état de l'environnement\n1972 : Rapport du Club de Rome (The Limits to Growth) ; Conférence des Nations Unies sur l'environnement (Stockholm)\n1987 : Rapport Brundtland\n1992 : Sommet de la Terre de Rio\n1997 : Convention sur le climat\n2007 : Grenelle de l'environnement\n2015 : Accord de Paris\n2017 : Objectifs de Développement Durable (ODD)"
+    },
+    {
+      "id": "rfc4",
+      "theme": "fondamentaux",
+      "srcChap": 1,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Le Global Compact (Pacte mondial)",
+      "a": "Le Global Compact est un cadre d'engagement volontaire porté par les Nations Unies. Il repose sur 10 principes couvrant 4 domaines : droits de l'Homme, normes internationales du travail, environnement, lutte contre la corruption.\n\nL'entreprise qui y adhère s'engage à :\n1. Mettre en application les 10 principes dans son organisation\n2. Les promouvoir au sein de sa sphère d'influence\n3. Inscrire ses actions dans les ODD et communiquer dessus"
+    },
+    {
+      "id": "rfc5",
+      "theme": "fondamentaux",
+      "srcChap": 2,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "La RSE : définition",
+      "a": "La RSE (Responsabilité Sociétale de l'Entreprise) est « l'intégration volontaire par les entreprises de préoccupations sociales et environnementales à leurs activités commerciales et à leurs relations avec les parties prenantes » (définition de la Commission Européenne).\n\nC'est l'application du développement durable, notion planétaire, à l'échelle de l'entreprise."
+    },
+    {
+      "id": "rfc6",
+      "theme": "fondamentaux",
+      "srcChap": 2,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "L'évolution historique de la RSE",
+      "a": "1950 : la RSE « éthique » — Howard R. Bowen, « Social Responsibilities of the Businessman »\n1980 : la RSE « utilitariste » — R. Edward Freeman, « Strategic Management »\n2000 : la RSE actuelle — Michel Capron et Françoise Quairel-Lanoizelée, « La responsabilité sociale d'entreprise »"
+    },
+    {
+      "id": "rfc7",
+      "theme": "fondamentaux",
+      "srcChap": 2,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "La performance globale",
+      "a": "Performance financière + Performance extra-financière = Performance globale.\n\nLes 3 piliers de la performance globale (interdépendants) :\n• Social : capital humain, égalité et diversité, droits humains, gouvernance éthique\n• Économique : résilience du modèle, innovation responsable, valeur partagée, transparence\n• Environnement : décarbonation, ressources naturelles, biodiversité, économie circulaire"
+    },
+    {
+      "id": "rfc8",
+      "theme": "fondamentaux",
+      "srcChap": 3,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "La norme ISO 26000 : caractéristiques",
+      "a": "L'ISO 26000 fournit aux organisations les lignes directrices de la RSE :\n• Apporte une référence commune autour des notions RSE\n• Norme volontaire, éditée en 2010, non contraignante et NON certifiable\n• Approche « performance globale » intégrant tout l'écosystème et les parties prenantes (notion de parties prenantes et de sphère d'influence)\n• Articulée autour de 7 principes et de 7 questions centrales"
+    },
+    {
+      "id": "rfc9",
+      "theme": "fondamentaux",
+      "srcChap": 3,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Les 7 principes de l'ISO 26000",
+      "a": "Les 7 principes de responsabilité sociétale :\n1. Redevabilité\n2. Transparence\n3. Comportement éthique\n4. Reconnaissance des intérêts des parties prenantes\n5. Respect du principe de légalité\n6. Prise en compte des normes internationales de comportement\n7. Respect des droits de l'Homme"
+    },
+    {
+      "id": "rfc10",
+      "theme": "fondamentaux",
+      "srcChap": 3,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Les 7 questions centrales de l'ISO 26000",
+      "a": "L'ISO 26000 articule la démarche autour de 7 questions centrales, organisées autour de la Gouvernance de l'organisation (au centre) :\n• Droits de l'Homme\n• Relations et conditions de travail\n• L'environnement\n• Loyauté des pratiques\n• Questions relatives aux consommateurs\n• Communautés et développement local\n\nLe tout s'appuie sur le dialogue avec les parties prenantes."
+    },
+    {
+      "id": "rfc11",
+      "theme": "fondamentaux",
+      "srcChap": 3,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "La sphère d'influence",
+      "a": "« Toute organisation ne peut évoluer sans tenir compte de sa sphère d'influence, c'est-à-dire de toute entité impactée par ses décisions et ses actes. »\n\nL'entreprise doit identifier ses parties prenantes (salariés, fournisseurs, partenaires financiers, acteurs territoriaux, pouvoirs publics, clients...) et définir des modes de dialogue adaptés à chacune."
+    },
+    {
+      "id": "rfc12",
+      "theme": "reglementation",
+      "srcChap": 4,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "La loi NRE (2001)",
+      "a": "La loi NRE (Nouvelles Régulations Économiques, 2001) fait entrer la notion de reporting extra-financier dans le droit français :\n• Publication d'informations relatives aux conséquences sociales et environnementales des activités\n• Objectif : renforcer la transparence de l'entreprise vis-à-vis de ses parties prenantes"
+    },
+    {
+      "id": "rfc13",
+      "theme": "reglementation",
+      "srcChap": 4,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Le dispositif Grenelle",
+      "a": "Le dispositif Grenelle est issu des débats multipartites du « Grenelle de l'Environnement ». Il vise à :\n• Renforcer les engagements envers le développement durable et les régulations environnementales\n• Renforcer le reporting extra-financier des entreprises"
+    },
+    {
+      "id": "rfc14",
+      "theme": "reglementation",
+      "srcChap": 4,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "La loi TECV (2015)",
+      "a": "La loi TECV (Transition Énergétique pour la Croissance Verte, 2015) :\n• Répond aux engagements de l'Accord de Paris\n• Vise à accélérer la transition énergétique\n• Vise à réduire les émissions de GES liées au transport et aux bâtiments"
+    },
+    {
+      "id": "rfc15",
+      "theme": "reglementation",
+      "srcChap": 4,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "La loi sur le devoir de vigilance (2017)",
+      "a": "La loi sur le devoir de vigilance (2017) :\n• Instaure des obligations de vigilance pour les sociétés-mères\n• Engage la responsabilité des sociétés-mères en cas d'atteintes aux droits humains et à l'environnement\n\nElle fait écho à des drames comme l'effondrement du Rana Plaza."
+    },
+    {
+      "id": "rfc16",
+      "theme": "reglementation",
+      "srcChap": 4,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "La DPEF (2017)",
+      "a": "La DPEF (Déclaration de Performance Extra-Financière, 2017) :\n• Dispositif issu d'une directive européenne (NFRD)\n• Repose sur le principe de matérialité de l'information\n• Objectif : identifier et hiérarchiser les enjeux RSE\n\nEntreprises concernées : entreprises cotées de plus de 500 salariés et plus de 40 M€ de CA ; entreprises non cotées de plus de 500 salariés et plus de 100 M€ de CA."
+    },
+    {
+      "id": "rfc17",
+      "theme": "reglementation",
+      "srcChap": 4,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "La loi PACTE (2019)",
+      "a": "La loi PACTE (promulguée le 22 mai 2019) est une innovation juridique à 3 étages :\n1. Toutes les entreprises : prendre en considération les enjeux sociaux et environnementaux de leur activité\n2. Les entreprises volontaires : inscrire leur raison d'être dans leurs statuts\n3. Les entreprises engagées : adopter la qualité de société à mission"
+    },
+    {
+      "id": "rfc18",
+      "theme": "reglementation",
+      "srcChap": 4,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Le Green Deal européen (2019)",
+      "a": "Le Green Deal (pacte vert pour l'Europe) est un ensemble de mesures visant à engager l'UE sur la voie de la transition écologique, avec pour objectif ultime la neutralité climatique à l'horizon 2050.\n\nIl favorise la transformation de l'UE en une société juste et prospère dotée d'une économie moderne et compétitive, et incite les financeurs à investir dans la transition écologique."
+    },
+    {
+      "id": "rfc19",
+      "theme": "reglementation",
+      "srcChap": 4,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "La CSRD (2022)",
+      "a": "La CSRD (Corporate Sustainability Reporting Directive, 2022) :\n• Définit un cadre de reporting extra-financier standardisé, au regard de 12 normes ESRS (European Sustainability Reporting Standards)\n• Fournit un cadre de référence commun pour une meilleure comparabilité et transparence des informations extra-financières\n• Introduit l'analyse de double matérialité"
+    },
+    {
+      "id": "rfc20",
+      "theme": "opportunites",
+      "srcChap": 5,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Les 6 opportunités d'une démarche RSE",
+      "a": "1. Évolution du business model : anticipation des risques, préparation aux changements réglementaires\n2. Image de marque positive : distinction par rapport aux concurrents\n3. Accès à de nouveaux marchés et innovation\n4. Renforcement des relations avec les parties prenantes\n5. Attractivité pour les talents\n6. Réduction des coûts : pratiques éco-efficaces, efficacité énergétique"
+    },
+    {
+      "id": "rfc21",
+      "theme": "opportunites",
+      "srcChap": 5,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Les opportunités métiers de la RSE",
+      "a": "Pour les (futurs) collaborateurs, la RSE offre :\n• Une attractivité accrue sur le marché de l'emploi (les entreprises y accordent de l'importance au recrutement)\n• Le développement de compétences transférables (pensée critique, résolution de problèmes, collaboration), utiles à l'audit, la comptabilité, etc.\n• Un impact sociétal positif\n• L'anticipation des contraintes futures"
+    },
+    {
+      "id": "rfc22",
+      "theme": "demarche",
+      "srcChap": 6,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "La démarche RSE en 6 étapes",
+      "a": "1. Déterminer ses enjeux RSE (analyse de matérialité, parties prenantes)\n2. Identifier sa gouvernance RSE\n3. Constituer sa politique et ses objectifs\n4. Déterminer ses actions RSE (plan d'actions)\n5. Mesurer sa performance à l'aide d'indicateurs\n6. Communiquer sur sa démarche (reporting)"
+    },
+    {
+      "id": "rfc23",
+      "theme": "demarche",
+      "srcChap": 6,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Qu'est-ce qu'un enjeu RSE ?",
+      "a": "Un enjeu RSE est une thématique de durabilité identifiée par l'entreprise. Les enjeux peuvent être environnementaux, sociaux, de gouvernance, économiques ou sociétaux.\n\nIdentifier ses enjeux permet l'orientation stratégique (concentrer les efforts sur les enjeux les plus critiques) et la gestion des risques (actions préventives face aux risques extra-financiers)."
+    },
+    {
+      "id": "rfc24",
+      "theme": "demarche",
+      "srcChap": 6,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "L'analyse de matérialité simple",
+      "a": "La matérialité « simple » consiste à identifier les impacts potentiels des enjeux RSE sur la performance financière de l'entreprise : c'est une analyse des risques extra-financiers.\n\nLa matrice croise l'importance de l'enjeu pour l'entreprise (axe horizontal) et pour ses parties prenantes (axe vertical), afin de hiérarchiser les enjeux."
+    },
+    {
+      "id": "rfc25",
+      "theme": "demarche",
+      "srcChap": 6,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "L'analyse de double matérialité",
+      "a": "Avec l'adoption de la CSRD (2022), on passe à la double matérialité. Elle complète la matérialité simple :\n\n• Matérialité financière : risque que l'enjeu RSE fait peser sur la performance financière de l'entreprise\n• Matérialité d'impact : effets de l'activité de l'entreprise sur son environnement et les tiers\n\nUn enjeu est matériel dès lors qu'il est significatif du point de vue de l'impact OU du point de vue financier."
+    },
+    {
+      "id": "rfc26",
+      "theme": "demarche",
+      "srcChap": 6,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Le concept d'IRO",
+      "a": "IRO = Impacts, Risques et Opportunités.\n\nDémarche de double matérialité en 3 étapes :\n1. Analyse contextuelle et identification des IRO (sur l'ensemble de la chaîne de valeur)\n2. Évaluation de la matérialité d'impact et de la matérialité financière (échelle de cotation, critères quantitatifs ou qualitatifs)\n3. Identification de l'information à publier"
+    },
+    {
+      "id": "rfc27",
+      "theme": "demarche",
+      "srcChap": 6,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Le rôle des parties prenantes",
+      "a": "Pour déterminer ses enjeux RSE, l'entreprise doit :\n• Réaliser son analyse de matérialité (simple ou double)\n• Consulter et prendre en compte ses parties prenantes clés\n• Impliquer les différentes fonctions de l'entreprise\n\nToutes les parties prenantes n'ont pas le même poids : un barème peut leur être attribué dans l'analyse finale."
+    },
+    {
+      "id": "rfc28",
+      "theme": "demarche",
+      "srcChap": 7,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Étape 2 : la gouvernance RSE",
+      "a": "L'implication de la gouvernance est indispensable. Elle se décline en deux volets :\n\n• La Direction : impulse la stratégie et porte les engagements, diffuse les valeurs et la culture, veille à l'intégration de la RSE dans les process, apporte crédibilité et légitimité\n• L'Organisation : définit les porteurs du projet RSE (responsable, comité...), assure le suivi et l'amélioration continue de la démarche"
+    },
+    {
+      "id": "rfc29",
+      "theme": "demarche",
+      "srcChap": 7,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Étape 3 : la politique RSE",
+      "a": "Une politique RSE met en œuvre la stratégie ou les décisions de gestion de l'entreprise sur un enjeu de durabilité. Elle est sous la responsabilité de personnes définies, sur un périmètre d'application précis, avec des objectifs identifiés.\n\nElle permet de répondre aux enjeux matériels, de définir la vision et l'engagement de l'entreprise, et de fixer ses objectifs. Elle est ensuite mise en œuvre par des actions."
+    },
+    {
+      "id": "rfc30",
+      "theme": "demarche",
+      "srcChap": 7,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Étape 3 : les objectifs SMART",
+      "a": "Un objectif RSE est la trajectoire cible visée par la stratégie et les politiques. L'entreprise met en place son plan d'actions pour l'atteindre.\n\nUn objectif est nécessairement SMART :\n• S : Spécifique\n• M : Mesurable\n• A : Atteignable\n• R : Réalisable\n• T : Temporellement défini"
+    },
+    {
+      "id": "rfc31",
+      "theme": "demarche",
+      "srcChap": 8,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Étape 4 : le plan d'actions RSE",
+      "a": "Un plan d'actions RSE est un ensemble de mesures, tâches ou activités visant à atteindre des objectifs prédéfinis. Il est consigné dans un document décrivant les étapes nécessaires (date d'échéance, pilote de l'action, tâches à réaliser).\n\nIl permet d'atteindre les objectifs (jalonner étape par étape) et de piloter le projet en optimisant les moyens."
+    },
+    {
+      "id": "rfc32",
+      "theme": "demarche",
+      "srcChap": 8,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Étape 5 : les indicateurs de performance",
+      "a": "Un indicateur de performance RSE permet de mesurer le degré d'accomplissement des objectifs RSE. Mesurer sa performance sert à suivre l'évolution de sa stratégie et à ajuster son plan d'action.\n\nTrois types d'indicateurs :\n• Indicateur de performance : information quantifiée mesurant les résultats d'une ou plusieurs actions (souvent un ratio)\n• Indicateur de moyen (de pilotage) : permet d'anticiper et de réajuster ; un levier au service de l'objectif\n• Indicateur d'impact : démontre la contribution de l'entreprise à l'amélioration d'un problème sociétal"
+    },
+    {
+      "id": "rfc33",
+      "theme": "demarche",
+      "srcChap": 8,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Étape 6 : le rapport de durabilité",
+      "a": "Le rapport RSE, aujourd'hui nommé officiellement rapport de durabilité, est un document périodique (généralement annuel) par lequel une entreprise rend compte de ses actions et résultats en matière de RSE.\n\n• En interne : il permet de mesurer les conséquences des activités et d'améliorer les processus\n• En externe : il permet aux parties prenantes de comprendre l'implication de l'entreprise et d'évaluer les conséquences à moyen et long terme de ses activités"
+    },
+    {
+      "id": "rfc34",
+      "theme": "demarche",
+      "srcChap": 8,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "EcoVadis",
+      "a": "EcoVadis est une plateforme de notation utilisée par les partenaires commerciaux pour partager des informations sur leurs performances RSE.\n\nSa méthodologie est basée sur 7 indicateurs de management répartis en 21 critères RSE, couvrant l'environnement, le social, les droits humains et les achats responsables."
+    },
+    {
+      "id": "rfc35",
+      "theme": "opportunites",
+      "srcChap": 9,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Certifications et labels RSE",
+      "a": "Un label ou une certification RSE est une reconnaissance attribuée à une entreprise qui atteste de sa démarche et de ses actions en matière de responsabilité sociétale.\n\nIls sont délivrés par des organismes indépendants après évaluation. Ils permettent à l'entreprise de démontrer son engagement, de renforcer sa crédibilité et son image, et d'encourager des pratiques durables et transparentes."
+    },
+    {
+      "id": "rfc36",
+      "theme": "opportunites",
+      "srcChap": 9,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Le label B Corp",
+      "a": "La certification B Corp est un label international qui évalue les entreprises sur divers domaines regroupés en 5 catégories principales : Collaborateurs, Environnement, Gouvernance, Clients, Collectivité.\n\nLes entreprises labellisées s'engagent à équilibrer leurs objectifs financiers avec des impacts positifs sur la société et l'environnement."
+    },
+    {
+      "id": "rfc37",
+      "theme": "opportunites",
+      "srcChap": 9,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Le label LUCIE",
+      "a": "Développé par l'association LUCIE, le label LUCIE RSE est attribué aux entreprises s'engageant dans une démarche de responsabilité sociétale et de durabilité. Il s'appuie sur les engagements de la norme ISO 26000.\n\nDomaines couverts : gouvernance responsable et transparence, respect des individus, qualité de vie au travail, protection de l'environnement, éthique des pratiques, respect des intérêts des citoyens, développement local."
+    },
+    {
+      "id": "rfc38",
+      "theme": "opportunites",
+      "srcChap": 9,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Le label Engagé RSE (AFNOR)",
+      "a": "Le label « Engagé RSE » de l'AFNOR évalue la maturité des démarches RSE des organisations. Il s'adresse à divers types d'organisations (entreprises, associations, territoires), quelle que soit leur taille ou leur secteur.\n\nIl repose sur le modèle AFAQ 26000 et couvre notamment : vision RSE et gouvernance, intégration de la RSE, performance environnementale, performance sociale et sociétale, modes de production et de consommation durables, ancrage territorial, ressources humaines, performance économique."
+    },
+    {
+      "id": "rfc39",
+      "theme": "fondamentaux",
+      "srcChap": 2,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "RSE et performance financière : un faux débat",
+      "a": "Le débat opposant performance financière et performance RSE est dépassé. La RSE, intégrée à la performance globale, peut être créatrice de valeur : anticipation des risques, image de marque, accès à de nouveaux marchés, attractivité des talents, réduction des coûts.\n\nUne étude de France Stratégie évoque jusqu'à +13 % de performance pour les entreprises engagées."
+    },
+    {
+      "id": "rfc40",
+      "theme": "demarche",
+      "srcChap": 6,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Matérialité financière vs matérialité d'impact",
+      "a": "Dans la double matérialité, deux perspectives se complètent :\n\n• Matérialité financière : raisonne en risques et opportunités, à court / moyen / long terme, réels ou potentiels. Elle évalue l'impact des sujets ESG sur la performance de l'entreprise.\n• Matérialité d'impact : raisonne en impacts négatifs et positifs, à court / moyen / long terme, réels ou potentiels. Elle évalue l'impact de l'entreprise sur l'environnement et les tiers."
+    }
+  ],
+  "quizQuestions": [
+    {
+      "q": "Selon le Rapport Brundtland, le développement durable est :",
+      "theme": "fondamentaux",
+      "o": [
+        "La croissance économique maximale",
+        "Un développement qui répond aux besoins du présent sans compromettre ceux des générations futures",
+        "La protection exclusive de l'environnement",
+        "La suppression de toute activité industrielle"
+      ],
+      "c": 1,
+      "e": "La définition de référence est celle du Rapport Brundtland (1987).",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 1
+    },
+    {
+      "q": "Les 3 piliers du développement durable sont :",
+      "theme": "fondamentaux",
+      "o": [
+        "Производство, Vente, Marketing",
+        "Économique, Social, Écologique",
+        "Local, National, International",
+        "Court, Moyen, Long terme"
+      ],
+      "c": 1,
+      "e": "Le DD repose sur la convergence des piliers économique, social et écologique.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 1
+    },
+    {
+      "q": "L'intersection des piliers économique et écologique du DD est qualifiée de :",
+      "theme": "fondamentaux",
+      "o": [
+        "Équitable",
+        "Vivable",
+        "Viable",
+        "Durable"
+      ],
+      "c": 2,
+      "e": "Économique + écologique = viable ; économique + social = équitable ; social + écologique = vivable ; les trois = durable.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 1
+    },
+    {
+      "q": "En quelle année le Rapport Brundtland a-t-il été publié ?",
+      "theme": "fondamentaux",
+      "o": [
+        "1972",
+        "1987",
+        "1992",
+        "2015"
+      ],
+      "c": 1,
+      "e": "1987 : Rapport Brundtland. 1972 : Club de Rome et Stockholm. 1992 : Sommet de Rio. 2015 : Accord de Paris.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 1
+    },
+    {
+      "q": "Le Global Compact des Nations Unies repose sur :",
+      "theme": "fondamentaux",
+      "o": [
+        "12 normes ESRS",
+        "10 principes (droits de l'Homme, travail, environnement, anti-corruption)",
+        "7 questions centrales",
+        "3 piliers"
+      ],
+      "c": 1,
+      "e": "Le Global Compact est un cadre d'engagement volontaire reposant sur 10 principes couvrant 4 domaines.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 1
+    },
+    {
+      "q": "La RSE se définit comme :",
+      "theme": "fondamentaux",
+      "o": [
+        "Une obligation légale de publier ses comptes",
+        "L'intégration volontaire de préoccupations sociales et environnementales aux activités et aux relations avec les parties prenantes",
+        "Une taxe environnementale",
+        "Un label de qualité produit"
+      ],
+      "c": 1,
+      "e": "Définition de la Commission Européenne. La RSE est l'application du développement durable à l'échelle de l'entreprise.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 2
+    },
+    {
+      "q": "À quel auteur associe-t-on la RSE « éthique » des années 1950 ?",
+      "theme": "fondamentaux",
+      "o": [
+        "Howard R. Bowen",
+        "R. Edward Freeman",
+        "Michel Capron",
+        "Milton Friedman"
+      ],
+      "c": 0,
+      "e": "1950 : Bowen (RSE éthique) ; 1980 : Freeman (RSE utilitariste) ; 2000 : Capron et Quairel-Lanoizelée.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 2
+    },
+    {
+      "q": "La performance globale correspond à :",
+      "theme": "fondamentaux",
+      "o": [
+        "La performance financière seule",
+        "La performance financière + la performance extra-financière",
+        "La performance boursière",
+        "La performance commerciale"
+      ],
+      "c": 1,
+      "e": "Performance globale = performance financière + performance extra-financière.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 2
+    },
+    {
+      "q": "La norme ISO 26000 est :",
+      "theme": "fondamentaux",
+      "o": [
+        "Une norme obligatoire et certifiable",
+        "Une norme volontaire, non contraignante et non certifiable",
+        "Une loi française",
+        "Un label délivré par l'AFNOR"
+      ],
+      "c": 1,
+      "e": "L'ISO 26000 (2010) est une norme volontaire qui fournit des lignes directrices de la RSE ; elle n'est ni contraignante ni certifiable.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 3
+    },
+    {
+      "q": "Combien de principes de responsabilité sociétale l'ISO 26000 énonce-t-elle ?",
+      "theme": "fondamentaux",
+      "o": [
+        "3",
+        "5",
+        "7",
+        "10"
+      ],
+      "c": 2,
+      "e": "7 principes : redevabilité, transparence, comportement éthique, intérêts des parties prenantes, légalité, normes internationales de comportement, droits de l'Homme.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 3
+    },
+    {
+      "q": "L'ISO 26000 articule la démarche RSE autour de :",
+      "theme": "fondamentaux",
+      "o": [
+        "7 principes et 7 questions centrales",
+        "12 normes ESRS",
+        "82 exigences de publication",
+        "3 piliers seulement"
+      ],
+      "c": 0,
+      "e": "L'ISO 26000 s'articule autour de 7 principes et de 7 questions centrales, organisées autour de la gouvernance.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 3
+    },
+    {
+      "q": "La sphère d'influence d'une organisation désigne :",
+      "theme": "fondamentaux",
+      "o": [
+        "Sa part de marché",
+        "Toute entité impactée par ses décisions et ses actes",
+        "Ses actionnaires uniquement",
+        "Son chiffre d'affaires"
+      ],
+      "c": 1,
+      "e": "Une organisation doit tenir compte de sa sphère d'influence : toute entité impactée par ses décisions et actes (parties prenantes).",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 3
+    },
+    {
+      "q": "La loi NRE (2001) a pour effet principal de :",
+      "theme": "reglementation",
+      "o": [
+        "Créer la CSRD",
+        "Faire entrer le reporting extra-financier dans le droit français",
+        "Interdire les énergies fossiles",
+        "Créer le label B Corp"
+      ],
+      "c": 1,
+      "e": "La loi NRE (2001) fait entrer la notion de reporting extra-financier dans le droit français.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 4
+    },
+    {
+      "q": "La loi sur le devoir de vigilance (2017) :",
+      "theme": "reglementation",
+      "o": [
+        "Crée la société à mission",
+        "Instaure des obligations de vigilance pour les sociétés-mères sur les droits humains et l'environnement",
+        "Définit les 12 ESRS",
+        "Supprime la DPEF"
+      ],
+      "c": 1,
+      "e": "Elle engage la responsabilité des sociétés-mères en cas d'atteintes aux droits humains et à l'environnement.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 4
+    },
+    {
+      "q": "La DPEF (2017) est issue :",
+      "theme": "reglementation",
+      "o": [
+        "De la loi PACTE",
+        "De la directive européenne NFRD",
+        "Du Global Compact",
+        "De l'ISO 26000"
+      ],
+      "c": 1,
+      "e": "La DPEF (Déclaration de Performance Extra-Financière) est issue de la directive européenne NFRD et repose sur le principe de matérialité.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 4
+    },
+    {
+      "q": "La loi PACTE (2019) introduit notamment :",
+      "theme": "reglementation",
+      "o": [
+        "Les 12 normes ESRS",
+        "La raison d'être et la société à mission",
+        "Le Green Deal",
+        "Le label LUCIE"
+      ],
+      "c": 1,
+      "e": "La loi PACTE (3 étages) permet d'inscrire une raison d'être dans les statuts et d'adopter la qualité de société à mission.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 4
+    },
+    {
+      "q": "L'objectif ultime du Green Deal européen (2019) est :",
+      "theme": "reglementation",
+      "o": [
+        "La neutralité climatique à l'horizon 2050",
+        "La fin du reporting extra-financier",
+        "La suppression de la CSRD",
+        "Le doublement du PIB"
+      ],
+      "c": 0,
+      "e": "Le Green Deal vise à engager l'UE vers la transition écologique, avec pour objectif ultime la neutralité climatique en 2050.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 4
+    },
+    {
+      "q": "La CSRD (2022) définit un cadre de reporting standardisé au regard de :",
+      "theme": "reglementation",
+      "o": [
+        "7 questions centrales",
+        "12 normes ESRS",
+        "10 principes",
+        "3 piliers"
+      ],
+      "c": 1,
+      "e": "La CSRD définit un cadre de reporting extra-financier standardisé au regard de 12 normes ESRS, et introduit la double matérialité.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 4
+    },
+    {
+      "q": "Parmi les opportunités d'une démarche RSE figure :",
+      "theme": "opportunites",
+      "o": [
+        "L'augmentation systématique de l'impôt",
+        "L'attractivité pour les talents",
+        "La réduction de la transparence",
+        "La suppression des parties prenantes"
+      ],
+      "c": 1,
+      "e": "Les 6 opportunités : business model, image de marque, nouveaux marchés, parties prenantes, talents, réduction des coûts.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 5
+    },
+    {
+      "q": "La démarche RSE se structure en :",
+      "theme": "demarche",
+      "o": [
+        "3 étapes",
+        "5 étapes",
+        "6 étapes",
+        "12 étapes"
+      ],
+      "c": 2,
+      "e": "6 étapes : déterminer les enjeux, identifier la gouvernance, constituer la politique et les objectifs, déterminer les actions, mesurer la performance, communiquer.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 6
+    },
+    {
+      "q": "L'analyse de matérialité simple consiste à identifier :",
+      "theme": "demarche",
+      "o": [
+        "Les impacts de l'entreprise sur l'environnement",
+        "Les impacts potentiels des enjeux RSE sur la performance financière de l'entreprise",
+        "Le chiffre d'affaires",
+        "Les émissions de GES uniquement"
+      ],
+      "c": 1,
+      "e": "La matérialité simple analyse les risques extra-financiers : impact des enjeux RSE sur la performance financière de l'entreprise.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 6
+    },
+    {
+      "q": "La double matérialité ajoute à la matérialité financière :",
+      "theme": "demarche",
+      "o": [
+        "La matérialité d'impact (effets de l'entreprise sur l'environnement et les tiers)",
+        "Le calcul du résultat net",
+        "La notation boursière",
+        "La part de marché"
+      ],
+      "c": 0,
+      "e": "La double matérialité combine la matérialité financière et la matérialité d'impact ; elle est associée à la CSRD (2022).",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 6
+    },
+    {
+      "q": "Le sigle IRO désigne :",
+      "theme": "demarche",
+      "o": [
+        "Indicateurs, Ratios, Objectifs",
+        "Impacts, Risques, Opportunités",
+        "Investissement, Rendement, Optimisation",
+        "Information, Reporting, Organisation"
+      ],
+      "c": 1,
+      "e": "IRO = Impacts, Risques et Opportunités ; ils sont identifiés sur l'ensemble de la chaîne de valeur.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 6
+    },
+    {
+      "q": "Un objectif RSE doit être SMART, c'est-à-dire :",
+      "theme": "demarche",
+      "o": [
+        "Simple, Mesurable, Annuel, Réel, Total",
+        "Spécifique, Mesurable, Atteignable, Réalisable, Temporellement défini",
+        "Stratégique, Mondial, Ambitieux, Rapide, Tangible",
+        "Social, Moral, Acceptable, Responsable, Transparent"
+      ],
+      "c": 1,
+      "e": "SMART : Spécifique, Mesurable, Atteignable, Réalisable, Temporellement défini.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 7
+    },
+    {
+      "q": "Parmi les 3 types d'indicateurs, l'indicateur de moyen :",
+      "theme": "demarche",
+      "o": [
+        "Mesure le résultat final",
+        "Permet d'anticiper et de réajuster ; c'est un levier de pilotage",
+        "Démontre l'impact sociétal",
+        "Calcule le bénéfice"
+      ],
+      "c": 1,
+      "e": "Indicateur de performance (résultats), indicateur de moyen / pilotage (anticiper, réajuster), indicateur d'impact (contribution sociétale).",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 8
+    },
+    {
+      "q": "Le rapport RSE est aujourd'hui officiellement nommé :",
+      "theme": "demarche",
+      "o": [
+        "Bilan carbone",
+        "Rapport de durabilité",
+        "DPEF",
+        "Rapport de gestion"
+      ],
+      "c": 1,
+      "e": "Le rapport RSE est désormais officiellement appelé rapport de durabilité.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 8
+    },
+    {
+      "q": "EcoVadis est :",
+      "theme": "demarche",
+      "o": [
+        "Une norme ISO",
+        "Une plateforme de notation de la performance RSE (7 indicateurs, 21 critères)",
+        "Un label de l'AFNOR",
+        "Une loi européenne"
+      ],
+      "c": 1,
+      "e": "EcoVadis est une plateforme de notation utilisée par les partenaires commerciaux ; méthodologie basée sur 7 indicateurs de management et 21 critères.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 8
+    },
+    {
+      "q": "Le label B Corp évalue les entreprises sur :",
+      "theme": "opportunites",
+      "o": [
+        "3 piliers",
+        "5 catégories : Collaborateurs, Environnement, Gouvernance, Clients, Collectivité",
+        "7 questions centrales",
+        "12 normes"
+      ],
+      "c": 1,
+      "e": "B Corp est un label international évaluant les entreprises sur 5 catégories.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 9
+    },
+    {
+      "q": "Le label LUCIE s'appuie sur :",
+      "theme": "opportunites",
+      "o": [
+        "La loi PACTE",
+        "La norme ISO 26000",
+        "La CSRD",
+        "Le Global Compact"
+      ],
+      "c": 1,
+      "e": "Le label LUCIE RSE s'appuie sur les engagements de la norme ISO 26000.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 9
+    },
+    {
+      "q": "Le label « Engagé RSE » est délivré par :",
+      "theme": "opportunites",
+      "o": [
+        "L'AFNOR (modèle AFAQ 26000)",
+        "L'association B Lab",
+        "Les Nations Unies",
+        "La Commission Européenne"
+      ],
+      "c": 0,
+      "e": "Le label « Engagé RSE » de l'AFNOR évalue la maturité des démarches RSE, sur le modèle AFAQ 26000.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 9
+    },
+    {
+      "q": "Performance financière et performance RSE :",
+      "theme": "fondamentaux",
+      "o": [
+        "S'opposent toujours",
+        "Ne s'opposent pas : la RSE, via la performance globale, peut créer de la valeur",
+        "Sont sans lien",
+        "Sont identiques"
+      ],
+      "c": 1,
+      "e": "Le débat opposant performance financière et RSE est dépassé : la RSE peut être créatrice de valeur.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 2
+    },
+    {
+      "q": "Dans la matrice de matérialité simple, les deux axes sont :",
+      "theme": "demarche",
+      "o": [
+        "Coûts et bénéfices",
+        "Importance de l'enjeu pour l'entreprise et importance pour les parties prenantes",
+        "Court terme et long terme",
+        "Risques et opportunités"
+      ],
+      "c": 1,
+      "e": "La matrice croise l'importance de l'enjeu pour l'entreprise et son importance pour les parties prenantes.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 6
+    },
+    {
+      "q": "Le passage de la matérialité simple à la double matérialité est lié à :",
+      "theme": "demarche",
+      "o": [
+        "La loi NRE (2001)",
+        "L'adoption de la CSRD (2022)",
+        "Le Grenelle de l'environnement",
+        "L'ISO 26000"
+      ],
+      "c": 1,
+      "e": "L'adoption de la CSRD en 2022 fait passer l'analyse à la double matérialité.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 6
+    }
+  ],
+  "annales": [
+    {
+      "id": "rse_2024_2025",
+      "year": "2024-2025",
+      "name": "Session 1 — Jeudi 12 juin 2025",
+      "duration": "1h00",
+      "format": "Écrit · Aucun document autorisé",
+      "professor": "D. Duheron",
+      "subject": "",
+      "dossiers": [
+        {
+          "label": "Exercice 1 — QCM (5 points)",
+          "context": "1 point par question. Lire attentivement chaque énoncé : certaines questions admettent une seule bonne réponse, d'autres plusieurs réponses possibles.",
+          "items": [
+            {
+              "q": "1. Qu'est-ce que la RSE ? (1 seule bonne réponse)\n  ☐ A. L'ensemble des réglementations applicable aux entreprises en matière Environnementale et sociale\n  ☐ B. La prise en compte volontaire par l'entreprise de son impact en matière Environnementale et Sociétale\n  ☐ C. Un label garantissant aux tiers que l'entreprise travaille de manière responsable\n  ☐ D. La Réglementation Sociétale des Entreprises",
+              "correction": "Bonne réponse : B — « La prise en compte volontaire par l'entreprise de son impact en matière Environnementale et Sociétale ».\n\nLa RSE n'est PAS une réglementation imposée (A faux), pas un label (C faux), pas une « Réglementation Sociétale » qui n'existe pas (D faux). C'est bien une démarche volontaire portant sur les impacts environnementaux ET sociétaux (économiques, sociaux, environnementaux, gouvernance)."
+            },
+            {
+              "q": "2. Qu'est-ce que la CSRD ? (1 seule bonne réponse)\n  ☐ A. Une norme de présentation des performances extra-financières obligatoire pour toutes les entreprises\n  ☐ B. Règlement Européen d'application obligatoire dans tous les pays de l'Union Européenne\n  ☐ C. Un des outils du Green Deal Européen pour accélérer la Transition Environnementale des entreprises\n  ☐ D. Le guide de mise en place du Rapport de Durabilité volontaire pour les PME",
+              "correction": "Bonne réponse : C — « Un des outils du Green Deal Européen pour accélérer la Transition Environnementale des entreprises ».\n\nLa CSRD (Corporate Sustainability Reporting Directive) n'est pas obligatoire pour toutes les entreprises mais seulement celles dépassant certains seuils (A faux). C'est une directive (à transposer) et non un règlement (B faux). Ce n'est pas un guide PME (D faux — c'est le rôle du VSME)."
+            },
+            {
+              "q": "3. Quelle(s) démarche(s) fait/font partie des principaux sujets à prendre en compte pour construire sa stratégie RSE ? (1 seule bonne réponse)\n  ☐ A. L'identification des parties prenantes et la prise en compte de leurs attentes\n  ☐ B. La description du modèle d'affaire de l'entreprise\n  ☐ C. L'identification des enjeux, impacts, risques et opportunités liés aux activités de l'entreprise\n  ☐ D. A, B et C",
+              "correction": "Bonne réponse : D — « A, B et C ».\n\nLes trois axes sont indispensables à toute démarche RSE structurée : cartographie des parties prenantes, description du business model et identification des IRO (Impacts, Risques, Opportunités)."
+            },
+            {
+              "q": "4. Quels outils / référentiels sont disponibles pour les entreprises sous les seuils de la CSRD désirant préparer un rapport de performances extra-financières ? (Plusieurs réponses possibles)\n  ☐ A. La norme VSME (Voluntary Small and Medium Entities) de l'EFRAG\n  ☐ B. La CSRD\n  ☐ C. Label Engagé RSE Afnor\n  ☐ D. Le statut de Société à Mission prévu par la Loi PACTE de 2019",
+              "correction": "Bonnes réponses : A, C et D.\n\nA — VSME : norme volontaire de l'EFRAG pour PME et micro-entreprises.\nC — Label Engagé RSE Afnor : label structurant la démarche.\nD — Société à Mission (Loi PACTE 2019) : statut juridique pour formaliser une raison d'être.\n\nB (CSRD) est faux : la CSRD s'applique aux entreprises AU-DESSUS des seuils, pas en-dessous."
+            },
+            {
+              "q": "5. Parmi les 10 Thèmes contenus dans les ESRS seul le Thème E1 « Changement climatique » est quasi-incontournable. Quels sujets aborde-t-il ? (Plusieurs réponses possibles)\n  ☐ A. La biodiversité\n  ☐ B. L'adaptation au changement climatique\n  ☐ C. L'atténuation du changement climatique\n  ☐ D. Préservation des ressources naturelles\n\n(N.B. : la version distribuée du sujet mentionnait « le Thème S1 » par erreur — il s'agit bien du Thème E1 = Changement climatique.)",
+              "correction": "Bonnes réponses : B et C.\n\nL'ESRS E1 (Changement climatique) couvre 3 piliers :\n  • Atténuation du changement climatique (réduction des GES)\n  • Adaptation au changement climatique (résilience)\n  • Énergie\n\nLa biodiversité (A) est traitée dans l'ESRS E4. La préservation des ressources naturelles (D) est plutôt dans E5 (économie circulaire) et E3 (ressources aquatiques et marines)."
+            }
+          ]
+        },
+        {
+          "label": "Exercice 2 — Questions de cours, réponses courtes (4 points, 2 pts/question)",
+          "context": "",
+          "items": [
+            {
+              "q": "1. Quelles sont les composantes de l'analyse de Double Matérialité au sens de la CSRD ?",
+              "correction": "[Meilleure copie — note 17/20]\n\nLa CSRD (Corporate Sustainability Reporting Directive), en français directive de publication d'un rapport de durabilité pour les entreprises, découle du pacte vert européen (Green Deal) de 2019 et impose un cadre de reporting extra-financier standardisé avec les 12 normes ESRS (European Sustainability Reporting Standards), des standards à respecter sur les aspects environnementaux, sociaux et de gouvernance. Cela contribue à financer la transition écologique.\n\nCela permet aux entreprises de présenter une analyse de double matérialité, allant alors plus loin que la simple matérialité de la NFRD de 2014.\n\nLa simple matérialité était l'analyse de l'impact des enjeux RSE sur la performance financière de l'entreprise (analyse extra-financière).\n\nLa double matérialité va plus loin et impose 2 analyses :\n\n  • La matérialité d'impact = l'impact des enjeux de l'entreprise sur l'environnement et les tiers, les parties prenantes, qui découle de son activité. L'entreprise va alors identifier les impacts positifs et négatifs majeurs, déterminants, réels ou potentiels, à court, moyen et long terme.\n\n  • La matérialité financière = l'impact des enjeux RSE sur la performance de l'entreprise (correspond à la simple matérialité financière). Elle va analyser les risques et opportunités, réels ou potentiels, à CT, MT, LT, que les conséquences sociales, environnementales et économiques peuvent avoir sur sa capacité à mobiliser ses capitaux, sur sa création de valeur, les répercussions sur sa performance financière et globale."
+            },
+            {
+              "q": "2. Quels sont les principaux enjeux qui devraient motiver un chef d'entreprise pour mettre en place une stratégie RSE ?",
+              "correction": "[Meilleure copie — note 17/20]\n\nLes principaux enjeux RSE sont de diverses natures :\n\n  • Cela peut amener une entreprise à se questionner sur son modèle d'affaire pour le rendre plus durable, anticiper les perturbations futures et donc être plus performante\n\n  • Réduction des coûts en diminuant sa consommation d'énergie, par la réduction des déchets par exemple\n\n  • Cela peut lui permettre d'innover dans de nouvelles technologies et ainsi augmenter sa sphère de clientèle donc favoriser un meilleur chiffre d'affaires\n\n  • En étant plus durable, elle peut fidéliser les parties prenantes\n\n  • Elle devient attractive pour recruter des talents et fidéliser sa main-d'œuvre\n\n  • Elle améliore son image de marque, sa notoriété, sa réputation et renforce ainsi sa performance (fidélisation)"
+            }
+          ]
+        },
+        {
+          "label": "Exercice 3 — Questions de cours, réponses développées (8 points, 4 pts/question)",
+          "context": "",
+          "items": [
+            {
+              "q": "1. Quelles sont les grandes étapes de mise en œuvre d'une démarche RSE dans une organisation ? Présentez-les en expliquant les objectifs et les enjeux de chaque étape.",
+              "correction": "[Meilleure copie — note 17/20]\n\nLes 6 grandes étapes dans la mise en œuvre d'une démarche RSE sont :\n\n─── 1ère étape : Déterminer les enjeux RSE ───\n\nCela a pour but de construire la démarche de manière complète, en répondant aux attentes CSRD.\n  → Faire une analyse contextuelle de l'entreprise et de son environnement :\n       • Faire un modèle d'affaire complet\n       • Faire une cartographie des parties prenantes\n       • Analyser la chaîne de valeur (amont et aval)\n  → Faire l'analyse de double matérialité pour déterminer les enjeux RSE les plus importants (impact et financière).\n\n─── 2e étape : Identifier la gouvernance RSE ───\n\nIl va falloir que la direction et le Conseil d'administration et les autres organes de direction s'impliquent dans la démarche ; c'est une condition obligatoire pour que la démarche ait du sens et elle doit engager toute l'entreprise dans sa globalité.\n\n─── 3e étape : Déterminer la politique et les objectifs RSE ───\n\nIl s'agit de réfléchir aux objectifs RSE et à la politique RSE que l'on souhaite appliquer, en lien avec la 1ère étape. Ils doivent être cohérents et SMART (spécifiques, mesurables, atteignables, réalistes, temporellement définis).\n\n─── 4e étape : Élaborer un plan d'action ───\n\nDéterminer une feuille de route avec le plan d'action des objectifs RSE et définir une temporalité associée aux actions.\n\n─── 5e étape : Mesurer la performance avec des indicateurs RSE ───\n\nIl s'agit de chiffrer la démarche pour mesurer les écarts entre le réalisé et le prévisionnel. Par exemple, pour un objectif de replanter 10 000 arbres : c'est un indicateur de performance qui permet de situer l'avancement et de savoir si on peut améliorer notre action. Cela permet d'être dans une démarche d'amélioration continue = de revoir les objectifs et d'améliorer les actions pour y parvenir.\n\n─── 6e étape : Communiquer et reporting ───\n\nIl faut alors communiquer sur la démarche, être transparent, réaliser le rapport de durabilité aux normes attendues, CSRD et celles-ci validées par un expert (CAC (H2A) ou organisme tiers indépendant).\n\nDe plus, l'entreprise peut étendre sa démarche par des certifications ou labels pour faire reconnaître son investissement RSE."
+            },
+            {
+              "q": "2. Quels sont les objectifs d'un rapport de durabilité conforme à la CSRD ? Expliquez en quoi cette nouvelle obligation va au-delà des anciennes exigences de reporting.",
+              "correction": "[Meilleure copie — note 17/20]\n\nLes objectifs d'un rapport de durabilité conforme à la CSRD sont :\n\n  • La standardisation des rapports pour faciliter les comparaisons\n  • La double matérialité (impact + financière)\n  • Le rapport de durabilité validé et certifié\n\nLe rapport de durabilité est certifié par le CAC (inscrit à la H2A) ou un organisme tiers indépendant qui atteste et certifie la solidité.\n\nIl doit respecter les 12 normes ESRS, standardisées, ce qui permet aux investisseurs de pouvoir comparer plus sereinement les rapports, qui peuvent influencer les choix d'investissements.\n\nLe vérificateur émet un rapport de certification avec une assurance limitée (formulée négativement), d'une durée de validité de 6 ans, qui atteste donc de la conformité de la démarche. Cela va donc plus loin puisque le fait que la démarche soit contrôlée, les entreprises sont contraintes à faire leur rapport de manière sérieuse et conforme.\n\nLe vérificateur garantit la conformité, la sincérité et la fiabilité du reporting après avoir vérifié qu'il n'y avait pas d'erreurs, d'omissions, d'incohérences (avec les bilans financiers par exemple) ou qu'il soit incomplet.\n\nIl vérifie aussi toutes les informations en lien avec la chaîne de valeur, le modèle d'affaire, les analyses d'impacts, les calculs effectués…\n\nAinsi, les investisseurs retrouvent confiance dans le processus et peuvent investir dans la transition écologique."
+            }
+          ]
+        },
+        {
+          "label": "Exercice 4 — Question rédactionnelle de synthèse (3 points)",
+          "context": "En une page maximum, exposez en quoi la RSE va avoir un impact sur votre futur métier. Vous pouvez vous positionner en tant que futur Responsable Financier d'une Entreprise, Expert-Comptable ou Commissaire aux Comptes… (précisez votre positionnement).",
+          "items": [
+            {
+              "q": "Rédigez votre synthèse (1 page maximum).",
+              "correction": "[Meilleure copie — note 17/20 — positionnement expert-comptable]\n\nEn tant qu'expert-comptable, la RSE aura un impact car de plus en plus d'entreprises seront concernées. En effet, les seuils des entreprises concernées seront amenés à diminuer (attente du positionnement européen sur ce sujet, Omnibus 2) et surtout, les entreprises peuvent accéder à une démarche volontaire et peuvent donc prendre part à la transition écologique dès à présent.\n\nEn effet, le VSME (Voluntary Small and Medium Enterprise) est une démarche volontaire pour les PME qui souhaitent être dans la RSE, avec des objectifs simplifiés des ESRS. Cela concerne les micro-entreprises et les PME jusqu'à 250 salariés, ce qui constitue la majorité de la clientèle d'un cabinet d'expertise-comptable.\n\nNous pourrons alors accompagner et aider les entrepreneurs dans leur démarche, en apportant nos conseils puisque nous sommes formés à la RSE. De plus, étant en collaboration avec les CAC déjà formés à la vérification, nous pourrons mieux guider nos clients.\n\nCela consistera à les accompagner dans leurs choix de niveau :\n  • 1er niveau : objectifs classiques des RSE avec les enjeux traditionnels de GES\n  • 2e niveau plus poussé : comme le CRD classique mais avec des objectifs allégés\n\nLe rôle de soutien, appui et conseil sera donc important et constitue un rôle essentiel pour accompagner les clients.\n\nDe plus, en tant qu'expert-comptable, on peut également mettre en place une VSME au sein de son propre cabinet pour être soi-même acteur de la démarche, ce qui peut attirer les talents, les nouvelles générations, favoriser l'attractivité du cabinet et le pouvoir à innover, renforcer la fidélisation des collaborateurs et la performance globale (motivation)."
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "Bien gérer son temps : QCM (5 min) → Ex2 court (10 min) → Ex3 développé (25 min) → Ex4 synthèse (15 min). La synthèse rapporte 3 points : ne pas la bâcler.",
+        "Pour le QCM : attention à la Q5 qui mentionne « S1 » dans l'énoncé — il faut comprendre qu'il s'agit de E1 (Changement climatique). Les ESRS commencent par E (Environnement), S (Social), G (Gouvernance).",
+        "Mémoriser les 6 étapes de la démarche RSE : enjeux → gouvernance → politique → plan d'action → mesure → reporting.",
+        "Double matérialité = (impact + financière). C'est LA notion centrale de la CSRD à parfaitement maîtriser.",
+        "Pour la synthèse Ex4 : se positionner clairement (expert-comptable / CAC / RF) dès l'intro. Mobiliser VSME pour le marché PME (cœur de clientèle des cabinets)."
+      ]
+    }
+  ],
+  "themes": [
+    {
+      "id": "fondamentaux",
+      "icon": "🌍",
+      "label": "Fondamentaux : DD, RSE, ISO 26000"
+    },
+    {
+      "id": "reglementation",
+      "icon": "⚖️",
+      "label": "Cadre réglementaire"
+    },
+    {
+      "id": "demarche",
+      "icon": "🛠️",
+      "label": "Démarche RSE"
+    },
+    {
+      "id": "opportunites",
+      "icon": "🌟",
+      "label": "Opportunités & labels"
+    }
+  ]
+};
+
+let DATA = null;
+
+function escAnnale(s) {
+  return String(s == null ? '' : s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+}
+function toggleAnnaleCorrection(id, btn) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const isHidden = el.style.display === 'none' || !el.style.display;
+  el.style.display = isHidden ? 'block' : 'none';
+  btn.textContent = isHidden ? '▾ Masquer la correction' : '▸ Afficher la correction';
+  btn.classList.toggle('open', isHidden);
+}
+function expandAllAnnales(scope) {
+  document.querySelectorAll(scope + ' .annale-correction').forEach(el => { el.style.display = 'block'; });
+  document.querySelectorAll(scope + ' .annale-show-corr').forEach(btn => { btn.textContent = '▾ Masquer la correction'; btn.classList.add('open'); });
+}
+function collapseAllAnnales(scope) {
+  document.querySelectorAll(scope + ' .annale-correction').forEach(el => { el.style.display = 'none'; });
+  document.querySelectorAll(scope + ' .annale-show-corr').forEach(btn => { btn.textContent = '▸ Afficher la correction'; btn.classList.remove('open'); });
+}
+
+function switchAnnale(idx, btn) {
+  document.querySelectorAll('.annale-body-wrap').forEach(el => {
+    el.style.display = parseInt(el.dataset.annaleIdx, 10) === idx ? '' : 'none';
+  });
+  document.querySelectorAll('.annale-tab').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  // Collapse toutes les corrections de l'annale qu'on quitte pour repartir propre
+  document.querySelectorAll('.annale-correction').forEach(el => { el.style.display = 'none'; });
+  document.querySelectorAll('.annale-show-corr').forEach(b => { b.textContent = '▸ Afficher la correction'; b.classList.remove('open'); });
+}
+
+function getAnnalesHTML() {
+  const list = (DATA.annales || []);
+  if (!list.length) return `<div class="annales-empty"><p>Aucune annale disponible pour ce cours.</p></div>`;
+  const renderOne = (a, aIdx) => {
+    const meta = [a.duration ? `⏱ ${a.duration}` : '', a.format || '', a.professor ? `👤 ${a.professor}` : '']
+      .filter(Boolean).join(' · ');
+    const head = `
+      <div class="annale-head">
+        <div class="annale-head-row">
+          <div class="annale-year">${escAnnale(a.year || '')}</div>
+          <div class="annale-title">${escAnnale(a.name || 'Annale')}</div>
+        </div>
+        ${meta ? `<div class="annale-meta">${escAnnale(meta)}</div>` : ''}
+      </div>`;
+    const tipsHTML = (a.tips||[]).length ? `
+      <div class="annale-tips">
+        <div class="annale-block-title">💡 Conseils méthodologiques</div>
+        <ul>${a.tips.map(t => `<li>${escAnnale(t)}</li>`).join('')}</ul>
+      </div>` : '';
+
+    // ── NOUVEAU SCHÉMA : dossiers[].items[{q,correction}] avec bouton par sous-question ──
+    if (Array.isArray(a.dossiers) && a.dossiers.length) {
+      const cardId = `annale-card-${aIdx}`;
+      const dossiersHTML = a.dossiers.map((ds, dIdx) => {
+        const itemsHTML = (ds.items || []).map((it, iIdx) => {
+          const corrId = `corr-${aIdx}-${dIdx}-${iIdx}`;
+          return `
+          <div class="annale-question">
+            <div class="annale-q-text">${escAnnale(it.q || '')}</div>
+            ${it.correction ? `
+              <button class="annale-show-corr" type="button" onclick="toggleAnnaleCorrection('${corrId}', this)">▸ Afficher la correction</button>
+              <div class="annale-correction" id="${corrId}" style="display:none">${escAnnale(it.correction)}</div>
+            ` : ''}
+          </div>`;
+        }).join('');
+        return `
+        <div class="annale-dossier">
+          <div class="annale-dossier-label">${escAnnale(ds.label || '')}</div>
+          ${ds.context ? `<div class="annale-dossier-context">${escAnnale(ds.context)}</div>` : ''}
+          <div class="annale-dossier-items">${itemsHTML}</div>
+        </div>`;
+      }).join('');
+      const subjectHTML = a.subject ? `
+        <div class="annale-subject">
+          <div class="annale-block-title">📋 Énoncé général</div>
+          <div class="annale-subject-content">${escAnnale(a.subject)}</div>
+        </div>` : '';
+      return `
+      <div class="annale-card" id="${cardId}">
+        ${head}
+        <div class="annale-toolbar">
+          <button class="annale-toolbar-btn" type="button" onclick="expandAllAnnales('#${cardId}')">▾ Tout afficher</button>
+          <button class="annale-toolbar-btn" type="button" onclick="collapseAllAnnales('#${cardId}')">▸ Tout masquer</button>
+        </div>
+        ${subjectHTML}
+        <div class="annale-dossiers">${dossiersHTML}</div>
+        ${tipsHTML}
+      </div>`;
+    }
+
+    // ── ANCIEN SCHÉMA (fallback pour annales non encore migrées) ──
+    const exHTML = (a.exercises || []).map(e => `
+      <div class="annale-exercise">
+        <div class="annale-exercise-label">${escAnnale(e.label)}</div>
+        <div class="annale-exercise-content">${escAnnale(e.content||'').replace(/\n/g,'<br>')}</div>
+      </div>
+    `).join('');
+    const bc = a.bestCopy;
+    let bestCopyHTML = '';
+    if (bc) {
+      const planHTML = (bc.plan||[]).map(line => {
+        const t = (line||'').trim();
+        if (!t) return '<div class="annale-plan-spacer"></div>';
+        if (/^(I+\.|[0-9]+\.|Introduction|Conclusion|Exercice|Q[0-9]+|•)/.test(t)) {
+          return `<div class="annale-plan-line annale-plan-main">${escAnnale(t)}</div>`;
+        }
+        return `<div class="annale-plan-line">${escAnnale(t)}</div>`;
+      }).join('');
+      const conceptsHTML = (bc.keyConcepts||[]).map(c => `<span class="annale-concept">${escAnnale(c)}</span>`).join('');
+      const qcmHTML = (bc.qcmAnswers||[]).length
+        ? `<div class="annale-block annale-qcm"><div class="annale-block-title">QCM — réponses correctes</div>${bc.qcmAnswers.map(q=>`<div class="annale-qcm-line">${escAnnale(q)}</div>`).join('')}</div>`
+        : '';
+      bestCopyHTML = `
+      <div class="annale-bestcopy">
+        <div class="annale-bestcopy-head">
+          <span class="annale-grade">📝 Note : ${escAnnale(bc.grade)}</span>
+          ${bc.subjectChosen ? `<span class="annale-chosen">Sujet traité : ${escAnnale(bc.subjectChosen)}</span>` : ''}
+        </div>
+        ${qcmHTML}
+        <div class="annale-block">
+          <div class="annale-block-title">Plan-type / structure de la copie</div>
+          <div class="annale-plan">${planHTML}</div>
+        </div>
+        ${(bc.keyConcepts||[]).length ? `
+        <div class="annale-block">
+          <div class="annale-block-title">Mots-clés &amp; concepts mobilisés</div>
+          <div class="annale-concepts">${conceptsHTML}</div>
+        </div>` : ''}
+        ${bc.correctorNotes ? `<div class="annale-corrector"><strong>Annotations du correcteur :</strong> ${escAnnale(bc.correctorNotes)}</div>` : ''}
+      </div>`;
+    }
+    let corrigeHTML = '';
+    if (a.corrige && a.corrige.available) {
+      const hl = (a.corrige.highlights||[]).map(h => `<li>${escAnnale(h)}</li>`).join('');
+      corrigeHTML = `
+      <div class="annale-corrige">
+        <div class="annale-block-title">Corrigé officiel — points clés</div>
+        ${a.corrige.summary ? `<p class="annale-corrige-summary">${escAnnale(a.corrige.summary)}</p>` : ''}
+        <ul>${hl}</ul>
+      </div>`;
+    }
+    return `
+    <div class="annale-card">
+      ${head}
+      <div class="annale-subject">
+        <div class="annale-block-title">📋 Sujet</div>
+        <div class="annale-subject-content">${escAnnale(a.subject||'').replace(/\n/g,'<br>')}</div>
+      </div>
+      ${exHTML ? `<div class="annale-exercises">${exHTML}</div>` : ''}
+      ${bestCopyHTML}
+      ${corrigeHTML}
+      ${tipsHTML}
+    </div>`;
+  };
+  if (list.length === 1) return renderOne(list[0], 0);
+  // Multi-annales : onglets en haut + un seul corps visible à la fois
+  const tabsHTML = list.map((a, i) => `
+    <button class="annale-tab${i === 0 ? ' active' : ''}" type="button" onclick="switchAnnale(${i}, this)">
+      <span class="annale-tab-year">${escAnnale(a.year || '')}</span>
+      ${a.name ? `<span class="annale-tab-name">${escAnnale(a.name)}</span>` : ''}
+    </button>`).join('');
+  return `
+    <div class="annales-tabs">${tabsHTML}</div>
+    <div class="annales-bodies">
+      ${list.map((a, i) => `<div class="annale-body-wrap" data-annale-idx="${i}" style="${i === 0 ? '' : 'display:none'}">${renderOne(a, i)}</div>`).join('')}
+    </div>`;
+}
+
+function getCoursHTML() {
+  return `
+    <!-- ══ CH 1 : Le développement durable ══ -->
+    <div class="course-chapter" data-theme="fondamentaux" data-chap-idx="1" id="chap-1">
+      <h2 class="chapter-title">1 · Le développement durable : enjeux et définition</h2>
+
+      <div class="def-box">
+        <strong>Développement durable.</strong> « Un développement qui répond aux besoins du présent sans compromettre la capacité des générations futures à répondre aux leurs » (Rapport Brundtland). Cette notion s'appuie sur la convergence de 3 composantes : économique, sociale et écologique.
+      </div>
+
+      <h3>Les 3 piliers du développement durable</h3>
+      <table class="comp-table">
+        <thead><tr><th>Intersection</th><th>Qualificatif</th></tr></thead>
+        <tbody>
+          <tr><td>Économique + Social</td><td>Équitable</td></tr>
+          <tr><td>Économique + Écologique</td><td>Viable</td></tr>
+          <tr><td>Social + Écologique</td><td>Vivable</td></tr>
+          <tr><td>Les trois piliers réunis</td><td>Durable</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Les dates clés du développement durable</h3>
+      <ul>
+        <li><strong>1951</strong> : Rapport sur l'état de l'environnement</li>
+        <li><strong>1972</strong> : Rapport du Club de Rome (« The Limits to Growth ») ; Conférence des Nations Unies sur l'environnement (Stockholm)</li>
+        <li><strong>1987</strong> : Rapport Brundtland</li>
+        <li><strong>1992</strong> : Sommet de la Terre de Rio</li>
+        <li><strong>1997</strong> : Convention sur le climat</li>
+        <li><strong>2007</strong> : Grenelle de l'environnement</li>
+        <li><strong>2015</strong> : Accord de Paris</li>
+        <li><strong>2017</strong> : Objectifs de Développement Durable (ODD)</li>
+      </ul>
+
+      <h3>Le Global Compact (Pacte mondial)</h3>
+      <p>Le Global Compact est un cadre d'engagement volontaire porté par les Nations Unies, reposant sur 10 principes couvrant 4 domaines : droits de l'Homme, normes internationales du travail, environnement, lutte contre la corruption. L'entreprise adhérente s'engage à :</p>
+      <ol>
+        <li>Mettre en application les 10 principes dans son organisation ;</li>
+        <li>Promouvoir ces principes au sein de sa sphère d'influence ;</li>
+        <li>Inscrire ses actions dans les Objectifs de Développement Durable et communiquer dessus.</li>
+      </ol>
+    </div>
+
+    <!-- ══ CH 2 : De la RSE à la performance globale ══ -->
+    <div class="course-chapter" data-theme="fondamentaux" data-chap-idx="2" id="chap-2">
+      <h2 class="chapter-title">2 · De la RSE à la performance globale</h2>
+
+      <div class="def-box">
+        <strong>RSE (Responsabilité Sociétale de l'Entreprise).</strong> « L'intégration volontaire par les entreprises de préoccupations sociales et environnementales à leurs activités commerciales et à leurs relations avec les parties prenantes » (Commission Européenne). C'est l'application du développement durable, notion planétaire, à l'échelle de l'entreprise.
+      </div>
+
+      <h3>L'évolution historique de la RSE</h3>
+      <table class="comp-table">
+        <thead><tr><th>Période</th><th>Conception</th><th>Référence</th></tr></thead>
+        <tbody>
+          <tr><td>1950</td><td>RSE « éthique »</td><td>Howard R. Bowen, « Social Responsibilities of the Businessman »</td></tr>
+          <tr><td>1980</td><td>RSE « utilitariste »</td><td>R. Edward Freeman, « Strategic Management »</td></tr>
+          <tr><td>2000</td><td>RSE actuelle</td><td>M. Capron et F. Quairel-Lanoizelée, « La responsabilité sociale d'entreprise »</td></tr>
+        </tbody>
+      </table>
+
+      <h3>La performance globale</h3>
+      <div class="key-box">
+        Performance financière + Performance extra-financière = <strong>Performance globale</strong>.
+      </div>
+      <p>Les 3 piliers de la performance globale sont interdépendants et doivent être pensés ensemble :</p>
+      <ul>
+        <li><strong>Social</strong> : capital humain, égalité et diversité, droits humains, gouvernance éthique.</li>
+        <li><strong>Économique</strong> : résilience du modèle, innovation responsable, valeur partagée, transparence.</li>
+        <li><strong>Environnement</strong> : décarbonation, ressources naturelles, biodiversité, économie circulaire.</li>
+      </ul>
+      <p>Le débat opposant performance financière et performance RSE est dépassé : intégrée à la performance globale, la RSE peut être créatrice de valeur.</p>
+    </div>
+
+    <!-- ══ CH 3 : La norme ISO 26000 ══ -->
+    <div class="course-chapter" data-theme="fondamentaux" data-chap-idx="3" id="chap-3">
+      <h2 class="chapter-title">3 · La norme ISO 26000</h2>
+
+      <div class="def-box">
+        <strong>ISO 26000.</strong> Norme qui fournit aux organisations les lignes directrices de la RSE. Elle apporte une référence commune autour des notions RSE. C'est une norme <strong>volontaire</strong>, éditée en <strong>2010</strong>, <strong>non contraignante et non certifiable</strong>. Elle propose une approche « performance globale » intégrant tout l'écosystème et les parties prenantes.
+      </div>
+
+      <h3>Les 7 principes de responsabilité sociétale</h3>
+      <ol>
+        <li>Redevabilité</li>
+        <li>Transparence</li>
+        <li>Comportement éthique</li>
+        <li>Reconnaissance des intérêts des parties prenantes</li>
+        <li>Respect du principe de légalité</li>
+        <li>Prise en compte des normes internationales de comportement</li>
+        <li>Respect des droits de l'Homme</li>
+      </ol>
+
+      <h3>Les 7 questions centrales</h3>
+      <p>La démarche RSE est articulée autour de 7 questions centrales, organisées autour de la <strong>gouvernance de l'organisation</strong> (au centre) :</p>
+      <ul>
+        <li>Droits de l'Homme</li>
+        <li>Relations et conditions de travail</li>
+        <li>L'environnement</li>
+        <li>Loyauté des pratiques</li>
+        <li>Questions relatives aux consommateurs</li>
+        <li>Communautés et développement local</li>
+      </ul>
+
+      <h3>La sphère d'influence</h3>
+      <div class="key-box">
+        « Toute organisation ne peut évoluer sans tenir compte de sa sphère d'influence, c'est-à-dire de toute entité impactée par ses décisions et ses actes. » L'entreprise identifie ses parties prenantes (salariés, fournisseurs, partenaires financiers, acteurs territoriaux, pouvoirs publics, clients...) et définit des modes de dialogue adaptés.
+      </div>
+    </div>
+
+    <!-- ══ CH 4 : Le cadre réglementaire ══ -->
+    <div class="course-chapter" data-theme="reglementation" data-chap-idx="4" id="chap-4">
+      <h2 class="chapter-title">4 · Le cadre réglementaire de la RSE</h2>
+
+      <p>La RSE est passée d'une démarche volontaire à une réglementation de plus en plus spécifique.</p>
+      <table class="comp-table">
+        <thead><tr><th>Texte</th><th>Apport principal</th></tr></thead>
+        <tbody>
+          <tr><td>Loi NRE (2001)</td><td>Fait entrer le reporting extra-financier dans le droit français : publication d'informations sur les conséquences sociales et environnementales des activités.</td></tr>
+          <tr><td>Dispositif Grenelle</td><td>Issu du « Grenelle de l'Environnement » : renforce les engagements de développement durable et le reporting extra-financier.</td></tr>
+          <tr><td>Loi TECV (2015)</td><td>Transition Énergétique pour la Croissance Verte : répond à l'Accord de Paris, accélère la transition énergétique, réduit les émissions de GES (transport, bâtiments).</td></tr>
+          <tr><td>Loi devoir de vigilance (2017)</td><td>Instaure des obligations de vigilance pour les sociétés-mères ; engage leur responsabilité en cas d'atteintes aux droits humains et à l'environnement.</td></tr>
+          <tr><td>DPEF (2017)</td><td>Déclaration de Performance Extra-Financière, issue de la directive NFRD ; repose sur le principe de matérialité ; objectif : identifier et hiérarchiser les enjeux RSE.</td></tr>
+          <tr><td>Loi PACTE (2019)</td><td>Innovation juridique à 3 étages : prise en compte des enjeux sociaux et environnementaux ; raison d'être dans les statuts ; qualité de société à mission.</td></tr>
+          <tr><td>Green Deal (2019)</td><td>Pacte vert pour l'Europe : engager l'UE vers la transition écologique, objectif de neutralité climatique à l'horizon 2050.</td></tr>
+          <tr><td>CSRD (2022)</td><td>Corporate Sustainability Reporting Directive : cadre de reporting extra-financier standardisé au regard de 12 normes ESRS ; introduit la double matérialité.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="key-box">
+        <strong>DPEF : entreprises concernées.</strong> Entreprises cotées : plus de 500 salariés et CA supérieur à 40 M€. Entreprises non cotées : plus de 500 salariés et CA supérieur à 100 M€.
+      </div>
+    </div>
+
+    <!-- ══ CH 5 : Enjeux et opportunités ══ -->
+    <div class="course-chapter" data-theme="opportunites" data-chap-idx="5" id="chap-5">
+      <h2 class="chapter-title">5 · La RSE : enjeux et opportunités pour l'entreprise</h2>
+
+      <h3>Les 6 opportunités d'une démarche RSE</h3>
+      <ol>
+        <li><strong>Évolution du business model</strong> : anticipation des risques sociaux et environnementaux, meilleure préparation aux changements réglementaires et aux risques de réputation.</li>
+        <li><strong>Image de marque positive</strong> : les pratiques durables renforcent l'image et distinguent l'entreprise de ses concurrents.</li>
+        <li><strong>Accès à de nouveaux marchés et innovation</strong> : certains marchés exigent des normes élevées de durabilité.</li>
+        <li><strong>Renforcement des relations avec les parties prenantes</strong> : relations plus solides avec employés, clients, fournisseurs, communautés.</li>
+        <li><strong>Attractivité pour les talents</strong> : les entreprises engagées attirent des talents dont les valeurs sont alignées.</li>
+        <li><strong>Réduction des coûts</strong> : pratiques éco-efficaces, efficacité énergétique, réduction des déchets.</li>
+      </ol>
+
+      <h3>Les opportunités métiers</h3>
+      <p>Pour les futurs collaborateurs (Responsable Financier, Expert-Comptable, Commissaire aux comptes...), la RSE offre :</p>
+      <ul>
+        <li>Une attractivité accrue sur le marché de l'emploi ;</li>
+        <li>Le développement de compétences transférables (pensée critique, résolution de problèmes, collaboration) utiles à l'audit et à la comptabilité ;</li>
+        <li>Un impact sociétal positif ;</li>
+        <li>L'anticipation des contraintes futures.</li>
+      </ul>
+    </div>
+
+    <!-- ══ CH 6 : Démarche RSE - enjeux et matérialité ══ -->
+    <div class="course-chapter" data-theme="demarche" data-chap-idx="6" id="chap-6">
+      <h2 class="chapter-title">6 · Démarche RSE : déterminer ses enjeux et la matérialité</h2>
+
+      <div class="key-box">
+        <strong>La démarche RSE en 6 étapes.</strong> 1. Déterminer ses enjeux RSE · 2. Identifier sa gouvernance RSE · 3. Constituer sa politique et ses objectifs · 4. Déterminer ses actions RSE · 5. Mesurer sa performance · 6. Communiquer sur sa démarche.
+      </div>
+
+      <h3>Étape 1 : déterminer ses enjeux RSE</h3>
+      <p>Un <strong>enjeu RSE</strong> est une thématique de durabilité identifiée par l'entreprise (environnementale, sociale, de gouvernance, économique ou sociétale). Les identifier permet l'orientation stratégique (concentrer les efforts sur les enjeux critiques) et la gestion des risques extra-financiers.</p>
+
+      <h3>L'analyse de matérialité</h3>
+      <table class="comp-table">
+        <thead><tr><th>Type</th><th>Principe</th></tr></thead>
+        <tbody>
+          <tr><td>Matérialité simple</td><td>Identifie les impacts potentiels des enjeux RSE sur la performance financière de l'entreprise (analyse des risques extra-financiers).</td></tr>
+          <tr><td>Double matérialité</td><td>Complète la matérialité simple : on prend aussi en compte les effets de l'activité de l'entreprise sur son environnement et les tiers. Associée à la CSRD (2022).</td></tr>
+        </tbody>
+      </table>
+      <p>La double matérialité combine donc :</p>
+      <ul>
+        <li><strong>Matérialité financière</strong> : risques et opportunités que l'enjeu fait peser sur la performance de l'entreprise.</li>
+        <li><strong>Matérialité d'impact</strong> : impacts positifs et négatifs de l'entreprise sur l'environnement et les tiers.</li>
+      </ul>
+
+      <h3>La démarche de double matérialité et les IRO</h3>
+      <p>Le concept d'<strong>IRO</strong> (Impacts, Risques et Opportunités) structure la démarche, en 3 étapes :</p>
+      <ol>
+        <li>Analyse contextuelle et identification des IRO, sur l'ensemble de la chaîne de valeur.</li>
+        <li>Évaluation de la matérialité d'impact et de la matérialité financière, selon une échelle de cotation (critères quantitatifs ou qualitatifs).</li>
+        <li>Identification de l'information à publier : un IRO est matériel dès lors qu'il est significatif du point de vue de l'impact ou du point de vue financier.</li>
+      </ol>
+
+      <h3>Le rôle des parties prenantes</h3>
+      <p>Pour déterminer ses enjeux, l'entreprise doit réaliser son analyse de matérialité, consulter ses parties prenantes clés et impliquer ses différentes fonctions. Toutes les parties prenantes n'ont pas le même poids : un barème peut leur être attribué dans l'analyse.</p>
+    </div>
+
+    <!-- ══ CH 7 : Démarche RSE - gouvernance, politique, objectifs ══ -->
+    <div class="course-chapter" data-theme="demarche" data-chap-idx="7" id="chap-7">
+      <h2 class="chapter-title">7 · Démarche RSE : gouvernance, politique et objectifs</h2>
+
+      <h3>Étape 2 : identifier sa gouvernance RSE</h3>
+      <p>L'implication de la gouvernance est indispensable. Elle se décline en deux volets :</p>
+      <ul>
+        <li><strong>La Direction</strong> : impulse la stratégie et porte les engagements, diffuse les valeurs et la culture, veille à l'intégration de la RSE dans les process, apporte crédibilité et légitimité.</li>
+        <li><strong>L'Organisation</strong> : définit les porteurs du projet RSE (responsable, comité...), assure le suivi et l'amélioration continue de la démarche.</li>
+      </ul>
+
+      <h3>Étape 3 : constituer sa politique et ses objectifs</h3>
+      <div class="def-box">
+        <strong>Politique RSE.</strong> Elle met en œuvre la stratégie de l'entreprise sur un enjeu de durabilité. Elle est sous la responsabilité de personnes définies, sur un périmètre d'application précis, avec des objectifs identifiés. Elle permet de répondre aux enjeux matériels, de formaliser la vision et l'engagement de l'entreprise, et de fixer ses objectifs.
+      </div>
+      <div class="def-box">
+        <strong>Objectif RSE.</strong> C'est la trajectoire cible, le but visé par la stratégie et les politiques. L'entreprise met en place son plan d'actions pour l'atteindre. Un objectif permet de suivre l'efficacité de la stratégie.
+      </div>
+      <div class="key-box">
+        <strong>Un objectif est nécessairement SMART :</strong> Spécifique · Mesurable · Atteignable · Réalisable · Temporellement défini.
+      </div>
+    </div>
+
+    <!-- ══ CH 8 : Démarche RSE - actions, performance, communication ══ -->
+    <div class="course-chapter" data-theme="demarche" data-chap-idx="8" id="chap-8">
+      <h2 class="chapter-title">8 · Démarche RSE : actions, performance et communication</h2>
+
+      <h3>Étape 4 : déterminer ses actions RSE</h3>
+      <div class="def-box">
+        <strong>Plan d'actions RSE.</strong> Ensemble de mesures, tâches ou activités visant à atteindre des objectifs prédéfinis. Il est consigné dans un document décrivant les étapes nécessaires (date d'échéance, pilote de l'action, tâches à réaliser). Il permet d'atteindre les objectifs en les jalonnant et de piloter le projet en optimisant les moyens.
+      </div>
+
+      <h3>Étape 5 : mesurer sa performance RSE</h3>
+      <p>Un <strong>indicateur de performance RSE</strong> mesure le degré d'accomplissement des objectifs. Mesurer sa performance permet de suivre l'évolution de sa stratégie et d'ajuster son plan d'action. Trois types d'indicateurs :</p>
+      <table class="comp-table">
+        <thead><tr><th>Indicateur</th><th>Rôle</th></tr></thead>
+        <tbody>
+          <tr><td>Indicateur de performance</td><td>Information quantifiée mesurant les résultats d'une ou plusieurs actions (souvent un ratio).</td></tr>
+          <tr><td>Indicateur de moyen (de pilotage)</td><td>Permet d'anticiper et de réajuster ; c'est un levier au service de l'objectif.</td></tr>
+          <tr><td>Indicateur d'impact</td><td>Démontre la contribution de l'entreprise à l'amélioration d'un problème sociétal.</td></tr>
+        </tbody>
+      </table>
+      <p>Un indicateur de performance répond toujours à un objectif.</p>
+
+      <h3>Étape 6 : communiquer sur sa démarche</h3>
+      <div class="def-box">
+        <strong>Rapport de durabilité.</strong> Le rapport RSE est aujourd'hui officiellement nommé rapport de durabilité. C'est un document périodique (généralement annuel) par lequel l'entreprise rend compte de ses actions et résultats en matière de RSE.
+      </div>
+      <ul>
+        <li><strong>En interne</strong> : mesurer les conséquences des activités sur l'environnement, la société et l'écosystème économique, et améliorer les processus.</li>
+        <li><strong>En externe</strong> : permettre aux parties prenantes de comprendre l'implication de l'entreprise et d'évaluer les conséquences à moyen et long terme de ses activités.</li>
+      </ul>
+      <p><strong>EcoVadis</strong> est une plateforme de notation utilisée par les partenaires commerciaux pour partager les performances RSE. Sa méthodologie repose sur 7 indicateurs de management répartis en 21 critères (environnement, social, droits humains, achats responsables).</p>
+    </div>
+
+    <!-- ══ CH 9 : Certifications et labels ══ -->
+    <div class="course-chapter" data-theme="opportunites" data-chap-idx="9" id="chap-9">
+      <h2 class="chapter-title">9 · Certifications, labels et impact sur le métier</h2>
+
+      <div class="def-box">
+        <strong>Label / certification RSE.</strong> Reconnaissance attribuée à une entreprise qui atteste de sa démarche et de ses actions en matière de responsabilité sociétale. Délivrés par des organismes indépendants après évaluation, les labels permettent de démontrer l'engagement de l'entreprise, de renforcer sa crédibilité et son image, et d'encourager des pratiques durables et transparentes.
+      </div>
+
+      <h3>Trois exemples de labels</h3>
+      <table class="comp-table">
+        <thead><tr><th>Label</th><th>Caractéristiques</th></tr></thead>
+        <tbody>
+          <tr><td>B Corp</td><td>Label international évaluant les entreprises sur 5 catégories : Collaborateurs, Environnement, Gouvernance, Clients, Collectivité. Les entreprises labellisées équilibrent objectifs financiers et impacts positifs.</td></tr>
+          <tr><td>LUCIE</td><td>Développé par l'association LUCIE ; certification attribuée aux entreprises engagées dans une démarche RSE, s'appuyant sur la norme ISO 26000.</td></tr>
+          <tr><td>Engagé RSE (AFNOR)</td><td>Évalue la maturité des démarches RSE des organisations (entreprises, associations, territoires), sur le modèle AFAQ 26000.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>L'impact de la RSE sur le futur métier</h3>
+      <p>La RSE transforme les métiers de la finance, de la comptabilité et de l'audit. Le futur Responsable Financier, Expert-Comptable ou Commissaire aux comptes est concerné par le reporting de durabilité, la fiabilisation des données extra-financières et l'accompagnement des entreprises dans leur démarche RSE. Se former à la RSE, c'est anticiper les contraintes à venir et prévenir les risques.</p>
+    </div>
+`;
+}
+function getSynthHTML() {
+  return `
+
+<div class="synth-card">
+  <div class="synth-card-title">
+    <div class="synth-icon" style="background:rgba(90,145,104,0.18)">🌱</div> Fondamentaux : développement durable et RSE
+  </div>
+  <div class="synth-grid">
+    <div class="synth-mini">
+      <strong>Développement durable</strong>
+      <p>« Un développement qui répond aux besoins du présent sans compromettre la capacité des générations futures à répondre aux leurs » (Rapport Brundtland, 1987). Il repose sur 3 piliers : <strong>économique, social, écologique</strong>.</p>
+    </div>
+    <div class="synth-mini">
+      <strong>Les 3 piliers et leurs intersections</strong>
+      <p>Économique + social = <strong>équitable</strong> · économique + écologique = <strong>viable</strong> · social + écologique = <strong>vivable</strong> · les trois réunis = <strong>durable</strong>.</p>
+    </div>
+    <div class="synth-mini">
+      <strong>Définition de la RSE</strong>
+      <p>« L'intégration volontaire par les entreprises de préoccupations sociales et environnementales à leurs activités et à leurs relations avec les parties prenantes » (Commission Européenne). C'est l'application du développement durable à l'échelle de l'entreprise.</p>
+    </div>
+    <div class="synth-mini">
+      <strong>Évolution historique et performance globale</strong>
+      <p>RSE éthique (Bowen, 1950) · RSE utilitariste (Freeman, 1980) · RSE actuelle (Capron et Quairel-Lanoizelée, 2000). Performance financière + performance extra-financière = <strong>performance globale</strong>.</p>
+    </div>
+  </div>
+</div>
+
+<div class="synth-card">
+  <div class="synth-card-title">
+    <div class="synth-icon" style="background:rgba(61,114,180,0.18)">📋</div> ISO 26000 et cadre réglementaire
+  </div>
+  <div class="synth-grid">
+    <div class="synth-mini">
+      <strong>La norme ISO 26000</strong>
+      <p>Lignes directrices de la RSE : norme <strong>volontaire</strong> (2010), <strong>non contraignante et non certifiable</strong>. Articulée autour de <strong>7 principes</strong> et de <strong>7 questions centrales</strong>, organisées autour de la gouvernance.</p>
+    </div>
+    <div class="synth-mini">
+      <strong>De la démarche volontaire à la réglementation</strong>
+      <p>Loi NRE (2001) · Grenelle · Loi TECV (2015) · Loi devoir de vigilance (2017) · DPEF (2017) · Loi PACTE (2019) · Green Deal (2019) · CSRD (2022).</p>
+    </div>
+    <div class="synth-mini">
+      <strong>La loi PACTE (2019)</strong>
+      <p>Trois étages : prise en compte des enjeux sociaux et environnementaux par toutes les entreprises · raison d'être dans les statuts · qualité de société à mission.</p>
+    </div>
+    <div class="synth-mini">
+      <strong>La CSRD (2022)</strong>
+      <p>Cadre de reporting extra-financier standardisé au regard de <strong>12 normes ESRS</strong>. Introduit l'analyse de <strong>double matérialité</strong>.</p>
+    </div>
+  </div>
+</div>
+
+<div class="synth-card">
+  <div class="synth-card-title">
+    <div class="synth-icon" style="background:rgba(200,150,80,0.18)">🛠️</div> La démarche RSE en 6 étapes
+  </div>
+  <div class="synth-grid">
+    <div class="synth-mini">
+      <strong>Les 6 étapes</strong>
+      <p>1. Déterminer ses enjeux · 2. Identifier sa gouvernance · 3. Constituer sa politique et ses objectifs · 4. Déterminer ses actions · 5. Mesurer sa performance · 6. Communiquer.</p>
+    </div>
+    <div class="synth-mini">
+      <strong>Matérialité simple vs double</strong>
+      <p>Simple : impacts des enjeux RSE sur la performance financière de l'entreprise. Double (CSRD) : ajoute la matérialité d'impact (effets de l'entreprise sur l'environnement et les tiers). Concept d'<strong>IRO</strong> : Impacts, Risques, Opportunités.</p>
+    </div>
+    <div class="synth-mini">
+      <strong>Politique et objectifs SMART</strong>
+      <p>La politique met en œuvre la stratégie sur un enjeu de durabilité. Un objectif est <strong>SMART</strong> : Spécifique, Mesurable, Atteignable, Réalisable, Temporellement défini.</p>
+    </div>
+    <div class="synth-mini">
+      <strong>Mesurer et communiquer</strong>
+      <p>3 types d'indicateurs : de performance, de moyen (pilotage), d'impact. Le rapport RSE est aujourd'hui le <strong>rapport de durabilité</strong>. EcoVadis : plateforme de notation (7 indicateurs, 21 critères).</p>
+    </div>
+  </div>
+</div>
+
+<div class="synth-card">
+  <div class="synth-card-title">
+    <div class="synth-icon" style="background:rgba(150,110,180,0.18)">🏅</div> Opportunités et labels
+  </div>
+  <div class="synth-grid">
+    <div class="synth-mini">
+      <strong>Les 6 opportunités d'une démarche RSE</strong>
+      <p>Évolution du business model · image de marque · accès à de nouveaux marchés et innovation · relations avec les parties prenantes · attractivité des talents · réduction des coûts.</p>
+    </div>
+    <div class="synth-mini">
+      <strong>Les labels RSE</strong>
+      <p><strong>B Corp</strong> (5 catégories : collaborateurs, environnement, gouvernance, clients, collectivité) · <strong>LUCIE</strong> (fondé sur l'ISO 26000) · <strong>Engagé RSE</strong> de l'AFNOR (modèle AFAQ 26000).</p>
+    </div>
+    <div class="synth-mini">
+      <strong>Impact sur le futur métier</strong>
+      <p>La RSE transforme les métiers de la finance, de la comptabilité et de l'audit : reporting de durabilité, fiabilisation des données extra-financières, conseil et accompagnement des entreprises.</p>
+    </div>
+  </div>
+</div>
+`;
+}
+/* ═══════ TABS ═══════ */
+const TABS = [
+  { id:'checklist', label:'✅ Checklist', prog:10 },
+  { id:'cours',     label:'📖 Cours',     prog:25 },
+  { id:'synth',     label:'📝 Synthèse',  prog:40 },
+  { id:'flash',     label:'⚡ Flashcards', prog:55 },
+  { id:'quiz',      label:'🎯 Quiz',      prog:70 },
+  { id:'examen',    label:'📝 Examen blanc', prog:85 },
+  { id:'annales',   label:'📜 Annales',   prog:100 }
+];
+let currentTab = 'checklist';
+let fcTheme = 'all', quizTheme = 'all', coursTheme = 'all';
+
+
+function getFilteredFlashcards() {
+  if (fcTheme === 'all') return DATA.flashcards.map((_, i) => i);
+  return DATA.flashcards.map((fc, i) => fc.theme === fcTheme ? i : -1).filter(i => i >= 0);
+}
+function getFilteredQuizQuestions() {
+  if (quizTheme === 'all') return DATA.quizQuestions;
+  return DATA.quizQuestions.filter(q => q.theme === quizTheme);
+}
+function setFcTheme(id) { fcTheme = id; switchTab('flash'); }
+function setQuizTheme(id) { quizTheme = id; switchTab('quiz'); }
+function setCoursTheme(id) { coursTheme = id; applyCoursFilter(); renderCoursPills(); }
+function applyCoursFilter() {
+  document.querySelectorAll('.course-chapter').forEach(el => {
+    const matches = coursTheme === 'all' || el.dataset.theme === coursTheme;
+    el.style.display = matches ? '' : 'none';
+  });
+  const empty = document.getElementById('coursEmpty');
+  if (empty) {
+    const visible = Array.from(document.querySelectorAll('.course-chapter')).some(el => el.style.display !== 'none');
+    empty.style.display = visible ? 'none' : 'block';
+  }
+}
+function renderCoursPills() {
+  const host = document.getElementById('coursThemeSelectorWrap');
+  if (host) host.innerHTML = themeSelectorHTML('cours');
+}
+
+function themeSelectorHTML(scope) {
+  const current = scope === 'flash' ? fcTheme : (scope === 'quiz' ? quizTheme : coursTheme);
+  const fn = scope === 'flash' ? 'setFcTheme' : (scope === 'quiz' ? 'setQuizTheme' : 'setCoursTheme');
+  const themes = DATA.themes || [];
+  if (!themes.length) return '';
+  const counts = {};
+  if (scope === 'flash') {
+    counts.all = DATA.flashcards.length;
+    themes.forEach(t => counts[t.id] = DATA.flashcards.filter(fc => fc.theme === t.id).length);
+  } else if (scope === 'quiz') {
+    counts.all = DATA.quizQuestions.length;
+    themes.forEach(t => counts[t.id] = DATA.quizQuestions.filter(q => q.theme === t.id).length);
+  } else {
+    // cours : on compte les .course-chapter DOM si déjà présents, sinon fallback à 0
+    const chaps = document.querySelectorAll('.course-chapter');
+    counts.all = chaps.length;
+    themes.forEach(t => counts[t.id] = Array.from(chaps).filter(c => c.dataset.theme === t.id).length);
+  }
+  const pill = (id, label, count) => `<button class="theme-pill${current === id ? ' active' : ''}" onclick="${fn}('${id}')" title="${label}">${label} <span class="theme-count">${count}</span></button>`;
+  return `<div class="theme-selector" id="coursThemeSelector-${scope}">
+    <div class="theme-label">Filtre par axe</div>
+    <div class="theme-pills">
+      ${pill('all', '🔍 Tous', counts.all)}
+      ${themes.map(t => pill(t.id, t.icon + ' ' + t.label, counts[t.id] || 0)).join('')}
+    </div>
+  </div>`;
+}
+
+
+function switchTab(id) {
+  currentTab = id;
+  renderNav();
+  removeScrollSpy();
+  const t = TABS.find(t => t.id === id);
+  document.getElementById('progressFill').style.width = (t ? t.prog : 0) + '%';
+  renderTab(id);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function renderNav() {
+  document.getElementById('navTabs').innerHTML = TABS.map(t =>
+    `<button class="nav-tab${t.id === currentTab ? ' active' : ''}" onclick="switchTab('${t.id}')">${t.label}</button>`
+  ).join('');
+}
+
+function renderTab(id) {
+  const root = document.getElementById('appRoot');
+  const header = `
+    <div class="page-header">
+      <button class="back-home" onclick="window.location.href='index.html'">← Accueil</button>
+      <div class="page-title">${DATA.title}</div>
+      <div class="page-subtitle">${DATA.subtitle}</div>
+    </div>`;
+  if (id === 'checklist') root.innerHTML = header + renderChecklist();
+  else if (id === 'cours') {
+    root.innerHTML = header + `<div class="fade-up"><div id="coursThemeSelectorWrap"></div>${getCoursHTML()}<div id="coursEmpty" class="cours-empty" style="display:none">Aucun chapitre dans cet axe pour ce cours.</div></div>`;
+    document.getElementById('coursThemeSelectorWrap').innerHTML = themeSelectorHTML('cours');
+    applyCoursFilter();
+    setTimeout(() => buildScrollSpy('.main', '.course-chapter:not([style*="display: none"]) h2'), 100);
+    if (window._pendingCoursJump) { window._pendingCoursJump(); window._pendingCoursJump = null; }
+  }
+  else if (id === 'synth') root.innerHTML = header + `<div class="fade-up fade-up-stagger">${getSynthHTML()}</div>`;
+  else if (id === 'flash') { root.innerHTML = header + renderFlash(); bindFlash(); }
+  else if (id === 'quiz')  { root.innerHTML = header + renderQuizSetup(); }
+  else if (id === 'annales'){ root.innerHTML = header + `<div class="fade-up fade-up-stagger">${getAnnalesHTML()}</div>`; }
+  else if (id === 'examen') { renderExamen(); }
+}
+
+
+/* ═══════ DEEP LINK (hash : #cours=N&q=word ou #chap-N) ═══════ */
+function parseDeepLink() {
+  const h = window.location.hash || '';
+  if (!h) return null;
+  const out = {};
+  // Format 1 : #chap-3
+  let m = h.match(/^#chap-(\d+)$/);
+  if (m) { out.chap = parseInt(m[1], 10); return out; }
+  // Format 2 : #cours=3&q=mot&theme=xxx
+  m = h.match(/^#([^?]+)/);
+  if (m) {
+    const params = new URLSearchParams(h.slice(1));
+    if (params.has('cours')) out.chap = parseInt(params.get('cours'), 10);
+    if (params.has('q')) out.q = params.get('q');
+    if (params.has('theme')) out.theme = params.get('theme');
+    if (params.has('tab')) out.tab = params.get('tab');
+  }
+  return Object.keys(out).length ? out : null;
+}
+function highlightInChapter(chapEl, word) {
+  if (!chapEl || !word) return;
+  const re = new RegExp('(' + word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+  const walker = document.createTreeWalker(chapEl, NodeFilter.SHOW_TEXT, null);
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach(n => {
+    if (!re.test(n.nodeValue)) return;
+    re.lastIndex = 0;
+    const span = document.createElement('span');
+    span.innerHTML = n.nodeValue.replace(re, '<mark class="search-hit">$1</mark>');
+    n.parentNode.replaceChild(span, n);
+  });
+}
+function applyDeepLink() {
+  const dl = parseDeepLink();
+  if (!dl) return;
+  if (dl.theme) coursTheme = dl.theme;
+  // S'assurer qu'on est sur l'onglet cours
+  const targetTab = dl.tab || 'cours';
+  const jumper = () => {
+    const el = dl.chap ? document.getElementById('chap-' + dl.chap) : null;
+    if (el) {
+      // Si le chapitre est masqué par le filtre, réinitialise à 'all'
+      if (el.style.display === 'none') { coursTheme = 'all'; applyCoursFilter(); renderCoursPills(); }
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      el.classList.add('chap-target-flash');
+      setTimeout(() => el.classList.remove('chap-target-flash'), 2400);
+      if (dl.q) highlightInChapter(el, dl.q);
+    }
+  };
+  if (currentTab !== targetTab) {
+    window._pendingCoursJump = jumper;
+    switchTab(targetTab);
+  } else {
+    setTimeout(jumper, 80);
+  }
+}
+window.addEventListener('hashchange', applyDeepLink);
+
+/* ═══════ CHECKLIST ═══════ */
+function renderChecklist() {
+  const items = DATA.checklistItems;
+  const total = items.length;
+  const done = items.filter(i => isChecked(COURSE_KEY + ':' + i.id)).length;
+  const pct = total ? Math.round(done / total * 100) : 0;
+  saveCourseProgress(COURSE_KEY, done, total);
+  const r = 54, circ = 2 * Math.PI * r;
+  const offset = circ - (pct / 100) * circ;
+
+  return `
+  <div class="cl-progress-wrap fade-up">
+    <div style="position:relative;width:140px;height:140px;margin:0 auto">
+      <svg width="140" height="140" viewBox="0 0 140 140" class="cl-ring-svg" aria-label="Progression ${pct}%">
+        <defs>
+          <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="var(--accent)"/>
+            <stop offset="100%" stop-color="var(--copper)"/>
+          </linearGradient>
+        </defs>
+        <circle cx="70" cy="70" r="${r}" fill="none" stroke="var(--bg3)" stroke-width="10"/>
+        <circle cx="70" cy="70" r="${r}" fill="none" stroke="url(#ringGrad)" stroke-width="10"
+          stroke-linecap="round" stroke-dasharray="${circ.toFixed(1)}" stroke-dashoffset="${offset.toFixed(1)}"
+          style="transition:stroke-dashoffset 0.8s cubic-bezier(0.34,1.56,0.64,1)"/>
+      </svg>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:1.6rem;font-weight:700;color:var(--text)">${pct}%</div>
+        <div style="font-size:0.7rem;color:var(--text3);margin-top:2px">${done}/${total} points</div>
+      </div>
+    </div>
+    <div style="margin-top:1.5rem;font-family:'Playfair Display',serif;font-size:1rem;color:var(--text2)">Progression du cours</div>
+  </div>
+  <div class="checklist-list fade-up-stagger">
+    ${items.map(i => { const cid = COURSE_KEY + ':' + i.id, ck = isChecked(cid); return `
+      <div class="cl-item${ck ? ' done' : ''}" data-id="${cid}" role="checkbox" aria-checked="${ck}" tabindex="0" onclick="handleCheck('${cid}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();handleCheck('${cid}');}">
+        <div class="cl-box">${ck ? '✓' : ''}</div>
+        <span class="cl-label">${i.label}</span>
+      </div>`; }).join('')}
+  </div>`;
+}
+
+function handleCheck(id) {
+  toggleCheck(id);
+  switchTab('checklist');
+}
+
+/* ═══════ FLASHCARDS ═══════ */
+let fcQueue = [], fcKnown = [], fcFlipped = false, fcStreak = 0;
+let fcSRS = {}, fcSRSMode = 'srs', fcSessionSize = 0;
+
+function initFlashcards() {
+  fcSRS = loadSRS(DATA.quizKey);
+  const allowedIdx = new Set(getFilteredFlashcards());
+  const total = allowedIdx.size;
+  if (fcSRSMode === 'srs') {
+    fcQueue = srsBuildQueue(fcSRS, DATA.flashcards.length).filter(i => allowedIdx.has(i)).slice(0, SRS_SESSION_MAX);
+    if (fcQueue.length === 0) {
+      fcQueue = shuffle([...allowedIdx]).slice(0, SRS_SESSION_MAX);
+    }
+  } else {
+    fcQueue = shuffle([...allowedIdx]);
+  }
+  fcSessionSize = fcQueue.length;
+  fcKnown = []; fcFlipped = false; fcStreak = 0;
+}
+
+function renderFlash() {
+  initFlashcards();
+  return buildFlashHTML();
+}
+
+function buildFlashHTML() {
+  const total = DATA.flashcards.length;
+  const knownCount = fcKnown.length;
+  const pct = fcSessionSize > 0 ? Math.round(knownCount / fcSessionSize * 100) : 0;
+  const stats = srsGetStats(fcSRS, total);
+
+  if (fcQueue.length === 0) {
+    launchConfetti();
+    return `
+    <div class="fade-up">
+      <div class="fc-done">
+        <div style="font-size:3rem;margin-bottom:0.5rem">🎉</div>
+        <div class="fc-done-title">Toutes les cartes maîtrisées !</div>
+        <p style="color:var(--text2);margin:0.5rem 0 1rem">${total}/${total} cartes — Score parfait</p>
+        <button class="fc-reset-btn" onclick="resetFlash()">↺ Recommencer</button>
+      </div>
+    </div>`;
+  }
+
+  const card = DATA.flashcards[fcQueue[0]];
+  const streakHTML = fcStreak >= 2 ? `<span class="fc-streak">🔥 ${fcStreak} d'affilée</span>` : '';
+  return `
+  <div class="fade-up">
+    ${themeSelectorHTML('flash')}
+    <div class="fc-header">
+      <div class="fc-progress-bar">
+        <div class="fc-pb-label">${knownCount} / ${fcSessionSize} en session · ${stats.learned}/${stats.total} maîtrisées${stats.due > 0 && fcSRSMode==='srs' ? ` · <span style=\"color:var(--orange)\">${stats.due} dues</span>` : ''} ${streakHTML}</div>
+        <div class="fc-pb-track"><div class="fc-pb-fill" style="width:${pct}%"></div></div>
+      </div>
+      <div class="fc-shortcuts">${fcSRSMode === 'srs' ? '🧠 SRS' : '🔀 Mélangé'} · <span onclick="toggleSRSMode()" style="cursor:pointer;text-decoration:underline">basculer</span></div>
+    </div>
+    <div class="fc-counter">Carte ${fcKnown.length + 1} sur ${total} — ${fcQueue.length} restante(s)</div>
+    <div class="flashcard-container">
+      <div class="flashcard${fcFlipped ? ' flipped' : ''}" id="fcCard" role="button" tabindex="0" aria-label="Carte de révision — cliquer ou Espace pour retourner" onclick="flipCard()" onkeydown="if(event.key==='Enter'){event.preventDefault();flipCard();}">
+        <div class="flashcard-face flashcard-front">
+          <div class="flashcard-q">${card.q}</div>
+          <div class="flashcard-hint">Cliquez pour révéler la réponse</div>
+        </div>
+        <div class="flashcard-face flashcard-back">
+          <div class="flashcard-a">${card.a}</div>
+        </div>
+      </div>
+    </div>
+    <div class="fc-actions">
+      <button class="fc-btn-review" onclick="markReview()" title="Raccourci : ←">
+        <span class="fc-btn-lbl">✗ À revoir</span>
+        <span class="fc-btn-iv">${srsFormatInterval(srsPreviewInterval(fcSRS[fcQueue[0]], 'again'))}</span>
+      </button>
+      <button class="fc-btn-known" onclick="markKnown()" title="Raccourci : ↓">
+        <span class="fc-btn-lbl">✓ Bien</span>
+        <span class="fc-btn-iv">${srsFormatInterval(srsPreviewInterval(fcSRS[fcQueue[0]], 'good'))}</span>
+      </button>
+      <button class="fc-btn-easy" onclick="markEasy()" title="Raccourci : →">
+        <span class="fc-btn-lbl">★ Facile</span>
+        <span class="fc-btn-iv">${srsFormatInterval(srsPreviewInterval(fcSRS[fcQueue[0]], 'easy'))}</span>
+      </button>
+    </div>
+    <div style="text-align:center;margin-top:0.6rem">
+      <button class="fc-btn-skip" onclick="skipCard()" title="Passer cette carte sans la noter">↪ Passer (sans noter)</button>
+    </div>
+    <div style="text-align:center;margin-top:1rem">
+      <button class="fc-reset-btn" onclick="resetFlash()">↺ Réinitialiser</button>
+    </div>
+  </div>`;
+}
+
+function flipCard() {
+  fcFlipped = !fcFlipped;
+  const card = document.getElementById('fcCard');
+  if (card) card.classList.toggle('flipped', fcFlipped);
+}
+
+function markKnown() {
+  if (!fcQueue.length) return;
+  const idx = fcQueue.shift();
+  fcSRS[idx] = srsScheduleCard(fcSRS[idx], 'good');
+  saveSRS(DATA.quizKey, fcSRS);
+  fcKnown.push(idx); fcStreak++; fcFlipped = false; rerenderFlash();
+}
+function markReview() {
+  if (!fcQueue.length) return;
+  const idx = fcQueue.shift();
+  fcSRS[idx] = srsScheduleCard(fcSRS[idx], 'again');
+  saveSRS(DATA.quizKey, fcSRS);
+  fcQueue.push(idx); fcStreak = 0; fcFlipped = false; rerenderFlash();
+}
+function markEasy() {
+  if (!fcQueue.length) return;
+  const idx = fcQueue.shift();
+  fcSRS[idx] = srsScheduleCard(fcSRS[idx], 'easy');
+  saveSRS(DATA.quizKey, fcSRS);
+  fcKnown.push(idx); fcStreak++; fcFlipped = false; rerenderFlash();
+}
+function skipCard() {
+  if (!fcQueue.length) return;
+  fcQueue.push(fcQueue.shift()); fcFlipped = false; rerenderFlash();
+}
+function toggleSRSMode() {
+  fcSRSMode = (fcSRSMode === 'srs') ? 'shuffle' : 'srs';
+  switchTab('flash');
+}
+function resetFlash() { initFlashcards(); rerenderFlash(); }
+
+function rerenderFlash() {
+  const ctx = { fcQueue, fcKnown, fcStreak, fcSRS, fcSRSMode, fcSessionSize };
+  if (updateFlashCardPartial(DATA, ctx)) return;
+  const root = document.getElementById('appRoot');
+  const header = root.querySelector('.page-header') ? root.querySelector('.page-header').outerHTML : '';
+  root.innerHTML = header + buildFlashHTML();
+}
+
+function bindFlash() { document.addEventListener('keydown', fcKeyHandler); }
+function fcKeyHandler(e) {
+  if (currentTab !== 'flash') { document.removeEventListener('keydown', fcKeyHandler); return; }
+  if (e.code === 'Space') { e.preventDefault(); flipCard(); }
+  else if (e.code === 'ArrowLeft') { if (fcQueue.length > 0) markReview(); }
+  else if (e.code === 'ArrowDown') { e.preventDefault(); if (fcQueue.length > 0) markKnown(); }
+  else if (e.code === 'ArrowRight') { if (fcQueue.length > 0) markEasy(); }
+  else if (e.code === 'Tab' || e.code === 'KeyS') { e.preventDefault(); if (fcQueue.length > 0) skipCard(); }
+}
+
+/* ═══════ QUIZ ═══════ */
+let quizState = null;
+let timerInterval = null;
+let timeLeft = 30;
+
+function renderQuizSetup() {
+  const scores = loadQuizScores(DATA.quizKey).slice(0, 3);
+  const histHTML = scores.length === 0
+    ? '<p style="color:var(--text3);font-size:0.82rem">Aucune partie précédente</p>'
+    : scores.map(s => {
+        const pct = Math.round(s.score / s.total * 100);
+        const d = new Date(s.date);
+        const ds = d.toLocaleDateString('fr-FR',{day:'2-digit',month:'2-digit'}) + ' ' + d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'});
+        const col = pct >= 75 ? 'var(--green)' : pct >= 50 ? 'var(--orange)' : 'var(--red)';
+        return `<span class="quiz-score-pill"><span style="color:${col};font-weight:700">${s.score}/${s.total}</span><span style="color:var(--text3)">${ds}</span></span>`;
+      }).join('');
+
+  const filteredQuiz = getFilteredQuizQuestions();
+  const quizSize = Math.min(20, filteredQuiz.length);
+  return `
+  <div class="fade-up">
+    ${themeSelectorHTML('quiz')}
+    <div class="quiz-setup">
+      <div style="font-size:2rem;margin-bottom:0.5rem">🎯</div>
+      <h3>Quiz — ${DATA.title}</h3>
+      <p>${quizSize} questions tirées au sort sur ${filteredQuiz.length}${quizTheme !== 'all' ? ' (thème filtré)' : ''}</p>
+      <div class="quiz-history">
+        <div class="quiz-history-title">Scores récents</div>
+        ${histHTML}
+      </div>
+      <div id="timerToggle" class="quiz-timer-toggle" onclick="toggleTimer()">
+        <span>⏱</span> Timer 30s par question
+      </div>
+      <br>
+      <button class="start-btn" onclick="startQuiz()">Lancer le quiz</button>
+    </div>
+  </div>`;
+}
+
+function toggleTimer() {
+  const el = document.getElementById('timerToggle');
+  if (!el) return;
+  const on = el.classList.toggle('on');
+  el._timerOn = on;
+  if (quizState) quizState.timerEnabled = on;
+}
+
+function startQuiz() {
+  const timerEl = document.getElementById('timerToggle');
+  const timerOn = timerEl ? !!timerEl._timerOn : false;
+  const pool = getFilteredQuizQuestions();
+  quizState = {
+    questions: shuffle([...pool]).slice(0, Math.min(20, pool.length)).map(quizShuffleQuestion),
+    current: 0,
+    answers: [],
+    timerEnabled: timerOn,
+    errors: []
+  };
+  renderQuizQuestion();
+}
+
+function renderQuizQuestion() {
+  if (!quizState || quizState.current >= quizState.questions.length) { showQuizResult(); return; }
+  clearInterval(timerInterval);
+  timeLeft = 30;
+  if (updateQuizQuestionPartial(quizState)) {
+    if (quizState.timerEnabled) {
+      const fill = document.getElementById('timerFill');
+      if (fill) { fill.style.width = '100%'; fill.classList.remove('warn'); }
+      const label = document.getElementById('timerLabel');
+      if (label) label.textContent = timeLeft + 's';
+      startQuestionTimer(quizState.current);
+    }
+    return;
+  }
+  const qi = quizState.current;
+  const q = quizState.questions[qi];
+  const total = quizState.questions.length;
+  const letters = ['A','B','C','D'];
+  const timerBar = quizState.timerEnabled ? `<div class="quiz-timer-bar"><div class="quiz-timer-fill" id="timerFill" style="width:100%"></div></div>` : '';
+  const timerLabel = quizState.timerEnabled ? `<span style="font-family:'JetBrains Mono',monospace;color:var(--cyan);font-size:0.78rem" id="timerLabel">${timeLeft}s</span>` : '';
+
+  const root = document.getElementById('appRoot');
+  root.innerHTML = `
+  <div class="page-header">
+    <button class="back-home" onclick="window.location.href='index.html'">← Accueil</button>
+    <div class="page-title">${DATA.title}</div>
+    <div class="page-subtitle">${DATA.subtitle}</div>
+  </div>
+  <div class="fade-up">
+    <div class="quiz-progress">
+      <span>Question ${qi + 1} / ${total}</span>
+      ${timerLabel}
+    </div>
+    ${timerBar}
+    <div class="quiz-global-bar"><div class="quiz-global-fill" style="width:${Math.round((qi/total)*100)}%"></div></div>
+    <div class="quiz-card" id="quizCard">
+      <div class="quiz-q-num">Q${qi + 1}</div>
+      <div class="quiz-q-text">${q.q}</div>
+      <div class="quiz-options" id="quizOpts">
+        ${q.o.map((opt, i) => `
+          <button class="quiz-option" data-i="${i}" onclick="selectAnswer(event, ${qi}, ${i})">
+            <div class="opt-letter">${letters[i]}</div>
+            <span>${opt}</span>
+          </button>`).join('')}
+      </div>
+    </div>
+  </div>`;
+
+  // Attach ripples
+  document.querySelectorAll('.quiz-option').forEach(attachRipple);
+
+  if (quizState.timerEnabled) startQuestionTimer(qi);
+}
+
+function startQuestionTimer(qi) {
+  timeLeft = 30;
+  const fill = document.getElementById('timerFill');
+  const label = document.getElementById('timerLabel');
+  clearInterval(timerInterval);
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    if (fill) {
+      fill.style.width = (timeLeft / 30 * 100) + '%';
+      if (timeLeft <= 10) fill.classList.add('warn');
+    }
+    if (label) label.textContent = timeLeft + 's';
+    if (timeLeft <= 0) { clearInterval(timerInterval); autoWrong(qi); }
+  }, 1000);
+}
+
+function autoWrong(qi) {
+  if (!quizState || quizState.answers[qi] !== undefined) return;
+  quizState.answers[qi] = -1;
+  quizState.errors.push({ qi, chosen: -1 });
+  const opts = document.querySelectorAll('.quiz-option');
+  opts.forEach(o => o.classList.add('disabled'));
+  const q = quizState.questions[qi];
+  if (opts[q.c]) opts[q.c].classList.add('correct');
+  document.getElementById('quizCard').classList.add('shake');
+  showExplanation(q, true, qi);
+}
+
+function selectAnswer(ev, qi, chosen) {
+  if (!quizState || quizState.answers[qi] !== undefined) return;
+  clearInterval(timerInterval);
+  quizState.answers[qi] = chosen;
+  const q = quizState.questions[qi];
+  const correct = chosen === q.c;
+  if (!correct) quizState.errors.push({ qi, chosen });
+  const opts = document.querySelectorAll('.quiz-option');
+  opts.forEach(o => o.classList.add('disabled'));
+  opts[q.c].classList.add('correct');
+  opts[q.c].classList.add('correct-highlight');
+  if (!correct) {
+    if (opts[chosen]) opts[chosen].classList.add('wrong');
+    document.getElementById('quizCard').classList.add('shake');
+    setTimeout(() => document.getElementById('quizCard')?.classList.remove('shake'), 500);
+  }
+  showExplanation(q, !correct, qi);
+}
+
+function showExplanation(q, wrong, qi) {
+  const card = document.getElementById('quizCard');
+  if (!card) return;
+  const expl = document.createElement('div');
+  expl.className = 'quiz-expl';
+  expl.textContent = q.e;
+  card.appendChild(expl);
+  const nextBtn = document.createElement('button');
+  nextBtn.className = 'quiz-next-btn';
+  const isLast = quizState.current >= quizState.questions.length - 1;
+  nextBtn.textContent = isLast ? 'Voir les résultats →' : 'Question suivante →';
+  nextBtn.onclick = () => { quizState.current++; renderQuizQuestion(); };
+  card.appendChild(nextBtn);
+}
+
+function showQuizResult() {
+  clearInterval(timerInterval);
+  const total = quizState.questions.length;
+  const score = quizState.answers.filter((a, i) => isQuestionCorrect(quizState.questions[i], a)).length;
+  saveQuizScore(DATA.quizKey, score, total);
+  const pct = Math.round(score / total * 100);
+  const emoji = pct >= 90 ? '🏆' : pct >= 75 ? '🎉' : pct >= 50 ? '👍' : '💪';
+  const msg = pct >= 90 ? 'Excellent !' : pct >= 75 ? 'Très bien !' : pct >= 50 ? 'Bien !' : 'Continue tes efforts !';
+  if (pct >= 90) launchConfetti();
+
+  const errorsHTML = quizState.errors.length === 0
+    ? '<p style="color:var(--green);text-align:center;margin-top:1rem">Aucune erreur — parfait !</p>'
+    : `<div class="errors-list">
+        <div style="font-size:0.78rem;text-transform:uppercase;letter-spacing:1px;color:var(--text3);font-family:'JetBrains Mono',monospace;margin-bottom:0.7rem">Erreurs à revoir</div>
+        ${quizState.errors.map(err => {
+          const q = quizState.questions[err.qi];
+          const yourAns = q.type === 'tf' ? '' : (err.chosen >= 0 && q.o ? q.o[err.chosen] : 'Pas de réponse');
+          return `<div class="error-item"><div class="eq">${q.q}</div>${yourAns ? `<div class="ea-wrong">✗ Ta réponse : ${yourAns}</div>` : ''}<div class="ea">${formatCorrectAnswerHTML(q)}</div>${q.e ? `<div class="ea-expl">${q.e}</div>` : ''}</div>`;
+        }).join('')}
+      </div>`;
+
+  const root = document.getElementById('appRoot');
+  root.innerHTML = `
+  <div class="page-header">
+    <button class="back-home" onclick="window.location.href='index.html'">← Accueil</button>
+    <div class="page-title">${DATA.title}</div>
+    <div class="page-subtitle">${DATA.subtitle}</div>
+  </div>
+  <div class="fade-up">
+    <div class="score-box">
+      <div class="score-emoji">${emoji}</div>
+      <div class="score-num" id="scoreNum">0/${total}</div>
+      <div class="score-label">${msg} · ${pct}%</div>
+      <div class="score-actions">
+        <button class="btn-secondary" onclick="switchTab('quiz')">↺ Relancer</button>
+        <button class="btn-primary" id="errBtn" onclick="toggleErrors()">${quizState.errors.length > 0 ? 'Voir les erreurs' : "Pas d'erreurs"}</button>
+        ${quizState.errors.length > 0 ? `<button class="btn-secondary" onclick="replayErrors()">↻ Rejouer mes ${quizState.errors.length} erreur${quizState.errors.length > 1 ? 's' : ''}</button>` : ''}
+      </div>
+      <div id="errSection" style="display:none">${errorsHTML}</div>
+    </div>
+  </div>`;
+
+  // Animation compteur
+  const el = document.getElementById('scoreNum');
+  const start = Date.now();
+  const dur = 1500;
+  (function tick() {
+    const t = Math.min((Date.now() - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - t, 3);
+    el.textContent = Math.round(ease * score) + '/' + total;
+    if (t < 1) requestAnimationFrame(tick);
+  })();
+}
+
+function toggleErrors() {
+  const sec = document.getElementById('errSection');
+  const btn = document.getElementById('errBtn');
+  if (!sec) return;
+  const visible = sec.style.display !== 'none';
+  sec.style.display = visible ? 'none' : 'block';
+  if (btn) btn.textContent = visible ? 'Voir les erreurs' : 'Masquer les erreurs';
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ═══════ EXAMEN BLANC — RSE/CSRD (format D. Duheron 1h) ═══════
+   Ex1 QCM 5 pts · Ex2 courtes 4 pts · Ex3 dev 8 pts · Ex4 synth. 3 pts
+   = 20 pts total · slider 15→60 min
+   ═══════════════════════════════════════════════════════════ */
+
+const EXAM_KEY = 'm2cca_examen_rse';
+let examState = null;
+let examTimerInterval = null;
+
+/* ───── Helpers ───── */
+function ePick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+function eShuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+function eEscape(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function eArrEq(a, b) {
+  if (!Array.isArray(a) || !Array.isArray(b) || a.length !== b.length) return false;
+  const sa = [...a].sort(), sb = [...b].sort();
+  return sa.every((v, i) => v === sb[i]);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   POOLS DE QUESTIONS
+   ═══════════════════════════════════════════════════════════ */
+
+/* ───── Pool QCM (Ex1) — single ou multi ───── */
+const RSE_QCM_POOL = [
+  { q: "Qu'est-ce que la RSE ?", o: ["L'ensemble des réglementations environnementales applicables aux entreprises", "L'intégration volontaire de préoccupations sociales et environnementales aux activités et aux relations avec les parties prenantes", "Une norme comptable obligatoire", "Un label délivré par l'État"], c: [1], e: "Définition de la Commission Européenne : la RSE est une démarche volontaire, application du développement durable à l'entreprise." },
+  { q: "Le développement durable, selon le Rapport Brundtland, répond aux besoins du présent :", o: ["en maximisant la croissance", "sans compromettre la capacité des générations futures à répondre aux leurs", "en supprimant l'activité industrielle", "en priorisant l'économie sur l'environnement"], c: [1], e: "Définition de référence du Rapport Brundtland (1987)." },
+  { q: "Les 3 piliers du développement durable sont :", o: ["Production, Vente, Marketing", "Économique, Social, Écologique", "Local, National, International", "Passé, Présent, Futur"], c: [1], e: "Le DD repose sur la convergence des piliers économique, social et écologique." },
+  { q: "L'intersection des piliers social et écologique du DD est qualifiée de :", o: ["Équitable", "Viable", "Vivable", "Durable"], c: [2], e: "Social + écologique = vivable ; économique + social = équitable ; économique + écologique = viable." },
+  { q: "Le Global Compact des Nations Unies repose sur :", o: ["12 normes ESRS", "10 principes (droits de l'Homme, travail, environnement, anti-corruption)", "7 questions centrales", "3 piliers"], c: [1], e: "Cadre d'engagement volontaire reposant sur 10 principes couvrant 4 domaines." },
+  { q: "À quel auteur associe-t-on la RSE « éthique » des années 1950 ?", o: ["Howard R. Bowen", "R. Edward Freeman", "Michel Capron", "le Rapport Brundtland"], c: [0], e: "1950 : Bowen (RSE éthique) ; 1980 : Freeman (RSE utilitariste) ; 2000 : Capron et Quairel-Lanoizelée." },
+  { q: "La performance globale est égale à :", o: ["la performance financière seule", "la performance financière + la performance extra-financière", "la performance boursière", "la performance commerciale"], c: [1], e: "Performance globale = performance financière + performance extra-financière." },
+  { q: "La norme ISO 26000 est :", o: ["obligatoire et certifiable", "volontaire, non contraignante et non certifiable", "une loi française", "un label de l'AFNOR"], c: [1], e: "L'ISO 26000 (2010) fournit des lignes directrices de la RSE ; elle n'est ni contraignante ni certifiable." },
+  { q: "L'ISO 26000 articule la démarche RSE autour de :", o: ["7 principes et 7 questions centrales", "12 normes ESRS", "6 étapes", "3 piliers seulement"], c: [0], e: "L'ISO 26000 s'articule autour de 7 principes et de 7 questions centrales." },
+  { q: "Quels textes relèvent du cadre réglementaire français/européen de la RSE ? (plusieurs réponses)", o: ["Loi NRE (2001)", "Loi PACTE (2019)", "Directive CSRD (2022)", "Loi de finances rectificative"], c: [0, 1, 2], multi: true, e: "NRE, PACTE et CSRD font partie du cadre RSE ; la loi de finances n'en relève pas." },
+  { q: "La loi NRE (2001) a pour effet principal de :", o: ["créer la société à mission", "faire entrer le reporting extra-financier dans le droit français", "interdire les énergies fossiles", "créer le label B Corp"], c: [1], e: "La loi NRE (2001) fait entrer le reporting extra-financier dans le droit français." },
+  { q: "La loi PACTE (2019) introduit :", o: ["les 12 normes ESRS", "la raison d'être et la société à mission", "le Green Deal", "le label LUCIE"], c: [1], e: "La loi PACTE permet d'inscrire une raison d'être dans les statuts et d'adopter la qualité de société à mission." },
+  { q: "La CSRD (2022) définit un cadre de reporting standardisé au regard de :", o: ["7 questions centrales", "12 normes ESRS", "10 principes", "3 piliers"], c: [1], e: "La CSRD définit un cadre de reporting au regard de 12 normes ESRS et introduit la double matérialité." },
+  { q: "L'objectif ultime du Green Deal européen (2019) est :", o: ["la neutralité climatique à l'horizon 2050", "la fin du reporting extra-financier", "le doublement du PIB", "la suppression de la CSRD"], c: [0], e: "Le Green Deal vise la neutralité climatique de l'UE en 2050." },
+  { q: "La démarche RSE se structure en :", o: ["3 étapes", "5 étapes", "6 étapes", "12 étapes"], c: [2], e: "6 étapes : enjeux, gouvernance, politique et objectifs, actions, mesure de la performance, communication." },
+  { q: "La matérialité simple consiste à identifier :", o: ["les impacts de l'entreprise sur l'environnement", "les impacts potentiels des enjeux RSE sur la performance financière de l'entreprise", "le chiffre d'affaires", "les émissions de GES"], c: [1], e: "La matérialité simple analyse les risques extra-financiers sur la performance financière." },
+  { q: "La double matérialité combine : (plusieurs réponses)", o: ["la matérialité financière", "la matérialité d'impact", "la matérialité comptable", "la matérialité fiscale"], c: [0, 1], multi: true, e: "Double matérialité = matérialité financière + matérialité d'impact (effets de l'entreprise sur l'environnement et les tiers)." },
+  { q: "Le sigle IRO désigne :", o: ["Indicateurs, Ratios, Objectifs", "Impacts, Risques, Opportunités", "Information, Reporting, Organisation", "Investissement, Rendement, Optimisation"], c: [1], e: "IRO = Impacts, Risques et Opportunités, identifiés sur la chaîne de valeur." },
+  { q: "Un objectif RSE doit être SMART, c'est-à-dire :", o: ["Spécifique, Mesurable, Atteignable, Réalisable, Temporellement défini", "Simple, Mondial, Annuel, Rapide, Total", "Social, Moral, Acceptable, Responsable, Transparent", "Stratégique, Marketing, Agile, Rentable, Technique"], c: [0], e: "SMART : Spécifique, Mesurable, Atteignable, Réalisable, Temporellement défini." },
+  { q: "Le rapport RSE est aujourd'hui officiellement appelé :", o: ["bilan carbone", "rapport de durabilité", "DPEF", "rapport de gestion"], c: [1], e: "Le rapport RSE est désormais officiellement nommé rapport de durabilité." },
+  { q: "EcoVadis est :", o: ["une norme ISO", "une plateforme de notation de la performance RSE", "un label de l'AFNOR", "une loi européenne"], c: [1], e: "EcoVadis est une plateforme de notation (7 indicateurs de management, 21 critères)." },
+  { q: "Le label B Corp évalue les entreprises sur :", o: ["3 piliers", "5 catégories : collaborateurs, environnement, gouvernance, clients, collectivité", "7 questions centrales", "12 normes"], c: [1], e: "B Corp est un label international évaluant 5 catégories." },
+  { q: "Le label LUCIE s'appuie sur :", o: ["la loi PACTE", "la norme ISO 26000", "la CSRD", "le Global Compact"], c: [1], e: "Le label LUCIE RSE s'appuie sur les engagements de la norme ISO 26000." },
+  { q: "Parmi les opportunités d'une démarche RSE figurent : (plusieurs réponses)", o: ["l'attractivité pour les talents", "la réduction des coûts", "l'augmentation automatique de l'impôt", "le renforcement des relations avec les parties prenantes"], c: [0, 1, 3], multi: true, e: "Les 6 opportunités : business model, image de marque, nouveaux marchés, parties prenantes, talents, réduction des coûts." }
+];
+
+const RSE_COURT_POOL = [
+  { q: "Quelles sont les composantes de l'analyse de double matérialité au sens de la CSRD ?", points: [
+    "La matérialité d'impact : effets de l'activité de l'entreprise sur l'environnement et les tiers (impacts positifs et négatifs)",
+    "La matérialité financière : risques et opportunités que les enjeux RSE font peser sur la performance financière de l'entreprise",
+    "Un enjeu est matériel dès lors qu'il est significatif du point de vue de l'impact OU du point de vue financier",
+    "Identification des IRO (Impacts, Risques, Opportunités) sur l'ensemble de la chaîne de valeur" ] },
+  { q: "Quels sont les principaux enjeux qui devraient motiver un chef d'entreprise à mettre en place une stratégie RSE ?", points: [
+    "Faire évoluer son business model et anticiper les risques sociaux et environnementaux",
+    "Renforcer son image de marque et se distinguer de ses concurrents",
+    "Accéder à de nouveaux marchés et stimuler l'innovation",
+    "Renforcer les relations avec les parties prenantes et attirer les talents",
+    "Réduire ses coûts grâce à des pratiques éco-efficaces" ] },
+  { q: "Définissez la RSE et expliquez son lien avec le développement durable.", points: [
+    "RSE : intégration volontaire de préoccupations sociales et environnementales aux activités et aux relations avec les parties prenantes (Commission Européenne)",
+    "Le développement durable est une notion planétaire ; la RSE en est l'application à l'échelle de l'entreprise",
+    "La RSE s'inscrit dans la performance globale (financière + extra-financière)" ] },
+  { q: "Qu'est-ce que la norme ISO 26000 et quelles sont ses caractéristiques ?", points: [
+    "Norme fournissant les lignes directrices de la RSE, référence commune autour des notions RSE",
+    "Norme volontaire, éditée en 2010, non contraignante et non certifiable",
+    "Articulée autour de 7 principes et de 7 questions centrales",
+    "Approche performance globale intégrant les parties prenantes et la sphère d'influence" ] },
+  { q: "Citez et expliquez les 3 types d'indicateurs de performance RSE.", points: [
+    "Indicateur de performance : information quantifiée mesurant les résultats d'une ou plusieurs actions (souvent un ratio)",
+    "Indicateur de moyen (de pilotage) : permet d'anticiper et de réajuster, levier au service de l'objectif",
+    "Indicateur d'impact : démontre la contribution de l'entreprise à l'amélioration d'un problème sociétal" ] },
+  { q: "Qu'est-ce qu'une analyse de matérialité et à quoi sert-elle ?", points: [
+    "Outil central pour identifier et hiérarchiser les enjeux RSE de l'entreprise",
+    "Matérialité simple : croise l'importance de l'enjeu pour l'entreprise et pour ses parties prenantes",
+    "Permet de concentrer les efforts sur les enjeux les plus critiques (orientation stratégique, gestion des risques)" ] },
+  { q: "Quel est le rôle de la gouvernance dans une démarche RSE ?", points: [
+    "La Direction impulse la stratégie, porte les engagements, diffuse les valeurs, apporte crédibilité et légitimité",
+    "L'Organisation définit les porteurs du projet RSE (responsable, comité) et assure le suivi et l'amélioration continue",
+    "L'implication de la gouvernance est indispensable à la réussite de la démarche" ] }
+];
+
+const RSE_DEV_POOL = [
+  { q: "Quelles sont les grandes étapes de mise en œuvre d'une démarche RSE dans une organisation ? Présentez les objectifs et les enjeux de chaque étape.", points: [
+    "Étape 1 — Déterminer ses enjeux RSE : analyse de matérialité (simple ou double), consultation des parties prenantes",
+    "Étape 2 — Identifier sa gouvernance RSE : implication de la Direction et structuration de l'organisation",
+    "Étape 3 — Constituer sa politique et ses objectifs : formaliser l'engagement, fixer des objectifs SMART",
+    "Étape 4 — Déterminer ses actions RSE : élaborer un plan d'actions (échéances, pilotes, tâches)",
+    "Étape 5 — Mesurer sa performance : indicateurs de performance, de moyen et d'impact",
+    "Étape 6 — Communiquer sur sa démarche : rapport de durabilité, en interne et en externe" ] },
+  { q: "Quels sont les objectifs d'un rapport de durabilité et en quoi va-t-il au-delà des anciennes obligations ?", points: [
+    "Le rapport RSE est aujourd'hui nommé rapport de durabilité ; document périodique rendant compte des actions et résultats RSE",
+    "En interne : mesurer les conséquences des activités et améliorer les processus",
+    "En externe : permettre aux parties prenantes de comprendre l'implication de l'entreprise",
+    "Avec la CSRD : reporting standardisé au regard des 12 normes ESRS, fondé sur la double matérialité",
+    "Objectif : des informations extra-financières comparables, fiables et transparentes" ] },
+  { q: "Présentez la norme ISO 26000 : nature, principes et questions centrales.", points: [
+    "Lignes directrices de la RSE ; norme volontaire (2010), non contraignante et non certifiable",
+    "7 principes : redevabilité, transparence, comportement éthique, intérêts des parties prenantes, légalité, normes internationales de comportement, droits de l'Homme",
+    "7 questions centrales organisées autour de la gouvernance : droits de l'Homme, relations et conditions de travail, environnement, loyauté des pratiques, consommateurs, communautés et développement local",
+    "Notions clés : parties prenantes et sphère d'influence" ] },
+  { q: "Expliquez la différence entre matérialité simple et double matérialité, et le contexte de ce passage.", points: [
+    "Matérialité simple : impacts potentiels des enjeux RSE sur la performance financière de l'entreprise",
+    "Double matérialité : ajoute la matérialité d'impact (effets de l'entreprise sur l'environnement et les tiers)",
+    "Le passage à la double matérialité est lié à l'adoption de la CSRD (2022)",
+    "Démarche en 3 temps : identification des IRO, évaluation des deux matérialités, identification de l'information à publier" ] },
+  { q: "Présentez le cadre réglementaire de la RSE, de la démarche volontaire à la réglementation.", points: [
+    "Loi NRE (2001) : entrée du reporting extra-financier dans le droit français",
+    "Grenelle et loi TECV (2015) : renforcement des engagements et de la transition énergétique",
+    "Loi devoir de vigilance (2017) et DPEF (2017, directive NFRD)",
+    "Loi PACTE (2019) : raison d'être et société à mission",
+    "Green Deal (2019) et CSRD (2022) : reporting standardisé selon les 12 ESRS" ] }
+];
+
+const RSE_SYNTH_POOL = [
+  { q: "En une page maximum, exposez en quoi la RSE va avoir un impact sur votre futur métier d'Expert-Comptable.", role: "Expert-Comptable", points: [
+    "Positionnement clair en tant que futur Expert-Comptable",
+    "Nouvelle mission de conseil et d'accompagnement RSE auprès des clients (diagnostic, analyse de matérialité)",
+    "Fiabilisation et structuration des données extra-financières",
+    "Accompagnement à la mise en place d'une démarche RSE (les 6 étapes) et au rapport de durabilité",
+    "Développement de compétences transférables et anticipation des contraintes réglementaires" ] },
+  { q: "En une page maximum, exposez en quoi la RSE va avoir un impact sur votre futur métier de Commissaire aux comptes.", role: "Commissaire aux comptes", points: [
+    "Positionnement clair en tant que futur Commissaire aux comptes",
+    "Élargissement de la mission vers la vérification des informations de durabilité",
+    "Exigence de fiabilité, de comparabilité et de transparence des données extra-financières",
+    "Nécessité de monter en compétences sur les enjeux RSE et le cadre CSRD / ESRS",
+    "Renforcement du rôle de tiers de confiance auprès des parties prenantes" ] },
+  { q: "En une page maximum, exposez en quoi la RSE va avoir un impact sur votre futur métier de Responsable Administratif et Financier.", role: "Responsable Administratif et Financier", points: [
+    "Positionnement clair en tant que futur RAF",
+    "Pilotage de la performance globale (financière et extra-financière)",
+    "Mise en place et suivi des indicateurs RSE et du plan d'actions",
+    "Coordination de la production du rapport de durabilité et du dialogue avec les parties prenantes",
+    "Intégration des enjeux RSE dans la stratégie et les décisions d'investissement" ] }
+];
+
+/* ═══════════════════════════════════════════════════════════
+   GÉNÉRATEURS / RENDERS / CORRECTEURS PAR EXERCICE
+   ═══════════════════════════════════════════════════════════ */
+
+/* ───── Ex1 — QCM (5 pts) ───── */
+function rseEx1Generate() { return { qcms: eShuffle(RSE_QCM_POOL).slice(0, 5) }; }
+
+function rseEx1Render(p, ans) {
+  ans = ans || {};
+  const blocks = p.qcms.map((q, qi) => {
+    const qid = 'ex1_q' + qi;
+    const userAns = ans[qid];
+    const isMulti = !!q.multi;
+    const opts = q.o.map((opt, i) => {
+      let sel = false;
+      if (isMulti) sel = Array.isArray(userAns) && userAns.indexOf(i) >= 0;
+      else sel = userAns === i;
+      const onClick = isMulti ? `rseEx1ToggleMulti('${qid}', ${i})` : `examPick('${qid}', ${i})`;
+      const icon = isMulti ? (sel ? '☑' : '☐') : (String.fromCharCode(65 + i) + '.');
+      return `<button type="button" class="exam-opt exam-opt-wide${sel ? ' selected' : ''}" onclick="${onClick}"><span class="exam-opt-bullet">${icon}</span> ${eEscape(opt)}</button>`;
+    }).join('');
+    return `
+      <div class="exam-q">
+        <div class="exam-q-prompt"><strong>Q${qi + 1}.</strong> ${eEscape(q.q)} ${isMulti ? '<span class="exam-q-multi">(plusieurs réponses possibles)</span>' : ''} <span class="exam-q-pts">1 pt</span></div>
+        <div class="exam-opts">${opts}</div>
+      </div>`;
+  }).join('');
+  return `
+    <div class="exam-dossier" id="exam-ex1">
+      <div class="exam-dossier-head">
+        <div class="exam-dossier-num">Exercice 1</div>
+        <div class="exam-dossier-title">QCM</div>
+        <div class="exam-dossier-pts">5 points</div>
+      </div>
+      <div class="exam-context"><p>QCM — 1 point par question. <em>Une seule bonne réponse</em> sauf mention contraire (« plusieurs réponses possibles »).</p></div>
+      ${blocks}
+    </div>`;
+}
+
+function rseEx1ToggleMulti(qid, i) {
+  if (!examState || examState.submitted) return;
+  examState.answers[qid] = examState.answers[qid] || [];
+  const cur = examState.answers[qid];
+  const idx = cur.indexOf(i);
+  if (idx >= 0) cur.splice(idx, 1); else cur.push(i);
+  // re-render visual
+  const root = document.getElementById('exam-ex1');
+  if (root) {
+    const btns = root.querySelectorAll(`[onclick*="'${qid}'"]`);
+    btns.forEach(btn => {
+      const m = btn.getAttribute('onclick').match(/,\s*(\d+)\)/);
+      if (!m) return;
+      const optIdx = parseInt(m[1], 10);
+      const sel = cur.indexOf(optIdx) >= 0;
+      btn.classList.toggle('selected', sel);
+      const bullet = btn.querySelector('.exam-opt-bullet');
+      if (bullet) bullet.textContent = sel ? '☑' : '☐';
+    });
+  }
+}
+
+function rseEx1Correct(p, ans) {
+  ans = ans || {};
+  let pts = 0;
+  const details = p.qcms.map((q, qi) => {
+    const qid = 'ex1_q' + qi;
+    const u = ans[qid];
+    let ok = false;
+    if (q.multi) {
+      ok = Array.isArray(u) && eArrEq(u, q.c);
+    } else {
+      ok = u === q.c[0];
+    }
+    if (ok) pts += 1;
+    const userLabel = u == null ? '—' : (q.multi
+      ? (Array.isArray(u) && u.length ? u.map(i => String.fromCharCode(65 + i)).join(', ') : '—')
+      : String.fromCharCode(65 + u));
+    const correctLabel = q.c.map(i => String.fromCharCode(65 + i)).join(', ') + ' — ' + q.c.map(i => eEscape(q.o[i])).join(' / ');
+    return { q: `Q${qi + 1}. ${q.q}${q.multi ? ' (multi)' : ''}`, userOk: ok, points: ok ? 1 : 0, max: 1, userAnswer: userLabel, correctAnswer: correctLabel, explain: q.e };
+  });
+  return { pts, total: 5, details };
+}
+
+/* ───── Ex2 — Questions courtes (4 pts = 2 × 2 pts) ───── */
+function rseEx2Generate() { return { questions: eShuffle(RSE_COURT_POOL).slice(0, 2) }; }
+
+function rseEx2Render(p, ans) {
+  ans = ans || {};
+  const blocks = p.questions.map((q, qi) => {
+    const qid = 'ex2_q' + qi;
+    const text = ans[qid + '_text'] || '';
+    return `
+      <div class="exam-q">
+        <div class="exam-q-prompt"><strong>Q${qi + 1}.</strong> ${eEscape(q.q)} <span class="exam-q-pts">2 pts</span></div>
+        <textarea class="exam-textarea" placeholder="Rédigez votre réponse (5 à 10 lignes)..." oninput="examPick('${qid}_text', this.value)">${eEscape(text)}</textarea>
+        <div class="exam-wc">${text.trim() ? text.trim().split(/\s+/).length : 0} mots</div>
+      </div>`;
+  }).join('');
+  return `
+    <div class="exam-dossier" id="exam-ex2">
+      <div class="exam-dossier-head">
+        <div class="exam-dossier-num">Exercice 2</div>
+        <div class="exam-dossier-title">Questions de cours — réponse courte</div>
+        <div class="exam-dossier-pts">4 points</div>
+      </div>
+      <div class="exam-context"><p>2 questions × 2 pts. Réponse courte (5-10 lignes). À la soumission, tu coches les points-clés réellement traités.</p></div>
+      ${blocks}
+    </div>`;
+}
+
+function rseEx2RenderEval(p, ans) {
+  ans = ans || {};
+  return p.questions.map((q, qi) => {
+    const qid = 'ex2_q' + qi;
+    const checks = ans[qid + '_checks'] || {};
+    return `
+      <div class="exam-eval-sub">
+        <div class="exam-eval-section"><strong>Q${qi + 1}.</strong> ${eEscape(q.q)}</div>
+        ${q.points.map((pt, i) => `
+          <label class="exam-eval-item">
+            <input type="checkbox" ${checks['p' + i] ? 'checked' : ''} onchange="examEvalCheck('${qid}_checks', 'p${i}', this.checked)">
+            <span>${eEscape(pt)}</span>
+            <span class="exam-eval-pts">+${(2 / q.points.length).toFixed(2)} pt</span>
+          </label>`).join('')}
+      </div>`;
+  }).join('');
+}
+
+function rseEx2Correct(p, ans) {
+  ans = ans || {};
+  let total = 0;
+  const details = p.questions.map((q, qi) => {
+    const qid = 'ex2_q' + qi;
+    const checks = ans[qid + '_checks'] || {};
+    const nChecked = q.points.filter((_, i) => checks['p' + i]).length;
+    const pts = Math.min(2, nChecked * (2 / q.points.length));
+    total += pts;
+    return { q: `Q${qi + 1}. ${q.q}`, userOk: pts >= 1.5, points: Math.round(pts * 100) / 100, max: 2, userAnswer: `${nChecked}/${q.points.length} points-clés cochés`, correctAnswer: '', explain: '<ul>' + q.points.map(pt => `<li>${eEscape(pt)}</li>`).join('') + '</ul>' };
+  });
+  return { pts: Math.round(total * 100) / 100, total: 4, details };
+}
+
+/* ───── Ex3 — Questions développées (8 pts = 2 × 4 pts) ───── */
+function rseEx3Generate() { return { questions: eShuffle(RSE_DEV_POOL).slice(0, 2) }; }
+
+function rseEx3Render(p, ans) {
+  ans = ans || {};
+  const blocks = p.questions.map((q, qi) => {
+    const qid = 'ex3_q' + qi;
+    const text = ans[qid + '_text'] || '';
+    return `
+      <div class="exam-q">
+        <div class="exam-q-prompt"><strong>Q${qi + 1}.</strong> ${eEscape(q.q)} <span class="exam-q-pts">4 pts</span></div>
+        <textarea class="exam-textarea" style="min-height:300px" placeholder="Rédigez votre développement (1-2 pages, plan structuré recommandé)..." oninput="examPick('${qid}_text', this.value)">${eEscape(text)}</textarea>
+        <div class="exam-wc">${text.trim() ? text.trim().split(/\s+/).length : 0} mots</div>
+      </div>`;
+  }).join('');
+  return `
+    <div class="exam-dossier" id="exam-ex3">
+      <div class="exam-dossier-head">
+        <div class="exam-dossier-num">Exercice 3</div>
+        <div class="exam-dossier-title">Questions de cours — réponse développée</div>
+        <div class="exam-dossier-pts">8 points</div>
+      </div>
+      <div class="exam-context"><p>2 questions × 4 pts. Réponse développée et structurée. À la soumission, tu coches les points-clés réellement traités.</p></div>
+      ${blocks}
+    </div>`;
+}
+
+function rseEx3RenderEval(p, ans) {
+  ans = ans || {};
+  return p.questions.map((q, qi) => {
+    const qid = 'ex3_q' + qi;
+    const checks = ans[qid + '_checks'] || {};
+    const ptPerPoint = 4 / q.points.length;
+    return `
+      <div class="exam-eval-sub">
+        <div class="exam-eval-section"><strong>Q${qi + 1}.</strong> ${eEscape(q.q)}</div>
+        ${q.points.map((pt, i) => `
+          <label class="exam-eval-item">
+            <input type="checkbox" ${checks['p' + i] ? 'checked' : ''} onchange="examEvalCheck('${qid}_checks', 'p${i}', this.checked)">
+            <span>${eEscape(pt)}</span>
+            <span class="exam-eval-pts">+${ptPerPoint.toFixed(2)} pt</span>
+          </label>`).join('')}
+      </div>`;
+  }).join('');
+}
+
+function rseEx3Correct(p, ans) {
+  ans = ans || {};
+  let total = 0;
+  const details = p.questions.map((q, qi) => {
+    const qid = 'ex3_q' + qi;
+    const checks = ans[qid + '_checks'] || {};
+    const nChecked = q.points.filter((_, i) => checks['p' + i]).length;
+    const pts = Math.min(4, nChecked * (4 / q.points.length));
+    total += pts;
+    return { q: `Q${qi + 1}. ${q.q}`, userOk: pts >= 3, points: Math.round(pts * 100) / 100, max: 4, userAnswer: `${nChecked}/${q.points.length} points-clés cochés`, correctAnswer: '', explain: '<ul>' + q.points.map(pt => `<li>${eEscape(pt)}</li>`).join('') + '</ul>' };
+  });
+  return { pts: Math.round(total * 100) / 100, total: 8, details };
+}
+
+/* ───── Ex4 — Synthèse rédactionnelle (3 pts) ───── */
+function rseEx4Generate() { return { sujet: ePick(RSE_SYNTH_POOL) }; }
+
+function rseEx4Render(p, ans) {
+  ans = ans || {};
+  const text = ans['ex4_text'] || '';
+  return `
+    <div class="exam-dossier" id="exam-ex4">
+      <div class="exam-dossier-head">
+        <div class="exam-dossier-num">Exercice 4</div>
+        <div class="exam-dossier-title">Question rédactionnelle de synthèse</div>
+        <div class="exam-dossier-pts">3 points</div>
+      </div>
+      <div class="exam-context">
+        <p>${eEscape(p.sujet.q)}</p>
+        <p class="exam-rappel">📐 Une page maximum. Positionnement attendu : <strong>${eEscape(p.sujet.role)}</strong>. À la soumission, tu coches les points-clés réellement traités.</p>
+      </div>
+      <div class="exam-q">
+        <textarea class="exam-textarea" style="min-height:240px" placeholder="Rédigez votre synthèse (1 page max)..." oninput="examPick('ex4_text', this.value)">${eEscape(text)}</textarea>
+        <div class="exam-wc">${text.trim() ? text.trim().split(/\s+/).length : 0} mots</div>
+      </div>
+    </div>`;
+}
+
+function rseEx4RenderEval(p, ans) {
+  ans = ans || {};
+  const checks = ans['ex4_checks'] || {};
+  const ptPerPoint = 3 / p.sujet.points.length;
+  return `
+    <div class="exam-eval-sub">
+      <div class="exam-eval-section">${eEscape(p.sujet.q)}</div>
+      ${p.sujet.points.map((pt, i) => `
+        <label class="exam-eval-item">
+          <input type="checkbox" ${checks['p' + i] ? 'checked' : ''} onchange="examEvalCheck('ex4_checks', 'p${i}', this.checked)">
+          <span>${eEscape(pt)}</span>
+          <span class="exam-eval-pts">+${ptPerPoint.toFixed(2)} pt</span>
+        </label>`).join('')}
+    </div>`;
+}
+
+function rseEx4Correct(p, ans) {
+  ans = ans || {};
+  const checks = ans['ex4_checks'] || {};
+  const nChecked = p.sujet.points.filter((_, i) => checks['p' + i]).length;
+  const pts = Math.min(3, nChecked * (3 / p.sujet.points.length));
+  return {
+    pts: Math.round(pts * 100) / 100, total: 3,
+    details: [{ q: p.sujet.q, userOk: pts >= 2, points: Math.round(pts * 100) / 100, max: 3, userAnswer: `${nChecked}/${p.sujet.points.length} points-clés cochés`, correctAnswer: '', explain: '<ul>' + p.sujet.points.map(pt => `<li>${eEscape(pt)}</li>`).join('') + '</ul>' }]
+  };
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ORCHESTRATION
+   ═══════════════════════════════════════════════════════════ */
+function examGenerate(includeMask) {
+  return {
+    ex1: includeMask.ex1 ? rseEx1Generate() : null,
+    ex2: includeMask.ex2 ? rseEx2Generate() : null,
+    ex3: includeMask.ex3 ? rseEx3Generate() : null,
+    ex4: includeMask.ex4 ? rseEx4Generate() : null
+  };
+}
+
+function examDossiersFromDuration(durMin) {
+  if (durMin <= 15) return 1;
+  if (durMin <= 30) return 2;
+  if (durMin <= 45) return 3;
+  return 4;
+}
+
+function examPick(qid, value) {
+  if (!examState || examState.submitted) return;
+  examState.answers[qid] = value;
+  if (qid.indexOf('_text') >= 0) return;
+  // refresh selected class on QCM single
+  document.querySelectorAll(`[onclick*="examPick('${qid}'"]`).forEach(el => {
+    const m = el.getAttribute('onclick').match(/,\s*(\d+)\)/);
+    if (!m) return;
+    const i = parseInt(m[1], 10);
+    el.classList.toggle('selected', i === value);
+  });
+}
+
+function examEvalCheck(group, key, checked) {
+  if (!examState) return;
+  examState.answers[group] = examState.answers[group] || {};
+  examState.answers[group][key] = checked;
+  if (examState.submitted) examRecomputeScore();
+}
+
+function examRecomputeScore() {
+  const ds = examState.dossiers;
+  const a = examState.answers;
+  let total = 0, max = 0;
+  if (ds.ex1) { const r = rseEx1Correct(ds.ex1, a); total += r.pts; max += r.total; }
+  if (ds.ex2) { const r = rseEx2Correct(ds.ex2, a); total += r.pts; max += r.total; }
+  if (ds.ex3) { const r = rseEx3Correct(ds.ex3, a); total += r.pts; max += r.total; }
+  if (ds.ex4) { const r = rseEx4Correct(ds.ex4, a); total += r.pts; max += r.total; }
+  const rounded = Math.round(total * 100) / 100;
+  const el = document.getElementById('exam-score-live');
+  if (el) el.textContent = rounded.toFixed(2).replace('.', ',');
+  if (examState && examState.submitted) {
+    const arr = loadExamScores();
+    if (arr.length > 0) {
+      arr[0].score = rounded;
+      arr[0].total = max;
+      localStorage.setItem(EXAM_KEY, JSON.stringify(arr));
+      flashSaveIndicator();
+    }
+  }
+}
+
+function flashSaveIndicator() {
+  const el = document.getElementById('exam-save-flash');
+  if (!el) return;
+  el.classList.remove('flash');
+  void el.offsetWidth;
+  el.classList.add('flash');
+}
+
+function renderExamen() {
+  const root = document.getElementById('appRoot');
+  const header = `
+    <div class="page-header">
+      <button class="back-home" onclick="window.location.href='index.html'">← Accueil</button>
+      <div class="page-title">${DATA.title}</div>
+      <div class="page-subtitle">${DATA.subtitle}</div>
+    </div>`;
+  if (!examState) { root.innerHTML = header + renderExamenConfig(); return; }
+  if (examState.submitted) { root.innerHTML = header + renderExamenResult(); return; }
+  root.innerHTML = header + renderExamenRunning();
+  examStartTimer();
+}
+
+function loadExamScores() {
+  try { return JSON.parse(localStorage.getItem(EXAM_KEY)) || []; } catch (e) { return []; }
+}
+function saveExamScore(score, total, durationSec, elapsedSec) {
+  const arr = loadExamScores();
+  arr.unshift({ score, total, date: Date.now(), duration: durationSec, elapsed: elapsedSec });
+  localStorage.setItem(EXAM_KEY, JSON.stringify(arr.slice(0, 5)));
+}
+
+function renderExamenConfig() {
+  const scores = loadExamScores().slice(0, 3);
+  const fmtNum = v => (Math.round(v * 100) / 100).toFixed(2).replace('.', ',');
+  const histHTML = scores.length === 0
+    ? '<p style="color:var(--text3);font-size:0.82rem;text-align:center">Aucune tentative précédente</p>'
+    : scores.map(s => {
+        const pct = Math.round(s.score / s.total * 100);
+        const d = new Date(s.date);
+        const ds = d.toLocaleDateString('fr-FR',{day:'2-digit',month:'2-digit'}) + ' ' + d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'});
+        const col = pct >= 75 ? 'var(--green)' : pct >= 50 ? 'var(--orange)' : 'var(--red)';
+        const mm = Math.floor((s.elapsed || 0) / 60);
+        return `<span class="quiz-score-pill"><span style="color:${col};font-weight:700">${fmtNum(s.score)}/${s.total}</span><span style="color:var(--text3)">${ds} · ${mm} min</span></span>`;
+      }).join('');
+  return `
+    <div class="fade-up">
+      <div class="exam-setup">
+        <div style="font-size:2.4rem">📝</div>
+        <h3 style="font-family:'Playfair Display',serif;margin:0.4rem 0">Examen blanc — RSE / CSRD</h3>
+        <p style="color:var(--text2);max-width:560px;margin:0 auto 1.4rem;font-size:0.92rem">Format épreuve écrite (D. Duheron) — 1h, 20 pts : QCM (5) + courtes (4) + dev (8) + synthèse (3). Aucun document autorisé.</p>
+        <div class="quiz-history" style="max-width:560px;margin:0 auto 1.4rem">
+          <div class="quiz-history-title">Tentatives récentes</div>
+          ${histHTML}
+        </div>
+        <div class="exam-setup-grid">
+          <div class="exam-setup-card">
+            <div class="exam-setup-label">⏱ Durée</div>
+            <input id="exam-duration" type="range" min="15" max="60" step="15" value="60" class="exam-slider" oninput="examUpdateDurationLabel(this.value)">
+            <div class="exam-setup-value"><span id="exam-duration-label">60 min</span></div>
+            <div class="exam-setup-hint" id="exam-duration-hint">→ <strong>4 exercices</strong> · note sur <strong>20 pts</strong> (épreuve complète)</div>
+          </div>
+          <div class="exam-setup-card">
+            <div class="exam-setup-label">📚 Pool d'exercices</div>
+            <div class="exam-setup-checks">
+              <label><input type="checkbox" id="ck-ex1" checked onchange="examUpdateDurationLabel()"> Exercice 1 — QCM (5 pts)</label>
+              <label><input type="checkbox" id="ck-ex2" checked onchange="examUpdateDurationLabel()"> Exercice 2 — Courtes (4 pts)</label>
+              <label><input type="checkbox" id="ck-ex3" checked onchange="examUpdateDurationLabel()"> Exercice 3 — Développées (8 pts)</label>
+              <label><input type="checkbox" id="ck-ex4" checked onchange="examUpdateDurationLabel()"> Exercice 4 — Synthèse (3 pts)</label>
+            </div>
+            <div class="exam-setup-hint" style="margin-top:0.5rem">Tirage <strong>au hasard</strong> parmi les exercices cochés.</div>
+          </div>
+        </div>
+        <button class="start-btn" style="margin-top:1.5rem" onclick="examStart()">🚀 Lancer l'examen blanc</button>
+      </div>
+    </div>
+  `;
+}
+
+function examUpdateDurationLabel(val) {
+  const sliderEl = document.getElementById('exam-duration');
+  if (val == null) val = sliderEl ? sliderEl.value : 60;
+  const dur = parseInt(val, 10);
+  const lbl = document.getElementById('exam-duration-label');
+  if (lbl) lbl.textContent = dur + ' min';
+  const targetN = examDossiersFromDuration(dur);
+  const keys = ['ex1','ex2','ex3','ex4'];
+  const ptsMap = { ex1: 5, ex2: 4, ex3: 8, ex4: 3 };
+  const checked = keys.filter(k => {
+    const el = document.getElementById('ck-' + k);
+    return el && el.checked;
+  });
+  const n = Math.min(targetN, checked.length);
+  // Note approximative = somme des points des n premiers (on tire au sort, donc on indique la moyenne)
+  const avgPts = checked.length ? Math.round((n / checked.length) * checked.reduce((s, k) => s + ptsMap[k], 0)) : 0;
+  const hint = document.getElementById('exam-duration-hint');
+  if (hint) {
+    const isFull = n === 4 && checked.length === 4;
+    hint.innerHTML = checked.length === 0
+      ? '<span style="color:var(--red)">Coche au moins un exercice.</span>'
+      : (targetN > checked.length
+          ? `→ <strong>${n} exercice${n>1?'s':''}</strong> (pool limité) · note variable selon tirage`
+          : `→ <strong>${n} exercice${n>1?'s':''}</strong> tiré${n>1?'s':''} au sort${isFull ? ' · note sur <strong>20 pts</strong> (épreuve complète)' : ' · note variable selon tirage'}`);
+  }
+}
+
+function examStart() {
+  const dur = parseInt(document.getElementById('exam-duration').value, 10) * 60;
+  const pool = ['ex1','ex2','ex3','ex4'].filter(k => {
+    const el = document.getElementById('ck-' + k);
+    return el && el.checked;
+  });
+  if (pool.length === 0) { alert('Sélectionne au moins un exercice.'); return; }
+  const targetN = examDossiersFromDuration(Math.floor(dur / 60));
+  const n = Math.min(targetN, pool.length);
+  const shuffled = eShuffle(pool);
+  const picked = shuffled.slice(0, n).sort();
+  const mask = { ex1: false, ex2: false, ex3: false, ex4: false };
+  picked.forEach(k => { mask[k] = true; });
+  examState = {
+    startedAt: Date.now(),
+    durationSec: dur,
+    submitted: false,
+    dossiers: examGenerate(mask),
+    answers: {},
+    mask, pickedCount: n
+  };
+  renderExamen();
+}
+
+function renderExamenRunning() {
+  const ds = examState.dossiers;
+  const a = examState.answers;
+  let body = '';
+  if (ds.ex1) body += rseEx1Render(ds.ex1, a);
+  if (ds.ex2) body += rseEx2Render(ds.ex2, a);
+  if (ds.ex3) body += rseEx3Render(ds.ex3, a);
+  if (ds.ex4) body += rseEx4Render(ds.ex4, a);
+  return `
+    <div class="exam-timer-bar" id="exam-timer-bar">
+      <span class="exam-timer-icon">⏱</span>
+      <span class="exam-timer-time" id="exam-timer-time">--:--</span>
+      <div class="exam-timer-progress"><div class="exam-timer-progress-fill" id="exam-timer-fill"></div></div>
+      <button class="exam-timer-submit" onclick="examSubmit(false)">Terminer l'examen →</button>
+    </div>
+    <div class="fade-up exam-running">
+      ${body}
+      <div style="text-align:center;margin:2rem 0">
+        <button class="start-btn" onclick="examSubmit(false)">Terminer l'examen et voir le corrigé →</button>
+      </div>
+    </div>`;
+}
+
+function examStartTimer() {
+  clearInterval(examTimerInterval);
+  const update = () => {
+    if (!examState || examState.submitted) { clearInterval(examTimerInterval); return; }
+    const elapsed = Math.floor((Date.now() - examState.startedAt) / 1000);
+    const remaining = Math.max(0, examState.durationSec - elapsed);
+    const mm = String(Math.floor(remaining / 60)).padStart(2, '0');
+    const ss = String(remaining % 60).padStart(2, '0');
+    const el = document.getElementById('exam-timer-time');
+    if (el) el.textContent = mm + ':' + ss;
+    const fill = document.getElementById('exam-timer-fill');
+    if (fill) fill.style.width = (remaining / examState.durationSec * 100) + '%';
+    const bar = document.getElementById('exam-timer-bar');
+    if (bar) {
+      bar.classList.toggle('warn', remaining < 300 && remaining > 60);
+      bar.classList.toggle('danger', remaining <= 60);
+    }
+    if (remaining <= 0) { clearInterval(examTimerInterval); examSubmit(true); }
+  };
+  update();
+  examTimerInterval = setInterval(update, 1000);
+}
+
+function examSubmit(timeout) {
+  if (!examState || examState.submitted) return;
+  if (!timeout && !confirm('Terminer l\'examen et afficher le corrigé ? Tu ne pourras plus modifier tes réponses.')) return;
+  examState.submitted = true;
+  examState.elapsedSec = Math.floor((Date.now() - examState.startedAt) / 1000);
+  examState.timeout = !!timeout;
+  clearInterval(examTimerInterval);
+  renderExamen();
+}
+
+function renderExamenResult() {
+  const ds = examState.dossiers;
+  const a = examState.answers;
+  const fmtNum = v => (Math.round(v * 100) / 100).toFixed(2).replace('.', ',');
+  const corrs = [];
+  if (ds.ex1) corrs.push({ key: 'ex1', label: 'Exercice 1 — QCM', r: rseEx1Correct(ds.ex1, a), hasEval: false });
+  if (ds.ex2) corrs.push({ key: 'ex2', label: 'Exercice 2 — Courtes', r: rseEx2Correct(ds.ex2, a), hasEval: true, evalFn: rseEx2RenderEval });
+  if (ds.ex3) corrs.push({ key: 'ex3', label: 'Exercice 3 — Développées', r: rseEx3Correct(ds.ex3, a), hasEval: true, evalFn: rseEx3RenderEval });
+  if (ds.ex4) corrs.push({ key: 'ex4', label: 'Exercice 4 — Synthèse', r: rseEx4Correct(ds.ex4, a), hasEval: true, evalFn: rseEx4RenderEval });
+  const total = Math.round(corrs.reduce((s, c) => s + c.r.pts, 0) * 100) / 100;
+  const max = corrs.reduce((s, c) => s + c.r.total, 0);
+  const pct = max > 0 ? Math.round(total / max * 100) : 0;
+  const emoji = pct >= 75 ? '🏆' : pct >= 50 ? '🎉' : pct >= 35 ? '👍' : '💪';
+  const msg = pct >= 75 ? 'Mention TB' : pct >= 60 ? 'Mention B' : pct >= 50 ? 'Validé' : pct >= 30 ? 'Insuffisant' : 'Non validé';
+  saveExamScore(total, max, examState.durationSec, examState.elapsedSec);
+  if (pct >= 75) launchConfetti();
+  const mm = Math.floor(examState.elapsedSec / 60);
+  const ss = examState.elapsedSec % 60;
+  const evalBlocks = corrs.filter(c => c.hasEval).map(c => `
+    <div class="exam-result-dossier">
+      <div class="exam-result-dossier-head">
+        <div class="exam-result-dossier-title">📝 Auto-évaluation — ${c.label}</div>
+      </div>
+      <div style="padding:0 1rem 1rem">
+        ${c.key === 'ex4' ? `<div style="background:var(--bg);padding:0.8rem 1rem;border-radius:8px;margin-bottom:1rem;border-left:3px solid var(--accent);font-size:0.88rem;white-space:pre-wrap">${eEscape(a['ex4_text'] || '(aucune rédaction saisie)')}</div>` : ''}
+        ${c.evalFn(ds[c.key], a)}
+      </div>
+    </div>`).join('');
+  const detailsHTML = corrs.map(c => `
+    <div class="exam-result-dossier">
+      <div class="exam-result-dossier-head">
+        <div class="exam-result-dossier-title">${c.label}</div>
+        <div class="exam-result-dossier-score" style="color:${c.r.pts / c.r.total >= 0.75 ? 'var(--green)' : c.r.pts / c.r.total >= 0.5 ? 'var(--orange)' : 'var(--red)'}">${fmtNum(c.r.pts)} / ${c.r.total} pts</div>
+      </div>
+      ${c.r.details.map(d => `
+        <div class="exam-result-q ${d.userOk ? 'ok' : 'ko'}">
+          <div class="exam-result-q-head">
+            <span class="exam-result-q-icon">${d.userOk ? '✓' : '✗'}</span>
+            <span class="exam-result-q-text">${d.q}</span>
+            <span class="exam-result-q-pts">${fmtNum(d.points)} / ${d.max} pt${d.max > 1 ? 's' : ''}</span>
+          </div>
+          <div class="exam-result-q-body">
+            <div class="exam-result-q-line"><strong>Ta réponse :</strong> ${d.userAnswer}</div>
+            ${d.correctAnswer ? `<div class="exam-result-q-line"><strong>Bonne réponse :</strong> ${d.correctAnswer}</div>` : ''}
+            <div class="exam-result-q-line exam-result-q-explain">${d.explain}</div>
+          </div>
+        </div>`).join('')}
+    </div>`).join('');
+  return `
+    <div class="fade-up">
+      <div class="score-box">
+        <div class="score-emoji">${emoji}</div>
+        <div class="score-num"><span id="exam-score-live">${fmtNum(total)}</span> / ${max}</div>
+        <div class="exam-save-flash-wrap"><span id="exam-save-flash" class="exam-save-flash">💾 Note sauvegardée</span></div>
+        <div class="score-label">${msg} · ${pct}% · ${mm}min${ss > 0 ? ' ' + ss + 's' : ''}${examState.timeout ? ' (temps écoulé)' : ''}</div>
+        <div class="score-actions">
+          <button class="btn-secondary" onclick="examState = null; renderExamen()">↺ Nouvel examen</button>
+        </div>
+      </div>
+      ${evalBlocks}
+      ${detailsHTML}
+    </div>`;
+}
+
+/* ═══════ BOOT ═══════ */
+(async function() {
+  try {
+    DATA = await loadJSON('data/rse.json', FALLBACK);
+    if (!DATA || !DATA.checklistItems) DATA = FALLBACK;
+    renderNav();
+    switchTab('checklist');
+  } catch (err) {
+    console.error('[rse] boot error', err);
+    const root = document.getElementById('appRoot');
+    if (root) root.innerHTML = `
+      <div style="padding:3rem 1.5rem;text-align:center;background:var(--card);border-radius:14px;border:1px solid var(--red)">
+        <div style="font-size:2rem;margin-bottom:0.8rem">⚠️</div>
+        <div style="color:var(--red);font-weight:600;margin-bottom:0.4rem">Erreur de chargement</div>
+        <div style="color:var(--text2);font-size:0.85rem;margin-bottom:1rem">${err.message || err}</div>
+        <button class="back-home" onclick="window.location.href='index.html'">← Retour à l'accueil</button>
+      </div>`;
+  }
+})();
+
+/* DEEPLINK_BOOTSTRAP */
+window.addEventListener('load', () => setTimeout(applyDeepLink, 200));
+</script>
+</body>
+</html>

@@ -1,0 +1,1104 @@
+{
+  "title": "RSE",
+  "subtitle": "Responsabilité Sociétale des Entreprises · Cours Introduction à la RSE (D. Duheron)",
+  "quizKey": "m2cca_quiz_rse",
+  "checklistItems": [
+    {
+      "id": "rf1",
+      "theme": "fondamentaux",
+      "label": "Développement durable : définition du Rapport Brundtland"
+    },
+    {
+      "id": "rf2",
+      "theme": "fondamentaux",
+      "label": "Les 3 piliers du DD (économique, social, écologique) et leurs intersections"
+    },
+    {
+      "id": "rf3",
+      "theme": "fondamentaux",
+      "label": "Les dates clés du développement durable (1951 → 2017)"
+    },
+    {
+      "id": "rf4",
+      "theme": "fondamentaux",
+      "label": "Le Global Compact : 10 principes et 3 engagements"
+    },
+    {
+      "id": "rf5",
+      "theme": "fondamentaux",
+      "label": "La RSE : définition de la Commission Européenne"
+    },
+    {
+      "id": "rf6",
+      "theme": "fondamentaux",
+      "label": "La RSE comme application du DD à l'entreprise"
+    },
+    {
+      "id": "rf7",
+      "theme": "fondamentaux",
+      "label": "Évolution historique de la RSE (Bowen, Freeman, Capron-Quairel)"
+    },
+    {
+      "id": "rf8",
+      "theme": "fondamentaux",
+      "label": "La performance globale (financière + extra-financière)"
+    },
+    {
+      "id": "rf9",
+      "theme": "fondamentaux",
+      "label": "Les 3 piliers de la performance globale"
+    },
+    {
+      "id": "rf10",
+      "theme": "fondamentaux",
+      "label": "La norme ISO 26000 : caractéristiques (volontaire, 2010, non certifiable)"
+    },
+    {
+      "id": "rf11",
+      "theme": "fondamentaux",
+      "label": "Les 7 principes de responsabilité sociétale (ISO 26000)"
+    },
+    {
+      "id": "rf12",
+      "theme": "fondamentaux",
+      "label": "Les 7 questions centrales de l'ISO 26000"
+    },
+    {
+      "id": "rf13",
+      "theme": "fondamentaux",
+      "label": "La sphère d'influence et les parties prenantes"
+    },
+    {
+      "id": "rr1",
+      "theme": "reglementation",
+      "label": "Loi NRE (2001) : entrée du reporting extra-financier dans le droit"
+    },
+    {
+      "id": "rr2",
+      "theme": "reglementation",
+      "label": "Le dispositif Grenelle"
+    },
+    {
+      "id": "rr3",
+      "theme": "reglementation",
+      "label": "La loi TECV (2015) : transition énergétique"
+    },
+    {
+      "id": "rr4",
+      "theme": "reglementation",
+      "label": "La loi sur le devoir de vigilance (2017)"
+    },
+    {
+      "id": "rr5",
+      "theme": "reglementation",
+      "label": "La DPEF (2017) : NFRD, matérialité, seuils"
+    },
+    {
+      "id": "rr6",
+      "theme": "reglementation",
+      "label": "La loi PACTE (2019) : raison d'être et société à mission"
+    },
+    {
+      "id": "rr7",
+      "theme": "reglementation",
+      "label": "Le Green Deal européen (2019)"
+    },
+    {
+      "id": "rr8",
+      "theme": "reglementation",
+      "label": "La CSRD (2022) et les 12 normes ESRS"
+    },
+    {
+      "id": "rd1",
+      "theme": "demarche",
+      "label": "La démarche RSE en 6 étapes"
+    },
+    {
+      "id": "rd2",
+      "theme": "demarche",
+      "label": "Étape 1 : déterminer ses enjeux RSE"
+    },
+    {
+      "id": "rd3",
+      "theme": "demarche",
+      "label": "L'analyse de matérialité simple"
+    },
+    {
+      "id": "rd4",
+      "theme": "demarche",
+      "label": "L'analyse de double matérialité"
+    },
+    {
+      "id": "rd5",
+      "theme": "demarche",
+      "label": "Matérialité financière et matérialité d'impact"
+    },
+    {
+      "id": "rd6",
+      "theme": "demarche",
+      "label": "Le concept d'IRO (Impacts, Risques, Opportunités)"
+    },
+    {
+      "id": "rd7",
+      "theme": "demarche",
+      "label": "Le rôle des parties prenantes dans l'identification des enjeux"
+    },
+    {
+      "id": "rd8",
+      "theme": "demarche",
+      "label": "Étape 2 : identifier sa gouvernance RSE"
+    },
+    {
+      "id": "rd9",
+      "theme": "demarche",
+      "label": "Étape 3 : politique RSE et objectifs SMART"
+    },
+    {
+      "id": "rd10",
+      "theme": "demarche",
+      "label": "Étape 4 : le plan d'actions RSE"
+    },
+    {
+      "id": "rd11",
+      "theme": "demarche",
+      "label": "Étape 5 : mesurer la performance (indicateurs)"
+    },
+    {
+      "id": "rd12",
+      "theme": "demarche",
+      "label": "Les 3 types d'indicateurs (performance, moyen, impact)"
+    },
+    {
+      "id": "rd13",
+      "theme": "demarche",
+      "label": "Étape 6 : communiquer, le rapport de durabilité"
+    },
+    {
+      "id": "rd14",
+      "theme": "demarche",
+      "label": "EcoVadis : plateforme de notation RSE"
+    },
+    {
+      "id": "ro1",
+      "theme": "opportunites",
+      "label": "Les 6 opportunités d'une démarche RSE"
+    },
+    {
+      "id": "ro2",
+      "theme": "opportunites",
+      "label": "Les opportunités métiers de la RSE"
+    },
+    {
+      "id": "ro3",
+      "theme": "opportunites",
+      "label": "Certifications et labels RSE : définition et rôle"
+    },
+    {
+      "id": "ro4",
+      "theme": "opportunites",
+      "label": "Le label B Corp"
+    },
+    {
+      "id": "ro5",
+      "theme": "opportunites",
+      "label": "Le label LUCIE"
+    },
+    {
+      "id": "ro6",
+      "theme": "opportunites",
+      "label": "Le label Engagé RSE (AFNOR)"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "rfc1",
+      "theme": "fondamentaux",
+      "srcChap": 1,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Le développement durable : définition",
+      "a": "Le développement durable est « un développement qui répond aux besoins du présent sans compromettre la capacité des générations futures à répondre aux leurs » (Rapport Brundtland).\n\nIl s'appuie sur la convergence de 3 composantes : économique, sociale et écologique."
+    },
+    {
+      "id": "rfc2",
+      "theme": "fondamentaux",
+      "srcChap": 1,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Les 3 piliers du développement durable",
+      "a": "Le DD repose sur 3 piliers en intersection :\n• Économique\n• Social (ou sociétal)\n• Écologique (environnemental)\n\nLeurs intersections :\n• Économique + Social = Équitable\n• Économique + Écologique = Viable\n• Social + Écologique = Vivable\n• Au centre des trois = Durable"
+    },
+    {
+      "id": "rfc3",
+      "theme": "fondamentaux",
+      "srcChap": 1,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Les dates clés du développement durable",
+      "a": "1951 : Rapport sur l'état de l'environnement\n1972 : Rapport du Club de Rome (The Limits to Growth) ; Conférence des Nations Unies sur l'environnement (Stockholm)\n1987 : Rapport Brundtland\n1992 : Sommet de la Terre de Rio\n1997 : Convention sur le climat\n2007 : Grenelle de l'environnement\n2015 : Accord de Paris\n2017 : Objectifs de Développement Durable (ODD)"
+    },
+    {
+      "id": "rfc4",
+      "theme": "fondamentaux",
+      "srcChap": 1,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Le Global Compact (Pacte mondial)",
+      "a": "Le Global Compact est un cadre d'engagement volontaire porté par les Nations Unies. Il repose sur 10 principes couvrant 4 domaines : droits de l'Homme, normes internationales du travail, environnement, lutte contre la corruption.\n\nL'entreprise qui y adhère s'engage à :\n1. Mettre en application les 10 principes dans son organisation\n2. Les promouvoir au sein de sa sphère d'influence\n3. Inscrire ses actions dans les ODD et communiquer dessus"
+    },
+    {
+      "id": "rfc5",
+      "theme": "fondamentaux",
+      "srcChap": 2,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "La RSE : définition",
+      "a": "La RSE (Responsabilité Sociétale de l'Entreprise) est « l'intégration volontaire par les entreprises de préoccupations sociales et environnementales à leurs activités commerciales et à leurs relations avec les parties prenantes » (définition de la Commission Européenne).\n\nC'est l'application du développement durable, notion planétaire, à l'échelle de l'entreprise."
+    },
+    {
+      "id": "rfc6",
+      "theme": "fondamentaux",
+      "srcChap": 2,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "L'évolution historique de la RSE",
+      "a": "1950 : la RSE « éthique » — Howard R. Bowen, « Social Responsibilities of the Businessman »\n1980 : la RSE « utilitariste » — R. Edward Freeman, « Strategic Management »\n2000 : la RSE actuelle — Michel Capron et Françoise Quairel-Lanoizelée, « La responsabilité sociale d'entreprise »"
+    },
+    {
+      "id": "rfc7",
+      "theme": "fondamentaux",
+      "srcChap": 2,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "La performance globale",
+      "a": "Performance financière + Performance extra-financière = Performance globale.\n\nLes 3 piliers de la performance globale (interdépendants) :\n• Social : capital humain, égalité et diversité, droits humains, gouvernance éthique\n• Économique : résilience du modèle, innovation responsable, valeur partagée, transparence\n• Environnement : décarbonation, ressources naturelles, biodiversité, économie circulaire"
+    },
+    {
+      "id": "rfc8",
+      "theme": "fondamentaux",
+      "srcChap": 3,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "La norme ISO 26000 : caractéristiques",
+      "a": "L'ISO 26000 fournit aux organisations les lignes directrices de la RSE :\n• Apporte une référence commune autour des notions RSE\n• Norme volontaire, éditée en 2010, non contraignante et NON certifiable\n• Approche « performance globale » intégrant tout l'écosystème et les parties prenantes (notion de parties prenantes et de sphère d'influence)\n• Articulée autour de 7 principes et de 7 questions centrales"
+    },
+    {
+      "id": "rfc9",
+      "theme": "fondamentaux",
+      "srcChap": 3,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Les 7 principes de l'ISO 26000",
+      "a": "Les 7 principes de responsabilité sociétale :\n1. Redevabilité\n2. Transparence\n3. Comportement éthique\n4. Reconnaissance des intérêts des parties prenantes\n5. Respect du principe de légalité\n6. Prise en compte des normes internationales de comportement\n7. Respect des droits de l'Homme"
+    },
+    {
+      "id": "rfc10",
+      "theme": "fondamentaux",
+      "srcChap": 3,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Les 7 questions centrales de l'ISO 26000",
+      "a": "L'ISO 26000 articule la démarche autour de 7 questions centrales, organisées autour de la Gouvernance de l'organisation (au centre) :\n• Droits de l'Homme\n• Relations et conditions de travail\n• L'environnement\n• Loyauté des pratiques\n• Questions relatives aux consommateurs\n• Communautés et développement local\n\nLe tout s'appuie sur le dialogue avec les parties prenantes."
+    },
+    {
+      "id": "rfc11",
+      "theme": "fondamentaux",
+      "srcChap": 3,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "La sphère d'influence",
+      "a": "« Toute organisation ne peut évoluer sans tenir compte de sa sphère d'influence, c'est-à-dire de toute entité impactée par ses décisions et ses actes. »\n\nL'entreprise doit identifier ses parties prenantes (salariés, fournisseurs, partenaires financiers, acteurs territoriaux, pouvoirs publics, clients...) et définir des modes de dialogue adaptés à chacune."
+    },
+    {
+      "id": "rfc12",
+      "theme": "reglementation",
+      "srcChap": 4,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "La loi NRE (2001)",
+      "a": "La loi NRE (Nouvelles Régulations Économiques, 2001) fait entrer la notion de reporting extra-financier dans le droit français :\n• Publication d'informations relatives aux conséquences sociales et environnementales des activités\n• Objectif : renforcer la transparence de l'entreprise vis-à-vis de ses parties prenantes"
+    },
+    {
+      "id": "rfc13",
+      "theme": "reglementation",
+      "srcChap": 4,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Le dispositif Grenelle",
+      "a": "Le dispositif Grenelle est issu des débats multipartites du « Grenelle de l'Environnement ». Il vise à :\n• Renforcer les engagements envers le développement durable et les régulations environnementales\n• Renforcer le reporting extra-financier des entreprises"
+    },
+    {
+      "id": "rfc14",
+      "theme": "reglementation",
+      "srcChap": 4,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "La loi TECV (2015)",
+      "a": "La loi TECV (Transition Énergétique pour la Croissance Verte, 2015) :\n• Répond aux engagements de l'Accord de Paris\n• Vise à accélérer la transition énergétique\n• Vise à réduire les émissions de GES liées au transport et aux bâtiments"
+    },
+    {
+      "id": "rfc15",
+      "theme": "reglementation",
+      "srcChap": 4,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "La loi sur le devoir de vigilance (2017)",
+      "a": "La loi sur le devoir de vigilance (2017) :\n• Instaure des obligations de vigilance pour les sociétés-mères\n• Engage la responsabilité des sociétés-mères en cas d'atteintes aux droits humains et à l'environnement\n\nElle fait écho à des drames comme l'effondrement du Rana Plaza."
+    },
+    {
+      "id": "rfc16",
+      "theme": "reglementation",
+      "srcChap": 4,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "La DPEF (2017)",
+      "a": "La DPEF (Déclaration de Performance Extra-Financière, 2017) :\n• Dispositif issu d'une directive européenne (NFRD)\n• Repose sur le principe de matérialité de l'information\n• Objectif : identifier et hiérarchiser les enjeux RSE\n\nEntreprises concernées : entreprises cotées de plus de 500 salariés et plus de 40 M€ de CA ; entreprises non cotées de plus de 500 salariés et plus de 100 M€ de CA."
+    },
+    {
+      "id": "rfc17",
+      "theme": "reglementation",
+      "srcChap": 4,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "La loi PACTE (2019)",
+      "a": "La loi PACTE (promulguée le 22 mai 2019) est une innovation juridique à 3 étages :\n1. Toutes les entreprises : prendre en considération les enjeux sociaux et environnementaux de leur activité\n2. Les entreprises volontaires : inscrire leur raison d'être dans leurs statuts\n3. Les entreprises engagées : adopter la qualité de société à mission"
+    },
+    {
+      "id": "rfc18",
+      "theme": "reglementation",
+      "srcChap": 4,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Le Green Deal européen (2019)",
+      "a": "Le Green Deal (pacte vert pour l'Europe) est un ensemble de mesures visant à engager l'UE sur la voie de la transition écologique, avec pour objectif ultime la neutralité climatique à l'horizon 2050.\n\nIl favorise la transformation de l'UE en une société juste et prospère dotée d'une économie moderne et compétitive, et incite les financeurs à investir dans la transition écologique."
+    },
+    {
+      "id": "rfc19",
+      "theme": "reglementation",
+      "srcChap": 4,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "La CSRD (2022)",
+      "a": "La CSRD (Corporate Sustainability Reporting Directive, 2022) :\n• Définit un cadre de reporting extra-financier standardisé, au regard de 12 normes ESRS (European Sustainability Reporting Standards)\n• Fournit un cadre de référence commun pour une meilleure comparabilité et transparence des informations extra-financières\n• Introduit l'analyse de double matérialité"
+    },
+    {
+      "id": "rfc20",
+      "theme": "opportunites",
+      "srcChap": 5,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Les 6 opportunités d'une démarche RSE",
+      "a": "1. Évolution du business model : anticipation des risques, préparation aux changements réglementaires\n2. Image de marque positive : distinction par rapport aux concurrents\n3. Accès à de nouveaux marchés et innovation\n4. Renforcement des relations avec les parties prenantes\n5. Attractivité pour les talents\n6. Réduction des coûts : pratiques éco-efficaces, efficacité énergétique"
+    },
+    {
+      "id": "rfc21",
+      "theme": "opportunites",
+      "srcChap": 5,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Les opportunités métiers de la RSE",
+      "a": "Pour les (futurs) collaborateurs, la RSE offre :\n• Une attractivité accrue sur le marché de l'emploi (les entreprises y accordent de l'importance au recrutement)\n• Le développement de compétences transférables (pensée critique, résolution de problèmes, collaboration), utiles à l'audit, la comptabilité, etc.\n• Un impact sociétal positif\n• L'anticipation des contraintes futures"
+    },
+    {
+      "id": "rfc22",
+      "theme": "demarche",
+      "srcChap": 6,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "La démarche RSE en 6 étapes",
+      "a": "1. Déterminer ses enjeux RSE (analyse de matérialité, parties prenantes)\n2. Identifier sa gouvernance RSE\n3. Constituer sa politique et ses objectifs\n4. Déterminer ses actions RSE (plan d'actions)\n5. Mesurer sa performance à l'aide d'indicateurs\n6. Communiquer sur sa démarche (reporting)"
+    },
+    {
+      "id": "rfc23",
+      "theme": "demarche",
+      "srcChap": 6,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Qu'est-ce qu'un enjeu RSE ?",
+      "a": "Un enjeu RSE est une thématique de durabilité identifiée par l'entreprise. Les enjeux peuvent être environnementaux, sociaux, de gouvernance, économiques ou sociétaux.\n\nIdentifier ses enjeux permet l'orientation stratégique (concentrer les efforts sur les enjeux les plus critiques) et la gestion des risques (actions préventives face aux risques extra-financiers)."
+    },
+    {
+      "id": "rfc24",
+      "theme": "demarche",
+      "srcChap": 6,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "L'analyse de matérialité simple",
+      "a": "La matérialité « simple » consiste à identifier les impacts potentiels des enjeux RSE sur la performance financière de l'entreprise : c'est une analyse des risques extra-financiers.\n\nLa matrice croise l'importance de l'enjeu pour l'entreprise (axe horizontal) et pour ses parties prenantes (axe vertical), afin de hiérarchiser les enjeux."
+    },
+    {
+      "id": "rfc25",
+      "theme": "demarche",
+      "srcChap": 6,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "L'analyse de double matérialité",
+      "a": "Avec l'adoption de la CSRD (2022), on passe à la double matérialité. Elle complète la matérialité simple :\n\n• Matérialité financière : risque que l'enjeu RSE fait peser sur la performance financière de l'entreprise\n• Matérialité d'impact : effets de l'activité de l'entreprise sur son environnement et les tiers\n\nUn enjeu est matériel dès lors qu'il est significatif du point de vue de l'impact OU du point de vue financier."
+    },
+    {
+      "id": "rfc26",
+      "theme": "demarche",
+      "srcChap": 6,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Le concept d'IRO",
+      "a": "IRO = Impacts, Risques et Opportunités.\n\nDémarche de double matérialité en 3 étapes :\n1. Analyse contextuelle et identification des IRO (sur l'ensemble de la chaîne de valeur)\n2. Évaluation de la matérialité d'impact et de la matérialité financière (échelle de cotation, critères quantitatifs ou qualitatifs)\n3. Identification de l'information à publier"
+    },
+    {
+      "id": "rfc27",
+      "theme": "demarche",
+      "srcChap": 6,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Le rôle des parties prenantes",
+      "a": "Pour déterminer ses enjeux RSE, l'entreprise doit :\n• Réaliser son analyse de matérialité (simple ou double)\n• Consulter et prendre en compte ses parties prenantes clés\n• Impliquer les différentes fonctions de l'entreprise\n\nToutes les parties prenantes n'ont pas le même poids : un barème peut leur être attribué dans l'analyse finale."
+    },
+    {
+      "id": "rfc28",
+      "theme": "demarche",
+      "srcChap": 7,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Étape 2 : la gouvernance RSE",
+      "a": "L'implication de la gouvernance est indispensable. Elle se décline en deux volets :\n\n• La Direction : impulse la stratégie et porte les engagements, diffuse les valeurs et la culture, veille à l'intégration de la RSE dans les process, apporte crédibilité et légitimité\n• L'Organisation : définit les porteurs du projet RSE (responsable, comité...), assure le suivi et l'amélioration continue de la démarche"
+    },
+    {
+      "id": "rfc29",
+      "theme": "demarche",
+      "srcChap": 7,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Étape 3 : la politique RSE",
+      "a": "Une politique RSE met en œuvre la stratégie ou les décisions de gestion de l'entreprise sur un enjeu de durabilité. Elle est sous la responsabilité de personnes définies, sur un périmètre d'application précis, avec des objectifs identifiés.\n\nElle permet de répondre aux enjeux matériels, de définir la vision et l'engagement de l'entreprise, et de fixer ses objectifs. Elle est ensuite mise en œuvre par des actions."
+    },
+    {
+      "id": "rfc30",
+      "theme": "demarche",
+      "srcChap": 7,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Étape 3 : les objectifs SMART",
+      "a": "Un objectif RSE est la trajectoire cible visée par la stratégie et les politiques. L'entreprise met en place son plan d'actions pour l'atteindre.\n\nUn objectif est nécessairement SMART :\n• S : Spécifique\n• M : Mesurable\n• A : Atteignable\n• R : Réalisable\n• T : Temporellement défini"
+    },
+    {
+      "id": "rfc31",
+      "theme": "demarche",
+      "srcChap": 8,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Étape 4 : le plan d'actions RSE",
+      "a": "Un plan d'actions RSE est un ensemble de mesures, tâches ou activités visant à atteindre des objectifs prédéfinis. Il est consigné dans un document décrivant les étapes nécessaires (date d'échéance, pilote de l'action, tâches à réaliser).\n\nIl permet d'atteindre les objectifs (jalonner étape par étape) et de piloter le projet en optimisant les moyens."
+    },
+    {
+      "id": "rfc32",
+      "theme": "demarche",
+      "srcChap": 8,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Étape 5 : les indicateurs de performance",
+      "a": "Un indicateur de performance RSE permet de mesurer le degré d'accomplissement des objectifs RSE. Mesurer sa performance sert à suivre l'évolution de sa stratégie et à ajuster son plan d'action.\n\nTrois types d'indicateurs :\n• Indicateur de performance : information quantifiée mesurant les résultats d'une ou plusieurs actions (souvent un ratio)\n• Indicateur de moyen (de pilotage) : permet d'anticiper et de réajuster ; un levier au service de l'objectif\n• Indicateur d'impact : démontre la contribution de l'entreprise à l'amélioration d'un problème sociétal"
+    },
+    {
+      "id": "rfc33",
+      "theme": "demarche",
+      "srcChap": 8,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Étape 6 : le rapport de durabilité",
+      "a": "Le rapport RSE, aujourd'hui nommé officiellement rapport de durabilité, est un document périodique (généralement annuel) par lequel une entreprise rend compte de ses actions et résultats en matière de RSE.\n\n• En interne : il permet de mesurer les conséquences des activités et d'améliorer les processus\n• En externe : il permet aux parties prenantes de comprendre l'implication de l'entreprise et d'évaluer les conséquences à moyen et long terme de ses activités"
+    },
+    {
+      "id": "rfc34",
+      "theme": "demarche",
+      "srcChap": 8,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "EcoVadis",
+      "a": "EcoVadis est une plateforme de notation utilisée par les partenaires commerciaux pour partager des informations sur leurs performances RSE.\n\nSa méthodologie est basée sur 7 indicateurs de management répartis en 21 critères RSE, couvrant l'environnement, le social, les droits humains et les achats responsables."
+    },
+    {
+      "id": "rfc35",
+      "theme": "opportunites",
+      "srcChap": 9,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Certifications et labels RSE",
+      "a": "Un label ou une certification RSE est une reconnaissance attribuée à une entreprise qui atteste de sa démarche et de ses actions en matière de responsabilité sociétale.\n\nIls sont délivrés par des organismes indépendants après évaluation. Ils permettent à l'entreprise de démontrer son engagement, de renforcer sa crédibilité et son image, et d'encourager des pratiques durables et transparentes."
+    },
+    {
+      "id": "rfc36",
+      "theme": "opportunites",
+      "srcChap": 9,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Le label B Corp",
+      "a": "La certification B Corp est un label international qui évalue les entreprises sur divers domaines regroupés en 5 catégories principales : Collaborateurs, Environnement, Gouvernance, Clients, Collectivité.\n\nLes entreprises labellisées s'engagent à équilibrer leurs objectifs financiers avec des impacts positifs sur la société et l'environnement."
+    },
+    {
+      "id": "rfc37",
+      "theme": "opportunites",
+      "srcChap": 9,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Le label LUCIE",
+      "a": "Développé par l'association LUCIE, le label LUCIE RSE est attribué aux entreprises s'engageant dans une démarche de responsabilité sociétale et de durabilité. Il s'appuie sur les engagements de la norme ISO 26000.\n\nDomaines couverts : gouvernance responsable et transparence, respect des individus, qualité de vie au travail, protection de l'environnement, éthique des pratiques, respect des intérêts des citoyens, développement local."
+    },
+    {
+      "id": "rfc38",
+      "theme": "opportunites",
+      "srcChap": 9,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Le label Engagé RSE (AFNOR)",
+      "a": "Le label « Engagé RSE » de l'AFNOR évalue la maturité des démarches RSE des organisations. Il s'adresse à divers types d'organisations (entreprises, associations, territoires), quelle que soit leur taille ou leur secteur.\n\nIl repose sur le modèle AFAQ 26000 et couvre notamment : vision RSE et gouvernance, intégration de la RSE, performance environnementale, performance sociale et sociétale, modes de production et de consommation durables, ancrage territorial, ressources humaines, performance économique."
+    },
+    {
+      "id": "rfc39",
+      "theme": "fondamentaux",
+      "srcChap": 2,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "RSE et performance financière : un faux débat",
+      "a": "Le débat opposant performance financière et performance RSE est dépassé. La RSE, intégrée à la performance globale, peut être créatrice de valeur : anticipation des risques, image de marque, accès à de nouveaux marchés, attractivité des talents, réduction des coûts.\n\nUne étude de France Stratégie évoque jusqu'à +13 % de performance pour les entreprises engagées."
+    },
+    {
+      "id": "rfc40",
+      "theme": "demarche",
+      "srcChap": 6,
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "q": "Matérialité financière vs matérialité d'impact",
+      "a": "Dans la double matérialité, deux perspectives se complètent :\n\n• Matérialité financière : raisonne en risques et opportunités, à court / moyen / long terme, réels ou potentiels. Elle évalue l'impact des sujets ESG sur la performance de l'entreprise.\n• Matérialité d'impact : raisonne en impacts négatifs et positifs, à court / moyen / long terme, réels ou potentiels. Elle évalue l'impact de l'entreprise sur l'environnement et les tiers."
+    }
+  ],
+  "quizQuestions": [
+    {
+      "q": "Selon le Rapport Brundtland, le développement durable est :",
+      "theme": "fondamentaux",
+      "o": [
+        "La croissance économique maximale",
+        "Un développement qui répond aux besoins du présent sans compromettre ceux des générations futures",
+        "La protection exclusive de l'environnement",
+        "La suppression de toute activité industrielle"
+      ],
+      "c": 1,
+      "e": "La définition de référence est celle du Rapport Brundtland (1987).",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 1
+    },
+    {
+      "q": "Les 3 piliers du développement durable sont :",
+      "theme": "fondamentaux",
+      "o": [
+        "Производство, Vente, Marketing",
+        "Économique, Social, Écologique",
+        "Local, National, International",
+        "Court, Moyen, Long terme"
+      ],
+      "c": 1,
+      "e": "Le DD repose sur la convergence des piliers économique, social et écologique.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 1
+    },
+    {
+      "q": "L'intersection des piliers économique et écologique du DD est qualifiée de :",
+      "theme": "fondamentaux",
+      "o": [
+        "Équitable",
+        "Vivable",
+        "Viable",
+        "Durable"
+      ],
+      "c": 2,
+      "e": "Économique + écologique = viable ; économique + social = équitable ; social + écologique = vivable ; les trois = durable.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 1
+    },
+    {
+      "q": "En quelle année le Rapport Brundtland a-t-il été publié ?",
+      "theme": "fondamentaux",
+      "o": [
+        "1972",
+        "1987",
+        "1992",
+        "2015"
+      ],
+      "c": 1,
+      "e": "1987 : Rapport Brundtland. 1972 : Club de Rome et Stockholm. 1992 : Sommet de Rio. 2015 : Accord de Paris.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 1
+    },
+    {
+      "q": "Le Global Compact des Nations Unies repose sur :",
+      "theme": "fondamentaux",
+      "o": [
+        "12 normes ESRS",
+        "10 principes (droits de l'Homme, travail, environnement, anti-corruption)",
+        "7 questions centrales",
+        "3 piliers"
+      ],
+      "c": 1,
+      "e": "Le Global Compact est un cadre d'engagement volontaire reposant sur 10 principes couvrant 4 domaines.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 1
+    },
+    {
+      "q": "La RSE se définit comme :",
+      "theme": "fondamentaux",
+      "o": [
+        "Une obligation légale de publier ses comptes",
+        "L'intégration volontaire de préoccupations sociales et environnementales aux activités et aux relations avec les parties prenantes",
+        "Une taxe environnementale",
+        "Un label de qualité produit"
+      ],
+      "c": 1,
+      "e": "Définition de la Commission Européenne. La RSE est l'application du développement durable à l'échelle de l'entreprise.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 2
+    },
+    {
+      "q": "À quel auteur associe-t-on la RSE « éthique » des années 1950 ?",
+      "theme": "fondamentaux",
+      "o": [
+        "Howard R. Bowen",
+        "R. Edward Freeman",
+        "Michel Capron",
+        "Milton Friedman"
+      ],
+      "c": 0,
+      "e": "1950 : Bowen (RSE éthique) ; 1980 : Freeman (RSE utilitariste) ; 2000 : Capron et Quairel-Lanoizelée.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 2
+    },
+    {
+      "q": "La performance globale correspond à :",
+      "theme": "fondamentaux",
+      "o": [
+        "La performance financière seule",
+        "La performance financière + la performance extra-financière",
+        "La performance boursière",
+        "La performance commerciale"
+      ],
+      "c": 1,
+      "e": "Performance globale = performance financière + performance extra-financière.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 2
+    },
+    {
+      "q": "La norme ISO 26000 est :",
+      "theme": "fondamentaux",
+      "o": [
+        "Une norme obligatoire et certifiable",
+        "Une norme volontaire, non contraignante et non certifiable",
+        "Une loi française",
+        "Un label délivré par l'AFNOR"
+      ],
+      "c": 1,
+      "e": "L'ISO 26000 (2010) est une norme volontaire qui fournit des lignes directrices de la RSE ; elle n'est ni contraignante ni certifiable.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 3
+    },
+    {
+      "q": "Combien de principes de responsabilité sociétale l'ISO 26000 énonce-t-elle ?",
+      "theme": "fondamentaux",
+      "o": [
+        "3",
+        "5",
+        "7",
+        "10"
+      ],
+      "c": 2,
+      "e": "7 principes : redevabilité, transparence, comportement éthique, intérêts des parties prenantes, légalité, normes internationales de comportement, droits de l'Homme.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 3
+    },
+    {
+      "q": "L'ISO 26000 articule la démarche RSE autour de :",
+      "theme": "fondamentaux",
+      "o": [
+        "7 principes et 7 questions centrales",
+        "12 normes ESRS",
+        "82 exigences de publication",
+        "3 piliers seulement"
+      ],
+      "c": 0,
+      "e": "L'ISO 26000 s'articule autour de 7 principes et de 7 questions centrales, organisées autour de la gouvernance.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 3
+    },
+    {
+      "q": "La sphère d'influence d'une organisation désigne :",
+      "theme": "fondamentaux",
+      "o": [
+        "Sa part de marché",
+        "Toute entité impactée par ses décisions et ses actes",
+        "Ses actionnaires uniquement",
+        "Son chiffre d'affaires"
+      ],
+      "c": 1,
+      "e": "Une organisation doit tenir compte de sa sphère d'influence : toute entité impactée par ses décisions et actes (parties prenantes).",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 3
+    },
+    {
+      "q": "La loi NRE (2001) a pour effet principal de :",
+      "theme": "reglementation",
+      "o": [
+        "Créer la CSRD",
+        "Faire entrer le reporting extra-financier dans le droit français",
+        "Interdire les énergies fossiles",
+        "Créer le label B Corp"
+      ],
+      "c": 1,
+      "e": "La loi NRE (2001) fait entrer la notion de reporting extra-financier dans le droit français.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 4
+    },
+    {
+      "q": "La loi sur le devoir de vigilance (2017) :",
+      "theme": "reglementation",
+      "o": [
+        "Crée la société à mission",
+        "Instaure des obligations de vigilance pour les sociétés-mères sur les droits humains et l'environnement",
+        "Définit les 12 ESRS",
+        "Supprime la DPEF"
+      ],
+      "c": 1,
+      "e": "Elle engage la responsabilité des sociétés-mères en cas d'atteintes aux droits humains et à l'environnement.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 4
+    },
+    {
+      "q": "La DPEF (2017) est issue :",
+      "theme": "reglementation",
+      "o": [
+        "De la loi PACTE",
+        "De la directive européenne NFRD",
+        "Du Global Compact",
+        "De l'ISO 26000"
+      ],
+      "c": 1,
+      "e": "La DPEF (Déclaration de Performance Extra-Financière) est issue de la directive européenne NFRD et repose sur le principe de matérialité.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 4
+    },
+    {
+      "q": "La loi PACTE (2019) introduit notamment :",
+      "theme": "reglementation",
+      "o": [
+        "Les 12 normes ESRS",
+        "La raison d'être et la société à mission",
+        "Le Green Deal",
+        "Le label LUCIE"
+      ],
+      "c": 1,
+      "e": "La loi PACTE (3 étages) permet d'inscrire une raison d'être dans les statuts et d'adopter la qualité de société à mission.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 4
+    },
+    {
+      "q": "L'objectif ultime du Green Deal européen (2019) est :",
+      "theme": "reglementation",
+      "o": [
+        "La neutralité climatique à l'horizon 2050",
+        "La fin du reporting extra-financier",
+        "La suppression de la CSRD",
+        "Le doublement du PIB"
+      ],
+      "c": 0,
+      "e": "Le Green Deal vise à engager l'UE vers la transition écologique, avec pour objectif ultime la neutralité climatique en 2050.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 4
+    },
+    {
+      "q": "La CSRD (2022) définit un cadre de reporting standardisé au regard de :",
+      "theme": "reglementation",
+      "o": [
+        "7 questions centrales",
+        "12 normes ESRS",
+        "10 principes",
+        "3 piliers"
+      ],
+      "c": 1,
+      "e": "La CSRD définit un cadre de reporting extra-financier standardisé au regard de 12 normes ESRS, et introduit la double matérialité.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 4
+    },
+    {
+      "q": "Parmi les opportunités d'une démarche RSE figure :",
+      "theme": "opportunites",
+      "o": [
+        "L'augmentation systématique de l'impôt",
+        "L'attractivité pour les talents",
+        "La réduction de la transparence",
+        "La suppression des parties prenantes"
+      ],
+      "c": 1,
+      "e": "Les 6 opportunités : business model, image de marque, nouveaux marchés, parties prenantes, talents, réduction des coûts.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 5
+    },
+    {
+      "q": "La démarche RSE se structure en :",
+      "theme": "demarche",
+      "o": [
+        "3 étapes",
+        "5 étapes",
+        "6 étapes",
+        "12 étapes"
+      ],
+      "c": 2,
+      "e": "6 étapes : déterminer les enjeux, identifier la gouvernance, constituer la politique et les objectifs, déterminer les actions, mesurer la performance, communiquer.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 6
+    },
+    {
+      "q": "L'analyse de matérialité simple consiste à identifier :",
+      "theme": "demarche",
+      "o": [
+        "Les impacts de l'entreprise sur l'environnement",
+        "Les impacts potentiels des enjeux RSE sur la performance financière de l'entreprise",
+        "Le chiffre d'affaires",
+        "Les émissions de GES uniquement"
+      ],
+      "c": 1,
+      "e": "La matérialité simple analyse les risques extra-financiers : impact des enjeux RSE sur la performance financière de l'entreprise.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 6
+    },
+    {
+      "q": "La double matérialité ajoute à la matérialité financière :",
+      "theme": "demarche",
+      "o": [
+        "La matérialité d'impact (effets de l'entreprise sur l'environnement et les tiers)",
+        "Le calcul du résultat net",
+        "La notation boursière",
+        "La part de marché"
+      ],
+      "c": 0,
+      "e": "La double matérialité combine la matérialité financière et la matérialité d'impact ; elle est associée à la CSRD (2022).",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 6
+    },
+    {
+      "q": "Le sigle IRO désigne :",
+      "theme": "demarche",
+      "o": [
+        "Indicateurs, Ratios, Objectifs",
+        "Impacts, Risques, Opportunités",
+        "Investissement, Rendement, Optimisation",
+        "Information, Reporting, Organisation"
+      ],
+      "c": 1,
+      "e": "IRO = Impacts, Risques et Opportunités ; ils sont identifiés sur l'ensemble de la chaîne de valeur.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 6
+    },
+    {
+      "q": "Un objectif RSE doit être SMART, c'est-à-dire :",
+      "theme": "demarche",
+      "o": [
+        "Simple, Mesurable, Annuel, Réel, Total",
+        "Spécifique, Mesurable, Atteignable, Réalisable, Temporellement défini",
+        "Stratégique, Mondial, Ambitieux, Rapide, Tangible",
+        "Social, Moral, Acceptable, Responsable, Transparent"
+      ],
+      "c": 1,
+      "e": "SMART : Spécifique, Mesurable, Atteignable, Réalisable, Temporellement défini.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 7
+    },
+    {
+      "q": "Parmi les 3 types d'indicateurs, l'indicateur de moyen :",
+      "theme": "demarche",
+      "o": [
+        "Mesure le résultat final",
+        "Permet d'anticiper et de réajuster ; c'est un levier de pilotage",
+        "Démontre l'impact sociétal",
+        "Calcule le bénéfice"
+      ],
+      "c": 1,
+      "e": "Indicateur de performance (résultats), indicateur de moyen / pilotage (anticiper, réajuster), indicateur d'impact (contribution sociétale).",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 8
+    },
+    {
+      "q": "Le rapport RSE est aujourd'hui officiellement nommé :",
+      "theme": "demarche",
+      "o": [
+        "Bilan carbone",
+        "Rapport de durabilité",
+        "DPEF",
+        "Rapport de gestion"
+      ],
+      "c": 1,
+      "e": "Le rapport RSE est désormais officiellement appelé rapport de durabilité.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 8
+    },
+    {
+      "q": "EcoVadis est :",
+      "theme": "demarche",
+      "o": [
+        "Une norme ISO",
+        "Une plateforme de notation de la performance RSE (7 indicateurs, 21 critères)",
+        "Un label de l'AFNOR",
+        "Une loi européenne"
+      ],
+      "c": 1,
+      "e": "EcoVadis est une plateforme de notation utilisée par les partenaires commerciaux ; méthodologie basée sur 7 indicateurs de management et 21 critères.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 8
+    },
+    {
+      "q": "Le label B Corp évalue les entreprises sur :",
+      "theme": "opportunites",
+      "o": [
+        "3 piliers",
+        "5 catégories : Collaborateurs, Environnement, Gouvernance, Clients, Collectivité",
+        "7 questions centrales",
+        "12 normes"
+      ],
+      "c": 1,
+      "e": "B Corp est un label international évaluant les entreprises sur 5 catégories.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 9
+    },
+    {
+      "q": "Le label LUCIE s'appuie sur :",
+      "theme": "opportunites",
+      "o": [
+        "La loi PACTE",
+        "La norme ISO 26000",
+        "La CSRD",
+        "Le Global Compact"
+      ],
+      "c": 1,
+      "e": "Le label LUCIE RSE s'appuie sur les engagements de la norme ISO 26000.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 9
+    },
+    {
+      "q": "Le label « Engagé RSE » est délivré par :",
+      "theme": "opportunites",
+      "o": [
+        "L'AFNOR (modèle AFAQ 26000)",
+        "L'association B Lab",
+        "Les Nations Unies",
+        "La Commission Européenne"
+      ],
+      "c": 0,
+      "e": "Le label « Engagé RSE » de l'AFNOR évalue la maturité des démarches RSE, sur le modèle AFAQ 26000.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 9
+    },
+    {
+      "q": "Performance financière et performance RSE :",
+      "theme": "fondamentaux",
+      "o": [
+        "S'opposent toujours",
+        "Ne s'opposent pas : la RSE, via la performance globale, peut créer de la valeur",
+        "Sont sans lien",
+        "Sont identiques"
+      ],
+      "c": 1,
+      "e": "Le débat opposant performance financière et RSE est dépassé : la RSE peut être créatrice de valeur.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 2
+    },
+    {
+      "q": "Dans la matrice de matérialité simple, les deux axes sont :",
+      "theme": "demarche",
+      "o": [
+        "Coûts et bénéfices",
+        "Importance de l'enjeu pour l'entreprise et importance pour les parties prenantes",
+        "Court terme et long terme",
+        "Risques et opportunités"
+      ],
+      "c": 1,
+      "e": "La matrice croise l'importance de l'enjeu pour l'entreprise et son importance pour les parties prenantes.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 6
+    },
+    {
+      "q": "Le passage de la matérialité simple à la double matérialité est lié à :",
+      "theme": "demarche",
+      "o": [
+        "La loi NRE (2001)",
+        "L'adoption de la CSRD (2022)",
+        "Le Grenelle de l'environnement",
+        "L'ISO 26000"
+      ],
+      "c": 1,
+      "e": "L'adoption de la CSRD en 2022 fait passer l'analyse à la double matérialité.",
+      "src": "Cours Introduction à la RSE (D. Duheron)",
+      "srcChap": 6
+    }
+  ],
+  "annales": [
+    {
+      "id": "rse_2024_2025",
+      "year": "2024-2025",
+      "name": "Session 1 — Jeudi 12 juin 2025",
+      "duration": "1h00",
+      "format": "Écrit · Aucun document autorisé",
+      "professor": "D. Duheron",
+      "subject": "",
+      "dossiers": [
+        {
+          "label": "Exercice 1 — QCM (5 points)",
+          "context": "1 point par question. Lire attentivement chaque énoncé : certaines questions admettent une seule bonne réponse, d'autres plusieurs réponses possibles.",
+          "items": [
+            {
+              "q": "1. Qu'est-ce que la RSE ? (1 seule bonne réponse)\n  ☐ A. L'ensemble des réglementations applicable aux entreprises en matière Environnementale et sociale\n  ☐ B. La prise en compte volontaire par l'entreprise de son impact en matière Environnementale et Sociétale\n  ☐ C. Un label garantissant aux tiers que l'entreprise travaille de manière responsable\n  ☐ D. La Réglementation Sociétale des Entreprises",
+              "correction": "Bonne réponse : B — « La prise en compte volontaire par l'entreprise de son impact en matière Environnementale et Sociétale ».\n\nLa RSE n'est PAS une réglementation imposée (A faux), pas un label (C faux), pas une « Réglementation Sociétale » qui n'existe pas (D faux). C'est bien une démarche volontaire portant sur les impacts environnementaux ET sociétaux (économiques, sociaux, environnementaux, gouvernance)."
+            },
+            {
+              "q": "2. Qu'est-ce que la CSRD ? (1 seule bonne réponse)\n  ☐ A. Une norme de présentation des performances extra-financières obligatoire pour toutes les entreprises\n  ☐ B. Règlement Européen d'application obligatoire dans tous les pays de l'Union Européenne\n  ☐ C. Un des outils du Green Deal Européen pour accélérer la Transition Environnementale des entreprises\n  ☐ D. Le guide de mise en place du Rapport de Durabilité volontaire pour les PME",
+              "correction": "Bonne réponse : C — « Un des outils du Green Deal Européen pour accélérer la Transition Environnementale des entreprises ».\n\nLa CSRD (Corporate Sustainability Reporting Directive) n'est pas obligatoire pour toutes les entreprises mais seulement celles dépassant certains seuils (A faux). C'est une directive (à transposer) et non un règlement (B faux). Ce n'est pas un guide PME (D faux — c'est le rôle du VSME)."
+            },
+            {
+              "q": "3. Quelle(s) démarche(s) fait/font partie des principaux sujets à prendre en compte pour construire sa stratégie RSE ? (1 seule bonne réponse)\n  ☐ A. L'identification des parties prenantes et la prise en compte de leurs attentes\n  ☐ B. La description du modèle d'affaire de l'entreprise\n  ☐ C. L'identification des enjeux, impacts, risques et opportunités liés aux activités de l'entreprise\n  ☐ D. A, B et C",
+              "correction": "Bonne réponse : D — « A, B et C ».\n\nLes trois axes sont indispensables à toute démarche RSE structurée : cartographie des parties prenantes, description du business model et identification des IRO (Impacts, Risques, Opportunités)."
+            },
+            {
+              "q": "4. Quels outils / référentiels sont disponibles pour les entreprises sous les seuils de la CSRD désirant préparer un rapport de performances extra-financières ? (Plusieurs réponses possibles)\n  ☐ A. La norme VSME (Voluntary Small and Medium Entities) de l'EFRAG\n  ☐ B. La CSRD\n  ☐ C. Label Engagé RSE Afnor\n  ☐ D. Le statut de Société à Mission prévu par la Loi PACTE de 2019",
+              "correction": "Bonnes réponses : A, C et D.\n\nA — VSME : norme volontaire de l'EFRAG pour PME et micro-entreprises.\nC — Label Engagé RSE Afnor : label structurant la démarche.\nD — Société à Mission (Loi PACTE 2019) : statut juridique pour formaliser une raison d'être.\n\nB (CSRD) est faux : la CSRD s'applique aux entreprises AU-DESSUS des seuils, pas en-dessous."
+            },
+            {
+              "q": "5. Parmi les 10 Thèmes contenus dans les ESRS seul le Thème E1 « Changement climatique » est quasi-incontournable. Quels sujets aborde-t-il ? (Plusieurs réponses possibles)\n  ☐ A. La biodiversité\n  ☐ B. L'adaptation au changement climatique\n  ☐ C. L'atténuation du changement climatique\n  ☐ D. Préservation des ressources naturelles\n\n(N.B. : la version distribuée du sujet mentionnait « le Thème S1 » par erreur — il s'agit bien du Thème E1 = Changement climatique.)",
+              "correction": "Bonnes réponses : B et C.\n\nL'ESRS E1 (Changement climatique) couvre 3 piliers :\n  • Atténuation du changement climatique (réduction des GES)\n  • Adaptation au changement climatique (résilience)\n  • Énergie\n\nLa biodiversité (A) est traitée dans l'ESRS E4. La préservation des ressources naturelles (D) est plutôt dans E5 (économie circulaire) et E3 (ressources aquatiques et marines)."
+            }
+          ]
+        },
+        {
+          "label": "Exercice 2 — Questions de cours, réponses courtes (4 points, 2 pts/question)",
+          "context": "",
+          "items": [
+            {
+              "q": "1. Quelles sont les composantes de l'analyse de Double Matérialité au sens de la CSRD ?",
+              "correction": "[Meilleure copie — note 17/20]\n\nLa CSRD (Corporate Sustainability Reporting Directive), en français directive de publication d'un rapport de durabilité pour les entreprises, découle du pacte vert européen (Green Deal) de 2019 et impose un cadre de reporting extra-financier standardisé avec les 12 normes ESRS (European Sustainability Reporting Standards), des standards à respecter sur les aspects environnementaux, sociaux et de gouvernance. Cela contribue à financer la transition écologique.\n\nCela permet aux entreprises de présenter une analyse de double matérialité, allant alors plus loin que la simple matérialité de la NFRD de 2014.\n\nLa simple matérialité était l'analyse de l'impact des enjeux RSE sur la performance financière de l'entreprise (analyse extra-financière).\n\nLa double matérialité va plus loin et impose 2 analyses :\n\n  • La matérialité d'impact = l'impact des enjeux de l'entreprise sur l'environnement et les tiers, les parties prenantes, qui découle de son activité. L'entreprise va alors identifier les impacts positifs et négatifs majeurs, déterminants, réels ou potentiels, à court, moyen et long terme.\n\n  • La matérialité financière = l'impact des enjeux RSE sur la performance de l'entreprise (correspond à la simple matérialité financière). Elle va analyser les risques et opportunités, réels ou potentiels, à CT, MT, LT, que les conséquences sociales, environnementales et économiques peuvent avoir sur sa capacité à mobiliser ses capitaux, sur sa création de valeur, les répercussions sur sa performance financière et globale."
+            },
+            {
+              "q": "2. Quels sont les principaux enjeux qui devraient motiver un chef d'entreprise pour mettre en place une stratégie RSE ?",
+              "correction": "[Meilleure copie — note 17/20]\n\nLes principaux enjeux RSE sont de diverses natures :\n\n  • Cela peut amener une entreprise à se questionner sur son modèle d'affaire pour le rendre plus durable, anticiper les perturbations futures et donc être plus performante\n\n  • Réduction des coûts en diminuant sa consommation d'énergie, par la réduction des déchets par exemple\n\n  • Cela peut lui permettre d'innover dans de nouvelles technologies et ainsi augmenter sa sphère de clientèle donc favoriser un meilleur chiffre d'affaires\n\n  • En étant plus durable, elle peut fidéliser les parties prenantes\n\n  • Elle devient attractive pour recruter des talents et fidéliser sa main-d'œuvre\n\n  • Elle améliore son image de marque, sa notoriété, sa réputation et renforce ainsi sa performance (fidélisation)"
+            }
+          ]
+        },
+        {
+          "label": "Exercice 3 — Questions de cours, réponses développées (8 points, 4 pts/question)",
+          "context": "",
+          "items": [
+            {
+              "q": "1. Quelles sont les grandes étapes de mise en œuvre d'une démarche RSE dans une organisation ? Présentez-les en expliquant les objectifs et les enjeux de chaque étape.",
+              "correction": "[Meilleure copie — note 17/20]\n\nLes 6 grandes étapes dans la mise en œuvre d'une démarche RSE sont :\n\n─── 1ère étape : Déterminer les enjeux RSE ───\n\nCela a pour but de construire la démarche de manière complète, en répondant aux attentes CSRD.\n  → Faire une analyse contextuelle de l'entreprise et de son environnement :\n       • Faire un modèle d'affaire complet\n       • Faire une cartographie des parties prenantes\n       • Analyser la chaîne de valeur (amont et aval)\n  → Faire l'analyse de double matérialité pour déterminer les enjeux RSE les plus importants (impact et financière).\n\n─── 2e étape : Identifier la gouvernance RSE ───\n\nIl va falloir que la direction et le Conseil d'administration et les autres organes de direction s'impliquent dans la démarche ; c'est une condition obligatoire pour que la démarche ait du sens et elle doit engager toute l'entreprise dans sa globalité.\n\n─── 3e étape : Déterminer la politique et les objectifs RSE ───\n\nIl s'agit de réfléchir aux objectifs RSE et à la politique RSE que l'on souhaite appliquer, en lien avec la 1ère étape. Ils doivent être cohérents et SMART (spécifiques, mesurables, atteignables, réalistes, temporellement définis).\n\n─── 4e étape : Élaborer un plan d'action ───\n\nDéterminer une feuille de route avec le plan d'action des objectifs RSE et définir une temporalité associée aux actions.\n\n─── 5e étape : Mesurer la performance avec des indicateurs RSE ───\n\nIl s'agit de chiffrer la démarche pour mesurer les écarts entre le réalisé et le prévisionnel. Par exemple, pour un objectif de replanter 10 000 arbres : c'est un indicateur de performance qui permet de situer l'avancement et de savoir si on peut améliorer notre action. Cela permet d'être dans une démarche d'amélioration continue = de revoir les objectifs et d'améliorer les actions pour y parvenir.\n\n─── 6e étape : Communiquer et reporting ───\n\nIl faut alors communiquer sur la démarche, être transparent, réaliser le rapport de durabilité aux normes attendues, CSRD et celles-ci validées par un expert (CAC (H2A) ou organisme tiers indépendant).\n\nDe plus, l'entreprise peut étendre sa démarche par des certifications ou labels pour faire reconnaître son investissement RSE."
+            },
+            {
+              "q": "2. Quels sont les objectifs d'un rapport de durabilité conforme à la CSRD ? Expliquez en quoi cette nouvelle obligation va au-delà des anciennes exigences de reporting.",
+              "correction": "[Meilleure copie — note 17/20]\n\nLes objectifs d'un rapport de durabilité conforme à la CSRD sont :\n\n  • La standardisation des rapports pour faciliter les comparaisons\n  • La double matérialité (impact + financière)\n  • Le rapport de durabilité validé et certifié\n\nLe rapport de durabilité est certifié par le CAC (inscrit à la H2A) ou un organisme tiers indépendant qui atteste et certifie la solidité.\n\nIl doit respecter les 12 normes ESRS, standardisées, ce qui permet aux investisseurs de pouvoir comparer plus sereinement les rapports, qui peuvent influencer les choix d'investissements.\n\nLe vérificateur émet un rapport de certification avec une assurance limitée (formulée négativement), d'une durée de validité de 6 ans, qui atteste donc de la conformité de la démarche. Cela va donc plus loin puisque le fait que la démarche soit contrôlée, les entreprises sont contraintes à faire leur rapport de manière sérieuse et conforme.\n\nLe vérificateur garantit la conformité, la sincérité et la fiabilité du reporting après avoir vérifié qu'il n'y avait pas d'erreurs, d'omissions, d'incohérences (avec les bilans financiers par exemple) ou qu'il soit incomplet.\n\nIl vérifie aussi toutes les informations en lien avec la chaîne de valeur, le modèle d'affaire, les analyses d'impacts, les calculs effectués…\n\nAinsi, les investisseurs retrouvent confiance dans le processus et peuvent investir dans la transition écologique."
+            }
+          ]
+        },
+        {
+          "label": "Exercice 4 — Question rédactionnelle de synthèse (3 points)",
+          "context": "En une page maximum, exposez en quoi la RSE va avoir un impact sur votre futur métier. Vous pouvez vous positionner en tant que futur Responsable Financier d'une Entreprise, Expert-Comptable ou Commissaire aux Comptes… (précisez votre positionnement).",
+          "items": [
+            {
+              "q": "Rédigez votre synthèse (1 page maximum).",
+              "correction": "[Meilleure copie — note 17/20 — positionnement expert-comptable]\n\nEn tant qu'expert-comptable, la RSE aura un impact car de plus en plus d'entreprises seront concernées. En effet, les seuils des entreprises concernées seront amenés à diminuer (attente du positionnement européen sur ce sujet, Omnibus 2) et surtout, les entreprises peuvent accéder à une démarche volontaire et peuvent donc prendre part à la transition écologique dès à présent.\n\nEn effet, le VSME (Voluntary Small and Medium Enterprise) est une démarche volontaire pour les PME qui souhaitent être dans la RSE, avec des objectifs simplifiés des ESRS. Cela concerne les micro-entreprises et les PME jusqu'à 250 salariés, ce qui constitue la majorité de la clientèle d'un cabinet d'expertise-comptable.\n\nNous pourrons alors accompagner et aider les entrepreneurs dans leur démarche, en apportant nos conseils puisque nous sommes formés à la RSE. De plus, étant en collaboration avec les CAC déjà formés à la vérification, nous pourrons mieux guider nos clients.\n\nCela consistera à les accompagner dans leurs choix de niveau :\n  • 1er niveau : objectifs classiques des RSE avec les enjeux traditionnels de GES\n  • 2e niveau plus poussé : comme le CRD classique mais avec des objectifs allégés\n\nLe rôle de soutien, appui et conseil sera donc important et constitue un rôle essentiel pour accompagner les clients.\n\nDe plus, en tant qu'expert-comptable, on peut également mettre en place une VSME au sein de son propre cabinet pour être soi-même acteur de la démarche, ce qui peut attirer les talents, les nouvelles générations, favoriser l'attractivité du cabinet et le pouvoir à innover, renforcer la fidélisation des collaborateurs et la performance globale (motivation)."
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "Bien gérer son temps : QCM (5 min) → Ex2 court (10 min) → Ex3 développé (25 min) → Ex4 synthèse (15 min). La synthèse rapporte 3 points : ne pas la bâcler.",
+        "Pour le QCM : attention à la Q5 qui mentionne « S1 » dans l'énoncé — il faut comprendre qu'il s'agit de E1 (Changement climatique). Les ESRS commencent par E (Environnement), S (Social), G (Gouvernance).",
+        "Mémoriser les 6 étapes de la démarche RSE : enjeux → gouvernance → politique → plan d'action → mesure → reporting.",
+        "Double matérialité = (impact + financière). C'est LA notion centrale de la CSRD à parfaitement maîtriser.",
+        "Pour la synthèse Ex4 : se positionner clairement (expert-comptable / CAC / RF) dès l'intro. Mobiliser VSME pour le marché PME (cœur de clientèle des cabinets)."
+      ]
+    }
+  ],
+  "themes": [
+    {
+      "id": "fondamentaux",
+      "icon": "🌍",
+      "label": "Fondamentaux : DD, RSE, ISO 26000"
+    },
+    {
+      "id": "reglementation",
+      "icon": "⚖️",
+      "label": "Cadre réglementaire"
+    },
+    {
+      "id": "demarche",
+      "icon": "🛠️",
+      "label": "Démarche RSE"
+    },
+    {
+      "id": "opportunites",
+      "icon": "🌟",
+      "label": "Opportunités & labels"
+    }
+  ]
+}

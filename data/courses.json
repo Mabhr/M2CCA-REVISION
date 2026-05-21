@@ -1,0 +1,532 @@
+{
+  "semesters": [
+    { "id": "S2", "label": "Semestre 2", "sub": "Janvier — Juin" }
+  ],
+  "ueGroups": [
+    {
+      "semester": "S2",
+      "ue": "UE 5 — Finance",
+      "coef": 9,
+      "color": "#5a9168",
+      "courses": [
+        "inge_fi"
+      ]
+    },
+    {
+      "semester": "S2",
+      "ue": "UE 6 — Management et contrôle de gestion",
+      "coef": 9,
+      "color": "#c99850",
+      "courses": [
+        "evo_orga",
+        "strat"
+      ]
+    },
+    {
+      "semester": "S2",
+      "ue": "UE 7 — Management des SI",
+      "coef": 6,
+      "color": "#3d72b4",
+      "courses": [
+        "gouv"
+      ]
+    },
+    {
+      "semester": "S2",
+      "ue": "UE 8 — Communication spécialisée",
+      "coef": 3,
+      "color": "#b05a47",
+      "courses": [
+        "anglais"
+      ]
+    },
+    {
+      "semester": "S2",
+      "ue": "UE 9 — Développement des savoirs",
+      "coef": 3,
+      "color": "#4d9aa8",
+      "courses": [
+        "conduite_chgt",
+        "usage_num",
+        "rse_csrd"
+      ]
+    },
+    {
+      "semester": "S2",
+      "ue": "UE 10 — Appui à la transformation",
+      "coef": 3,
+      "color": "#8a7aa8",
+      "courses": [
+        "stage"
+      ]
+    }
+  ],
+  "courses": {
+    "strat": {
+      "title": "Management stratégique",
+      "sub": "BM · Plateformes · Benavent · Cusumano",
+      "icon": "🎯",
+      "color": "#c99850",
+      "hasContent": true,
+      "url": "strat.html",
+      "exam": {
+        "modalities": [
+          { "tp": "Écrit", "d": "1h" }
+        ]
+      },
+      "checklistItems": [
+        {
+          "id": "s1",
+          "label": "Business Model — Définition & composantes"
+        },
+        {
+          "id": "s2",
+          "label": "Les 9 blocs du BM Canvas"
+        },
+        {
+          "id": "s3",
+          "label": "Évaluation du BM (4 critères)"
+        },
+        {
+          "id": "s4",
+          "label": "Scalabilité & indicateurs financiers"
+        },
+        {
+          "id": "s5",
+          "label": "Les plateformes — Définition & types"
+        },
+        {
+          "id": "s6",
+          "label": "6 mécanismes clés (Benavent)"
+        },
+        {
+          "id": "s7",
+          "label": "4 erreurs typiques (Cusumano)"
+        },
+        {
+          "id": "s8",
+          "label": "Marchés bifaces & stratégies"
+        }
+      ]
+    },
+    "gouv": {
+      "title": "Système d'information",
+      "sub": "Gouvernance · COBIT · ITIL · CMMI",
+      "icon": "🏛️",
+      "color": "#3d72b4",
+      "hasContent": true,
+      "url": "gouv.html",
+      "exam": {
+        "modalities": [
+          { "tp": "Écrit", "d": "2h" }
+        ]
+      },
+      "checklistItems": [
+        {
+          "id": "g1",
+          "label": "Définition du SI & évolution historique (années 60 → cloud)"
+        },
+        {
+          "id": "g2",
+          "label": "Gouvernance des SI — définition & 5 fondements ISACA"
+        },
+        {
+          "id": "g3",
+          "label": "Alignement stratégique — modèle Henderson-Venkatraman"
+        },
+        {
+          "id": "g4",
+          "label": "Création de valeur par le SI & BSC de Kaplan-Norton"
+        },
+        {
+          "id": "g5",
+          "label": "Gestion des risques — ISO 27000 & ISO 27002"
+        },
+        {
+          "id": "g6",
+          "label": "Gouvernance SI vs gouvernance d'entreprise — articulation"
+        },
+        {
+          "id": "g7",
+          "label": "DSI — 3 pôles (études, production, support) & profils"
+        },
+        {
+          "id": "g8",
+          "label": "Infogérance — types (totale, partielle, applicative)"
+        },
+        {
+          "id": "g9",
+          "label": "TMA — 3 domaines (MCO, MEV, évolutive)"
+        },
+        {
+          "id": "g10",
+          "label": "SLA & OLA — définition, indicateurs, pénalités"
+        },
+        {
+          "id": "g11",
+          "label": "Réversibilité, transférabilité & offshore/nearshore/onshore"
+        },
+        {
+          "id": "g12",
+          "label": "COBIT — 4 domaines (PO, AI, DS, SE) & 7 critères"
+        },
+        {
+          "id": "g13",
+          "label": "ITIL — processus, catalogue de services, SLA"
+        },
+        {
+          "id": "g14",
+          "label": "CMMI — 5 niveaux de maturité (Initial → Optimisé)"
+        },
+        {
+          "id": "g15",
+          "label": "COSO — 5 composantes du contrôle interne"
+        },
+        {
+          "id": "g16",
+          "label": "Val IT & Risk IT — tryptique ISACA"
+        },
+        {
+          "id": "g17",
+          "label": "Audit des SI — objectifs, démarche, rapport"
+        },
+        {
+          "id": "g18",
+          "label": "Cadre légal audit SI — SOX, NRE, LSF, NEP"
+        },
+        {
+          "id": "g19",
+          "label": "BYOD, SI fantômes & nouveaux usages numériques"
+        },
+        {
+          "id": "g20",
+          "label": "RGPD — principes, rôles DPO, obligations entreprises"
+        },
+        {
+          "id": "g21",
+          "label": "Facturation électronique — Chorus Pro, e-invoicing 2026"
+        },
+        {
+          "id": "g22",
+          "label": "Intelligence artificielle & SI — impacts & gouvernance IA"
+        },
+        {
+          "id": "g23",
+          "label": "Dématérialisation — bulletins de paie, archives légales"
+        },
+        {
+          "id": "g24",
+          "label": "PSSI — Politique de Sécurité du SI, ISO 27002"
+        },
+        {
+          "id": "g25",
+          "label": "Plan de continuité d'activité (PCA) & Plan de reprise (PRA)"
+        }
+      ]
+    },
+    "inge_fi": {
+      "title": "Ingénierie financière",
+      "sub": "Marchés financiers · Évaluation",
+      "icon": "💹",
+      "color": "#5a9168",
+      "hasContent": true,
+      "url": "inge_fi.html",
+      "exam": {
+        "modalities": [
+          { "tp": "Oral de groupe", "d": "15 min", "n": "CC — groupe de 4 étudiants" },
+          { "tp": "Écrit", "d": "2h" }
+        ]
+      },
+      "checklistItems": [
+        {
+          "id": "if1",
+          "label": "Coût du capital (CMPC) — formule & composantes"
+        },
+        {
+          "id": "if2",
+          "label": "Coût de la dette (Rd) — calcul & fiscalité"
+        },
+        {
+          "id": "if3",
+          "label": "Coût des fonds propres — Gordon-Shapiro"
+        },
+        {
+          "id": "if4",
+          "label": "MEDAF — prime de risque & droite du marché"
+        },
+        {
+          "id": "if5",
+          "label": "Bêta endetté / désendetté — formule Hamada"
+        },
+        {
+          "id": "if6",
+          "label": "Bêta société non cotée & prime d'illiquidité"
+        },
+        {
+          "id": "if7",
+          "label": "Marchés financiers — organisé vs OTC"
+        },
+        {
+          "id": "if8",
+          "label": "Introduction en Bourse — IPO & Euronext"
+        },
+        {
+          "id": "if9",
+          "label": "Ordres de Bourse — types & priorités"
+        },
+        {
+          "id": "if10",
+          "label": "Obligations — valorisation & taux actuariel"
+        },
+        {
+          "id": "if11",
+          "label": "Duration & sensibilité obligataire"
+        },
+        {
+          "id": "if12",
+          "label": "Coupon couru & valeur pied de coupon"
+        },
+        {
+          "id": "if13",
+          "label": "Produits dérivés de taux — FRA & Forward Forward"
+        },
+        {
+          "id": "if14",
+          "label": "CAP, FLOOR, COLLAR — couverture de taux"
+        },
+        {
+          "id": "if15",
+          "label": "Options — call, put, stratégies"
+        },
+        {
+          "id": "if16",
+          "label": "Chambre de compensation — LCH ClearNet"
+        },
+        {
+          "id": "if17",
+          "label": "Critères extra-financiers ESG & intégration RSE"
+        },
+        {
+          "id": "if18",
+          "label": "Politique de dividende & rachat d'actions"
+        },
+        {
+          "id": "if19",
+          "label": "Évaluation d'entreprise — méthodes DCF & comparables"
+        },
+        {
+          "id": "if20",
+          "label": "Fusion-acquisition — logique financière & synergies"
+        }
+      ]
+    },
+    "evo_orga": {
+      "title": "Évolution des modèles d'organisation",
+      "sub": "Théories · Mintzberg · Modèles contemporains",
+      "icon": "🏢",
+      "color": "#c99850",
+      "hasContent": true,
+      "url": "evo_orga.html",
+      "exam": {
+        "modalities": [
+          { "tp": "Écrit", "d": "1h" }
+        ]
+      },
+      "checklistItems": [
+        { "id": "eo1", "label": "École classique — Taylor, Fayol, Weber" },
+        { "id": "eo2", "label": "Taylorisme — 4 principes de l'OST" },
+        { "id": "eo3", "label": "Fayol — POCCC et 14 principes" },
+        { "id": "eo4", "label": "Weber — bureaucratie & 3 dominations" },
+        { "id": "eo5", "label": "École des relations humaines — Mayo & Hawthorne" },
+        { "id": "eo6", "label": "Maslow & Herzberg — motivation" },
+        { "id": "eo7", "label": "Théories X et Y de McGregor" },
+        { "id": "eo8", "label": "Burns & Stalker — mécaniste vs organique" },
+        { "id": "eo9", "label": "Lawrence & Lorsch — différenciation/intégration" },
+        { "id": "eo10", "label": "Mintzberg — 6 parties de l'organisation" },
+        { "id": "eo11", "label": "Mintzberg — 6 mécanismes de coordination" },
+        { "id": "eo12", "label": "Mintzberg — 7 configurations structurelles" },
+        { "id": "eo13", "label": "Coûts de transaction (Coase · Williamson)" },
+        { "id": "eo14", "label": "Théorie de l'agence (Jensen & Meckling)" },
+        { "id": "eo15", "label": "Approche par les ressources (RBV — Barney)" },
+        { "id": "eo16", "label": "Parties prenantes (Freeman)" },
+        { "id": "eo17", "label": "Isomorphisme institutionnel (DiMaggio & Powell)" },
+        { "id": "eo18", "label": "Toyota Production System & Lean" },
+        { "id": "eo19", "label": "Holacratie, entreprise libérée, agile" },
+        { "id": "eo20", "label": "Modèle de Laloux — paradigmes Opale" }
+      ]
+    },
+    "anglais": {
+      "title": "Anglais",
+      "sub": "Compréhension · Expression",
+      "icon": "🇬🇧",
+      "color": "#b05a47",
+      "hasContent": false,
+      "url": null,
+      "exam": {
+        "modalities": [
+          { "tp": "Écrit", "d": "1h" }
+        ]
+      },
+      "checklistItems": []
+    },
+    "conduite_chgt": {
+      "title": "Conduite du changement",
+      "sub": "Modèles · Résistance · Sociodynamique · Apprentissage",
+      "icon": "🔄",
+      "color": "#4d9aa8",
+      "hasContent": true,
+      "url": "conduite_chgt.html",
+      "exam": {
+        "modalities": [
+          { "tp": "Écrit", "d": "1h" }
+        ]
+      },
+      "checklistItems": [
+        { "id": "cc1", "label": "Définition du changement & typologie (Watzlawick)" },
+        { "id": "cc2", "label": "Modèle de Kurt Lewin — 3 phases" },
+        { "id": "cc3", "label": "Les 8 étapes de John Kotter" },
+        { "id": "cc4", "label": "Modèle ADKAR (Prosci)" },
+        { "id": "cc5", "label": "Courbe du deuil — Kübler-Ross" },
+        { "id": "cc6", "label": "Équation de Beckhard — D × V × F > R" },
+        { "id": "cc7", "label": "Transitions de Bridges" },
+        { "id": "cc8", "label": "Sources et formes de la résistance" },
+        { "id": "cc9", "label": "Sociodynamique (Fauvet)" },
+        { "id": "cc10", "label": "Carte des partenaires & stratégie des alliés" },
+        { "id": "cc11", "label": "Communication — les 5 messages clés" },
+        { "id": "cc12", "label": "Apprentissage simple & double boucle (Argyris)" },
+        { "id": "cc13", "label": "Organisation apprenante — Senge" },
+        { "id": "cc14", "label": "Motivation (Maslow, Herzberg, McGregor, Deci-Ryan)" },
+        { "id": "cc15", "label": "Engagement & empowerment" },
+        { "id": "cc16", "label": "Burn-out · Bore-out · Brown-out" },
+        { "id": "cc17", "label": "Compétences du change manager" },
+        { "id": "cc18", "label": "Outils de diagnostic & accompagnement" },
+        { "id": "cc19", "label": "Changement & transformation digitale" },
+        { "id": "cc20", "label": "Pilotage du changement par les KPI" }
+      ]
+    },
+    "usage_num": {
+      "title": "Usage et outils numériques",
+      "sub": "Pratiques digitales",
+      "icon": "💻",
+      "color": "#8a7aa8",
+      "hasContent": false,
+      "url": null,
+      "exam": {
+        "modalities": [
+          { "tp": "Assiduité", "n": "Présence obligatoire" }
+        ]
+      },
+      "checklistItems": []
+    },
+    "rse_csrd": {
+      "title": "RSE et CSRD",
+      "sub": "Responsabilité sociale · Reporting",
+      "icon": "🌱",
+      "color": "#5a9168",
+      "hasContent": true,
+      "url": "rse.html",
+      "exam": {
+        "modalities": [
+          { "tp": "Écrit", "d": "1h" }
+        ]
+      },
+      "checklistItems": [
+        {
+          "id": "r1",
+          "label": "Définition de la RSE — prise en compte volontaire des impacts ESG"
+        },
+        {
+          "id": "r2",
+          "label": "Origines et évolution de la RSE — Grenelle I & II, DPEF, CSRD"
+        },
+        {
+          "id": "r3",
+          "label": "La Théorie du Donut — Kate Raworth (2010)"
+        },
+        {
+          "id": "r4",
+          "label": "Le Green Deal Européen — objectifs et instruments"
+        },
+        {
+          "id": "r5",
+          "label": "La CSRD — champ d'application, seuils et calendrier"
+        },
+        {
+          "id": "r6",
+          "label": "Les ESRS — 12 normes, 10 thèmes, structure"
+        },
+        {
+          "id": "r7",
+          "label": "E1 Changement climatique — atténuation, adaptation, énergie"
+        },
+        {
+          "id": "r8",
+          "label": "La Double Matérialité — impact + financière"
+        },
+        {
+          "id": "r9",
+          "label": "Le Rapport de durabilité — contenu, assurance, sanctions"
+        },
+        {
+          "id": "r10",
+          "label": "Les parties prenantes — identification, dialogue, attentes"
+        },
+        {
+          "id": "r11",
+          "label": "Démarche RSE en 5 étapes — mise en œuvre"
+        },
+        {
+          "id": "r12",
+          "label": "La Société à Mission — Loi PACTE 2019, raison d'être"
+        },
+        {
+          "id": "r13",
+          "label": "Label Engagé RSE AFNOR et VSME — outils PME"
+        },
+        {
+          "id": "r14",
+          "label": "Performance financière vs performance RSE"
+        },
+        {
+          "id": "r15",
+          "label": "Impact de la RSE sur la profession comptable et l'audit"
+        },
+        {
+          "id": "r16",
+          "label": "La directive Omnibus — évolution du cadre CSRD"
+        },
+        {
+          "id": "r17",
+          "label": "Greenwashing — définition et risques juridiques"
+        },
+        {
+          "id": "r18",
+          "label": "La taxonomie européenne — activités durables"
+        },
+        {
+          "id": "r19",
+          "label": "Indicateurs ESG — environnementaux, sociaux, gouvernance"
+        },
+        {
+          "id": "r20",
+          "label": "La chaîne de valeur — amont et aval dans la CSRD"
+        }
+      ]
+    },
+    "stage": {
+      "title": "Stage et étude professionnelle",
+      "sub": "Mémoire · Soutenance orale",
+      "icon": "📄",
+      "color": "#8a7aa8",
+      "hasContent": false,
+      "url": null,
+      "exam": {
+        "modalities": [
+          { "tp": "Mémoire écrit", "n": "Document à rendre" },
+          { "tp": "Soutenance orale", "d": "30 min", "n": "Oral individuel" }
+        ]
+      },
+      "checklistItems": []
+    }
+  }
+}

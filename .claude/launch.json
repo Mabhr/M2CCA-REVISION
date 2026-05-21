@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "m2cca",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["/tmp/m2cca_serve.py"],
+      "port": 8766
+    }
+  ]
+}

@@ -1,0 +1,2215 @@
+{
+  "title": "Management des Systèmes d'Information",
+  "subtitle": "Sécurité · Gouvernance · Audit des SI (N. Lebey)",
+  "quizKey": "m2cca_quiz_gouv",
+  "themes": [
+    {
+      "id": "securite",
+      "icon": "🔒",
+      "label": "Sécurité des SI"
+    },
+    {
+      "id": "gouvernance",
+      "icon": "🏛️",
+      "label": "Gouvernance des SI"
+    },
+    {
+      "id": "audit",
+      "icon": "🔍",
+      "label": "Audit des SI"
+    }
+  ],
+  "checklistItems": [
+    {
+      "id": "g1",
+      "label": "Définition du SI + gouvernance des SI (Lebey) — pilotage + contrôle"
+    },
+    {
+      "id": "g2",
+      "label": "Évolution historique des SI 1960 → 2000 (tableau Lebey)"
+    },
+    {
+      "id": "g3",
+      "label": "« Gouverner c'est » : connaître/anticiper, décider, communiquer/suivre, adapter"
+    },
+    {
+      "id": "g4",
+      "label": "5 fondements ISACA : alignement, valeur, risques, ressources, performance"
+    },
+    {
+      "id": "g5",
+      "label": "Henderson-Venkatraman — 4 formes d'alignement stratégique"
+    },
+    {
+      "id": "g6",
+      "label": "Démarche d'alignement stratégique en 5 étapes"
+    },
+    {
+      "id": "g7",
+      "label": "Création de valeur du SI — connaissance, M&A, optimisation des coûts"
+    },
+    {
+      "id": "g8",
+      "label": "Balanced Scorecard (Kaplan-Norton) — 4 axes"
+    },
+    {
+      "id": "g9",
+      "label": "Gouvernance d'entreprise vs gouvernance SI — performance + conformité"
+    },
+    {
+      "id": "g10",
+      "label": "Lois Corporate Governance : SOX (2002), NRE (2001), LSF (2003), Loi Breton (2005)"
+    },
+    {
+      "id": "g11",
+      "label": "Place et rôle du DSI — du technicien au manager stratégique"
+    },
+    {
+      "id": "g12",
+      "label": "DSI — 3 pôles (Production, Support, Développement) + 4 activités"
+    },
+    {
+      "id": "g13",
+      "label": "Help Desk — critères de qualité"
+    },
+    {
+      "id": "g14",
+      "label": "Sous-traitance vs infogérance — définitions + Commission ministérielle"
+    },
+    {
+      "id": "g15",
+      "label": "Types d'infogérance (globale, sélective, parc, production, BPO, BTO, ASP)"
+    },
+    {
+      "id": "g16",
+      "label": "TMA — 3 domaines (assistance, curative, évolutive + adaptative)"
+    },
+    {
+      "id": "g17",
+      "label": "Convention de service + 3 phases (prise en charge, récurrence, réversibilité)"
+    },
+    {
+      "id": "g18",
+      "label": "SLA — définition, SLS, SLO, intérêts et limites"
+    },
+    {
+      "id": "g19",
+      "label": "OLA — définition, intérêts et limites"
+    },
+    {
+      "id": "g20",
+      "label": "Réversibilité vs Transférabilité"
+    },
+    {
+      "id": "g21",
+      "label": "Offshore / Nearshore / Onshore"
+    },
+    {
+      "id": "g22",
+      "label": "COBIT — 4 domaines (PO, AI, DS, SE) + cube + 7 critères d'information"
+    },
+    {
+      "id": "g23",
+      "label": "ITIL — processus Support (incidents, problèmes, changements, MEP, configurations) et Production (capacité, disponibilité, continuité, financière, niveaux service)"
+    },
+    {
+      "id": "g24",
+      "label": "ISO 9000/9001/9004 + 8 principes de management de la qualité"
+    },
+    {
+      "id": "g25",
+      "label": "ISO 20000 (services) + ISO 27000/27001/27002/27004/27005 + PDCA"
+    },
+    {
+      "id": "g26",
+      "label": "CMMI — 5 niveaux + domaines de processus par niveau"
+    },
+    {
+      "id": "g27",
+      "label": "Tryptique ISACA : COBIT + Val IT + Risk IT"
+    },
+    {
+      "id": "g28",
+      "label": "Val IT — évaluation de la valeur des projets IT"
+    },
+    {
+      "id": "g29",
+      "label": "Risk IT — 3 volets (RG / RE / RR) + processus"
+    },
+    {
+      "id": "g30",
+      "label": "COSO — origine (1992, Enron/Worldcom 2002) + contrôle interne"
+    },
+    {
+      "id": "a1",
+      "label": "Définition audit (ISO 9000) + audit informatique vs audit des SI"
+    },
+    {
+      "id": "a2",
+      "label": "Audit SI apparu années 1970 — périmètre élargi vs audit informatique"
+    },
+    {
+      "id": "a3",
+      "label": "Objectifs de l'audit SI (efficacité, performance, pérennité, sécurité)"
+    },
+    {
+      "id": "a4",
+      "label": "Cas où un audit SI est utile (croissance, données, innovation, valorisation)"
+    },
+    {
+      "id": "a5",
+      "label": "Concepts de base — contrôle interne, lettre de mission, faits, entretiens, recommandations"
+    },
+    {
+      "id": "a6",
+      "label": "Référentiels mobilisés : COBIT, ISO 27002, CMMi, ITIL, Val IT, Risk IT"
+    },
+    {
+      "id": "a7",
+      "label": "Guide d'audit gouvernance SI — 12 vecteurs"
+    },
+    {
+      "id": "a8",
+      "label": "Audit interne (AFAI) vs audit externe (cabinets, CAC)"
+    },
+    {
+      "id": "a9",
+      "label": "Typologie missions audit SI — fonction, exploitation, projets, applications, sécurité"
+    },
+    {
+      "id": "a10",
+      "label": "Audit de la fonction informatique — COBIT PO4"
+    },
+    {
+      "id": "a11",
+      "label": "Audit de l'exploitation — Openview, Tivoli, Nagios — COBIT DS"
+    },
+    {
+      "id": "a12",
+      "label": "Audit des projets — modèles cascade, V, W, spirale — COBIT PO10/AI1/AI2"
+    },
+    {
+      "id": "a13",
+      "label": "Audit des applications opérationnelles — contrôles, données, traitements"
+    },
+    {
+      "id": "a14",
+      "label": "Audit de la sécurité informatique — 4 notions + COBIT DS5/PO9 + ISO 27001/27002"
+    },
+    {
+      "id": "a15",
+      "label": "Caractéristiques de la démarche (Progressive, Modulaire, Universelle, Opérationnelle)"
+    },
+    {
+      "id": "a16",
+      "label": "Règles d'audit SI — jugement + recommandations, comparaison, faisabilité"
+    },
+    {
+      "id": "a17",
+      "label": "Rapport d'audit SI — exigences ISACA (portée, objectifs, conclusions, signé)"
+    },
+    {
+      "id": "a18",
+      "label": "Démarche d'audit en 8 étapes (prise de connaissance → support utilisateurs)"
+    },
+    {
+      "id": "a19",
+      "label": "Normes professionnelles IIA (qualification, fonctionnement, mise en œuvre) + norme 1210.A3"
+    },
+    {
+      "id": "a20",
+      "label": "Normes ISA 315, 330 + ISCQ1 (IAASB/IFAC)"
+    },
+    {
+      "id": "a21",
+      "label": "Normes CNCC 2-201/2-301/2-302 → NEP 315 + NEP 330 (mai 2007)"
+    },
+    {
+      "id": "a22",
+      "label": "Contrôle interne — définition AFAI + 3 objectifs (conformité, fiabilité, opérations)"
+    },
+    {
+      "id": "a23",
+      "label": "Cadre AMF 2010 — référence COSO II + ISO 31000"
+    },
+    {
+      "id": "a24",
+      "label": "7 démarches du contrôle interne (AFAI) : comptable, interne, risques, sécurité, info, SI, qualité"
+    },
+    {
+      "id": "a25",
+      "label": "Contrôle comptes entités informatisées — SIC (autonome, semi-intégré, intégré)"
+    },
+    {
+      "id": "a26",
+      "label": "Norme CNCC 2-302 — environnement informatisé (objectif, étendue, démarche CAC)"
+    },
+    {
+      "id": "a27",
+      "label": "6 risques spécifiques de l'environnement informatique (trace, uniformité, séparation, erreurs)"
+    },
+    {
+      "id": "a28",
+      "label": "Risque d'audit ISACA = risque inhérent × risque lié au contrôle × risque de non-détection"
+    },
+    {
+      "id": "a29",
+      "label": "Cartographie des applications + interfaces (type, dates, environnement, flux)"
+    },
+    {
+      "id": "a30",
+      "label": "Appréciation de la complexité du SI + identification des processus (achats, ventes, stocks, paie)"
+    },
+    {
+      "id": "a31",
+      "label": "Management des risques — démarche : stratégie, qualification, vulnérabilités, plan d'action, conformité"
+    },
+    {
+      "id": "a32",
+      "label": "Structures de gestion des risques (Niveaux 1/2/3 + Risk Manager)"
+    },
+    {
+      "id": "a33",
+      "label": "Schéma directeur sécurité + tableau de bord sécurité"
+    },
+    {
+      "id": "a34",
+      "label": "Sécurité physique des sites informatiques + analyse critique des sauvegardes"
+    },
+    {
+      "id": "s1",
+      "label": "Définition de la sécurité informatique — réduire vulnérabilité face aux menaces"
+    },
+    {
+      "id": "s2",
+      "label": "Sûreté de fonctionnement vs Sécurité — différence claire"
+    },
+    {
+      "id": "s3",
+      "label": "Critères DIC (Disponibilité, Intégrité, Confidentialité) + Preuve (authentification + non-répudiation)"
+    },
+    {
+      "id": "s4",
+      "label": "5 objectifs sécurité : Intégrité, Confidentialité, Disponibilité, Non-répudiation, Authentification"
+    },
+    {
+      "id": "s5",
+      "label": "Équation du risque : RISQUE = MENACE × VULNÉRABILITÉ × IMPACT (guide ISO 73)"
+    },
+    {
+      "id": "s6",
+      "label": "Évolution des risques (Internet, attaques, failles tech/config/politique, profil pirates)"
+    },
+    {
+      "id": "s7",
+      "label": "10 principaux défauts de sécurité (installation par défaut, MAJ, mots de passe, services inutiles, traces, authentification faible…)"
+    },
+    {
+      "id": "s8",
+      "label": "État actif vs passif d'insécurité"
+    },
+    {
+      "id": "s9",
+      "label": "Normes ISO sécurité — 9000, 14001, 17799, 19001, 27001 (SMSI), 27002 (133 mesures), 27004, 27005"
+    },
+    {
+      "id": "s10",
+      "label": "PDCA (roue de Deming) appliqué à ISO 27002 — Plan/Do/Check/Act"
+    },
+    {
+      "id": "s11",
+      "label": "PSSI — définition + 4 étapes (Audit, Élaboration des règles, Surveillance, Actions)"
+    },
+    {
+      "id": "s12",
+      "label": "PSSI — mise en œuvre (Audit, Tests d'intrusion, Détection, Réactions, Restauration)"
+    },
+    {
+      "id": "s13",
+      "label": "PSSI — 8 thèmes (patrimoine, personnes, locaux, accès, communications, dvt, continuité, obligations légales)"
+    },
+    {
+      "id": "s14",
+      "label": "Méthodes — COBIT, EBIOS, MARION, MEHARI"
+    },
+    {
+      "id": "s15",
+      "label": "EBIOS — 5 étapes (contexte, besoins, menaces, objectifs, exigences)"
+    },
+    {
+      "id": "s16",
+      "label": "MEHARI — 3 livrables (PSS, POS, POE) + 3 critères DIC"
+    },
+    {
+      "id": "s17",
+      "label": "Cryptographie — historique (Cesar, Vernam 1918, Enigma 1923, Turing 1939, DES 1976, Diffie-Hellman 1976, RSA 1978)"
+    },
+    {
+      "id": "s18",
+      "label": "3 services de la cryptographie : intégrité, confidentialité, preuve (authentification + non-répudiation)"
+    },
+    {
+      "id": "s19",
+      "label": "Stéganographie — watermarking, canal caché (cover channel)"
+    },
+    {
+      "id": "s20",
+      "label": "Principe de Kerckhoff (1883) — sécurité repose sur la clé, pas l'algorithme"
+    },
+    {
+      "id": "s21",
+      "label": "Chiffrement symétrique — même clé chiffre/déchiffre, avantages, limites (multiplication clés, pas d'intégrité)"
+    },
+    {
+      "id": "s22",
+      "label": "Chiffrement asymétrique — paire clé publique / privée, avantages (confidentialité, intégrité), inconvénients (1000× lent, force brute)"
+    },
+    {
+      "id": "s23",
+      "label": "Hashage — empreinte digitale, irréversible, déterministe (MD5, SHA1, SHA256)"
+    },
+    {
+      "id": "s24",
+      "label": "Algorithme RSA — formule (c = m^e mod n) + création paire de clés"
+    },
+    {
+      "id": "s25",
+      "label": "Confiance numérique — 4 piliers"
+    },
+    {
+      "id": "s26",
+      "label": "Signature électronique — propriétés (identification, intégrité) + effets juridiques (Directive 1999, Code civil 2000)"
+    },
+    {
+      "id": "s27",
+      "label": "Certificat électronique — 3 classes (I, II, III, 3Plus)"
+    },
+    {
+      "id": "s28",
+      "label": "Autorité de certification — clé publique racine + chaîne de confiance"
+    },
+    {
+      "id": "s29",
+      "label": "Archivage électronique — SAE + lois (13/03/2000 art 1316-1, L134-2, etc.)"
+    },
+    {
+      "id": "s30",
+      "label": "Normes archivage — NF Z42-013 + modèle OAIS"
+    },
+    {
+      "id": "s31",
+      "label": "PKI / ICP — composants + services (VPN, BD, courrier, fiscalité, horodatage)"
+    },
+    {
+      "id": "s32",
+      "label": "Clé WEP (faille vecteur init) / WPA / WPA2 (TKIP, PSK)"
+    },
+    {
+      "id": "s33",
+      "label": "Architecture technique — Firewall, Proxy, SAS applicatifs"
+    },
+    {
+      "id": "s34",
+      "label": "SSL/TLS, SSH — protections (passive, active, usurpation, intrusion) — non protégés (répudiation, bout-en-bout)"
+    },
+    {
+      "id": "s35",
+      "label": "Blockchain — 3 composants (blocs, nœuds, mineurs) + caractéristiques (chronologique, immuable, infalsifiable)"
+    },
+    {
+      "id": "s36",
+      "label": "Blockchain — publiques vs privées + atouts (traçabilité, sécurité, efficacité) + limites (énergie, stockage, cadre)"
+    },
+    {
+      "id": "s37",
+      "label": "Bitcoin (2008 Satoshi Nakamoto) + règlement MiCA (02/08/2024)"
+    },
+    {
+      "id": "s38",
+      "label": "Cadre juridique — responsabilité civile (art 1384 C.civ.) + pénale du chef d'entreprise"
+    },
+    {
+      "id": "s39",
+      "label": "Loi Informatique et Libertés 6 janvier 1978 (modifiée 6 août 2004) + CNIL"
+    },
+    {
+      "id": "s40",
+      "label": "Droits données personnelles : information, accès, rectification, opposition"
+    },
+    {
+      "id": "s41",
+      "label": "Art 34 loi 1978 (précautions) + art 323-1 à 323-3-1 code pénal (intrusion)"
+    },
+    {
+      "id": "s42",
+      "label": "Identification entreprise site internet (mentions obligatoires) + publicité électronique (consentement)"
+    },
+    {
+      "id": "s43",
+      "label": "Lois importantes : 85-660 (contrefaçons), 88-19 (fraude), 19/03/99 (cryptographie : 40/128 bits, SCSSI)"
+    },
+    {
+      "id": "s44",
+      "label": "BYOD / BYOA — définition + responsabilité employeur"
+    },
+    {
+      "id": "s45",
+      "label": "Hacker (MIT IBM 704) / Hacktivisme / Cracker — distinctions"
+    },
+    {
+      "id": "s46",
+      "label": "Virus — typologie (furtif, polymorphe, macros VBA, composite)"
+    },
+    {
+      "id": "s47",
+      "label": "Vers (worm) — propagation réseau sans hôte"
+    },
+    {
+      "id": "s48",
+      "label": "Spyware (logiciel espion) + Hijackers (pirate navigateur)"
+    },
+    {
+      "id": "s49",
+      "label": "Troyens (cheval de Troie) + Backdoor + Bombe logique"
+    },
+    {
+      "id": "s50",
+      "label": "Cryptolocker / Ransomware (2013)"
+    },
+    {
+      "id": "s51",
+      "label": "Hoax (canular) — viroax, chaînes de solidarité, fausses infos, arnaques"
+    },
+    {
+      "id": "s52",
+      "label": "Spam + Mailbombing"
+    },
+    {
+      "id": "s53",
+      "label": "Phishing — mécanisme + protections"
+    },
+    {
+      "id": "s54",
+      "label": "Denial of Service (DoS)"
+    },
+    {
+      "id": "s55",
+      "label": "Sniffing (switch vs hub) + Scanning (IDS / IPS)"
+    },
+    {
+      "id": "s56",
+      "label": "Social Engineering — manipulation"
+    },
+    {
+      "id": "s57",
+      "label": "Cracking de mots de passe — attaque par dictionnaire, hybride, brute-force (John the Ripper, L0phtCrack)"
+    },
+    {
+      "id": "s58",
+      "label": "Spoofing — usurpation IP / e-mail / web"
+    },
+    {
+      "id": "s59",
+      "label": "Man in the Middle"
+    },
+    {
+      "id": "s60",
+      "label": "Hijacking (détournement de session) + Buffer overflow"
+    },
+    {
+      "id": "s61",
+      "label": "PCA (Plan de Continuité d'Activité) — définition + obligations (CRBF 2004-02 Bâle II, Code commerce L.123-22 10 ans, décret 24/03/2006)"
+    },
+    {
+      "id": "s62",
+      "label": "Politique de continuité — règles, actions, objectifs (processus critiques)"
+    },
+    {
+      "id": "s63",
+      "label": "PRA (Plan de Reprise d'Activité) — RPO + RTO + solutions (hébergeur, cloud, sauvegardes, virtualisation, NAS/SAN, image disque, télétravail)"
+    }
+  ],
+  "flashcards": [
+    {
+      "theme": "gouvernance",
+      "q": "Définition d'un Système d'Information (Lebey)",
+      "a": "Ensemble des données et ressources matérielles et logicielles de l'entreprise permettant de les stocker ou de les faire circuler. Organisation des activités d'acquisition, stockage, transformation, diffusion, exploitation et gestion des informations.",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Définition de la gouvernance des SI (Lebey)",
+      "a": "Moyens de gestion et de régulation des SI mis en place dans une entreprise pour atteindre ses objectifs stratégiques et les communiquer aux autres : Audit, Bonnes pratiques, Tableaux de bord, Benchmarking, Certification. Elle associe PILOTAGE (s'assurer que les décisions préparent le futur) et CONTRÔLE (mesure de l'écart réalisé/prévisionnel).",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "« Gouverner c'est… » — les 4 dimensions",
+      "a": "① Connaître et anticiper (objectifs DG/métiers/SI, technologie, coûts, risques — pro-activité, prospective, veille)\n② Décider (définir et piloter les prises de décision SI)\n③ Communiquer et suivre (dialogue répétitif, cohérent, multi-supports)\n④ Adapter (réviser en permanence à la réalité de l'entreprise et de son environnement)",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Les 5 fondements de la gouvernance SI (ISACA)",
+      "a": "① Alignement stratégique du SI sur la stratégie d'entreprise\n② Création de valeur via les bénéfices apportés\n③ Gestion des risques (ISO 27000/27002)\n④ Gestion des ressources (infrastructures, applications, compétences)\n⑤ Mesure de la performance (Balanced Scorecard)",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Le modèle Henderson-Venkatraman — 4 formes d'alignement",
+      "a": "① L'exécution opérationnelle de la stratégie\n② Le SI comme vecteur de transformation technologique\n③ Le SI à l'origine de la stratégie et source d'avantage concurrentiel\n④ Le SI comme prestataire de services opérationnels\nDeux conditions préalables : compréhension des objectifs stratégiques par la fonction IT + prise en compte des opportunités/contraintes IT dans la stratégie générale.",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Démarche d'alignement stratégique — 5 étapes",
+      "a": "① Favoriser la communication entre acteurs\n② Définir et réviser la stratégie SI\n③ Nouer des alliances et partenariats avec les métiers\n④ Améliorer la visibilité et la prévisibilité\n⑤ Choisir des projets et prioriser",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Comment le SI crée-t-il de la valeur ?",
+      "a": "Essentiellement à travers la connaissance qu'il détient et délivre. Il est le point de départ (données) ET d'arrivée (aide à la décision) de toute analyse. Un SI fiable peut aussi avoir une valeur pécuniaire lors d'une fusion-acquisition. Son budget a un double objectif : mettre en évidence la valeur créée + optimiser les coûts.",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Balanced Scorecard (Kaplan-Norton) — les 4 axes",
+      "a": "① Axe Financier (résultats, rentabilité)\n② Axe Client (satisfaction, parts de marché)\n③ Axe Innovation / Apprentissage (R&D, formation)\n④ Axe Processus internes (efficacité, qualité)\nTableau de bord traduisant la stratégie en KPI mesurables.",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Gouvernance d'entreprise vs gouvernance des SI",
+      "a": "GOUVERNANCE D'ENTREPRISE : organisation du système de contrôle des décisions des dirigeants. Alchimie entre PERFORMANCE et CONFORMITÉ. Renforcée par les scandales 2000 (Enron, Worldcom).\nGOUVERNANCE SI : extrêmement dépendante de la gouvernance d'entreprise. Elle contribue à la fois à la Gouvernance de Conformité et à la Gouvernance de Performance. Deux éléments hérités : séparation propriétaires/gestionnaires + gestion des risques.",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Lois encadrant la Corporate Governance",
+      "a": "• SOX (Sarbanes-Oxley, août 2002) — États-Unis, contrôle interne obligatoire après Enron/Worldcom\n• NRE (Nouvelles Réglementations Économiques, mai 2001) — France\n• LSF (Loi de Sécurité Financière, août 2003) — France, équivalent SOX\n• Loi Breton (juillet 2005) — France, confiance et modernisation de l'économie",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Organisation interne de la DSI — 3 pôles",
+      "a": "① PRODUCTION : exploitation courante (hébergement, sauvegardes, configurations, accès)\n② SUPPORT : traite les erreurs et demandes des usagers (Help Desk)\n③ DÉVELOPPEMENT : prépare les évolutions du SI selon les orientations stratégiques\nLe DSI siège aux assemblées stratégiques avec la DG.",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "4 activités principales de la DSI",
+      "a": "① Soutenir les objectifs de création de valeur\n② Accroître la performance des processus du SI\n③ Maîtriser l'exploitation courante et assurer les risques SI\n④ Développer des solutions et compétences pour les besoins futurs",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Help Desk — critères de qualité",
+      "a": "• Taux et temps de résolution des problèmes\n• Taux de résolution en ligne (premier contact)\n• Temps moyen de décroché\n• Taux d'abandon d'appel\n• Taux de prise en main à distance\n• Qualité de l'accueil et service rendu",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Sous-traitance vs Infogérance",
+      "a": "SOUS-TRAITANCE : faire réaliser certaines opérations par des prestataires externes, en CONSERVANT le choix des moyens, la maîtrise et la responsabilité.\nINFOGÉRANCE (contrat) : achat auprès d'un fournisseur d'un service complet avec OBLIGATION DE RÉSULTAT, sans maîtrise ni responsabilité sur les moyens.\nEn France, la Commission ministérielle réserve « externalisation » à l'infogérance basée sur l'exploitation ET le développement évolutif.",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Caractéristiques de l'infogérance",
+      "a": "• Engagement pluriannuel prestataire/client\n• Relation multi-partite (DG, DAF, DSI, métiers)\n• Cadre contractuel précis définissant un NIVEAU DE SERVICE attendu (vs livrable d'un contrat d'intégration)\n• Périmètre évolutif\n• Conditions de réversibilité et de transférabilité\n• Parfois reprise de personnel/actifs + offshore/nearshore + hébergement",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Types d'infogérance",
+      "a": "• GLOBALE : reprise complète du SI (infra + applis hétérogènes : paie, banques, CRM…). Inclut parfois reprise du personnel et actifs.\n• SÉLECTIVE : ne couvre qu'une part (parc, production, TMA)\n• DE PARC : postes utilisateurs (help desk, équipe proximité, gestion parc, dépannage, masterisation, télédistribution)\n• DE PRODUCTION : serveurs (messagerie, applis critiques), réseaux, téléphonie\n• BPO (Business Process Outsourcing) : processus métiers entiers, va plus loin que l'infogérance\n• BTO (Business Transformation Outsourcing) : transformation complète\n• ASP (Application Service Provider) : location d'application",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "TMA — Tierce Maintenance Applicative — 3 domaines",
+      "a": "① ASSISTANCE APPLICATIVE : support fonctionnel et technique aux responsables d'applications et équipes d'exploitation client\n② MAINTENANCE CURATIVE : maintien du bon fonctionnement des applications en production\n③ MAINTENANCE ÉVOLUTIVE : ajout/modification de fonctionnalités, évolutions réglementaires + maintenance adaptative (changements d'OS)\nLa TMA NE COUVRE PAS l'exploitation (couverte par l'infogérance de production).",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Phases d'un service d'infogérance",
+      "a": "① PRISE EN CHARGE : 1ère phase, fondements pour la production, constitution équipe opérationnelle, minimiser le risque de prise en charge\n② RÉCURRENCE / PRODUCTION : fourniture conforme au contrat, gestion financière, propositions d'optimisation\n③ RÉVERSIBILITÉ / TRANSFÉRABILITÉ : fin du service, soit reprise par le client (réversibilité), soit confié à un autre prestataire (transférabilité)",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "SLA — Service Level Agreement",
+      "a": "Document qui définit la qualité de service requise entre un prestataire et un client. Contrat formalisant : niveaux de disponibilité, performance, opération, facturation et pénalités.\nIntérêt : transforme l'obligation de moyens en obligation de résultat, réduit les coûts et améliore la performance.\nLimites : manque de précision, complexité IT, contrôle souvent confié à un tiers.\nDeux composantes techniques : SLS (Service Level Specification) et SLO (Service Level Objectives).",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "OLA — Operation Level Agreement",
+      "a": "Document définissant l'accord entre un fournisseur de service IT et une autre partie DE LA MÊME ORGANISATION. Niveaux opérationnels internes (ex : DSI ↔ achats, Centre de Services ↔ groupe de support).\nIntérêts : recensement des besoins, mutualisation, ventilation des coûts (justifie la facturation interne), incite à standardiser le matériel/logiciel.\nLimites : imputation lourde et complexe, coût de traitement élevé.",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Réversibilité vs Transférabilité",
+      "a": "RÉVERSIBILITÉ : le client reprend lui-même la maîtrise du périmètre infogéré (ré-internalisation).\nTRANSFÉRABILITÉ : le service est confié à un tiers (changement de prestataire).\nLa clause de réversibilité/transférabilité dans un contrat d'infogérance définit les conditions, y compris financières. Phase souvent plus délicate juridiquement qu'opérationnellement (transferts de responsabilité).",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Offshore / Nearshore / Onshore",
+      "a": "OFFSHORE : ressources dans un pays à faible coût de main d'œuvre (Inde, Pologne). Contraintes : distance, culture, fuseau horaire, langue, juridique, back/front-office.\nNEARSHORE : pays limitrophe.\nONSHORE : prestation de proximité (province ou région).",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "COBIT — définition et 4 domaines",
+      "a": "COBIT (Control OBjectives for Information and related Technology) : référentiel ISACA, cadre de référence et de contrôle fondamental de la gouvernance et de l'audit des SI. Aide le management à piloter risques (fiabilité, conformité, sécurité) et investissements.\nLes 4 domaines :\n① PO — Planifier et Organiser\n② AI — Acquérir et Implémenter\n③ DS — Délivrer et Supporter (Livraison et Support)\n④ SE — Surveiller et Évaluer (Monitoring)\nLe cube COBIT illustre 3 dimensions : processus, segmentation de l'information, ressources concernées.",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "COBIT — 7 critères d'information",
+      "a": "① EFFICACITÉ : information pertinente, livrée au bon moment, sous forme correcte\n② EFFICIENCE : utilisation optimale (productive, économique) des ressources\n③ CONFIDENTIALITÉ : protection contre divulgation non autorisée\n④ INTÉGRITÉ : exactitude, exhaustivité, validité\n⑤ DISPONIBILITÉ : information disponible immédiatement et à l'avenir + sauvegarde\n⑥ CONFORMITÉ : lois, réglementations, contrats, politiques internes\n⑦ FIABILITÉ : information appropriée pour piloter l'entreprise et exercer les responsabilités fiduciaires",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "ITIL — processus du service Support",
+      "a": "① Gestion des INCIDENTS : revenir au niveau de service initial en cas d'incident\n② Gestion des PROBLÈMES : identifier la cause fondamentale des incidents récurrents/importants — être proactif\n③ Gestion des CHANGEMENTS : management des évolutions, procédures suivies, qualité de service\n④ Gestion des MISES EN PRODUCTION : contrôle qualité des nouvelles versions avant MEP\n⑤ Gestion des CONFIGURATIONS : suivi du référentiel CMDB",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "ITIL — processus du service Production",
+      "a": "① Gestion de la CAPACITÉ : optimiser la capacité existante, anticiper le besoin futur\n② Gestion de la DISPONIBILITÉ : service continu, anticipation des incidents, reprise rapide\n③ Gestion de la CONTINUITÉ DE SERVICES : rétablir les services critiques, sites de secours\n④ Gestion FINANCIÈRE : suivi des coûts, budgets, négociation de refacturation\n⑤ Gestion des NIVEAUX DE SERVICE : SLA, implication fournisseurs, métriques consensuelles",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "ISO 9000 / 9001 / 9004",
+      "a": "ISO 9000 : principes d'un système de management de la qualité + terminologie\nISO 9001 : exigences relatives à un SMQ (usage interne, contractuel, certification)\nISO 9004 : lignes directrices pour l'amélioration des performances (usage interne)\nCaractéristique de l'ISO 9001 : GÉNÉRIQUE, applicable à tous secteurs.",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "8 principes de management de la qualité (ISO 9000:2000)",
+      "a": "① Orientation client\n② Leadership\n③ Implication du personnel\n④ Approche processus\n⑤ Management par approche système\n⑥ Amélioration continue\n⑦ Approche factuelle pour la prise de décision\n⑧ Relations mutuellement bénéfiques avec les fournisseurs",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "ISO 27000 et famille",
+      "a": "ISO 27000 : présentation, glossaire\nISO 27001 : norme internationale SMSI (Système de Management de la Sécurité de l'Information)\nISO 27002 : 133 bonnes pratiques de sécurité de l'information\nISO 27004 : indicateurs, mesures et métrique pour le suivi du SMSI\nISO 27005 : gestion des risques et sécurité de l'information",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "PDCA appliqué à ISO 27002 (sécurité)",
+      "a": "PLAN : élaboration de la PSSI, périmètre, objectifs, analyse des risques, cartographie, définition des indicateurs\nDO : déploiement des mesures de sécurité, élaboration des procédures, sensibilisation et formation, tableaux de bord\nCHECK : audit, contrôles internes, revue de processus\nACT : identification, mise en place d'actions correctives, amélioration, bouclage",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "CMMI — 5 niveaux de maturité",
+      "a": "① INITIAL : efficacité dépend des individus, processus quasi inconnus\n② DISCIPLINÉ : projet maîtrisé, méthodes assurent la répétition\n③ AJUSTÉ : processus clairement identifiés et définis, compréhension partagée\n④ GÉRÉ QUANTITATIVEMENT : déroulement mesuré quantitatif et qualitatif, écarts analysés\n⑤ EN OPTIMISATION : stade ultime d'amélioration continue\nPrincipe d'empilement : un niveau supérieur stable suppose les niveaux inférieurs stables.",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Tryptique ISACA — COBIT + Val IT + Risk IT",
+      "a": "COBIT : référentiel fondamental de la gouvernance et de l'audit des SI (4 domaines, 7 critères)\nVAL IT : préconisations pour évaluer la CRÉATION DE VALEUR comme critère de sélection entre projets ; suivi cycle de vie + bilan\nRISK IT : volet management des risques en 3 parties (Gouvernance, Évaluation, Réponse) — intègre les risques SI aux risques entreprise",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Risk IT — 3 volets et processus",
+      "a": "GOUVERNANCE DES RISQUES (RG) : RG1 vision commune des risques · RG2 intégrer aux risques entreprise · RG3 décisions business tenant compte des risques\nÉVALUATION DES RISQUES (RE) : RE1 collecte données · RE2 analyse · RE3 profil de risque\nRÉPONSE AUX RISQUES (RR) : RR1 articuler · RR2 gérer · RR3 réagir aux événements",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "gouvernance",
+      "q": "COSO — référentiel de contrôle interne",
+      "a": "Committee of Sponsoring Organisation of the Treadway Commission, défini en 1992. Émerge réellement à partir de 2002 après les scandales Enron et Worldcom (USA), puis en France avec la LSF de 2003. Référentiel de contrôle interne visant à limiter les tentatives de fraudes dans les rapports financiers.",
+      "src": "Gouvernance"
+    },
+    {
+      "theme": "audit",
+      "q": "Définition de l'audit (ISO 9000)",
+      "a": "« Processus méthodique, indépendant et documenté permettant de recueillir des informations objectives pour déterminer dans quelle mesure les pratiques observées satisfont aux référentiels du domaine concerné ». L'auditeur se forge une opinion qu'il consigne ensuite dans un rapport.",
+      "src": "Audit"
+    },
+    {
+      "theme": "audit",
+      "q": "Audit informatique vs Audit des SI",
+      "a": "AUDIT INFORMATIQUE : conseil en organisation par spécialistes extérieurs, accompagne et justifie la mise en place de nouvelles structures/méthodes. Focus technique.\nAUDIT DES SI (apparu années 1970) : couvre un périmètre plus large — aspects organisationnels et fonctionnels EN PLUS du technique. Examen et évaluation des processus, systèmes de traitement automatisé et interfaces, avec règles en vigueur (fiscales, juridiques, techniques).",
+      "src": "Audit"
+    },
+    {
+      "theme": "audit",
+      "q": "Quand un audit SI est-il utile ?",
+      "a": "• L'entreprise a franchi un cap (CA, collaborateurs, métier) et le SI freine sa croissance\n• Impossibilité de capter les données pour nouveaux produits/marchés\n• Besoin de réorganiser pour s'adapter au monde de demain (expérience client, générations Y/Z)\n• Le SI ne permet pas l'effet de levier des nouvelles technologies\n• Besoin de renouveler le business model ou innover\n• La DSI met trop de temps à répondre aux utilisateurs\n• Valorisation d'une entreprise (cession, fusion)",
+      "src": "Audit"
+    },
+    {
+      "theme": "audit",
+      "q": "Référentiels mobilisés par l'auditeur SI",
+      "a": "Référentiel de base : COBIT (Control Objectives for Information and related Technology). Mais aussi :\n• ISO 27002 (sécurité)\n• CMMi (maturité)\n• ITIL (services)\n• Val IT (valeur)\n• Risk IT (risques)\nL'auditeur relève des faits, mène des entretiens, évalue par rapport aux référentiels, puis propose des recommandations.",
+      "src": "Audit"
+    },
+    {
+      "theme": "audit",
+      "q": "Guide d'audit gouvernance SI — les 12 vecteurs",
+      "a": "① Stratégie : enjeux numériques dans le plan stratégique\n② Innovation : culture numérique, technologies innovantes\n③ Risques : risques numériques dans la stratégie et les processus\n④ Données : gestion, valorisation, protection\n⑤ Architecture : alignement avec les enjeux stratégiques\n⑥ Portefeuille de projets : optimiser la valeur, gérer les évolutions\n⑦ Projets : maîtrise de la réalisation\n⑧ Ressources humaines : organiser et manager les talents\n⑨ Prestataires & Fournisseurs : piloter les relations\n⑩ Services : conformes aux attentes clients\n⑪ Budget & Performance : piloter\n⑫ Marketing & Communication : valoriser",
+      "src": "Audit"
+    },
+    {
+      "theme": "audit",
+      "q": "Audit interne vs audit externe",
+      "a": "AUDIT INTERNE (AFAI) : « activité indépendante et objective qui donne à l'organisation une assurance sur le degré de maîtrise de ses opérations, apporte des conseils pour les améliorer, contribue à créer de la valeur ajoutée ». Diligenté par la direction, exécuté par le département d'audit interne.\nAUDIT EXTERNE : réalisé par des personnes extérieures (cabinets d'experts-comptables, spécialistes). Soit pour pallier l'absence d'audit interne, soit pour répondre à un autre contexte (mission CAC). Pour les CAC : objectif = renseigner sur le niveau de contrôle interne et évaluer les risques impactant l'opinion.",
+      "src": "Audit"
+    },
+    {
+      "theme": "audit",
+      "q": "Typologie des missions d'audit SI",
+      "a": "① Audit de la fonction informatique (COBIT PO4) — pilotage, structures, responsabilités\n② Audit de l'exploitation (COBIT DS1/3/6/12/13) — outils Openview, Tivoli, Nagios\n③ Audit des projets informatiques (COBIT PO10, AI1, AI2) — modèles cascade/V/W/spirale\n④ Audit des applications opérationnelles — fonction ou processus (paie, comptabilité, ventes…)\n⑤ Audit de la sécurité informatique (COBIT DS5/PO9) — référentiel ISO 27001/27002",
+      "src": "Audit"
+    },
+    {
+      "theme": "audit",
+      "q": "Audit de la sécurité informatique — 4 notions fondamentales",
+      "a": "① MENACES significatives en permanence sur la sécurité (notamment biens immatériels)\n② FACTEUR DE RISQUE : cause de vulnérabilité (faiblesse organisation/méthodes/techniques/contrôle)\n③ MANIFESTATION du risque : physique (incendie, inondation) ou invisible (destruction données, indisponibilité service, détournement)\n④ MAÎTRISE du risque : mesures réduisant le niveau (contrôles d'accès, authentification)\nObjectifs : repérer actifs, identifier risques (RSSI), évaluer menaces, mesurer impacts (cartographie), définir parades.",
+      "src": "Audit"
+    },
+    {
+      "theme": "audit",
+      "q": "Caractéristiques de la démarche d'audit SI",
+      "a": "PROGRESSIVE : différents objectifs successifs\nMODULAIRE : application en tout ou partie\nUNIVERSELLE : tous domaines potentiellement concernés\nOPÉRATIONNELLE : orientée vers la proposition de solutions concrètes",
+      "src": "Audit"
+    },
+    {
+      "theme": "audit",
+      "q": "Règles de l'audit SI",
+      "a": "• L'audit doit non seulement porter jugement (approbation/condamnation), mais préciser ce qu'il aurait fallu faire pour corriger les défauts\n• Comparer l'observation d'objets selon des aspects, à ce qu'ils devraient être\n• Tâche parfaitement définie quant à l'objet et l'aspect, sans en déborder\n• Ne pas remettre en cause la finalité de l'audit en fonction de la facilité\n• Toujours faisable : découpé en fonctions, étapes significatives, conclusions partielles",
+      "src": "Audit"
+    },
+    {
+      "theme": "audit",
+      "q": "Rapport d'audit SI — exigences ISACA",
+      "a": "• Préciser l'entreprise, les destinataires, les éventuelles restrictions de diffusion\n• Spécifier la portée, les objectifs, la période, la nature, la durée et l'ampleur de l'audit\n• Spécifier les conclusions et recommandations, limitations, réserves\n• L'auditeur doit collecter des éléments probants suffisants et pertinents\n• Le rapport doit être signé, daté, distribué conformément à la charte d'audit ou lettre de mission\n→ Outil stratégique, support des améliorations du SI",
+      "src": "Audit"
+    },
+    {
+      "theme": "audit",
+      "q": "Cadre légal de l'audit SI",
+      "a": "FRANCE :\n• NRE — 15 mai 2001 (Nouvelles Réglementations Économiques)\n• LSF — 1er août 2003 (Sécurité Financière) — Code commerce art L.225-37, L.225-68, L.225-235\n• Loi Breton — 26 juillet 2005 (Confiance et modernisation)\nUSA : SOX (29 août 2002, Sarbanes-Oxley)\nObjectif : rétablir la confiance entre les acteurs de l'économie.",
+      "src": "Audit"
+    },
+    {
+      "theme": "audit",
+      "q": "Normes d'audit interne (IIA)",
+      "a": "Référentiel : normes de l'Institute of Internal Auditors (IIA) + code de déontologie.\nComposées de :\n• Normes de QUALIFICATION (caractéristiques des organisations/personnes)\n• Normes de FONCTIONNEMENT (nature des missions + critères de qualité)\n• Normes de MISE EN ŒUVRE (exigences activités d'assurance ou conseil)\nNorme 1210.A3 : les auditeurs internes doivent posséder une connaissance suffisante des principaux risques et contrôles IT, et des techniques d'audit informatisées.",
+      "src": "Audit"
+    },
+    {
+      "theme": "audit",
+      "q": "Normes d'audit externe — ISA",
+      "a": "International Standards on Auditing (ISA), élaborées par l'IAASB (International Auditing and Assurance Standards Board), dépendance de l'IFAC.\nRéférences clés :\n• ISA 315 — Connaissance de l'entité et évaluation du risque d'anomalies significatives\n• ISA 330 — Procédures à mettre en œuvre selon l'évaluation du risque\n• ISCQ1 — exigences contrôle qualité des cabinets\nL'architecture comprend : normes (exigences obligatoires) + recommandations + procédures.",
+      "src": "Audit"
+    },
+    {
+      "theme": "audit",
+      "q": "Normes professionnelles nationales — CNCC / NEP",
+      "a": "En France, la CNCC (Compagnie nationale des commissaires aux comptes) homologue le référentiel normatif. Anciennes normes (entérinées 2000) :\n• CNCC 2-301 : évaluation du risque et contrôle interne\n• CNCC 2-302 : audit réalisé en environnement informatique\nRemplacées le 1er mai 2007 par les NEP (Normes d'Exercice Professionnel) :\n• NEP 315 : Connaissance de l'entité et évaluation du risque\n• NEP 330 : Procédures à mettre en œuvre selon évaluation des risques\nLes NEP ont VALEUR DE LOI dans la mission du CAC. Découlent des normes internationales ISA 315 et 330.",
+      "src": "Audit"
+    },
+    {
+      "theme": "audit",
+      "q": "Contrôle interne — définition et 3 objectifs",
+      "a": "Selon l'AFAI : dispositif mis en œuvre par la société, ensemble de moyens/comportements/procédures/actions qui contribuent à la maîtrise des activités et permettent de prendre en compte les risques significatifs.\nLes 3 objectifs (selon le COSO) :\n① Conformité aux lois et règlements\n② Fiabilité des informations financières\n③ Réalisation et optimisation des opérations\nL'audit informatique s'intéresse surtout au 3ème objectif.",
+      "src": "Audit"
+    },
+    {
+      "theme": "audit",
+      "q": "Cadre AMF 2010 — référence COSO II et ISO 31000",
+      "a": "Cadre de référence de l'AMF (Autorité des marchés financiers) sur les dispositifs de gestion des risques et de contrôle interne. Édition 2010 s'appuie sur :\n• Référentiel COSO II (le plus communément admis, adopté par de nombreuses entreprises françaises)\n• Norme ISO 31000 (Management du risque — principes et lignes directrices)\nIntègre un questionnaire sur le contrôle interne comptable et financier, dont une partie sur les SI.",
+      "src": "Audit"
+    },
+    {
+      "theme": "audit",
+      "q": "7 démarches du contrôle interne (AFAI)",
+      "a": "① Audit comptable (sincérité des comptes — CAC ou audit interne)\n② Audit interne (assurance du niveau de sécurité)\n③ Analyse des risques (évaluation périodique opérationnels + bilanciels)\n④ Audit de sécurité (dispositifs sécurité organisationnels/matériels/logiciels)\n⑤ Audit informatique (efficacité des activités IT)\n⑥ Audit du SI (contribution des ressources IT à l'efficacité de l'entreprise)\n⑦ Audit qualité (dispositifs d'assurance qualité)",
+      "src": "Audit"
+    },
+    {
+      "theme": "audit",
+      "q": "SIC — Système d'Information Comptable",
+      "a": "Interface entre les systèmes opérants (achat, production, vente, investissement) et le système de pilotage. Recueille et traite les informations comptables/financières pour les mettre à disposition du système de décision.\n3 niveaux d'intégration :\n• COMPTABILITÉ AUTONOME : petites entreprises, progiciel comptable + lien direct fait juridique/écriture\n• COMPTABILITÉ SEMI-INTÉGRÉE : moyenne/grande entreprise, progiciels métier alimentent la compta\n• COMPTABILITÉ INTÉGRÉE : grandes entreprises, saisie unique en base commune (ERP)",
+      "src": "Audit"
+    },
+    {
+      "theme": "audit",
+      "q": "Risques spécifiques de l'environnement informatique (norme CNCC 2-302)",
+      "a": "① Manque de trace matérielle des opérations → risque de non-détection d'erreurs dans les programmes/logiciels\n② Uniformité du traitement → élimine erreurs humaines MAIS erreurs de programmation peuvent affecter TOUTES les opérations\n③ Séparation insuffisante des tâches (centralisation des contrôles)\n④ Erreurs humaines dans conception/maintenance/MEP (plus importantes qu'en système manuel)\n⑤ Utilisateurs non autorisés modifiant/supprimant des données sans trace visible\n⑥ Erreurs intégrées lors de la conception/modification des programmes, difficilement identifiables dans le temps",
+      "src": "Audit"
+    },
+    {
+      "theme": "audit",
+      "q": "Risque d'audit (ISACA) — 3 composantes",
+      "a": "① RISQUE INHÉRENT : possibilité qu'une anomalie significative se produise dans les comptes, INDÉPENDAMMENT du contrôle interne\n② RISQUE LIÉ AU CONTRÔLE : risque que le contrôle interne ne prévienne ni ne détecte une anomalie significative\n③ RISQUE DE NON-DÉTECTION : propre à la mission d'audit — risque que le CAC ne détecte pas une anomalie significative\nLe risque le plus important pour le CAC est le risque de non-détection. Quand le risque d'anomalies significatives (inhérent + contrôle) est élevé, des procédures d'audit complémentaires sont mises en œuvre.",
+      "src": "Audit"
+    },
+    {
+      "theme": "audit",
+      "q": "Cartographie générale des applications",
+      "a": "Objectif : comprendre et documenter le SI, mettre en évidence les risques liés à l'architecture.\nPour chaque APPLICATION : type (progiciel/spécifique), date de mise en place, environnement technique (UNIX, Windows, AS400), mode de traitement (différé/temps réel), éditeur/prestataire, date dernière modification, fonctionnalités, sorties, volume traité.\nPour chaque INTERFACE : type (auto/semi/manuel), applications amont/aval, nature des flux, fréquence, états d'anomalies.\nRésultat : représentation graphique + tableaux d'inventaire.",
+      "src": "Audit"
+    },
+    {
+      "theme": "audit",
+      "q": "Identification des processus à analyser",
+      "a": "Un processus = « enchaînement de tâches manuelles/semi-auto/auto concourant à l'élaboration, la production ou le traitement d'informations, produits ou services ».\nLe CAC ne s'intéresse qu'aux processus contribuant à la production des comptes. Principaux :\n• Achats\n• Ventes\n• Stocks\n• Règlements\n• Paie\nSeules les applications (et leurs inter-relations) participant à ces processus font l'objet d'une étude d'audit.",
+      "src": "Audit"
+    },
+    {
+      "theme": "audit",
+      "q": "Management des risques — démarche générale",
+      "a": "① STRATÉGIE : définition et qualification des risques (inhérents + propres) ; validation DG ; charte d'audit, responsabilités, ressources\n② ÉVALUATION DES VULNÉRABILITÉS : outils, dispositifs en place, cartographie du risque résiduel\n③ PLAN D'ACTIONS : moyens de protection, objectifs clairs et mesurables, responsabilités\n④ MISE EN ŒUVRE : conception/déploiement, mode projet, efficacité, intégration\n⑤ COMMUNICATION / FORMATION : diffuser référentiels, intégrer aux objectifs individuels\n⑥ MESURE DE LA CONFORMITÉ : suivi du plan, tableau de bord, programme d'audit (revue périodique)\n⑦ PÉRENNISER : industrialiser les outils, maintenir la communication",
+      "src": "Audit"
+    },
+    {
+      "theme": "audit",
+      "q": "Structures de gestion des risques — 3 niveaux",
+      "a": "NIVEAU 1 : responsabilité implicite avec la fonction, absence de processus de suivi\nNIVEAU 2 : responsabilité définie, délégation formelle, intégration à l'organigramme\nNIVEAU 3 : responsabilité globale, Comité ou Direction des Risques, Risk Manager — responsabilité transversale, optimisation des polices d'assurance, communication externe sur la gestion des risques",
+      "src": "Audit"
+    },
+    {
+      "theme": "securite",
+      "q": "Définition de la sécurité informatique",
+      "a": "Ensemble des moyens mis en œuvre pour réduire la vulnérabilité d'un système contre les menaces accidentelles ou intentionnelles. Elle a pour objectif de réduire les risques pesant sur le SI pour limiter leurs impacts sur le fonctionnement et les activités métiers.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Sûreté de fonctionnement vs Sécurité",
+      "a": "SÛRETÉ DE FONCTIONNEMENT : spécification formelle, preuve de programmes, test de protocole. Domaine du génie logiciel. Vérifier que l'application réalise EXACTEMENT les tâches attendues.\nSÉCURITÉ : ensemble des moyens pour réduire la vulnérabilité face aux menaces. Ce n'est PAS la même chose.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Critères DIC + Preuve",
+      "a": "3 critères de base pour évaluer le niveau de sécurité d'un bien du SI :\n① DISPONIBILITÉ — bien accessible quand on en a besoin\n② INTÉGRITÉ — données conformes à ce qu'on croit\n③ CONFIDENTIALITÉ — accès limité aux personnes autorisées\n+ PREUVE = AUTHENTIFICATION (identité vérifiée) + NON-RÉPUDIATION (action non niable)",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "5 objectifs de la sécurité informatique",
+      "a": "① INTÉGRITÉ : garantir que les données sont bien celles qu'on croit\n② CONFIDENTIALITÉ : seules les personnes autorisées accèdent aux ressources\n③ DISPONIBILITÉ : maintenir le bon fonctionnement du SI\n④ NON-RÉPUDIATION : une transaction ne peut être niée\n⑤ AUTHENTIFICATION : seules les personnes autorisées accèdent aux ressources",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Équation du risque (guide ISO 73)",
+      "a": "RISQUE = MENACE × VULNÉRABILITÉ × IMPACT\n• MENACE : source du risque, attaque possible d'un élément dangereux, agent responsable\n• VULNÉRABILITÉ : caractéristique d'un élément constituant une faiblesse ou faille au regard de la sécurité\n• IMPACT : conséquence du risque sur l'organisme et ses objectifs\nMenace + Vulnérabilité = cause du risque (qualifiées en potentialité). Impact qualifié en sévérité.\nIl faut RETENIR : le risque zéro n'existe pas — définir le risque résiduel acceptable.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Évolution des risques",
+      "a": "• Croissance de l'Internet\n• Croissance des attaques\n• Failles des technologies\n• Failles des configurations\n• Failles des politiques de sécurité\n• Changement de profil des pirates\nLes principaux risques restent banals : câble arraché, coupure secteur, crash disque, mauvais profil utilisateur.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "10 principaux défauts de sécurité",
+      "a": "① Installation des logiciels et matériels par défaut\n② Mises à jour non effectuées\n③ Mots de passe inexistants ou par défaut\n④ Services inutiles conservés (Netbios…)\n⑤ Traces inexploitées (logs)\n⑥ Pas de séparation des flux opérationnels et d'administration\n⑦ Télémaintenance sans contrôle fort\n⑧ Procédures de sécurité obsolètes (périmées)\n⑨ Authentification faible\n⑩ État actif d'insécurité (utilisateur ignore les fonctionnalités) + état passif (admin ignore les moyens en place)",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Normes ISO sécurité",
+      "a": "• ISO 9000 : système de management (référentiel + audit)\n• ISO 9001 : SMQ — exigences\n• ISO 14001 : management environnemental\n• ISO 17799 : sécurité — découpage par thèmes (ancêtre 27002)\n• ISO 19001 : directives conduite d'audit\n• ISO 27001 : SMSI — Système de Management de la Sécurité de l'Information\n• ISO 27002 : 133 bonnes pratiques sécurité\n• ISO 27004 : indicateurs et métriques SMSI\n• ISO 27005 : gestion des risques",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "ISO 27001 — buts du SMSI",
+      "a": "Le SMSI a pour buts de :\n① Maintenir et améliorer la position de l'organisme du point de vue : compétitivité, profitabilité, conformité aux lois/règlements, image de marque\n② Protéger les actifs (« assets ») de l'organisme — tout ce qui compte pour lui\nVocabulaire dans IS 27000. Mesures à prendre dans le catalogue ISO 27002.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Définition PSSI",
+      "a": "Politique de Sécurité des Systèmes d'Information : ensemble formalisé dans un document applicable, des directives, procédures, codes de conduite, règles organisationnelles et techniques, ayant pour objectif la protection des systèmes d'information de l'organisme.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "PSSI — 4 étapes principales",
+      "a": "① AUDIT : identifier risques + leurs conséquences\n② ÉLABORATION DES RÈGLES : règles et procédures pour les risques identifiés\n③ SURVEILLANCE : veille technologique sur les vulnérabilités découvertes\n④ ACTIONS : actions à entreprendre + personnes à contacter en cas d'incident",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "PSSI — mise en œuvre",
+      "a": "① Audit\n② Tests d'intrusion\n③ Détection d'incidents\n④ Réactions\n⑤ Restauration\nÉléments de la politique : défaillance matérielle/logicielle, accidents, erreur humaine, vol physique, virus, piratage réseau.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "PSSI — 8 thèmes",
+      "a": "① Classification et contrôle du patrimoine matériel et immatériel\n② Rôle des personnes\n③ Protection des locaux et équipements\n④ Contrôle des accès et gestion des habilitations\n⑤ Gestion des communications et des opérations\n⑥ Développement et maintenance des SI\n⑦ Continuité des activités\n⑧ Obligations légales\nRéussite : PSSI simple, réaliste, intégrée à la stratégie, à faire vivre.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Méthodes d'analyse des risques sécurité",
+      "a": "• COBIT : Control Objectives for Business and related Technology\n• EBIOS : Expression des Besoins et Identification des Objectifs de Sécurité (ANSSI)\n• MARION (ancienne)\n• MEHARI : MÉthode HArmonisée d'analyse de RIsques (CLUSIF, depuis 1995)\nNormes = bonnes pratiques. Méthodes = évaluation globale du SI en termes de risques et de protection.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "EBIOS — 5 étapes",
+      "a": "① ÉTUDE DU CONTEXTE : périmètre, entreprise, architecture, contraintes, enjeux\n② EXPRESSION DES BESOINS DE SÉCURITÉ : critères + impacts inacceptables\n③ ÉTUDE DES MENACES : vulnérabilités + types d'attaque par origine (humaine/matérielle/environnementale) et cause (accidentelle/délibérée)\n④ IDENTIFICATION DES OBJECTIFS DE SÉCURITÉ : confrontation besoins/menaces → cahier des charges sécurité\n⑤ DÉTERMINATION DES EXIGENCES DE SÉCURITÉ : jusqu'où aller, stratégie de gestion du risque (accepter, réduire, refuser)",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "MEHARI — démarche",
+      "a": "Développée par le CLUSIF depuis 1995, dérivée de MELISA et MARION.\nDémarche : analyse des enjeux de sécurité (scénarios redoutés), classification des entités selon DIC, audits identifiant les vulnérabilités, analyse des risques.\n3 livrables :\n• PSS — Plan Stratégique de Sécurité (objectifs, métriques, politique, charte)\n• POS — Plans Opérationnels de Sécurité (mesures par site, scénarios, planning)\n• POE — Plan Opérationnel d'Entreprise (suivi via indicateurs, choix des scénarios de catastrophe)",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Cryptographie — services rendus",
+      "a": "3 services principaux :\n① INTÉGRITÉ : détecter une modification malveillante (la crypto fournit le MOYEN de détecter, pas d'empêcher)\n② CONFIDENTIALITÉ : accès aux données limité aux personnes autorisées\n③ PREUVE : authentification (vérifier l'identité) + non-répudiation (imputation des actions)",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Stéganographie",
+      "a": "Du grec « écriture couverte/dissimulée ». Dissimuler l'information dans une AUTRE information (vs cryptographie qui rend illisible).\nExemples :\n• Un bit sur 8 dans une image (bit de poids faible)\n• Watermarking (filigrane) : dissimulation pour protection des droits d'auteur\n• Cover channel (canal caché) : véritable canal de communication détourné, déjoue les firewalls (ex : ralentir/accélérer un FTP pour coder un bit)\n• Compte rendu d'échec où les coups codent un message",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Principe de Kerckhoff (1883)",
+      "a": "Auguste Kerckhoff, « La cryptographie militaire », février 1883.\n① L'opposant connaît le système cryptographique\n② Toute la sécurité d'un système cryptographique doit reposer sur LA CLÉ, et pas sur le système lui-même\nFonde la cryptographie moderne : algorithme PUBLIC + clé SECRÈTE.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Chiffrement symétrique",
+      "a": "MÊME CLÉ pour chiffrer et déchiffrer.\nAvantages : facile à implémenter, rapide.\nLimites :\n• Multiplication des clés (n participants → n(n-1)/2 clés)\n• Pas d'intégrité ni d'identification de l'auteur si la clé est partagée par plusieurs\n• Problème d'échange des clés",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Chiffrement asymétrique",
+      "a": "Chaque communicant possède une PAIRE de clés associées : clé publique (Kpb) et clé privée (Kpv).\nUn message chiffré par une clé ne peut être déchiffré que par L'AUTRE clé de la paire.\nAvantages :\n• Chiffré avec clé pub → confidentialité (seul le destinataire peut lire)\n• Chiffré avec clé priv → intégrité + identité (origine prouvée)\nInconvénients :\n• Algorithmes complexes\n• ~1000× plus lent que symétrique\n• Moins sûr contre la force brute → clés plus longues nécessaires\nAucun moyen pratique de déduire une clé de l'autre.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Hashage",
+      "a": "Calcul d'un « condensé significatif » de taille fixe quelle que soit la taille d'origine.\nPropriétés :\n• IRRÉVERSIBLE : transformation inverse impossible\n• DÉTERMINISTE : même message → même résumé\n• Effets imprévisibles : un changement minime change tout le hash\nL'intégrité du résumé garantit l'intégrité du document = « empreinte digitale ».\nFonctions : MD5, SHA1, SHA256.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Algorithme RSA",
+      "a": "Du nom de Rivest, Shamir, Adleman (1978). Algorithme asymétrique très utilisé (navigateurs, e-mail). Dans le domaine public.\nFormules :\n• Chiffrement : c = m^e mod n\n• Déchiffrement : m = c^d mod n\nm = message clair, c = chiffré, (e,n) = clé publique, (d,n) = clé privée, n = pq (produit de 2 nombres premiers).\nCréation paire : choisir p et q premiers, calculer n = pq, choisir e sans facteur commun avec (p-1)(q-1), calculer d tel que ed mod (p-1)(q-1) = 1.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Signature électronique — propriétés",
+      "a": "Mécanisme garantissant l'intégrité d'un document électronique et authentifiant son auteur, par analogie avec la signature manuscrite. Suite de caractères, pas visuelle.\nPropriétés requises :\n① IDENTIFICATION : permet d'identifier la personne/organisme signataire\n② INTÉGRITÉ : garantit que le document n'a pas été altéré entre la signature et la consultation\nEffets juridiques : Directive du Parlement européen 13 déc. 1999 + 14 lois/décrets 2000-2010 en France + modification Code civil 2000. Même valeur juridique qu'une signature manuscrite.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Certificat électronique — 3 classes",
+      "a": "Document numérique validant le lien entre une signature électronique et son signataire. Double rôle : chiffrement avec clés + atteste l'identité.\nClasses :\n① CLASSE I : ne garantit pas l'identité, seulement l'existence de l'e-mail\n② CLASSE II : garantit infos titulaire + entreprise (contrôle par AC sur pièces postales)\n③ CLASSE III : idem II + contrôle supplémentaire de l'identité du titulaire\nCertificats agréés par l'État : type 3Plus (sécurité maximale).",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Autorité de certification (AC)",
+      "a": "Organisme enregistré et certifié auprès d'autorités publiques ou de gouvernance d'Internet, établissant sa viabilité comme intermédiaire fiable (ex : Click and Trust du Groupe Banque Populaire).\nDiffuse ses propres clés publiques.\nEn contact direct avec les producteurs d'OS et de navigateurs (Firefox, IE, Chrome) qui incluent nativement les listes de clés.\nClés publiques racines (clé root) = base de la CHAÎNE DE CONFIANCE, utilisées pour identifier les clés publiques d'autres organismes.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Archivage électronique — cadre légal",
+      "a": "Un SAE (Système d'Archivage Électronique) conserve les documents numériques sur le long terme et préserve de toute modification, pour preuve devant un tribunal.\nTextes clés :\n• Loi 13 mars 2000 + Art. 1316-1 Code civil : écrit électronique = preuve si conservation garantissant l'intégrité\n• Art. L134-2 Code consommation (loi confiance économie numérique 2004) : archivage 10 ans des contrats > 120 € (décret 16/02/2005)\n• Art. 289 et suivants CGI : conservation des factures électroniques\nLa destruction d'archives publiques sans autorisation est un délit (Code du patrimoine).",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Normes d'archivage",
+      "a": "• NF Z42-013 : mesures techniques + processus organisationnels pour archivage électronique, traçabilité, exigences sécurité/accès, clauses pour tiers-archiveur (norme technique)\n• Modèle OAIS (Open Archival Information System) : modèle conceptuel généraliste, indépendant des technologies, définit vocabulaire commun + responsabilités/fonctions/organisation pour pérenniser l'information numérique",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "PKI / ICP — Infrastructure à Clés Publiques",
+      "a": "Ensemble de composants physiques (ordinateurs, équipements crypto, HSM, cartes à puce), procédures humaines (vérification, validation) et logiciels gérant le cycle de vie des certificats numériques.\nGère listes importantes de clés publiques et assure leur fiabilité.\nOffre : confidentialité, authentification, intégrité, non-répudiation.\nServices : communications serveur/navigateur, accès BD, VPN, courrier électronique, procédures administratives en ligne, déclarations fiscales/sociales, dématérialisation, horodatage.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Clé WEP / WPA / WPA2",
+      "a": "WEP (Wired Equivalent Privacy) : clé 64-256 bits dont 24 non utilisés pour le chiffrement. Vecteur d'initialisation non chiffré et réutilisé → faille majeure. Reconstitution possible en quelques minutes. NE DOIT PLUS ÊTRE UTILISÉE.\nWPA : même algo mais ajout du TKIP (Temporal Key Integrity Protocol) pour permutation des clés. Mode Personnel : PSK (Pre-Shared Key) ≥ 32 caractères.\nWPA2 : algo de chiffrement beaucoup plus puissant, dernière norme WPA, considéré comme le plus sécurisé (faille découverte juillet 2010).",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Architecture technique — Firewall, Proxy, SAS",
+      "a": "FIREWALL (pare-feu) : contrôles d'accès réseau sur les paramètres (adresses, ports, sens). Permet : restriction accès entrée précise, restriction sorties pour limiter les envois, blocage en cas d'attaque.\nPROXY : serveur entre clients et application (ex : Web proxy entre browsers et serveur Web) — contrôles plus fins (et plus lourds) au niveau du flot de données.\nSAS APPLICATIFS : serveurs spécialisés pour certaines applications (proxy FTP, proxy Telnet).",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "SSL/TLS et SSH — protections",
+      "a": "Principaux protocoles de sécurité de transport :\n• SSL/TLS (Secured Socket Layer / Transport Layer Security)\n• SSH (Secured SHell)\nProtections ASSURÉES : attaque passive, attaque active, usurpation, intrusion.\nProtections NON assurées : répudiation, protection de bout en bout.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Blockchain — fonctionnement",
+      "a": "Base de données distribuée stockant une liste croissante de blocs liés. Maintient une archive indélébile et transparente sans autorité centrale.\n3 composants :\n• BLOCS : groupements de transactions, identifiant unique (hash)\n• NŒUDS : ordinateurs connectés, chaque nœud héberge une copie complète\n• MINEURS : utilisent puissance de calcul pour résoudre des puzzles cryptographiques et valider les blocs\nCaractéristiques : CHRONOLOGIQUE (intégration successive), IMMUABLE (pas de suppression), INFALSIFIABLE (modification impossible après intégration).\nFonctions de hash : MD5, SHA1, SHA256.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Blockchain — publique vs privée",
+      "a": "BLOCKCHAIN PUBLIQUE (distribuée) — ex : Bitcoin : ouverte à tous, nœuds participent sans distinction, code source commun.\nBLOCKCHAIN PRIVÉE (centralisée) : entrée sur invitation de l'administrateur (« gérant »), accès personnalisable, taille restreinte → efficacité décuplée. Certains la considèrent comme une simple BD utilisant la technologie blockchain.\nAtouts : traçabilité, sécurité (>50% des nœuds doivent être hackés simultanément), efficacité 24/24, réduction des coûts et erreurs.\nLimites : impact environnemental (énergivore), volume de stockage croissant, temps d'adaptation, absence de cadre réglementaire international.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "MiCA — règlement européen",
+      "a": "Markets in Crypto-Assets, 02/08/2024. Issu du Digital Finance Package européen. Vise à encadrer les émissions et services sur crypto-actifs non couverts par les règlementations existantes.\nCouvre :\n• Offre publique et admission à la négociation de crypto-actifs\n• Stablecoins (jetons de valeur stable)\n• Fourniture de services sur crypto-actifs (PSAN)\n• Prévention des abus de marché\nRemplace les cadres nationaux (loi PACTE 2019 en France).",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Responsabilité du chef d'entreprise sur les SI",
+      "a": "RESPONSABILITÉ CIVILE (art. 1384 C.civ.) : civilement responsable de l'activité de ses employés, notamment en cas d'utilisation malveillante des moyens informatiques (messagerie, forums).\nRESPONSABILITÉ PÉNALE : pénalement responsable des faits de ses préposés/auxiliaires dès lors que certaines obligations légales lui imposent le devoir d'exercer une action directe.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Loi Informatique et Libertés + CNIL",
+      "a": "LOI INFORMATIQUE ET LIBERTÉS : 6 janvier 1978, modifiée le 6 août 2004. Sécurité informatique, fichiers, libertés ; traite des problèmes d'intrusion dans les SI.\nCNIL (Commission Nationale de l'Informatique et des Libertés) : autorité administrative indépendante. Veille à ce que l'informatique soit au service du citoyen et ne porte atteinte ni à l'identité humaine, ni aux droits de l'homme, ni à la vie privée, ni aux libertés.\nPrincipes : finalité des fichiers, pertinence, conservation limitée, confidentialité.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Droits des personnes (données personnelles)",
+      "a": "L'entreprise doit garantir :\n① Droit à l'INFORMATION PRÉALABLE\n② Droit d'ACCÈS aux données traitées les concernant\n③ Droit de RECTIFICATION\n④ Droit d'OPPOSITION au traitement (collecte, utilisation, diffusion)\nLe chef d'entreprise a en principe l'obligation d'effectuer une déclaration préalable auprès de la CNIL.\nSanctions en cas de non-respect : pénales (art 226-16 à 226-23 du Code pénal) et civiles.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Article 34 loi 1978 + Code pénal SI",
+      "a": "ARTICLE 34 LOI 1978 : le responsable du traitement doit prendre « toutes précautions utiles » pour protéger les données personnelles : empêcher déformation, endommagement, accès de tiers non autorisés.\nARTICLES 323-1 à 323-3-1 CODE PÉNAL : permettent de porter plainte en cas d'intrusion dans le SI.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Lois importantes sur la sécurité informatique",
+      "a": "• Loi 85-660 du 3/7/1985 : contrefaçons et droit d'auteur (copie hors sauvegarde : 3 mois à 2 ans de prison, 6000 à 12000 F)\n• Loi 88-19 du 5/1/1988 : fraude informatique. Sanctions jusqu'à 5 ans prison + 2M d'amende pour : accès frauduleux, introduction de données, entrave au fonctionnement\n• Loi 19/03/1999 sur la cryptographie :\n  – Usage libre pour authentification/intégrité, clés < 40 bits (40-128 bits : déclaration)\n  – Déclaration de commercialisation et d'importation pour clés 40-128 bits\n  – Autorisation pour clés > 128 bits (distribution et utilisation)\n  – Autorisation pour exportation\n  – Auprès du SCSSI (Service Central de Sécurité des SI)",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "BYOD / BYOA",
+      "a": "BYOD — Bring Your Own Device (« Apportez Votre Équipement personnel de Communication ») : usage d'équipements informatiques personnels (smartphone, tablette, PC) dans un contexte professionnel.\nBYOA — Bring Your Own Application : usage d'applications personnelles (Dropbox, Google Drive, iCloud) à des fins professionnelles.\nL'employeur reste RESPONSABLE de la sécurité des données personnelles de l'entreprise, même sur des terminaux dont il n'a pas la maîtrise. Risques : disponibilité, intégrité, confidentialité, compromission générale (intrusion, virus, troyens).",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Hacker / Hacktiviste / Cracker",
+      "a": "HACKER : origine MIT (premier IBM 704). « Bidouilleur » utilisant une machine à des fins non prévues. Pas péjoratif à l'origine.\nHACKTIVISTE : fusion hacker + activisme. Objectifs politiques, utilise ses connaissances pour diffuser des opinions (piratage de sites, altération de données, détournement de serveurs). Action illégale.\nCRACKER : « déplombeur de logiciels ». Spécialisé dans le cassage des protections (assembleur, désassembleur, débogueur). Crée des patches/cracks/keygens. Motivations : renommée, exploit, intérêt personnel.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Virus — typologie",
+      "a": "Programme qui se reproduit en s'insérant dans d'autres fichiers. Tant que non exécuté, pas de risque.\n• VIRUS FURTIF : se camoufle pour ne pas être détecté par les antivirus\n• VIRUS POLYMORPHE : change de signature pour berner les antivirus (rare)\n• VIRUS MACROS : écrit en VBA (Visual Basic Application) — Word, Excel… Très dangereux par diffusion\n• VIRUS COMPOSITE : combinaison des catégories",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Vers (worm)",
+      "a": "Programme se propageant d'ordinateur à ordinateur via le réseau (Internet). Contrairement au virus, n'a pas besoin de programme hôte. Poids léger → propagation à vitesse impressionnante, peut SATURER le réseau.\nLorsqu'activé : fonctionnalités menaçantes comme un virus + saturation des ressources réseau.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Cheval de Troie / Backdoor / Bombe logique",
+      "a": "TROYEN (Trojan horse) : apparence saine, mais effectue discrètement des actions supplémentaires à l'exécution (ex : installation d'une backdoor). Composé client + serveur permet à un attaquant de contrôler la machine cible.\nBACKDOOR (porte dérobée) : moyen laissé par une personne malveillante pour revenir dans le système (compte secret, par ex.). Pour espionnage ou pour lancer des attaques en faisant porter le chapeau.\nBOMBE LOGIQUE : troyen produisant ses effets à un moment précis (date, combinaison de touches, exécution d'un fichier). Ex : Tchernobyl s'activant le 26 avril 1999.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Cryptolocker / Ransomware",
+      "a": "Apparu en 2013, principalement sur Windows. Se propage comme un cheval de Troie via emails malicieux.\nMécanisme :\n① Pénètre le système\n② Exécute une charge active chiffrant les fichiers de l'utilisateur\n③ Seul l'auteur connaît la clé privée de déchiffrement\n④ Message exigeant une rançon dans un laps de temps court, menaçant de supprimer les données\nCryptolocker = cheval de Troie + ransomware. Fonctionnement basé sur le chiffrement de données personnelles.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Phishing — mécanisme et protection",
+      "a": "Soutirer des informations confidentielles (codes bancaires, identifiants) par USURPATION D'IDENTITÉ.\nMécanismes :\n• Création d'un site de e-commerce répliqué (faux site)\n• Mail usurpant l'identité d'une banque demandant des infos confidentielles\nProtection :\n• Écrire soi-même l'URL au lieu de cliquer sur un lien\n• Se méfier des courriels de la banque (rares demandes d'infos)\n• En cas de doute, téléphoner\n• Sites sécurisés commencent par « https » + cadenas",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Denial of Service (DoS)",
+      "a": "Attaque ayant pour but de mettre HORS JEU le système visé. La victime est dans l'incapacité d'accéder à son réseau. Touche serveurs d'entreprise comme particuliers (Windows, Linux, Unix).\nProtection : être à jour dans les correctifs logiciels (patches).\nDDoS (Distributed) : attaque coordonnée depuis plusieurs machines (ex : 2000, ebay/cnn/amazon/microsoft submergés).",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Sniffing et Scanning",
+      "a": "SNIFFING (reniflage) : analyser le trafic réseau pour récupérer des informations sensibles (mots de passe, identifiants). Ex : 100 PC reliés par un HUB → un pirate peut lire tous les identifiants entre 8h-10h.\nProtection : utiliser un SWITCH plutôt qu'un hub, protocoles chiffrés, détecteur de sniffer.\nSCANNING : balayer tous les ports d'une machine avec un scanner pour identifier les ports ouverts (déduire OS, applications). Permet aux hackers de trouver les points faibles.\nProtection : scanner sa machine, surveiller les ports avec un firewall, fermer ceux inutiles, IDS (détection) ou IPS (prévention).",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Cracking de mots de passe — 3 méthodes",
+      "a": "Trouve le mot de passe via un craqueur (John the Ripper, L0phtCrack) qui s'applique sur un fichier de hash des mots de passe.\n① ATTAQUE PAR DICTIONNAIRE : teste tous les mots stockés dans un fichier texte. Redoutable et rapide car beaucoup de mots de passe sont des mots existants.\n② ATTAQUE HYBRIDE : teste les mots + combinaisons (ex : « thomas01 »). Redoutable car beaucoup ajoutent des chiffres.\n③ ATTAQUE BRUTE-FORCE : teste toutes les combinaisons possibles. Aboutit toujours mais très long.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Spoofing — usurpation",
+      "a": "Se faire passer pour quelqu'un d'autre.\n• USURPATION IP : changer l'adresse IP pour se faire passer pour un autre ordinateur et obtenir des informations sensibles\n• USURPATION E-MAIL : changer l'adresse pour envoyer un mail au nom d'un supérieur\n• USURPATION WEB : c'est le principe du phishing\nProtection : ne pas empêcher l'usurpation mais être sûr de l'identité de la machine (utiliser SSH qui empêche le spoofing).",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Man in the Middle",
+      "a": "« L'homme du milieu ». S'insère entre deux ordinateurs A et B qui communiquent. Le pirate se fait passer pour A auprès de B et pour B auprès de A → tout le trafic passe par lui.\nRisques :\n• Interception des informations sensibles (mots de passe)\n• Modification du trafic avant retransmission (ex : commander 10€ → 1000€)\nProtection : sur Internet, achats sur sites sécurisés (https, cadenas) ; sur un réseau, protocoles sécurisés.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Social Engineering",
+      "a": "Art de manipuler les personnes. Obtenir d'une personne des informations qu'elle ne devrait pas donner, en lui donnant de bonnes raisons (téléphone, courrier électronique, lettre).\nN'est PAS d'ordre informatique mais peut être très efficace, à ne pas sous-estimer.\nProtection : bon sens pour flairer l'arnaque, se méfier des personnes inconnues.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "Hijacking et Buffer overflow",
+      "a": "HIJACKING (détournement de session) : au lieu de cracker le mot de passe, attendre que la victime se connecte et prendre sa place → contourner l'authentification. Lancer un DoS contre la victime pour la mettre hors-jeu ou écouter le trafic.\nBUFFER OVERFLOW (débordement de tampon) : envoyer plus de données qu'un programme n'en attend pour qu'il exécute un code arbitraire. Si le programme ne vérifie pas la longueur des chaînes en paramètre, possibilité de compromettre la machine.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "PCA — Plan de Continuité d'Activité",
+      "a": "Limite l'impact des accidents, dysfonctionnements ou malveillance. Fait partie de la PSSI (incendie, malveillance, inondation).\nObligations légales :\n• CRBF 2004-02 (issue de Bâle II) : plan de secours opérationnel pour les établissements financiers/banques/assurances\n• Code commerce art. L.123-22 : conservation des documents comptables 10 ans\n• Décret 24 mars 2006 : conservation des fichiers de journalisation des hébergeurs\nObjectifs : identifier les processus critiques à rétablir rapidement, éviter pertes importantes, réduire conséquences économiques/légales.",
+      "src": "Sécurité"
+    },
+    {
+      "theme": "securite",
+      "q": "PRA — Plan de Reprise d'Activité",
+      "a": "Reconstruire ou basculer sur un système de relève pour une durée déterminée en cas de crise/sinistre. Fournit les besoins informatiques nécessaires à la survie de l'entreprise.\nS'appuie sur 2 indicateurs :\n• RPO (Recovery Point Objective) : risque défini de perte de données\n• RTO (Recovery Time Objective) : durée acceptable d'interruption\nExemple : basculement vers un DataCenter de secours en cas d'incendie.\nSolutions : hébergeur externe, Cloud (Amazon EC2…), sauvegardes en ligne (GoogleDrive, Dropbox), virtualisation (VMware, VirtualBox), NAS/SAN/RAID, image complète (Clonezilla, Ghost), applications Web (Google Docs, Office 365), télétravail.",
+      "src": "Sécurité"
+    }
+  ],
+  "quizQuestions": [
+    {
+      "theme": "gouvernance",
+      "q": "La gouvernance des SI est définie comme :",
+      "o": [
+        "L'ensemble des logiciels et matériels de l'entreprise",
+        "Les moyens de gestion et de régulation des SI pour atteindre les objectifs stratégiques",
+        "L'organisation hiérarchique de la DSI",
+        "Le budget annuel alloué à l'informatique"
+      ],
+      "c": 1,
+      "e": "Selon Lebey, la gouvernance SI = moyens de gestion et de régulation des SI alignés avec les objectifs stratégiques : Audit, Bonnes pratiques, Tableaux de bord, Benchmarking, Certification."
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Quelle proportion du budget IT est consacrée au seul fonctionnement du SI ?",
+      "o": [
+        "20-30 %",
+        "50-60 %",
+        "70-80 %",
+        "90-95 %"
+      ],
+      "c": 2,
+      "e": "Les départements informatiques consomment entre 70 % et 80 % de leur budget uniquement pour le fonctionnement du système d'information (Lebey)."
+    },
+    {
+      "theme": "gouvernance",
+      "q": "L'ISACA définit combien de fondements pour la gouvernance des SI ?",
+      "o": [
+        "3",
+        "4",
+        "5",
+        "7"
+      ],
+      "c": 2,
+      "e": "L'ISACA définit 5 fondements : alignement stratégique, création de valeur, gestion des risques, gestion des ressources, mesure de la performance."
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Le modèle Henderson-Venkatraman propose combien de formes d'alignement stratégique ?",
+      "o": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "c": 2,
+      "e": "4 formes : exécution opérationnelle de la stratégie, SI vecteur de transformation, SI à l'origine de la stratégie, SI prestataire de services opérationnels."
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Le Balanced Scorecard de Kaplan-Norton repose sur combien d'axes ?",
+      "o": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "c": 1,
+      "e": "4 axes : Financier, Client, Innovation/Apprentissage, Processus internes."
+    },
+    {
+      "theme": "gouvernance",
+      "q": "La loi Sarbanes-Oxley (SOX, 2002) a été adoptée en réponse à :",
+      "o": [
+        "La crise financière de 2008",
+        "Les scandales Enron et Worldcom",
+        "Les attentats du 11 septembre",
+        "La directive européenne RGPD"
+      ],
+      "c": 1,
+      "e": "SOX (29 août 2002) est la réponse américaine aux scandales Enron et Worldcom. La LSF française (1er août 2003) en est l'équivalent."
+    },
+    {
+      "theme": "gouvernance",
+      "q": "La gouvernance d'entreprise est décrite comme une alchimie entre :",
+      "o": [
+        "Performance et productivité",
+        "Performance et conformité",
+        "Risque et rentabilité",
+        "Innovation et tradition"
+      ],
+      "c": 1,
+      "e": "La gouvernance d'entreprise est une savante alchimie entre PERFORMANCE et CONFORMITÉ (Lebey)."
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Les 3 pôles d'organisation interne de la DSI sont :",
+      "o": [
+        "Marketing, Vente, Production",
+        "Production, Support, Développement",
+        "Stratégie, Tactique, Opérationnel",
+        "R&D, Production, Maintenance"
+      ],
+      "c": 1,
+      "e": "3 pôles : Production (exploitation), Support (Help Desk), Développement (évolutions du SI)."
+    },
+    {
+      "theme": "gouvernance",
+      "q": "La TMA (Tierce Maintenance Applicative) se décompose en :",
+      "o": [
+        "2 domaines",
+        "3 domaines",
+        "4 domaines",
+        "5 domaines"
+      ],
+      "c": 1,
+      "e": "3 domaines : Assistance applicative, Maintenance curative, Maintenance évolutive (incluant la maintenance adaptative aux changements d'OS)."
+    },
+    {
+      "theme": "gouvernance",
+      "q": "La différence entre SLA et OLA est que :",
+      "o": [
+        "Le SLA est gratuit, l'OLA est payant",
+        "Le SLA est externe (prestataire/client), l'OLA est interne (entre services de la même organisation)",
+        "Le SLA dure 1 an, l'OLA dure 3 ans",
+        "Le SLA est obligatoire, l'OLA est facultatif"
+      ],
+      "c": 1,
+      "e": "SLA = contrat entre prestataire et client externe. OLA = accord interne entre services de la même organisation pour permettre le respect du SLA."
+    },
+    {
+      "theme": "gouvernance",
+      "q": "La réversibilité en infogérance signifie :",
+      "o": [
+        "Le service est confié à un autre prestataire",
+        "Le client reprend la maîtrise du périmètre infogéré",
+        "Le contrat est annulé sans pénalité",
+        "Le prestataire change de méthode"
+      ],
+      "c": 1,
+      "e": "Réversibilité = ré-internalisation (le client reprend la responsabilité). Transférabilité = changement de prestataire."
+    },
+    {
+      "theme": "gouvernance",
+      "q": "« Offshore » en infogérance désigne :",
+      "o": [
+        "Ressources dans un pays à faible coût de main d'œuvre (Inde, Pologne)",
+        "Ressources dans un pays limitrophe",
+        "Ressources locales (province ou région)",
+        "Hébergement en mer (datacenters offshore)"
+      ],
+      "c": 0,
+      "e": "Offshore = pays à faible coût (Inde, Pologne). Nearshore = pays limitrophe. Onshore = relative proximité (province/région)."
+    },
+    {
+      "theme": "gouvernance",
+      "q": "COBIT signifie :",
+      "o": [
+        "Common Objectives for Business Intelligence Tools",
+        "Control OBjectives for Information and related Technology",
+        "COmpany Business IT",
+        "COmputer Based Information Technology"
+      ],
+      "c": 1,
+      "e": "COBIT = Control OBjectives for Information and related Technology. Référentiel ISACA, cadre fondamental de la gouvernance et de l'audit des SI."
+    },
+    {
+      "theme": "gouvernance",
+      "q": "COBIT est structuré en combien de domaines de processus ?",
+      "o": [
+        "3",
+        "4",
+        "5",
+        "7"
+      ],
+      "c": 1,
+      "e": "4 domaines : PO (Planifier Organiser), AI (Acquérir Implémenter), DS (Délivrer Supporter), SE (Surveiller Évaluer)."
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Les 7 critères d'information de COBIT incluent :",
+      "o": [
+        "Vitesse, agilité, scalabilité",
+        "Efficacité, efficience, confidentialité, intégrité, disponibilité, conformité, fiabilité",
+        "ROI, NPV, IRR, payback",
+        "SLA, OLA, KPI"
+      ],
+      "c": 1,
+      "e": "7 critères : Efficacité, Efficience, Confidentialité, Intégrité, Disponibilité, Conformité, Fiabilité."
+    },
+    {
+      "theme": "gouvernance",
+      "q": "CMMI comporte combien de niveaux de maturité ?",
+      "o": [
+        "3",
+        "4",
+        "5",
+        "7"
+      ],
+      "c": 2,
+      "e": "5 niveaux : Initial, Discipliné, Ajusté, Géré quantitativement, En optimisation."
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Le niveau 3 de maturité CMMI correspond à :",
+      "o": [
+        "Initial (chaotique)",
+        "Discipliné",
+        "Ajusté (processus définis et compris)",
+        "Optimisation"
+      ],
+      "c": 2,
+      "e": "Niveau 3 « Ajusté » : les processus du projet sont clairement identifiés et définis, compréhension claire par tous les acteurs."
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Le tryptique ISACA est composé de :",
+      "o": [
+        "COBIT + ITIL + CMMI",
+        "COBIT + Val IT + Risk IT",
+        "COSO + ISO 27001 + LSF",
+        "SOX + LSF + NRE"
+      ],
+      "c": 1,
+      "e": "Tryptique ISACA : COBIT (gouvernance/audit) + Val IT (création de valeur) + Risk IT (gestion des risques)."
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Risk IT est structuré en combien de volets ?",
+      "o": [
+        "2 (Évaluation, Réponse)",
+        "3 (Gouvernance, Évaluation, Réponse)",
+        "4 (Identification, Évaluation, Réponse, Suivi)",
+        "5"
+      ],
+      "c": 1,
+      "e": "3 volets : Gouvernance des Risques (RG), Évaluation des Risques (RE), Réponse aux Risques (RR)."
+    },
+    {
+      "theme": "gouvernance",
+      "q": "COSO est un référentiel de :",
+      "o": [
+        "Sécurité des SI",
+        "Contrôle interne",
+        "Gestion de projet",
+        "Comptabilité analytique"
+      ],
+      "c": 1,
+      "e": "COSO = Committee of Sponsoring Organisation of the Treadway Commission (1992). Référentiel de contrôle interne visant à limiter les fraudes, émerge après Enron/Worldcom."
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Le modèle ITIL traite principalement de :",
+      "o": [
+        "La gouvernance des projets",
+        "La prestation et le support de services IT",
+        "La sécurité des données",
+        "La maturité organisationnelle"
+      ],
+      "c": 1,
+      "e": "ITIL = Information Technology Infrastructure Library. Référentiel pour la prestation de services IT (Support : incidents, problèmes, changements, MEP, configurations ; Production : capacité, disponibilité, continuité, financière, niveaux service)."
+    },
+    {
+      "theme": "gouvernance",
+      "q": "L'ISO 27001 spécifie :",
+      "o": [
+        "Les 133 bonnes pratiques de sécurité",
+        "Le SMSI (Système de Management de la Sécurité de l'Information)",
+        "Les indicateurs SMSI",
+        "La gestion des risques"
+      ],
+      "c": 1,
+      "e": "ISO 27001 = norme internationale SMSI. ISO 27002 = 133 bonnes pratiques. ISO 27004 = indicateurs. ISO 27005 = gestion des risques."
+    },
+    {
+      "theme": "gouvernance",
+      "q": "L'évolution de l'image de l'informaticien dans les années 2000 est :",
+      "o": [
+        "Celui qui sait",
+        "Celui qui coûte cher",
+        "Celui qui peut établir le lien organisation/SI",
+        "Celui qui peut aider à générer un avantage compétitif"
+      ],
+      "c": 3,
+      "e": "Dans le tableau Lebey : années 60/70 = celui qui sait · 80s = celui qui coûte cher · 90s = établit le lien orga/SI · 2000s = celui qui peut aider à générer un avantage compétitif."
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Un projet informatique sur deux est :",
+      "o": [
+        "Livré dans les temps",
+        "Sur-budgétisé",
+        "Abandonné avant son achèvement",
+        "Externalisé en offshore"
+      ],
+      "c": 2,
+      "e": "Un projet sur deux est abandonné avant son achèvement (source : Cours Audit des SI DPIO, cité par Lebey)."
+    },
+    {
+      "theme": "gouvernance",
+      "q": "Le BPO (Business Process Outsourcing) :",
+      "o": [
+        "Externalise uniquement les serveurs",
+        "Va plus loin que l'infogérance en prenant en charge l'informatique ET les autres segments de la fonction externalisée",
+        "Concerne uniquement le help desk",
+        "Est limité aux PME"
+      ],
+      "c": 1,
+      "e": "Le BPO va plus loin que l'infogérance dans l'externalisation : il prend en charge non seulement l'informatique mais aussi les autres segments de la fonction externalisée."
+    },
+    {
+      "theme": "audit",
+      "q": "Selon l'ISO 9000, l'audit est défini comme :",
+      "o": [
+        "Une vérification fiscale obligatoire",
+        "Un processus méthodique, indépendant et documenté permettant de recueillir des informations objectives",
+        "Une procédure de certification ISO 9001",
+        "Un contrôle interne réalisé par les CAC"
+      ],
+      "c": 1,
+      "e": "ISO 9000 : « processus méthodique, indépendant et documenté permettant de recueillir des informations objectives pour déterminer dans quelle mesure les pratiques observées satisfont aux référentiels du domaine concerné »."
+    },
+    {
+      "theme": "audit",
+      "q": "Le concept d'audit des SI est apparu dans :",
+      "o": [
+        "Les années 1960",
+        "Les années 1970",
+        "Les années 1990",
+        "Après 2000"
+      ],
+      "c": 1,
+      "e": "L'audit des SI est apparu au cours des années 1970, avec un périmètre plus large que l'audit informatique (organisationnel + fonctionnel)."
+    },
+    {
+      "theme": "audit",
+      "q": "Le référentiel de base de l'audit des SI est :",
+      "o": [
+        "ISO 9001",
+        "COBIT",
+        "ITIL",
+        "CMMI"
+      ],
+      "c": 1,
+      "e": "COBIT (Control Objectives for Information and related Technology) fournit les bonnes pratiques pour l'appréciation des risques informatiques. C'est le référentiel de base de l'audit SI."
+    },
+    {
+      "theme": "audit",
+      "q": "Le Guide d'audit gouvernance SI compte combien de vecteurs ?",
+      "o": [
+        "7",
+        "10",
+        "12",
+        "15"
+      ],
+      "c": 2,
+      "e": "12 vecteurs : Stratégie, Innovation, Risques, Données, Architecture, Portefeuille, Projets, RH, Prestataires, Services, Budget&Performance, Marketing&Communication."
+    },
+    {
+      "theme": "audit",
+      "q": "L'audit de la fonction informatique correspond au processus COBIT :",
+      "o": [
+        "PO4",
+        "DS5",
+        "AI1",
+        "ME1"
+      ],
+      "c": 0,
+      "e": "L'audit de la fonction informatique correspond au processus PO4 de COBIT : « Définir les processus, l'organisation et les relations de travail »."
+    },
+    {
+      "theme": "audit",
+      "q": "Quelle est la caractéristique de la démarche d'audit qui signifie qu'elle peut être appliquée en tout ou partie ?",
+      "o": [
+        "Progressive",
+        "Modulaire",
+        "Universelle",
+        "Opérationnelle"
+      ],
+      "c": 1,
+      "e": "MODULAIRE : application en tout ou partie. Progressive : différents objectifs successifs. Universelle : tous domaines. Opérationnelle : solutions concrètes."
+    },
+    {
+      "theme": "audit",
+      "q": "L'outil open source de référence pour l'exploitation informatique cité par Lebey est :",
+      "o": [
+        "Openview (HP)",
+        "Tivoli (IBM)",
+        "Nagios",
+        "Datadog"
+      ],
+      "c": 2,
+      "e": "Openview (HP) et Tivoli (IBM) sont propriétaires. Nagios est l'outil open source de gestion de la production."
+    },
+    {
+      "theme": "audit",
+      "q": "Les NEP 315 et 330 (entrées en vigueur le 1er mai 2007) sont issues des normes :",
+      "o": [
+        "COBIT",
+        "ISA 315 et 330 (IAASB/IFAC)",
+        "ISO 9001",
+        "COSO II"
+      ],
+      "c": 1,
+      "e": "Les NEP 315 et 330 sont la transposition française des normes internationales d'audit ISA 315 et 330 élaborées par l'IAASB (IFAC)."
+    },
+    {
+      "theme": "audit",
+      "q": "Les normes CNCC 2-301 et 2-302 ont été remplacées en 2007 par :",
+      "o": [
+        "ISA 315 et 330",
+        "NEP 315 et 330",
+        "ISO 27001 et 27002",
+        "COBIT PO et DS"
+      ],
+      "c": 1,
+      "e": "Le 1er mai 2007, les normes CNCC 2-301 (risque + contrôle interne) et 2-302 (environnement informatique) ont été remplacées par les NEP 315 et 330."
+    },
+    {
+      "theme": "audit",
+      "q": "Le cadre AMF 2010 s'appuie principalement sur :",
+      "o": [
+        "LSF + SOX",
+        "COSO II + ISO 31000",
+        "NEP 315 + NEP 330",
+        "ITIL + COBIT"
+      ],
+      "c": 1,
+      "e": "Le cadre AMF 2010 s'appuie sur le référentiel de contrôle interne COSO II (le plus communément admis) et la norme ISO 31000 (management du risque)."
+    },
+    {
+      "theme": "audit",
+      "q": "Le risque d'audit selon l'ISACA est composé de :",
+      "o": [
+        "Risque inhérent uniquement",
+        "Risque inhérent + risque lié au contrôle + risque de non-détection",
+        "Risque opérationnel + financier + juridique",
+        "Risque interne + externe"
+      ],
+      "c": 1,
+      "e": "Risque d'audit = Risque inhérent (anomalies possibles indépendamment du CI) + Risque lié au contrôle (CI ne détecte pas l'anomalie) + Risque de non-détection (l'audit ne détecte pas)."
+    },
+    {
+      "theme": "audit",
+      "q": "Un risque MAJEUR spécifique à l'environnement informatique (vs manuel) est :",
+      "o": [
+        "Le manque de trace matérielle des opérations + uniformité du traitement",
+        "L'absence d'auditeur compétent",
+        "Le coût trop élevé du matériel",
+        "La fatigue des opérateurs"
+      ],
+      "c": 0,
+      "e": "Norme CNCC 2-302 : risques spécifiques = manque de trace matérielle, uniformité (erreurs systématiques), séparation insuffisante des tâches, erreurs humaines en conception/maintenance, accès non autorisés sans trace."
+    },
+    {
+      "theme": "audit",
+      "q": "Le SIC (Système d'Information Comptable) est qualifié de « semi-intégré » quand :",
+      "o": [
+        "L'entreprise utilise uniquement un progiciel comptable",
+        "Les progiciels métier (achats, ventes, paie) alimentent la compta via importation/exportation",
+        "Une base de données unique est partagée par tous les modules (ERP)",
+        "La comptabilité est externalisée"
+      ],
+      "c": 1,
+      "e": "Semi-intégré (entreprises moyennes/grandes) : la comptabilité est alimentée par des progiciels amont dédiés aux domaines fonctionnels (achats, ventes, immobilisations, paie), facilitant la génération automatique des écritures."
+    },
+    {
+      "theme": "audit",
+      "q": "Le rapport d'audit SI doit (selon l'ISACA) :",
+      "o": [
+        "Être anonyme",
+        "Être signé, daté et distribué conformément à la charte d'audit ou lettre de mission",
+        "Être publié dans le rapport annuel obligatoirement",
+        "Être validé par la CNIL"
+      ],
+      "c": 1,
+      "e": "Le rapport doit préciser entreprise/destinataires/restrictions, spécifier portée/objectifs/période/nature, conclusions/recommandations, et être signé, daté, distribué selon la charte d'audit ou la lettre de mission."
+    },
+    {
+      "theme": "audit",
+      "q": "L'audit d'une application opérationnelle de gestion est recommandé :",
+      "o": [
+        "Tous les 6 mois",
+        "Tous les ans",
+        "Tous les deux ou trois ans",
+        "Tous les 10 ans"
+      ],
+      "c": 2,
+      "e": "Lebey recommande l'audit d'une application de gestion tous les deux ou trois ans pour s'assurer du bon fonctionnement et apporter les améliorations."
+    },
+    {
+      "theme": "audit",
+      "q": "Pour l'audit de sécurité informatique, les 4 notions fondamentales sont :",
+      "o": [
+        "Menaces, vulnérabilité, manifestation, maîtrise du risque",
+        "Confidentialité, intégrité, disponibilité, traçabilité",
+        "Prévention, détection, réaction, restauration",
+        "Risque, contrôle, conformité, qualité"
+      ],
+      "c": 0,
+      "e": "4 notions fondamentales pour l'audit sécurité : menaces significatives permanentes + facteur de risque (vulnérabilité) + manifestation (physique ou invisible) + maîtrise du risque (mesures réduisant le niveau)."
+    },
+    {
+      "theme": "audit",
+      "q": "L'audit interne, selon l'AFAI, est :",
+      "o": [
+        "Réalisé par les CAC",
+        "Une activité indépendante et objective donnant une assurance sur le degré de maîtrise des opérations",
+        "Un contrôle fiscal annuel",
+        "Une certification ISO obligatoire"
+      ],
+      "c": 1,
+      "e": "AFAI : audit interne = « activité indépendante et objective qui donne à une organisation une assurance sur le degré de maîtrise de ses opérations, lui apporte des conseils, contribue à créer de la valeur ajoutée »."
+    },
+    {
+      "theme": "audit",
+      "q": "La cartographie générale des applications nécessite, pour chaque application :",
+      "o": [
+        "Uniquement le nom et l'éditeur",
+        "Type, date de mise en place, environnement technique, mode de traitement, éditeur, date de dernière modification, fonctionnalités, sorties, volume",
+        "Seulement le coût annuel",
+        "Le nombre d'utilisateurs"
+      ],
+      "c": 1,
+      "e": "L'identification d'une application requiert : type (progiciel/spécifique), date de MEP, environnement (UNIX/Windows/AS400), mode (différé/temps réel), éditeur/prestataire, date dernière modif, fonctionnalités, sorties, volume traité."
+    },
+    {
+      "theme": "securite",
+      "q": "La sécurité informatique est définie comme :",
+      "o": [
+        "L'achat d'un antivirus et d'un firewall",
+        "L'ensemble des moyens mis en œuvre pour réduire la vulnérabilité d'un système contre les menaces accidentelles ou intentionnelles",
+        "Le respect du RGPD",
+        "La sauvegarde quotidienne des données"
+      ],
+      "c": 1,
+      "e": "Sécurité informatique = ensemble des moyens mis en œuvre pour réduire la vulnérabilité d'un système contre les menaces accidentelles ou intentionnelles."
+    },
+    {
+      "theme": "securite",
+      "q": "Les critères DIC (de base) sont :",
+      "o": [
+        "Données, Information, Communication",
+        "Disponibilité, Intégrité, Confidentialité",
+        "Détection, Identification, Contrôle",
+        "Direction, Information, Compliance"
+      ],
+      "c": 1,
+      "e": "DIC = Disponibilité, Intégrité, Confidentialité. Étendus par la Preuve (Authentification + Non-répudiation)."
+    },
+    {
+      "theme": "securite",
+      "q": "Les 5 objectifs de la sécurité informatique sont :",
+      "o": [
+        "Intégrité, Confidentialité, Disponibilité, Non-répudiation, Authentification",
+        "Vitesse, Fiabilité, Coût, Qualité, Service",
+        "Prévention, Détection, Réaction, Restauration, Amélioration",
+        "Plan, Do, Check, Act, Reporter"
+      ],
+      "c": 0,
+      "e": "5 objectifs : Intégrité (données conformes), Confidentialité (accès limité), Disponibilité (fonctionnement maintenu), Non-répudiation (transaction non niable), Authentification."
+    },
+    {
+      "theme": "securite",
+      "q": "L'équation du risque (guide ISO 73) est :",
+      "o": [
+        "RISQUE = MENACE × IMPACT",
+        "RISQUE = MENACE × VULNÉRABILITÉ × IMPACT",
+        "RISQUE = PROBABILITÉ × COÛT",
+        "RISQUE = MENACE + VULNÉRABILITÉ + IMPACT"
+      ],
+      "c": 1,
+      "e": "RISQUE = MENACE × VULNÉRABILITÉ × IMPACT. Menace + Vulnérabilité = cause du risque (potentialité). Impact = conséquence (sévérité)."
+    },
+    {
+      "theme": "securite",
+      "q": "La PSSI (Politique de Sécurité des SI) est définie comme :",
+      "o": [
+        "Un antivirus installé sur tous les postes",
+        "Un ensemble formalisé de directives, procédures, codes de conduite, règles organisationnelles et techniques pour la protection des SI",
+        "Un audit annuel obligatoire",
+        "Une certification ISO 27001"
+      ],
+      "c": 1,
+      "e": "PSSI = ensemble formalisé dans un document applicable des directives, procédures, codes de conduite, règles organisationnelles et techniques ayant pour objectif la protection des SI de l'organisme."
+    },
+    {
+      "theme": "securite",
+      "q": "Les 4 étapes principales d'une PSSI sont :",
+      "o": [
+        "Plan, Do, Check, Act",
+        "Audit, Élaboration des règles, Surveillance, Actions",
+        "Identifier, Protéger, Détecter, Répondre",
+        "Prévenir, Détecter, Réagir, Reconstruire"
+      ],
+      "c": 1,
+      "e": "PSSI : ① Audit ② Élaboration des règles ③ Surveillance (veille technologique) ④ Actions à entreprendre + personnes à contacter."
+    },
+    {
+      "theme": "securite",
+      "q": "L'ISO 27002 propose combien de bonnes pratiques (mesures) ?",
+      "o": [
+        "50",
+        "100",
+        "133",
+        "200"
+      ],
+      "c": 2,
+      "e": "L'ISO 27002 couvre le management de la sécurité avec 133 bonnes pratiques sur les aspects stratégiques et opérationnels."
+    },
+    {
+      "theme": "securite",
+      "q": "La méthode EBIOS comporte :",
+      "o": [
+        "3 étapes",
+        "4 étapes",
+        "5 étapes",
+        "7 étapes"
+      ],
+      "c": 2,
+      "e": "EBIOS (Expression des Besoins et Identification des Objectifs de Sécurité) : 5 étapes — Étude du contexte, Expression des besoins, Étude des menaces, Identification des objectifs, Détermination des exigences."
+    },
+    {
+      "theme": "securite",
+      "q": "MEHARI a été développée par :",
+      "o": [
+        "L'ANSSI",
+        "Le CLUSIF (depuis 1995)",
+        "L'ISACA",
+        "Le NIST"
+      ],
+      "c": 1,
+      "e": "MEHARI (MÉthode HArmonisée d'analyse de RIsques) est développée par le CLUSIF depuis 1995, dérivée de MELISA et MARION."
+    },
+    {
+      "theme": "securite",
+      "q": "Le principe de Kerckhoff (1883) stipule que :",
+      "o": [
+        "L'algorithme doit être secret",
+        "Toute la sécurité d'un système cryptographique doit reposer sur la clé, pas sur le système lui-même",
+        "Les clés doivent être courtes",
+        "Le chiffrement est inutile sans confidentialité"
+      ],
+      "c": 1,
+      "e": "Principe de Kerckhoff (1883) : l'opposant connaît le système ; toute la sécurité doit reposer sur LA CLÉ et pas sur le système lui-même."
+    },
+    {
+      "theme": "securite",
+      "q": "Le chiffrement asymétrique est environ :",
+      "o": [
+        "10× plus rapide que le symétrique",
+        "Aussi rapide que le symétrique",
+        "1000× plus lent que le symétrique",
+        "Impossible à implémenter"
+      ],
+      "c": 2,
+      "e": "Le chiffrement asymétrique est environ 1000× plus lent que le chiffrement symétrique et nécessite des clés plus longues. Il est utilisé pour échanger les clés symétriques, pas pour le gros volume."
+    },
+    {
+      "theme": "securite",
+      "q": "Le hashage est :",
+      "o": [
+        "Réversible avec la bonne clé",
+        "Irréversible et déterministe",
+        "Toujours de taille variable",
+        "Aléatoire à chaque calcul"
+      ],
+      "c": 1,
+      "e": "Le hashage est IRRÉVERSIBLE (transformation inverse impossible) et DÉTERMINISTE (même message = même résumé). Taille fixe quelle que soit l'entrée. Fonctions : MD5, SHA1, SHA256."
+    },
+    {
+      "theme": "securite",
+      "q": "Dans l'algorithme RSA, la clé publique est composée de :",
+      "o": [
+        "(e, n)",
+        "(d, n)",
+        "(p, q)",
+        "(p-1)(q-1)"
+      ],
+      "c": 0,
+      "e": "Dans RSA : (e, n) = clé publique, (d, n) = clé privée. n = pq (produit de 2 nombres premiers). Chiffrement : c = m^e mod n."
+    },
+    {
+      "theme": "securite",
+      "q": "Un certificat électronique de Classe III :",
+      "o": [
+        "Ne garantit que l'existence de l'e-mail",
+        "Garantit les informations du titulaire et de l'entreprise (contrôles AC sur pièces postales)",
+        "Idem Classe II + contrôle supplémentaire de l'identité du titulaire",
+        "Est interdit pour les particuliers"
+      ],
+      "c": 2,
+      "e": "Classe I = e-mail seulement. Classe II = identité titulaire + entreprise contrôlée par AC sur pièces postales. Classe III = idem II + contrôle supplémentaire d'identité. Type 3Plus = agréé par l'État, sécurité maximale."
+    },
+    {
+      "theme": "securite",
+      "q": "La norme NF Z42-013 concerne :",
+      "o": [
+        "La gestion des projets IT",
+        "Les mesures techniques et processus organisationnels d'archivage électronique",
+        "Le SMSI",
+        "La signature électronique"
+      ],
+      "c": 1,
+      "e": "NF Z42-013 = norme technique d'archivage électronique : mesures techniques + processus organisationnels, traçabilité, exigences sécurité/accès, clauses pour tiers-archiveur."
+    },
+    {
+      "theme": "securite",
+      "q": "Le protocole WEP a une faille majeure car :",
+      "o": [
+        "Sa clé est trop longue",
+        "Le vecteur d'initialisation circule en clair et peut être reconstitué",
+        "Il utilise un algorithme asymétrique trop lent",
+        "Il ne fonctionne pas en 5 GHz"
+      ],
+      "c": 1,
+      "e": "WEP : 24 bits servent de vecteur d'initialisation non chiffré. Réutilisation systématique → reconstitution de la clé en quelques minutes par écoute des échanges. WEP ne doit plus être utilisée."
+    },
+    {
+      "theme": "securite",
+      "q": "SSL/TLS et SSH protègent contre :",
+      "o": [
+        "Tous les types d'attaques",
+        "Attaque passive, active, usurpation, intrusion (mais pas répudiation ni protection bout en bout)",
+        "Uniquement les attaques DDoS",
+        "Uniquement la confidentialité"
+      ],
+      "c": 1,
+      "e": "SSL/TLS et SSH protègent contre attaque passive, attaque active, usurpation, intrusion. Ils NE protègent PAS contre la répudiation ni ne fournissent une protection de bout en bout."
+    },
+    {
+      "theme": "securite",
+      "q": "Le règlement européen MiCA (02/08/2024) encadre :",
+      "o": [
+        "Le RGPD",
+        "Les crypto-actifs (émissions, services, stablecoins, abus de marché)",
+        "Les signatures électroniques",
+        "Les marchés financiers traditionnels"
+      ],
+      "c": 1,
+      "e": "MiCA (Markets in Crypto-Assets) : encadre les émissions et services sur crypto-actifs non couverts par les règlementations existantes (stablecoins, PSAN, abus de marché). Remplace les cadres nationaux comme la loi PACTE 2019."
+    },
+    {
+      "theme": "securite",
+      "q": "La loi Informatique et Libertés date du :",
+      "o": [
+        "6 janvier 1978",
+        "13 mars 2000",
+        "6 août 2004",
+        "19 mars 1999"
+      ],
+      "c": 0,
+      "e": "Loi Informatique et Libertés : 6 janvier 1978, modifiée le 6 août 2004. Traite des problèmes d'intrusion dans les SI et institue la CNIL."
+    },
+    {
+      "theme": "securite",
+      "q": "La loi française du 19 mars 1999 sur la cryptographie impose :",
+      "o": [
+        "Utilisation libre pour toutes les clés",
+        "Déclaration pour clés 40-128 bits, autorisation pour clés > 128 bits",
+        "Interdiction totale du chiffrement",
+        "Uniquement le chiffrement symétrique"
+      ],
+      "c": 1,
+      "e": "Loi 19/03/1999 : usage libre pour authentification/intégrité et clés < 40 bits ; déclaration pour 40-128 bits ; autorisation > 128 bits (auprès du SCSSI)."
+    },
+    {
+      "theme": "securite",
+      "q": "Le BYOD signifie :",
+      "o": [
+        "Buy Your Own Device",
+        "Bring Your Own Device",
+        "Backup Your Own Data",
+        "Block Your Own Drive"
+      ],
+      "c": 1,
+      "e": "BYOD = Bring Your Own Device (« Apportez Votre Équipement personnel de Communication »). Usage d'équipements personnels en contexte professionnel."
+    },
+    {
+      "theme": "securite",
+      "q": "Un virus polymorphe :",
+      "o": [
+        "Se camoufle pour ne pas être détecté",
+        "Change de signature pour berner les antivirus",
+        "Est écrit en VBA Microsoft Office",
+        "Combine plusieurs catégories"
+      ],
+      "c": 1,
+      "e": "Virus furtif = se camoufle. Virus polymorphe = change de signature (rare). Virus macros = VBA Microsoft Office (Word/Excel). Virus composite = combinaison."
+    },
+    {
+      "theme": "securite",
+      "q": "Un cryptolocker est :",
+      "o": [
+        "Un firewall avancé",
+        "Un cheval de Troie de type ransomware qui chiffre les données et exige une rançon",
+        "Un algorithme de chiffrement asymétrique",
+        "Un protocole de sauvegarde"
+      ],
+      "c": 1,
+      "e": "Cryptolocker (apparu 2013) = cheval de Troie de type ransomware. Chiffre les fichiers via emails malicieux et exige une rançon contre la clé de déchiffrement."
+    },
+    {
+      "theme": "securite",
+      "q": "L'attaque par dictionnaire :",
+      "o": [
+        "Teste toutes les combinaisons possibles",
+        "Teste tous les mots de passe stockés dans un fichier texte",
+        "Utilise un mot de passe + des combinaisons (ex : thomas01)",
+        "Utilise une faille du protocole HTTPS"
+      ],
+      "c": 1,
+      "e": "3 attaques : DICTIONNAIRE = teste tous les mots d'un fichier texte. HYBRIDE = mots + combinaisons (chiffres). BRUTE-FORCE = toutes combinaisons possibles."
+    },
+    {
+      "theme": "securite",
+      "q": "Une attaque « Man in the Middle » consiste à :",
+      "o": [
+        "Saturer le serveur de requêtes",
+        "S'insérer entre deux ordinateurs qui communiquent en se faisant passer pour chacun auprès de l'autre",
+        "Chiffrer les données de la victime",
+        "Voler le smartphone de la victime"
+      ],
+      "c": 1,
+      "e": "MITM : le pirate se fait passer pour A auprès de B et pour B auprès de A. Tout le trafic passe par lui : interception (mots de passe) et modification possible (ex : changer un montant)."
+    },
+    {
+      "theme": "securite",
+      "q": "Pour s'en protéger, un PRA s'appuie sur 2 indicateurs :",
+      "o": [
+        "MTTR + MTBF",
+        "RPO (Recovery Point Objective) + RTO (Recovery Time Objective)",
+        "KPI + ROI",
+        "SLA + OLA"
+      ],
+      "c": 1,
+      "e": "PRA (Plan de Reprise d'Activité) : RPO = risque défini de perte de données ; RTO = durée acceptable d'interruption. Détermine la sophistication des solutions (datacenter de secours, cloud, sauvegardes…)."
+    },
+    {
+      "theme": "securite",
+      "q": "Selon Lebey, parmi les principaux risques de la sécurité, on retient :",
+      "o": [
+        "Uniquement les cyberattaques sophistiquées",
+        "Câble arraché, coupure secteur, crash disque, mauvais profil utilisateur",
+        "Uniquement les virus et vers",
+        "Les seules failles logicielles 0-day"
+      ],
+      "c": 1,
+      "e": "Lebey rappelle que les principaux risques restent banals : « câble arraché », « coupure secteur », « crash disque », « mauvais profil utilisateur ». La sécurité ne se limite pas aux attaques sophistiquées."
+    },
+    {
+      "theme": "securite",
+      "q": "L'obligation de PCA pour les établissements financiers découle de :",
+      "o": [
+        "La loi 1978",
+        "La réglementation CRBF 2004-02 (issue de Bâle II)",
+        "La directive RGPD",
+        "Le code du patrimoine"
+      ],
+      "c": 1,
+      "e": "CRBF 2004-02 (issue de Bâle II) : obligation d'un plan de secours opérationnel pour les établissements financiers, banques et assurances."
+    },
+    {
+      "theme": "securite",
+      "q": "Le principe de la stéganographie est de :",
+      "o": [
+        "Rendre l'information illisible par chiffrement",
+        "Dissimuler l'information dans une autre information",
+        "Supprimer définitivement les données",
+        "Compresser l'information"
+      ],
+      "c": 1,
+      "e": "Stéganographie (« écriture couverte ») = dissimuler l'information dans une AUTRE information (image, document). Vs cryptographie qui rend illisible. Exemples : watermarking, canal caché (cover channel)."
+    },
+    {
+      "theme": "securite",
+      "q": "La blockchain repose sur :",
+      "o": [
+        "Une autorité de certification centralisée",
+        "3 composants : blocs (transactions), nœuds (copies BD), mineurs (validation par calcul)",
+        "Uniquement le chiffrement symétrique",
+        "Un seul super-serveur de confiance"
+      ],
+      "c": 1,
+      "e": "3 composants : BLOCS (groupements de transactions, identifiés par hash) + NŒUDS (ordinateurs avec copie complète de la base) + MINEURS (puissance de calcul pour valider les blocs)."
+    },
+    {
+      "theme": "securite",
+      "q": "Le Bitcoin a été initialement décrit par :",
+      "o": [
+        "Vitalik Buterin",
+        "Satoshi Nakamoto (peu après la crise 2008)",
+        "Bill Gates",
+        "Elon Musk"
+      ],
+      "c": 1,
+      "e": "Bitcoin mentionné pour la première fois peu après la crise 2008 par un certain Satoshi Nakamoto (identité inconnue à ce jour) — « système d'échange de liquidités de pair-à-pair sans institution financière »."
+    },
+    {
+      "theme": "securite",
+      "q": "L'état « actif » d'insécurité est :",
+      "o": [
+        "L'utilisateur ne connaît pas les fonctionnalités du système (certaines pouvant lui être nuisibles)",
+        "L'administrateur ne connaît pas les dispositifs de sécurité dont il dispose",
+        "Le firewall est désactivé",
+        "Les sauvegardes sont à jour"
+      ],
+      "c": 0,
+      "e": "État ACTIF d'insécurité = non-connaissance par l'utilisateur des fonctionnalités du système (ex : ne pas désactiver des services réseaux non nécessaires). État PASSIF = méconnaissance des moyens de sécurité par l'admin."
+    }
+  ],
+  "annales": [
+    {
+      "id": "gouv_2024_2025",
+      "year": "2024-2025",
+      "name": "Session 1 — Mercredi 11 juin 2025",
+      "duration": "2h00",
+      "format": "Écrit · Aucun document autorisé",
+      "professor": "N. Lebey",
+      "subject": "",
+      "dossiers": [
+        {
+          "label": "Question 1 — Dématérialisation des bulletins de paie",
+          "context": "Dématérialisation des bulletins de paie : un nouveau standard en entreprise ?\n\nArticle de Bertrand Dolbeau.\nSelon le Baromètre 2024 de la dématérialisation des documents RH mené par Digiposte et OpinionWay, 63 % des travailleurs reçoivent aujourd'hui leur fiche de paie au format numérique contre seulement 42 % en 2020. Cette transition vers un environnement professionnel toujours plus digital, loin d'être anodin, témoigne d'un bouleversement profond des usages et des mentalités, même si des inquiétudes persistent.\n\nLe coffre-fort numérique, outil plébiscité par les salariés, s'impose comme une réponse adaptée aux besoins de sécurité et d'accessibilité. Il permet non seulement un stockage sûr et durable des bulletins de paie, mais ouvre aussi la voie à une centralisation plus large des documents RH.\n\nLa praticité de conservation (58 %) et l'accès facilité (51 %) restent les deux principaux leviers de la dématérialisation du bulletin de paie et les salariés recevant leurs bulletins de paie dans un coffre-fort numérique sont très confiants, à 90 %, par rapport au stockage de ce type de document.\n\nPourtant, cette transformation n'est pas exempte de résistances. Près de 80 % des salariés expriment encore des préoccupations face aux risques numériques, notamment le vol de données personnelles ou l'utilisation frauduleuse de leurs documents. Un sentiment de vulnérabilité qui n'est pas à prendre à la légère et qui impose aux entreprises et aux acteurs de la dématérialisation un effort constant en matière de transparence et de pédagogie. Car si la technologie est prête, les esprits, eux, ont encore besoin d'être rassurés. Dans ce contexte, l'hébergement des données en France ou en Europe émerge comme une solution rassurante, souhaitée par 72 % des répondants.\n\nDes solutions de confiance peuvent apporter une réponse sécurisée et pédagogique pour accompagner les entreprises dans cette transition numérique, au bénéfice des employeurs comme des salariés.",
+          "items": [
+            {
+              "q": "Expliquez quelles sont les obligations et les risques liés à la dématérialisation des bulletins de salaire.",
+              "correction": "[Meilleure copie — note 16/20]\n\nLa dématérialisation des bulletins de salaire implique les obligations et les risques suivants.\n\n━━━ OBLIGATIONS ━━━\n\nAu niveau des obligations, la dématérialisation impose à l'entreprise de garantir aux salariés :\n  • La sécurité de leurs données à caractère personnel (DCP) par la mise en place d'un certain nombre de moyens, mesures, ressources ainsi que de leurs données sensibles comme le coffre-fort numérique\n  • La disponibilité de ces données pendant 50 ans (accès numérique)\n  • L'intégrité de celles-ci\n  • L'authenticité et l'identification de celles-ci ainsi que de son émetteur et de celui qui y accède\n  • La non-répudiation\n  • L'inaltérabilité\n\nCette dématérialisation impose également aux entreprises de se conformer au RGPD (Règlement Général sur la Protection des Données) et à la loi Informatique et Libertés de 1978.\n\nL'entreprise est tenue de nommer un DPO (Délégué à la Protection des Données) chargé du respect du traitement de ces données au RGPD.\n\nElle doit tenir un registre des traitements des données à caractère personnel.\nElle doit informer la CNIL (Commission Nationale Informatique et Libertés) de toute perte de données dans les 72h.\nElle doit garantir les droits des salariés en ce qui concerne le droit à la consultation de leurs DCP, le droit à la rectification / suppression de leurs données, le droit à la portabilité.\nElle doit informer les salariés des finalités du traitement de la collecte de leurs données à caractère personnel et obtenir leurs consentements si elles souhaitent commercialiser celles-ci.\nElle doit stocker ces données sur des serveurs hébergés en France et/ou en Europe.\nElle doit mettre en place une PSSI (Politique de Sécurité des Systèmes d'Information) et un PCA (Plan de Continuité d'Activité).\nElle doit nommer un RCCI (Responsable Conformité et Contrôle Interne) et mettre en place une procédure de contrôle interne.\n\n━━━ RISQUES ━━━\n\nAu niveau des risques, la dématérialisation engendre les risques suivants :\n\n  • Risques financiers en cas de perte / vol de données : cela peut engendrer des coûts pour l'entreprise, d'une part pour indemniser les salariés du préjudice subi, et d'autre part, en cas de rançons demandées par les assaillants.\n\n  • Risques d'image liés également à la perte / fuite des données qui aurait pour conséquence de faire perdre la confiance des salariés dans la capacité à protéger leurs données et par la même occasion celles de leurs clients.\n\n  • Risques organisationnels liés à la nécessité de cartographier les risques, d'élaborer une stratégie et une méthode de projet pour mettre en place cette dématérialisation, ainsi que l'établissement de procédures.\n\n  • Risques humains liés à la résistance au changement, par exemple 37 % selon le baromètre 2024 de la dématérialisation des documents RH mené par Digiposte et OpinionWay.\n\n  • Risques techniques et informatiques liés à la mise en œuvre de cette dématérialisation et la nécessité d'avoir du matériel permettant celle-ci, de répondre à ses obligations vues précédemment ; la nécessité d'avoir les compétences techniques ou informatiques… et/ou encore la perte de réseaux de communication."
+            }
+          ]
+        },
+        {
+          "label": "Question 2 — IA et usages : 3 risques + pistes pour les diminuer",
+          "context": "IA et usages : la confiance, pierre angulaire de son adoption durable.\n\nUne étude mondiale KPMG-Université de Melbourne révèle une adoption croissante de l'IA, mais pointe un manque de formation, une confiance encore limitée et la nécessité d'un cadre réglementaire renforcé. En France, malgré des usages en progression, les risques associés demeurent encore des freins importants notamment en entreprise.",
+          "items": [
+            {
+              "q": "Donnez et expliquez trois risques, proposez des pistes pour les diminuer.",
+              "correction": "[Meilleure copie — note 16/20]\n\n─── 1. Le risque de résistance au changement ───\n\nLa crainte de voir l'IA remplacer les tâches réalisées par l'Homme pousse celui-ci à refuser parfois son adoption par ses détracteurs.\n\nAfin de diminuer ce risque, il convient d'étudier les possibilités offertes par l'IA afin d'aider l'Homme dans son quotidien, développer les formations et intégrer et développer la culture du numérique dans les usages du quotidien aussi bien professionnel que personnel.\n\nIl faut également renforcer la confiance des ménages et des entreprises dans l'IA par l'adoption d'un cadre réglementaire renforcé. Pour cela, l'UE envisage d'établir, on a déjà établi ce qu'on appelle l'IA Act afin de protéger le citoyen européen.\n\n─── 2. Le risque de dépendance, de perte de compétences et/ou de savoir-faire ───\n\nEn effet, l'accroissement de l'IA dans nos usages, et l'avancée technologique des américains dans ce domaine bouleverse les entreprises. Ainsi, cela provoque ou peut provoquer une dépendance à l'égard de pays disposant d'avancées technologiques dans ce domaine si l'UE ne suit pas.\n\nAinsi pour diminuer ce risque, il convient de rechercher un équilibre entre réglementation afin de protéger / sécuriser et performance / création de valeur. Il faut donc mettre en place une stratégie visant à garder une autonomie stratégique par l'allocation de moyens / ressources au niveau européen mais également des mesures de contrôles, d'audit afin d'assurer la conformité et la pérennité de l'entreprise et de l'adoption de l'IA dans nos usages.\n\nEnfin, il faut également développer la formation continue et accompagner la montée en compétences des salariés dans l'usage de l'IA au quotidien. Cela nécessite donc la mise en place d'une gouvernance du système d'information au sein de l'entreprise, d'audit de sécurité, d'audit IT, de comités d'audit… Cela peut également être l'adoption de référentiels de bonnes pratiques.\n\n─── 3. Le risque de sécurité ───\n\nEn effet, l'utilisation de l'IA dans nos usages amène la question du risque de sécurité lié aux données intégrées dans cet outil. À qui appartiennent les données, comment garantir le droit à la propriété intellectuelle, les droits d'auteurs…\n\nAinsi, afin de diminuer ce risque, les entreprises peuvent développer des IA spécifiques à leur profession, telle que l'IA Francis Lefebvre basée sur la base de données des éditions Francis Lefebvre. Elles peuvent également former les collaborateurs, souscrire des cyber-assurances, étudier les contrats de services avec leurs fournisseurs tout en prévoyant des clauses de réversibilité, des niveaux de services (SLA / SLR)…"
+            }
+          ]
+        },
+        {
+          "label": "Question 3 — Facturation électronique : un chantier triple",
+          "context": "La mise en place de la facturation électronique est un chantier à la fois informatique, financier et managérial. Mais il ne faut pas oublier les obligations qui s'imposent aux entreprises, notamment en matière de traitement des données personnelles.",
+          "items": [
+            {
+              "q": "Expliquez « un chantier à la fois informatique, financier et managérial ».",
+              "correction": "[Meilleure copie — note 16/20]\n\nLa facturation électronique est un chantier à la fois informatique, financier et managérial car elle nécessite la mise en place d'un ensemble de mesures regroupant à la fois la sécurité des systèmes d'informations, l'allocation de ressources financières pour accompagner cette transformation ainsi que la mise en place d'une gouvernance des systèmes d'information afin de réduire les risques pour les organisations tout en leur permettant d'être performantes et créer de la valeur. C'est donc la recherche d'un équilibre entre risques et création de valeur."
+            },
+            {
+              "q": "Quelles sont les obligations qui s'imposent aux entreprises, notamment en matière de traitement des données personnelles.",
+              "correction": "[Meilleure copie — note 16/20]\n\nEn ce qui concerne les obligations qui s'imposent aux entreprises, je vous invite à consulter la réponse à la question 1, faisant référence à celles-ci en ce qui concerne le traitement des données à caractère personnelles (RGPD, loi Informatique et Libertés de 1978, nomination DPO, registre des traitements, information CNIL sous 72h, droits des salariés, stockage en France/Europe, PSSI, PCA, RCCI…)."
+            }
+          ]
+        },
+        {
+          "label": "Question 4 — Politique de sécurité des SI",
+          "context": "",
+          "items": [
+            {
+              "q": "Décrivez les différentes étapes pour construire une politique de sécurité SI.",
+              "correction": "[Meilleure copie — note 16/20]\n\nPour construire une politique de sécurité des SI, on peut se référer aux référentiels ISO 17799 et ISO 27000 et suivants. On peut également se référer à la méthodologie MARION pour la mise en place de celle-ci.\n\n1) Nommer un DPO (Délégué à la Protection des Données).\n2) Établir un audit du SI afin d'identifier les risques et les menaces pesant sur le SI.\n3) Évaluer les risques pour l'entreprise. Risque = Impact × Menace × Vulnérabilité.\n4) Effectuer une analyse d'impact de ces risques et définir les mesures correctives à mettre en place.\n5) Mettre en place les mesures correctives.\n6) Vérifier et contrôler régulièrement le niveau de sécurité attendu du SI par des indicateurs clés.\n\nLa mise en place d'une politique SI passe également par la mise en place d'un Plan de Continuité d'Activité (PCA) et d'un Plan de Sécurité du Système d'Information (PSSI)."
+            },
+            {
+              "q": "Donnez 3 problèmes ou difficultés que l'on peut rencontrer lors de la mise en œuvre d'une politique de sécurité, proposez pour chaque problème des pistes pour les diminuer.",
+              "correction": "[Meilleure copie — note 16/20]\n\nVoici 3 problèmes ou difficultés que l'on peut rencontrer lors de la mise en œuvre d'une politique de sécurité :\n\n─── Problème 1 : Moyens / ressources financières ───\n\nSolution : lever des fonds auprès des actionnaires, négocier le budget SI, emprunter auprès de sa banque OU prioriser les risques et mettre en place les mesures de sécurité en priorité sur les risques les plus significatifs (démarche d'approche par les risques).\n\n─── Problème 2 : Compétences techniques en interne ───\n\nSolution : Externaliser la fonction SI, mettre en place des contrats de services, d'infogérance avec des clauses de réversibilité et/ou transférabilité. Il convient également de prévoir les niveaux de services attendus (SLA / SLR) ainsi que la mise en place d'une TMA (Tierce Maintenance Applicative) pour déterminer si l'on souhaite une maintenance adaptative, évolutive, ainsi que le cahier des charges et le niveau d'exigences attendus vis-à-vis du prestataire de services qui est souvent une ESN (Entreprise de Services Numériques).\n\n─── Problème 3 : Difficulté dans la construction même de cette politique de SI ───\n\nEt manque de connaissances / compétences pour construire cette politique.\n\nSolution : Utiliser les référentiels et guides de bonnes pratiques permettant à quiconque de construire cette politique tels que les normes ISO 17799, 27000 et suivants mais également les référentiels Val IT, Risk IT, COBIT."
+            }
+          ]
+        },
+        {
+          "label": "Question 5 — Facturation électronique & IA : menace ou opportunité ?",
+          "context": "Facture électronique et intelligence artificielle : menace ou opportunité pour les experts-comptables ?",
+          "items": [
+            {
+              "q": "Présentez 3 opportunités / 3 menaces en les développant.",
+              "correction": "[Meilleure copie — note 16/20]\n\nJe réponds à cette question par les deux à la fois. Certains s'adapteront, d'autres disparaîtront. On peut résumer cela par « le phénomène de sélection naturelle ».\n\n━━━ OPPORTUNITÉS ━━━\n\n• L'expert-comptable, et au notamment, au travers l'action menée par l'ordre des experts-comptables envisage de devenir un tiers de confiance numérique pour le chef d'entreprise. Cela lui permettra donc d'être « au centre du jeu », de la donnée, d'avoir accès à des informations privilégiées en temps réel, perfectionner la connaissance de ses clients et développer des missions à plus forte valeur ajoutée.\n\n• La facturation électronique et l'intelligence artificielle permettront également à l'EC (expert-comptable) de gagner un temps considérable. Fini de scanner, photocopier, trier, ranger, archiver les factures. Fini la saisie comptable. Fini de passer des coups de téléphone aux chefs d'entreprise pour récupérer telle ou telle pièce comptable ! Tout sera centralisé, implémenté directement en comptabilité automatiquement. Cela lui permettra ainsi de réduire ses coûts, ses charges et dégager des marges et une rentabilité supérieure.\n\n• La facturation électronique et l'intelligence artificielle va permettre de réduire les risques d'erreurs (erreur de saisie par exemple), lutter contre la fraude, détecter les anomalies, éviter les doublons de facture, les ruptures de séquences, supprimer le manquement des mentions obligatoires sur celles-ci, éviter des sanctions financières, avoir une visibilité et connaître les délais de paiement de ses clients / fournisseurs, envoyer des relances automatiques.\n\n━━━ MENACES ━━━\n\n• Risques de perte de données liés à l'accroissement des cyberattaques, attaques par rançongiciels, déni de service…\n\n• Risques financiers en cas de perte, vol des données, fuite… mais également hausse des coûts de cyber-assurance, de coûts de stockage, maintenance des serveurs et SI.\n\n• Risques sociaux liés à la suppression des emplois, mais également risque de remplacement de l'EC par l'IA à terme."
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "5 questions à traiter en 2h → ~24 min/question. Bien gérer le temps : il ne faut pas faire l'impasse sur la dernière question (souvent rédactionnelle).",
+        "Structure attendue pour chaque question : annoncer le plan (obligations / risques / opportunités / menaces) puis dérouler en parties claires.",
+        "Mobiliser les acronymes du cours : PSSI, PCA, PRA, SLA, OLA, TMA, ESN, CNIL, ISO 27001/27002, COBIT, ITIL, Val IT, Risk IT, EBIOS, MEHARI, MARION, SMSI, CMMI, SOX, LSF, NRE.",
+        "Pour Q1 et Q3 : la dématérialisation et la facturation électronique partagent les mêmes obligations RGPD — on peut renvoyer d'une question à l'autre (gain de temps).",
+        "Pour Q5 : structurer en 3 opportunités + 3 menaces, bien équilibrer. Possibilité de conclure avec une métaphore (« sélection naturelle »)."
+      ]
+    },
+    {
+      "id": "si-30012026",
+      "year": "Janvier 2026 — version 2024-2025",
+      "name": "Examen 30/01/2026",
+      "duration": "2h",
+      "subject": "Autre sujet de la même session — questions similaires sur dématérialisation, IA et conduite du changement SI.",
+      "tips": [
+        "Mêmes thèmes que l'annale Juin 2025 — réviser les mêmes mots-clés.",
+        "Donner des EXEMPLES concrets issus du cours : ERP, infogérance, TMA, PSSI, blockchain, Cryptolocker, BYOD/Shadow IT."
+      ]
+    }
+  ]
+}

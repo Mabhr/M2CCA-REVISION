@@ -1,0 +1,3399 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conduite du changement — M2 CCA</title>
+<meta name="description" content="Cours Conduite du changement M2 CCA — cours, synthèse, flashcards et quiz.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%2280%22 font-size=%2290%22>🔄</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="shared.css?v=202605180400">
+</head>
+<body>
+
+<div class="blobs">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<nav class="nav">
+  <div class="nav-brand" onclick="window.location.href='index.html'">
+    <div class="nav-logo">M2 CCA</div>
+    <div class="nav-sub">By Mathieu Belloir</div>
+  </div>
+  <div class="nav-tabs" id="navTabs"></div>
+</nav>
+<div class="progress-line"><div class="progress-line-fill" id="progressFill"></div></div>
+
+<div class="main" id="appRoot">
+  <div style="padding:3rem 0;text-align:center;color:var(--text2);font-size:0.9rem">
+    <div style="font-size:2rem;margin-bottom:0.8rem">🔄</div>
+    Chargement du cours…
+  </div>
+</div>
+
+<script src="engine.js?v=202605180400"></script>
+<script>
+/* ═══════ FALLBACK DATA (file://) ═══════ */
+const FALLBACK = {
+  "title": "Conduite du changement & gestion des compétences",
+  "subtitle": "Cours F. Besombes — Démarche 8 étapes · GPEC · RACI · Gilbert 1980",
+  "quizKey": "m2cca_quiz_conduite_chgt",
+  "checklistItems": [
+    {
+      "id": "cc1",
+      "label": "Loi de Le Chatelier — analogie résistance au changement"
+    },
+    {
+      "id": "cc2",
+      "label": "Lewin — 3 phases : Décristallisation / Changement / Cristallisation"
+    },
+    {
+      "id": "cc3",
+      "label": "Modèle de Kotter (mentionné comme référence à connaître)"
+    },
+    {
+      "id": "cc4",
+      "label": "Modèle de Kübler-Ross — courbe du changement (mentionné)"
+    },
+    {
+      "id": "cc5",
+      "label": "3 facteurs psychosociologiques du changement"
+    },
+    {
+      "id": "cc6",
+      "label": "7 résistances classiques au changement"
+    },
+    {
+      "id": "cc7",
+      "label": "4 leviers anti-résistance : Communiquer / Faire participer / Soutenir / Négocier"
+    },
+    {
+      "id": "cc8",
+      "label": "3 stratégies utiles : coercition / persuasion rationnelle / partage de pouvoir"
+    },
+    {
+      "id": "cc9",
+      "label": "L'univers du changement — 4 dimensions"
+    },
+    {
+      "id": "cc10",
+      "label": "Démarche Besombes en 8 étapes (Amorcer → S'améliorer)"
+    },
+    {
+      "id": "cc11",
+      "label": "Gouvernance projet — Direction / Comité de pilotage / Groupes de travail"
+    },
+    {
+      "id": "cc12",
+      "label": "Vocation conduite du changement — 3 étapes (Écoute / Mobilisation / Coordination)"
+    },
+    {
+      "id": "cc13",
+      "label": "Qualifier les solutions — 4 cases (Gains/Contraintes/Appuis/Freins)"
+    },
+    {
+      "id": "cc14",
+      "label": "Matrice de priorisation Importance × Facilité"
+    },
+    {
+      "id": "cc15",
+      "label": "3 types de comportements 10-80-10 (Proactifs / Passifs / Opposants)"
+    },
+    {
+      "id": "cc16",
+      "label": "3 niveaux d'acteurs : Top Management → Middle → Ressources métiers"
+    },
+    {
+      "id": "cc17",
+      "label": "Méthode RACI — Responsable / Acteur / Contribution / Information"
+    },
+    {
+      "id": "cc18",
+      "label": "Grille communication × dispositif (questions des acteurs → modules)"
+    },
+    {
+      "id": "cc19",
+      "label": "Instance décisionnaire dédiée à l'accompagnement"
+    },
+    {
+      "id": "cc20",
+      "label": "Les 10 points clés de la conduite du changement"
+    },
+    {
+      "id": "cc21",
+      "label": "Chaîne des rôles : confié → perçu → accepté → tenu"
+    },
+    {
+      "id": "cc22",
+      "label": "Définition compétence : savoir / savoir-faire / savoir-être (combinaison dynamique)"
+    },
+    {
+      "id": "cc23",
+      "label": "5 critères d'identification des compétences par potentiel estimé"
+    },
+    {
+      "id": "cc24",
+      "label": "Référentiel des métiers + 4-5 niveaux de maîtrise"
+    },
+    {
+      "id": "cc25",
+      "label": "4 outils d'identification des compétences détenues"
+    },
+    {
+      "id": "cc26",
+      "label": "GPEC — objectif réduire écarts besoins / ressources"
+    },
+    {
+      "id": "cc27",
+      "label": "Éthique de performance — triangle Actionnaires / Salariés / Clients"
+    },
+    {
+      "id": "cc28",
+      "label": "Organisation qualifiante — 3 piliers"
+    },
+    {
+      "id": "cc29",
+      "label": "Description de poste — 6 rubriques (Intitulé / Missions / Dimensions / Contexte / Activités / Résultats)"
+    },
+    {
+      "id": "cc30",
+      "label": "3 dimensions des compétences : métier / management / orientation résultats"
+    },
+    {
+      "id": "cc31",
+      "label": "Évaluation sanction vs formative"
+    },
+    {
+      "id": "cc32",
+      "label": "3 missionnements × 3 appréciations"
+    },
+    {
+      "id": "cc33",
+      "label": "Culture d'entreprise — 5 forces (Mythes / Rites / Identité / Valeurs / Histoire)"
+    },
+    {
+      "id": "cc34",
+      "label": "5 étapes constitution d'équipe (Constitution / Tension / Normalisation / Production / Dissolution)"
+    },
+    {
+      "id": "cc35",
+      "label": "Définition équipe selon Lewin — interdépendance"
+    },
+    {
+      "id": "cc36",
+      "label": "Continuum management directif → délégatif (7 niveaux)"
+    },
+    {
+      "id": "cc37",
+      "label": "Modèle Pertinence / Cap / Actions / Ressources"
+    },
+    {
+      "id": "cc38",
+      "label": "4 attentes manager — Honnête / Compétent / Tourné vers l'avenir / Motivant"
+    },
+    {
+      "id": "cc39",
+      "label": "Agilité managériale — capacité d'adaptation et d'innovation"
+    },
+    {
+      "id": "cc40",
+      "label": "Modèle de Gilbert (1980) — Performance = Objectifs / Moyens / Résultats"
+    }
+  ],
+  "flashcards": [
+    {
+      "q": "Loi de Le Chatelier appliquée au changement organisationnel",
+      "a": "« Toute modification apportée à l'équilibre d'un système entraîne au sein de celui-ci l'apparition de phénomènes qui tendent à s'opposer à cette modification et à en annuler les effets. »\n\nConséquence : pour réussir un changement, modifier l'équilibre dans un sens délibéré en :\n  • Augmentant les pressions dans le sens du changement\n  • Diminuant les résistances\n\nBonne pratique : associer les deux.",
+      "theme": "processus_chgt",
+      "src": "Conduite p.3",
+      "srcChap": 1
+    },
+    {
+      "q": "Modèle de Kurt Lewin — les 3 phases",
+      "a": "Kurt Lewin a modélisé le changement en 3 phases :\n\n① DÉCRISTALLISATION — préparation au changement, remise en cause du fonctionnement actuel\n\n② CHANGEMENT — modifications des tâches, de la structure, des techniques et du comportement des individus\n\n③ CRISTALLISATION — renforcement positif des résultats souhaités, évaluation et suivi",
+      "theme": "processus_chgt",
+      "src": "Conduite p.5",
+      "srcChap": 2
+    },
+    {
+      "q": "Modèles de Kotter et Kübler-Ross — niveau Besombes",
+      "a": "Le support Besombes mentionne ces 2 modèles comme références à connaître MAIS sans les détailler :\n\n• Kotter — modèle de référence en conduite du changement (titre seul)\n\n• Kübler-Ross — courbe du changement (schéma Philippe Moret) qui permet de comprendre les réactions émotionnelles face au changement (titre + schéma seuls)\n\n→ À mobiliser en examen comme modèles structurants, sans les détailler outre mesure.",
+      "theme": "processus_chgt",
+      "src": "Conduite p.6",
+      "srcChap": 3
+    },
+    {
+      "q": "3 facteurs psychosociologiques du changement",
+      "a": "① La découverte chez autrui d'attitudes sociales différentes des nôtres\n\n② La découverte de l'image de soi vue par les autres, bien différente de ce que nous pensions être\n\n③ La découverte d'un nouveau sens à un mot, nous qui prenions notre sens pour la vérité absolue",
+      "theme": "processus_chgt",
+      "src": "Conduite p.7",
+      "srcChap": 4
+    },
+    {
+      "q": "Les 7 résistances au changement (Besombes)",
+      "a": "① Manque d'informations des collaborateurs\n② Peur de l'inconnu\n③ Besoin de sécurité\n④ Besoin de changement inexistant\n⑤ Peur de perdre des acquis\n⑥ Moment mal choisi\n⑦ Manque de ressources",
+      "theme": "processus_chgt",
+      "src": "Conduite p.8-9",
+      "srcChap": 4
+    },
+    {
+      "q": "Les 4 leviers pour lutter contre les résistances",
+      "a": "① COMMUNIQUER — éliminer les craintes liées à l'incertitude, expliquer clairement le but visé\n\n② FAIRE PARTICIPER — créer un sentiment d'engagement, impliquer de la planification à la réalisation\n\n③ SOUTENIR — assurer la confiance et la crédibilité, consacrer plus de temps aux collaborateurs en difficulté\n\n④ NÉGOCIER — éliminer les conflits avec des buts personnels, harmoniser objectifs (cohérence d'ensemble)",
+      "theme": "processus_chgt",
+      "src": "Conduite p.8-9",
+      "srcChap": 4
+    },
+    {
+      "q": "Les 3 stratégies utiles face au changement",
+      "a": "① LA COERCITION — réactions par peur des sanctions ou par attrait des récompenses ; s'appuyer sur l'autorité conférée par le poste\n\n② LA PERSUASION RATIONNELLE — individus essentiellement rationnels, actes basés sur la logique ; appel au pouvoir lié à la compétence\n\n③ LE PARTAGE DE POUVOIR — la responsabilisation comme facteur de motivation ; implication des personnes dans le processus de changement",
+      "theme": "processus_chgt",
+      "src": "Conduite p.10",
+      "srcChap": 4
+    },
+    {
+      "q": "Limites de la dynamique de groupe en situation de changement",
+      "a": "Chacune des solutions est au gré des dirigeants ; chacune ayant ses avantages et inconvénients selon le moment.\n\n→ Question de DISCERNEMENT et de PHILOSOPHIE DE GESTION\n\nAttention au paradoxe : désir de participer à condition de ne pas perdre d'autonomie.",
+      "theme": "processus_chgt"
+    },
+    {
+      "q": "L'univers du changement — 4 dimensions",
+      "a": "Le management du changement s'inscrit dans 4 dimensions interconnectées :\n\n• STRATÉGIE\n• MÉTHODES ET ACTIVITÉS\n• COLLABORATEURS\n• PARTENAIRES EXTERNES",
+      "theme": "demarche",
+      "src": "Conduite p.12",
+      "srcChap": 5
+    },
+    {
+      "q": "Les 8 étapes de la démarche Besombes",
+      "a": "① AMORCER — Définir une stratégie / politique\n② ANALYSER L'EXISTANT — Diagnostic\n③ DÉFINIR LE NOUVEAU CADRE — Innover, objectifs opérationnels\n④ MOBILISER — Sensibiliser, former\n⑤ ÉLABORER LES PLANS D'ACTIONS — Hiérarchiser, planifier\n⑥ MISE EN ŒUVRE — Déployer, contrôler dérives\n⑦ MESURER ET ÉVALUER — Constater écarts, corriger, motiver\n⑧ S'AMÉLIORER — Boucler la démarche, fixer nouveaux objectifs\n\nDurée moyenne : 2 ans — ni trop, ni trop peu.",
+      "theme": "demarche",
+      "src": "Conduite p.13-23",
+      "srcChap": 5
+    },
+    {
+      "q": "Étape 1 — Amorcer : analyser facteurs internes et externes",
+      "a": "FACTEURS INTERNES :\n  • L'organisation actuelle : points forts / points faibles\n  • Les compétences disponibles : immédiatement / CT / MT / inexistantes\n\nFACTEURS EXTERNES :\n  • La demande des clients (évolution / tendances)\n  • L'observation statistique\n  • La prospective économique (nouveaux thèmes, nouvelles règles)\n  • Les autres acteurs (financeurs, association, commune…)\n\nLa stratégie sera élaborée à partir de l'analyse de ces éléments.",
+      "theme": "demarche",
+      "src": "Conduite p.15",
+      "srcChap": 5
+    },
+    {
+      "q": "Étape 4 — Mobiliser : 6 actions clés",
+      "a": "① Sensibiliser l'ensemble des collaborateurs collectivement ET individuellement aux nouveaux objectifs\n② S'assurer de la compréhension de tous\n③ Former aux nouvelles méthodes\n④ Définir les règles du jeu\n⑤ Définir les modalités d'évaluation\n⑥ Définir les méthodes de soutien",
+      "theme": "demarche"
+    },
+    {
+      "q": "Étape 5 — Élaborer les plans d'actions : 5 livrables",
+      "a": "① Hiérarchiser les actions\n② Définir le calendrier\n③ Nommer les responsables et répartir les équipes\n④ Définir les temps d'échanges\n⑤ Définir les indicateurs de pilotage",
+      "theme": "demarche"
+    },
+    {
+      "q": "Gouvernance projet — qui fait quoi ?",
+      "a": "3 niveaux de gouvernance projet :\n\n• DIRECTION → Projet stratégique\n• COMITÉ DE PILOTAGE PROJET → Gestion participative\n• GROUPES DE TRAVAIL (typiquement 4) → Exécution opérationnelle",
+      "theme": "demarche",
+      "src": "Conduite p.14",
+      "srcChap": 5
+    },
+    {
+      "q": "Vocation de la conduite du changement — 3 étapes",
+      "a": "De la PROBLÉMATIQUE au CHANGEMENT via 3 étapes :\n\n① GARANTIR LA BONNE COMPRÉHENSION et la pertinence de la problématique\n   → Écoute · Propositions · Échanges\n\n② FÉDÉRER LES PARTIES PRENANTES autour d'un périmètre commun\n   → Mobilisation · Priorisation · Structuration · Alignement\n\n③ FACILITER LA MISE EN ŒUVRE du changement\n   → Coordination · Communication · Accompagnement",
+      "theme": "demarche",
+      "src": "Conduite p.27-30",
+      "srcChap": 6
+    },
+    {
+      "q": "Qualifier les solutions — grille à 4 cases",
+      "a": "Pour qualifier une solution :\n\nCôté RÉSULTATS :\n  • GAINS ATTENDUS — gain de temps, productivité, niveau de service, qualité, fiabilité\n  • CONTRAINTES — éléments externes sur lesquels on a peu d'emprise mais qui impactent\n\nCôté CONDITIONS :\n  • POINTS D'APPUI — éléments favorables à utiliser au maximum (sponsor de poids, effet de levier)\n  • FREINS — éléments qui s'opposent à l'atteinte du résultat (mais sur lesquels on peut agir)",
+      "theme": "demarche",
+      "src": "Conduite p.31",
+      "srcChap": 6
+    },
+    {
+      "q": "Matrice de priorisation Importance × Facilité",
+      "a": "Outil de priorisation graphique :\n\n• Abscisses : FACILITÉ / MAÎTRISE (0-10)\n• Ordonnées : IMPORTANCE (0-10)\n\nPermet d'identifier :\n  • Actions PRIORITAIRES : Importance élevée + Facilité élevée\n  • Actions « AU PARKING » : Importance faible (sortir de la roadmap)",
+      "theme": "demarche"
+    },
+    {
+      "q": "Les 3 types de comportements face au changement (10-80-10)",
+      "a": "Face à tout changement, 3 types de comportements :\n\n① LES PROACTIFS (constructifs) — 10 à 20 %\n   Favorables au changement, se positionnent comme prescripteurs\n   → LES UTILISER\n\n② LES PASSIFS (hésitants) — 60 à 80 %\n   En attente de résultats probants, veulent être sécurisés\n   → LES RASSURER\n\n③ LES OPPOSANTS (destructeurs) — 10 à 20 %\n   Opposés aux projets, avancent des arguments « contre »\n   → LES LAISSER S'ISOLER pour mieux les raccrocher",
+      "theme": "acteurs",
+      "src": "Conduite p.36",
+      "srcChap": 7
+    },
+    {
+      "q": "S'appuyer sur le Top Management — pourquoi et comment",
+      "a": "Le Top Management donne L'IMPULSION ET LA LÉGITIMITÉ :\n\n• Montrer à tous que le projet est moteur pour l'organisation\n• Prendre les décisions importantes et les communiquer\n\nPrérequis : le Top Management doit être IMPLIQUÉ ET MOTIVÉ.",
+      "theme": "acteurs"
+    },
+    {
+      "q": "S'appuyer sur le Middle Management — rôle de relais",
+      "a": "Le Middle Management opérationnel RELAIE le changement :\n\n• S'impliquer dans les actions de communication\n• Intégrer les changements dans le management au quotidien\n• Contribuer à l'accompagnement post-déploiement\n\nPrérequis : le Management de proximité doit bénéficier d'un TEMPS D'AVANCE.",
+      "theme": "acteurs"
+    },
+    {
+      "q": "Miser sur les Ressources Métiers — 3 atouts",
+      "a": "Les Ressources Métiers internes sont des relais légitimes car :\n\n• Ils CONNAISSENT l'organisation\n• Ils sont LÉGITIMES\n• Ils RESTERONT\n\nCondition : les mobiliser et les animer LE PLUS EN AMONT POSSIBLE, puis les accompagner dans ce rôle.",
+      "theme": "acteurs",
+      "src": "Conduite p.39",
+      "srcChap": 7
+    },
+    {
+      "q": "La méthode RACI — 4 rôles par activité",
+      "a": "Pour chaque activité, on distingue 4 rôles :\n\n• R : RESPONSABLE (1 et un seul) — Donne son approbation, assume la responsabilité globale\n\n• A : ACTEUR (1 à n) — Réalise les activités\n\n• C : CONTRIBUTION (0 à n) — Dispose d'une information / expertise mais n'a pas d'autorité\n\n• I : INFORMATION (0 à n) — Informé sans intervention (généralement indirectement impacté)",
+      "theme": "pilotage",
+      "src": "Conduite p.40",
+      "srcChap": 8
+    },
+    {
+      "q": "Identifier les impacts organisationnels — démarche",
+      "a": "Démarche en 3 temps :\n\n① Identifier les impacts par PROCESSUS / SOUS-PROCESSUS\n② Identifier les SCÉNARIOS et formuler une recommandation, puis faire arbitrer\n③ FORMALISER LE RACI par processus",
+      "theme": "pilotage",
+      "src": "Conduite p.40",
+      "srcChap": 8
+    },
+    {
+      "q": "Grille communication × dispositif — Pourquoi changer ?",
+      "a": "Selon la question posée par l'acteur, le dispositif diffère :\n\n• « Pourquoi changer ? » → Communication projet · Kits de communication\n• « Comment ça va se passer ? » → Information ciblée par métier, domaine, fonction, rôle\n• « Qu'est-ce qui change pour moi ? » → Modules de sensibilisation\n• « Vais-je être à la hauteur ? » → Formation aux nouveautés\n• « Comment vais-je faire ? » → Modules de formation\n• « Suis-je prêt ? » → Entraînement libre ou encadré\n• « Je ne suis pas prêt ! » → Assistance de proximité\n• « Comment faire encore mieux ? » → Assistance à distance + Management au quotidien",
+      "theme": "pilotage",
+      "src": "Conduite p.41",
+      "srcChap": 8
+    },
+    {
+      "q": "Instance décisionnaire dédiée à l'accompagnement du changement",
+      "a": "Préalable au pilotage : constituer une instance qui couvre 8 dimensions :\n\n• Cohérence avec les orientations stratégiques\n• Indicateurs à suivre\n• Ressources nécessaires, relais terrain\n• Tactique de déploiement\n• Coordination équipe projet\n• Planification, suivi du plan d'action\n• Déploiement des actions de communication clés\n• Alertes et risques",
+      "theme": "pilotage",
+      "src": "Conduite p.42",
+      "srcChap": 8
+    },
+    {
+      "q": "Les 10 points clés de la conduite du changement (Besombes)",
+      "a": "① Faire participer les acteurs clés\n② Rester factuel\n③ Être réaliste\n④ Communiquer « honnête » et « utile »\n⑤ Faciliter la coordination des projets\n⑥ Accompagner le changement (tenir compte du « deuil »)\n⑦ Mesurer les impacts d'un projet avant de communiquer\n⑧ S'appuyer sur une méthodologie structurée et rassurante\n⑨ S'appuyer sur la DG puis sur le middle management\n⑩ S'appuyer sur des ressources métiers internes et les « chouchouter »",
+      "theme": "pilotage",
+      "src": "Conduite p.39",
+      "srcChap": 7
+    },
+    {
+      "q": "Chaîne des rôles — description de poste (Besombes)",
+      "a": "La performance organisationnelle dépend de 4 rôles successifs :\n\n• RÔLE CONFIÉ (par l'organisation)\n• RÔLE PERÇU (par le salarié)\n• RÔLE ACCEPTÉ (par le salarié)\n• RÔLE TENU (effectivement)\n\nLa DESCRIPTION DE POSTE permet de minimiser l'écart d'efficacité entre rôle confié et rôle tenu.",
+      "theme": "competences",
+      "src": "Compétences p.3",
+      "srcChap": 10
+    },
+    {
+      "q": "Définition de la compétence selon Besombes",
+      "a": "« La compétence est une DISPOSITION À MOBILISER, À COMBINER ET METTRE EN ŒUVRE DES RESSOURCES (savoir, savoir-faire, savoir-être). »\n\nC'est la COMBINAISON DYNAMIQUE de différents éléments :\n  • Savoir théorique\n  • Procédures et / ou bonnes pratiques\n  • Savoir-faire\n  • Expérience non formalisée",
+      "theme": "competences",
+      "src": "Compétences p.6",
+      "srcChap": 10
+    },
+    {
+      "q": "Les 5 critères d'identification des compétences (potentiel estimé)",
+      "a": "① Motivation\n② Caractère\n③ Image que l'on a de soi\n④ Les connaissances et le savoir\n⑤ Le savoir-faire\n\nBonne pratique : il est préférable d'EMBAUCHER quelqu'un qui a 1, 2, 3 et de le FORMER à 4 et 5.",
+      "theme": "competences"
+    },
+    {
+      "q": "Les 4 outils d'identification des compétences détenues",
+      "a": "Pour mesurer l'employabilité individuelle :\n\n① Mesure de l'employabilité individuelle\n② Bilan de compétences\n③ Portefeuille de compétences\n④ Cartes de compétences\n\nLe RÉFÉRENTIEL DES MÉTIERS indique le niveau de maîtrise sur 4 à 5 niveaux.",
+      "theme": "competences"
+    },
+    {
+      "q": "GPEC — définition et objectif (Besombes)",
+      "a": "Gestion Prévisionnelle des Emplois et des Compétences :\n\n« Vise à RÉDUIRE, DE FAÇON ANTICIPÉE, LES ÉCARTS entre les besoins et les ressources de l'entreprise en termes d'effectifs et de compétences en fonction des objectifs identifiés, avec l'IMPLICATION DU SALARIÉ dans le cadre d'un projet d'évolution professionnelle. »",
+      "theme": "competences",
+      "src": "Compétences p.11",
+      "srcChap": 11
+    },
+    {
+      "q": "Éthique de performance — triangle Besombes",
+      "a": "L'éthique de performance repose sur un triangle :\n\n• ACTIONNAIRES (stratégie, vision)\n• SALARIÉS (création de valeur)\n• CLIENTS (profits)\n\nAu centre : la DIRECTION assure l'équilibre permanent et la constance de l'objectif stratégique.",
+      "theme": "competences",
+      "src": "Compétences p.12",
+      "srcChap": 11
+    },
+    {
+      "q": "L'organisation qualifiante — 3 piliers",
+      "a": "L'organisation qualifiante repose sur :\n\n① ENRICHISSEMENT DES TÂCHES\n② VOLONTÉ ÉDUCATIVE (développement de l'apprentissage permanent)\n③ RECHERCHE DE LA COMPÉTITIVITÉ\n\nÉléments préalables : identification des emplois actuels (résultats attendus + compétences requises via DICTIONNAIRE DE COMPÉTENCES) + prévision réaliste de l'évolution.",
+      "theme": "competences",
+      "src": "Compétences p.14",
+      "srcChap": 11
+    },
+    {
+      "q": "Description de poste — 6 rubriques",
+      "a": "Schéma de principe d'une description de poste :\n\n① INTITULÉ DU POSTE\n② MISSIONS\n③ DIMENSIONS (chiffres significatifs)\n④ CONTEXTE GÉNÉRAL DU POSTE (cadre général de travail, contraintes)\n⑤ NATURE ET ÉTENDUE DES ACTIVITÉS (analyse du cadre d'activité et de ses moyens)\n⑥ RÉSULTATS ATTENDUS (identification des objectifs)\n\nDistinguer : LE POSTE (emploi tenu, unité physiquement identifiable) vs LA FONCTION (activités tendant vers le même but).",
+      "theme": "competences",
+      "src": "Compétences p.18-19",
+      "srcChap": 11
+    },
+    {
+      "q": "Les 3 dimensions des compétences (Besombes)",
+      "a": "① EN TERMES DE MÉTIER\n  • Connaissances techniques et théoriques\n  • Connaissances pratiques et savoir-faire\n\n② EN TERMES DE MANAGEMENT\n  • Compétences relationnelles liées au métier\n  • Planification, organisation, coordination, contrôle\n  • Direction, animation, motivation\n\n③ ORIENTATION VERS LES RÉSULTATS\n  • Initiation, autonomie\n  • Engagement, sens des responsabilités\n  • Sens des priorités et flexibilité\n  • Contribution aux axes de progrès",
+      "theme": "competences",
+      "src": "Compétences p.20",
+      "srcChap": 11
+    },
+    {
+      "q": "Système d'évaluation — sanction vs formative",
+      "a": "L'évaluation des compétences s'envisage au regard d'OBJECTIFS À ATTEINDRE.\n\nÉVALUATION « SANCTION » :\n  Cible : la performance, les résultats\n  Outils : objectifs quantitatifs, plans d'actions, management de la performance\n\nÉVALUATION « FORMATIVE » :\n  Cible : les compétences, la tenue du poste\n  Outils : orientations développement\n\nL'instauration d'un système d'évaluation INDUIT LE CHANGEMENT : comportements, pratiques managériales, relations d'autorité, mentalités, représentations culturelles.",
+      "theme": "competences",
+      "src": "Compétences p.25",
+      "srcChap": 11
+    },
+    {
+      "q": "Les 3 missionnements × 3 appréciations",
+      "a": "Pour mettre en œuvre un système d'appréciation, confier aux salariés MISSIONS CLAIRES + MOYENS ADAPTÉS.\n\n3 TYPES DE MISSIONNEMENT :\n  • Les directives (règle, procédure, plan d'action)\n  • Les objectifs quantitatifs\n  • Les orientations ou objectifs qualitatifs\n\n3 TYPES D'APPRÉCIATION :\n  • Le contrôle\n  • La mesure\n  • L'appréciation",
+      "theme": "competences",
+      "src": "Compétences p.27",
+      "srcChap": 11
+    },
+    {
+      "q": "La culture d'entreprise — 5 forces (Besombes)",
+      "a": "La culture d'entreprise repose sur 5 forces :\n\n• MYTHES\n• RITES\n• IDENTITÉ\n• VALEURS\n• HISTOIRE\n\nLa mise en œuvre d'un système d'appréciation s'appuyant sur des entretiens individuels fait appel à des notions qui RELÈVENT DE LA CULTURE D'ENTREPRISE.",
+      "theme": "competences",
+      "src": "Compétences p.30",
+      "srcChap": 11
+    },
+    {
+      "q": "Les 5 étapes de constitution d'une équipe",
+      "a": "① CONSTITUTION — création de l'équipe, découverte des autres et de la légitimité de chacun → Team Building\n\n② TENSION — confrontation des opinions, divergences objectives ou irrationnelles → Prévention / Gestion des conflits\n\n③ NORMALISATION — acceptation d'un but commun, apparition de règles et structuration → Négociation\n\n④ PRODUCTION — travail collectif vers le but commun → Motivation\n\n⑤ DISSOLUTION — dissolution (membres partis, nouveaux arrivants) → Valorisation",
+      "theme": "equipe",
+      "src": "Compétences p.31-32",
+      "srcChap": 12
+    },
+    {
+      "q": "Définition de l'équipe selon Lewin",
+      "a": "« L'ESSENCE D'UN GROUPE EST L'INTERDÉPENDANCE DE CHACUN DE SES MEMBRES. » — Kurt Lewin\n\n3 caractéristiques d'une équipe :\n  • Objectif commun\n  • Interaction psychologique\n  • Existence collective",
+      "theme": "equipe",
+      "src": "Compétences p.33",
+      "srcChap": 12
+    },
+    {
+      "q": "Continuum de management directif → délégatif (7 niveaux)",
+      "a": "Le comportement managérial s'inscrit sur un continuum entre AUTORITÉ DU RESPONSABLE et LIBERTÉ D'ACTION DU GROUPE.\n\nCentré sur l'animateur (autorité forte) :\n  • AUTORITÉ (directif)\n  • INFORMATION\n  • EXPLICATIF\n  • CONSULTATION\n\nCentré sur le groupe (liberté forte) :\n  • EXPLICATIF (concertation)\n  • NÉGOCIATION\n  • IMPLICATIF (délégation, responsabilisant)",
+      "theme": "equipe",
+      "src": "Compétences p.35",
+      "srcChap": 12
+    },
+    {
+      "q": "Modèle Pertinence / Cap / Actions / Ressources",
+      "a": "Pour responsabiliser, articuler 4 dimensions :\n\n• CAP — Quelle est la destination à atteindre ?\n• ACTIONS — Comment s'y prendre pour atteindre le cap ?\n• RESSOURCES — Avec qui et quoi pour atteindre le cap ?\n• PERTINENCE — Sens ? Utilité ? Cohérence ?",
+      "theme": "equipe",
+      "src": "Compétences p.36",
+      "srcChap": 12
+    },
+    {
+      "q": "Les 4 attentes vis-à-vis du manager",
+      "a": "Ce que les managés attendent de leur manager :\n\n① HONNÊTE — l'intégrité (confiance)\n② COMPÉTENT — la compétence (technique & managériale)\n③ TOURNÉ VERS L'AVENIR — la vision\n④ MOTIVANT — le dynamisme (implication et responsabilisation)",
+      "theme": "equipe",
+      "src": "Compétences p.37",
+      "srcChap": 12
+    },
+    {
+      "q": "Agilité managériale",
+      "a": "Définition : la CAPACITÉ D'ADAPTATION ET D'INNOVATION mobilisée ensemble face à :\n\n• Quelles problématiques ?\n• Quelle résolution de problème ensemble ?\n• Quel plan d'actions concerté ?",
+      "theme": "equipe",
+      "src": "Compétences p.36",
+      "srcChap": 12
+    },
+    {
+      "q": "Manager n'est pas une fin en soi",
+      "a": "Manager est un MOYEN pour :\n\n• Réussir un projet ensemble (ou un défi à relever)\n• Rester concentré sur l'essentiel (satisfaction client + collaborateurs)\n• Se connaître soi-même pour entrer en relation positive avec l'autre\n• La discipline de groupe crée les conditions de la réussite : les membres formulent ensemble le projet, se mettent d'accord sur les objectifs, définissent une méthode de travail commune, développent des compétences complémentaires, s'engagent collectivement à atteindre les résultats souhaités.",
+      "theme": "equipe"
+    },
+    {
+      "q": "Modèle de Gilbert (1980) — triangle de la performance",
+      "a": "La PERFORMANCE se construit à l'intersection de 3 dimensions :\n\n• OBJECTIFS\n• MOYENS\n• RÉSULTATS\n\nLes écarts entre ces 3 sommets définissent :\n  • Objectifs ↔ Résultats : EFFICACITÉ\n  • Moyens ↔ Résultats : EFFICIENCE\n  • Objectifs ↔ Moyens : PERTINENCE",
+      "theme": "equipe",
+      "src": "Compétences p.40",
+      "srcChap": 12
+    }
+  ],
+  "quizQuestions": [
+    {
+      "q": "Quelle loi physique sert d'analogie pour comprendre la résistance au changement organisationnel selon Besombes ?",
+      "o": [
+        "Loi de Le Chatelier",
+        "Loi de Pareto",
+        "Loi de Murphy",
+        "Loi de Parkinson"
+      ],
+      "c": 0,
+      "e": "La loi de Le Chatelier énonce que toute modification de l'équilibre d'un système entraîne l'apparition de phénomènes qui tendent à s'y opposer. Pour réussir un changement, il faut donc associer 2 actions : augmenter les pressions dans le sens du changement ET diminuer les résistances.",
+      "theme": "processus_chgt",
+      "src": "Conduite p.3",
+      "srcChap": 1
+    },
+    {
+      "q": "Quelles sont les 3 phases du modèle de Kurt Lewin ?",
+      "o": [
+        "Diagnostic / Action / Évaluation",
+        "Décristallisation / Changement / Cristallisation",
+        "Préparation / Exécution / Contrôle",
+        "Mobilisation / Production / Dissolution"
+      ],
+      "c": 1,
+      "e": "Lewin a modélisé le changement en 3 phases : ① Décristallisation (remise en cause du fonctionnement actuel), ② Changement (modifications des tâches, structure, techniques, comportements), ③ Cristallisation (renforcement positif des résultats souhaités, évaluation et suivi).",
+      "theme": "processus_chgt",
+      "src": "Conduite p.5",
+      "srcChap": 2
+    },
+    {
+      "q": "Combien de résistances classiques au changement sont identifiées par Besombes ?",
+      "o": [
+        "3 résistances",
+        "5 résistances",
+        "7 résistances",
+        "10 résistances"
+      ],
+      "c": 2,
+      "e": "Les 7 résistances classiques : manque d'informations, peur de l'inconnu, besoin de sécurité, besoin de changement inexistant, peur de perdre des acquis, moment mal choisi, manque de ressources.",
+      "theme": "processus_chgt",
+      "src": "Conduite p.8-9",
+      "srcChap": 4
+    },
+    {
+      "q": "Parmi les 3 stratégies utiles face au changement (Besombes), laquelle fait appel à la responsabilisation comme facteur de motivation ?",
+      "o": [
+        "La coercition",
+        "La persuasion rationnelle",
+        "Le partage de pouvoir",
+        "L'incitation financière"
+      ],
+      "c": 2,
+      "e": "Le partage de pouvoir mobilise la responsabilisation comme facteur de motivation, par l'implication des personnes dans le processus de changement. La coercition s'appuie sur sanctions/récompenses ; la persuasion rationnelle sur la logique et la compétence.",
+      "theme": "processus_chgt",
+      "src": "Conduite p.10",
+      "srcChap": 4
+    },
+    {
+      "q": "Combien d'étapes compte la démarche Besombes de conduite du changement ?",
+      "o": [
+        "4 étapes",
+        "5 étapes",
+        "8 étapes",
+        "10 étapes"
+      ],
+      "c": 2,
+      "e": "La démarche Besombes comporte 8 étapes : ① Amorcer, ② Analyser l'existant, ③ Définir le nouveau cadre, ④ Mobiliser, ⑤ Élaborer les plans d'actions, ⑥ Mise en œuvre, ⑦ Mesurer et évaluer, ⑧ S'améliorer. Durée moyenne : 2 ans.",
+      "theme": "demarche",
+      "src": "Conduite p.13-23",
+      "srcChap": 5
+    },
+    {
+      "q": "Selon Besombes, combien de temps faut-il en moyenne pour réaliser la démarche complète (étapes 1 à 7) ?",
+      "o": [
+        "6 mois",
+        "1 an",
+        "2 ans",
+        "5 ans"
+      ],
+      "c": 2,
+      "e": "Pour réaliser le parcours de l'étape 1 à l'étape 7, il faut envisager une période de 2 ans en moyenne — « ni trop, ni trop peu ».",
+      "theme": "demarche"
+    },
+    {
+      "q": "Quelles sont les 4 dimensions de « l'univers du changement » selon Besombes ?",
+      "o": [
+        "Stratégie / Méthodes et activités / Collaborateurs / Partenaires externes",
+        "Vision / Mission / Objectifs / Valeurs",
+        "Plan / Do / Check / Act",
+        "Direction / Encadrement / Production / Support"
+      ],
+      "c": 0,
+      "e": "Les 4 dimensions de l'univers du changement sont : Stratégie, Méthodes et activités, Collaborateurs, Partenaires externes. Le management du changement s'inscrit à la croisée de ces 4 dimensions.",
+      "theme": "demarche",
+      "src": "Conduite p.12",
+      "srcChap": 5
+    },
+    {
+      "q": "Quel est l'ordre des 3 grandes étapes de la vocation de la conduite du changement (Besombes) ?",
+      "o": [
+        "Plan d'action → Périmètre → Adhésion",
+        "Compréhension → Périmètre commun → Mise en œuvre",
+        "Diagnostic → Mobilisation → Évaluation",
+        "Stratégie → Tactique → Opérationnel"
+      ],
+      "c": 1,
+      "e": "La vocation se décline en 3 étapes : ① Garantir la bonne compréhension et la pertinence de la problématique (Écoute), ② Fédérer les parties prenantes autour d'un périmètre commun (Mobilisation), ③ Faciliter la mise en œuvre du changement (Coordination).",
+      "theme": "demarche",
+      "src": "Conduite p.27-30",
+      "srcChap": 6
+    },
+    {
+      "q": "Pour qualifier les solutions, Besombes propose une grille à 4 cases. Quels sont les éléments FAVORABLES ?",
+      "o": [
+        "Gains attendus + Contraintes",
+        "Points d'appui + Freins",
+        "Gains attendus + Points d'appui",
+        "Contraintes + Freins"
+      ],
+      "c": 2,
+      "e": "La grille croise Résultats (Gains attendus vs Contraintes) et Conditions (Points d'appui vs Freins). Les éléments FAVORABLES sont les Gains attendus (résultats positifs) et les Points d'appui (éléments à utiliser au max comme un sponsor de poids).",
+      "theme": "demarche",
+      "src": "Conduite p.31",
+      "srcChap": 6
+    },
+    {
+      "q": "Quels sont les axes de la matrice de priorisation des actions selon Besombes ?",
+      "o": [
+        "Coût × Bénéfice",
+        "Importance × Facilité (Maîtrise)",
+        "Urgence × Importance (Eisenhower)",
+        "Probabilité × Impact"
+      ],
+      "c": 1,
+      "e": "La matrice de priorisation Besombes croise IMPORTANCE (ordonnées) et FACILITÉ / MAÎTRISE (abscisses). Elle permet d'identifier les actions à mener en priorité (Importance + Facilité élevées) vs celles à mettre « au parking » (Importance faible).",
+      "theme": "demarche"
+    },
+    {
+      "q": "Selon Besombes, quelle est la répartition typique des comportements face au changement ?",
+      "o": [
+        "50 % proactifs / 50 % opposants",
+        "10-20 % proactifs / 60-80 % passifs / 10-20 % opposants",
+        "1/3 - 1/3 - 1/3",
+        "25 % proactifs / 50 % passifs / 25 % opposants"
+      ],
+      "c": 1,
+      "e": "Besombes décrit 3 catégories : 10-20 % de PROACTIFS (constructifs, à utiliser), 60-80 % de PASSIFS (hésitants, à rassurer), 10-20 % d'OPPOSANTS (destructeurs, à laisser s'isoler).",
+      "theme": "acteurs",
+      "src": "Conduite p.36",
+      "srcChap": 7
+    },
+    {
+      "q": "Quels sont les 3 niveaux d'acteurs sur lesquels s'appuyer pour accompagner le changement selon Besombes ?",
+      "o": [
+        "DG / RH / Communication",
+        "Top Management / Middle Management / Ressources Métiers",
+        "Sponsors / Champions / Utilisateurs",
+        "Direction / Cadres / Employés"
+      ],
+      "c": 1,
+      "e": "Besombes identifie 3 niveaux d'acteurs : ① Le Top Management donne l'impulsion et la légitimité, ② Le Middle Management opérationnel relaie, ③ Les Ressources Métiers internes accompagnent (elles connaissent l'organisation, sont légitimes, et resteront).",
+      "theme": "acteurs",
+      "src": "Conduite p.39",
+      "srcChap": 7
+    },
+    {
+      "q": "Que signifie l'acronyme RACI ?",
+      "o": [
+        "Risque / Action / Contrôle / Indicateur",
+        "Responsable / Acteur / Contribution / Information",
+        "Réalisation / Audit / Conformité / Innovation",
+        "Référent / Adjoint / Coordinateur / Intervenant"
+      ],
+      "c": 1,
+      "e": "RACI = Responsable (1 et un seul par activité) / Acteur (1 à n, réalise) / Contribution (0 à n, expertise sans autorité) / Information (0 à n, informé sans intervention). Outil clé de répartition des rôles dans un projet de changement.",
+      "theme": "pilotage",
+      "src": "Conduite p.40",
+      "srcChap": 8
+    },
+    {
+      "q": "Selon la grille communication × dispositif de Besombes, quel dispositif répond à la question « Suis-je prêt ? »",
+      "o": [
+        "Kits de communication",
+        "Modules de sensibilisation",
+        "Entraînement libre ou encadré",
+        "Modules de formation"
+      ],
+      "c": 2,
+      "e": "La question « Suis-je prêt ? » se traite par un Entraînement libre ou encadré. La grille fait correspondre chaque question des acteurs (Pourquoi changer / Comment ça va se passer / Qu'est-ce qui change pour moi / Vais-je être à la hauteur / Comment vais-je faire / Suis-je prêt / Je ne suis pas prêt / Comment faire encore mieux) à un dispositif spécifique.",
+      "theme": "pilotage",
+      "src": "Conduite p.41",
+      "srcChap": 8
+    },
+    {
+      "q": "Selon Besombes, combien de points clés résument la conduite du changement ?",
+      "o": [
+        "5 points",
+        "7 points",
+        "10 points",
+        "12 points"
+      ],
+      "c": 2,
+      "e": "Besombes synthétise sa démarche en 10 points clés : faire participer les acteurs, rester factuel, être réaliste, communiquer honnêtement, faciliter la coordination, accompagner en tenant compte du « deuil », mesurer les impacts, s'appuyer sur une méthodologie, s'appuyer sur la DG + middle management, s'appuyer sur les ressources métiers.",
+      "theme": "pilotage",
+      "src": "Conduite p.39",
+      "srcChap": 7
+    },
+    {
+      "q": "Selon Besombes, quel est l'ordre de la chaîne des rôles dans une description de poste ?",
+      "o": [
+        "Confié → Tenu → Perçu → Accepté",
+        "Perçu → Confié → Accepté → Tenu",
+        "Confié → Perçu → Accepté → Tenu",
+        "Accepté → Perçu → Tenu → Confié"
+      ],
+      "c": 2,
+      "e": "La chaîne des rôles selon Besombes : Rôle CONFIÉ (par l'organisation) → Rôle PERÇU (par le salarié) → Rôle ACCEPTÉ (par le salarié) → Rôle TENU (effectivement). La description de poste permet de minimiser l'écart d'efficacité entre rôle confié et rôle tenu.",
+      "theme": "competences",
+      "src": "Compétences p.3",
+      "srcChap": 10
+    },
+    {
+      "q": "Selon Besombes, qu'est-ce que la compétence ?",
+      "o": [
+        "L'ensemble des diplômes obtenus",
+        "Une disposition à mobiliser, combiner et mettre en œuvre des ressources (savoir, savoir-faire, savoir-être)",
+        "L'expérience professionnelle accumulée",
+        "Le savoir technique acquis en formation"
+      ],
+      "c": 1,
+      "e": "Définition Besombes : « La compétence est une disposition à mobiliser, à combiner et mettre en œuvre des ressources (savoir, savoir-faire, savoir-être). C'est la combinaison dynamique de différents éléments : savoir théorique, procédures et bonnes pratiques, savoir-faire, expérience non formalisée. »",
+      "theme": "competences",
+      "src": "Compétences p.6",
+      "srcChap": 10
+    },
+    {
+      "q": "Quel est l'objectif de la GPEC selon Besombes ?",
+      "o": [
+        "Maximiser la productivité",
+        "Réduire de façon anticipée les écarts entre besoins et ressources de l'entreprise en effectifs et compétences",
+        "Augmenter les salaires",
+        "Réduire les coûts de main-d'œuvre"
+      ],
+      "c": 1,
+      "e": "La GPEC (Gestion Prévisionnelle des Emplois et des Compétences) vise à réduire, de façon anticipée, les écarts entre les besoins et les ressources de l'entreprise en termes d'effectifs et de compétences en fonction des objectifs identifiés, avec l'implication du salarié dans le cadre d'un projet d'évolution professionnelle.",
+      "theme": "competences",
+      "src": "Compétences p.11",
+      "srcChap": 11
+    },
+    {
+      "q": "L'éthique de performance de Besombes repose sur quel triangle ?",
+      "o": [
+        "Coût / Qualité / Délai",
+        "Actionnaires / Salariés / Clients",
+        "Direction / Encadrement / Production",
+        "Mission / Vision / Valeurs"
+      ],
+      "c": 1,
+      "e": "L'éthique de performance repose sur 3 parties prenantes : ACTIONNAIRES (stratégie, vision), SALARIÉS (création de valeur), CLIENTS (profits). Au centre : la DIRECTION assure l'équilibre permanent et la constance de l'objectif stratégique.",
+      "theme": "competences",
+      "src": "Compétences p.12",
+      "srcChap": 11
+    },
+    {
+      "q": "Selon Besombes, quels sont les 3 piliers de l'organisation qualifiante ?",
+      "o": [
+        "Formation / Évaluation / Promotion",
+        "Enrichissement des tâches / Volonté éducative / Recherche de la compétitivité",
+        "Recrutement / Formation / Fidélisation",
+        "Diagnostic / Action / Mesure"
+      ],
+      "c": 1,
+      "e": "L'organisation qualifiante repose sur : ① Enrichissement des tâches, ② Volonté éducative (développement de l'apprentissage permanent), ③ Recherche de la compétitivité. Elle s'appuie sur un dictionnaire de compétences et une prévision réaliste de l'évolution de l'emploi.",
+      "theme": "competences",
+      "src": "Compétences p.14",
+      "srcChap": 11
+    },
+    {
+      "q": "Selon Besombes, l'évaluation des compétences peut tendre vers 2 finalités. Lesquelles ?",
+      "o": [
+        "Promotion vs licenciement",
+        "Évaluation « sanction » vs évaluation « formative »",
+        "Quantitative vs qualitative",
+        "Hiérarchique vs participative"
+      ],
+      "c": 1,
+      "e": "Besombes distingue : ÉVALUATION « SANCTION » (cible la performance et les résultats, outils : objectifs quantitatifs, plans d'actions, management de la performance) vs ÉVALUATION « FORMATIVE » (cible les compétences et la tenue du poste, outils : orientations développement).",
+      "theme": "competences",
+      "src": "Compétences p.25",
+      "srcChap": 11
+    },
+    {
+      "q": "Combien de types de missionnement Besombes distingue-t-il dans la mise en œuvre d'un système d'appréciation ?",
+      "o": [
+        "2 types",
+        "3 types",
+        "4 types",
+        "5 types"
+      ],
+      "c": 1,
+      "e": "Besombes distingue 3 TYPES DE MISSIONNEMENT : ① Les directives (règle, procédure, plan d'action), ② Les objectifs quantitatifs, ③ Les orientations ou objectifs qualitatifs. Avec en parallèle 3 TYPES D'APPRÉCIATION : contrôle, mesure, appréciation.",
+      "theme": "competences",
+      "src": "Compétences p.27",
+      "srcChap": 11
+    },
+    {
+      "q": "Selon Besombes, sur quoi repose la culture d'entreprise ?",
+      "o": [
+        "Mythes / Rites / Identité / Valeurs / Histoire",
+        "Vision / Mission / Valeurs",
+        "Pouvoir / Droit / Intérêt",
+        "Stratégie / Structure / Système"
+      ],
+      "c": 0,
+      "e": "Selon Besombes, la culture d'entreprise repose sur 5 forces : MYTHES, RITES, IDENTITÉ, VALEURS, HISTOIRE. La mise en œuvre d'un système d'appréciation s'appuyant sur des entretiens individuels fait appel à des notions qui relèvent de cette culture.",
+      "theme": "competences",
+      "src": "Compétences p.30",
+      "srcChap": 11
+    },
+    {
+      "q": "Quelles sont les 5 étapes de constitution d'une équipe selon Besombes ?",
+      "o": [
+        "Initiation / Action / Maturité / Récolte / Fin",
+        "Constitution / Tension / Normalisation / Production / Dissolution",
+        "Plan / Do / Check / Act / Repeat",
+        "Forming / Storming / Norming / Performing / Adjourning"
+      ],
+      "c": 1,
+      "e": "Besombes présente les 5 étapes en français : ① CONSTITUTION (team building), ② TENSION (gestion des conflits), ③ NORMALISATION (négociation), ④ PRODUCTION (motivation), ⑤ DISSOLUTION (valorisation). Sans nommer Tuckman ni utiliser la terminologie anglaise.",
+      "theme": "equipe",
+      "src": "Compétences p.31-32",
+      "srcChap": 12
+    },
+    {
+      "q": "Selon Lewin, qu'est-ce qui caractérise l'essence d'un groupe ?",
+      "o": [
+        "La hiérarchie",
+        "L'interdépendance de chacun de ses membres",
+        "L'autonomie de chacun",
+        "La compétition"
+      ],
+      "c": 1,
+      "e": "« L'essence d'un groupe est l'interdépendance de chacun de ses membres » (Lewin). 3 caractéristiques d'une équipe : objectif commun, interaction psychologique, existence collective.",
+      "theme": "equipe",
+      "src": "Compétences p.33",
+      "srcChap": 12
+    },
+    {
+      "q": "Le continuum de management directif → délégatif comporte combien de niveaux ?",
+      "o": [
+        "3 niveaux",
+        "5 niveaux",
+        "7 niveaux",
+        "10 niveaux"
+      ],
+      "c": 2,
+      "e": "Le continuum présenté par Besombes comporte 7 niveaux entre autorité du responsable et liberté d'action du groupe : Autorité (directif), Information, Explicatif, Consultation, Explicatif (concertation), Négociation, Implicatif (délégation, responsabilisant).",
+      "theme": "equipe",
+      "src": "Compétences p.35",
+      "srcChap": 12
+    },
+    {
+      "q": "Quelles sont les 4 dimensions du modèle de responsabilisation de Besombes ?",
+      "o": [
+        "Cap / Actions / Ressources / Pertinence",
+        "Plan / Do / Check / Act",
+        "Direction / Décision / Délégation / Délivrance",
+        "Objectifs / Moyens / Méthodes / Mesures"
+      ],
+      "c": 0,
+      "e": "Le modèle articule : CAP (destination à atteindre), ACTIONS (comment s'y prendre), RESSOURCES (avec qui et quoi), PERTINENCE (sens, utilité, cohérence). Outil de responsabilisation managériale.",
+      "theme": "equipe",
+      "src": "Compétences p.36",
+      "srcChap": 12
+    },
+    {
+      "q": "Selon Besombes, quelles sont les 4 attentes des managés vis-à-vis de leur manager ?",
+      "o": [
+        "Sympathique / Disponible / Patient / Compréhensif",
+        "Honnête / Compétent / Tourné vers l'avenir / Motivant",
+        "Strict / Juste / Récompensant / Sanctionnant",
+        "Charismatique / Visionnaire / Inspirant / Engagé"
+      ],
+      "c": 1,
+      "e": "Les 4 attentes : ① HONNÊTE (intégrité, confiance), ② COMPÉTENT (technique & managériale), ③ TOURNÉ VERS L'AVENIR (vision), ④ MOTIVANT (dynamisme, implication, responsabilisation).",
+      "theme": "equipe",
+      "src": "Compétences p.37",
+      "srcChap": 12
+    },
+    {
+      "q": "Quel est le triangle du Modèle de Gilbert (1980) ?",
+      "o": [
+        "Coût / Qualité / Délai",
+        "Objectifs / Moyens / Résultats",
+        "Mission / Vision / Valeurs",
+        "Plan / Action / Contrôle"
+      ],
+      "c": 1,
+      "e": "Le Modèle de Gilbert (1980) est un triangle Objectifs / Moyens / Résultats. Les 3 écarts définissent : Efficacité (Objectifs ↔ Résultats), Efficience (Moyens ↔ Résultats), Pertinence (Objectifs ↔ Moyens).",
+      "theme": "equipe",
+      "src": "Compétences p.40",
+      "srcChap": 12
+    }
+  ],
+  "annales": [
+    {
+      "id": "cc_2024_2025",
+      "year": "2024-2025",
+      "name": "Session 1 — Jeudi 12 juin 2025",
+      "duration": "1h00",
+      "format": "Écrit · Aucun document autorisé",
+      "professor": "F. Besombes",
+      "subject": "",
+      "dossiers": [
+        {
+          "label": "Question (20 points)",
+          "context": "",
+          "items": [
+            {
+              "q": "Après avoir rappelé ce qu'est la compétence, la GPEC et la GEPP, vous expliquerez en quoi la compétence est devenue un enjeu clé pour l'avenir des organisations.\n\nPuis, vous expliquerez en quoi une bonne gestion des compétences favorise l'autonomie des personnes dans un contexte de changement.",
+              "correction": "[Meilleure copie — note 17/20 — « Très bon travail »]\n\n─── Définitions et introduction ───\n\nLa compétence est une disposition à combiner, à moduler et à mettre en œuvre des ressources. Elle représente le savoir-faire, les connaissances, l'expérience de chacun. Elle est nécessaire pour tel ou tel métier et doit être en adéquation avec le poste pour que la personne puisse être efficiente.\n\nLa GEPP est la gestion de l'emploi et du parcours professionnel. Elle a été mise en place en 2017 par Macron par le biais d'une ordonnance. Elle concerne toutes les entreprises qui ont plus de 300 salariés. Il s'agit d'une négociation auprès des salariés pour évaluer leurs compétences, voir les évolutions des métiers et l'amélioration des compétences. Cette négociation a lieu tous les trois ans.\n\nDe cette manière, on peut constater que la compétence est un enjeu crucial, obsolète dans la pérennité de l'entreprise. Dans un premier temps, il sera question de voir que la compétence est devenue un enjeu clé pour l'avenir des organisations. Ensuite, il sera pertinent de voir que la bonne gestion des compétences favorise l'autonomie des personnes dans un contexte de changement.\n\n─── I. La compétence : un enjeu clé pour l'avenir des organisations ───\n\nPour commencer, lors du recrutement, l'accent est mis sur l'adéquation des compétences réelles du candidat et les compétences requises pour le métier. Le système d'information est notamment utilisé pour répondre à cette problématique. En effet, de plus en plus d'entreprises utilisent l'IA prédictive pour constater les compétences. C'est le cas avec les ATS (Attending Tracking System) où l'IA sélectionne des CV en priorité par rapport à des compétences prédéfinies. L'IA peut également constater quelles sont les compétences en tension dans tel corps de métier. Un autre outil essentiel qui permet d'identifier les compétences des collaborateurs est le SIRH. Ce système d'information permet d'avoir une visualisation globale sur les salariés, constater leurs compétences, s'il y a un écart entre les compétences requises et réelles. Cela permet également de voir si les collaborateurs ont suivi des formations ou non. Tous ces outils informatiques permettent de constater les compétences et une adéquation de celles-ci avec le métier permet de faire fructifier grandement la performance de l'entreprise. Sans les compétences requises, les collaborateurs ne peuvent pas être efficients.\n\nOn peut également constater que la compétence est devenue un enjeu clé dans l'avenir des organisations dans certaines situations. Plusieurs anticipations doivent être prises en compte dans l'organisation d'une entreprise. La GEPP permet justement de mettre en avant l'anticipation des compétences. Cet élément doit être pris en compte lorsqu'un collaborateur part à la retraite par exemple. Il représente un savoir-faire, des compétences de plusieurs années. Il s'agit encore plus le cas dans les générations qui arrivent actuellement à la retraite car ces personnes sont souvent restées pendant plusieurs décennies dans la même entreprise. Ainsi, lors du recrutement du remplaçant, il faut quelqu'un qui doit avoir un minimum de compétences pour remplacer un collaborateur qui a une expérience très largement reconnue. Une inadéquation des compétences lors du recrutement du remplacement peut conduire à un véritable déséquilibre dans l'organisation de l'entreprise.\n\nUne autre situation à prendre en compte dans l'enjeu qu'est la compétence est l'anticipation de l'évolution des métiers. En effet, il s'agit d'un point abordé dans la GEPP qui est important. On peut donner l'exemple d'une assistante comptable qui doit faire face à l'arrivée de la facturation électronique. Son métier va complètement évoluer et les compétences acquises et réelles seront peut-être obsolètes pour l'évolution de son métier. Il ne sera plus demandé de faire de la saisie comptable mais plutôt vérifier les données transmises par le SI et valider celles-ci. Ainsi de nouvelles compétences seront requises et l'entreprise doit anticiper ces évolutions pour pouvoir mettre en place une nouvelle organisation.\n\n─── II. La gestion des compétences favorise l'autonomie dans un contexte de changement ───\n\nUne bonne gestion des compétences favorise l'autonomie des personnes dans un contexte de changement. En effet, un changement peut être mal perçu par les collaborateurs. Il peut y avoir de la résistance face à ce changement, ce qui complique l'organisation des compétences et le management à employer. En outre, une structure hiérarchique peut aussi être handicapante dans le changement d'organisation et la bonne gestion des compétences. C'est le cas car ce type de structure ne favorise pas la transmission du savoir. S'il n'y a pas de transmission du savoir, il ne peut pas y avoir une bonne gestion des compétences car elles ne circulent pas entre collaborateurs et la performance en est influencée.\n\nDe cette manière, il est possible de s'appuyer sur la théorie de Kotter pour favoriser une bonne gestion des compétences. Selon lui, il est important de définir des objectifs fixes et de permettre des victoires à court terme pour les collaborateurs. Il est également important de tous les faire participer aux différents projets de l'entreprise. En y prenant part, ils peuvent devenir autonomes et mettre en application leurs compétences. Une autre idée de Kotter est celle de la politique de l'urgence. Il faut être réactif dans ses missions. Cette réactivité pousse à l'autonomie.\n\nUn second auteur peut être cité pour montrer comment avoir une bonne gestion des compétences en vue d'une autonomie des collaborateurs. L'auteur en question est Peter Drucker. Ce dernier évoque l'homme comme l'atout stratégique d'une structure. Il faut définir des objectifs clairs et atteignables pour donner une impulsion positive. D'autre part, il faut que les collaborateurs soient dans un apprentissage en continu. Il faut régulièrement former les équipes afin que le savoir-faire augmente et que les compétences requises soient en adéquation avec la réalité. Tous ces éléments permettent une bonne gestion des compétences chez les collaborateurs et cela permet qu'ils deviennent autonomes.\n\n─── Conclusion ───\n\nEn conclusion, la GEPP et la GEPC (gestion des évolutions de compétences professionnelles) mettent en avant l'importance de la compétence. Comme on peut le voir au travers de l'utilisation des systèmes informatiques, il s'agit d'un élément que l'on ne peut pas négliger. Il faut que les compétences requises soient en adéquation avec les compétences réelles. Il en va de même lorsque les métiers évoluent ou qu'un collaborateur part à la retraite. Dans le cas contraire, il y a une désorganisation stratégique qui apparaît dans la structure. Afin d'assurer une bonne gestion des compétences au sein des collaborateurs, il est possible de s'appuyer sur les théories de Kotter et Drucker. Le contexte de changement peut effectivement révéler quelques difficultés qui peuvent être palliées par un bon management."
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "Définir précisément les 3 termes en intro (compétence, GPEC, GEPP) : la GPEC a été remplacée par la GEPP en 2017 (ordonnance Macron) — bien marquer cette distinction.",
+        "Mobiliser des outils SI concrets : ATS, SIRH, IA prédictive — ça montre une vision moderne et opérationnelle.",
+        "Donner un exemple de métier en mutation (assistant comptable + facturation électronique) pour illustrer l'anticipation des compétences.",
+        "Sur la 2e partie : mobiliser Kotter (8 étapes, victoires à court terme, sentiment d'urgence) et Drucker (homme = atout stratégique, objectifs SMART, apprentissage continu).",
+        "Conclure en reliant les 2 parties : pas de bonne gestion du changement sans bonne gestion des compétences."
+      ]
+    },
+    {
+      "id": "cc-gepp-case",
+      "year": "Étude de cas",
+      "name": "Étude de cas — Travail et GEPP",
+      "format": "Étude de cas pratique",
+      "subject": "Cas pratique sur la mise en œuvre d'un projet GEPP dans une entreprise en transformation (numérique). Identifier les acteurs, les étapes, les outils.",
+      "tips": [
+        "Méthode : 1) Analyse du contexte (mutations économiques, technologiques, sociales) — 2) Cartographie des compétences actuelles vs cibles — 3) Plan d'action (formation, mobilité, recrutement) — 4) Pilotage avec indicateurs.",
+        "Acteurs clés : Direction, DRH, managers, IRP, salariés. Dialogue social = accord triennal GEPP.",
+        "Outils : SIRH, référentiel, bilans de compétences, entretiens professionnels, plan de développement."
+      ]
+    }
+  ],
+  "themes": [
+    {
+      "id": "processus_chgt",
+      "icon": "🔄",
+      "label": "Processus du changement (Le Chatelier, Lewin, Kotter, Kübler-Ross)"
+    },
+    {
+      "id": "demarche",
+      "icon": "📋",
+      "label": "Démarche en 8 étapes Besombes"
+    },
+    {
+      "id": "acteurs",
+      "icon": "👥",
+      "label": "Acteurs face au changement"
+    },
+    {
+      "id": "pilotage",
+      "icon": "🧭",
+      "label": "Outils & pilotage (RACI, matrices)"
+    },
+    {
+      "id": "competences",
+      "icon": "🎯",
+      "label": "Gestion des compétences"
+    },
+    {
+      "id": "equipe",
+      "icon": "🤝",
+      "label": "Équipe & management agile"
+    }
+  ]
+};
+
+let DATA = null;
+
+function escAnnale(s) {
+  return String(s == null ? '' : s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+}
+function toggleAnnaleCorrection(id, btn) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const isHidden = el.style.display === 'none' || !el.style.display;
+  el.style.display = isHidden ? 'block' : 'none';
+  btn.textContent = isHidden ? '▾ Masquer la correction' : '▸ Afficher la correction';
+  btn.classList.toggle('open', isHidden);
+}
+function expandAllAnnales(scope) {
+  document.querySelectorAll(scope + ' .annale-correction').forEach(el => { el.style.display = 'block'; });
+  document.querySelectorAll(scope + ' .annale-show-corr').forEach(btn => { btn.textContent = '▾ Masquer la correction'; btn.classList.add('open'); });
+}
+function collapseAllAnnales(scope) {
+  document.querySelectorAll(scope + ' .annale-correction').forEach(el => { el.style.display = 'none'; });
+  document.querySelectorAll(scope + ' .annale-show-corr').forEach(btn => { btn.textContent = '▸ Afficher la correction'; btn.classList.remove('open'); });
+}
+
+function switchAnnale(idx, btn) {
+  document.querySelectorAll('.annale-body-wrap').forEach(el => {
+    el.style.display = parseInt(el.dataset.annaleIdx, 10) === idx ? '' : 'none';
+  });
+  document.querySelectorAll('.annale-tab').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  // Collapse toutes les corrections de l'annale qu'on quitte pour repartir propre
+  document.querySelectorAll('.annale-correction').forEach(el => { el.style.display = 'none'; });
+  document.querySelectorAll('.annale-show-corr').forEach(b => { b.textContent = '▸ Afficher la correction'; b.classList.remove('open'); });
+}
+
+function getAnnalesHTML() {
+  const list = (DATA.annales || []);
+  if (!list.length) return `<div class="annales-empty"><p>Aucune annale disponible pour ce cours.</p></div>`;
+  const renderOne = (a, aIdx) => {
+    const meta = [a.duration ? `⏱ ${a.duration}` : '', a.format || '', a.professor ? `👤 ${a.professor}` : '']
+      .filter(Boolean).join(' · ');
+    const head = `
+      <div class="annale-head">
+        <div class="annale-head-row">
+          <div class="annale-year">${escAnnale(a.year || '')}</div>
+          <div class="annale-title">${escAnnale(a.name || 'Annale')}</div>
+        </div>
+        ${meta ? `<div class="annale-meta">${escAnnale(meta)}</div>` : ''}
+      </div>`;
+    const tipsHTML = (a.tips||[]).length ? `
+      <div class="annale-tips">
+        <div class="annale-block-title">💡 Conseils méthodologiques</div>
+        <ul>${a.tips.map(t => `<li>${escAnnale(t)}</li>`).join('')}</ul>
+      </div>` : '';
+
+    // ── NOUVEAU SCHÉMA : dossiers[].items[{q,correction}] avec bouton par sous-question ──
+    if (Array.isArray(a.dossiers) && a.dossiers.length) {
+      const cardId = `annale-card-${aIdx}`;
+      const dossiersHTML = a.dossiers.map((ds, dIdx) => {
+        const itemsHTML = (ds.items || []).map((it, iIdx) => {
+          const corrId = `corr-${aIdx}-${dIdx}-${iIdx}`;
+          return `
+          <div class="annale-question">
+            <div class="annale-q-text">${escAnnale(it.q || '')}</div>
+            ${it.correction ? `
+              <button class="annale-show-corr" type="button" onclick="toggleAnnaleCorrection('${corrId}', this)">▸ Afficher la correction</button>
+              <div class="annale-correction" id="${corrId}" style="display:none">${escAnnale(it.correction)}</div>
+            ` : ''}
+          </div>`;
+        }).join('');
+        return `
+        <div class="annale-dossier">
+          <div class="annale-dossier-label">${escAnnale(ds.label || '')}</div>
+          ${ds.context ? `<div class="annale-dossier-context">${escAnnale(ds.context)}</div>` : ''}
+          <div class="annale-dossier-items">${itemsHTML}</div>
+        </div>`;
+      }).join('');
+      const subjectHTML = a.subject ? `
+        <div class="annale-subject">
+          <div class="annale-block-title">📋 Énoncé général</div>
+          <div class="annale-subject-content">${escAnnale(a.subject)}</div>
+        </div>` : '';
+      return `
+      <div class="annale-card" id="${cardId}">
+        ${head}
+        <div class="annale-toolbar">
+          <button class="annale-toolbar-btn" type="button" onclick="expandAllAnnales('#${cardId}')">▾ Tout afficher</button>
+          <button class="annale-toolbar-btn" type="button" onclick="collapseAllAnnales('#${cardId}')">▸ Tout masquer</button>
+        </div>
+        ${subjectHTML}
+        <div class="annale-dossiers">${dossiersHTML}</div>
+        ${tipsHTML}
+      </div>`;
+    }
+
+    // ── ANCIEN SCHÉMA (fallback pour annales non encore migrées) ──
+    const exHTML = (a.exercises || []).map(e => `
+      <div class="annale-exercise">
+        <div class="annale-exercise-label">${escAnnale(e.label)}</div>
+        <div class="annale-exercise-content">${escAnnale(e.content||'').replace(/\n/g,'<br>')}</div>
+      </div>
+    `).join('');
+    const bc = a.bestCopy;
+    let bestCopyHTML = '';
+    if (bc) {
+      const planHTML = (bc.plan||[]).map(line => {
+        const t = (line||'').trim();
+        if (!t) return '<div class="annale-plan-spacer"></div>';
+        if (/^(I+\.|[0-9]+\.|Introduction|Conclusion|Exercice|Q[0-9]+|•)/.test(t)) {
+          return `<div class="annale-plan-line annale-plan-main">${escAnnale(t)}</div>`;
+        }
+        return `<div class="annale-plan-line">${escAnnale(t)}</div>`;
+      }).join('');
+      const conceptsHTML = (bc.keyConcepts||[]).map(c => `<span class="annale-concept">${escAnnale(c)}</span>`).join('');
+      const qcmHTML = (bc.qcmAnswers||[]).length
+        ? `<div class="annale-block annale-qcm"><div class="annale-block-title">QCM — réponses correctes</div>${bc.qcmAnswers.map(q=>`<div class="annale-qcm-line">${escAnnale(q)}</div>`).join('')}</div>`
+        : '';
+      bestCopyHTML = `
+      <div class="annale-bestcopy">
+        <div class="annale-bestcopy-head">
+          <span class="annale-grade">📝 Note : ${escAnnale(bc.grade)}</span>
+          ${bc.subjectChosen ? `<span class="annale-chosen">Sujet traité : ${escAnnale(bc.subjectChosen)}</span>` : ''}
+        </div>
+        ${qcmHTML}
+        <div class="annale-block">
+          <div class="annale-block-title">Plan-type / structure de la copie</div>
+          <div class="annale-plan">${planHTML}</div>
+        </div>
+        ${(bc.keyConcepts||[]).length ? `
+        <div class="annale-block">
+          <div class="annale-block-title">Mots-clés &amp; concepts mobilisés</div>
+          <div class="annale-concepts">${conceptsHTML}</div>
+        </div>` : ''}
+        ${bc.correctorNotes ? `<div class="annale-corrector"><strong>Annotations du correcteur :</strong> ${escAnnale(bc.correctorNotes)}</div>` : ''}
+      </div>`;
+    }
+    let corrigeHTML = '';
+    if (a.corrige && a.corrige.available) {
+      const hl = (a.corrige.highlights||[]).map(h => `<li>${escAnnale(h)}</li>`).join('');
+      corrigeHTML = `
+      <div class="annale-corrige">
+        <div class="annale-block-title">Corrigé officiel — points clés</div>
+        ${a.corrige.summary ? `<p class="annale-corrige-summary">${escAnnale(a.corrige.summary)}</p>` : ''}
+        <ul>${hl}</ul>
+      </div>`;
+    }
+    return `
+    <div class="annale-card">
+      ${head}
+      <div class="annale-subject">
+        <div class="annale-block-title">📋 Sujet</div>
+        <div class="annale-subject-content">${escAnnale(a.subject||'').replace(/\n/g,'<br>')}</div>
+      </div>
+      ${exHTML ? `<div class="annale-exercises">${exHTML}</div>` : ''}
+      ${bestCopyHTML}
+      ${corrigeHTML}
+      ${tipsHTML}
+    </div>`;
+  };
+  if (list.length === 1) return renderOne(list[0], 0);
+  // Multi-annales : onglets en haut + un seul corps visible à la fois
+  const tabsHTML = list.map((a, i) => `
+    <button class="annale-tab${i === 0 ? ' active' : ''}" type="button" onclick="switchAnnale(${i}, this)">
+      <span class="annale-tab-year">${escAnnale(a.year || '')}</span>
+      ${a.name ? `<span class="annale-tab-name">${escAnnale(a.name)}</span>` : ''}
+    </button>`).join('');
+  return `
+    <div class="annales-tabs">${tabsHTML}</div>
+    <div class="annales-bodies">
+      ${list.map((a, i) => `<div class="annale-body-wrap" data-annale-idx="${i}" style="${i === 0 ? '' : 'display:none'}">${renderOne(a, i)}</div>`).join('')}
+    </div>`;
+}
+
+function getCoursHTML() {
+  return `
+
+<div class="course-chapter" data-theme="processus_chgt" data-chap-idx="1" id="chap-1">
+  <h2>1. Les processus du changement — la Loi de Le Chatelier</h2>
+  <div class="def-box">
+    <div class="def-label">Loi de Le Chatelier (analogie fondatrice)</div>
+    <p>« <strong>Toute modification apportée à l'équilibre d'un système entraîne au sein de celui-ci l'apparition de phénomènes qui tendent à s'opposer à cette modification et à en annuler les effets.</strong> »</p>
+    <p>Cette loi physique sert d'analogie pour comprendre la résistance naturelle des organisations face au changement.</p>
+  </div>
+  <h3>Conséquence pratique pour conduire un changement</h3>
+  <div class="key-box">
+    Pour réussir un changement, il faut modifier cet équilibre <strong>dans un sens délibéré</strong>. Deux propositions se présentent :
+    <ul>
+      <li><strong>Augmenter les pressions</strong> dans le sens du changement</li>
+      <li><strong>Diminuer les résistances</strong> envers ce même changement</li>
+    </ul>
+    <p style="margin-top:0.6rem"><strong>La bonne pratique : associer les deux.</strong></p>
+  </div>
+</div>
+
+<div class="course-chapter" data-theme="processus_chgt" data-chap-idx="2" id="chap-2">
+  <h2>2. Les processus de changement selon Kurt Lewin</h2>
+  <div class="def-box">
+    <div class="def-label">Modèle de Lewin — 3 phases</div>
+    <p>Kurt Lewin a modélisé le changement organisationnel en <strong>3 phases successives</strong> :</p>
+  </div>
+  <table class="comp-table">
+    <thead><tr><th>Phase</th><th>Contenu</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>① Décristallisation</strong></td>
+        <td>Préparation au changement. <strong>Remise en cause du fonctionnement actuel</strong>.</td>
+      </tr>
+      <tr>
+        <td><strong>② Changement</strong></td>
+        <td>Changement en tant que tel : <strong>modifications des tâches, de la structure, des techniques et du comportement des individus</strong>.</td>
+      </tr>
+      <tr>
+        <td><strong>③ Cristallisation</strong></td>
+        <td><strong>Renforcement positif des résultats souhaités</strong> : évaluation des résultats et suivi.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="course-chapter" data-theme="processus_chgt" data-chap-idx="3" id="chap-3">
+  <h2>3. Autres modèles évoqués — Kotter & Kübler-Ross</h2>
+  <div class="key-box">
+    <strong>⚠️ Note méthodologique</strong> — Le support du prof mentionne ces 2 modèles sans les détailler. Ils sont indiqués comme références à connaître. La présentation suivante reste donc volontairement synthétique.
+  </div>
+
+  <h3>Modèle de Kotter</h3>
+  <div class="def-box">
+    <p>Le <strong>modèle de Kotter</strong> est mentionné comme référence en conduite du changement. Le support de Besombes l'évoque par son titre, sans détailler les 8 étapes classiquement associées à ce modèle. C'est un modèle à mobiliser lors d'une question d'examen sur les démarches structurées.</p>
+  </div>
+
+  <h3>Modèle de Kübler-Ross — la courbe du changement</h3>
+  <div class="def-box">
+    <p>Le <strong>modèle de Kübler-Ross</strong>, présenté via la « courbe du changement » (schéma Philippe Moret), permet de comprendre les <strong>réactions émotionnelles des acteurs</strong> face au changement.</p>
+    <p>Comme pour Kotter, le support ne détaille pas les phases ; il indique la courbe comme outil de lecture des processus d'adhésion / de deuil organisationnels.</p>
+  </div>
+</div>
+
+<div class="course-chapter" data-theme="processus_chgt" data-chap-idx="4" id="chap-4">
+  <h2>4. Facteurs psychosociologiques, résistances et stratégies</h2>
+
+  <h3>Les 3 facteurs psychosociologiques du changement</h3>
+  <div class="key-box">
+    <ol>
+      <li>La <strong>découverte chez autrui d'attitudes sociales différentes</strong> des nôtres</li>
+      <li>La <strong>découverte de l'image de soi vue par les autres</strong>, bien différente de ce que nous pensions être</li>
+      <li>La <strong>découverte d'un nouveau sens à un mot</strong>, nous qui prenions notre sens pour la vérité absolue</li>
+    </ol>
+  </div>
+
+  <h3>Les 7 résistances au changement</h3>
+  <div class="key-box">
+    <ol>
+      <li><strong>Manque d'informations</strong> des collaborateurs</li>
+      <li><strong>Peur de l'inconnu</strong></li>
+      <li><strong>Besoin de sécurité</strong></li>
+      <li><strong>Besoin de changement inexistant</strong></li>
+      <li><strong>Peur de perdre des acquis</strong></li>
+      <li><strong>Moment mal choisi</strong></li>
+      <li><strong>Manque de ressources</strong></li>
+    </ol>
+  </div>
+
+  <h3>Lutter contre les résistances — 4 leviers</h3>
+  <table class="comp-table">
+    <thead><tr><th>Levier</th><th>Pratique</th></tr></thead>
+    <tbody>
+      <tr><td><strong>① Communiquer</strong></td><td>Éliminer les craintes liées à l'incertitude · informer suffisamment et expliquer clairement le but visé</td></tr>
+      <tr><td><strong>② Faire participer</strong></td><td>Créer un sentiment d'engagement · impliquer de la planification à la réalisation</td></tr>
+      <tr><td><strong>③ Soutenir</strong></td><td>Assurer la confiance et la crédibilité · consacrer plus de temps aux collaborateurs en difficulté</td></tr>
+      <tr><td><strong>④ Négocier</strong></td><td>Éliminer les conflits avec des buts personnels (challenge personnel) · harmoniser les buts et objectifs (cohérence d'ensemble)</td></tr>
+    </tbody>
+  </table>
+
+  <h3>3 stratégies utiles selon le contexte</h3>
+  <table class="comp-table">
+    <thead><tr><th>Stratégie</th><th>Mécanisme</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>La coercition</strong></td>
+        <td>Réactions par <strong>peur des sanctions</strong> ou par <strong>attrait des récompenses</strong>. Adopter de nouvelles attitudes en s'appuyant sur l'autorité que confère le poste.</td>
+      </tr>
+      <tr>
+        <td><strong>La persuasion rationnelle</strong></td>
+        <td>Individus essentiellement rationnels — leurs actes s'appuient sur la logique. Fait appel au <strong>pouvoir lié à la compétence</strong> pour convaincre.</td>
+      </tr>
+      <tr>
+        <td><strong>Le partage de pouvoir</strong></td>
+        <td>La <strong>responsabilisation</strong> comme facteur de motivation. Implication des personnes dans le processus de changement.</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="example-box">
+    <strong>Limites de la dynamique de groupe</strong> — Chacune des solutions est au gré des dirigeants ; chacune ayant ses avantages et inconvénients selon le moment. C'est <strong>une question de discernement et de philosophie de gestion</strong>. Attention : <em>désir de participer à condition de ne pas perdre d'autonomie</em>.
+  </div>
+</div>
+
+<div class="course-chapter" data-theme="demarche" data-chap-idx="5" id="chap-5">
+  <h2>5. L'univers du changement et la démarche en 8 étapes (Besombes)</h2>
+
+  <h3>L'univers du changement — 4 dimensions</h3>
+  <div class="def-box">
+    Le <strong>management du changement</strong> s'inscrit dans 4 dimensions interconnectées :
+    <ul>
+      <li><strong>Stratégie</strong></li>
+      <li><strong>Méthodes et activités</strong></li>
+      <li><strong>Collaborateurs</strong></li>
+      <li><strong>Partenaires externes</strong></li>
+    </ul>
+  </div>
+
+  <h3>La démarche Besombes — 8 étapes</h3>
+  <table class="comp-table">
+    <thead><tr><th>Étape</th><th>Action</th><th>Détail</th></tr></thead>
+    <tbody>
+      <tr><td><strong>① Amorcer</strong></td><td>Définir une stratégie / politique</td><td>Analyser facteurs internes (organisation actuelle, compétences disponibles) et externes (demande clients, prospective, autres acteurs)</td></tr>
+      <tr><td><strong>② Analyser l'existant</strong></td><td>Diagnostic</td><td>Identification forces/faiblesses · cartographie relations services/individus · prise en compte mode classement information · résultats qualitatifs détenus</td></tr>
+      <tr><td><strong>③ Définir le nouveau cadre</strong></td><td>Innover, objectifs opérationnels</td><td>Documentation centralisée · carte des compétences · fiches prestations · programme de formation · stratégie de communication · outils de pilotage</td></tr>
+      <tr><td><strong>④ Mobiliser</strong></td><td>Mobiliser les acteurs</td><td>Sensibilisation collective + individuelle · s'assurer de la compréhension · former aux nouvelles méthodes · définir règles du jeu, modalités d'évaluation, méthodes de soutien</td></tr>
+      <tr><td><strong>⑤ Élaborer les plans d'actions</strong></td><td>Hiérarchiser, planifier</td><td>Hiérarchiser les actions · définir le calendrier · nommer les responsables · répartir les équipes · définir temps d'échanges et indicateurs de pilotage</td></tr>
+      <tr><td><strong>⑥ Mise en œuvre</strong></td><td>Déployer</td><td>S'assurer du bon déroulement · rester vigilant et en appui des équipes · contrôler dérives · respecter délais</td></tr>
+      <tr><td><strong>⑦ Mesurer et évaluer</strong></td><td>Mesurer résultats</td><td>Mesurer les résultats · constater écarts positifs/négatifs · corriger · informer collaborateurs · motiver</td></tr>
+      <tr><td><strong>⑧ S'améliorer</strong></td><td>Boucler la démarche</td><td>Associer l'équipe à la réflexion · fixer nouveaux objectifs · responsabiliser · envisager nouvelles actions</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Qui fait quoi ? — gouvernance projet</h3>
+  <div class="key-box">
+    <ul>
+      <li><strong>Direction</strong> : Projet stratégique</li>
+      <li><strong>Comité de pilotage projet</strong> : Gestion participative</li>
+      <li><strong>Groupes de travail</strong> : exécution opérationnelle (4 groupes typiques)</li>
+    </ul>
+  </div>
+
+  <h3>Quel temps ?</h3>
+  <div class="example-box">
+    Pour réaliser ce parcours de l'étape 1 à l'étape 7 il faut envisager une période de <strong>2 ans en moyenne — ni trop, ni trop peu</strong>.
+  </div>
+
+  <h3>Outils nécessaires</h3>
+  <div class="key-box">
+    <ul>
+      <li>Base expert d'informations qualifiées</li>
+      <li>Fiches produits</li>
+      <li>Outils de communication</li>
+      <li>Référentiels de formation</li>
+      <li>Cartographie</li>
+      <li>Outils d'aide à la décision (observatoire, fichier qualifié)</li>
+    </ul>
+  </div>
+</div>
+
+<div class="course-chapter" data-theme="demarche" data-chap-idx="6" id="chap-6">
+  <h2>6. La vocation de la conduite du changement — 3 grandes étapes</h2>
+  <div class="def-box">
+    <div class="def-label">Chaîne de valeur de la conduite du changement (Besombes)</div>
+    <p>De la <strong>Problématique</strong> au <strong>Changement</strong> en passant par 3 étapes structurantes :</p>
+    <ul>
+      <li><strong>Garantir la bonne compréhension</strong> et la pertinence de la problématique → Écoute · Propositions · Échanges</li>
+      <li><strong>Fédérer les parties prenantes</strong> autour d'un périmètre commun → Mobilisation · Priorisation · Structuration · Alignement</li>
+      <li><strong>Faciliter la mise en œuvre</strong> du changement → Coordination · Communication · Accompagnement</li>
+    </ul>
+  </div>
+
+  <h3>Étape 1 — Écouter et comprendre</h3>
+  <div class="key-box">
+    <ul>
+      <li>Écouter <strong>ceux qui ont formulé la problématique</strong>, mais aussi ceux qui peuvent y être confrontés</li>
+      <li>Plutôt <strong>en face à face et individuellement</strong></li>
+      <li>Pour <strong>comprendre la problématique</strong>, mesurer les <strong>écarts d'angles de vue</strong> et de motivation</li>
+      <li>Évaluer la <strong>hauteur de la marche à franchir</strong></li>
+      <li>Capter (sans censurer) les idées, propositions, suggestions</li>
+      <li>Instaurer un <strong>dialogue et une relation de confiance</strong></li>
+      <li>Identifier les parties prenantes (managers, sachants, « clients » du changement, contributeurs transverses)</li>
+      <li>Formaliser une <strong>synthèse</strong> et la partager avec les décideurs</li>
+    </ul>
+  </div>
+
+  <h3>Étape 2 — Fédérer autour d'un périmètre commun</h3>
+  <div class="key-box">
+    <ul>
+      <li>Mobiliser les parties prenantes (panel représentatif et légitime)</li>
+      <li><strong>Qualifier les solutions</strong> envisageables</li>
+      <li>Définir ensemble des <strong>critères de priorisation</strong></li>
+      <li>Sélectionner les solutions à mettre en place</li>
+      <li>Identifier celles qui pourraient faire l'objet d'un <strong>« Lot 2 »</strong></li>
+      <li>Valider ensemble un <strong>plan d'action commun</strong> (« comment passer de la lettre au Père Noël à un projet collectif »)</li>
+    </ul>
+  </div>
+
+  <h4>Comment qualifier les solutions — grille à 4 cases</h4>
+  <table class="comp-table">
+    <thead><tr><th></th><th>Favorable</th><th>Défavorable</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Résultats</strong></td>
+        <td><strong>Gains attendus</strong> : gain de temps, productivité, niveau de service, qualité, fiabilité</td>
+        <td><strong>Contraintes</strong> : éléments externes sur lesquels on a peu d'emprise mais qui impactent</td>
+      </tr>
+      <tr>
+        <td><strong>Conditions</strong></td>
+        <td><strong>Points d'appui</strong> : éléments favorables à utiliser au maximum (sponsor de poids, effet de levier)</td>
+        <td><strong>Freins</strong> : éléments qui s'opposent à l'atteinte du résultat (mais sur lesquels on peut agir)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Prioriser les pistes — matrice Importance × Facilité</h4>
+  <div class="key-box">
+    Représentation graphique avec en abscisses la <strong>Facilité / Maîtrise</strong> et en ordonnées l'<strong>Importance</strong>. Permet d'identifier les actions à mener en priorité (Importance élevée + Facilité élevée) vs à mettre « au parking » (Importance faible).
+  </div>
+
+  <h3>Étape 3 — Faciliter la mise en œuvre</h3>
+  <div class="key-box">
+    <ul>
+      <li>Construire la <strong>structure qui permettra de piloter</strong> et coordonner les actions</li>
+      <li>Constitution d'une équipe de <strong>correspondants métiers</strong></li>
+      <li>Répartition des rôles + cellule de coordination</li>
+      <li>Initialisation d'un <strong>plan de communication</strong></li>
+      <li>Indicateurs de pilotage</li>
+      <li>Validation par les décideurs (structure et ressources)</li>
+      <li>Communiquer rapidement pour : expliquer et vendre la cible, donner du sens, rassurer, informer sur la suite</li>
+    </ul>
+  </div>
+</div>
+
+<div class="course-chapter" data-theme="acteurs" data-chap-idx="7" id="chap-7">
+  <h2>7. Les acteurs face au changement</h2>
+
+  <h3>3 types de comportements face au changement</h3>
+  <table class="comp-table">
+    <thead><tr><th>Catégorie</th><th>%</th><th>Profil</th><th>Action recommandée</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Les PROACTIFS (constructifs)</strong></td>
+        <td>10 à 20 %</td>
+        <td>Favorables au changement, se positionnent comme <strong>prescripteurs</strong></td>
+        <td><strong>Les utiliser</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Les PASSIFS (hésitants)</strong></td>
+        <td>60 à 80 %</td>
+        <td>En attente de résultats probants, veulent <strong>être sécurisés</strong></td>
+        <td><strong>Les rassurer</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Les OPPOSANTS (destructeurs)</strong></td>
+        <td>10 à 20 %</td>
+        <td>Opposés aux projets, avancent systématiquement des <strong>arguments « contre »</strong></td>
+        <td><strong>Les laisser s'isoler</strong> pour mieux les raccrocher</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>3 niveaux d'acteurs pour accompagner le changement</h3>
+  <div class="key-box">
+    <strong>① S'appuyer sur le Top Management</strong> pour donner l'<strong>impulsion et la légitimité</strong> :
+    <ul>
+      <li>Montrer à tous que le projet est moteur pour l'organisation</li>
+      <li>Prendre les décisions importantes et les communiquer</li>
+      <li>… ce qui suppose que le Top Management est <strong>impliqué et motivé</strong></li>
+    </ul>
+  </div>
+  <div class="key-box">
+    <strong>② Puis sur le Middle Management opérationnel</strong> pour <strong>relayer</strong> :
+    <ul>
+      <li>S'impliquer dans les actions de communication</li>
+      <li>Intégrer les changements dans le management au quotidien</li>
+      <li>Contribuer à l'accompagnement post-déploiement</li>
+      <li>… ce qui suppose que le Management de proximité bénéficie d'un <strong>temps d'avance</strong></li>
+    </ul>
+  </div>
+  <div class="key-box">
+    <strong>③ Miser sur des Ressources Métiers</strong> pour accompagner le changement :
+    <ul>
+      <li>Ils <strong>connaissent l'organisation</strong></li>
+      <li>Ils sont <strong>légitimes</strong></li>
+      <li>Ils <strong>resteront</strong></li>
+      <li>… ce qui suppose de les mobiliser et de les animer le plus en amont possible, puis de les accompagner dans ce rôle</li>
+    </ul>
+  </div>
+</div>
+
+<div class="course-chapter" data-theme="pilotage" data-chap-idx="8" id="chap-8">
+  <h2>8. Outils opérationnels : RACI, matrices et grille communication</h2>
+
+  <h3>La méthode RACI</h3>
+  <div class="def-box">
+    <div class="def-label">RACI — 4 rôles par activité</div>
+    <ul>
+      <li><strong>R : Responsable (1 et un seul par activité)</strong> — Donne son approbation, et assume la responsabilité globale de l'activité et ses conséquences</li>
+      <li><strong>A : Acteur (1 à n par étape)</strong> — Réalise les activités</li>
+      <li><strong>C : Contribution (0 à n par étape)</strong> — Dispose d'une information / d'une expertise pour la réalisation de l'activité, mais n'a pas d'autorité sur celle-ci (c'est R qui décide)</li>
+      <li><strong>I : Information (0 à n par étape)</strong> — Informé de l'activité, sans avoir d'intervention dans sa réalisation (est généralement indirectement impacté)</li>
+    </ul>
+  </div>
+
+  <h3>Identifier les impacts organisationnels</h3>
+  <div class="key-box">
+    <ol>
+      <li>Identifier les impacts <strong>par processus / sous-processus</strong></li>
+      <li>Identifier les <strong>scénarios</strong> et formuler une recommandation, puis faire arbitrer</li>
+      <li><strong>Formaliser le RACI</strong> par processus</li>
+    </ol>
+  </div>
+
+  <h3>Grille communication × dispositif (suivre les questions des acteurs)</h3>
+  <table class="comp-table">
+    <thead><tr><th>Question posée par l'acteur</th><th>Dispositif à mettre en œuvre</th></tr></thead>
+    <tbody>
+      <tr><td><strong>« Pourquoi changer ? »</strong></td><td>Communication projet · Kits de communication</td></tr>
+      <tr><td><strong>« Comment ça va se passer ? »</strong></td><td>Information ciblée par métier, domaine, fonction, rôle</td></tr>
+      <tr><td><strong>« Qu'est-ce qui change pour moi ? »</strong></td><td>Modules de sensibilisation</td></tr>
+      <tr><td><strong>« Vais-je être à la hauteur ? »</strong></td><td>Formation aux nouveautés (outils, processus, comportements)</td></tr>
+      <tr><td><strong>« Comment vais-je faire ? »</strong></td><td>Modules de formation</td></tr>
+      <tr><td><strong>« Suis-je prêt ? »</strong></td><td>Entraînement libre ou encadré</td></tr>
+      <tr><td><strong>« Je ne suis pas prêt ! »</strong></td><td>Assistance de proximité</td></tr>
+      <tr><td><strong>« Comment faire encore mieux ? »</strong></td><td>Assistance à distance + Management au quotidien</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Piloter le changement — préalable</h3>
+  <div class="key-box">
+    Constituer une <strong>instance décisionnaire dédiée à l'accompagnement du changement</strong> qui couvre :
+    <ul>
+      <li>Cohérence avec les orientations stratégiques</li>
+      <li>Indicateurs à suivre</li>
+      <li>Ressources nécessaires, relais terrain</li>
+      <li>Tactique de déploiement</li>
+      <li>Coordination équipe projet</li>
+      <li>Planification, suivi du plan d'action</li>
+      <li>Déploiement des actions de communication clés</li>
+      <li>Alertes et risques</li>
+    </ul>
+  </div>
+
+  <h3>Matrice de décision &amp; Matrice d'impact</h3>
+  <div class="example-box">
+    Le support s'appuie sur 2 outils visuels : la <strong>matrice de décision (vote pour décider)</strong> et la <strong>matrice d'impact</strong>, utilisées pour arbitrer entre options et qualifier les conséquences organisationnelles.
+  </div>
+</div>
+
+<div class="course-chapter" data-theme="pilotage" data-chap-idx="9" id="chap-9">
+  <h2>9. Les 10 points clés de la conduite du changement (Besombes)</h2>
+  <div class="key-box">
+    <ol>
+      <li><strong>Faire participer les acteurs clés</strong> — savoir les identifier, puis les mobiliser</li>
+      <li><strong>Rester factuel</strong> — écouter, comprendre, restituer, donner les moyens de qualifier et prioriser</li>
+      <li><strong>Être réaliste</strong> — tenir compte de la capacité de changement du terrain, voire de son envie de changement</li>
+      <li><strong>Communiquer « honnête » et « utile »</strong> — sans noyer sous un flot d'information</li>
+      <li><strong>Faciliter la coordination des projets</strong> — afin de contribuer à la stratégie</li>
+      <li><strong>Accompagner le changement</strong> — en tenant compte du processus de « deuil » des collaborateurs</li>
+      <li><strong>Mesurer les impacts</strong> d'un projet et l'ampleur du changement — avant de décider « quoi communiquer » ou « qui sensibiliser et former à quoi »</li>
+      <li><strong>S'appuyer sur une méthodologie structurée et rassurante</strong> pour garantir l'appropriation des changements</li>
+      <li><strong>S'appuyer sur la Direction Générale</strong> pour donner l'impulsion et la légitimité, puis sur le middle management opérationnel pour relayer</li>
+      <li><strong>S'appuyer sur des ressources métiers internes</strong> pour accompagner le changement — et les « chouchouter »</li>
+    </ol>
+  </div>
+  <div class="def-box" style="text-align:center; margin-top:1.5rem;">
+    <p style="font-style:italic;">« La conduite du changement repose moins sur une méthode magique que sur une <strong>discipline d'écoute, de coordination et d'accompagnement</strong>, articulée autour d'une démarche structurée et de quelques outils robustes. »</p>
+  </div>
+</div>
+
+<div class="course-chapter" data-theme="competences" data-chap-idx="10" id="chap-10">
+  <h2>10. La gestion des compétences — fondamentaux Besombes</h2>
+
+  <h3>De la description de poste à la performance — chaîne des rôles</h3>
+  <div class="def-box">
+    <div class="def-label">Traitement et exploitation des descriptions de poste</div>
+    <p>4 rôles successifs définissent la performance organisationnelle :</p>
+    <ul>
+      <li><strong>Rôle confié</strong> (par l'organisation)</li>
+      <li><strong>Rôle perçu</strong> (par le salarié)</li>
+      <li><strong>Rôle accepté</strong> (par le salarié)</li>
+      <li><strong>Rôle tenu</strong> (effectivement)</li>
+    </ul>
+    <p style="margin-top:0.6rem">La <strong>description de poste</strong> permet de minimiser l'<strong>écart d'efficacité</strong> entre rôle confié et rôle tenu.</p>
+  </div>
+
+  <h3>Pourquoi la gestion des compétences est devenue critique</h3>
+  <div class="key-box">
+    Les entreprises doivent en permanence se remettre en cause, tant leur environnement est soumis à des <strong>mutations importantes</strong>. L'organisation doit être <strong>aussi réactive que possible</strong> et permettre le développement des initiatives conduisant à l'obtention de la performance.
+  </div>
+  <h4>Problèmes RH actuels</h4>
+  <div class="key-box">
+    <ul>
+      <li><strong>Transformation des niveaux de qualifications</strong></li>
+      <li><strong>Modification de la structure de population</strong> (âge, niveau…)</li>
+      <li><strong>Modification du comportement</strong></li>
+      <li><strong>Départs / promotions</strong></li>
+      <li><strong>Modification du rapport au travail</strong></li>
+    </ul>
+  </div>
+
+  <h3>Définition de la compétence</h3>
+  <div class="def-box">
+    <div class="def-label">La compétence selon Besombes</div>
+    <p>« La compétence est une <strong>disposition à mobiliser, à combiner et mettre en œuvre des ressources</strong> (savoir, savoir-faire, savoir-être). C'est la <strong>combinaison dynamique</strong> de différents éléments. »</p>
+    <ul>
+      <li><strong>Savoir théorique</strong></li>
+      <li><strong>Procédures et / ou bonnes pratiques</strong></li>
+      <li><strong>Savoir-faire</strong></li>
+      <li><strong>Expérience non formalisée</strong></li>
+    </ul>
+  </div>
+
+  <h3>Identification des compétences</h3>
+  <div class="key-box">
+    <strong>Méthode 1 — Selon le potentiel estimé</strong> (5 critères) :
+    <ol>
+      <li>Motivation</li>
+      <li>Caractère</li>
+      <li>Image que l'on a de soi</li>
+      <li>Les connaissances et le savoir</li>
+      <li>Le savoir-faire</li>
+    </ol>
+    <p style="margin-top:0.6rem"><em>Il est préférable d'embaucher quelqu'un qui a 1, 2, 3 et de le former à 4 et 5.</em></p>
+  </div>
+  <div class="key-box">
+    <strong>Méthode 2 — L'approche par les compétences professionnelles</strong> :
+    <ul>
+      <li>Les compétences sont définies par leur <strong>contenu en termes de savoir</strong></li>
+      <li>Permet de rapprocher les <strong>diplômes souhaités dans les référentiels d'emplois</strong></li>
+    </ul>
+  </div>
+
+  <h3>Compétences selon l'objectif poursuivi</h3>
+  <div class="key-box">
+    <strong>Identification des compétences nécessaires</strong> :
+    <ul>
+      <li>Établir un <strong>référentiel des métiers ou des emplois</strong>, élaboré soit dans le cadre d'une réflexion menée dans l'entreprise, soit provenant de l'extérieur et adapté</li>
+      <li>Indication du <strong>niveau de maîtrise sur 4 à 5 niveaux</strong></li>
+    </ul>
+  </div>
+  <div class="key-box">
+    <strong>Identification des compétences détenues</strong> — 4 outils :
+    <ul>
+      <li><strong>Mesure de l'employabilité individuelle</strong></li>
+      <li><strong>Bilan de compétences</strong></li>
+      <li><strong>Portefeuille de compétences</strong></li>
+      <li><strong>Cartes de compétences</strong></li>
+    </ul>
+  </div>
+</div>
+
+<div class="course-chapter" data-theme="competences" data-chap-idx="11" id="chap-11">
+  <h2>11. GPEC, organisation qualifiante et systèmes d'évaluation</h2>
+
+  <h3>GPEC — Gestion Prévisionnelle des Emplois et des Compétences</h3>
+  <div class="def-box">
+    <div class="def-label">Objectif de la GPEC</div>
+    <p>Vise à <strong>réduire, de façon anticipée, les écarts entre les besoins et les ressources</strong> de l'entreprise en termes d'effectifs et de compétences en fonction des objectifs identifiés, avec l'<strong>implication du salarié</strong> dans le cadre d'un projet d'évolution professionnelle.</p>
+  </div>
+
+  <h3>Éthique de performance</h3>
+  <div class="key-box">
+    L'<strong>éthique de performance</strong> repose sur un triangle :
+    <ul>
+      <li><strong>Actionnaires</strong> (stratégie, vision)</li>
+      <li><strong>Salariés</strong> (création de valeur)</li>
+      <li><strong>Clients</strong> (profits)</li>
+    </ul>
+    Au centre : la <strong>Direction</strong> assure l'équilibre permanent et la constance de l'objectif stratégique.
+  </div>
+
+  <h3>L'organisation qualifiante</h3>
+  <div class="def-box">
+    <p>L'<strong>organisation qualifiante</strong> repose sur 3 piliers :</p>
+    <ul>
+      <li><strong>Enrichissement des tâches</strong></li>
+      <li><strong>Volonté éducative</strong> (développement de l'apprentissage permanent)</li>
+      <li><strong>Recherche de la compétitivité</strong></li>
+    </ul>
+  </div>
+  <div class="key-box">
+    <strong>Éléments préalables</strong> :
+    <ul>
+      <li>Identification et connaissance des emplois actuels (résultats attendus, compétences requises via <strong>dictionnaire de compétences</strong>)</li>
+      <li>Prévision raisonnable et réaliste de l'évolution de l'emploi</li>
+    </ul>
+    <strong>Mise en œuvre</strong> : travailler sur l'organisation en tenant compte
+    <ul>
+      <li>Des compétences existantes ou pouvant être recrutées</li>
+      <li>En augmentant le niveau de compétences (plan de formation)</li>
+      <li>En faisant évoluer les compétences</li>
+    </ul>
+  </div>
+
+  <h3>Description de poste — schéma de principe</h3>
+  <div class="def-box">
+    <p>La <strong>description de poste</strong> est un outil à la fois RH et organisationnel. Distinguons :</p>
+    <ul>
+      <li><strong>Le poste</strong> (emploi tenu) : unité physiquement identifiable</li>
+      <li><strong>La fonction</strong> : activités mises en œuvre tendant vers le même but</li>
+    </ul>
+  </div>
+  <table class="comp-table">
+    <thead><tr><th>Rubrique</th><th>Contenu</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Intitulé du poste</strong></td><td>Nom officiel du poste</td></tr>
+      <tr><td><strong>Missions</strong></td><td>Finalités du poste</td></tr>
+      <tr><td><strong>Dimensions</strong></td><td>Chiffres significatifs</td></tr>
+      <tr><td><strong>Contexte général</strong></td><td>Cadre général de travail, contraintes</td></tr>
+      <tr><td><strong>Nature et étendue des activités</strong></td><td>Analyse du cadre d'activité et de ses moyens</td></tr>
+      <tr><td><strong>Résultats attendus</strong></td><td>Identification des objectifs</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Les 3 dimensions des compétences</h3>
+  <div class="key-box">
+    <strong>① En termes de métier</strong> : connaissances techniques et théoriques · connaissances pratiques et savoir-faire<br>
+    <strong>② En termes de management</strong> : compétences relationnelles liées au métier · planification, organisation, coordination, contrôle · direction, animation, motivation<br>
+    <strong>③ Orientation vers les résultats</strong> : initiation, autonomie · engagement, sens des responsabilités · sens des priorités et flexibilité · contribution aux axes de progrès
+  </div>
+
+  <h3>Les systèmes d'évaluation</h3>
+  <div class="def-box">
+    <p>L'évaluation des compétences doit s'envisager au regard d'<strong>objectifs à atteindre</strong>. Elle doit mettre en évidence des <strong>écarts à combler</strong> et permettre de fonder des démarches de progrès.</p>
+    <p>Inducteur de changement, l'instauration d'un système d'évaluation fait évoluer : <strong>comportements, pratiques managériales, relations d'autorité, mentalités, représentations culturelles</strong>.</p>
+  </div>
+  <table class="comp-table">
+    <thead><tr><th>Vers une évaluation « sanction »</th><th>Vers une évaluation « formative »</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>
+          La performance, les résultats. <strong>Outil de mesures</strong> :
+          <ul>
+            <li>Les objectifs quantitatifs</li>
+            <li>Les plans d'actions</li>
+            <li>Le management de la performance</li>
+          </ul>
+        </td>
+        <td>
+          Les compétences, la tenue du poste. <strong>Outils de mesure</strong> :
+          <ul>
+            <li>Les orientations développement</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Conditions de mise en œuvre</h4>
+  <div class="key-box">
+    Pour mettre en œuvre un système d'appréciation, il faut confier aux salariés :
+    <ul>
+      <li>Des <strong>missions claires</strong></li>
+      <li>Des <strong>moyens adaptés</strong></li>
+    </ul>
+    <strong>3 types de missionnement</strong> :
+    <ul>
+      <li>Les <strong>directives</strong> (règle, procédure, plan d'action)</li>
+      <li>Les <strong>objectifs quantitatifs</strong></li>
+      <li>Les <strong>orientations ou objectifs qualitatifs</strong></li>
+    </ul>
+    <strong>3 types d'appréciation</strong> :
+    <ul>
+      <li>Le <strong>contrôle</strong></li>
+      <li>La <strong>mesure</strong></li>
+      <li>L'<strong>appréciation</strong></li>
+    </ul>
+  </div>
+
+  <h4>Implications du système d'appréciation</h4>
+  <div class="key-box">
+    La mise en œuvre s'appuyant sur des <strong>entretiens individuels</strong> fait appel à des notions qui relèvent de la <strong>culture d'entreprise</strong>. La démarche doit intégrer :
+    <ul>
+      <li>La clarification des postes</li>
+      <li>La clarification des objectifs</li>
+      <li>Des objectifs quantitatifs</li>
+      <li>Des plans d'actions formalisés</li>
+      <li>L'appréciation des résultats</li>
+      <li>La notion de performance</li>
+    </ul>
+  </div>
+
+  <h3>La culture d'entreprise — 5 forces</h3>
+  <div class="def-box">
+    La culture d'entreprise repose sur 5 forces :
+    <ul>
+      <li><strong>Mythes</strong></li>
+      <li><strong>Rites</strong></li>
+      <li><strong>Identité</strong></li>
+      <li><strong>Valeurs</strong></li>
+      <li><strong>Histoire</strong></li>
+    </ul>
+  </div>
+</div>
+
+<div class="course-chapter" data-theme="equipe" data-chap-idx="12" id="chap-12">
+  <h2>12. L'équipe et le management agile (Besombes)</h2>
+
+  <h3>Les 5 étapes de constitution d'une équipe</h3>
+  <table class="comp-table">
+    <thead><tr><th>Étape</th><th>Description</th><th>Rôle du manager</th></tr></thead>
+    <tbody>
+      <tr><td><strong>① CONSTITUTION</strong></td><td>Création de l'équipe, découverte des autres et de la légitimité de chacun, positionnement au sein de l'équipe</td><td>Team Building</td></tr>
+      <tr><td><strong>② TENSION</strong></td><td>Confrontation des opinions (parfois violemment), divergences objectives ou irrationnelles, tensions</td><td>Prévention · Gestion des conflits</td></tr>
+      <tr><td><strong>③ NORMALISATION</strong></td><td>Acceptation d'un but commun, d'un cadre commun de travail, apparition de règles et structuration de l'équipe</td><td>Négociation</td></tr>
+      <tr><td><strong>④ PRODUCTION</strong></td><td>Travail collectif vers le but commun. En marche vers l'efficacité de l'équipe</td><td>Motivation</td></tr>
+      <tr><td><strong>⑤ DISSOLUTION</strong></td><td>Dissolution de l'équipe (membres partis, nouveaux arrivants)</td><td>Valorisation</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Travailler en équipe — définition</h3>
+  <div class="def-box">
+    <div class="def-label">Définition de l'équipe (selon Lewin)</div>
+    <p>« <strong>L'essence d'un groupe est l'interdépendance de chacun de ses membres.</strong> » — Kurt Lewin</p>
+    <p>Caractéristiques d'une équipe :</p>
+    <ul>
+      <li><strong>Objectif commun</strong></li>
+      <li><strong>Interaction psychologique</strong></li>
+      <li><strong>Existence collective</strong></li>
+    </ul>
+  </div>
+
+  <h3>Le continuum de management — comportement managérial selon l'autorité</h3>
+  <div class="key-box">
+    Le management s'inscrit sur un continuum entre <strong>autorité du responsable</strong> et <strong>liberté d'action du groupe</strong>, organisé en 7 niveaux :
+    <table class="comp-table">
+      <thead><tr><th>Centré sur l'animateur</th><th>Centré sur le groupe</th></tr></thead>
+      <tbody>
+        <tr><td>AUTORITÉ — directif</td><td>IMPLICATIF — délégation, responsabilisant</td></tr>
+        <tr><td>INFORMATION</td><td>NÉGOCIATION</td></tr>
+        <tr><td>EXPLICATIF</td><td>EXPLICATIF — concertation</td></tr>
+        <tr><td>CONSULTATION</td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Management et responsabilisation — modèle Pertinence / Cap / Actions / Ressources</h3>
+  <div class="key-box">
+    Pour responsabiliser, articuler 4 dimensions :
+    <ul>
+      <li><strong>Cap</strong> — Quelle est la destination à atteindre ?</li>
+      <li><strong>Actions</strong> — Comment s'y prendre pour atteindre le cap ?</li>
+      <li><strong>Ressources</strong> — Avec qui et quoi pour atteindre le cap ?</li>
+      <li><strong>Pertinence</strong> — Sens ? Utilité ? Cohérence ?</li>
+    </ul>
+  </div>
+
+  <h3>Les 4 attentes vis-à-vis du manager</h3>
+  <div class="key-box">
+    Ce que les managés attendent de leur manager (notamment dans une équipe « nouvelle ») :
+    <ol>
+      <li><strong>Honnête</strong> — l'intégrité (confiance)</li>
+      <li><strong>Compétent</strong> — la compétence (technique &amp; managériale)</li>
+      <li><strong>Tourné vers l'avenir</strong> — la vision</li>
+      <li><strong>Motivant</strong> — le dynamisme (implication et responsabilisation)</li>
+    </ol>
+  </div>
+
+  <h3>Agilité managériale</h3>
+  <div class="def-box">
+    <div class="def-label">Agilité managériale</div>
+    <p>La <strong>capacité d'adaptation et d'innovation</strong> mobilisée ensemble face à :</p>
+    <ul>
+      <li>Quelles problématiques ?</li>
+      <li>Quelle résolution de problème ensemble ?</li>
+      <li>Quel plan d'actions concerté ?</li>
+    </ul>
+  </div>
+
+  <h3>Manager n'est pas une fin en soi, c'est un moyen</h3>
+  <div class="key-box">
+    Manager sert à :
+    <ul>
+      <li>Réussir un projet ensemble (ou un défi à relever)</li>
+      <li>Rester concentré sur l'essentiel (satisfaction du client et des collaborateurs)</li>
+      <li>Se connaître soi-même pour entrer en relation et dans une dynamique positive de travail avec l'autre. Être cohérent ensemble.</li>
+      <li>La discipline de groupe crée les conditions de la réussite : ses membres formulent ensemble le projet, se mettent d'accord sur les objectifs, définissent une méthode de travail commune, développent des compétences complémentaires à un niveau élevé, s'engagent collectivement à atteindre les résultats souhaités.</li>
+    </ul>
+  </div>
+
+  <h3>Le Modèle de Gilbert (1980) — triangle de la performance</h3>
+  <div class="def-box">
+    <div class="def-label">Modèle de Gilbert (1980)</div>
+    <p>La <strong>performance</strong> se construit à l'intersection de 3 dimensions :</p>
+    <ul>
+      <li><strong>OBJECTIFS</strong></li>
+      <li><strong>MOYENS</strong></li>
+      <li><strong>RÉSULTATS</strong></li>
+    </ul>
+    Les écarts entre ces sommets définissent :
+    <ul>
+      <li><strong>Objectifs ↔ Résultats</strong> : Efficacité</li>
+      <li><strong>Moyens ↔ Résultats</strong> : Efficience</li>
+      <li><strong>Objectifs ↔ Moyens</strong> : Pertinence</li>
+    </ul>
+  </div>
+
+  <h3>Conclusion — la quête d'équilibre</h3>
+  <div class="def-box" style="text-align:center;">
+    <p style="font-style:italic;">« La recherche de l'<strong>équilibre entre les besoins en ressources de l'organisation et les ressources prévisibles</strong> conduit à rechercher divers modes d'ajustements internes et externes. »</p>
+  </div>
+</div>
+`;
+}
+
+function getSynthHTML() {
+  return `
+
+<div class="synth-card">
+  <div class="synth-card-title">
+    <div class="synth-icon" style="background:rgba(61,114,180,0.18)">🔄</div> Le changement comme processus
+  </div>
+  <div class="synth-grid">
+    <div class="synth-mini">
+      <strong>Loi de Le Chatelier — l'analogie fondatrice</strong>
+      <p>Toute modification de l'équilibre d'un système provoque des phénomènes qui s'y opposent. Appliquée à l'organisation : tout changement génère naturellement des résistances. Pour réussir, il faut <strong>simultanément augmenter les pressions favorables et diminuer les résistances</strong> — l'un sans l'autre échoue.</p>
+    </div>
+    <div class="synth-mini">
+      <strong>Modèle de Kurt Lewin (1947) — 3 phases</strong>
+      <p>① <strong>Décristallisation</strong> : on remet en cause les habitudes, on prépare les esprits. ② <strong>Changement</strong> : modifications concrètes des tâches, de la structure, des techniques et des comportements. ③ <strong>Cristallisation</strong> : on stabilise les nouveaux comportements par un renforcement positif (évaluation, suivi, célébrations).</p>
+    </div>
+    <div class="synth-mini">
+      <strong>Modèle de Kotter</strong>
+      <p>Cité comme référence par Besombes (sans détailler les 8 étapes classiques). À mobiliser comme grille structurée pour démarche de transformation. C'est l'un des modèles incontournables à connaître nominativement à l'examen.</p>
+    </div>
+    <div class="synth-mini">
+      <strong>Courbe de Kübler-Ross</strong>
+      <p>Modèle psychologique des étapes émotionnelles face au changement (initialement étapes du deuil). Schéma transposé au monde de l'entreprise par Philippe Moret : choc → déni → résistance → exploration → acceptation. Permet d'anticiper les réactions individuelles.</p>
+    </div>
+  </div>
+</div>
+
+<div class="synth-card">
+  <div class="synth-card-title">
+    <div class="synth-icon" style="background:rgba(176,90,71,0.18)">⚔️</div> Résistance &amp; adhésion
+  </div>
+  <div class="synth-grid">
+    <div class="synth-mini">
+      <strong>Pourquoi le changement perturbe</strong>
+      <p>Trois facteurs psychosociologiques déstabilisent l'individu : découvrir chez les autres des attitudes différentes des siennes ; voir son image renvoyée par les autres comme différente de l'idée qu'on s'en faisait ; et constater qu'un même mot a un sens différent selon les personnes.</p>
+    </div>
+    <div class="synth-mini">
+      <strong>Les 7 sources de résistance</strong>
+      <p>① Manque d'informations claires sur le projet · ② peur de l'inconnu · ③ besoin de sécurité menacé · ④ pas de besoin de changement ressenti · ⑤ peur de perdre des acquis (statut, avantages) · ⑥ moment mal choisi (autre urgence) · ⑦ manque de ressources (temps, moyens).</p>
+    </div>
+    <div class="synth-mini">
+      <strong>4 leviers pour surmonter la résistance</strong>
+      <p><strong>Communiquer</strong> (éliminer les craintes par l'information). <strong>Faire participer</strong> (créer un sentiment d'engagement dès la planification). <strong>Soutenir</strong> (assurer confiance et crédibilité, accompagner les plus en difficulté). <strong>Négocier</strong> (harmoniser objectifs personnels et organisationnels).</p>
+    </div>
+    <div class="synth-mini">
+      <strong>3 stratégies utiles selon le contexte</strong>
+      <p><strong>Coercition</strong> : autorité hiérarchique, peur des sanctions, attrait des récompenses (efficace dans l'urgence). <strong>Persuasion rationnelle</strong> : appel à la logique et à la compétence (pour convaincre par les faits). <strong>Partage du pouvoir</strong> : responsabilisation comme moteur de motivation (le plus durable mais le plus long).</p>
+    </div>
+  </div>
+</div>
+
+<div class="synth-card">
+  <div class="synth-card-title">
+    <div class="synth-icon" style="background:rgba(90,145,104,0.18)">📋</div> La démarche en 8 étapes (Besombes)
+  </div>
+  <div class="synth-grid">
+    <div class="synth-mini">
+      <strong>Étapes 1-2 : Amorcer &amp; Diagnostiquer</strong>
+      <p>① <strong>Amorcer</strong> : définir la politique en analysant les facteurs internes (organisation actuelle, compétences disponibles) et externes (demande clients, prospective économique, autres acteurs). ② <strong>Diagnostic</strong> : forces/faiblesses, cartographie des relations, prise en compte des résultats déjà existants.</p>
+    </div>
+    <div class="synth-mini">
+      <strong>Étapes 3-4 : Cadre &amp; Mobiliser</strong>
+      <p>③ <strong>Nouveau cadre</strong> : documentation centralisée, carte des compétences, fiches prestations, programme de formation, communication, outils de pilotage. ④ <strong>Mobiliser</strong> : sensibilisation collective ET individuelle aux nouveaux objectifs, formation aux méthodes, définition des règles du jeu et des modalités d'évaluation.</p>
+    </div>
+    <div class="synth-mini">
+      <strong>Étapes 5-6 : Plans &amp; Mise en œuvre</strong>
+      <p>⑤ <strong>Plans d'action</strong> : hiérarchiser les actions, calendrier, désigner les responsables, répartir les équipes, définir indicateurs de pilotage. ⑥ <strong>Mise en œuvre</strong> : déployer en restant vigilant, en appui des équipes, en contrôlant les dérives et en respectant les délais.</p>
+    </div>
+    <div class="synth-mini">
+      <strong>Étapes 7-8 : Mesurer &amp; S'améliorer (~2 ans)</strong>
+      <p>⑦ <strong>Mesurer</strong> : constater écarts positifs et négatifs, corriger, informer les collaborateurs, motiver. ⑧ <strong>S'améliorer</strong> : associer l'équipe à la réflexion, fixer de nouveaux objectifs, responsabiliser. Besombes estime que ce parcours complet demande <strong>2 ans en moyenne — ni trop, ni trop peu</strong>.</p>
+    </div>
+  </div>
+</div>
+
+<div class="synth-card">
+  <div class="synth-card-title">
+    <div class="synth-icon" style="background:rgba(200,131,70,0.18)">🧭</div> La vocation en 3 phases (Écoute / Mobilisation / Coordination)
+  </div>
+  <div class="synth-grid">
+    <div class="synth-mini">
+      <strong>Phase 1 : Écouter pour comprendre</strong>
+      <p>On commence par <strong>écouter ceux qui ont formulé la problématique mais aussi ceux qui la vivront</strong>, plutôt en face-à-face individuel. Objectif : comprendre les écarts d'angles de vue, mesurer la hauteur de la marche, capter sans censurer les idées, instaurer un dialogue de confiance. On termine par une synthèse partagée avec les décideurs.</p>
+    </div>
+    <div class="synth-mini">
+      <strong>Phase 2 : Mobiliser autour d'un périmètre commun</strong>
+      <p>Réunir un panel représentatif des parties prenantes pour <strong>qualifier les solutions, définir des critères de priorisation, sélectionner les actions à mettre en place</strong>. Le mot d'ordre : passer « de la lettre au Père Noël à un projet collectif réaliste ».</p>
+    </div>
+    <div class="synth-mini">
+      <strong>Qualifier les solutions — grille à 4 cases</strong>
+      <p>Côté résultats : <strong>Gains attendus</strong> (productivité, qualité, niveau de service) vs <strong>Contraintes</strong> (éléments externes subis). Côté conditions : <strong>Points d'appui</strong> (sponsor de poids, effet de levier) vs <strong>Freins</strong> (obstacles internes sur lesquels on peut agir).</p>
+    </div>
+    <div class="synth-mini">
+      <strong>Prioriser — matrice Importance × Facilité</strong>
+      <p>Représentation graphique avec deux axes notés de 0 à 10. Les actions à mener en priorité sont celles à <strong>importance élevée ET facilité élevée</strong>. Les autres sont mises « au parking » (importance faible) ou méritent un travail préparatoire (importance haute / facilité faible).</p>
+    </div>
+  </div>
+</div>
+
+<div class="synth-card">
+  <div class="synth-card-title">
+    <div class="synth-icon" style="background:rgba(138,122,168,0.18)">👥</div> Les acteurs face au changement
+  </div>
+  <div class="synth-grid">
+    <div class="synth-mini">
+      <strong>Le triptyque 10-80-10</strong>
+      <p>Face à tout changement, on retrouve trois profils dans la population. <strong>10 à 20 % de proactifs</strong> (constructifs, prescripteurs) qu'il faut <strong>utiliser</strong> comme relais. <strong>60 à 80 % de passifs</strong> (hésitants, en attente de preuves) qu'il faut <strong>rassurer</strong>. <strong>10 à 20 % d'opposants</strong> (destructeurs systématiques) qu'il faut <strong>laisser s'isoler</strong> pour pouvoir mieux les récupérer ensuite.</p>
+    </div>
+    <div class="synth-mini">
+      <strong>Trois niveaux d'appui successifs</strong>
+      <p>① <strong>Le Top Management</strong> donne l'impulsion et la légitimité (mais doit lui-même être convaincu). ② <strong>Le Middle Management</strong> relaie et intègre le changement dans le quotidien (à condition d'avoir un temps d'avance). ③ <strong>Les Ressources Métiers internes</strong> accompagnent sur le terrain — elles connaissent l'organisation, sont légitimes, et resteront.</p>
+    </div>
+    <div class="synth-mini">
+      <strong>La grille communication selon les questions</strong>
+      <p>À chaque question des acteurs correspond un dispositif. « Pourquoi changer ? » → comm projet · « Qu'est-ce qui change pour moi ? » → modules de sensibilisation · « Vais-je être à la hauteur ? » → formation · « Suis-je prêt ? » → entraînement · « Je ne suis pas prêt ! » → assistance de proximité.</p>
+    </div>
+    <div class="synth-mini">
+      <strong>La méthode RACI — clarifier les rôles</strong>
+      <p>Outil de répartition des rôles, à formaliser par processus. <strong>R</strong>esponsable (un seul par activité, approuve et assume). <strong>A</strong>cteur (1 à n, réalise concrètement). <strong>C</strong>ontribution (apporte information / expertise sans autorité). <strong>I</strong>nformation (mis au courant, généralement indirectement impacté).</p>
+    </div>
+  </div>
+</div>
+
+<div class="synth-card">
+  <div class="synth-card-title">
+    <div class="synth-icon" style="background:rgba(77,154,168,0.18)">🎯</div> La gestion des compétences
+  </div>
+  <div class="synth-grid">
+    <div class="synth-mini">
+      <strong>Définition Besombes de la compétence</strong>
+      <p>« Une disposition à mobiliser, combiner et mettre en œuvre des ressources : savoir, savoir-faire et savoir-être. C'est une <strong>combinaison dynamique</strong> de plusieurs éléments — savoir théorique, procédures, bonnes pratiques, savoir-faire et expérience non formalisée. »</p>
+    </div>
+    <div class="synth-mini">
+      <strong>La chaîne des rôles dans la performance</strong>
+      <p>Un poste passe par 4 étapes : le <strong>rôle confié</strong> par l'organisation → le <strong>rôle perçu</strong> par le salarié → le <strong>rôle accepté</strong> → le <strong>rôle tenu</strong> effectivement. La description de poste sert à <strong>minimiser l'écart d'efficacité</strong> entre rôle confié et rôle tenu.</p>
+    </div>
+    <div class="synth-mini">
+      <strong>GPEC / GEPP — l'anticipation</strong>
+      <p>La Gestion Prévisionnelle des Emplois et des Compétences vise à <strong>réduire de façon anticipée les écarts entre besoins et ressources</strong> de l'entreprise (effectifs et compétences), au regard des objectifs identifiés, avec l'implication du salarié dans un projet d'évolution professionnelle.</p>
+    </div>
+    <div class="synth-mini">
+      <strong>L'organisation qualifiante</strong>
+      <p>Repose sur 3 piliers : <strong>enrichissement des tâches</strong>, <strong>volonté éducative</strong> (apprentissage permanent), <strong>recherche de la compétitivité</strong>. Elle s'appuie sur un dictionnaire de compétences et une prévision réaliste de l'évolution de l'emploi. C'est l'antithèse de l'organisation taylorienne.</p>
+    </div>
+  </div>
+</div>
+
+<div class="synth-card">
+  <div class="synth-card-title">
+    <div class="synth-icon" style="background:rgba(61,114,180,0.18)">🤝</div> L'équipe &amp; le management
+  </div>
+  <div class="synth-grid">
+    <div class="synth-mini">
+      <strong>Les 5 étapes de constitution d'une équipe</strong>
+      <p>① <strong>Constitution</strong> (création, découverte, positionnement → team building) · ② <strong>Tension</strong> (confrontation des opinions → prévention/gestion des conflits) · ③ <strong>Normalisation</strong> (acceptation d'un but commun → négociation) · ④ <strong>Production</strong> (travail collectif efficace → motivation) · ⑤ <strong>Dissolution</strong> (départs, nouveaux arrivants → valorisation).</p>
+    </div>
+    <div class="synth-mini">
+      <strong>Le continuum directif → délégatif</strong>
+      <p>Le management se positionne sur 7 niveaux entre l'<strong>autorité du responsable</strong> et la <strong>liberté du groupe</strong> : autorité (directif) → information → explicatif → consultation → concertation → négociation → implicatif (délégation). Le bon style dépend de la maturité de l'équipe.</p>
+    </div>
+    <div class="synth-mini">
+      <strong>Les 4 attentes vis-à-vis du manager</strong>
+      <p>Ce que les managés attendent : un manager <strong>honnête</strong> (intégrité, source de confiance) ; <strong>compétent</strong> (techniquement et managérialement) ; <strong>tourné vers l'avenir</strong> (vision) ; <strong>motivant</strong> (dynamisme, capacité à impliquer). Sans ces 4 piliers, pas de leadership crédible.</p>
+    </div>
+    <div class="synth-mini">
+      <strong>Le Modèle de Gilbert (1980)</strong>
+      <p>La performance se construit à l'intersection de 3 dimensions : <strong>Objectifs · Moyens · Résultats</strong>. Les écarts définissent : <strong>Efficacité</strong> (Objectifs ↔ Résultats), <strong>Efficience</strong> (Moyens ↔ Résultats), <strong>Pertinence</strong> (Objectifs ↔ Moyens). Outil simple et complet d'analyse de la performance.</p>
+    </div>
+  </div>
+</div>
+
+`;
+}
+
+/* ═══════ TABS ═══════ */
+const TABS = [
+  { id:'checklist', label:'✅ Checklist', prog:10 },
+  { id:'cours',     label:'📖 Cours',     prog:20 },
+  { id:'synth',     label:'📝 Synthèse',  prog:35 },
+  { id:'flash',     label:'⚡ Flashcards', prog:50 },
+  { id:'quiz',      label:'🎯 Quiz',      prog:65 },
+  { id:'sujets',    label:'🗂 Sujets-types', prog:78 },
+  { id:'examen',    label:'📝 Examen blanc', prog:90 },
+  { id:'annales',   label:'📜 Annales',   prog:100 }
+];
+let currentTab = 'checklist';
+let fcTheme = 'all', quizTheme = 'all', coursTheme = 'all';
+
+function getFilteredFlashcards() {
+  if (fcTheme === 'all') return DATA.flashcards.map((_, i) => i);
+  return DATA.flashcards.map((fc, i) => fc.theme === fcTheme ? i : -1).filter(i => i >= 0);
+}
+function getFilteredQuizQuestions() {
+  if (quizTheme === 'all') return DATA.quizQuestions;
+  return DATA.quizQuestions.filter(q => q.theme === quizTheme);
+}
+function setFcTheme(id) { fcTheme = id; switchTab('flash'); }
+function setQuizTheme(id) { quizTheme = id; switchTab('quiz'); }
+function setCoursTheme(id) { coursTheme = id; applyCoursFilter(); renderCoursPills(); }
+function applyCoursFilter() {
+  document.querySelectorAll('.course-chapter').forEach(el => {
+    const matches = coursTheme === 'all' || el.dataset.theme === coursTheme;
+    el.style.display = matches ? '' : 'none';
+  });
+  const empty = document.getElementById('coursEmpty');
+  if (empty) {
+    const visible = Array.from(document.querySelectorAll('.course-chapter')).some(el => el.style.display !== 'none');
+    empty.style.display = visible ? 'none' : 'block';
+  }
+}
+function renderCoursPills() {
+  const host = document.getElementById('coursThemeSelectorWrap');
+  if (host) host.innerHTML = themeSelectorHTML('cours');
+}
+
+function themeSelectorHTML(scope) {
+  const current = scope === 'flash' ? fcTheme : (scope === 'quiz' ? quizTheme : coursTheme);
+  const fn = scope === 'flash' ? 'setFcTheme' : (scope === 'quiz' ? 'setQuizTheme' : 'setCoursTheme');
+  const themes = DATA.themes || [];
+  if (!themes.length) return '';
+  const counts = {};
+  if (scope === 'flash') {
+    counts.all = DATA.flashcards.length;
+    themes.forEach(t => counts[t.id] = DATA.flashcards.filter(fc => fc.theme === t.id).length);
+  } else if (scope === 'quiz') {
+    counts.all = DATA.quizQuestions.length;
+    themes.forEach(t => counts[t.id] = DATA.quizQuestions.filter(q => q.theme === t.id).length);
+  } else {
+    // cours : on compte les .course-chapter DOM si déjà présents, sinon fallback à 0
+    const chaps = document.querySelectorAll('.course-chapter');
+    counts.all = chaps.length;
+    themes.forEach(t => counts[t.id] = Array.from(chaps).filter(c => c.dataset.theme === t.id).length);
+  }
+  const pill = (id, label, count) => `<button class="theme-pill${current === id ? ' active' : ''}" onclick="${fn}('${id}')" title="${label}">${label} <span class="theme-count">${count}</span></button>`;
+  return `<div class="theme-selector" id="coursThemeSelector-${scope}">
+    <div class="theme-label">Filtre par axe</div>
+    <div class="theme-pills">
+      ${pill('all', '🔍 Tous', counts.all)}
+      ${themes.map(t => pill(t.id, t.icon + ' ' + t.label, counts[t.id] || 0)).join('')}
+    </div>
+  </div>`;
+}
+
+
+function switchTab(id) {
+  currentTab = id;
+  renderNav();
+  removeScrollSpy();
+  const t = TABS.find(t => t.id === id);
+  document.getElementById('progressFill').style.width = (t ? t.prog : 0) + '%';
+  renderTab(id);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function renderNav() {
+  document.getElementById('navTabs').innerHTML = TABS.map(t =>
+    `<button class="nav-tab${t.id === currentTab ? ' active' : ''}" onclick="switchTab('${t.id}')">${t.label}</button>`
+  ).join('');
+}
+
+function renderTab(id) {
+  const root = document.getElementById('appRoot');
+  const header = `
+    <div class="page-header">
+      <button class="back-home" onclick="window.location.href='index.html'">← Accueil</button>
+      <div class="page-title">${DATA.title}</div>
+      <div class="page-subtitle">${DATA.subtitle}</div>
+    </div>`;
+  if (id === 'checklist') root.innerHTML = header + renderChecklist();
+  else if (id === 'cours') {
+    root.innerHTML = header + `<div class="fade-up"><div id="coursThemeSelectorWrap"></div>${getCoursHTML()}<div id="coursEmpty" class="cours-empty" style="display:none">Aucun chapitre dans cet axe pour ce cours.</div></div>`;
+    document.getElementById('coursThemeSelectorWrap').innerHTML = themeSelectorHTML('cours');
+    applyCoursFilter();
+    setTimeout(() => buildScrollSpy('.main', '.course-chapter:not([style*="display: none"]) h2'), 100);
+    if (window._pendingCoursJump) { window._pendingCoursJump(); window._pendingCoursJump = null; }
+  }
+  else if (id === 'synth') root.innerHTML = header + `<div class="fade-up fade-up-stagger">${getSynthHTML()}</div>`;
+  else if (id === 'flash') { root.innerHTML = header + renderFlash(); bindFlash(); }
+  else if (id === 'quiz')  { root.innerHTML = header + renderQuizSetup(); }
+  else if (id === 'annales'){ root.innerHTML = header + `<div class="fade-up fade-up-stagger">${getAnnalesHTML()}</div>`; }
+  else if (id === 'sujets') { root.innerHTML = header + renderSujetsTypes(); }
+  else if (id === 'examen') { renderExamen(); }
+}
+
+
+/* ═══════ DEEP LINK (hash : #cours=N&q=word ou #chap-N) ═══════ */
+function parseDeepLink() {
+  const h = window.location.hash || '';
+  if (!h) return null;
+  const out = {};
+  // Format 1 : #chap-3
+  let m = h.match(/^#chap-(\d+)$/);
+  if (m) { out.chap = parseInt(m[1], 10); return out; }
+  // Format 2 : #cours=3&q=mot&theme=xxx
+  m = h.match(/^#([^?]+)/);
+  if (m) {
+    const params = new URLSearchParams(h.slice(1));
+    if (params.has('cours')) out.chap = parseInt(params.get('cours'), 10);
+    if (params.has('q')) out.q = params.get('q');
+    if (params.has('theme')) out.theme = params.get('theme');
+    if (params.has('tab')) out.tab = params.get('tab');
+  }
+  return Object.keys(out).length ? out : null;
+}
+function highlightInChapter(chapEl, word) {
+  if (!chapEl || !word) return;
+  const re = new RegExp('(' + word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+  const walker = document.createTreeWalker(chapEl, NodeFilter.SHOW_TEXT, null);
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach(n => {
+    if (!re.test(n.nodeValue)) return;
+    re.lastIndex = 0;
+    const span = document.createElement('span');
+    span.innerHTML = n.nodeValue.replace(re, '<mark class="search-hit">$1</mark>');
+    n.parentNode.replaceChild(span, n);
+  });
+}
+function applyDeepLink() {
+  const dl = parseDeepLink();
+  if (!dl) return;
+  if (dl.theme) coursTheme = dl.theme;
+  // S'assurer qu'on est sur l'onglet cours
+  const targetTab = dl.tab || 'cours';
+  const jumper = () => {
+    const el = dl.chap ? document.getElementById('chap-' + dl.chap) : null;
+    if (el) {
+      // Si le chapitre est masqué par le filtre, réinitialise à 'all'
+      if (el.style.display === 'none') { coursTheme = 'all'; applyCoursFilter(); renderCoursPills(); }
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      el.classList.add('chap-target-flash');
+      setTimeout(() => el.classList.remove('chap-target-flash'), 2400);
+      if (dl.q) highlightInChapter(el, dl.q);
+    }
+  };
+  if (currentTab !== targetTab) {
+    window._pendingCoursJump = jumper;
+    switchTab(targetTab);
+  } else {
+    setTimeout(jumper, 80);
+  }
+}
+window.addEventListener('hashchange', applyDeepLink);
+
+/* ═══════ CHECKLIST ═══════ */
+function renderChecklist() {
+  const items = DATA.checklistItems;
+  const total = items.length;
+  const done = items.filter(i => isChecked(COURSE_KEY + ':' + i.id)).length;
+  const pct = total ? Math.round(done / total * 100) : 0;
+  saveCourseProgress(COURSE_KEY, done, total);
+  const r = 54, circ = 2 * Math.PI * r;
+  const offset = circ - (pct / 100) * circ;
+
+  return `
+  <div class="cl-progress-wrap fade-up">
+    <div style="position:relative;width:140px;height:140px;margin:0 auto">
+      <svg width="140" height="140" viewBox="0 0 140 140" class="cl-ring-svg" aria-label="Progression ${pct}%">
+        <defs>
+          <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="var(--accent)"/>
+            <stop offset="100%" stop-color="var(--copper)"/>
+          </linearGradient>
+        </defs>
+        <circle cx="70" cy="70" r="${r}" fill="none" stroke="var(--bg3)" stroke-width="10"/>
+        <circle cx="70" cy="70" r="${r}" fill="none" stroke="url(#ringGrad)" stroke-width="10"
+          stroke-linecap="round" stroke-dasharray="${circ.toFixed(1)}" stroke-dashoffset="${offset.toFixed(1)}"
+          style="transition:stroke-dashoffset 0.8s cubic-bezier(0.34,1.56,0.64,1)"/>
+      </svg>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:1.6rem;font-weight:700;color:var(--text)">${pct}%</div>
+        <div style="font-size:0.7rem;color:var(--text3);margin-top:2px">${done}/${total} points</div>
+      </div>
+    </div>
+    <div style="margin-top:1.5rem;font-family:'Playfair Display',serif;font-size:1rem;color:var(--text2)">Progression du cours</div>
+  </div>
+  <div class="checklist-list fade-up-stagger">
+    ${items.map(i => { const cid = COURSE_KEY + ':' + i.id, ck = isChecked(cid); return `
+      <div class="cl-item${ck ? ' done' : ''}" data-id="${cid}" role="checkbox" aria-checked="${ck}" tabindex="0" onclick="handleCheck('${cid}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();handleCheck('${cid}');}">
+        <div class="cl-box">${ck ? '✓' : ''}</div>
+        <span class="cl-label">${i.label}</span>
+      </div>`; }).join('')}
+  </div>`;
+}
+
+function handleCheck(id) {
+  toggleCheck(id);
+  switchTab('checklist');
+}
+
+/* ═══════ FLASHCARDS ═══════ */
+let fcQueue = [], fcKnown = [], fcFlipped = false, fcStreak = 0;
+let fcSRS = {}, fcSRSMode = 'srs', fcSessionSize = 0;
+
+function initFlashcards() {
+  fcSRS = loadSRS(DATA.quizKey);
+  const allowedIdx = new Set(getFilteredFlashcards());
+  const total = allowedIdx.size;
+  if (fcSRSMode === 'srs') {
+    fcQueue = srsBuildQueue(fcSRS, DATA.flashcards.length).filter(i => allowedIdx.has(i)).slice(0, SRS_SESSION_MAX);
+    if (fcQueue.length === 0) {
+      fcQueue = shuffle([...allowedIdx]).slice(0, SRS_SESSION_MAX);
+    }
+  } else {
+    fcQueue = shuffle([...allowedIdx]);
+  }
+  fcSessionSize = fcQueue.length;
+  fcKnown = []; fcFlipped = false; fcStreak = 0;
+}
+
+function renderFlash() {
+  initFlashcards();
+  return buildFlashHTML();
+}
+
+function buildFlashHTML() {
+  const total = DATA.flashcards.length;
+  const knownCount = fcKnown.length;
+  const pct = fcSessionSize > 0 ? Math.round(knownCount / fcSessionSize * 100) : 0;
+  const stats = srsGetStats(fcSRS, total);
+
+  if (fcQueue.length === 0) {
+    launchConfetti();
+    return `
+    <div class="fade-up">
+      <div class="fc-done">
+        <div style="font-size:3rem;margin-bottom:0.5rem">🎉</div>
+        <div class="fc-done-title">Toutes les cartes maîtrisées !</div>
+        <p style="color:var(--text2);margin:0.5rem 0 1rem">${total}/${total} cartes — Score parfait</p>
+        <button class="fc-reset-btn" onclick="resetFlash()">↺ Recommencer</button>
+      </div>
+    </div>`;
+  }
+
+  const card = DATA.flashcards[fcQueue[0]];
+  const streakHTML = fcStreak >= 2 ? `<span class="fc-streak">🔥 ${fcStreak} d'affilée</span>` : '';
+  return `
+  <div class="fade-up">
+    ${themeSelectorHTML('flash')}
+    <div class="fc-header">
+      <div class="fc-progress-bar">
+        <div class="fc-pb-label">${knownCount} / ${fcSessionSize} en session · ${stats.learned}/${stats.total} maîtrisées${stats.due > 0 && fcSRSMode==='srs' ? ` · <span style=\"color:var(--orange)\">${stats.due} dues</span>` : ''} ${streakHTML}</div>
+        <div class="fc-pb-track"><div class="fc-pb-fill" style="width:${pct}%"></div></div>
+      </div>
+      <div class="fc-shortcuts">${fcSRSMode === 'srs' ? '🧠 SRS' : '🔀 Mélangé'} · <span onclick="toggleSRSMode()" style="cursor:pointer;text-decoration:underline">basculer</span></div>
+    </div>
+    <div class="fc-counter">Carte ${fcKnown.length + 1} sur ${total} — ${fcQueue.length} restante(s)</div>
+    <div class="flashcard-container">
+      <div class="flashcard${fcFlipped ? ' flipped' : ''}" id="fcCard" role="button" tabindex="0" aria-label="Carte de révision — cliquer ou Espace pour retourner" onclick="flipCard()" onkeydown="if(event.key==='Enter'){event.preventDefault();flipCard();}">
+        <div class="flashcard-face flashcard-front">
+          <div class="flashcard-q">${card.q}</div>
+          <div class="flashcard-hint">Cliquez pour révéler la réponse</div>
+        </div>
+        <div class="flashcard-face flashcard-back">
+          <div class="flashcard-a">${card.a}</div>
+        </div>
+      </div>
+    </div>
+    <div class="fc-actions">
+      <button class="fc-btn-review" onclick="markReview()" title="Raccourci : ←">
+        <span class="fc-btn-lbl">✗ À revoir</span>
+        <span class="fc-btn-iv">${srsFormatInterval(srsPreviewInterval(fcSRS[fcQueue[0]], 'again'))}</span>
+      </button>
+      <button class="fc-btn-known" onclick="markKnown()" title="Raccourci : ↓">
+        <span class="fc-btn-lbl">✓ Bien</span>
+        <span class="fc-btn-iv">${srsFormatInterval(srsPreviewInterval(fcSRS[fcQueue[0]], 'good'))}</span>
+      </button>
+      <button class="fc-btn-easy" onclick="markEasy()" title="Raccourci : →">
+        <span class="fc-btn-lbl">★ Facile</span>
+        <span class="fc-btn-iv">${srsFormatInterval(srsPreviewInterval(fcSRS[fcQueue[0]], 'easy'))}</span>
+      </button>
+    </div>
+    <div style="text-align:center;margin-top:0.6rem">
+      <button class="fc-btn-skip" onclick="skipCard()" title="Passer cette carte sans la noter">↪ Passer (sans noter)</button>
+    </div>
+    <div style="text-align:center;margin-top:1rem">
+      <button class="fc-reset-btn" onclick="resetFlash()">↺ Réinitialiser</button>
+    </div>
+  </div>`;
+}
+
+function flipCard() {
+  fcFlipped = !fcFlipped;
+  const card = document.getElementById('fcCard');
+  if (card) card.classList.toggle('flipped', fcFlipped);
+}
+
+function markKnown() {
+  if (!fcQueue.length) return;
+  const idx = fcQueue.shift();
+  fcSRS[idx] = srsScheduleCard(fcSRS[idx], 'good');
+  saveSRS(DATA.quizKey, fcSRS);
+  fcKnown.push(idx); fcStreak++; fcFlipped = false; rerenderFlash();
+}
+function markReview() {
+  if (!fcQueue.length) return;
+  const idx = fcQueue.shift();
+  fcSRS[idx] = srsScheduleCard(fcSRS[idx], 'again');
+  saveSRS(DATA.quizKey, fcSRS);
+  fcQueue.push(idx); fcStreak = 0; fcFlipped = false; rerenderFlash();
+}
+function markEasy() {
+  if (!fcQueue.length) return;
+  const idx = fcQueue.shift();
+  fcSRS[idx] = srsScheduleCard(fcSRS[idx], 'easy');
+  saveSRS(DATA.quizKey, fcSRS);
+  fcKnown.push(idx); fcStreak++; fcFlipped = false; rerenderFlash();
+}
+function skipCard() {
+  if (!fcQueue.length) return;
+  fcQueue.push(fcQueue.shift()); fcFlipped = false; rerenderFlash();
+}
+function toggleSRSMode() {
+  fcSRSMode = (fcSRSMode === 'srs') ? 'shuffle' : 'srs';
+  switchTab('flash');
+}
+function resetFlash() { initFlashcards(); rerenderFlash(); }
+
+function rerenderFlash() {
+  const ctx = { fcQueue, fcKnown, fcStreak, fcSRS, fcSRSMode, fcSessionSize };
+  if (updateFlashCardPartial(DATA, ctx)) return;
+  const root = document.getElementById('appRoot');
+  const header = root.querySelector('.page-header') ? root.querySelector('.page-header').outerHTML : '';
+  root.innerHTML = header + buildFlashHTML();
+}
+
+function bindFlash() { document.addEventListener('keydown', fcKeyHandler); }
+function fcKeyHandler(e) {
+  if (currentTab !== 'flash') { document.removeEventListener('keydown', fcKeyHandler); return; }
+  if (e.code === 'Space') { e.preventDefault(); flipCard(); }
+  else if (e.code === 'ArrowLeft') { if (fcQueue.length > 0) markReview(); }
+  else if (e.code === 'ArrowDown') { e.preventDefault(); if (fcQueue.length > 0) markKnown(); }
+  else if (e.code === 'ArrowRight') { if (fcQueue.length > 0) markEasy(); }
+  else if (e.code === 'Tab' || e.code === 'KeyS') { e.preventDefault(); if (fcQueue.length > 0) skipCard(); }
+}
+
+/* ═══════ QUIZ ═══════ */
+let quizState = null;
+let timerInterval = null;
+let timeLeft = 30;
+
+function renderQuizSetup() {
+  const scores = loadQuizScores(DATA.quizKey).slice(0, 3);
+  const histHTML = scores.length === 0
+    ? '<p style="color:var(--text3);font-size:0.82rem">Aucune partie précédente</p>'
+    : scores.map(s => {
+        const pct = Math.round(s.score / s.total * 100);
+        const d = new Date(s.date);
+        const ds = d.toLocaleDateString('fr-FR',{day:'2-digit',month:'2-digit'}) + ' ' + d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'});
+        const col = pct >= 75 ? 'var(--green)' : pct >= 50 ? 'var(--orange)' : 'var(--red)';
+        return `<span class="quiz-score-pill"><span style="color:${col};font-weight:700">${s.score}/${s.total}</span><span style="color:var(--text3)">${ds}</span></span>`;
+      }).join('');
+
+  const filteredQuiz = getFilteredQuizQuestions();
+  const quizSize = Math.min(20, filteredQuiz.length);
+  return `
+  <div class="fade-up">
+    ${themeSelectorHTML('quiz')}
+    <div class="quiz-setup">
+      <div style="font-size:2rem;margin-bottom:0.5rem">🎯</div>
+      <h3>Quiz — ${DATA.title}</h3>
+      <p>${quizSize} questions tirées au sort sur ${filteredQuiz.length}${quizTheme !== 'all' ? ' (thème filtré)' : ''}</p>
+      <div class="quiz-history">
+        <div class="quiz-history-title">Scores récents</div>
+        ${histHTML}
+      </div>
+      <div id="timerToggle" class="quiz-timer-toggle" onclick="toggleTimer()">
+        <span>⏱</span> Timer 30s par question
+      </div>
+      <br>
+      <button class="start-btn" onclick="startQuiz()">Lancer le quiz</button>
+    </div>
+  </div>`;
+}
+
+function toggleTimer() {
+  const el = document.getElementById('timerToggle');
+  if (!el) return;
+  const on = el.classList.toggle('on');
+  el._timerOn = on;
+  if (quizState) quizState.timerEnabled = on;
+}
+
+function startQuiz() {
+  const timerEl = document.getElementById('timerToggle');
+  const timerOn = timerEl ? !!timerEl._timerOn : false;
+  const pool = getFilteredQuizQuestions();
+  quizState = {
+    questions: shuffle([...pool]).slice(0, Math.min(20, pool.length)).map(quizShuffleQuestion),
+    current: 0,
+    answers: [],
+    timerEnabled: timerOn,
+    errors: []
+  };
+  renderQuizQuestion();
+}
+
+function renderQuizQuestion() {
+  if (!quizState || quizState.current >= quizState.questions.length) { showQuizResult(); return; }
+  clearInterval(timerInterval);
+  timeLeft = 30;
+  if (updateQuizQuestionPartial(quizState)) {
+    if (quizState.timerEnabled) {
+      const fill = document.getElementById('timerFill');
+      if (fill) { fill.style.width = '100%'; fill.classList.remove('warn'); }
+      const label = document.getElementById('timerLabel');
+      if (label) label.textContent = timeLeft + 's';
+      startQuestionTimer(quizState.current);
+    }
+    return;
+  }
+  const qi = quizState.current;
+  const q = quizState.questions[qi];
+  const total = quizState.questions.length;
+  const letters = ['A','B','C','D'];
+  const timerBar = quizState.timerEnabled ? `<div class="quiz-timer-bar"><div class="quiz-timer-fill" id="timerFill" style="width:100%"></div></div>` : '';
+  const timerLabel = quizState.timerEnabled ? `<span style="font-family:'JetBrains Mono',monospace;color:var(--cyan);font-size:0.78rem" id="timerLabel">${timeLeft}s</span>` : '';
+
+  const root = document.getElementById('appRoot');
+  root.innerHTML = `
+  <div class="page-header">
+    <button class="back-home" onclick="window.location.href='index.html'">← Accueil</button>
+    <div class="page-title">${DATA.title}</div>
+    <div class="page-subtitle">${DATA.subtitle}</div>
+  </div>
+  <div class="fade-up">
+    <div class="quiz-progress">
+      <span>Question ${qi + 1} / ${total}</span>
+      ${timerLabel}
+    </div>
+    ${timerBar}
+    <div class="quiz-global-bar"><div class="quiz-global-fill" style="width:${Math.round((qi/total)*100)}%"></div></div>
+    <div class="quiz-card" id="quizCard">
+      <div class="quiz-q-num">Q${qi + 1}</div>
+      <div class="quiz-q-text">${q.q}</div>
+      <div class="quiz-options" id="quizOpts">
+        ${q.o.map((opt, i) => `
+          <button class="quiz-option" data-i="${i}" onclick="selectAnswer(event, ${qi}, ${i})">
+            <div class="opt-letter">${letters[i]}</div>
+            <span>${opt}</span>
+          </button>`).join('')}
+      </div>
+    </div>
+  </div>`;
+
+  document.querySelectorAll('.quiz-option').forEach(attachRipple);
+
+  if (quizState.timerEnabled) startQuestionTimer(qi);
+}
+
+function startQuestionTimer(qi) {
+  timeLeft = 30;
+  const fill = document.getElementById('timerFill');
+  const label = document.getElementById('timerLabel');
+  clearInterval(timerInterval);
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    if (fill) {
+      fill.style.width = (timeLeft / 30 * 100) + '%';
+      if (timeLeft <= 10) fill.classList.add('warn');
+    }
+    if (label) label.textContent = timeLeft + 's';
+    if (timeLeft <= 0) { clearInterval(timerInterval); autoWrong(qi); }
+  }, 1000);
+}
+
+function autoWrong(qi) {
+  if (!quizState || quizState.answers[qi] !== undefined) return;
+  quizState.answers[qi] = -1;
+  quizState.errors.push({ qi, chosen: -1 });
+  const opts = document.querySelectorAll('.quiz-option');
+  opts.forEach(o => o.classList.add('disabled'));
+  const q = quizState.questions[qi];
+  if (opts[q.c]) opts[q.c].classList.add('correct');
+  document.getElementById('quizCard').classList.add('shake');
+  showExplanation(q, true, qi);
+}
+
+function selectAnswer(ev, qi, chosen) {
+  if (!quizState || quizState.answers[qi] !== undefined) return;
+  clearInterval(timerInterval);
+  quizState.answers[qi] = chosen;
+  const q = quizState.questions[qi];
+  const correct = chosen === q.c;
+  if (!correct) quizState.errors.push({ qi, chosen });
+  const opts = document.querySelectorAll('.quiz-option');
+  opts.forEach(o => o.classList.add('disabled'));
+  opts[q.c].classList.add('correct');
+  opts[q.c].classList.add('correct-highlight');
+  if (!correct) {
+    if (opts[chosen]) opts[chosen].classList.add('wrong');
+    document.getElementById('quizCard').classList.add('shake');
+    setTimeout(() => document.getElementById('quizCard')?.classList.remove('shake'), 500);
+  }
+  showExplanation(q, !correct, qi);
+}
+
+function showExplanation(q, wrong, qi) {
+  const card = document.getElementById('quizCard');
+  if (!card) return;
+  const expl = document.createElement('div');
+  expl.className = 'quiz-expl';
+  expl.textContent = q.e;
+  card.appendChild(expl);
+  const nextBtn = document.createElement('button');
+  nextBtn.className = 'quiz-next-btn';
+  const isLast = quizState.current >= quizState.questions.length - 1;
+  nextBtn.textContent = isLast ? 'Voir les résultats →' : 'Question suivante →';
+  nextBtn.onclick = () => { quizState.current++; renderQuizQuestion(); };
+  card.appendChild(nextBtn);
+}
+
+function showQuizResult() {
+  clearInterval(timerInterval);
+  const total = quizState.questions.length;
+  const score = quizState.answers.filter((a, i) => isQuestionCorrect(quizState.questions[i], a)).length;
+  saveQuizScore(DATA.quizKey, score, total);
+  const pct = Math.round(score / total * 100);
+  const emoji = pct >= 90 ? '🏆' : pct >= 75 ? '🎉' : pct >= 50 ? '👍' : '💪';
+  const msg = pct >= 90 ? 'Excellent !' : pct >= 75 ? 'Très bien !' : pct >= 50 ? 'Bien !' : 'Continue tes efforts !';
+  if (pct >= 90) launchConfetti();
+
+  const errorsHTML = quizState.errors.length === 0
+    ? '<p style="color:var(--green);text-align:center;margin-top:1rem">Aucune erreur — parfait !</p>'
+    : `<div class="errors-list">
+        <div style="font-size:0.78rem;text-transform:uppercase;letter-spacing:1px;color:var(--text3);font-family:'JetBrains Mono',monospace;margin-bottom:0.7rem">Erreurs à revoir</div>
+        ${quizState.errors.map(err => {
+          const q = quizState.questions[err.qi];
+          const yourAns = q.type === 'tf' ? '' : (err.chosen >= 0 && q.o ? q.o[err.chosen] : 'Pas de réponse');
+          return `<div class="error-item"><div class="eq">${q.q}</div>${yourAns ? `<div class="ea-wrong">✗ Ta réponse : ${yourAns}</div>` : ''}<div class="ea">${formatCorrectAnswerHTML(q)}</div>${q.e ? `<div class="ea-expl">${q.e}</div>` : ''}</div>`;
+        }).join('')}
+      </div>`;
+
+  const root = document.getElementById('appRoot');
+  root.innerHTML = `
+  <div class="page-header">
+    <button class="back-home" onclick="window.location.href='index.html'">← Accueil</button>
+    <div class="page-title">${DATA.title}</div>
+    <div class="page-subtitle">${DATA.subtitle}</div>
+  </div>
+  <div class="fade-up">
+    <div class="score-box">
+      <div class="score-emoji">${emoji}</div>
+      <div class="score-num" id="scoreNum">0/${total}</div>
+      <div class="score-label">${msg} · ${pct}%</div>
+      <div class="score-actions">
+        <button class="btn-secondary" onclick="switchTab('quiz')">↺ Relancer</button>
+        <button class="btn-primary" id="errBtn" onclick="toggleErrors()">${quizState.errors.length > 0 ? 'Voir les erreurs' : "Pas d'erreurs"}</button>
+        ${quizState.errors.length > 0 ? `<button class="btn-secondary" onclick="replayErrors()">↻ Rejouer mes ${quizState.errors.length} erreur${quizState.errors.length > 1 ? 's' : ''}</button>` : ''}
+      </div>
+      <div id="errSection" style="display:none">${errorsHTML}</div>
+    </div>
+  </div>`;
+
+  const el = document.getElementById('scoreNum');
+  const start = Date.now();
+  const dur = 1500;
+  (function tick() {
+    const t = Math.min((Date.now() - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - t, 3);
+    el.textContent = Math.round(ease * score) + '/' + total;
+    if (t < 1) requestAnimationFrame(tick);
+  })();
+}
+
+function toggleErrors() {
+  const sec = document.getElementById('errSection');
+  const btn = document.getElementById('errBtn');
+  if (!sec) return;
+  const visible = sec.style.display !== 'none';
+  sec.style.display = visible ? 'none' : 'block';
+  if (btn) btn.textContent = visible ? 'Voir les erreurs' : 'Masquer les erreurs';
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ═══════ SUJETS-TYPES & PLANS CORRIGÉS ═══════
+   Format Besombes : dissertation pure 1h, 1 sujet à traiter.
+   ═══════════════════════════════════════════════════════════ */
+
+const CC_SUJETS = [
+  {
+    id: 'culture_changement',
+    titre: "La culture d'entreprise et la réussite du changement",
+    enonce: "La culture d'entreprise est l'un des facteurs déterminants de la réussite ou de l'échec d'une démarche de changement. En vous appuyant sur le cours, présentez la culture d'entreprise selon Besombes et expliquez comment elle conditionne la réussite d'un projet de changement.",
+    annee: "Sujet « LA CULTURE » — annoncé par le prof",
+    plan: [
+      {
+        section: "Introduction",
+        bullets: [
+          "Accroche : la Loi de Le Chatelier — « toute modification apportée à l'équilibre d'un système entraîne l'apparition de phénomènes qui tendent à s'opposer à cette modification »",
+          "Cette loi physique sert d'analogie pour comprendre la résistance naturelle des organisations face au changement — la culture en est le principal vecteur",
+          "Définition de la culture d'entreprise selon Besombes : ce qui fonde l'identité collective et conditionne les comportements face au changement",
+          "Problématique : en quoi la culture d'entreprise conditionne-t-elle la réussite d'un projet de changement ?",
+          "Annonce du plan en 3 parties"
+        ]
+      },
+      {
+        section: "I. Qu'est-ce que la culture d'entreprise ? — les 5 forces de Besombes",
+        bullets: [
+          "La culture d'entreprise repose sur 5 forces (Besombes) : MYTHES / RITES / IDENTITÉ / VALEURS / HISTOIRE",
+          "Les mythes : récits fondateurs, héros, événements clés qui structurent l'imaginaire collectif",
+          "Les rites : pratiques répétées (rituels, réunions, célébrations) qui rythment la vie de l'organisation",
+          "L'identité : ce qui distingue l'entreprise de ses pairs, son ADN",
+          "Les valeurs : croyances partagées qui guident les décisions et les comportements",
+          "L'histoire : trajectoire de l'organisation, qui constitue le socle de référence pour ses membres",
+          "Lien avec le cours d'évolution des modèles : « la culture d'entreprise est fondée sur une histoire, une identité, des règles du jeu, des croyances et des routines »",
+          "Confrontation permanente entre valeurs personnelles des acteurs et culture déclarée de l'établissement"
+        ]
+      },
+      {
+        section: "II. La culture comme déterminant des résistances au changement",
+        bullets: [
+          "Loi de Le Chatelier : pour conduire un changement, il faut soit augmenter les pressions dans son sens, soit diminuer les résistances",
+          "Les 3 facteurs psychosociologiques du changement : découverte d'attitudes sociales différentes / découverte de l'image de soi vue par les autres / découverte d'un nouveau sens à un mot",
+          "Les 7 résistances au changement : manque d'informations, peur de l'inconnu, besoin de sécurité, besoin de changement inexistant, peur de perdre des acquis, moment mal choisi, manque de ressources",
+          "Plusieurs de ces résistances sont enracinées dans la culture : la peur de perdre des acquis, le besoin de sécurité, le manque d'informations sont culturellement construits",
+          "Lewin (3 phases) : la décristallisation consiste précisément à remettre en cause les hypothèses culturelles installées",
+          "Modèle Kübler-Ross (courbe du changement) : les réactions émotionnelles face au changement sont médiatisées par les valeurs et l'identité culturelles"
+        ]
+      },
+      {
+        section: "III. Mobiliser la culture pour faire réussir le changement",
+        bullets: [
+          "Les 4 leviers contre les résistances : Communiquer / Faire participer / Soutenir / Négocier — chacun mobilise un aspect de la culture",
+          "Les 3 stratégies utiles selon le contexte : la coercition (peur des sanctions, attrait des récompenses) / la persuasion rationnelle (pouvoir lié à la compétence) / le partage de pouvoir (responsabilisation)",
+          "Démarche en 8 étapes Besombes : Amorcer / Analyser l'existant / Définir le nouveau cadre / Mobiliser / Élaborer les plans d'action / Mise en œuvre / Mesurer et évaluer / S'améliorer",
+          "L'étape 2 (analyser l'existant) inclut explicitement la prise en compte des routines culturelles et de la cartographie des relations",
+          "L'étape 4 (mobiliser) suppose de sensibiliser collectivement et individuellement, en s'appuyant sur les rites et les valeurs",
+          "Les 3 grandes étapes de la vocation conduite du changement : Garantir la bonne compréhension / Fédérer les parties prenantes autour d'un périmètre commun / Faciliter la mise en œuvre",
+          "L'évaluation comme inducteur de changement culturel (chap 11) : « l'instauration d'un système d'évaluation fait évoluer comportements, pratiques managériales, relations d'autorité, mentalités, représentations culturelles »"
+        ]
+      },
+      {
+        section: "Conclusion",
+        bullets: [
+          "Synthèse : la culture d'entreprise est à la fois le terrain de la résistance et le levier de la transformation",
+          "Reconnaître et travailler les 5 forces culturelles (mythes, rites, identité, valeurs, histoire) est indispensable à toute conduite de changement réussie",
+          "Une période moyenne de 2 ans est nécessaire pour parcourir une démarche complète de changement (Besombes, étapes 1 à 7)",
+          "Ouverture : le management agile et l'évolution du rôle du leader face à des cultures de plus en plus diverses"
+        ]
+      }
+    ],
+    auteurs_cles: ['Besombes (5 forces de la culture)', 'Lewin (3 phases)', 'Le Chatelier', 'Kübler-Ross (courbe du changement)', 'Besombes (8 étapes)'],
+    pieges: [
+      "Ne pas inventer d'auteurs hors-cours (Schein, Hofstede, Trompenaars, Cameron-Quinn) — Besombes attend uniquement les 5 forces et les modèles du support",
+      "Citer impérativement les 5 forces : Mythes / Rites / Identité / Valeurs / Histoire",
+      "Lier explicitement culture ↔ résistances au changement (3 facteurs psychosociologiques + 7 résistances)",
+      "Mobiliser la Loi de Le Chatelier comme analogie pour expliquer la résistance culturelle",
+      "Faire référence à l'évaluation comme inducteur de changement culturel (chap 11)"
+    ]
+  },
+  {
+    id: 'culture_levier_frein',
+    titre: "La culture d'entreprise : levier ou frein de la conduite du changement ?",
+    enonce: "La culture d'entreprise est souvent invoquée comme un obstacle au changement, mais elle peut aussi en être le moteur. En vous appuyant sur le cours, exposez en quoi la culture d'entreprise peut constituer à la fois un frein et un levier de la conduite du changement.",
+    annee: "Sujet « LA CULTURE » — variante probable",
+    plan: [
+      {
+        section: "Introduction",
+        bullets: [
+          "Accroche : la culture d'entreprise est partout invoquée dans les projets de transformation, mais rarement traitée explicitement",
+          "Définition Besombes : la culture repose sur 5 forces — Mythes / Rites / Identité / Valeurs / Histoire",
+          "Tension annoncée : la culture est-elle un point d'appui ou une source de blocage pour le changement ?",
+          "Annonce du plan en 2 ou 3 parties"
+        ]
+      },
+      {
+        section: "I. La culture comme frein au changement",
+        bullets: [
+          "Loi de Le Chatelier : toute modification de l'équilibre déclenche des phénomènes qui s'y opposent — la culture en est le principal moteur",
+          "Les 5 forces culturelles produisent inertie : mythes ancrés, rites répétitifs, identité protégée, valeurs défendues, histoire revendiquée",
+          "Les 3 facteurs psychosociologiques du changement créent un choc culturel : découverte d'attitudes différentes, image de soi vue par les autres, sens différent attribué à un mot",
+          "Les 7 résistances : la peur de perdre des acquis, le besoin de sécurité, la peur de l'inconnu — toutes culturellement construites",
+          "Modèle Kübler-Ross (courbe du changement) : la culture porte les réactions émotionnelles initiales (déni, résistance)",
+          "Confrontation entre valeurs personnelles des acteurs et culture déclarée — source de friction"
+        ]
+      },
+      {
+        section: "II. La culture comme levier du changement",
+        bullets: [
+          "Lewin — phase de cristallisation : la culture est précisément ce qui ancre durablement le changement",
+          "Étape 4 Besombes (Mobiliser) : s'appuyer sur les rites et les valeurs pour sensibiliser collectivement",
+          "Étape 8 Besombes (S'améliorer) : la culture du retour d'expérience permet la boucle d'amélioration",
+          "Les 4 leviers contre la résistance — chacun mobilise un aspect culturel : Communiquer (mythes et histoire) / Faire participer (identité partagée) / Soutenir (valeurs de solidarité) / Négocier (rites de dialogue)",
+          "Stratégie du partage de pouvoir : la responsabilisation comme facteur de motivation — repose sur une culture d'autonomie",
+          "10 points clés conduite du changement (Besombes) : la culture sert de cadre cohérent à l'ensemble de la démarche",
+          "L'évaluation comme inducteur de changement culturel : la mise en place d'un système d'évaluation fait évoluer comportements, pratiques managériales, relations d'autorité, mentalités, représentations culturelles"
+        ]
+      },
+      {
+        section: "III. (optionnel) Comment travailler la culture dans le projet de changement ?",
+        bullets: [
+          "Étape 2 Besombes (Analyser l'existant) : diagnostic culturel — identifier mythes, rites, identité, valeurs, histoire",
+          "Étape 3 (Définir le nouveau cadre) : intégrer les évolutions culturelles dans la documentation, les fiches, la communication",
+          "3 grandes étapes de la vocation : Garantir la compréhension (écouter ceux qui formulent la problématique et ceux concernés) / Fédérer (qualifier les solutions, prioriser) / Faciliter (coordination, communication, accompagnement)",
+          "Limites de la dynamique de groupe (Besombes) : « désir de participer à condition de ne pas perdre d'autonomie » — équilibre culturel délicat",
+          "L'équipe et le management agile (chap 12) : 5 étapes de constitution d'une équipe (constitution, tension, normalisation, production, dissolution) — la culture s'y construit"
+        ]
+      },
+      {
+        section: "Conclusion",
+        bullets: [
+          "Synthèse : la culture d'entreprise n'est ni un obstacle ni un levier en soi — elle est ce que les acteurs en font dans le processus de changement",
+          "Reconnaître les 5 forces culturelles, mobiliser les 4 leviers de résistance, choisir la bonne stratégie (coercition / persuasion / partage de pouvoir) selon le contexte",
+          "Citer Besombes : « C'est une question de discernement et de philosophie de gestion »",
+          "Ouverture : nouveaux défis (transformation digitale, équipes hybrides, IA) qui exigent de réinventer la culture en permanence"
+        ]
+      }
+    ],
+    auteurs_cles: ['Besombes (5 forces, 8 étapes, 10 points clés)', 'Lewin (3 phases)', 'Le Chatelier', 'Kübler-Ross', 'Besombes (3 grandes étapes)'],
+    pieges: [
+      "Ne pas se contenter d'énumérer les 5 forces — montrer leur action concrète sur le changement",
+      "Articuler frein ET levier sans tomber dans une vision manichéenne",
+      "Mobiliser les 3 stratégies (coercition / persuasion rationnelle / partage de pouvoir) — souvent oubliées",
+      "Citer la phrase de Besombes : « C'est une question de discernement et de philosophie de gestion »",
+      "Ne pas oublier l'évaluation comme inducteur de changement culturel"
+    ]
+  },
+  {
+    id: 'cinq_forces',
+    titre: "Les 5 forces de la culture d'entreprise (Besombes) et leur impact sur la conduite du changement",
+    enonce: "Selon Besombes, la culture d'entreprise repose sur cinq forces : Mythes, Rites, Identité, Valeurs, Histoire. En vous appuyant sur le cours, présentez ces cinq forces et expliquez comment chacune d'elles influe sur la conduite du changement.",
+    annee: "Sujet « LA CULTURE » — variante très probable (libellé direct)",
+    plan: [
+      {
+        section: "Introduction",
+        bullets: [
+          "Accroche : « l'instauration d'un système d'évaluation fait évoluer comportements, pratiques managériales, relations d'autorité, mentalités, représentations culturelles » (cours, chap 11)",
+          "La culture d'entreprise n'est pas un décor — elle est l'opérateur silencieux qui détermine la réussite des changements",
+          "Définition Besombes : la culture d'entreprise repose sur 5 forces — Mythes, Rites, Identité, Valeurs, Histoire",
+          "Problématique : comment chacune de ces forces influe-t-elle sur la conduite du changement ?",
+          "Annonce du plan : passage en revue des 5 forces puis synthèse opérationnelle"
+        ]
+      },
+      {
+        section: "I. Les 5 forces de la culture d'entreprise selon Besombes",
+        bullets: [
+          "MYTHES : récits fondateurs, héros, événements clés — fournissent les symboles auxquels les acteurs adhèrent",
+          "RITES : pratiques répétées (rituels, réunions, célébrations) — donnent un rythme et une appartenance",
+          "IDENTITÉ : ADN de l'entreprise, ce qui la distingue — fondement du sentiment de soi collectif",
+          "VALEURS : croyances partagées guidant les décisions et les comportements quotidiens",
+          "HISTOIRE : trajectoire passée, étapes marquantes, leçons retenues — socle de référence",
+          "Confrontation entre valeurs personnelles des acteurs et culture déclarée (chap 11) — source potentielle de tension et de mobilisation"
+        ]
+      },
+      {
+        section: "II. Impact de chaque force sur la conduite du changement",
+        bullets: [
+          "MYTHES face au changement : les mythes peuvent justifier le statu quo (« on a toujours fait comme ça ») ou au contraire fonder l'élan de transformation (mythe du fondateur réformateur)",
+          "RITES face au changement : les rites cristallisent les habitudes ; les transformer suppose de créer de nouveaux rituels (réunion debout agile, célébration des succès collectifs)",
+          "IDENTITÉ face au changement : un changement perçu comme menace identitaire suscite résistance, perçu comme renforcement identitaire il mobilise",
+          "VALEURS face au changement : les valeurs sont leviers s'il y a alignement avec le nouveau projet, frein si discordance",
+          "HISTOIRE face au changement : un passé d'échecs de transformation crée de la défiance, un passé d'évolutions réussies crée de la confiance",
+          "Lien avec les 7 résistances (chap 4) : la peur de perdre des acquis, le besoin de sécurité, la peur de l'inconnu sont des productions directes des 5 forces",
+          "Lien avec Lewin : la phase de décristallisation consiste à remettre en cause ces 5 forces, la phase de cristallisation à les reconstruire"
+        ]
+      },
+      {
+        section: "III. Mobiliser les 5 forces dans la démarche de conduite du changement",
+        bullets: [
+          "Démarche en 8 étapes Besombes : Amorcer / Analyser l'existant / Définir le nouveau cadre / Mobiliser / Élaborer plans d'action / Mise en œuvre / Mesurer et évaluer / S'améliorer",
+          "Étape 2 (Analyser l'existant) : diagnostic explicite des 5 forces — quels mythes, quels rites, quelle identité, quelles valeurs, quelle histoire ?",
+          "Étape 3 (Définir le nouveau cadre) : élaborer le récit du changement en s'appuyant sur les mythes existants ou en en créant de nouveaux",
+          "Étape 4 (Mobiliser) : utiliser les rites comme support de sensibilisation, mobiliser les valeurs partagées",
+          "Les 4 leviers contre la résistance (Communiquer / Faire participer / Soutenir / Négocier) — chacun s'adresse à une ou plusieurs des 5 forces",
+          "L'évaluation comme inducteur de changement culturel : modifier le système d'évaluation fait bouger les comportements, donc les rites, donc l'identité collective",
+          "3 grandes étapes de la vocation (Écouter et comprendre / Fédérer autour d'un périmètre commun / Faciliter la mise en œuvre) : à articuler avec les 5 forces"
+        ]
+      },
+      {
+        section: "Conclusion",
+        bullets: [
+          "Synthèse : les 5 forces de Besombes (Mythes, Rites, Identité, Valeurs, Histoire) sont le cadre opérationnel pour penser et conduire le changement culturel",
+          "Aucune transformation durable n'est possible sans intégrer ces 5 forces dans la démarche",
+          "Période moyenne de 2 ans pour une démarche en 8 étapes complète (Besombes)",
+          "Ouverture : la culture évolue elle-même sous l'effet des mutations contemporaines (digital, IA, agilité, RSE)"
+        ]
+      }
+    ],
+    auteurs_cles: ['Besombes (5 forces de la culture)', 'Besombes (8 étapes)', 'Lewin (3 phases)', 'Le Chatelier'],
+    pieges: [
+      "Présenter explicitement les 5 forces — c'est le squelette obligatoire de la copie",
+      "Pour chaque force, montrer son rôle concret dans le changement (pas juste la définition)",
+      "Articuler les 5 forces aux 7 résistances et aux 4 leviers (chap 4)",
+      "Mobiliser la démarche en 8 étapes (chap 5) pour la partie opérationnelle",
+      "Citer l'évaluation comme inducteur (chap 11) — passerelle obligatoire"
+    ]
+  },
+  {
+    id: 'transformer_culture',
+    titre: "Comment transformer la culture d'entreprise face aux mutations contemporaines ?",
+    enonce: "Les mutations économiques, technologiques et sociales obligent les entreprises à faire évoluer leur culture. En vous appuyant sur le cours, exposez les leviers et la démarche permettant de transformer la culture d'entreprise.",
+    annee: "Sujet « LA CULTURE » — variante probable",
+    plan: [
+      {
+        section: "Introduction",
+        bullets: [
+          "Accroche : la Loi de Le Chatelier — toute modification de l'équilibre génère des phénomènes opposés ; la culture est l'équilibre le plus stable d'une organisation",
+          "Définition Besombes : la culture d'entreprise repose sur 5 forces — Mythes, Rites, Identité, Valeurs, Histoire",
+          "Problématique : par quels leviers et selon quelle démarche peut-on transformer la culture d'entreprise ?",
+          "Annonce du plan : diagnostiquer la culture / mobiliser les leviers / déployer la démarche"
+        ]
+      },
+      {
+        section: "I. Diagnostiquer la culture pour identifier la cible de transformation",
+        bullets: [
+          "Étape 1 Besombes (Amorcer) : analyser facteurs internes (organisation, compétences) et externes (demande clients, prospective, autres acteurs)",
+          "Étape 2 Besombes (Analyser l'existant) : identification forces/faiblesses, cartographie des relations services/individus, mode de classement de l'information",
+          "Diagnostic explicite des 5 forces (Mythes, Rites, Identité, Valeurs, Histoire) — état initial",
+          "Les 3 facteurs psychosociologiques du changement : découverte d'attitudes sociales différentes, de l'image de soi par les autres, d'un nouveau sens à un mot",
+          "Identifier les 7 résistances probables : manque d'informations, peur de l'inconnu, besoin de sécurité, etc.",
+          "Cartographie des parties prenantes : managers, sachants, « clients » du changement, contributeurs transverses"
+        ]
+      },
+      {
+        section: "II. Mobiliser les leviers de transformation culturelle",
+        bullets: [
+          "Lewin — 3 phases appliquées à la culture : Décristalliser (remettre en cause les hypothèses) / Changer (modifier comportements, structures, techniques) / Cristalliser (ancrer les nouveaux comportements)",
+          "Les 4 leviers contre la résistance : Communiquer (éliminer les craintes liées à l'incertitude) / Faire participer (sentiment d'engagement, planification → réalisation) / Soutenir (confiance et crédibilité) / Négocier (cohérence d'ensemble)",
+          "Les 3 stratégies utiles selon le contexte : coercition (peur des sanctions ou attrait des récompenses) / persuasion rationnelle (pouvoir lié à la compétence) / partage de pouvoir (responsabilisation comme motivation)",
+          "L'évaluation des compétences comme inducteur de changement culturel : modifier le système d'évaluation fait évoluer comportements, pratiques managériales, relations d'autorité, mentalités, représentations culturelles",
+          "Les 3 grandes étapes de la vocation : Écouter et comprendre / Fédérer autour d'un périmètre commun / Faciliter la mise en œuvre"
+        ]
+      },
+      {
+        section: "III. Déployer la démarche de transformation culturelle",
+        bullets: [
+          "Démarche Besombes en 8 étapes : Amorcer / Analyser l'existant / Définir le nouveau cadre / Mobiliser / Élaborer les plans d'action / Mise en œuvre / Mesurer et évaluer / S'améliorer",
+          "Gouvernance projet : Direction (projet stratégique) / Comité de pilotage projet (gestion participative) / Groupes de travail (exécution opérationnelle, 4 groupes typiques)",
+          "Quel temps ? Période moyenne de 2 ans pour aller de l'étape 1 à 7 — ni trop ni trop peu",
+          "Outils nécessaires : base expert d'informations qualifiées, fiches produits, outils de communication, référentiels de formation, cartographie, outils d'aide à la décision",
+          "Les 10 points clés conduite du changement (Besombes) — cadre cohérent à mobiliser pour ne rien oublier",
+          "Étape 4 (Mobiliser) : sensibilisation collective et individuelle, formation aux nouvelles méthodes, définition des règles du jeu, modalités d'évaluation, méthodes de soutien",
+          "Étape 7 (Mesurer et évaluer) : mesurer les résultats, constater les écarts, corriger, informer, motiver"
+        ]
+      },
+      {
+        section: "Conclusion",
+        bullets: [
+          "Synthèse : transformer la culture exige du temps (2 ans en moyenne), une démarche structurée (8 étapes), une mobilisation explicite des 5 forces et des bons leviers",
+          "L'évaluation est l'inducteur le plus puissant — modifier les indicateurs, c'est modifier les comportements et donc la culture",
+          "Limites de la dynamique de groupe (Besombes) : « désir de participer à condition de ne pas perdre d'autonomie »",
+          "Ouverture : transformation culturelle continue face aux mutations digitales et à l'IA"
+        ]
+      }
+    ],
+    auteurs_cles: ['Besombes (5 forces, 8 étapes, 10 points clés, 3 grandes étapes)', 'Lewin (3 phases)', 'Le Chatelier'],
+    pieges: [
+      "Détailler explicitement la démarche en 8 étapes Besombes (au moins 4-5 étapes)",
+      "Mentionner les 5 forces de la culture comme cible du diagnostic initial",
+      "Mobiliser les 4 leviers et les 3 stratégies (chap 4) en partie II",
+      "Citer l'évaluation comme inducteur de changement culturel (chap 11)",
+      "Indiquer la durée moyenne (2 ans) — précision Besombes"
+    ]
+  },
+  {
+    id: 'evaluation_culture',
+    titre: "L'évaluation comme inducteur de changement culturel",
+    enonce: "Le cours souligne que « l'instauration d'un système d'évaluation fait évoluer comportements, pratiques managériales, relations d'autorité, mentalités, représentations culturelles ». En vous appuyant sur ce constat, expliquez comment l'évaluation des compétences peut être un véritable inducteur de changement culturel.",
+    annee: "Sujet « LA CULTURE » — variante probable (libellé du cours, chap 11)",
+    plan: [
+      {
+        section: "Introduction",
+        bullets: [
+          "Accroche : citation directe du cours — « l'instauration d'un système d'évaluation fait évoluer comportements, pratiques managériales, relations d'autorité, mentalités, représentations culturelles »",
+          "L'évaluation n'est pas un outil neutre : elle reconfigure la manière de travailler ensemble",
+          "Définition Besombes : la culture repose sur 5 forces — Mythes, Rites, Identité, Valeurs, Histoire",
+          "Problématique : en quoi l'évaluation des compétences peut-elle être un véritable inducteur de changement culturel ?",
+          "Annonce du plan"
+        ]
+      },
+      {
+        section: "I. Évaluation et culture : un lien intrinsèque",
+        bullets: [
+          "L'évaluation des compétences s'envisage au regard d'objectifs à atteindre et met en évidence des écarts à combler",
+          "Deux types d'évaluation : « sanction » (performance, résultats) avec objectifs quantitatifs, plans d'action, management de la performance",
+          "« Formative » (compétences, tenue du poste) avec orientations développement",
+          "L'évaluation s'appuie sur des entretiens individuels qui font appel à des notions relevant de la culture d'entreprise",
+          "La démarche doit intégrer : clarification des postes, clarification des objectifs, objectifs quantitatifs, plans d'actions formalisés, appréciation des résultats, notion de performance",
+          "Référence aux 5 forces : les rites (entretiens annuels), les valeurs (critères d'évaluation), l'identité (profils valorisés) sont impactés"
+        ]
+      },
+      {
+        section: "II. Pourquoi l'évaluation transforme la culture",
+        bullets: [
+          "L'évaluation modifie 5 dimensions explicitement listées par le cours :",
+          "1. Les COMPORTEMENTS : ce qui est évalué devient ce qui est fait",
+          "2. Les PRATIQUES MANAGÉRIALES : le manager devient évaluateur, le rapport hiérarchique change",
+          "3. Les RELATIONS D'AUTORITÉ : l'évaluation peut être unidirectionnelle, à 360°, par les pairs — choix structurants",
+          "4. Les MENTALITÉS : ce qui est mesuré devient ce qui compte (« what gets measured gets done »)",
+          "5. Les REPRÉSENTATIONS CULTURELLES : les héros de l'entreprise sont ceux qui réussissent aux indicateurs",
+          "Les 3 types de missionnement (directives / objectifs quantitatifs / orientations qualitatifs) traduisent des philosophies culturelles différentes",
+          "Les 3 types d'appréciation (contrôle / mesure / appréciation) renvoient à des cultures du contrôle vs de la confiance"
+        ]
+      },
+      {
+        section: "III. Conditions de réussite de l'évaluation comme inducteur de changement",
+        bullets: [
+          "Conditions de mise en œuvre : confier aux salariés des missions claires et des moyens adaptés",
+          "L'évaluation s'inscrit dans une démarche en 8 étapes (Besombes) — elle est partie intégrante de l'étape 7 (Mesurer et évaluer)",
+          "Articulation avec les 4 leviers contre la résistance : Communiquer (sur les critères), Faire participer (à la construction des indicateurs), Soutenir (les évalués), Négocier (les objectifs)",
+          "Limites de la dynamique de groupe : « désir de participer à condition de ne pas perdre d'autonomie » — paradoxe à gérer",
+          "Lien avec la GPEC : gestion prévisionnelle des emplois et des compétences — anticipation des évolutions culturelles",
+          "Lien avec l'équipe et le management agile (chap 12) : 5 étapes de constitution d'équipe (Constitution / Tension / Normalisation / Production / Dissolution) — l'évaluation y trouve sa place selon la maturité de l'équipe"
+        ]
+      },
+      {
+        section: "Conclusion",
+        bullets: [
+          "Synthèse : l'évaluation est l'un des leviers les plus puissants de changement culturel — elle reconfigure simultanément comportements, relations d'autorité et mentalités",
+          "Citation à mobiliser : « l'instauration d'un système d'évaluation fait évoluer comportements, pratiques managériales, relations d'autorité, mentalités, représentations culturelles »",
+          "Mais sa mise en œuvre exige des missions claires, des moyens adaptés, et une articulation avec la démarche globale de changement (8 étapes Besombes)",
+          "Ouverture : impact de l'IA sur l'évaluation (outils d'aide à la décision, analyse continue) et donc sur la culture future de l'entreprise"
+        ]
+      }
+    ],
+    auteurs_cles: ['Besombes (5 forces de la culture)', 'Besombes (8 étapes du changement)', 'Besombes (GPEC)', 'Besombes (équipe et management agile)'],
+    pieges: [
+      "Citer textuellement la phrase du cours sur les 5 dimensions modifiées par l'évaluation",
+      "Distinguer évaluation « sanction » et évaluation « formative »",
+      "Articuler l'évaluation aux 5 forces de la culture (sans inventer d'autres modèles)",
+      "Mentionner les 3 types de missionnement et les 3 types d'appréciation",
+      "Faire le lien avec la démarche globale en 8 étapes (Besombes)"
+    ]
+  }
+];
+
+function renderSujetsTypes() {
+  return `
+    <div class="fade-up">
+      <div class="sujets-intro">
+        <div style="font-size:2rem;margin-bottom:0.5rem">🗂</div>
+        <h3 style="font-family:'Playfair Display',serif;margin:0.4rem 0">Sujets-types & plans corrigés</h3>
+        <p style="color:var(--text2);max-width:640px;margin:0.8rem auto;font-size:0.92rem">Format Besombes : <strong>1 dissertation à rédiger en 1h</strong>, sans document. Pour chaque sujet probable, le plan détaillé attendu, les auteurs à mobiliser et les pièges à éviter. Idéal pour la révision express la veille de l'épreuve.</p>
+      </div>
+      <div class="sujets-list">
+        ${CC_SUJETS.map((s, i) => renderSujetCard(s, i)).join('')}
+      </div>
+    </div>
+  `;
+}
+
+function renderSujetCard(s, idx) {
+  const planHTML = s.plan.map(section => `
+    <div class="sujet-section">
+      <div class="sujet-section-title">${escAnnale(section.section)}</div>
+      <ul>${section.bullets.map(b => `<li>${escAnnale(b)}</li>`).join('')}</ul>
+    </div>`).join('');
+  const auteursHTML = s.auteurs_cles ? `
+    <div class="sujet-meta-block">
+      <div class="sujet-meta-label">📚 Auteurs / théories à citer</div>
+      <div class="sujet-tags">${s.auteurs_cles.map(a => `<span class="sujet-tag">${escAnnale(a)}</span>`).join('')}</div>
+    </div>` : '';
+  const piegesHTML = s.pieges && s.pieges.length ? `
+    <div class="sujet-meta-block">
+      <div class="sujet-meta-label">⚠️ Pièges à éviter</div>
+      <ul class="sujet-pieges">${s.pieges.map(p => `<li>${escAnnale(p)}</li>`).join('')}</ul>
+    </div>` : '';
+  return `
+    <div class="sujet-card" id="sujet-${s.id}">
+      <button class="sujet-card-head" onclick="toggleSujet('${s.id}')">
+        <div class="sujet-card-head-left">
+          <span class="sujet-card-num">${String(idx + 1).padStart(2, '0')}</span>
+          <div>
+            <div class="sujet-card-title">${escAnnale(s.titre)}</div>
+            <div class="sujet-card-annee">${escAnnale(s.annee)}</div>
+          </div>
+        </div>
+        <span class="sujet-card-chev">▸</span>
+      </button>
+      <div class="sujet-card-body" id="sujet-body-${s.id}" style="display:none">
+        <div class="sujet-enonce">
+          <div class="sujet-enonce-label">📝 Énoncé</div>
+          <div class="sujet-enonce-text">${escAnnale(s.enonce)}</div>
+        </div>
+        ${auteursHTML}
+        <div class="sujet-meta-block">
+          <div class="sujet-meta-label">📐 Plan détaillé attendu</div>
+          <div class="sujet-plan">${planHTML}</div>
+        </div>
+        ${piegesHTML}
+      </div>
+    </div>
+  `;
+}
+
+function toggleSujet(id) {
+  const body = document.getElementById('sujet-body-' + id);
+  const card = document.getElementById('sujet-' + id);
+  if (!body || !card) return;
+  const isHidden = body.style.display === 'none' || !body.style.display;
+  body.style.display = isHidden ? 'block' : 'none';
+  card.classList.toggle('open', isHidden);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ═══════ EXAMEN BLANC — 1 dissertation, format Besombes ═══════
+   Pool : CC_SUJETS (les mêmes sujets que l'onglet Sujets-types)
+   Format : durée 30→60 min · textarea + auto-évaluation par cochage
+   Note sur 20 pts répartis à parts égales sur les points-clés du plan.
+   ═══════════════════════════════════════════════════════════ */
+
+const EXAM_KEY = 'm2cca_examen_conduite_chgt';
+let examState = null;
+let examTimerInterval = null;
+
+function eExamPick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+function eExamEscape(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+/* Collecte de tous les points-clés (bullets) du plan + intro/pieges agrégés */
+function examFlattenBullets(sujet) {
+  const items = [];
+  (sujet.plan || []).forEach(section => {
+    (section.bullets || []).forEach(b => {
+      items.push({ section: section.section, text: b });
+    });
+  });
+  return items;
+}
+
+function loadExamScores() {
+  try { return JSON.parse(localStorage.getItem(EXAM_KEY)) || []; } catch (e) { return []; }
+}
+function saveExamScore(score, total, durationSec, elapsedSec, sujetId) {
+  const arr = loadExamScores();
+  arr.unshift({ score, total, date: Date.now(), duration: durationSec, elapsed: elapsedSec, sujetId });
+  localStorage.setItem(EXAM_KEY, JSON.stringify(arr.slice(0, 5)));
+}
+
+function renderExamen() {
+  const root = document.getElementById('appRoot');
+  const header = `
+    <div class="page-header">
+      <button class="back-home" onclick="window.location.href='index.html'">← Accueil</button>
+      <div class="page-title">${DATA.title}</div>
+      <div class="page-subtitle">${DATA.subtitle}</div>
+    </div>`;
+  if (!examState) { root.innerHTML = header + renderExamenConfig(); return; }
+  if (examState.submitted) { root.innerHTML = header + renderExamenResult(); return; }
+  root.innerHTML = header + renderExamenRunning();
+  examStartTimer();
+}
+
+function renderExamenConfig() {
+  const scores = loadExamScores().slice(0, 3);
+  const fmtNum = v => (Math.round(v * 100) / 100).toFixed(2).replace('.', ',');
+  const histHTML = scores.length === 0
+    ? '<p style="color:var(--text3);font-size:0.82rem;text-align:center">Aucune tentative précédente</p>'
+    : scores.map(s => {
+        const pct = Math.round(s.score / s.total * 100);
+        const d = new Date(s.date);
+        const ds = d.toLocaleDateString('fr-FR',{day:'2-digit',month:'2-digit'}) + ' ' + d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'});
+        const col = pct >= 75 ? 'var(--green)' : pct >= 50 ? 'var(--orange)' : 'var(--red)';
+        const mm = Math.floor((s.elapsed || 0) / 60);
+        return `<span class="quiz-score-pill"><span style="color:${col};font-weight:700">${fmtNum(s.score)}/${s.total}</span><span style="color:var(--text3)">${ds} · ${mm} min</span></span>`;
+      }).join('');
+  const pool = CC_SUJETS;
+  return `
+    <div class="fade-up">
+      <div class="exam-setup">
+        <div style="font-size:2.4rem">📝</div>
+        <h3 style="font-family:'Playfair Display',serif;margin:0.4rem 0">Examen blanc — ${DATA.title}</h3>
+        <p style="color:var(--text2);max-width:560px;margin:0 auto 1.4rem;font-size:0.92rem">Format épreuve écrite Besombes : 1 dissertation à rédiger, sans document, durée habituelle 1h, note sur 20 pts. ${pool.length} sujets dans le pool, tirage aléatoire. <strong>Focus sur le thème annoncé par le prof.</strong></p>
+        <div class="quiz-history" style="max-width:560px;margin:0 auto 1.4rem">
+          <div class="quiz-history-title">Tentatives récentes</div>
+          ${histHTML}
+        </div>
+        <div class="exam-setup-grid">
+          <div class="exam-setup-card">
+            <div class="exam-setup-label">⏱ Durée</div>
+            <input id="exam-duration" type="range" min="15" max="60" step="15" value="60" class="exam-slider" oninput="examUpdateDurationLabel(this.value)">
+            <div class="exam-setup-value"><span id="exam-duration-label">60 min</span></div>
+            <div class="exam-setup-hint" id="exam-duration-hint">→ <strong>1 dissertation</strong> sur <strong>20 pts</strong> (épreuve complète)</div>
+          </div>
+          <div class="exam-setup-card">
+            <div class="exam-setup-label">📚 Pool de sujets</div>
+            <p style="font-size:0.82rem;color:var(--text2);margin:0.4rem 0 0.6rem">${pool.length} sujets disponibles, tirage aléatoire à chaque lancement.</p>
+            <div class="exam-setup-hint">Tous les sujets sont basés strictement sur le contenu du cours Besombes.</div>
+          </div>
+        </div>
+        <button class="start-btn" style="margin-top:1.5rem" onclick="examStart()">🚀 Lancer l'examen blanc</button>
+      </div>
+    </div>
+  `;
+}
+
+function examUpdateDurationLabel(val) {
+  const sliderEl = document.getElementById('exam-duration');
+  if (val == null) val = sliderEl ? sliderEl.value : 60;
+  const lbl = document.getElementById('exam-duration-label');
+  if (lbl) lbl.textContent = parseInt(val, 10) + ' min';
+}
+
+function examStart() {
+  const dur = parseInt(document.getElementById('exam-duration').value, 10) * 60;
+  const pool = CC_SUJETS;
+  if (!pool.length) { alert('Aucun sujet disponible.'); return; }
+  const sujet = eExamPick(pool);
+  examState = {
+    startedAt: Date.now(),
+    durationSec: dur,
+    submitted: false,
+    sujet,
+    bullets: examFlattenBullets(sujet),
+    answers: { text: '', checks: {} }
+  };
+  renderExamen();
+}
+
+function renderExamenRunning() {
+  const s = examState.sujet;
+  const text = examState.answers.text || '';
+  return `
+    <div class="exam-timer-bar" id="exam-timer-bar">
+      <span class="exam-timer-icon">⏱</span>
+      <span class="exam-timer-time" id="exam-timer-time">--:--</span>
+      <div class="exam-timer-progress"><div class="exam-timer-progress-fill" id="exam-timer-fill"></div></div>
+      <button class="exam-timer-submit" onclick="examSubmit(false)">Terminer →</button>
+    </div>
+    <div class="fade-up exam-running">
+      <div class="exam-dossier">
+        <div class="exam-dossier-head">
+          <div class="exam-dossier-num">Dissertation</div>
+          <div class="exam-dossier-title">${eExamEscape(s.titre)}</div>
+          <div class="exam-dossier-pts">20 pts</div>
+        </div>
+        <div class="exam-context">
+          <p><em>${eExamEscape(s.enonce)}</em></p>
+          <p class="exam-rappel">📐 Durée 1h. À la soumission, tu cocheras les points-clés que tu as effectivement traités pour obtenir ta note.</p>
+        </div>
+        <div class="exam-q">
+          <textarea class="exam-textarea" style="min-height:380px" placeholder="Rédigez votre dissertation structurée (introduction, 2-3 parties, conclusion)..." oninput="examUpdateText(this.value)">${eExamEscape(text)}</textarea>
+          <div class="exam-wc" id="exam-wc">${text.trim() ? text.trim().split(/\s+/).length : 0} mots</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin:2rem 0">
+        <button class="start-btn" onclick="examSubmit(false)">Terminer l'examen et voir le corrigé →</button>
+      </div>
+    </div>`;
+}
+
+function examUpdateText(val) {
+  if (!examState || examState.submitted) return;
+  examState.answers.text = val;
+  const el = document.getElementById('exam-wc');
+  if (el) el.textContent = (val.trim() ? val.trim().split(/\s+/).length : 0) + ' mots';
+}
+
+function examStartTimer() {
+  clearInterval(examTimerInterval);
+  const update = () => {
+    if (!examState || examState.submitted) { clearInterval(examTimerInterval); return; }
+    const elapsed = Math.floor((Date.now() - examState.startedAt) / 1000);
+    const remaining = Math.max(0, examState.durationSec - elapsed);
+    const mm = String(Math.floor(remaining / 60)).padStart(2, '0');
+    const ss = String(remaining % 60).padStart(2, '0');
+    const el = document.getElementById('exam-timer-time');
+    if (el) el.textContent = mm + ':' + ss;
+    const fill = document.getElementById('exam-timer-fill');
+    if (fill) fill.style.width = (remaining / examState.durationSec * 100) + '%';
+    const bar = document.getElementById('exam-timer-bar');
+    if (bar) {
+      bar.classList.toggle('warn', remaining < 300 && remaining > 60);
+      bar.classList.toggle('danger', remaining <= 60);
+    }
+    if (remaining <= 0) { clearInterval(examTimerInterval); examSubmit(true); }
+  };
+  update();
+  examTimerInterval = setInterval(update, 1000);
+}
+
+function examSubmit(timeout) {
+  if (!examState || examState.submitted) return;
+  if (!timeout && !confirm('Terminer l\'examen et afficher le corrigé ? Tu ne pourras plus modifier ta rédaction (mais tu pourras encore cocher les points-clés).')) return;
+  examState.submitted = true;
+  examState.elapsedSec = Math.floor((Date.now() - examState.startedAt) / 1000);
+  examState.timeout = !!timeout;
+  clearInterval(examTimerInterval);
+  // sauvegarde initiale du score (0 jusqu'à auto-évaluation)
+  saveExamScore(0, 20, examState.durationSec, examState.elapsedSec, examState.sujet.id);
+  renderExamen();
+}
+
+function examEvalCheck(key, checked) {
+  if (!examState) return;
+  examState.answers.checks = examState.answers.checks || {};
+  examState.answers.checks[key] = checked;
+  if (examState.submitted) examRecomputeScore();
+}
+
+function examRecomputeScore() {
+  const checks = examState.answers.checks || {};
+  const total = examState.bullets.length;
+  const checked = Object.keys(checks).filter(k => checks[k]).length;
+  const pts = Math.round(checked / total * 20 * 100) / 100;
+  const el = document.getElementById('exam-score-live');
+  if (el) el.textContent = pts.toFixed(2).replace('.', ',');
+  // live persistence
+  if (examState.submitted) {
+    const arr = loadExamScores();
+    if (arr.length > 0) {
+      arr[0].score = pts;
+      localStorage.setItem(EXAM_KEY, JSON.stringify(arr));
+      flashSaveIndicator();
+    }
+  }
+}
+
+function flashSaveIndicator() {
+  const el = document.getElementById('exam-save-flash');
+  if (!el) return;
+  el.classList.remove('flash');
+  void el.offsetWidth;
+  el.classList.add('flash');
+}
+
+function renderExamenResult() {
+  const s = examState.sujet;
+  const a = examState.answers;
+  const bullets = examState.bullets;
+  const checked = bullets.filter((_, i) => (a.checks || {})['b' + i]).length;
+  const pts = Math.round(checked / bullets.length * 20 * 100) / 100;
+  const pct = Math.round(pts / 20 * 100);
+  const emoji = pct >= 75 ? '🏆' : pct >= 50 ? '🎉' : pct >= 35 ? '👍' : '💪';
+  const msg = pct >= 75 ? 'Mention TB' : pct >= 60 ? 'Mention B' : pct >= 50 ? 'Validé' : pct >= 30 ? 'Insuffisant' : 'Non validé';
+  if (pct >= 75) launchConfetti();
+  // Save the initial score with no checks
+  const fmtNum = v => (Math.round(v * 100) / 100).toFixed(2).replace('.', ',');
+  const mm = Math.floor(examState.elapsedSec / 60);
+  const ss = examState.elapsedSec % 60;
+  // group bullets by section for display
+  const sectionMap = {};
+  bullets.forEach((b, i) => { if (!sectionMap[b.section]) sectionMap[b.section] = []; sectionMap[b.section].push({ ...b, idx: i }); });
+  const evalHTML = Object.keys(sectionMap).map(secTitle => `
+    <div class="exam-eval-sub">
+      <div class="exam-eval-section"><strong>${eExamEscape(secTitle)}</strong></div>
+      ${sectionMap[secTitle].map(b => `
+        <label class="exam-eval-item">
+          <input type="checkbox" ${(a.checks || {})['b' + b.idx] ? 'checked' : ''} onchange="examEvalCheck('b${b.idx}', this.checked)">
+          <span>${eExamEscape(b.text)}</span>
+          <span class="exam-eval-pts">+${(20 / bullets.length).toFixed(2)} pt</span>
+        </label>`).join('')}
+    </div>
+  `).join('');
+  const auteursHTML = (s.auteurs_cles && s.auteurs_cles.length)
+    ? `<div class="sujet-meta-block"><div class="sujet-meta-label">📚 Auteurs / concepts à mobiliser</div><div class="sujet-tags">${s.auteurs_cles.map(a => `<span class="sujet-tag">${eExamEscape(a)}</span>`).join('')}</div></div>`
+    : '';
+  const piegesHTML = (s.pieges && s.pieges.length)
+    ? `<div class="sujet-meta-block"><div class="sujet-meta-label">⚠️ Pièges à éviter</div><ul class="sujet-pieges">${s.pieges.map(p => `<li>${eExamEscape(p)}</li>`).join('')}</ul></div>`
+    : '';
+  return `
+    <div class="fade-up">
+      <div class="score-box">
+        <div class="score-emoji">${emoji}</div>
+        <div class="score-num"><span id="exam-score-live">${fmtNum(pts)}</span> / 20</div>
+        <div class="exam-save-flash-wrap"><span id="exam-save-flash" class="exam-save-flash">💾 Note sauvegardée</span></div>
+        <div class="score-label">${msg} · ${pct}% · ${mm}min${ss > 0 ? ' ' + ss + 's' : ''}${examState.timeout ? ' (temps écoulé)' : ''}</div>
+        <div class="score-actions">
+          <button class="btn-secondary" onclick="examState = null; renderExamen()">↺ Nouvel examen</button>
+        </div>
+      </div>
+      <div class="exam-result-dossier">
+        <div class="exam-result-dossier-head">
+          <div class="exam-result-dossier-title">📝 Sujet et ta rédaction</div>
+        </div>
+        <div style="padding:0 1rem 1rem">
+          <p style="font-size:0.92rem;color:var(--text)"><strong>${eExamEscape(s.titre)}</strong></p>
+          <p style="font-size:0.88rem;color:var(--text2);font-style:italic;margin:0.4rem 0 0.8rem">${eExamEscape(s.enonce)}</p>
+          <div style="background:var(--bg);padding:0.8rem 1rem;border-radius:8px;border-left:3px solid var(--accent);font-size:0.88rem;white-space:pre-wrap">${eExamEscape(a.text || '(aucune rédaction saisie)')}</div>
+        </div>
+      </div>
+      <div class="exam-result-dossier">
+        <div class="exam-result-dossier-head">
+          <div class="exam-result-dossier-title">✅ Auto-évaluation — coche les points-clés que tu as réellement traités</div>
+        </div>
+        <div style="padding:0.6rem 1rem 1rem">
+          ${evalHTML}
+        </div>
+      </div>
+      ${auteursHTML ? `<div class="exam-result-dossier"><div style="padding:1rem 1.3rem">${auteursHTML}</div></div>` : ''}
+      ${piegesHTML ? `<div class="exam-result-dossier"><div style="padding:1rem 1.3rem">${piegesHTML}</div></div>` : ''}
+    </div>`;
+}
+
+/* ═══════ BOOT ═══════ */
+(async function() {
+  try {
+    DATA = await loadJSON('data/conduite_chgt.json', FALLBACK);
+    if (!DATA || !DATA.checklistItems) DATA = FALLBACK;
+    renderNav();
+    switchTab('checklist');
+  } catch (err) {
+    console.error('[conduite_chgt] boot error', err);
+    const root = document.getElementById('appRoot');
+    if (root) root.innerHTML = `
+      <div style="padding:3rem 1.5rem;text-align:center;background:var(--card);border-radius:14px;border:1px solid var(--red)">
+        <div style="font-size:2rem;margin-bottom:0.8rem">⚠️</div>
+        <div style="color:var(--red);font-weight:600;margin-bottom:0.4rem">Erreur de chargement</div>
+        <div style="color:var(--text2);font-size:0.85rem;margin-bottom:1rem">${err.message || err}</div>
+        <button class="back-home" onclick="window.location.href='index.html'">← Retour à l'accueil</button>
+      </div>`;
+  }
+})();
+
+/* DEEPLINK_BOOTSTRAP */
+window.addEventListener('load', () => setTimeout(applyDeepLink, 200));
+</script>
+</body>
+</html>

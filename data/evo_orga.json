@@ -1,0 +1,815 @@
+{
+  "title": "Évolution des modèles d'organisation",
+  "subtitle": "Cours F. Besombes — DPPO · Processus · Performance · Pilotage",
+  "quizKey": "m2cca_quiz_evo_orga",
+  "checklistItems": [
+    {
+      "id": "eo1",
+      "label": "Frise historique : du feu (−400 000) à l'IA (2030)"
+    },
+    {
+      "id": "eo2",
+      "label": "3 logiques économiques : Production (1900) → Vente (1950) → Création de valeur"
+    },
+    {
+      "id": "eo3",
+      "label": "Quelles organisations aujourd'hui ? (virtuelles, fabless-fab, multi-PME, territoires)"
+    },
+    {
+      "id": "eo4",
+      "label": "Schéma BOR : Besoin / Organisation / Réponse — cohérence RH × Matériel/Financier"
+    },
+    {
+      "id": "eo5",
+      "label": "Les 12 thèmes structurants du cours Besombes"
+    },
+    {
+      "id": "eo6",
+      "label": "DPPO de Peter Drucker (1954) — 6 principes fondamentaux"
+    },
+    {
+      "id": "eo7",
+      "label": "Champ des objectifs opérationnels DPPO (structure, équipes, pilotage)"
+    },
+    {
+      "id": "eo8",
+      "label": "Stratégie de différenciation — avantage concurrentiel par perception client"
+    },
+    {
+      "id": "eo9",
+      "label": "Le métier comme combinaison de savoir-faire"
+    },
+    {
+      "id": "eo10",
+      "label": "Tainter — 6 facteurs de l'effondrement par complexité"
+    },
+    {
+      "id": "eo11",
+      "label": "Étude Deloitte 2016 (Philippe Burger) — réseau d'équipes (90 % / 11 %)"
+    },
+    {
+      "id": "eo12",
+      "label": "Concept organisationnel — transversalité, autonomie, innovation, satisfaction client"
+    },
+    {
+      "id": "eo13",
+      "label": "Culture d'entreprise — histoire, identité, règles du jeu, croyances"
+    },
+    {
+      "id": "eo14",
+      "label": "Citation Paul Valéry : « Un bon chef est celui qui a besoin des autres »"
+    },
+    {
+      "id": "eo15",
+      "label": "Norme ISO 8402 + ISO 9001 v.2000 — définition formelle du processus"
+    },
+    {
+      "id": "eo16",
+      "label": "3 types de processus : Réalisation / Support / Pilotage"
+    },
+    {
+      "id": "eo17",
+      "label": "Vocabulaire : Macroprocessus → Processus → Sous-processus → Tâches"
+    },
+    {
+      "id": "eo18",
+      "label": "Tortue de Crosby — 4 questions (Avec quoi / Avec qui / Comment / Combien)"
+    },
+    {
+      "id": "eo19",
+      "label": "Cartographie des processus + interactions"
+    },
+    {
+      "id": "eo20",
+      "label": "Dualité Stratégie-Organisation — Chandler, Edgar Morin (ago-antagoniste)"
+    },
+    {
+      "id": "eo21",
+      "label": "Approche US Navy de la performance (mission, outputs, standards, budget, reporting)"
+    },
+    {
+      "id": "eo22",
+      "label": "Efficacité vs Efficience selon Drucker (bonnes choses / bonne façon)"
+    },
+    {
+      "id": "eo23",
+      "label": "Modèle de Gilbert (1980) — triangle Objectifs / Moyens / Résultats"
+    },
+    {
+      "id": "eo24",
+      "label": "Michel Crozier (1922-2013) — analyse stratégique, organisation = corps vivant"
+    },
+    {
+      "id": "eo25",
+      "label": "Arbre de décision dynamique : Pouvoir / Droit / Intérêt"
+    },
+    {
+      "id": "eo26",
+      "label": "Dialogue social — citation Ghosn (5 % stratégie / 95 % action)"
+    },
+    {
+      "id": "eo27",
+      "label": "4 niveaux : TOP / Proximité / Opérateurs / IRP — formel & informel"
+    },
+    {
+      "id": "eo28",
+      "label": "Migration structure fonctionnelle → structure projet (PDCA)"
+    },
+    {
+      "id": "eo29",
+      "label": "7 leviers pour passer de la vision à l'action"
+    },
+    {
+      "id": "eo30",
+      "label": "3 conditions du management (performance / stratégie partagée / réussite)"
+    },
+    {
+      "id": "eo31",
+      "label": "Citation Karajan : « L'art de diriger consiste à abandonner la baguette »"
+    },
+    {
+      "id": "eo32",
+      "label": "Pilotage au quotidien : pilote + fréquence + mesure + communication"
+    },
+    {
+      "id": "eo33",
+      "label": "Conclusion : CO-CONSTRUIRE / CO-AGIR / CO-RESPONSABLE"
+    }
+  ],
+  "flashcards": [
+    {
+      "q": "Frise historique de l'évolution des organisations",
+      "a": "Selon Besombes, 4 jalons clés :\n• −400 000 av. J.-C. : maîtrise du feu\n• XVIIIe siècle : Révolution industrielle\n• Fin XXe : TIC\n• 2030 : IA\n\n3 tensions permanentes structurent toute organisation : Pouvoir, Contre-pouvoir, Spécialisation.",
+      "theme": "intro",
+      "src": "Évo p.3-5",
+      "srcChap": 1
+    },
+    {
+      "q": "Les 3 logiques économiques successives",
+      "a": "• 1900 : Logique de PRODUCTION\n• 1950 : Logique de VENTE\n• Aujourd'hui : Logique de CRÉATION DE VALEUR",
+      "theme": "intro",
+      "src": "Évo p.5",
+      "srcChap": 1
+    },
+    {
+      "q": "Quelles organisations aujourd'hui ? (Besombes)",
+      "a": "4 formes typiques :\n• Entreprises virtuelles\n• Industries sans usines (fabless-fab)\n• Grandes entreprises composées d'une multitude de PME\n• Entreprises sur l'ensemble des territoires",
+      "theme": "intro",
+      "src": "Évo p.6",
+      "srcChap": 1
+    },
+    {
+      "q": "Schéma BOR — la logique permanente",
+      "a": "Besoin → Organisation → Réponse\n\nLa cohérence de l'organisation repose sur 2 piliers :\n• Ressources humaines / compétences\n• Ressources matérielles et financières",
+      "theme": "intro",
+      "src": "Évo p.7",
+      "srcChap": 1
+    },
+    {
+      "q": "Les 12 thèmes du cours Besombes",
+      "a": "① IA · ② Robotique/cobotique · ③ Capital humain · ④ Stratégie vs Organisation · ⑤ Contingence organisationnelle · ⑥ Innovation · ⑦ RSE · ⑧ Réseau et territoire · ⑨ Approche systémique et processus · ⑩ Chaîne de valeur et globalisation · ⑪ Productivité vs création de valeur · ⑫ Nouvelles formes de travail",
+      "theme": "intro",
+      "src": "Évo p.5",
+      "srcChap": 1
+    },
+    {
+      "q": "Changement de paradigme dans le management",
+      "a": "Évolution :\n• Logique de TÂCHES (école classique)\n→\n• Logique d'OBJECTIFS (orientée performance)\n\nCette bascule fonde la DPPO de Drucker.",
+      "theme": "intro",
+      "src": "Évo p.10-12 (DPPO)",
+      "srcChap": 3
+    },
+    {
+      "q": "Stratégie de différenciation — Besombes",
+      "a": "4 principes-clés :\n• La différenciation est à l'origine des avantages concurrentiels décisifs\n• Seules les différences PERÇUES PAR LE CLIENT ont de la valeur\n• Les différences complexes s'appuient sur la spécialisation\n• La perception de la différence est liée à la maîtrise de l'ensemble de la chaîne de valeur",
+      "theme": "intro",
+      "src": "Évo p.13",
+      "srcChap": 4
+    },
+    {
+      "q": "Le métier et le savoir-faire",
+      "a": "• Le métier = somme des savoir-faire acquis + capacité à les combiner\n• Le processus combinatoire varie d'une organisation à l'autre\n• Difficile à décrire car les combinaisons sont informelles\n• La vision du métier par un manager conditionne sa capacité à découvrir de nouvelles voies",
+      "theme": "intro",
+      "src": "Évo p.14",
+      "srcChap": 5
+    },
+    {
+      "q": "Tainter — théorie de l'effondrement par complexité (6 facteurs)",
+      "a": "Tainter étudie les effondrements de sociétés :\n1) Les sociétés sont des organisations pour résoudre des problèmes\n2) Les systèmes sociopolitiques ont besoin d'énergie pour se maintenir\n3) La complexité accrue porte des coûts accrus par habitant\n4) L'investissement dans la complexité atteint un point de rendements marginaux décroissants\n5) Quand le rendement décline, la société investit toujours plus dans une stratégie moins rentable\n6) Les rendements décroissants poussent à la séparation ou désintégration (sécession)",
+      "theme": "intro",
+      "src": "Évo p.15-16",
+      "srcChap": 6
+    },
+    {
+      "q": "Étude Deloitte 2016 (Philippe Burger) — réseau d'équipes",
+      "a": "Chiffres clés :\n• 90 % des entreprises françaises envisagent une évolution de leur organisation\n• 11 % déclarent avoir une structure construite autour de projets/programmes transverses\n\nLe « réseau d'équipes » est un nouveau modèle organisationnel : équipes responsables, flexibles, interconnectées, partout dans le monde.",
+      "theme": "intro",
+      "src": "Évo p.17",
+      "srcChap": 7
+    },
+    {
+      "q": "Concept organisationnel — 4 principes généraux",
+      "a": "Principes du modèle contemporain :\n• Transversalité\n• Autonomie vs Responsabilité\n• Initiative et innovation\n• Orientation Satisfaction Client",
+      "theme": "intro"
+    },
+    {
+      "q": "La culture d'entreprise (Besombes)",
+      "a": "4 caractéristiques :\n• Elle existe toujours, qu'elle soit connue ou non\n• Fondée sur les habitudes, attitudes sociales, histoire de chacun\n• Confrontation entre valeurs personnelles et culture déclarée\n• Fondée sur une histoire, une identité, des règles du jeu, des croyances et des routines",
+      "theme": "intro",
+      "src": "Évo p.19",
+      "srcChap": 7
+    },
+    {
+      "q": "Citation Paul Valéry sur le management",
+      "a": "« Un bon chef est celui qui a besoin des autres » — Paul Valéry\n\nPour construire la performance, il faut : FAIRE RÉUSSIR LES AUTRES.",
+      "theme": "intro",
+      "src": "Évo p.20",
+      "srcChap": 7
+    },
+    {
+      "q": "DPPO — Direction Par Objectifs (Peter Drucker, 1954)",
+      "a": "Concept conceptualisé en 1954 par Peter Drucker (1909-2005).\n\nC'est le passage d'une logique de TÂCHES à une logique d'OBJECTIFS, fondateur du management contemporain.",
+      "theme": "dppo",
+      "src": "Évo p.10-12 (DPPO)",
+      "srcChap": 3
+    },
+    {
+      "q": "Les 6 principes fondamentaux de la DPPO (Drucker)",
+      "a": "1) Définir la mission de son entité\n2) Fixer des objectifs clairs pour les équipes\n3) Analyser et organiser le travail pour créer un sentiment de satisfaction\n4) Informer et écouter ses employés\n5) Évaluer les résultats au moyen de normes spécifiques\n6) Former ses collaborateurs en permanence",
+      "theme": "dppo",
+      "src": "Évo p.7",
+      "srcChap": 1
+    },
+    {
+      "q": "Le champ des objectifs opérationnels (DPPO)",
+      "a": "3 dimensions d'évolution :\n• STRUCTURE : de hiérarchique à transversale\n• ÉQUIPES : déclinaison des objectifs stratégiques en objectifs opérationnels pour chaque pôle et chaque collaborateur\n• PILOTAGE & AMÉLIORATION : participation des collaborateurs au déploiement des procédures + information sur les indicateurs",
+      "theme": "dppo",
+      "src": "Évo p.7",
+      "srcChap": 1
+    },
+    {
+      "q": "L'évolution du management : de la tâche au processus",
+      "a": "Passage :\n• Logique de « tâches » (école classique)\n→\n• Approche « processus » orientée vers la performance et l'excellence",
+      "theme": "processus"
+    },
+    {
+      "q": "Définition formelle du processus (ISO 8402)",
+      "a": "« Ensemble des moyens et d'activités qui transforment les éléments entrants en éléments sortants dans un but défini et mesurable » (ISO 8402, cité par P. Baracchini, 2007)\n\nPlus simplement : ensemble homogène de sous-processus et de tâches qui s'enchaînent pour transformer des intrants en extrants.",
+      "theme": "processus",
+      "src": "Évo p.28",
+      "srcChap": 8
+    },
+    {
+      "q": "Les 3 types de processus",
+      "a": "• PROCESSUS DE RÉALISATION : réalisation du produit/service (conception, fabrication, vente, prestation)\n• PROCESSUS SUPPORT : outils et méthodes appuyant la réalisation (RH, formation, IT, comptabilité, maintenance)\n• PROCESSUS DE PILOTAGE : mise en œuvre des objectifs (politique, stratégie, décision, budget, mesure)",
+      "theme": "processus",
+      "src": "Évo p.25",
+      "srcChap": 8
+    },
+    {
+      "q": "Vocabulaire hiérarchique des processus",
+      "a": "4 niveaux :\n• MACROPROCESSUS : Client, RH…\n• PROCESSUS : ensemble de sous-processus\n• SOUS-PROCESSUS : ensemble de tâches\n• TÂCHES : opération spécifique",
+      "theme": "processus",
+      "src": "Évo p.26",
+      "srcChap": 8
+    },
+    {
+      "q": "Norme ISO 9001 version 2000 — schéma SMQ",
+      "a": "Système de Management de la Qualité — boucle d'amélioration continue :\n\nClient (exigences) → Données d'entrée → Réalisation du produit/service → Données de sortie → Client (satisfaction)\n\nSupervisé par : Responsabilité de la direction + Management des ressources + Mesure/analyse/amélioration",
+      "theme": "processus",
+      "src": "Évo p.27",
+      "srcChap": 8
+    },
+    {
+      "q": "La tortue de Crosby — 4 questions pour caractériser un processus",
+      "a": "• AVEC QUOI ? — Moyens et équipements\n• AVEC QUI ? — Compétences\n• COMMENT ? — Méthodes\n• COMBIEN ? — Indicateurs de pilotage",
+      "theme": "processus",
+      "src": "Évo p.29",
+      "srcChap": 8
+    },
+    {
+      "q": "Interactions entre processus + cartographie",
+      "a": "Démarche :\n1) Identifier les processus entre lesquels il existe une interaction\n2) Définir la nature de l'interaction (sortie de l'un = entrée d'un autre)\n3) Établir un diagramme de toutes les interactions = CARTOGRAPHIE des processus",
+      "theme": "processus",
+      "src": "Évo p.30",
+      "srcChap": 8
+    },
+    {
+      "q": "Nature des processus et chaîne de valeur",
+      "a": "2 catégories de processus :\n• Ceux dont les sorties sont associées aux EXIGENCES DES CLIENTS\n• Ceux dont les sorties ont une incidence sur l'EFFICACITÉ DES AUTRES PROCESSUS\n\nLe processus produit de la VALEUR AJOUTÉE des fournisseurs vers les clients, à travers des MOYENS et des RÈGLES.",
+      "theme": "processus"
+    },
+    {
+      "q": "Dualité Stratégie-Organisation (Besombes)",
+      "a": "L'entreprise doit avoir une démarche pro-active de CONQUÊTE tout en LIMITANT LE RISQUE.\n\n• Convergence d'éléments AGO-ANTAGONISTES (Edgar Morin)\n• Lien indissociable structure ↔ stratégie (A. Chandler)\n• Maîtrise organisationnelle nécessaire : communication, comportements, jeux d'acteurs",
+      "theme": "performance",
+      "src": "Évo p.34",
+      "srcChap": 9
+    },
+    {
+      "q": "Définition de la performance organisationnelle (Besombes)",
+      "a": "4 caractéristiques :\n• Issue d'un PROCESSUS DE CONSTRUCTION CONTINGENT\n• Conséquence d'une REPRÉSENTATION (pas de réalité propre)\n• Résultat de l'ACCORD ENTRE LES PARTIES PRENANTES (consensus, coopération)\n• Devenue STRATÉGIQUE, contribue à l'émergence du « sens »\n\nDéfinition synthétique : résultat d'un processus maîtrisé pour atteindre un but préalablement défini, en mobilisant des ressources variées et optimisées.",
+      "theme": "performance"
+    },
+    {
+      "q": "L'approche US Navy de la performance",
+      "a": "« Processus de définition de la mission et des outputs escomptés, de détermination des standards de la performance, de mise en relation du budget avec la performance, de reporting des résultats ainsi que de l'assurance que les managers sont comptables des résultats. »",
+      "theme": "performance",
+      "src": "Évo p.38",
+      "srcChap": 9
+    },
+    {
+      "q": "Efficacité vs Efficience selon Drucker",
+      "a": "• EFFICACITÉ : atteinte des résultats QUELLE QUE SOIT l'allocation de ressources = « Faire les bonnes choses »\n• EFFICIENCE : atteinte des résultats EN OPTIMISANT l'allocation de ressources = « Faire les choses de la bonne façon »\n\nLa performance dans un contexte donné = capacité d'être à la fois Efficace ET Efficient.",
+      "theme": "performance",
+      "src": "Évo p.10-12 (DPPO)",
+      "srcChap": 3
+    },
+    {
+      "q": "Modèle de Gilbert (1980) — triangle de la performance",
+      "a": "PERFORMANCE = intersection de 3 dimensions :\n• OBJECTIFS\n• MOYENS\n• RÉSULTATS\n\nLes 3 écarts définissent :\n• Objectifs ↔ Résultats : EFFICACITÉ\n• Moyens ↔ Résultats : EFFICIENCE\n• Objectifs ↔ Moyens : PERTINENCE",
+      "theme": "performance",
+      "src": "Évo p.41",
+      "srcChap": 9
+    },
+    {
+      "q": "Michel Crozier (1922-2013) — l'organisation est un corps vivant",
+      "a": "Concepteur de l'ANALYSE STRATÉGIQUE et de l'ACTION COLLECTIVE.\n\n• Les organisations sont comparables à des organismes vivants\n• Les êtres vivants planifient, analysent, expérimentent et décident\n• Ils s'adaptent et innovent face aux évolutions et à l'environnement",
+      "theme": "performance",
+      "src": "Évo p.42",
+      "srcChap": 10
+    },
+    {
+      "q": "L'arbre de décision dynamique de Crozier",
+      "a": "3 leviers structurants en interaction :\n• POUVOIR\n• DROIT\n• INTÉRÊT\n\nCes 3 dimensions déterminent les jeux d'acteurs au sein de l'organisation.",
+      "theme": "performance",
+      "src": "Évo p.42",
+      "srcChap": 10
+    },
+    {
+      "q": "Citation Carlos Ghosn sur la stratégie",
+      "a": "« La réussite d'une entreprise, c'est 5 % de stratégie et 95 % d'action. » — Carlos Ghosn\n\nCette citation justifie l'importance centrale du dialogue social et du pilotage opérationnel.",
+      "theme": "pilotage",
+      "src": "Évo p.44",
+      "srcChap": 11
+    },
+    {
+      "q": "Le dialogue social — 4 niveaux d'acteurs",
+      "a": "• TOP MANAGEMENT\n• MANAGEMENT DE PROXIMITÉ\n• OPÉRATEURS\n• IRP (Instances Représentatives du Personnel)\n\n2 registres : dialogue social FORMEL + dialogue social INFORMEL.\n\nObjectif : aller vers un dialogue social PERMANENT centré sur le projet à réussir ensemble.",
+      "theme": "pilotage",
+      "src": "Évo p.44",
+      "srcChap": 11
+    },
+    {
+      "q": "Migration structure fonctionnelle → structure projet",
+      "a": "STRUCTURE FONCTIONNELLE (contrôle) :\n• Communication séquentielle descendante (parfois ascendante)\n• Organisation centrée sur les TÂCHES\n\nSTRUCTURE PROJET :\n• Communication continue CIRCULAIRE\n• Organisation centrée sur les PROCESSUS\n\nCycle PDCA : Prévoir → Faire → Contrôler (autonomie) → Agir ou Réagir",
+      "theme": "pilotage",
+      "src": "Évo p.45",
+      "srcChap": 11
+    },
+    {
+      "q": "Les 7 leviers pour passer de la vision à l'action",
+      "a": "1) Avoir une offre choisie et non subie\n2) Choisir ses clients en segmentant\n3) Cultiver les réseaux pour une réponse globale et experte\n4) Cultiver la capacité innovante\n5) Assurer la convergence des compétences des collaborateurs\n6) Intensifier la transversalité\n7) Construire une offre experte (notre métier) ET globale (partenaires)",
+      "theme": "pilotage",
+      "src": "Évo p.7",
+      "srcChap": 1
+    },
+    {
+      "q": "Management et performance — 3 conditions (Besombes)",
+      "a": "• Il n'y a pas de PERFORMANCE sans MANAGEMENT\n• Il n'y a pas de MANAGEMENT sans STRATÉGIE PARTAGÉE\n• Il n'y a pas de RÉUSSITE sans MANAGEMENT\n\nLes équipes sont au cœur de la performance organisationnelle.",
+      "theme": "pilotage"
+    },
+    {
+      "q": "Citation Karajan sur le pilotage",
+      "a": "« L'art de diriger consiste à abandonner la baguette pour ne pas gêner l'orchestre. » — Herbert von Karajan\n\nLa direction efficace consiste à donner l'autonomie aux acteurs après avoir donné le cap.",
+      "theme": "pilotage",
+      "src": "Évo p.50",
+      "srcChap": 11
+    },
+    {
+      "q": "Pourquoi piloter ? (Besombes)",
+      "a": "« On ne peut progresser que sur ce que l'on mesure. »\n\nLa mesure des écarts et leur correction partagée et comprise permet à chacun de progresser.",
+      "theme": "pilotage"
+    },
+    {
+      "q": "Qu'est-ce que piloter ?",
+      "a": "Piloter, c'est DÉPLOYER LA STRATÉGIE EN ACTIONS.\n\nCes actions doivent être mesurées et vérifiées régulièrement pour s'assurer qu'elles satisfont à l'exigence stratégique.",
+      "theme": "pilotage"
+    },
+    {
+      "q": "Pilotage au quotidien — 4 éléments par action",
+      "a": "Pour chaque action pilotée, désigner :\n• Un PILOTE\n• Une FRÉQUENCE\n• Un MOYEN DE MESURE\n• Une COMMUNICATION\n\n3 piliers : PILOTAGE (maîtriser) + INDICATEURS (garder le contrôle) + INFORMATIONS (expliquer, anticiper).",
+      "theme": "pilotage"
+    },
+    {
+      "q": "Conclusion du cours Besombes — CO-CONSTRUIRE / CO-AGIR / CO-RESPONSABLE",
+      "a": "« La performance est éphémère et il convient à chaque instant de renouveler l'expérience collective qui permet de la construire. »\n\nCO-CONSTRUIRE pour CO-AGIR et être CO-RESPONSABLE",
+      "theme": "pilotage",
+      "src": "Évo p.54",
+      "srcChap": 11
+    }
+  ],
+  "quizQuestions": [
+    {
+      "q": "Selon Besombes, quelle est la séquence des 3 logiques économiques successives ?",
+      "o": [
+        "Vente → Production → Création de valeur",
+        "Production (1900) → Vente (1950) → Création de valeur (aujourd'hui)",
+        "Innovation → Vente → Production",
+        "Création de valeur → Production → Vente"
+      ],
+      "c": 1,
+      "e": "Selon Besombes, l'évolution est : Logique de Production (1900) → Logique de Vente (1950) → Logique de Création de valeur (aujourd'hui).",
+      "theme": "intro",
+      "src": "Évo p.5",
+      "srcChap": 1
+    },
+    {
+      "q": "En quelle année et par qui a été conceptualisée la DPPO ?",
+      "o": [
+        "1962 par Chandler",
+        "1954 par Peter Drucker",
+        "1980 par Gilbert",
+        "1948 par Henri Fayol"
+      ],
+      "c": 1,
+      "e": "La Direction Par Objectifs (DPPO) a été conceptualisée en 1954 par Peter Drucker (1909-2005). C'est l'un des concepts les plus structurants du management moderne.",
+      "theme": "dppo",
+      "src": "Évo p.10-12 (DPPO)",
+      "srcChap": 3
+    },
+    {
+      "q": "Combien de principes fondamentaux compte la DPPO de Drucker ?",
+      "o": [
+        "4 principes",
+        "5 principes",
+        "6 principes",
+        "8 principes"
+      ],
+      "c": 2,
+      "e": "La DPPO compte 6 principes : définir la mission, fixer des objectifs clairs, analyser/organiser le travail, informer/écouter, évaluer les résultats, former en permanence.",
+      "theme": "dppo",
+      "src": "Évo p.10-12 (DPPO)",
+      "srcChap": 3
+    },
+    {
+      "q": "Quel auteur a énoncé la théorie de l'effondrement par complexité décroissante ?",
+      "o": [
+        "Edgar Morin",
+        "Tainter",
+        "Peter Drucker",
+        "Michel Crozier"
+      ],
+      "c": 1,
+      "e": "Tainter a étudié les effondrements de sociétés dans l'histoire et identifié 6 facteurs liés aux rendements marginaux décroissants de la complexité sociopolitique.",
+      "theme": "intro",
+      "src": "Évo p.15-16",
+      "srcChap": 6
+    },
+    {
+      "q": "Selon l'étude Deloitte de juin 2016, quelle proportion d'entreprises françaises ont une structure organisée autour de projets transverses ?",
+      "o": [
+        "5 %",
+        "11 %",
+        "30 %",
+        "45 %"
+      ],
+      "c": 1,
+      "e": "Selon Philippe Burger (Deloitte, juin 2016), 11 % des entreprises françaises déclarent avoir une structure construite autour de projets ou programmes transverses. Cette structure émergente est appelée « réseau d'équipes ».",
+      "theme": "intro",
+      "src": "Évo p.17",
+      "srcChap": 7
+    },
+    {
+      "q": "Quelle norme ISO définit formellement le processus ?",
+      "o": [
+        "ISO 9001:2000",
+        "ISO 8402",
+        "ISO 14001",
+        "ISO 26000"
+      ],
+      "c": 1,
+      "e": "L'ISO 8402 définit le processus comme « ensemble des moyens et d'activités qui transforment les éléments entrants en éléments sortants dans un but défini et mesurable ». La norme ISO 9001 v.2000 structure le SMQ qui s'appuie sur cette définition.",
+      "theme": "processus",
+      "src": "Évo p.28",
+      "srcChap": 8
+    },
+    {
+      "q": "Quels sont les 3 types de processus selon l'approche processus ?",
+      "o": [
+        "Stratégique / Opérationnel / Support",
+        "Réalisation / Support / Pilotage",
+        "Client / Interne / Fournisseur",
+        "Direction / Exécution / Contrôle"
+      ],
+      "c": 1,
+      "e": "Les 3 types sont : Processus de Réalisation (produit/service), Processus Support (RH/IT/compta/maintenance), Processus de Pilotage (politique/stratégie/décision/budget/mesure).",
+      "theme": "processus",
+      "src": "Évo p.21-32",
+      "srcChap": 8
+    },
+    {
+      "q": "Que mesure la « tortue de Crosby » ?",
+      "o": [
+        "Le délai de traitement d'une commande",
+        "Les caractéristiques d'un processus via 4 questions (Avec quoi/qui/comment/combien)",
+        "Le coût total de la non-qualité",
+        "La maturité d'une organisation sur 5 niveaux"
+      ],
+      "c": 1,
+      "e": "La tortue de Crosby caractérise un processus avec 4 questions : AVEC QUOI ? (moyens/équipements) — AVEC QUI ? (compétences) — COMMENT ? (méthodes) — COMBIEN ? (indicateurs).",
+      "theme": "processus",
+      "src": "Évo p.29",
+      "srcChap": 8
+    },
+    {
+      "q": "Comment Drucker distingue-t-il efficacité et efficience ?",
+      "o": [
+        "L'efficacité concerne les coûts, l'efficience le temps",
+        "L'efficacité = faire les bonnes choses ; l'efficience = faire les choses de la bonne façon",
+        "Les deux termes sont synonymes",
+        "L'efficacité concerne le QCD ; l'efficience le ROI"
+      ],
+      "c": 1,
+      "e": "Selon Drucker : « L'efficacité consiste à faire les bonnes choses et l'efficience consiste à faire les choses de la bonne façon ». L'efficacité = atteinte des résultats quelque soit l'allocation ; l'efficience = atteinte en optimisant les ressources.",
+      "theme": "performance",
+      "src": "Évo p.10-12 (DPPO)",
+      "srcChap": 3
+    },
+    {
+      "q": "Quel est le triangle du Modèle de Gilbert (1980) ?",
+      "o": [
+        "Performance / Coût / Qualité",
+        "Objectifs / Moyens / Résultats",
+        "Stratégie / Organisation / Culture",
+        "Mission / Vision / Valeurs"
+      ],
+      "c": 1,
+      "e": "Le Modèle de Gilbert (1980) est un triangle Objectifs / Moyens / Résultats. Les 3 écarts définissent : Efficacité (Objectifs ↔ Résultats), Efficience (Moyens ↔ Résultats), Pertinence (Objectifs ↔ Moyens).",
+      "theme": "performance",
+      "src": "Évo p.41",
+      "srcChap": 9
+    },
+    {
+      "q": "Qui est l'auteur de l'expression « ago-antagoniste » mobilisée par Besombes pour décrire la dualité Stratégie-Organisation ?",
+      "o": [
+        "Chandler",
+        "Peter Drucker",
+        "Edgar Morin",
+        "Michel Crozier"
+      ],
+      "c": 2,
+      "e": "Edgar Morin parle de convergence d'éléments « ago-antagonistes » : l'entreprise doit avoir une démarche pro-active de conquête tout en limitant le risque associé. C'est mobilisé pour décrire la dualité Stratégie-Organisation.",
+      "theme": "performance",
+      "src": "Évo p.34",
+      "srcChap": 9
+    },
+    {
+      "q": "Selon Besombes, quel auteur met en évidence le lien indissociable entre la structure de l'entreprise et sa stratégie ?",
+      "o": [
+        "Chandler",
+        "Edgar Morin",
+        "Peter Drucker",
+        "Michel Crozier"
+      ],
+      "c": 0,
+      "e": "Pour Besombes, A. Chandler met en évidence le lien indissociable entre la structure de l'entreprise et sa stratégie. Le succès ou l'échec d'une politique d'entreprise réside aussi dans la maîtrise organisationnelle (communication, comportements, jeux des acteurs).",
+      "theme": "performance",
+      "src": "Évo p.34",
+      "srcChap": 9
+    },
+    {
+      "q": "Michel Crozier (1922-2013) est connu comme le concepteur de :",
+      "o": [
+        "La théorie des coûts de transaction",
+        "L'analyse stratégique et de l'action collective",
+        "La pyramide des besoins",
+        "La théorie X et Y"
+      ],
+      "c": 1,
+      "e": "Michel Crozier est le concepteur de l'analyse stratégique et de l'action collective. Pour lui, les organisations sont comparables à des organismes vivants : elles planifient, analysent, expérimentent, décident et s'adaptent.",
+      "theme": "performance",
+      "src": "Évo p.42",
+      "srcChap": 10
+    },
+    {
+      "q": "Quels sont les 3 leviers de l'arbre de décision dynamique selon Crozier ?",
+      "o": [
+        "Pouvoir / Droit / Intérêt",
+        "Mission / Vision / Valeurs",
+        "Stratégie / Tactique / Opérationnel",
+        "Direction / Coordination / Contrôle"
+      ],
+      "c": 0,
+      "e": "Crozier identifie 3 leviers en interaction qui structurent les jeux d'acteurs : Pouvoir, Droit et Intérêt.",
+      "theme": "performance",
+      "src": "Évo p.42",
+      "srcChap": 10
+    },
+    {
+      "q": "Selon Carlos Ghosn, la réussite d'une entreprise repose sur :",
+      "o": [
+        "50 % stratégie / 50 % action",
+        "5 % stratégie / 95 % action",
+        "20 % stratégie / 80 % action",
+        "100 % stratégie"
+      ],
+      "c": 1,
+      "e": "Carlos Ghosn affirme : « La réussite d'une entreprise, c'est 5 % de stratégie et 95 % d'action. » Cette citation, mobilisée par Besombes, justifie l'importance centrale du dialogue social et du pilotage opérationnel.",
+      "theme": "pilotage",
+      "src": "Évo p.44",
+      "srcChap": 11
+    },
+    {
+      "q": "Quels sont les 4 niveaux du dialogue social ?",
+      "o": [
+        "DG / Cadres / Employés / Ouvriers",
+        "TOP / Proximité / Opérateurs / IRP",
+        "Stratégique / Tactique / Opérationnel / Support",
+        "Direction / Encadrement / Production / Syndicats"
+      ],
+      "c": 1,
+      "e": "Le dialogue social mobilise 4 niveaux d'acteurs : TOP MANAGEMENT, MANAGEMENT DE PROXIMITÉ, OPÉRATEURS, IRP (Instances Représentatives du Personnel). 2 registres : formel + informel.",
+      "theme": "pilotage",
+      "src": "Évo p.44",
+      "srcChap": 11
+    },
+    {
+      "q": "À quoi correspond le cycle PDCA dans la structure projet ?",
+      "o": [
+        "Plan / Do / Check / Act",
+        "Prévoir / Faire / Contrôler / Agir ou Réagir",
+        "Préparer / Décider / Coordonner / Auditer",
+        "Toutes les réponses sont équivalentes"
+      ],
+      "c": 3,
+      "e": "Le PDCA (Roue de Deming) appliqué à la structure projet par Besombes : Prévoir (Plan) / Faire (Do) / Contrôler avec autonomie (Check) / Agir ou Réagir (Act). Communication continue circulaire centrée sur les processus.",
+      "theme": "pilotage",
+      "src": "Évo p.45",
+      "srcChap": 11
+    },
+    {
+      "q": "Selon Besombes, combien de leviers permettent de passer de la vision à l'action ?",
+      "o": [
+        "3 leviers",
+        "5 leviers",
+        "7 leviers",
+        "10 leviers"
+      ],
+      "c": 2,
+      "e": "Besombes identifie 7 leviers : offre choisie/non subie · choisir ses clients en segmentant · cultiver les réseaux · cultiver la capacité innovante · convergence des compétences · transversalité · offre experte ET globale.",
+      "theme": "pilotage",
+      "src": "Évo p.46",
+      "srcChap": 11
+    },
+    {
+      "q": "Qui a dit : « L'art de diriger consiste à abandonner la baguette pour ne pas gêner l'orchestre » ?",
+      "o": [
+        "Peter Drucker",
+        "Carlos Ghosn",
+        "Herbert von Karajan",
+        "Paul Valéry"
+      ],
+      "c": 2,
+      "e": "Citation d'Herbert von Karajan mobilisée par Besombes pour illustrer l'art du pilotage : donner le cap puis laisser l'autonomie aux acteurs.",
+      "theme": "pilotage",
+      "src": "Évo p.50",
+      "srcChap": 11
+    },
+    {
+      "q": "Selon Besombes, pourquoi piloter ?",
+      "o": [
+        "Pour contrôler les salariés",
+        "Car on ne progresse que sur ce que l'on mesure",
+        "Pour réduire les coûts",
+        "Pour satisfaire les actionnaires"
+      ],
+      "c": 1,
+      "e": "« On ne peut progresser que sur ce que l'on mesure. » La mesure des écarts et leur correction partagée et comprise permet à chacun de progresser.",
+      "theme": "pilotage"
+    },
+    {
+      "q": "Selon Besombes, piloter c'est :",
+      "o": [
+        "Surveiller les indicateurs financiers",
+        "Déployer la stratégie en actions mesurées et vérifiées régulièrement",
+        "Établir un budget annuel",
+        "Tenir des réunions hebdomadaires"
+      ],
+      "c": 1,
+      "e": "Piloter, c'est déployer la stratégie en actions. Ces actions doivent être mesurées et vérifiées régulièrement pour s'assurer qu'elles satisfont à l'exigence stratégique.",
+      "theme": "pilotage"
+    },
+    {
+      "q": "Pour piloter au quotidien, Besombes recommande de désigner pour chaque action :",
+      "o": [
+        "Un pilote, une fréquence, un moyen de mesure, une communication",
+        "Un sponsor exécutif et un chef de projet",
+        "Un budget et un délai",
+        "Un livrable et une date limite"
+      ],
+      "c": 0,
+      "e": "Pour chaque action pilotée : un PILOTE + une FRÉQUENCE + un MOYEN DE MESURE + une COMMUNICATION. 3 piliers : Pilotage (maîtriser) + Indicateurs (garder le contrôle) + Informations (expliquer, anticiper).",
+      "theme": "pilotage"
+    },
+    {
+      "q": "Quelle est la conclusion du cours de Besombes ?",
+      "o": [
+        "La performance est durable et stable",
+        "CO-CONSTRUIRE pour CO-AGIR et être CO-RESPONSABLE",
+        "Il faut maximiser la productivité",
+        "La stratégie est plus importante que l'organisation"
+      ],
+      "c": 1,
+      "e": "« La performance est éphémère et il convient à chaque instant de renouveler l'expérience collective qui permet de la construire. CO-CONSTRUIRE pour CO-AGIR et être CO-RESPONSABLE. »",
+      "theme": "pilotage",
+      "src": "Évo p.54",
+      "srcChap": 11
+    },
+    {
+      "q": "Selon Besombes, le métier d'une organisation est :",
+      "o": [
+        "La description de poste de chaque collaborateur",
+        "La somme des savoir-faire acquis + la capacité de les combiner",
+        "L'ensemble des compétences requises par le poste",
+        "La fiche de poste validée par la DRH"
+      ],
+      "c": 1,
+      "e": "Le métier = somme des savoir-faire acquis + capacité combinatoire. Le processus combinatoire est informel et varie d'une organisation à l'autre. La vision du métier par un manager conditionne sa capacité à découvrir de nouvelles voies.",
+      "theme": "intro",
+      "src": "Évo p.14",
+      "srcChap": 5
+    },
+    {
+      "q": "Selon Besombes, qu'est-ce qui crée un avantage concurrentiel décisif ?",
+      "o": [
+        "Le prix le plus bas",
+        "La stratégie de différenciation perçue par le client",
+        "Les économies d'échelle",
+        "La concentration sectorielle"
+      ],
+      "c": 1,
+      "e": "Les stratégies de différenciation sont à l'origine des avantages concurrentiels décisifs, MAIS seules les différences PERÇUES par le client ont de la valeur. La perception est liée à la maîtrise de l'ensemble de la chaîne de valeur.",
+      "theme": "intro",
+      "src": "Évo p.13",
+      "srcChap": 4
+    }
+  ],
+  "annales": [
+    {
+      "id": "eo_2024_2025",
+      "year": "2024-2025",
+      "name": "Session 1 — Mercredi 11 juin 2025",
+      "duration": "1h00",
+      "format": "Écrit · Aucun document autorisé",
+      "professor": "F. Besombes",
+      "subject": "",
+      "dossiers": [
+        {
+          "label": "Question (20 points)",
+          "context": "La contingence organisationnelle (ou structurelle) est une constante dans toutes les organisations. Alors que ces dernières, connaissent sous l'impulsion des mutations économiques, technologiques, sociales, des changements majeurs.",
+          "items": [
+            {
+              "q": "Vous indiquerez comment les dirigeants peuvent améliorer la performance de l'organisation en veillant à l'équilibre entre l'ambition stratégique et la capacité organisationnelle de leur structure.\n\nPréalablement vous présenterez les concepts mobilisés par le postulat ci-dessus.",
+              "correction": "[Meilleure copie — note 17/20]\n\nDepuis longtemps, les théories classiques de management, comme celle de Taylor ou de Fayol, ont affirmé qu'il existait un modèle unique de gestion dit « one best way ». La théorie de la contingence a évolué dans un contexte où l'efficacité d'une organisation dépend de son habilité à s'adapter à son environnement.\n\nEn effet, la théorie de la contingence rejette l'idée qu'il existe un modèle de gestion unique mais que ce modèle de gestion doit s'adapter à son environnement, par des facteurs de contingence.\n\nPlusieurs auteurs ont pu participer à cette réflexion et l'un des premiers à poser la pierre à l'édifice est Woodward en 1958. Pour cet auteur, le type de gestion d'une entreprise doit s'adapter à son mode de production. Il en existe 3 :\n  • production unitaire : la structure de l'entreprise peut être flexible, décentralisée ;\n  • production en masse : à l'inverse, la structure doit être rigide ;\n  • production en continu : complexe et comme celle en masse, la structure doit être rigide.\n\nEnsuite, les auteurs Burns et Stalker en 1961 ont affirmé que la structure de l'entreprise dépend de son environnement. Effectivement, si l'entreprise évolue dans un environnement stable (mécanique) alors la structure sera centralisée avec une hiérarchie forte, rigide où toutes les informations nécessaires à la prise de décision sont envoyées au top management, le dirigeant. Tandis qu'un environnement instable comme l'innovation va préférer une structure organique (décentralisée) où cette fois-ci les ordres sont émis par plusieurs personnes, adaptée à la réalité du terrain.\n\nLawrence et Lorsch ont théorisé en 1967 qu'il peut exister plusieurs types de gestion en fonction du marché de l'entreprise, et donc en fonction du produit vendu, il peut exister plusieurs gestions dans une seule et même entreprise.\n\nEnsuite Fielder en 1967 classe deux types de leadership en fonction de la nature, culture et taille de l'entreprise :\n  • le leadership orienté tâche où seul l'objectif rentre en jeu ;\n  • le leadership orienté relation où les parties prenantes comme les salariés sont importantes pour une bonne gestion.\n\nEnfin, l'un des derniers auteurs que l'on peut rajouter, c'est Mintzberg en 1973 qui vient valider la théorie où il existe plusieurs types de structure :\n  • Structure simple : un seul gérant et c'est tout.\n  • Structure fonctionnelle : plusieurs pôles de fonction (GRH, logistique, production…) ;\n  • Structure divisionnelle : divisée par produit, marché ;\n  • Structure bureaucratique : forte hiérarchie ;\n  • Structure adhocratique : flexible.\n\nPour illustrer nos propos, prenons l'exemple d'une startup comme Blackmarket : cette entité repose sur une structure adhocratique car tout le temps en évolution. À l'inverse, les entités stables comme la Poste ou EDF ont plus une structure bureaucratique, où la forte hiérarchie se fait sentir. Michelin ou Airbus auront plus une structure divisionnelle catégorisée par type de production ou lieu géographique.\n\nTous ces auteurs convergent vers l'idée qu'il existe non pas un modèle unique de gestion mais que cela dépend de son environnement.\n\nPour résumer, les facteurs de contingence sont nombreux mais les principaux peuvent ressortir comme :\n  • La technologie (production)\n  • La taille de l'entreprise\n  • La culture\n  • L'environnement\n  • L'histoire du groupe\n  • La stratégie globale de l'entreprise\n\nC'est sur ce dernier facteur que repose la question : « Comment les dirigeants peuvent améliorer la performance de l'organisation en veillant à l'équilibre entre l'ambition stratégique et la capacité organisationnelle ? »\n\nTout d'abord, la stratégie c'est l'ensemble des actions mises en œuvre ou à mettre en œuvre pour atteindre un objectif MT ou LT en utilisant différentes ressources comme les compétences qui peuvent donner un avantage concurrentiel.\n\nCependant, nous avons pu voir que l'organisation est étroitement liée avec la stratégie de l'entreprise. Si les dirigeants veulent améliorer la performance de l'organisation, ce n'est pas seulement la structure à faire évoluer mais tous les autres facteurs de contingences. Pour évoluer avec les mutations économiques, technologiques, sociales alors il faudrait tendre vers une structure flexible, décentralisée, orientée relation, afin de prendre en compte tous les différents aspects. Cela affecterait inévitablement la performance de l'organisation car les parties prenantes plus impliquées dans un projet de changement ont plus de chance d'aboutir.\n\nSelon Forbes, 30 % des projets échouent si les entreprises impliquent les parties prenantes comme les salariés contre 60 % si elles ne le font pas. Ce qui pourrait augmenter la création de valeur pour l'entreprise (Résultat) comme pour les clients (utilité du produit).\n\nEn conclusion, la théorie de la contingence vient bousculer les théories classiques du management afin de prendre en compte l'environnement dans lequel une entreprise évolue afin de faire face aux différentes mutations actuelles."
+            }
+          ]
+        }
+      ],
+      "tips": [
+        "Structure académique attendue : intro → théories classiques (Taylor, Fayol) → théorie de la contingence → auteurs clés (Woodward, Burns & Stalker, Lawrence & Lorsch, Mintzberg) → application → conclusion.",
+        "Mobiliser au moins 4-5 auteurs avec leurs dates et apports précis (Woodward 1958, Burns & Stalker 1961, Lawrence & Lorsch 1967, Fielder 1967, Mintzberg 1973).",
+        "Donner des exemples concrets d'entreprises pour chaque type de structure (startup → adhocratique, Poste/EDF → bureaucratique, Michelin/Airbus → divisionnelle).",
+        "Lister les 6 principaux facteurs de contingence (technologie, taille, culture, environnement, histoire, stratégie).",
+        "Conclure en montrant que la stratégie ne se limite pas à la structure : tous les facteurs doivent évoluer ensemble."
+      ]
+    }
+  ],
+  "themes": [
+    {
+      "id": "intro",
+      "icon": "🌍",
+      "label": "Introduction & contexte"
+    },
+    {
+      "id": "dppo",
+      "icon": "🎯",
+      "label": "DPPO Drucker"
+    },
+    {
+      "id": "processus",
+      "icon": "⚙️",
+      "label": "Approche processus & ISO 9001"
+    },
+    {
+      "id": "performance",
+      "icon": "📊",
+      "label": "Performance"
+    },
+    {
+      "id": "pilotage",
+      "icon": "🧭",
+      "label": "Pilotage & dialogue social"
+    }
+  ]
+}
