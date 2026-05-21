@@ -635,6 +635,15 @@ function m2CourseTitle() {
 
 function m2PdfStyles() {
   return `
+    :root{
+      --accent:#2f5fa6;--accent2:#3d72b4;--accent3:#2f5fa6;
+      --copper:#b8791f;--copper-2:#9a6420;
+      --green:#2e7d4f;--green-bg:#eef5f0;--red:#b3392f;--red-bg:#f7ecea;
+      --orange:#b8791f;--orange-bg:#fbf4e8;--cyan:#3a7a86;
+      --text:#1a1a1a;--text2:#444;--text3:#777;--border:#c4c4c4;
+      --bg:#fff;--bg2:#f6f8fb;--bg3:#eef1f6;--card:#fff;--card-hover:#f0f3f8;
+      --glass:#f6f8fb;--glass-b:#d8dee8;--radius:6px;
+    }
     *{box-sizing:border-box;}
     html,body{margin:0;padding:0;background:#fff;color:#1a1a1a;
       font-family:Georgia,'Times New Roman',serif;font-size:11.5pt;line-height:1.5;}
@@ -642,6 +651,20 @@ function m2PdfStyles() {
     .pdf-h1{font-size:20pt;color:#2f5fa6;margin:0 0 2mm;border-bottom:2px solid #2f5fa6;padding-bottom:2mm;}
     .pdf-sub{color:#555;font-size:10pt;margin:0 0 2mm;font-style:italic;}
     .pdf-meta{color:#777;font-size:8.5pt;margin:0 0 6mm;}
+    /* ── Page de garde ── */
+    .pdf-cover{break-after:page;height:250mm;display:flex;flex-direction:column;
+      align-items:center;justify-content:center;text-align:center;
+      border-top:5pt solid;border-bottom:5pt solid;padding:14mm 12mm;}
+    .pdf-cover-eyebrow{font-size:10pt;letter-spacing:2.5pt;text-transform:uppercase;
+      color:#888;margin-bottom:20mm;font-family:'Helvetica Neue',Arial,sans-serif;}
+    .pdf-cover-icon{font-size:46pt;line-height:1;margin-bottom:12mm;}
+    .pdf-cover-kicker{font-size:12pt;font-weight:bold;letter-spacing:3.5pt;text-transform:uppercase;
+      margin-bottom:5mm;font-family:'Helvetica Neue',Arial,sans-serif;}
+    .pdf-cover-title{font-size:33pt;font-weight:bold;color:#1a1a1a;line-height:1.12;
+      margin:0 0 6mm;max-width:160mm;}
+    .pdf-cover-sub{font-size:12.5pt;color:#555;font-style:italic;max-width:135mm;line-height:1.5;}
+    .pdf-cover-rule{width:38mm;height:3pt;margin:15mm 0 8mm;border-radius:2pt;}
+    .pdf-cover-foot{font-size:10pt;color:#888;line-height:1.7;font-family:'Helvetica Neue',Arial,sans-serif;}
     h2,.chapter-title{font-size:15pt;color:#2f5fa6;margin:7mm 0 3mm;
       border-bottom:1px solid #c4c4c4;padding-bottom:1.5mm;break-after:avoid;}
     h3{font-size:12.5pt;color:#1a1a1a;margin:5mm 0 2mm;break-after:avoid;}
@@ -680,6 +703,99 @@ function m2PdfStyles() {
     input[type=text],input[type=number]{min-width:28mm;}
     button,.scroll-spy,.m2-pdf-bar,.exam-timer-bar{display:none !important;}
     a{color:#1a1a1a;text-decoration:none;}
+    /* ── Schémas (rendu clair pour impression) ── */
+    .schema-intro{display:none;}
+    .schema-theme{font-size:14pt;font-weight:bold;color:#2f5fa6;margin:7mm 0 3mm;
+      border-bottom:1px solid #c4c4c4;padding-bottom:1.5mm;break-after:avoid;}
+    .schema-card{border:1px solid #c4c4c4;border-radius:3px;padding:4mm;margin:0 0 4mm;break-inside:avoid;}
+    .schema-title{font-weight:bold;font-size:11.5pt;margin-bottom:3mm;}
+    .schema-viz{margin-bottom:3mm;}
+    .schema-note{font-size:9pt;color:#555;border-top:1px solid #ddd;padding-top:2mm;}
+    .sch-formula{font-family:'Courier New',monospace;font-size:9.5pt;color:#2f5fa6;background:#f6f8fb;
+      border:1px solid #d8dee8;border-radius:3px;padding:2mm;text-align:center;margin-top:3mm;}
+    .sch-bar{display:flex;border-radius:3px;overflow:hidden;min-height:16mm;}
+    .sch-bar-seg{display:flex;flex-direction:column;align-items:center;justify-content:center;
+      gap:1mm;padding:2mm;color:#fff;font-size:8.5pt;text-align:center;}
+    .sch-bar-seg strong{font-family:'Courier New',monospace;font-size:9.5pt;}
+    .sch-seg-cp{background:#2f5fa6;flex:58;}.sch-seg-dette{background:#b8791f;flex:42;}
+    .sch-bar-legend{display:flex;justify-content:space-between;font-size:8pt;color:#777;margin-top:1mm;}
+    .sch-eq{text-align:center;font-family:'Courier New',monospace;font-size:9.5pt;color:#444;margin-bottom:3mm;}
+    .sch-duo{display:flex;gap:3mm;}
+    .sch-duo-box{flex:1;border:1px solid #c4c4c4;border-radius:3px;padding:3mm;background:#f6f8fb;}
+    .sch-duo-box h4{font-size:10pt;margin:0 0 2mm;}
+    .sch-tag{display:inline-block;font-size:8pt;padding:0.6mm 2mm;border-radius:3px;
+      margin:0.6mm 1mm 0.6mm 0;font-family:'Helvetica Neue',Arial,sans-serif;}
+    .tag-ok{background:#eef5f0;color:#2e7d4f;}.tag-no{background:#f7ecea;color:#b3392f;}
+    .tag-neu{background:#eef1f6;color:#555;border:1px solid #d8dee8;}
+    .sch-gauge{display:flex;border:1px solid #c4c4c4;border-radius:3px;overflow:hidden;}
+    .sch-gauge-zone{flex:1;padding:2.5mm;text-align:center;font-size:8.5pt;color:#444;}
+    .sch-gauge-zone strong{display:block;font-family:'Courier New',monospace;font-size:10pt;color:#1a1a1a;margin-bottom:1mm;}
+    .sch-svg{width:100%;max-width:115mm;height:auto;display:block;margin:0 auto;}
+    .sch-svg-donut{max-width:72mm;}
+    .sch-flow{display:flex;align-items:center;gap:2mm;flex-wrap:wrap;justify-content:center;}
+    .sch-flow-box{border:1px solid #2f5fa6;border-radius:3px;padding:2mm 3mm;background:#eef3fa;
+      text-align:center;font-size:9pt;font-weight:bold;}
+    .sch-flow-box small{display:block;font-weight:normal;font-size:7.5pt;color:#777;margin-top:0.6mm;}
+    .sch-flow-pivot{border-color:#b8791f;background:#fbf4e8;}
+    .sch-flow-op{font-size:7.5pt;color:#777;font-family:'Courier New',monospace;text-align:center;}
+    .sch-substeps-label{font-size:9pt;font-weight:bold;color:#444;margin:3mm 0 2mm;}
+    .sch-steps{display:flex;flex-direction:column;gap:1.5mm;}
+    .sch-step{display:flex;gap:2.5mm;align-items:flex-start;}
+    .sch-step-num{flex-shrink:0;width:6mm;height:6mm;border-radius:50%;background:#2f5fa6;color:#fff;
+      display:flex;align-items:center;justify-content:center;font-size:8.5pt;font-weight:bold;}
+    .sch-step-txt{font-size:9.5pt;color:#444;}
+    .sch-cols3{display:flex;gap:2.5mm;}
+    .sch-mode{flex:1;border:1px solid #c4c4c4;border-radius:3px;padding:3mm;background:#f6f8fb;text-align:center;}
+    .sch-mode h4{font-size:9.5pt;margin:0 0 2mm;}
+    .sch-mode small{display:block;font-size:8pt;color:#777;margin-top:2mm;}
+    .sch-annuity{display:flex;align-items:flex-end;justify-content:center;gap:2mm;height:18mm;}
+    .sch-annuity i{width:5mm;background:#2f5fa6;border-radius:2px 2px 0 0;}
+    .sch-tunnel{display:flex;flex-direction:column;}
+    .sch-tunnel-band{padding:2.5mm;text-align:center;font-size:9pt;}
+    .sch-band-top{background:#f7ecea;color:#b3392f;}
+    .sch-band-mid{background:#eef1f6;font-weight:bold;padding:4mm 2.5mm;}
+    .sch-band-bot{background:#eef5f0;color:#2e7d4f;}
+    .sch-tunnel-line{text-align:center;font-family:'Courier New',monospace;font-size:8pt;color:#b8791f;
+      font-weight:bold;padding:1mm 0;border-top:1.5pt dashed #b8791f;border-bottom:1.5pt dashed #b8791f;}
+    .sch-scopes{display:flex;flex-direction:column;gap:1.5mm;}
+    .sch-scope{border-radius:3px;padding:2.5mm 3mm;color:#fff;}
+    .sch-scope strong{display:block;font-size:9.5pt;margin-bottom:0.6mm;}
+    .sch-scope small{font-size:8pt;}
+    .sch-scope-1{background:#2f5fa6;}.sch-scope-2{background:#3a7a86;}.sch-scope-3{background:#b8791f;}
+    .sch-legend{margin-top:3mm;display:flex;flex-direction:column;gap:1.2mm;}
+    .sch-legend-row{display:flex;align-items:center;gap:2mm;font-size:9pt;color:#444;}
+    .sch-dot{width:3mm;height:3mm;border-radius:50%;flex-shrink:0;}
+    .sch-grid4{display:flex;flex-wrap:wrap;gap:2.5mm;}
+    .sch-g4cell{flex:1 1 44%;border:1px solid #c4c4c4;border-radius:3px;padding:3mm;background:#f6f8fb;}
+    .sch-g4cell h4{font-size:9.5pt;margin:0 0 1.5mm;}
+    .sch-g4cell h4 .sch-g4num{display:inline-block;font-family:'Courier New',monospace;font-size:8pt;
+      color:#fff;background:#2f5fa6;padding:0.4mm 1.6mm;border-radius:2px;margin-right:2mm;}
+    .sch-g4cell p{font-size:8.5pt;color:#777;margin:0;}
+    .sch-tl{display:flex;flex-direction:column;padding-left:6mm;border-left:1.5pt solid #c4c4c4;}
+    .sch-tl-item{padding:1.5mm 0;}
+    .sch-tl-date{font-family:'Courier New',monospace;font-size:8.5pt;color:#b8791f;font-weight:bold;}
+    .sch-tl-label{font-size:9pt;color:#444;}
+    .sch-stairs{display:flex;align-items:flex-end;gap:1.5mm;}
+    .sch-stair{flex:1;border-radius:2px 2px 0 0;padding:2mm 1mm;color:#fff;text-align:center;
+      display:flex;flex-direction:column;justify-content:flex-end;gap:0.6mm;}
+    .sch-stair strong{font-family:'Courier New',monospace;font-size:8.5pt;}
+    .sch-stair span{font-size:7pt;}
+    .sch-matrix{display:grid;grid-template-columns:6mm 1fr 1fr;gap:1.5mm;}
+    .sch-mx-q{border:1px solid #c4c4c4;border-radius:3px;padding:2.5mm;font-size:8.5pt;text-align:center;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1mm;background:#f6f8fb;}
+    .sch-mx-q strong{font-size:9pt;}
+    .sch-mx-y{grid-row:1/3;writing-mode:vertical-rl;transform:rotate(180deg);display:flex;
+      align-items:center;justify-content:center;font-size:7.5pt;color:#777;}
+    .sch-mx-x{grid-column:2/4;display:flex;align-items:center;justify-content:center;font-size:7.5pt;color:#777;}
+    .sch-bmc{display:grid;gap:1.5mm;grid-template-columns:repeat(5,1fr);
+      grid-template-areas:"p a v r s" "p k v c s" "co co co re re";}
+    .sch-bmc>div{border:1px solid #c4c4c4;border-radius:3px;padding:2mm 1.5mm;font-size:7.5pt;
+      background:#f6f8fb;text-align:center;color:#777;}
+    .sch-bmc b{display:block;color:#1a1a1a;font-size:8pt;margin-bottom:0.6mm;}
+    .sch-bmc .bmc-v{background:#eef3fa;border-color:#2f5fa6;}
+    .sch-bmc .bmc-p{grid-area:p;}.sch-bmc .bmc-a{grid-area:a;}.sch-bmc .bmc-k{grid-area:k;}
+    .sch-bmc .bmc-v{grid-area:v;}.sch-bmc .bmc-r{grid-area:r;}.sch-bmc .bmc-c{grid-area:c;}
+    .sch-bmc .bmc-s{grid-area:s;}.sch-bmc .bmc-co{grid-area:co;}.sch-bmc .bmc-re{grid-area:re;}
     @page{margin:14mm 12mm;}
   `;
 }
@@ -709,11 +825,31 @@ function m2OpenPrint(title, bodyHTML) {
   else { f.onload = function () { setTimeout(go, 400); }; setTimeout(go, 1400); }
 }
 
-function m2PdfHeader(suffix, meta) {
-  var t = m2CourseTitle();
-  var sub = (window.DATA && DATA.subtitle) ? '<p class="pdf-sub">' + m2Esc(DATA.subtitle) + '</p>' : '';
-  return '<div class="pdf-h1">' + m2Esc(t) + ' — ' + m2Esc(suffix) + '</div>' + sub
-    + '<p class="pdf-meta">M2 CCA · ' + m2Esc(meta) + '</p>';
+/* Icône + couleur d'accent par cours, pour la page de garde des PDF. */
+var M2_COURSE_META = {
+  inge_fi:       { icon: '💹', color: '#42795a' },
+  gouv:          { icon: '🏛️', color: '#2f5fa6' },
+  strat:         { icon: '🎯', color: '#a87a2e' },
+  evo_orga:      { icon: '🏢', color: '#a87a2e' },
+  conduite_chgt: { icon: '🔄', color: '#3a7a86' },
+  rse_csrd:      { icon: '🌱', color: '#42795a' },
+};
+
+/* Page de garde stylée, personnalisée selon le cours. docType : « Cours complet »,
+   « Schémas », « Annales corrigées », « Examen blanc »… */
+function m2PdfCoverPage(docType) {
+  var meta = M2_COURSE_META[COURSE_KEY] || { icon: '📘', color: '#2f5fa6' };
+  var sub = (window.DATA && DATA.subtitle) ? DATA.subtitle : '';
+  var now = new Date().toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+  return '<div class="pdf-cover" style="border-color:' + meta.color + '">'
+    + '<div class="pdf-cover-eyebrow">M2 CCA · Comptabilité Contrôle Audit</div>'
+    + '<div class="pdf-cover-icon">' + meta.icon + '</div>'
+    + '<div class="pdf-cover-kicker" style="color:' + meta.color + '">' + m2Esc(docType) + '</div>'
+    + '<div class="pdf-cover-title">' + m2Esc(m2CourseTitle()) + '</div>'
+    + (sub ? '<div class="pdf-cover-sub">' + m2Esc(sub) + '</div>' : '')
+    + '<div class="pdf-cover-rule" style="background:' + meta.color + '"></div>'
+    + '<div class="pdf-cover-foot">Fiche de révision &middot; Mathieu Belloir<br>' + now + '</div>'
+    + '</div>';
 }
 
 /* Export du cours : seuls les chapitres VISIBLES (le filtre par axe s'applique). */
@@ -731,7 +867,18 @@ function m2ExportCours() {
   });
   if (!body) { alert('Aucun chapitre à exporter pour ce filtre.'); return; }
   m2OpenPrint(m2CourseTitle() + ' - Cours',
-    '<div class="pdf-doc">' + m2PdfHeader('Cours', 'Fiche de révision') + body + '</div>');
+    m2PdfCoverPage('Cours complet') + '<div class="pdf-doc">' + body + '</div>');
+}
+
+/* Export des schémas : tous les repères visuels du cours. */
+function m2ExportSchemas() {
+  var root = document.getElementById('appRoot');
+  var host = root ? root.querySelector('.fade-up') : null;
+  if (!host) { alert('Schémas introuvables.'); return; }
+  var cl = host.cloneNode(true);
+  cl.querySelectorAll('button, .m2-pdf-bar').forEach(function (e) { e.remove(); });
+  m2OpenPrint(m2CourseTitle() + ' - Schémas',
+    m2PdfCoverPage('Schémas') + '<div class="pdf-doc">' + cl.innerHTML + '</div>');
 }
 
 /* Export des annales : sujets + corrections (corrections dépliées). */
@@ -743,7 +890,7 @@ function m2ExportAnnales() {
   cl.querySelectorAll('.annale-correction').forEach(function (e) { e.style.display = 'block'; });
   cl.querySelectorAll('button, .m2-pdf-bar').forEach(function (e) { e.remove(); });
   m2OpenPrint(m2CourseTitle() + ' - Annales',
-    '<div class="pdf-doc">' + m2PdfHeader('Annales', 'Sujets et corrigés') + cl.innerHTML + '</div>');
+    m2PdfCoverPage('Annales corrigées') + '<div class="pdf-doc">' + cl.innerHTML + '</div>');
 }
 
 /* Export de l'examen blanc (sujet) ou de son corrigé selon l'état en cours. */
@@ -757,14 +904,14 @@ function m2ExportExamen() {
   var cl = host.cloneNode(true);
   cl.querySelectorAll('button, .m2-pdf-bar, .exam-timer-bar').forEach(function (e) { e.remove(); });
   var suffix = running ? 'Examen blanc' : 'Corrigé de l\'examen blanc';
-  var meta = running ? 'Sujet généré' : 'Sujet corrigé';
   m2OpenPrint(m2CourseTitle() + ' - ' + suffix,
-    '<div class="pdf-doc">' + m2PdfHeader(suffix, meta) + cl.innerHTML + '</div>');
+    m2PdfCoverPage(suffix) + '<div class="pdf-doc">' + cl.innerHTML + '</div>');
 }
 
 /* Détection de la section active et injection du bouton d'export. */
 function m2DetectSection(root) {
   if (root.querySelector('.course-chapter')) return 'cours';
+  if (root.querySelector('.schema-card')) return 'schemas';
   if (root.querySelector('.exam-running')) return 'examen-blanc';
   if (root.querySelector('.score-box, .exam-result-dossier')) return 'examen-corrige';
   if (root.querySelector('.annale-head')) return 'annales';
@@ -787,6 +934,9 @@ function m2RefreshPdfBar() {
   if (kind === 'cours') {
     label = '⬇ Télécharger le cours (PDF)'; fn = 'm2ExportCours()';
     hint = 'Le filtre par axe sélectionné est appliqué à l\'export.';
+  } else if (kind === 'schemas') {
+    label = '⬇ Télécharger les schémas (PDF)'; fn = 'm2ExportSchemas()';
+    hint = 'Tous les repères visuels du cours.';
   } else if (kind === 'annales') {
     label = '⬇ Télécharger les annales (PDF)'; fn = 'm2ExportAnnales()';
     hint = 'Sujets et corrigés inclus.';
