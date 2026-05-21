@@ -753,6 +753,222 @@
       "theme": "intro",
       "src": "Évo p.13",
       "srcChap": 4
+    },
+    {
+      "q": "Sur l'évolution des organisations :",
+      "type": "tf",
+      "theme": "intro",
+      "aff": [
+        {
+          "t": "Selon Besombes, 3 tensions permanentes structurent toute organisation : pouvoir, contre-pouvoir et spécialisation.",
+          "c": true,
+          "e": "Ces 3 tensions sont permanentes dans toute organisation."
+        },
+        {
+          "t": "Les 3 logiques économiques successives sont, dans l'ordre : production, vente, création de valeur.",
+          "c": true,
+          "e": "Logique de production (1900), de vente (1950), de création de valeur (aujourd'hui)."
+        },
+        {
+          "t": "Le schéma BOR signifie Besoin → Organisation → Réponse.",
+          "c": true,
+          "e": "La cohérence de l'organisation repose sur les ressources humaines et les ressources matérielles/financières."
+        },
+        {
+          "t": "Le changement de paradigme du management va d'une logique d'objectifs vers une logique de tâches.",
+          "c": false,
+          "e": "C'est l'inverse : on passe d'une logique de tâches (école classique) à une logique d'objectifs, ce qui fonde la DPPO."
+        }
+      ]
+    },
+    {
+      "q": "Sur la différenciation et la culture d'entreprise :",
+      "type": "tf",
+      "theme": "intro",
+      "aff": [
+        {
+          "t": "Selon Besombes, seules les différences perçues par le client ont de la valeur.",
+          "c": true,
+          "e": "La différenciation est à l'origine des avantages concurrentiels, mais seule la différence perçue compte."
+        },
+        {
+          "t": "La culture d'entreprise n'existe que si elle est formellement définie.",
+          "c": false,
+          "e": "La culture d'entreprise existe toujours, qu'elle soit connue ou non."
+        },
+        {
+          "t": "Le métier est la somme des savoir-faire acquis et la capacité à les combiner.",
+          "c": true,
+          "e": "Le processus combinatoire varie d'une organisation à l'autre et reste informel."
+        },
+        {
+          "t": "Selon Tainter, l'investissement dans la complexité atteint un point de rendements marginaux décroissants.",
+          "c": true,
+          "e": "Quand le rendement décline, la société investit toujours plus dans une stratégie moins rentable."
+        }
+      ]
+    },
+    {
+      "q": "Sur la DPPO de Drucker :",
+      "type": "tf",
+      "theme": "dppo",
+      "aff": [
+        {
+          "t": "La DPPO (Direction Par objectifs) a été conceptualisée par Peter Drucker en 1954.",
+          "c": true,
+          "e": "La DPPO est fondatrice du management contemporain."
+        },
+        {
+          "t": "La DPPO marque le passage d'une logique de tâches à une logique d'objectifs.",
+          "c": true,
+          "e": "C'est le cœur de la DPPO."
+        },
+        {
+          "t": "L'un des 6 principes de la DPPO est de former ses collaborateurs en permanence.",
+          "c": true,
+          "e": "La formation permanente fait partie des 6 principes fondamentaux de la DPPO."
+        },
+        {
+          "t": "La DPPO recommande de fixer des objectifs flous pour laisser de la liberté aux équipes.",
+          "c": false,
+          "e": "La DPPO recommande au contraire de fixer des objectifs CLAIRS pour les équipes."
+        }
+      ]
+    },
+    {
+      "q": "Sur l'approche processus :",
+      "type": "tf",
+      "theme": "processus",
+      "aff": [
+        {
+          "t": "Un processus transforme des éléments entrants en éléments sortants dans un but défini et mesurable.",
+          "c": true,
+          "e": "C'est la définition formelle du processus (ISO 8402)."
+        },
+        {
+          "t": "Les 3 types de processus sont : réalisation, support et pilotage.",
+          "c": true,
+          "e": "Réalisation (produit/service), support (outils et méthodes), pilotage (objectifs)."
+        },
+        {
+          "t": "Dans la hiérarchie des processus, un macroprocessus est plus fin qu'une tâche.",
+          "c": false,
+          "e": "C'est l'inverse : macroprocessus > processus > sous-processus > tâche."
+        },
+        {
+          "t": "La tortue de Crosby caractérise un processus par 4 questions : avec quoi, avec qui, comment, combien.",
+          "c": true,
+          "e": "Avec quoi (moyens), avec qui (compétences), comment (méthodes), combien (indicateurs)."
+        }
+      ]
+    },
+    {
+      "q": "Sur l'ISO 9001 et la cartographie des processus :",
+      "type": "tf",
+      "theme": "processus",
+      "aff": [
+        {
+          "t": "La norme ISO 9001 version 2000 décrit un Système de Management de la Qualité en boucle d'amélioration continue.",
+          "c": true,
+          "e": "Le SMQ va des exigences du client à sa satisfaction."
+        },
+        {
+          "t": "La cartographie des processus est le diagramme de toutes les interactions entre processus.",
+          "c": true,
+          "e": "On identifie les processus en interaction, on définit la nature de l'interaction, puis on établit le diagramme."
+        },
+        {
+          "t": "Dans une interaction entre processus, la sortie d'un processus peut être l'entrée d'un autre.",
+          "c": true,
+          "e": "C'est la nature même d'une interaction entre processus."
+        },
+        {
+          "t": "Le processus de pilotage réalise directement le produit ou le service vendu.",
+          "c": false,
+          "e": "C'est le processus de réalisation qui produit le bien ou le service ; le processus de pilotage met en œuvre les objectifs."
+        }
+      ]
+    },
+    {
+      "q": "Sur la performance organisationnelle :",
+      "type": "tf",
+      "theme": "performance",
+      "aff": [
+        {
+          "t": "Selon Drucker, l'efficacité c'est « faire les bonnes choses » et l'efficience « faire les choses de la bonne façon ».",
+          "c": true,
+          "e": "L'efficacité atteint le résultat ; l'efficience l'atteint en optimisant les ressources."
+        },
+        {
+          "t": "Dans le triangle de Gilbert, l'écart entre objectifs et résultats définit l'efficience.",
+          "c": false,
+          "e": "L'écart objectifs / résultats définit l'efficacité ; l'écart moyens / résultats définit l'efficience."
+        },
+        {
+          "t": "Selon Besombes, la performance résulte d'un accord entre les parties prenantes.",
+          "c": true,
+          "e": "La performance est issue d'un processus contingent et d'un consensus entre parties prenantes."
+        },
+        {
+          "t": "La performance suppose d'être à la fois efficace et efficient.",
+          "c": true,
+          "e": "Dans un contexte donné, la performance combine efficacité et efficience."
+        }
+      ]
+    },
+    {
+      "q": "Sur la performance et l'analyse stratégique :",
+      "type": "tf",
+      "theme": "performance",
+      "aff": [
+        {
+          "t": "Michel Crozier est le concepteur de l'analyse stratégique et de l'action collective.",
+          "c": true,
+          "e": "Crozier (1922-2013) compare les organisations à des organismes vivants."
+        },
+        {
+          "t": "L'arbre de décision dynamique de Crozier repose sur 3 leviers : pouvoir, droit et intérêt.",
+          "c": true,
+          "e": "Ces 3 dimensions déterminent les jeux d'acteurs dans l'organisation."
+        },
+        {
+          "t": "Selon Crozier, les organisations sont comparables à des machines figées.",
+          "c": false,
+          "e": "Crozier les compare au contraire à des organismes vivants, qui s'adaptent et innovent."
+        },
+        {
+          "t": "Le triangle de la performance de Gilbert croise les objectifs, les moyens et les résultats.",
+          "c": true,
+          "e": "Ses trois écarts définissent l'efficacité, l'efficience et la pertinence."
+        }
+      ]
+    },
+    {
+      "q": "Sur le pilotage :",
+      "type": "tf",
+      "theme": "pilotage",
+      "aff": [
+        {
+          "t": "Piloter, c'est déployer la stratégie en actions.",
+          "c": true,
+          "e": "Ces actions doivent être mesurées et vérifiées régulièrement au regard de l'exigence stratégique."
+        },
+        {
+          "t": "Selon Besombes, on ne peut progresser que sur ce que l'on mesure.",
+          "c": true,
+          "e": "La mesure des écarts et leur correction partagée permettent de progresser."
+        },
+        {
+          "t": "La structure projet privilégie une communication séquentielle descendante.",
+          "c": false,
+          "e": "La structure projet privilégie une communication continue et circulaire ; c'est la structure fonctionnelle qui est séquentielle et descendante."
+        },
+        {
+          "t": "Le pilotage au quotidien désigne, pour chaque action, un pilote, une fréquence, un moyen de mesure et une communication.",
+          "c": true,
+          "e": "Ces 4 éléments accompagnent chaque action pilotée."
+        }
+      ]
     }
   ],
   "annales": [

@@ -1360,6 +1360,222 @@
       "c": 1,
       "e": "Changement radical / stratégie de rupture : combine valeur supérieure et coûts inférieurs. Disruption à la Tesla (initialement), Nintendo Wii, Apple iPhone vs téléphones traditionnels.",
       "theme": "concurrentielle"
+    },
+    {
+      "q": "Sur le Business Model :",
+      "type": "tf",
+      "theme": "business_models",
+      "aff": [
+        {
+          "t": "Selon Osterwalder et Pigneur, un Business Model décrit comment une organisation crée, délivre et capture de la valeur.",
+          "c": true,
+          "e": "C'est la définition d'Osterwalder & Pigneur (2011) ; le BM se représente par 9 blocs."
+        },
+        {
+          "t": "Le Business Model Canvas comporte 9 blocs.",
+          "c": true,
+          "e": "Les 9 blocs répondent aux questions Comment ?, Quoi ?, Qui ? et Combien ?."
+        },
+        {
+          "t": "La scalabilité est la capacité d'augmenter le volume d'activité sans hausse proportionnelle des coûts.",
+          "c": true,
+          "e": "La scalabilité est l'un des 4 critères d'évaluation d'un Business Model."
+        },
+        {
+          "t": "Les économies d'échelle désignent la mutualisation des coûts entre plusieurs activités différentes.",
+          "c": false,
+          "e": "Cela définit les économies de champ. Les économies d'échelle sont la baisse du coût unitaire quand le volume d'une même activité augmente."
+        }
+      ]
+    },
+    {
+      "q": "Sur l'évaluation et la scalabilité d'un Business Model :",
+      "type": "tf",
+      "theme": "business_models",
+      "aff": [
+        {
+          "t": "Les 4 critères d'évaluation d'un Business Model sont la cohérence, la robustesse, la flexibilité et la scalabilité.",
+          "c": true,
+          "e": "Ce sont les 4 critères d'évaluation d'un BM."
+        },
+        {
+          "t": "Un levier opérationnel de 6 signifie qu'une hausse de 1 % du chiffre d'affaires génère une hausse de 6 % du résultat d'exploitation.",
+          "c": true,
+          "e": "Le levier opérationnel = marge sur coûts variables / résultat d'exploitation."
+        },
+        {
+          "t": "Un ratio coût marginal / revenu marginal proche de 1 signale une forte scalabilité.",
+          "c": false,
+          "e": "C'est l'inverse : un ratio proche de 0 indique une forte scalabilité (coût quasi nul par client supplémentaire) ; proche de 1, aucune scalabilité."
+        },
+        {
+          "t": "Une intensité capitalistique faible favorise la scalabilité.",
+          "c": true,
+          "e": "Un modèle économe en capital (services numériques, plateformes) présente une forte scalabilité."
+        }
+      ]
+    },
+    {
+      "q": "Sur les plateformes numériques :",
+      "type": "tf",
+      "theme": "plateformes",
+      "aff": [
+        {
+          "t": "Une plateforme met en relation au moins deux catégories d'agents : des offreurs et des demandeurs.",
+          "c": true,
+          "e": "Une plateforme est un dispositif de coordination contrôlé par un opérateur pivot."
+        },
+        {
+          "t": "La loi de Metcalfe énonce que la valeur d'un réseau augmente comme le carré du nombre de ses membres.",
+          "c": true,
+          "e": "La valeur globale d'un réseau croît en n² : le dernier arrivé apporte plus de valeur que le précédent."
+        },
+        {
+          "t": "Airbnb et Uber sont des exemples de plateformes d'innovation.",
+          "c": false,
+          "e": "Airbnb et Uber sont des plateformes de transaction. Les plateformes d'innovation sont des bases technologiques comme iOS, Android ou les consoles de jeux."
+        },
+        {
+          "t": "Le crowdsourcing fait fournir une part du capital et du travail par les utilisateurs eux-mêmes.",
+          "c": true,
+          "e": "Le crowdsourcing réduit les besoins en capital de l'opérateur ; il faut motiver et rémunérer les contributeurs."
+        }
+      ]
+    },
+    {
+      "q": "Sur les marchés bifaces et les erreurs de plateformes :",
+      "type": "tf",
+      "theme": "plateformes",
+      "aff": [
+        {
+          "t": "Un marché biface fait coexister deux types de clients distincts mais interdépendants.",
+          "c": true,
+          "e": "Les marchés bifaces présentent des effets de réseau croisés et une course à la taille critique."
+        },
+        {
+          "t": "Selon Cusumano, l'une des erreurs typiques des plateformes est de mal choisir qui subventionner et qui doit payer.",
+          "c": true,
+          "e": "C'est l'erreur de pricing ; les autres sont la méfiance, le timing et l'orgueil."
+        },
+        {
+          "t": "Un revendeur comme la Fnac ne détient pas les actifs qu'il vend.",
+          "c": false,
+          "e": "Le revendeur achète et revend les actifs (et porte le risque de stock). C'est la plateforme qui ne détient pas les actifs."
+        },
+        {
+          "t": "Les marchés de réputation reposent sur des systèmes de notation pour créer la confiance.",
+          "c": true,
+          "e": "Les systèmes d'avis et de notation créent la confiance entre acteurs qui ne se connaissent pas."
+        }
+      ]
+    },
+    {
+      "q": "Sur l'avantage concurrentiel :",
+      "type": "tf",
+      "theme": "concurrentielle",
+      "aff": [
+        {
+          "t": "Selon Porter, l'avantage concurrentiel est toujours relatif, contextuel et non éternel.",
+          "c": true,
+          "e": "Il se fonde sur des ressources rares ou des compétences distinctives, mais reste contextuel."
+        },
+        {
+          "t": "Une fois acquis, l'avantage concurrentiel est définitivement protégé.",
+          "c": false,
+          "e": "L'avantage concurrentiel n'est jamais éternel : imitation, diffusion des bonnes pratiques et innovation l'érodent. La stratégie doit le renouveler en continu."
+        },
+        {
+          "t": "Le mnémotechnique VIP désigne Valeur, Imitation, Périmètre.",
+          "c": true,
+          "e": "V = créer de la Valeur, I = se protéger de l'Imitation, P = choisir le Périmètre des activités."
+        },
+        {
+          "t": "La stratégie adaptative part de l'analyse de l'environnement (logique Outside-In).",
+          "c": true,
+          "e": "La stratégie adaptative détecte un marché attractif puis alloue les ressources ; l'intentionnelle part des ressources internes (Inside-Out)."
+        }
+      ]
+    },
+    {
+      "q": "Sur les stratégies concurrentielles :",
+      "type": "tf",
+      "theme": "concurrentielle",
+      "aff": [
+        {
+          "t": "La domination par les coûts vise des coûts plus bas pour une valeur standard.",
+          "c": true,
+          "e": "Elle s'appuie sur le volume et les économies d'échelle (ex. Lidl, Ryanair)."
+        },
+        {
+          "t": "La différenciation par le bas (low cost) assume une offre dégradée mais acceptable pour un segment cible.",
+          "c": true,
+          "e": "C'est la différence avec la domination par les coûts : on assume une offre réduite que le segment accepte."
+        },
+        {
+          "t": "La stratégie de changement radical combine des coûts plus bas et une valeur perçue plus haute.",
+          "c": true,
+          "e": "C'est une stratégie de rupture / disruption (ex. Nintendo Wii)."
+        },
+        {
+          "t": "La position « coûts élevés et valeur perçue faible » est une position tenable.",
+          "c": false,
+          "e": "C'est une position non tenable : Porter parle d'enlisement dans la voie médiane."
+        }
+      ]
+    },
+    {
+      "q": "Sur la Corporate Strategy :",
+      "type": "tf",
+      "theme": "corporate",
+      "aff": [
+        {
+          "t": "La stratégie corporate se situe au niveau du siège social et gère le portefeuille d'activités.",
+          "c": true,
+          "e": "Elle gère le portefeuille, l'allocation des ressources et les modalités de croissance/décroissance."
+        },
+        {
+          "t": "La business strategy vise à créer ou cultiver un avantage concurrentiel sur un domaine d'activité.",
+          "c": true,
+          "e": "La business strategy se situe au niveau d'un domaine d'activité stratégique (DAS)."
+        },
+        {
+          "t": "L'avantage parental existe quand la maison-mère ajoute plus de valeur à une filiale que celle-ci n'en obtiendrait seule.",
+          "c": true,
+          "e": "L'avantage parental se compare aussi à ce qu'apporterait un autre parent."
+        },
+        {
+          "t": "Si la maison-mère n'apporte rien à sa filiale, elle reste simplement neutre.",
+          "c": false,
+          "e": "Si le parent n'apporte rien, il détruit de la valeur (parent destruction)."
+        }
+      ]
+    },
+    {
+      "q": "Sur la stratégie : définitions et modes de croissance :",
+      "type": "tf",
+      "theme": "corporate",
+      "aff": [
+        {
+          "t": "Selon Chandler, la stratégie est la détermination des objectifs à long terme et l'allocation des ressources pour les atteindre.",
+          "c": true,
+          "e": "Définition canonique de Chandler (1962)."
+        },
+        {
+          "t": "La croissance externe se réalise par fusions et acquisitions.",
+          "c": true,
+          "e": "La croissance externe est rapide mais coûteuse et risquée (intégration, valorisation)."
+        },
+        {
+          "t": "La croissance interne (organique) est rapide mais très risquée.",
+          "c": false,
+          "e": "La croissance interne est au contraire lente mais maîtrisée, avec un risque limité."
+        },
+        {
+          "t": "La cession et la scission sont des modalités de décroissance.",
+          "c": true,
+          "e": "La cession vend une filiale ; la scission sépare l'entreprise en plusieurs entités."
+        }
+      ]
     }
   ],
   "annales": [

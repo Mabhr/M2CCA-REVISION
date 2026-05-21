@@ -1191,9 +1191,21 @@ const FALLBACK = {
     },
     {
       "theme": "securite",
-      "q": "Cheval de Troie / Backdoor / Bombe logique",
-      "a": "TROYEN (Trojan horse) : apparence saine, mais effectue discrètement des actions supplémentaires à l'exécution (ex : installation d'une backdoor). Composé client + serveur permet à un attaquant de contrôler la machine cible.\nBACKDOOR (porte dérobée) : moyen laissé par une personne malveillante pour revenir dans le système (compte secret, par ex.). Pour espionnage ou pour lancer des attaques en faisant porter le chapeau.\nBOMBE LOGIQUE : troyen produisant ses effets à un moment précis (date, combinaison de touches, exécution d'un fichier). Ex : Tchernobyl s'activant le 26 avril 1999.",
-      "src": "Sécurité"
+      "src": "Sécurité",
+      "q": "Le cheval de Troie (Trojan)",
+      "a": "Programme d'apparence saine qui effectue discrètement des actions supplémentaires à l'exécution, par exemple l'installation d'une backdoor. Composé d'un client et d'un serveur, il permet à un attaquant de contrôler la machine cible."
+    },
+    {
+      "theme": "securite",
+      "src": "Sécurité",
+      "q": "La backdoor (porte dérobée)",
+      "a": "Moyen laissé par une personne malveillante pour revenir dans le système (un compte secret, par exemple). Sert à l'espionnage ou à lancer des attaques en faisant porter le chapeau à la victime."
+    },
+    {
+      "theme": "securite",
+      "src": "Sécurité",
+      "q": "La bombe logique",
+      "a": "Cheval de Troie produisant ses effets à un moment précis : une date, une combinaison de touches, l'exécution d'un fichier. Exemple : le virus Tchernobyl s'activant le 26 avril 1999."
     },
     {
       "theme": "securite",
@@ -1215,9 +1227,15 @@ const FALLBACK = {
     },
     {
       "theme": "securite",
-      "q": "Sniffing et Scanning",
-      "a": "SNIFFING (reniflage) : analyser le trafic réseau pour récupérer des informations sensibles (mots de passe, identifiants). Ex : 100 PC reliés par un HUB → un pirate peut lire tous les identifiants entre 8h-10h.\nProtection : utiliser un SWITCH plutôt qu'un hub, protocoles chiffrés, détecteur de sniffer.\nSCANNING : balayer tous les ports d'une machine avec un scanner pour identifier les ports ouverts (déduire OS, applications). Permet aux hackers de trouver les points faibles.\nProtection : scanner sa machine, surveiller les ports avec un firewall, fermer ceux inutiles, IDS (détection) ou IPS (prévention).",
-      "src": "Sécurité"
+      "src": "Sécurité",
+      "q": "Le sniffing (reniflage)",
+      "a": "Analyser le trafic réseau pour récupérer des informations sensibles (mots de passe, identifiants). Exemple : sur 100 PC reliés par un hub, un pirate peut lire tous les identifiants. Protection : utiliser un switch plutôt qu'un hub, des protocoles chiffrés, un détecteur de sniffer."
+    },
+    {
+      "theme": "securite",
+      "src": "Sécurité",
+      "q": "Le scanning",
+      "a": "Balayer tous les ports d'une machine avec un scanner pour identifier les ports ouverts, et en déduire l'OS et les applications. Permet aux hackers de trouver les points faibles. Protection : surveiller les ports avec un firewall, fermer ceux inutiles, IDS (détection) ou IPS (prévention)."
     },
     {
       "theme": "securite",
@@ -1245,9 +1263,15 @@ const FALLBACK = {
     },
     {
       "theme": "securite",
-      "q": "Hijacking et Buffer overflow",
-      "a": "HIJACKING (détournement de session) : au lieu de cracker le mot de passe, attendre que la victime se connecte et prendre sa place → contourner l'authentification. Lancer un DoS contre la victime pour la mettre hors-jeu ou écouter le trafic.\nBUFFER OVERFLOW (débordement de tampon) : envoyer plus de données qu'un programme n'en attend pour qu'il exécute un code arbitraire. Si le programme ne vérifie pas la longueur des chaînes en paramètre, possibilité de compromettre la machine.",
-      "src": "Sécurité"
+      "src": "Sécurité",
+      "q": "Le hijacking (détournement de session)",
+      "a": "Au lieu de cracker le mot de passe, attendre que la victime se connecte et prendre sa place pour contourner l'authentification. Le pirate peut lancer un DoS contre la victime pour la mettre hors-jeu, ou écouter le trafic."
+    },
+    {
+      "theme": "securite",
+      "src": "Sécurité",
+      "q": "Le buffer overflow (débordement de tampon)",
+      "a": "Envoyer plus de données qu'un programme n'en attend pour qu'il exécute un code arbitraire. Si le programme ne vérifie pas la longueur des chaînes passées en paramètre, la machine peut être compromise."
     },
     {
       "theme": "securite",
@@ -2162,6 +2186,222 @@ const FALLBACK = {
       ],
       "c": 0,
       "e": "État ACTIF d'insécurité = non-connaissance par l'utilisateur des fonctionnalités du système (ex : ne pas désactiver des services réseaux non nécessaires). État PASSIF = méconnaissance des moyens de sécurité par l'admin."
+    },
+    {
+      "q": "Sur la gouvernance des SI :",
+      "type": "tf",
+      "theme": "gouvernance",
+      "aff": [
+        {
+          "t": "Les 5 fondements de la gouvernance SI selon l'ISACA incluent l'alignement stratégique et la création de valeur.",
+          "c": true,
+          "e": "Les 5 fondements ISACA sont : alignement stratégique, création de valeur, gestion des risques, gestion des ressources, mesure de la performance."
+        },
+        {
+          "t": "Le Balanced Scorecard de Kaplan-Norton comporte 4 axes : financier, client, innovation/apprentissage, processus internes.",
+          "c": true,
+          "e": "Le BSC traduit la stratégie en KPI mesurables selon ces 4 axes."
+        },
+        {
+          "t": "La gouvernance des SI est indépendante de la gouvernance d'entreprise.",
+          "c": false,
+          "e": "La gouvernance des SI est au contraire extrêmement dépendante de la gouvernance d'entreprise ; elle contribue à la gouvernance de conformité et à celle de performance."
+        },
+        {
+          "t": "L'alignement stratégique consiste à aligner le SI sur la stratégie de l'entreprise.",
+          "c": true,
+          "e": "L'alignement stratégique du SI sur la stratégie d'entreprise est le premier fondement de la gouvernance SI."
+        }
+      ]
+    },
+    {
+      "q": "Sur l'infogérance et les contrats de service :",
+      "type": "tf",
+      "theme": "gouvernance",
+      "aff": [
+        {
+          "t": "L'infogérance s'accompagne d'une obligation de résultat.",
+          "c": true,
+          "e": "L'infogérance est l'achat d'un service complet avec obligation de résultat, sans maîtrise des moyens — contrairement à la sous-traitance."
+        },
+        {
+          "t": "Dans la sous-traitance, le client conserve la maîtrise et la responsabilité des moyens.",
+          "c": true,
+          "e": "La sous-traitance fait réaliser des opérations par un prestataire tout en conservant le choix des moyens, la maîtrise et la responsabilité."
+        },
+        {
+          "t": "Le SLA (Service Level Agreement) lie un fournisseur IT et une autre partie de la même organisation.",
+          "c": false,
+          "e": "C'est l'OLA (Operation Level Agreement) qui est interne à l'organisation. Le SLA lie un prestataire et un client."
+        },
+        {
+          "t": "La réversibilité désigne la reprise du périmètre infogéré par le client lui-même.",
+          "c": true,
+          "e": "La réversibilité est la ré-internalisation ; la transférabilité confie le service à un autre prestataire."
+        }
+      ]
+    },
+    {
+      "q": "Sur les référentiels COBIT, ITIL et CMMI :",
+      "type": "tf",
+      "theme": "gouvernance",
+      "aff": [
+        {
+          "t": "COBIT comporte 4 domaines : Planifier-Organiser, Acquérir-Implémenter, Délivrer-Supporter, Surveiller-Évaluer.",
+          "c": true,
+          "e": "Ce sont les 4 domaines de COBIT (PO, AI, DS, SE), référentiel ISACA de gouvernance et d'audit des SI."
+        },
+        {
+          "t": "CMMI compte 5 niveaux de maturité, du niveau Initial au niveau En optimisation.",
+          "c": true,
+          "e": "Les 5 niveaux : Initial, Discipliné, Ajusté, Géré quantitativement, En optimisation, selon un principe d'empilement."
+        },
+        {
+          "t": "ITIL est un référentiel de gestion des risques financiers.",
+          "c": false,
+          "e": "ITIL est un référentiel de gestion des services IT (support et production : incidents, problèmes, changements, capacité, disponibilité…)."
+        },
+        {
+          "t": "ISO 27002 énonce 133 bonnes pratiques de sécurité de l'information.",
+          "c": true,
+          "e": "ISO 27002 fournit le catalogue de 133 bonnes pratiques ; ISO 27001 définit le SMSI."
+        }
+      ]
+    },
+    {
+      "q": "Sur l'audit des SI :",
+      "type": "tf",
+      "theme": "audit",
+      "aff": [
+        {
+          "t": "L'audit des SI couvre un périmètre plus large que l'audit informatique : il intègre les aspects organisationnels et fonctionnels en plus du technique.",
+          "c": true,
+          "e": "L'audit informatique est centré sur la technique ; l'audit des SI (apparu dans les années 1970) y ajoute l'organisationnel et le fonctionnel."
+        },
+        {
+          "t": "Le référentiel de base mobilisé par l'auditeur des SI est COBIT.",
+          "c": true,
+          "e": "COBIT est le référentiel de base ; l'auditeur mobilise aussi ISO 27002, CMMI, ITIL, Val IT, Risk IT."
+        },
+        {
+          "t": "L'audit interne est réalisé par des personnes extérieures à l'organisation.",
+          "c": false,
+          "e": "L'audit interne est diligenté par la direction et exécuté par le département d'audit interne. C'est l'audit externe qui est réalisé par des personnes extérieures."
+        },
+        {
+          "t": "Les NEP (Normes d'Exercice Professionnel) ont valeur de loi dans la mission du commissaire aux comptes.",
+          "c": true,
+          "e": "Les NEP, qui ont remplacé les anciennes normes CNCC en 2007, ont valeur de loi dans la mission du CAC."
+        }
+      ]
+    },
+    {
+      "q": "Sur le contrôle interne et le risque d'audit :",
+      "type": "tf",
+      "theme": "audit",
+      "aff": [
+        {
+          "t": "Le COSO est un référentiel de contrôle interne.",
+          "c": true,
+          "e": "Le COSO est le référentiel de contrôle interne, émergé après les scandales Enron et Worldcom."
+        },
+        {
+          "t": "Selon le COSO, le contrôle interne poursuit 3 objectifs : conformité aux lois, fiabilité des informations financières, optimisation des opérations.",
+          "c": true,
+          "e": "Ce sont les 3 objectifs du contrôle interne ; l'audit informatique s'intéresse surtout au 3ᵉ."
+        },
+        {
+          "t": "Le risque de non-détection est indépendant de la mission d'audit.",
+          "c": false,
+          "e": "Le risque de non-détection est au contraire propre à la mission d'audit : c'est le risque que le CAC ne détecte pas une anomalie significative."
+        },
+        {
+          "t": "Le risque inhérent existe indépendamment du contrôle interne.",
+          "c": true,
+          "e": "Le risque inhérent est la possibilité qu'une anomalie significative se produise indépendamment du contrôle interne."
+        }
+      ]
+    },
+    {
+      "q": "Sur les fondamentaux de la sécurité informatique :",
+      "type": "tf",
+      "theme": "securite",
+      "aff": [
+        {
+          "t": "Les 3 critères de base pour évaluer la sécurité d'un bien (DIC) sont la Disponibilité, l'Intégrité et la Confidentialité.",
+          "c": true,
+          "e": "DIC = Disponibilité, Intégrité, Confidentialité ; on y ajoute la Preuve (authentification + non-répudiation)."
+        },
+        {
+          "t": "L'équation du risque est : Risque = Menace × Vulnérabilité × Impact.",
+          "c": true,
+          "e": "Menace et vulnérabilité forment la cause du risque (potentialité), l'impact en est la sévérité."
+        },
+        {
+          "t": "Avec une politique de sécurité rigoureuse, le risque zéro peut être atteint.",
+          "c": false,
+          "e": "Le risque zéro n'existe pas : il faut définir un risque résiduel acceptable."
+        },
+        {
+          "t": "La sûreté de fonctionnement et la sécurité informatique désignent la même chose.",
+          "c": false,
+          "e": "La sûreté de fonctionnement vérifie que l'application réalise exactement les tâches attendues (génie logiciel) ; la sécurité réduit la vulnérabilité face aux menaces. Ce n'est pas la même chose."
+        }
+      ]
+    },
+    {
+      "q": "Sur la cryptographie :",
+      "type": "tf",
+      "theme": "securite",
+      "aff": [
+        {
+          "t": "Le chiffrement symétrique utilise la même clé pour chiffrer et pour déchiffrer.",
+          "c": true,
+          "e": "Le chiffrement symétrique est rapide mais pose le problème de l'échange et de la multiplication des clés."
+        },
+        {
+          "t": "Selon le principe de Kerckhoff, la sécurité d'un système cryptographique doit reposer sur la clé, et non sur l'algorithme.",
+          "c": true,
+          "e": "Kerckhoff (1883) fonde la cryptographie moderne : algorithme public, clé secrète."
+        },
+        {
+          "t": "Le hashage est une transformation réversible.",
+          "c": false,
+          "e": "Le hashage est irréversible : on ne peut pas retrouver le message d'origine à partir de son condensé. Il est aussi déterministe."
+        },
+        {
+          "t": "Dans le chiffrement asymétrique, chaque communicant possède une paire de clés : une clé publique et une clé privée.",
+          "c": true,
+          "e": "Un message chiffré par une clé de la paire ne peut être déchiffré que par l'autre clé."
+        }
+      ]
+    },
+    {
+      "q": "Sur les menaces et attaques informatiques :",
+      "type": "tf",
+      "theme": "securite",
+      "aff": [
+        {
+          "t": "Un ver (worm) a besoin d'un programme hôte pour se propager.",
+          "c": false,
+          "e": "Contrairement au virus, le ver n'a pas besoin de programme hôte : il se propage seul d'ordinateur à ordinateur via le réseau."
+        },
+        {
+          "t": "Le phishing consiste à soutirer des informations confidentielles par usurpation d'identité.",
+          "c": true,
+          "e": "Le phishing usurpe l'identité d'un tiers de confiance (banque, site) pour obtenir codes et identifiants."
+        },
+        {
+          "t": "Une attaque par déni de service (DoS) vise à mettre hors service le système visé.",
+          "c": true,
+          "e": "Le DoS rend la victime incapable d'accéder à son réseau ; le DDoS est une version coordonnée depuis plusieurs machines."
+        },
+        {
+          "t": "Le social engineering est une attaque d'ordre purement informatique.",
+          "c": false,
+          "e": "Le social engineering n'est pas d'ordre informatique : c'est l'art de manipuler les personnes pour obtenir des informations. Il ne doit pas être sous-estimé."
+        }
+      ]
     }
   ],
   "annales": [

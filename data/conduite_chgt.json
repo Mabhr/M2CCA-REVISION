@@ -872,6 +872,222 @@
       "theme": "equipe",
       "src": "Compétences p.40",
       "srcChap": 12
+    },
+    {
+      "q": "Sur le processus du changement :",
+      "type": "tf",
+      "theme": "processus_chgt",
+      "aff": [
+        {
+          "t": "La loi de Le Chatelier appliquée au changement énonce que toute modification de l'équilibre fait apparaître des phénomènes qui s'y opposent.",
+          "c": true,
+          "e": "Le système tend à annuler les effets de la modification : d'où les résistances au changement."
+        },
+        {
+          "t": "Le modèle de Kurt Lewin décompose le changement en 3 phases : décristallisation, changement, cristallisation.",
+          "c": true,
+          "e": "Décristallisation (préparation), changement (modifications), cristallisation (renforcement et suivi)."
+        },
+        {
+          "t": "Pour réussir un changement, il faut augmenter les résistances et diminuer les pressions favorables.",
+          "c": false,
+          "e": "C'est l'inverse : augmenter les pressions dans le sens du changement et diminuer les résistances — et associer les deux."
+        },
+        {
+          "t": "La courbe de Kübler-Ross permet de comprendre les réactions émotionnelles face au changement.",
+          "c": true,
+          "e": "Le support Besombes cite Kübler-Ross comme modèle structurant des réactions émotionnelles."
+        }
+      ]
+    },
+    {
+      "q": "Sur les résistances et les stratégies de changement :",
+      "type": "tf",
+      "theme": "processus_chgt",
+      "aff": [
+        {
+          "t": "Selon Besombes, la peur de l'inconnu fait partie des résistances au changement.",
+          "c": true,
+          "e": "Elle figure parmi les 7 résistances, avec le manque d'information, le besoin de sécurité, etc."
+        },
+        {
+          "t": "Faire participer les collaborateurs est l'un des 4 leviers pour lutter contre les résistances.",
+          "c": true,
+          "e": "Les 4 leviers sont : communiquer, faire participer, soutenir, négocier."
+        },
+        {
+          "t": "La persuasion rationnelle s'appuie sur la peur des sanctions et l'attrait des récompenses.",
+          "c": false,
+          "e": "Cela décrit la coercition. La persuasion rationnelle fait appel à la logique et au pouvoir lié à la compétence."
+        },
+        {
+          "t": "Le partage du pouvoir mise sur la responsabilisation comme facteur de motivation.",
+          "c": true,
+          "e": "Le partage du pouvoir implique les personnes dans le processus de changement."
+        }
+      ]
+    },
+    {
+      "q": "Sur la démarche de conduite du changement :",
+      "type": "tf",
+      "theme": "demarche",
+      "aff": [
+        {
+          "t": "La démarche de conduite du changement selon Besombes comporte 8 étapes, de « Amorcer » à « S'améliorer ».",
+          "c": true,
+          "e": "Les 8 étapes vont de la définition d'une stratégie au bouclage de la démarche."
+        },
+        {
+          "t": "La durée moyenne d'une démarche de changement est d'environ 2 ans.",
+          "c": true,
+          "e": "Ni trop, ni trop peu : environ 2 ans."
+        },
+        {
+          "t": "La première étape de la démarche consiste à mesurer et évaluer les résultats.",
+          "c": false,
+          "e": "La 1re étape est « Amorcer » (définir une stratégie). Mesurer et évaluer est la 7e étape."
+        },
+        {
+          "t": "L'étape « Mobiliser » consiste notamment à sensibiliser et former les collaborateurs.",
+          "c": true,
+          "e": "Mobiliser : sensibiliser, s'assurer de la compréhension, former aux nouvelles méthodes."
+        }
+      ]
+    },
+    {
+      "q": "Sur les acteurs face au changement :",
+      "type": "tf",
+      "theme": "acteurs",
+      "aff": [
+        {
+          "t": "Selon la répartition 10-80-10, la majorité des collaborateurs sont des passifs (hésitants) qu'il faut rassurer.",
+          "c": true,
+          "e": "Les passifs représentent 60 à 80 % : en attente de résultats probants, ils veulent être sécurisés."
+        },
+        {
+          "t": "Les proactifs face au changement doivent être laissés s'isoler.",
+          "c": false,
+          "e": "Ce sont les opposants qu'on laisse s'isoler pour mieux les raccrocher. Les proactifs, on les utilise comme prescripteurs."
+        },
+        {
+          "t": "Le Top Management donne l'impulsion et la légitimité au changement.",
+          "c": true,
+          "e": "Le Top Management montre que le projet est moteur et prend les décisions importantes."
+        },
+        {
+          "t": "Les ressources métiers internes sont des relais légitimes car elles connaissent l'organisation et y resteront.",
+          "c": true,
+          "e": "Elles connaissent l'organisation, sont légitimes et resteront : à mobiliser le plus en amont possible."
+        }
+      ]
+    },
+    {
+      "q": "Sur les outils de pilotage du changement :",
+      "type": "tf",
+      "theme": "pilotage",
+      "aff": [
+        {
+          "t": "Dans la méthode RACI, le rôle « R » (Responsable) est attribué à une seule et unique personne par activité.",
+          "c": true,
+          "e": "Le Responsable donne son approbation et assume la responsabilité globale ; il est unique."
+        },
+        {
+          "t": "Dans la méthode RACI, le « C » désigne la personne qui réalise les activités.",
+          "c": false,
+          "e": "Le C (Contribution) dispose d'une information ou d'une expertise mais n'a pas d'autorité. C'est le A (Acteur) qui réalise."
+        },
+        {
+          "t": "La matrice de priorisation croise l'importance et la facilité (ou maîtrise) d'une action.",
+          "c": true,
+          "e": "Les actions à importance et facilité élevées sont prioritaires ; celles à faible importance sont mises « au parking »."
+        },
+        {
+          "t": "Les 10 points clés de la conduite du changement incluent le fait de rester factuel.",
+          "c": true,
+          "e": "Rester factuel, être réaliste, communiquer honnêtement font partie des 10 points clés."
+        }
+      ]
+    },
+    {
+      "q": "Sur la gestion des compétences :",
+      "type": "tf",
+      "theme": "competences",
+      "aff": [
+        {
+          "t": "Selon Besombes, la compétence est une disposition à mobiliser, combiner et mettre en œuvre des ressources.",
+          "c": true,
+          "e": "La compétence combine savoir théorique, procédures, savoir-faire et expérience."
+        },
+        {
+          "t": "La GPEC vise à réduire de façon anticipée les écarts entre besoins et ressources en effectifs et compétences.",
+          "c": true,
+          "e": "La GPEC implique le salarié dans un projet d'évolution professionnelle."
+        },
+        {
+          "t": "La chaîne des rôles se compose, dans l'ordre, du rôle confié, perçu, accepté et tenu.",
+          "c": true,
+          "e": "La description de poste minimise l'écart entre rôle confié et rôle tenu."
+        },
+        {
+          "t": "L'évaluation « formative » cible la performance et les résultats.",
+          "c": false,
+          "e": "L'évaluation formative cible les compétences et la tenue du poste ; c'est l'évaluation « sanction » qui cible la performance et les résultats."
+        }
+      ]
+    },
+    {
+      "q": "Sur la compétence et la description de poste :",
+      "type": "tf",
+      "theme": "competences",
+      "aff": [
+        {
+          "t": "Selon Besombes, il est préférable d'embaucher quelqu'un pour sa motivation, son caractère et l'image de soi, puis de le former au savoir et au savoir-faire.",
+          "c": true,
+          "e": "Parmi les 5 critères, mieux vaut embaucher sur 1-2-3 et former à 4 (savoir) et 5 (savoir-faire)."
+        },
+        {
+          "t": "L'organisation qualifiante repose sur 3 piliers : enrichissement des tâches, volonté éducative et recherche de la compétitivité.",
+          "c": true,
+          "e": "Elle s'appuie aussi sur un dictionnaire de compétences."
+        },
+        {
+          "t": "Le poste et la fonction sont des notions strictement équivalentes.",
+          "c": false,
+          "e": "Le poste est une unité physiquement identifiable (emploi tenu) ; la fonction regroupe des activités tendant vers un même but."
+        },
+        {
+          "t": "La culture d'entreprise repose, selon Besombes, sur 5 forces : mythes, rites, identité, valeurs et histoire.",
+          "c": true,
+          "e": "Un système d'appréciation par entretiens individuels fait appel à ces notions de culture d'entreprise."
+        }
+      ]
+    },
+    {
+      "q": "Sur l'équipe et le management :",
+      "type": "tf",
+      "theme": "equipe",
+      "aff": [
+        {
+          "t": "Selon Lewin, l'essence d'un groupe est l'interdépendance de chacun de ses membres.",
+          "c": true,
+          "e": "Une équipe se caractérise par un objectif commun, une interaction psychologique et une existence collective."
+        },
+        {
+          "t": "Les 5 étapes de constitution d'une équipe sont : constitution, tension, normalisation, production, dissolution.",
+          "c": true,
+          "e": "Chaque étape appelle un levier : team building, gestion des conflits, négociation, motivation, valorisation."
+        },
+        {
+          "t": "Selon Besombes, manager est une fin en soi.",
+          "c": false,
+          "e": "Manager n'est pas une fin en soi : c'est un moyen pour réussir un projet ensemble et rester concentré sur l'essentiel."
+        },
+        {
+          "t": "Le continuum de management s'étend du style directif au style délégatif.",
+          "c": true,
+          "e": "Il va de l'autorité forte de l'animateur à la liberté forte du groupe (7 niveaux)."
+        }
+      ]
     }
   ],
   "annales": [
