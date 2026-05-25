@@ -1344,6 +1344,54 @@ mark.search-hit {
 }
 
 
+/* ═══════ Correction type (examen blanc) ═══════ */
+.exam-correction-block {
+  margin-top: 1rem;
+  border: 1px solid rgba(90,145,104,0.30);
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(90,145,104,0.05);
+}
+.exam-correction-summary {
+  cursor: pointer;
+  padding: 0.75rem 1.1rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--green);
+  background: rgba(90,145,104,0.12);
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.18s ease;
+}
+.exam-correction-summary::-webkit-details-marker { display: none; }
+.exam-correction-summary::before {
+  content: '▸';
+  color: var(--green);
+  font-size: 0.85rem;
+  transition: transform 0.18s ease;
+  display: inline-block;
+}
+.exam-correction-block[open] .exam-correction-summary::before { transform: rotate(90deg); }
+.exam-correction-summary:hover { background: rgba(90,145,104,0.18); }
+.exam-correction-hint {
+  margin-left: auto;
+  font-size: 0.72rem;
+  color: var(--text3);
+  font-weight: 400;
+  font-family: 'JetBrains Mono', monospace;
+}
+.exam-correction-text {
+  padding: 1rem 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--text);
+  white-space: pre-wrap;
+  background: rgba(90,145,104,0.03);
+}
+
 /* ═══════ Bouton export PDF (cours / examen / annales) ═══════ */
 .m2-pdf-bar{display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;margin:0 0 1.4rem;}
 .m2-pdf-btn{background:var(--accent);color:#fff;border:0;border-radius:9px;

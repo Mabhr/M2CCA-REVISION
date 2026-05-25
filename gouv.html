@@ -4846,21 +4846,14 @@ const GOUV_QUESTIONS = [
     q: "Expliquez quelles sont les obligations et les risques liés à la dématérialisation des bulletins de salaire.",
     context: "Selon le Baromètre 2024 de Digiposte-OpinionWay, 63 % des salariés reçoivent leur bulletin de paie au format numérique (vs 42 % en 2020). Près de 80 % expriment des préoccupations face aux risques numériques (vol de données, usage frauduleux). 72 % souhaitent un hébergement en France ou en Europe.",
     points: [
-      "Obligation : possibilité offerte par la loi El Khomri 2016 (art. L.3243-2 Code travail) — dématérialisation par défaut sauf opposition du salarié",
-      "Obligation : information préalable du salarié (1 mois avant) avec droit d'opposition",
-      "Obligation : conservation 50 ans par l'employeur (ou jusqu'à 75 ans du salarié)",
-      "Obligation : choix d'un mode de mise à disposition sécurisé (coffre-fort numérique CDC)",
-      "Obligation : portabilité du document jusqu'à 50 ans en cas de changement d'employeur",
-      "Obligation : RGPD — base légale (obligation légale), finalité, durée, sécurité",
-      "Obligation : conformité PSSI / ISO 27001 si traitement interne",
-      "Risque : vol de données personnelles (RIB, salaire, adresse) — risque RGPD majeur",
-      "Risque : usurpation d'identité et fraude documentaire",
-      "Risque : indisponibilité (coffre-fort hors service, perte d'accès)",
-      "Risque : non-conformité légale (durée, opposition non respectée)",
-      "Risque : dépendance à un prestataire (réversibilité, transférabilité)",
-      "Risque : fracture numérique (salariés peu à l'aise) → besoin d'accompagnement",
-      "Mesures de prévention : hébergement souverain (UE/France), chiffrement, double authentification, audit RGPD"
-    ]
+      "Cadre légal — loi El Khomri 2016 (art. L.3243-2 Code travail) : dématérialisation par défaut, information préalable du salarié 1 mois avant, droit d'opposition",
+      "Conservation — 50 ans côté employeur (ou jusqu'aux 75 ans du salarié), portabilité garantie en cas de changement d'employeur",
+      "Mise à disposition — coffre-fort numérique sécurisé (type CDC), accessible en continu au salarié",
+      "RGPD — base légale (obligation légale), finalité documentée, mesures techniques (chiffrement, MFA, hébergement souverain UE)",
+      "Risques sécurité — vol de données sensibles (RIB, salaire, identité), usurpation d'identité, fraude documentaire",
+      "Risques opérationnels — indisponibilité du coffre-fort, dépendance prestataire (réversibilité), fracture numérique des collaborateurs"
+    ],
+    correction: "La dématérialisation des bulletins de salaire est encadrée par la loi El Khomri du 8 août 2016 (article L.3243-2 du Code du travail), qui autorise l'employeur à transmettre les bulletins sous forme électronique par défaut, sous réserve d'informer le salarié au moins un mois à l'avance et de respecter son droit d'opposition. L'employeur doit conserver les bulletins pendant 50 ans (ou jusqu'aux 75 ans du salarié), via un coffre-fort numérique sécurisé garantissant la portabilité du document en cas de changement d'employeur. Le traitement est par ailleurs soumis au RGPD : la base légale est l'obligation légale, la finalité doit être documentée, et des mesures techniques (chiffrement, authentification forte, hébergement souverain en UE) ainsi qu'organisationnelles doivent être déployées. Les risques principaux sont (1) la fuite de données personnelles sensibles — salaire, RIB, adresse — pouvant ouvrir la voie à l'usurpation d'identité et à la fraude documentaire ; (2) l'indisponibilité ou la perte d'accès au coffre-fort, qui prive le salarié d'un document légal ; (3) la dépendance à un prestataire, qui impose des clauses de réversibilité solides ; et (4) la fracture numérique, qui peut exclure une partie des salariés et impose un accompagnement adapté."
   },
   {
     id: 'ia_risques',
@@ -4868,432 +4861,264 @@ const GOUV_QUESTIONS = [
     q: "Donnez et expliquez 3 risques liés à l'usage de l'IA en entreprise, et proposez des pistes pour les diminuer.",
     context: "Selon une étude KPMG-Université de Melbourne, l'adoption de l'IA en entreprise progresse mais la confiance reste limitée par un manque de formation et un cadre réglementaire à renforcer.",
     points: [
-      "Risque 1 — Biais et discrimination : algorithmes entraînés sur données biaisées → décisions injustes (recrutement, crédit)",
-      "Mitigation 1 : audit régulier des modèles, diversité des jeux de données, comité éthique IA, transparence",
-      "Risque 2 — Fuite de données confidentielles : prompts versés à des LLM publics → données sortantes de l'entreprise",
-      "Mitigation 2 : LLM internes (on-premise / cloud privé), charte d'usage, formation, monitoring des flux",
-      "Risque 3 — Hallucinations : génération de contenus faux mais plausibles (chiffres inventés, références fictives)",
-      "Mitigation 3 : double validation humaine, sources citées, intégration de RAG (Retrieval Augmented Generation)",
-      "Risque 4 — Désintermédiation et perte de compétences : sous-traitance excessive à l'IA → atrophie des savoir-faire",
-      "Mitigation 4 : formation continue, IA comme assistant (pas remplaçant), équilibre tâches humaines/IA",
-      "Risque 5 — Conformité réglementaire : RGPD (décisions automatisées), IA Act européen (2024-2026)",
-      "Mitigation 5 : analyse d'impact (AIPD), classification des systèmes IA selon risque (IA Act), gouvernance dédiée",
-      "Risque 6 — Cybersécurité spécifique : prompt injection, model poisoning, jailbreak",
-      "Mitigation 6 : sécurisation des modèles, tests adversariaux (red teaming IA), patch management",
-      "Risque 7 — Dépendance fournisseur : OpenAI, Anthropic, Google — risques de prix, disponibilité, souveraineté",
-      "Mitigation 7 : stratégie multi-fournisseurs, modèles open source (Llama, Mistral), réversibilité"
-    ]
+      "Biais et discrimination — algorithmes entraînés sur données biaisées (recrutement, scoring crédit) → audit régulier des modèles, diversité des jeux de données, comité éthique IA, transparence",
+      "Fuite de données confidentielles — prompts envoyés à des LLM publics → LLM internes / cloud privé, charte d'usage, formation, monitoring des flux",
+      "Hallucinations — génération de contenus faux mais plausibles (chiffres inventés, sources fictives) → double validation humaine, RAG (Retrieval Augmented Generation), citation systématique des sources",
+      "Désintermédiation et perte de compétences — sous-traitance excessive à l'IA, atrophie des savoir-faire → IA comme assistant (pas remplaçant), formation continue",
+      "Conformité réglementaire — RGPD (décisions automatisées art. 22) + IA Act européen (entrée progressive 2024-2026) → AIPD, classification des systèmes IA selon le risque, gouvernance dédiée",
+      "Cybersécurité spécifique IA — prompt injection, model poisoning, jailbreak, dépendance fournisseur (OpenAI, Anthropic) → tests adversariaux (red teaming), stratégie multi-fournisseurs, modèles open source (Mistral, Llama)"
+    ],
+    correction: "L'IA générative crée plusieurs familles de risques pour l'entreprise, parmi lesquels il faut savoir en présenter trois en profondeur. Les biais algorithmiques peuvent reproduire ou amplifier des discriminations existantes dans des décisions sensibles (recrutement, octroi de crédit) ; ils se combattent par l'audit régulier des modèles, la diversification des jeux de données et la mise en place d'un comité éthique. La fuite de données est le second grand risque : verser des informations confidentielles à un LLM public expose l'entreprise au transfert hors UE et à leur utilisation par le fournisseur ; la parade passe par des LLM internes ou en cloud privé, une charte d'usage signée par les collaborateurs et un monitoring des flux. Les hallucinations — contenus faux mais plausibles — imposent une double validation humaine systématique et l'usage de la technique RAG pour ancrer les réponses dans des sources vérifiées. Au-delà, l'usage massif d'IA fait courir un risque de perte de compétences, à compenser par une formation continue et un positionnement de l'IA comme assistant et non comme remplaçant. Sur le plan réglementaire, l'IA est encadrée par le RGPD (art. 22 sur les décisions automatisées) et par l'AI Act européen, dont l'entrée en vigueur progressive entre 2024 et 2026 impose une analyse d'impact (AIPD) et une gouvernance dédiée. Enfin, la cybersécurité spécifique à l'IA (prompt injection, model poisoning) appelle des tests adversariaux et une stratégie multi-fournisseurs pour éviter le verrouillage."
   },
   {
     id: 'facture_electronique',
     theme: '🧾 Facturation électronique',
     q: "La mise en place de la facturation électronique est un chantier à la fois informatique, financier et managérial. Expliquez ces trois dimensions et précisez les obligations qui s'imposent aux entreprises, notamment en matière de données personnelles.",
     points: [
-      "Cadre — Réforme française e-invoicing/e-reporting (généralisation 2026-2027 selon calendrier final)",
-      "Cadre — Norme Factur-X (PDF/A-3 + XML), plateforme Chorus Pro pour la sphère publique",
-      "Volet informatique — Choix d'une PDP (Plateforme de Dématérialisation Partenaire) ou du PPF (Portail Public de Facturation)",
-      "Volet informatique — Intégration avec ERP et logiciels comptables (interopérabilité, formats UBL/CII/Factur-X)",
-      "Volet informatique — Sécurité (signature électronique, archivage probant 10 ans, piste d'audit fiable)",
-      "Volet informatique — Performances (volumes, automatisation, OCR, IA pour pré-comptabilisation)",
-      "Volet financier — Réduction des coûts de traitement (estimation 5-10 € → 1-2 € par facture)",
-      "Volet financier — Délais de paiement réduits → optimisation BFR",
-      "Volet financier — Lutte contre la fraude à la TVA (objectif fiscal majeur de la réforme)",
-      "Volet financier — Investissement initial (logiciel, PDP, formation, conduite du changement)",
-      "Volet managérial — Refonte des processus achats/ventes",
-      "Volet managérial — Formation des équipes comptables et opérationnelles",
-      "Volet managérial — Conduite du changement (résistance, nouveaux gestes métier)",
-      "Volet managérial — Réorganisation possible (montée en compétences vs externalisation)",
-      "RGPD — Données personnelles dans factures (B2C : noms, adresses) → finalité fiscale, durée 10 ans",
-      "RGPD — Base légale : obligation légale (Code de commerce, CGI)",
-      "RGPD — Sécurité : chiffrement, gestion des accès, journalisation",
-      "RGPD — Sous-traitance PDP : contrat art. 28 RGPD, garanties, droits d'audit",
-      "RGPD — Transferts hors UE si PDP étrangère (clauses contractuelles types, BCR)"
-    ]
+      "Cadre — Réforme française e-invoicing / e-reporting (généralisation 2026-2027), norme Factur-X (PDF/A-3 + XML), Chorus Pro pour la sphère publique",
+      "Volet informatique 1 — Choix d'une PDP (Plateforme de Dématérialisation Partenaire) ou du PPF (Portail Public de Facturation)",
+      "Volet informatique 2 — Intégration ERP / comptabilité (interopérabilité Factur-X / UBL / CII), signature électronique, archivage probant 10 ans, piste d'audit fiable",
+      "Volet financier — Coûts de traitement réduits (5-10 € → 1-2 € par facture), délais de paiement raccourcis (BFR), lutte contre la fraude à la TVA (objectif fiscal majeur)",
+      "Volet financier (suite) — Investissement initial (logiciel, PDP, conduite du changement)",
+      "Volet managérial — Refonte des processus achats / ventes, formation des équipes, conduite du changement",
+      "RGPD — Données personnelles dans factures B2C → base légale : obligation légale fiscale, durée 10 ans, finalité documentée",
+      "RGPD — Sécurité : chiffrement, gestion des accès, journalisation des traitements",
+      "RGPD — Sous-traitance avec la PDP : contrat art. 28 RGPD, garanties, droit d'audit, vigilance si transferts hors UE"
+    ],
+    correction: "La facturation électronique, généralisée en France entre 2026 et 2027, impose le format Factur-X (PDF/A-3 incluant un XML structuré) et oblige l'entreprise à choisir entre une Plateforme de Dématérialisation Partenaire (PDP) immatriculée par l'administration ou le Portail Public de Facturation (PPF) qui prend le relais de Chorus Pro pour la sphère publique. Sur le plan informatique, le projet consiste à connecter l'ERP et la comptabilité à cette plateforme, à garantir l'interopérabilité (formats UBL, CII, Factur-X), à signer électroniquement les factures et à les archiver de manière probante pendant 10 ans avec une piste d'audit fiable. Sur le plan financier, l'enjeu est double : abaisser le coût unitaire de traitement (de 5-10 € à 1-2 € par facture), raccourcir les délais de paiement et donc améliorer le BFR ; au-delà, la réforme poursuit un objectif fiscal majeur de lutte contre la fraude à la TVA, justifiant la transmission en temps réel des données. Sur le plan managérial, les processus achats et ventes sont refondus, les équipes comptables doivent être formées, et une véritable conduite du changement est nécessaire pour ancrer les nouveaux gestes métier. En matière de données personnelles, les factures B2C contiennent des données soumises au RGPD : la base légale est l'obligation légale (Code de commerce, CGI), la durée de conservation est de 10 ans, la sécurité repose sur le chiffrement et la journalisation, et la sous-traitance avec la PDP doit faire l'objet d'un contrat conforme à l'article 28 du RGPD avec droit d'audit ; une vigilance particulière s'impose si la PDP opère hors UE (clauses contractuelles types, BCR)."
   },
   {
     id: 'pssi_etapes',
     theme: '🔐 Sécurité SI',
     q: "Décrivez les différentes étapes pour construire une politique de sécurité du SI (PSSI). Donnez 3 problèmes ou difficultés rencontrés lors de sa mise en œuvre et proposez des pistes pour les diminuer.",
     points: [
-      "Étape 1 — Analyse de l'existant : cartographie SI, inventaire actifs, identification des vulnérabilités (EBIOS RM, méthode ANSSI)",
-      "Étape 2 — Identification des risques : cartographie des menaces (interne/externe), évaluation probabilité × impact",
-      "Étape 3 — Définition des objectifs de sécurité : confidentialité, intégrité, disponibilité, traçabilité (CID-T)",
-      "Étape 4 — Élaboration de la PSSI : référentiel global, alignement ISO 27001/27002, politique formelle",
-      "Étape 5 — Validation et engagement de la direction : sponsorship visible, allocation budgétaire",
-      "Étape 6 — Communication et formation : sensibilisation des collaborateurs (phishing, mot de passe, charte)",
-      "Étape 7 — Mise en œuvre opérationnelle : déploiement des mesures techniques et organisationnelles",
-      "Étape 8 — Contrôle et audit : audits internes/externes, tests d'intrusion, indicateurs (KPI sécurité)",
-      "Étape 9 — Amélioration continue : revue annuelle, gestion des incidents, retour d'expérience",
-      "Difficulté 1 — Résistance des utilisateurs (contraintes perçues, productivité ralentie)",
-      "Mitigation 1 : pédagogie, ergonomie des mesures (SSO, MFA discret), implication métier",
-      "Difficulté 2 — Budget insuffisant et arbitrages avec les projets métier",
-      "Mitigation 2 : approche risque (priorisation), business case clair, intégration sécurité dès la conception (security by design)",
-      "Difficulté 3 — SI fantômes (Shadow IT) et BYOD non contrôlés",
-      "Mitigation 3 : inventaire continu, MDM (Mobile Device Management), politique BYOD encadrée",
-      "Difficulté 4 — Évolution rapide des menaces (ransomware, supply chain, IA)",
-      "Mitigation 4 : veille active, CERT, partenariats (ANSSI, ENISA), exercices de crise",
-      "Difficulté 5 — Complexité multi-sites / multi-pays (réglementations différentes)",
-      "Mitigation 5 : référentiel commun, déclinaisons locales, gouvernance globale/locale"
-    ]
+      "Étape 1 — Analyse de l'existant et identification des risques (cartographie SI, méthode EBIOS RM de l'ANSSI, évaluation probabilité × impact)",
+      "Étape 2 — Définition des objectifs de sécurité (Confidentialité, Intégrité, Disponibilité, Traçabilité — CID-T)",
+      "Étape 3 — Élaboration et validation de la PSSI (rédaction du référentiel, alignement ISO 27001 / 27002, sponsorship visible de la direction, budget alloué)",
+      "Étape 4 — Mise en œuvre opérationnelle (mesures techniques et organisationnelles, sensibilisation et formation des collaborateurs)",
+      "Étape 5 — Contrôle et amélioration continue (audits internes / externes, tests d'intrusion, KPI sécurité, revue annuelle, gestion d'incidents)",
+      "Difficulté 1 — Résistance des utilisateurs (contraintes perçues, frein à la productivité) → pédagogie, ergonomie (SSO, MFA discret), implication des métiers",
+      "Difficulté 2 — Budget insuffisant et arbitrages avec les projets métier → approche risque pour prioriser, security by design, business case clair",
+      "Difficulté 3 — Shadow IT et BYOD non contrôlés, menaces qui évoluent rapidement (ransomware, IA) → inventaire continu (CASB), MDM, veille active, exercices de crise"
+    ],
+    correction: "Construire une PSSI suit cinq étapes structurantes. La première est l'analyse de l'existant et des risques : cartographie du SI, inventaire des actifs, identification des vulnérabilités et hiérarchisation des risques par leur probabilité et leur impact, en s'appuyant sur la méthode EBIOS RM de l'ANSSI. La deuxième étape consiste à définir les objectifs de sécurité, en suivant le triptyque CID-T (Confidentialité, Intégrité, Disponibilité, Traçabilité). La troisième est l'élaboration formelle de la PSSI : rédaction du référentiel, alignement sur les normes ISO 27001 et 27002, et surtout obtention du sponsorship visible de la direction générale, sans lequel le budget et la légitimité font défaut. La quatrième étape est la mise en œuvre opérationnelle : déploiement des mesures techniques (chiffrement, MFA, segmentation réseau) et organisationnelles, et surtout sensibilisation et formation des collaborateurs (phishing, mot de passe, charte). La cinquième étape est le contrôle et l'amélioration continue, par audits internes / externes, tests d'intrusion, indicateurs de sécurité et revues annuelles. Trois grandes difficultés se présentent dans la mise en œuvre. La résistance des utilisateurs, d'abord, qui perçoivent les mesures comme des contraintes : on la traite par la pédagogie et l'ergonomie des dispositifs (SSO, MFA discret). Le budget insuffisant et les arbitrages permanents avec les projets métier, ensuite, qui se compensent par une approche risque permettant de prioriser les investissements et par un business case clair, en intégrant la sécurité dès la conception (security by design). Enfin, le Shadow IT et le BYOD non contrôlés combinés à l'évolution rapide des menaces (ransomware, IA générative) imposent un inventaire continu via un CASB, des outils MDM et une veille active appuyée sur des exercices de crise."
   },
   {
     id: 'ec_facture_ia',
     theme: '⚖️ Profession comptable',
     q: "Facture électronique et intelligence artificielle : menace ou opportunité pour les experts-comptables ? Présentez 3 opportunités et 3 menaces en les développant.",
     points: [
-      "Contexte — Réforme française facturation électronique 2026-2027 + IA générative (ChatGPT 2022, Claude, Mistral)",
-      "Opportunité 1 — Automatisation des tâches répétitives (saisie, lettrage, rapprochements bancaires)",
-      "Détail O1 : libération de temps pour le conseil à plus forte valeur (stratégie, RSE, fiscal complexe)",
-      "Opportunité 2 — Nouvelle offre de services à haute valeur ajoutée",
-      "Détail O2 : conseil pilotage (dashboards temps réel), conseil RSE/CSRD, conseil IA, accompagnement transformation",
-      "Opportunité 3 — Différenciation par la maîtrise technologique",
-      "Détail O3 : cabinets avant-gardistes attirent talents jeunes, captent clientèle tech-savvy, image moderne",
-      "Opportunité 4 — Anticipation et conformité réglementaire (PDP, facture électronique)",
-      "Détail O4 : positionnement comme guide vers la conformité (notamment PME), partenariats éditeurs",
-      "Menace 1 — Désintermédiation par les éditeurs / fintech (Pennylane, Qonto, Indy)",
-      "Détail M1 : ces acteurs proposent comptabilité automatisée intégrée, ciblant directement les PME-TPE",
-      "Menace 2 — Compression des honoraires sur les missions traditionnelles",
-      "Détail M2 : tenue comptable banalisée → baisse de marges, pression sur les prix, concurrence agressive",
-      "Menace 3 — Risque sur les emplois subalternes (collaborateurs juniors, saisie)",
-      "Détail M3 : transformation des effectifs, besoin de reskilling massif, risque social",
-      "Menace 4 — Risque de qualité / responsabilité",
-      "Détail M4 : hallucinations IA, erreurs non détectées, responsabilité professionnelle (Ordre, RCP)",
-      "Menace 5 — Investissements technologiques lourds (licences, formation, intégration)",
-      "Détail M5 : barrière à l'entrée renforcée, cabinets petits décrochent",
+      "Contexte — Réforme française facturation électronique (2026-2027) + démocratisation de l'IA générative (ChatGPT 2022, Claude, Mistral)",
+      "Opportunité 1 — Automatisation des tâches répétitives (saisie, lettrage, rapprochements bancaires) → libération de temps pour le conseil à plus forte valeur",
+      "Opportunité 2 — Nouvelle offre de services à haute valeur ajoutée (pilotage temps réel, RSE / CSRD, accompagnement transformation, conformité réglementaire)",
+      "Opportunité 3 — Différenciation par la maîtrise technologique (attractivité talents, image moderne, captation des clients tech-savvy)",
+      "Menace 1 — Désintermédiation par les éditeurs et fintech (Pennylane, Qonto, Indy) qui adressent directement les PME-TPE",
+      "Menace 2 — Compression des honoraires sur la tenue comptable banalisée et risque social sur les emplois subalternes (juniors, saisie) → reskilling massif nécessaire",
+      "Menace 3 — Risque qualité et responsabilité (hallucinations IA, erreurs non détectées, engagement de la RCP) + investissements lourds en technologie et formation (barrière pour les petits cabinets)",
       "Conclusion — Profession en transformation : montée en compétences indispensable, repositionnement sur le conseil"
-    ]
+    ],
+    correction: "La conjonction de la facturation électronique (réforme 2026-2027) et de l'IA générative (popularisée depuis ChatGPT en 2022) bouleverse le métier d'expert-comptable, mais offre autant d'opportunités que de menaces. Trois opportunités majeures émergent. D'abord, l'automatisation des tâches répétitives — saisie, lettrage, rapprochements bancaires — libère un temps considérable que le cabinet peut réinvestir dans le conseil à plus forte valeur. Ensuite, cela ouvre la voie à de nouvelles offres : pilotage en temps réel via dashboards, accompagnement RSE / CSRD, conseil sur l'usage de l'IA, conformité réglementaire (PDP, IA Act, RGPD). Enfin, la maîtrise technologique devient un facteur de différenciation : les cabinets en avance attirent les jeunes talents, captent une clientèle tech-savvy et renvoient une image moderne. Côté menaces, la première est la désintermédiation : des acteurs comme Pennylane, Qonto ou Indy proposent une comptabilité quasi-automatisée et adressent directement les PME-TPE, court-circuitant le rôle traditionnel du cabinet. La deuxième est la compression des honoraires sur les missions de tenue, qui se banalisent, avec un risque social sur les emplois subalternes (collaborateurs juniors, saisie) qui exige un reskilling massif. La troisième est le risque de qualité et de responsabilité : les hallucinations de l'IA peuvent provoquer des erreurs non détectées, mettant en jeu la responsabilité civile professionnelle, dans un contexte où les investissements technologiques constituent une barrière à l'entrée pour les petits cabinets. En définitive, la profession entre dans une transformation profonde où la montée en compétences et le repositionnement sur le conseil ne sont plus optionnels."
   },
   {
     id: 'rgpd_obligations',
     theme: '📑 RGPD',
     q: "Présentez les principes fondamentaux du RGPD et les principales obligations qui s'imposent aux entreprises.",
     points: [
-      "Cadre — Règlement UE 2016/679, applicable depuis le 25 mai 2018, autorité française : CNIL",
-      "Principe 1 — Licéité, loyauté, transparence : information claire des personnes",
-      "Principe 2 — Limitation des finalités : collecte pour un objectif déterminé, explicite, légitime",
-      "Principe 3 — Minimisation : ne collecter que les données nécessaires",
-      "Principe 4 — Exactitude : données à jour, droit de rectification",
-      "Principe 5 — Limitation de la conservation : durée proportionnée, suppression ou anonymisation",
-      "Principe 6 — Intégrité et confidentialité : sécurité technique et organisationnelle",
-      "Principe 7 — Responsabilité (accountability) : capacité à prouver la conformité",
-      "Obligation 1 — Tenue d'un registre des traitements (art. 30)",
-      "Obligation 2 — Analyse d'impact (AIPD) pour traitements à risque élevé (art. 35)",
-      "Obligation 3 — Désignation d'un DPO si organisme public, traitements à grande échelle ou données sensibles (art. 37)",
-      "Obligation 4 — Information des personnes : mentions d'information (art. 13-14)",
-      "Obligation 5 — Respect des droits : accès, rectification, effacement, portabilité, opposition, limitation",
-      "Obligation 6 — Sécurité : pseudonymisation, chiffrement, contrôles d'accès, journalisation",
-      "Obligation 7 — Notification des violations à la CNIL dans 72h (art. 33) et aux personnes si risque élevé (art. 34)",
-      "Obligation 8 — Encadrement des sous-traitants : contrat art. 28, garanties, droit d'audit",
-      "Obligation 9 — Encadrement des transferts hors UE : clauses contractuelles types, BCR, décision d'adéquation",
-      "Sanctions — Amendes administratives jusqu'à 20 M€ ou 4 % du CA mondial (art. 83), responsabilité civile et pénale"
-    ]
+      "Cadre — Règlement UE 2016/679 applicable depuis le 25 mai 2018, autorité française de contrôle : CNIL",
+      "Principes (1) — Licéité / loyauté / transparence + limitation des finalités (objectif déterminé) + minimisation (que les données nécessaires)",
+      "Principes (2) — Exactitude (données à jour, droit de rectification) + limitation de conservation (durée proportionnée) + intégrité / confidentialité (sécurité)",
+      "Accountability — l'entreprise doit pouvoir prouver sa conformité (registre, traces, AIPD)",
+      "Obligation — Tenue d'un registre des traitements (art. 30) et AIPD pour les traitements à risque élevé (art. 35)",
+      "Obligation — Désignation d'un DPO si organisme public, traitements à grande échelle ou données sensibles (art. 37)",
+      "Obligation — Respect des droits des personnes (accès, rectification, effacement, portabilité, opposition, limitation) + information préalable (art. 13-14)",
+      "Obligation — Notification des violations à la CNIL sous 72h (art. 33), encadrement des sous-traitants (art. 28) et des transferts hors UE (CCT, BCR) ; sanctions jusqu'à 20 M€ ou 4 % du CA mondial"
+    ],
+    correction: "Le RGPD (Règlement UE 2016/679, applicable depuis le 25 mai 2018, sous le contrôle de la CNIL en France) repose sur sept principes fondamentaux. Les trois premiers — licéité / loyauté / transparence, limitation des finalités et minimisation des données — encadrent la collecte : on ne collecte que des données nécessaires, pour un objectif explicite, en informant clairement les personnes. Les trois suivants — exactitude, limitation de la conservation, intégrité et confidentialité — encadrent le traitement : les données doivent être à jour, conservées le temps nécessaire et protégées par des mesures techniques (chiffrement, contrôles d'accès) et organisationnelles. Le septième principe est l'accountability : l'entreprise doit non seulement être conforme, mais pouvoir le prouver à tout moment. Pour ce faire, plusieurs obligations s'imposent. Toute entreprise doit tenir un registre des traitements (art. 30) et réaliser une analyse d'impact (AIPD, art. 35) pour les traitements à risque élevé. Un DPO doit être désigné dans les organismes publics, en cas de traitement à grande échelle ou de données sensibles (art. 37). Les droits des personnes — accès, rectification, effacement, portabilité, opposition, limitation — doivent être respectés, et une information préalable claire (art. 13-14) doit être délivrée. En cas de violation de données, la CNIL doit être notifiée dans les 72 heures (art. 33). Les sous-traitants doivent être encadrés par un contrat conforme à l'article 28 et les transferts hors UE par des clauses contractuelles types (CCT) ou des règles d'entreprise contraignantes (BCR). Les sanctions peuvent atteindre 20 M€ ou 4 % du chiffre d'affaires mondial."
   },
   {
     id: 'cobit_itil_cmmi',
     theme: '🏛️ Gouvernance SI',
     q: "Présentez et comparez les trois référentiels de gouvernance et de gestion des SI : COBIT, ITIL, CMMI. Précisez leur complémentarité.",
     points: [
-      "COBIT — Édité par ISACA, framework de gouvernance des SI (Control Objectives for Information and related Technology)",
-      "COBIT — 4 domaines : Plan & Organize, Acquire & Implement, Deliver & Support, Monitor & Evaluate",
-      "COBIT — 7 critères (efficacité, efficience, confidentialité, intégrité, disponibilité, conformité, fiabilité)",
-      "COBIT 2019 — 40 objectifs de gouvernance/gestion, 5 dimensions de gouvernance",
-      "COBIT — Cible : direction générale, audit, conformité — orientation stratégie et conformité",
-      "ITIL — Édité par Axelos, référentiel de bonnes pratiques pour la gestion des services IT",
-      "ITIL — Cycle de vie : stratégie, conception, transition, exploitation, amélioration continue",
-      "ITIL 4 — Service Value System, 34 pratiques, 4 dimensions (organisation/personnes, technologie, partenaires, processus)",
-      "ITIL — Concepts clés : catalogue de services, SLA/OLA, incident/problem management, change management",
-      "ITIL — Cible : DSI opérationnelle, support — orientation production et services",
-      "CMMI — Édité par CMMI Institute (Carnegie Mellon), modèle de maturité des processus",
-      "CMMI — 5 niveaux : 1 Initial (chaos), 2 Reproductible, 3 Défini, 4 Quantitativement géré, 5 Optimisé",
-      "CMMI — Domaines : développement (CMMI-DEV), services (CMMI-SVC), acquisition (CMMI-ACQ)",
-      "CMMI — Cible : organisations cherchant à mesurer et améliorer la maturité de leurs processus",
-      "Comparaison — COBIT répond au QUOI (gouvernance, contrôle), ITIL au COMMENT (opérationnel), CMMI au QUEL NIVEAU (maturité)",
-      "Comparaison — COBIT : direction stratégique ; ITIL : DSI services ; CMMI : qualité processus",
-      "Complémentarité — Les 3 référentiels se complètent souvent dans les grandes organisations",
-      "Complémentarité — Exemple : COBIT pour le pilotage / ITIL pour les services courants / CMMI pour le développement logiciel"
-    ]
+      "COBIT — Édité par ISACA (Control Objectives for Information and related Technology), framework de gouvernance des SI, version actuelle COBIT 2019",
+      "COBIT — Cible la direction générale et l'audit ; orientation stratégie et conformité ; depuis 2019 intègre Val IT (valeur) et Risk IT (risques)",
+      "ITIL — Édité par Axelos, référentiel de bonnes pratiques pour la gestion des services IT ; ITIL 4 = Service Value System, 34 pratiques, 4 dimensions",
+      "ITIL — Cycle de vie : stratégie / conception / transition / exploitation / amélioration continue ; concepts clés : SLA / OLA, catalogue de services, incident / problem / change management",
+      "ITIL — Cible : DSI opérationnelle, support ; orientation production et services courants",
+      "CMMI — Édité par le CMMI Institute (Carnegie Mellon), modèle de maturité des processus en 5 niveaux (Initial → Reproductible → Défini → Quantitativement géré → Optimisé)",
+      "CMMI — Cible : organisations cherchant à mesurer et améliorer la maturité de leurs processus (développement, services, acquisition)",
+      "Comparaison et complémentarité — COBIT répond au QUOI (gouvernance, contrôle), ITIL au COMMENT (opérationnel), CMMI au QUEL NIVEAU (maturité) ; les trois coexistent souvent dans les grandes organisations"
+    ],
+    correction: "Les trois référentiels structurants de la gouvernance et de la gestion des systèmes d'information répondent à des questions différentes mais complémentaires. COBIT (Control Objectives for Information and related Technology), édité par l'ISACA et désormais en version COBIT 2019, est un framework de gouvernance qui s'adresse à la direction générale et à l'audit. Il définit le QUOI : objectifs de gouvernance, mesures de contrôle, alignement stratégique, conformité réglementaire. Depuis 2019, il intègre les anciens référentiels Val IT (création de valeur) et Risk IT (gestion des risques) dans un cadre unifié. ITIL, édité par Axelos et désormais en version 4 (Service Value System, 34 pratiques, 4 dimensions), est un référentiel de bonnes pratiques pour la gestion des services IT. Il s'adresse à la DSI opérationnelle et au support, et répond au COMMENT : comment organiser les services, gérer les incidents, les problèmes, les changements, les SLA et les OLA, à travers le cycle de vie stratégie → conception → transition → exploitation → amélioration continue. CMMI (Capability Maturity Model Integration), édité par le CMMI Institute de Carnegie Mellon, est un modèle de maturité des processus en cinq niveaux — Initial, Reproductible, Défini, Quantitativement géré, Optimisé. Il répond au QUEL NIVEAU et permet à une organisation de mesurer et d'améliorer la maturité de ses processus de développement, de services ou d'acquisition. Les trois sont complémentaires : COBIT pilote la gouvernance et trace le cap stratégique, ITIL fait tourner les services au quotidien, CMMI mesure et fait progresser la qualité des processus."
   },
   {
     id: 'audit_si',
     theme: '🔍 Audit SI',
     q: "Présentez l'audit des SI : objectifs, démarche et rapport. Quel est le cadre légal applicable en France ?",
     points: [
-      "Définition — Audit SI : examen méthodique de l'organisation, des processus, des contrôles et des risques liés au SI",
-      "Objectif 1 — Évaluer la maîtrise des risques SI (intégrité des données, disponibilité, confidentialité)",
-      "Objectif 2 — Vérifier la conformité aux référentiels (COBIT, ITIL, ISO 27001) et à la réglementation",
-      "Objectif 3 — Apprécier la pertinence des choix techniques et des investissements",
-      "Objectif 4 — Identifier les axes d'amélioration et formuler des recommandations",
-      "Démarche 1 — Préparation : lettre de mission, périmètre, planning, équipe (auditeur senior + expert métier)",
-      "Démarche 2 — Prise de connaissance : entretiens, documents, cartographie SI, identification des risques",
-      "Démarche 3 — Évaluation du contrôle interne : tests de conception, tests de fonctionnement",
-      "Démarche 4 — Tests substantifs : analyses de données, échantillonnage, tests automatisés",
-      "Démarche 5 — Synthèse et conclusions : grille d'évaluation, hiérarchisation des constats",
-      "Démarche 6 — Rapport et restitution : rapport écrit, présentation orale, plan d'action",
-      "Démarche 7 — Suivi : vérification de la mise en œuvre des recommandations (audit de suivi)",
-      "Rapport — Synthèse exécutive, contexte/objectifs/méthodologie, constats détaillés, recommandations priorisées, plan d'action",
-      "Rapport — Diffusion contrôlée (confidentialité), validation par audité, présentation au Comité d'audit",
-      "Cadre légal France — SOX (Sarbanes-Oxley 2002) pour entreprises cotées aux US",
-      "Cadre légal France — LSF (Loi de Sécurité Financière 2003) : contrôle interne et risques SI",
-      "Cadre légal France — NRE (Nouvelles Régulations Économiques 2001) : transparence, RSE, gouvernance",
-      "Cadre légal France — NEP (Normes d'Exercice Professionnel) du CNCC pour les CAC, incluant SI",
-      "Cadre légal France — RGPD (audit conformité), Loi Informatique et Libertés 1978 modifiée",
-      "Référentiels professionnels — ISACA (CISA), AFAI, IFACI, IIA Standards"
-    ]
+      "Définition — Examen méthodique et indépendant de l'organisation, des processus, des contrôles et des risques liés au SI",
+      "Objectif 1 — Évaluer la maîtrise des risques SI (intégrité, disponibilité, confidentialité des données)",
+      "Objectif 2 — Vérifier la conformité aux référentiels (COBIT, ITIL, ISO 27001) et à la réglementation (RGPD, SOX, LSF)",
+      "Objectif 3 — Apprécier la pertinence des choix techniques et formuler des recommandations d'amélioration",
+      "Démarche — Préparation (lettre de mission, périmètre) → prise de connaissance (entretiens, cartographie) → évaluation du contrôle interne et tests substantifs → synthèse et rapport → suivi des recommandations",
+      "Rapport — Synthèse exécutive, constats hiérarchisés, recommandations priorisées, plan d'action ; diffusion contrôlée et présentation au Comité d'audit",
+      "Cadre légal France — SOX (Sarbanes-Oxley 2002) pour les entreprises cotées aux US, LSF (Loi de Sécurité Financière 2003) pour la France, NEP du CNCC pour les Commissaires aux comptes, RGPD pour les données personnelles",
+      "Référentiels professionnels — ISACA (certification CISA), AFAI, IFACI, IIA Standards"
+    ],
+    correction: "L'audit des systèmes d'information est un examen méthodique et indépendant de l'organisation, des processus, des contrôles et des risques liés au SI. Il poursuit quatre objectifs principaux : évaluer la maîtrise des risques SI (intégrité, disponibilité et confidentialité des données), vérifier la conformité aux référentiels (COBIT, ITIL, ISO 27001) et à la réglementation (RGPD, SOX, LSF), apprécier la pertinence des choix techniques et des investissements, et formuler des recommandations d'amélioration. La démarche suit cinq grandes étapes : préparation (lettre de mission, définition du périmètre et du planning, constitution de l'équipe), prise de connaissance (entretiens, examen documentaire, cartographie SI, identification des risques), évaluation du contrôle interne par des tests de conception et de fonctionnement, tests substantifs (analyses de données, échantillonnage, tests automatisés), enfin synthèse et restitution sous forme de rapport écrit, complété par une présentation au Comité d'audit et un suivi de la mise en œuvre des recommandations. Le rapport comporte une synthèse exécutive, un rappel du contexte, des objectifs et de la méthodologie, les constats hiérarchisés, des recommandations priorisées et un plan d'action ; sa diffusion est contrôlée et il est validé avec l'audité avant publication. En France, le cadre légal mobilisable est multiple : la loi américaine Sarbanes-Oxley (SOX, 2002) s'impose aux entreprises cotées aux États-Unis y compris à leurs filiales étrangères, la Loi de Sécurité Financière (LSF, 2003) en est l'équivalent français pour le contrôle interne, les Normes d'Exercice Professionnel (NEP) du CNCC encadrent les Commissaires aux comptes, et le RGPD ainsi que la loi Informatique et Libertés s'appliquent aux données personnelles. Les référentiels professionnels de l'auditeur SI sont édictés par l'ISACA (certification CISA), l'AFAI, l'IFACI et l'IIA."
   },
   {
     id: 'iso_27000',
     theme: '🔐 Sécurité SI',
     q: "Présentez le référentiel ISO 27000 : structure générale, contenu de l'ISO 27001 et ISO 27002, intérêt pour l'entreprise.",
     points: [
-      "Famille ISO 27000 — Ensemble de normes internationales sur la sécurité de l'information (SMSI)",
-      "Famille ISO 27000 — Édité par ISO et IEC depuis 2005, plus de 40 normes",
-      "ISO 27000 — Vue d'ensemble et terminologie du SMSI",
-      "ISO 27001 — Exigences du SMSI (Système de Management de la Sécurité de l'Information)",
-      "ISO 27001 — Norme certifiable, basée sur le cycle PDCA (Plan, Do, Check, Act)",
-      "ISO 27001 — Structure : leadership, planification, support, opérations, évaluation des performances, amélioration",
-      "ISO 27001 — 14 domaines de contrôle, 114 mesures de sécurité (Annexe A — alignée sur ISO 27002)",
-      "ISO 27001 — Étapes de certification : analyse de risques → traitement → SoA (Statement of Applicability) → audit",
-      "ISO 27002 — Code de bonnes pratiques : description détaillée des mesures de sécurité",
-      "ISO 27002 — 14 domaines : politique de sécurité, organisation, RH, gestion des actifs, contrôle d'accès, cryptographie, sécurité physique, opérations, communications, acquisition, fournisseurs, incidents, continuité d'activité, conformité",
-      "ISO 27005 — Méthodologie de gestion des risques de sécurité de l'information",
-      "ISO 27017/27018 — Spécifique cloud (sécurité, données personnelles)",
-      "ISO 27701 — Extension SMSI au management de la vie privée (PIMS, complément RGPD)",
-      "Intérêt 1 — Approche structurée et reconnue internationalement",
-      "Intérêt 2 — Démarche risque (priorisation des investissements)",
-      "Intérêt 3 — Crédibilité commerciale (appels d'offres, clients exigeant la certification)",
-      "Intérêt 4 — Conformité réglementaire (RGPD, NIS2)",
-      "Intérêt 5 — Amélioration continue de la maturité SI"
-    ]
+      "Famille ISO 27000 — Ensemble de plus de 40 normes internationales (ISO / IEC, depuis 2005) consacrées à la sécurité de l'information et au SMSI (Système de Management de la Sécurité de l'Information)",
+      "ISO 27001 — Exigences certifiables du SMSI, basée sur le cycle PDCA (Plan / Do / Check / Act) ; structure : leadership, planification, support, opérations, évaluation, amélioration ; 14 domaines de contrôle et 114 mesures en Annexe A",
+      "ISO 27001 — Étapes de certification : analyse des risques → traitement → SoA (Statement of Applicability) → audit de certification → revues périodiques",
+      "ISO 27002 — Code de bonnes pratiques détaillant les mesures de sécurité de l'Annexe A (politique, organisation, RH, actifs, accès, cryptographie, sécurité physique, opérations, fournisseurs, incidents, continuité, conformité)",
+      "Autres normes — ISO 27005 (gestion des risques), ISO 27017 / 27018 (cloud et données personnelles), ISO 27701 (extension management de la vie privée, complément RGPD)",
+      "Intérêt 1 — Approche structurée et reconnue internationalement, démarche fondée sur les risques (priorisation des investissements)",
+      "Intérêt 2 — Crédibilité commerciale (appels d'offres, conformité réglementaire RGPD / NIS2) et culture d'amélioration continue de la sécurité"
+    ],
+    correction: "La famille ISO 27000 regroupe plus de quarante normes internationales (éditées par l'ISO et l'IEC depuis 2005) consacrées à la sécurité de l'information et structurées autour du concept de SMSI — Système de Management de la Sécurité de l'Information. La norme centrale et certifiable est l'ISO 27001 : elle définit les exigences du SMSI, en suivant le cycle PDCA (Plan, Do, Check, Act), et impose un référentiel structuré en chapitres (leadership, planification, support, opérations, évaluation des performances, amélioration). Son Annexe A, alignée sur l'ISO 27002, recense 14 domaines de contrôle et 114 mesures de sécurité. La certification suit un parcours méthodique : analyse des risques, choix des traitements, rédaction du SoA (Statement of Applicability), puis audit par un organisme accrédité, suivi de revues périodiques. L'ISO 27002 est le code de bonnes pratiques qui détaille concrètement les mesures de sécurité couvertes par la 27001 — politique de sécurité, organisation, ressources humaines, gestion des actifs, contrôle d'accès, cryptographie, sécurité physique, opérations, communications, gestion des fournisseurs, gestion des incidents, continuité d'activité, conformité. La famille comprend aussi des normes plus spécialisées : l'ISO 27005 pour la gestion des risques de sécurité de l'information, les ISO 27017 et 27018 pour les environnements cloud et les données personnelles, et l'ISO 27701 pour le management de la vie privée en complément du RGPD. L'intérêt pour l'entreprise est multiple : une approche structurée et reconnue internationalement, une démarche fondée sur l'analyse de risques permettant de prioriser les investissements, une crédibilité commerciale notamment dans les appels d'offres, et l'alignement avec la réglementation (RGPD, NIS2). L'adoption de la norme installe enfin une culture d'amélioration continue de la sécurité."
   },
   {
     id: 'sla_ola',
     theme: '🤝 Contrats SI',
     q: "Présentez les notions de SLA et OLA dans la gestion d'un contrat d'infogérance : définitions, indicateurs, pénalités.",
     points: [
-      "SLA — Service Level Agreement : accord contractuel entre le prestataire IT et son client externe",
-      "OLA — Operational Level Agreement : accord entre les équipes internes du prestataire (support, infra, dev)",
-      "Différence clé — SLA = engagement vis-à-vis du client ; OLA = soutien interne pour tenir le SLA",
-      "Cadre — Le SLA est généralement annexé au contrat principal d'infogérance / cloud",
-      "Indicateurs SLA 1 — Disponibilité (uptime) : ex. 99,9 % (= 8h44 d'indisponibilité par an)",
-      "Indicateurs SLA 2 — Temps de réponse : Mean Time To Acknowledge (MTTA)",
-      "Indicateurs SLA 3 — Temps de résolution : Mean Time To Resolve (MTTR), par criticité (P1/P2/P3)",
-      "Indicateurs SLA 4 — Performance applicative : temps de réponse, débit",
-      "Indicateurs SLA 5 — Capacité (volumes traités, stockage)",
-      "Indicateurs SLA 6 — Qualité du support : taux de résolution au premier appel, satisfaction (NPS)",
-      "Pénalités — Avoirs ou remboursements proportionnels au manquement (ex. 5 % par tranche d'indisponibilité)",
-      "Pénalités — Plafonnées (ex. 15 % du montant mensuel) pour préserver la relation",
-      "Pénalités — Résiliation possible si manquements graves répétés (clause de résiliation pour faute)",
-      "Bonnes pratiques 1 — Indicateurs SMART (Spécifiques, Mesurables, Atteignables, Réalistes, Temporels)",
-      "Bonnes pratiques 2 — Reporting régulier (mensuel) avec tableau de bord partagé",
-      "Bonnes pratiques 3 — Comité de pilotage (steering committee) trimestriel",
-      "Bonnes pratiques 4 — Clauses d'évolution (révision annuelle des SLA selon l'usage réel)",
-      "Bonnes pratiques 5 — Réversibilité : SLA spécifiques en sortie de contrat (durée, accompagnement, transfert de données)"
-    ]
+      "SLA (Service Level Agreement) — Accord contractuel entre le prestataire IT et le client externe, annexé au contrat principal d'infogérance / cloud",
+      "OLA (Operational Level Agreement) — Accord interne entre les équipes du prestataire (support, infra, dev) destiné à soutenir la tenue du SLA",
+      "Différence clé — Le SLA est l'engagement vis-à-vis du client ; l'OLA est le support interne qui permet de l'atteindre",
+      "Indicateurs majeurs — Disponibilité / uptime (ex. 99,9 % = 8h44 d'indispo / an), MTTA (temps de prise en compte), MTTR (temps de résolution par criticité P1 / P2 / P3), performance applicative",
+      "Pénalités — Avoirs ou remboursements proportionnels au manquement (ex. 5 % par tranche d'indispo), plafonnés (ex. 15 % du montant mensuel) ; résiliation possible pour manquements graves répétés",
+      "Bonnes pratiques — Indicateurs SMART, reporting mensuel partagé, comité de pilotage trimestriel, clauses d'évolution annuelle",
+      "Réversibilité — SLA spécifiques en sortie de contrat (durée, accompagnement, transfert des données)"
+    ],
+    correction: "Dans un contrat d'infogérance, deux niveaux d'accord de service coexistent. Le SLA — Service Level Agreement — est l'accord contractuel passé entre le prestataire IT et son client externe, généralement annexé au contrat principal ; il définit les engagements de service avec des indicateurs mesurables et des pénalités en cas de manquement. L'OLA — Operational Level Agreement — est, lui, un accord interne entre les différentes équipes du prestataire (support, infrastructure, développement) ; il n'engage pas directement le client mais constitue la mécanique interne qui permet au prestataire de tenir son SLA. La différence est donc nette : le SLA est l'engagement externe, l'OLA est son soutien organisationnel. Les indicateurs typiques d'un SLA portent sur la disponibilité ou uptime (par exemple 99,9 %, soit 8h44 d'indisponibilité tolérée par an), le MTTA (Mean Time To Acknowledge — délai de prise en compte d'un incident), le MTTR (Mean Time To Resolve, modulé par criticité P1 / P2 / P3), la performance applicative (temps de réponse, débit), et la qualité du support (taux de résolution au premier appel, NPS). Les pénalités sont généralement proportionnelles au manquement — par exemple 5 % du montant mensuel par tranche d'indisponibilité — et plafonnées (souvent à 15 %) pour préserver la relation, avec une clause de résiliation pour manquements graves répétés. Les bonnes pratiques imposent des indicateurs SMART, un reporting mensuel partagé, un comité de pilotage trimestriel et une clause de révision annuelle des SLA. Enfin, en cas de sortie de contrat, des SLA spécifiques de réversibilité doivent encadrer la durée, l'accompagnement et le transfert des données vers le repreneur."
   },
   {
     id: 'pca_pra',
     theme: '🛡️ Continuité',
     q: "Présentez le Plan de Continuité d'Activité (PCA) et le Plan de Reprise d'Activité (PRA) : objectifs, indicateurs clés, démarche de mise en œuvre.",
     points: [
-      "PCA — Plan de Continuité d'Activité : ensemble de mesures pour maintenir l'activité essentielle en situation de crise",
-      "PRA — Plan de Reprise d'Activité : volet IT du PCA, focus sur la restauration des SI critiques après sinistre",
-      "Différence — PCA = vision globale (RH, juridique, communication, IT) ; PRA = composante technique IT",
-      "Objectif 1 — Identifier les activités vitales (Business Impact Analysis — BIA)",
-      "Objectif 2 — Définir les scénarios de crise (cyberattaque, panne majeure, incendie, pandémie)",
-      "Objectif 3 — Garantir la continuité des opérations critiques",
-      "Objectif 4 — Limiter les pertes financières et réputationnelles",
-      "Objectif 5 — Répondre aux obligations réglementaires (RGPD, NIS2, secteurs régulés : banque, santé)",
-      "Indicateur clé 1 — RTO (Recovery Time Objective) : temps maximum acceptable pour rétablir une activité",
-      "Indicateur clé 2 — RPO (Recovery Point Objective) : perte de données maximum tolérable (en temps)",
-      "Indicateur clé 3 — MTPD (Maximum Tolerable Period of Disruption) : temps maximum avant impact critique",
-      "Démarche 1 — Engagement direction et création d'un comité PCA",
-      "Démarche 2 — BIA : analyse d'impact, priorisation des processus métier",
-      "Démarche 3 — Analyse de risques : identification des menaces et vulnérabilités",
-      "Démarche 4 — Définition des stratégies de continuité (sites de secours, sauvegardes, télétravail)",
-      "Démarche 5 — Rédaction des procédures (PCA, PRA, gestion de crise, communication)",
-      "Démarche 6 — Mise en place des moyens techniques (datacenter de secours, réplication, sauvegardes externalisées)",
-      "Démarche 7 — Tests et exercices (annuels minimum, idéalement plusieurs scénarios)",
-      "Démarche 8 — Formation des équipes et sensibilisation des collaborateurs",
-      "Démarche 9 — Maintien en conditions opérationnelles (revue annuelle, retour d'expérience après incident)",
-      "Référentiels — ISO 22301 (continuité), ISO 27031 (PCA IT), Méthode EBIOS RM"
-    ]
+      "PCA — Plan de Continuité d'Activité : ensemble de mesures (organisationnelles, RH, juridiques, IT) pour maintenir l'activité essentielle en situation de crise",
+      "PRA — Plan de Reprise d'Activité : volet IT du PCA, centré sur la restauration des SI critiques après sinistre",
+      "Différence — PCA = vision globale multidisciplinaire ; PRA = composante technique IT",
+      "Objectifs — Identifier les activités vitales (BIA — Business Impact Analysis), définir les scénarios de crise (cyberattaque, panne, incendie, pandémie), garantir la continuité, limiter les pertes (financières / réputationnelles), répondre aux obligations réglementaires (RGPD, NIS2, secteurs régulés)",
+      "Indicateurs clés — RTO (Recovery Time Objective, temps maximal acceptable pour rétablir) ; RPO (Recovery Point Objective, perte de données maximale tolérée) ; MTPD (Maximum Tolerable Period of Disruption)",
+      "Démarche 1 — Engagement de la direction, BIA et analyse de risques (priorisation des processus métier critiques)",
+      "Démarche 2 — Définition des stratégies (sites de secours, sauvegardes, télétravail), rédaction des procédures (PCA, PRA, gestion de crise, communication), mise en place des moyens techniques (datacenter de secours, réplication)",
+      "Démarche 3 — Tests et exercices annuels, formation des équipes, maintien en conditions opérationnelles ; référentiels : ISO 22301 (continuité), ISO 27031 (PCA IT), méthode EBIOS RM"
+    ],
+    correction: "Le Plan de Continuité d'Activité (PCA) regroupe l'ensemble des mesures — organisationnelles, RH, juridiques, communication et IT — destinées à maintenir l'activité essentielle de l'entreprise en situation de crise. Le Plan de Reprise d'Activité (PRA) en est la composante technique IT : il se concentre sur la restauration des systèmes d'information critiques après un sinistre. La distinction est nette : le PCA a une vision globale et multi-disciplinaire, le PRA est sa déclinaison opérationnelle SI. Les objectifs poursuivis sont d'identifier les activités vitales via une Business Impact Analysis (BIA), de définir des scénarios de crise réalistes (cyberattaque, panne majeure, incendie, pandémie), de garantir la continuité des opérations critiques, de limiter les pertes financières et réputationnelles, et de répondre aux obligations réglementaires (RGPD, NIS2, secteurs régulés comme la banque ou la santé). Trois indicateurs clés structurent le dimensionnement : le RTO (Recovery Time Objective), temps maximal acceptable pour rétablir une activité ; le RPO (Recovery Point Objective), perte de données maximale tolérable, exprimée en durée ; le MTPD (Maximum Tolerable Period of Disruption), au-delà duquel l'impact devient critique pour l'entreprise. La démarche se déroule en trois grandes phases. La première combine l'engagement de la direction (création d'un comité PCA), la BIA et l'analyse de risques pour prioriser les processus métier. La deuxième définit les stratégies de continuité (sites de secours, sauvegardes externalisées, télétravail), rédige les procédures (PCA, PRA, gestion de crise, communication) et met en place les moyens techniques (datacenter de secours, réplication, sauvegardes). La troisième consiste à tester régulièrement (exercices annuels minimum, idéalement multi-scénarios), former les équipes, et maintenir en conditions opérationnelles, en s'appuyant sur les référentiels ISO 22301 (continuité), ISO 27031 (PCA IT) et la méthode EBIOS RM."
   },
   {
     id: 'cloud_infogerance',
     theme: '☁️ Infogérance / Cloud',
     q: "Présentez les différents types d'infogérance et leur déclinaison dans le cloud. Quels sont les avantages et risques associés ?",
     points: [
-      "Infogérance — Externalisation totale ou partielle de la gestion du SI auprès d'un prestataire",
-      "Type 1 — Infogérance totale (full outsourcing) : prestataire prend en charge l'ensemble du SI",
-      "Type 2 — Infogérance partielle : externalisation d'un périmètre (exploitation, support, infra, applicatif)",
-      "Type 3 — Infogérance applicative (TMA) : tierce maintenance d'applications (MCO, MEV, évolutive)",
-      "Cloud public — Infrastructure mutualisée (AWS, Azure, GCP, OVHcloud)",
-      "Cloud privé — Infrastructure dédiée (interne ou hébergée)",
-      "Cloud hybride — Combinaison public + privé selon la criticité des charges",
-      "Modèle IaaS — Infrastructure as a Service (machines virtuelles, stockage, réseau)",
-      "Modèle PaaS — Platform as a Service (environnement de développement et déploiement)",
-      "Modèle SaaS — Software as a Service (applications prêtes à l'emploi : Office 365, Salesforce, SAP S/4)",
-      "Avantage 1 — Recentrage sur le cœur de métier",
-      "Avantage 2 — Flexibilité et scalabilité (pay-as-you-go cloud)",
-      "Avantage 3 — Accès à l'expertise et aux dernières technologies",
-      "Avantage 4 — Mutualisation des coûts d'infrastructure",
-      "Avantage 5 — Continuité d'activité renforcée (SLA, datacenters redondés)",
-      "Risque 1 — Perte de maîtrise technique (vendor lock-in, dépendance)",
-      "Risque 2 — Sécurité et confidentialité (données chez un tiers, transferts hors UE)",
-      "Risque 3 — Conformité réglementaire (RGPD, souveraineté, Cloud Act US)",
-      "Risque 4 — Coûts cachés (sortie, customisation, intégration)",
-      "Risque 5 — Réversibilité difficile (transférabilité, formats, données)",
-      "Risque 6 — Dépendance à la qualité de connexion réseau",
-      "Risque 7 — Risque social interne (déqualification, externalisation des emplois)",
-      "Bonnes pratiques — SLA précis, clauses de réversibilité, audit du prestataire, plan B"
-    ]
+      "Infogérance — Externalisation totale ou partielle de la gestion du SI auprès d'un prestataire spécialisé",
+      "Types d'infogérance — Totale (full outsourcing), partielle (périmètre défini : exploitation, support, infra) et applicative (TMA : tierce maintenance d'applications, MCO + MEV)",
+      "Cloud — Trois modèles de déploiement : public (mutualisé — AWS, Azure, GCP, OVHcloud), privé (dédié, interne ou hébergé), hybride (combinaison selon la criticité)",
+      "Niveaux de service cloud — IaaS (Infrastructure : VM, stockage, réseau), PaaS (Platform : environnement de dev / déploiement), SaaS (Software : applications prêtes — Office 365, Salesforce)",
+      "Avantage 1 — Recentrage sur le cœur de métier, accès à l'expertise et aux dernières technologies, mutualisation des coûts d'infrastructure",
+      "Avantage 2 — Flexibilité et scalabilité (pay-as-you-go), continuité d'activité renforcée (SLA, datacenters redondés)",
+      "Risque 1 — Perte de maîtrise (vendor lock-in), sécurité et confidentialité (données chez un tiers, Cloud Act US), conformité (RGPD, souveraineté)",
+      "Risque 2 — Coûts cachés (sortie, intégration, customisation), réversibilité difficile, dépendance au réseau, risque social interne (déqualification, externalisation des emplois)"
+    ],
+    correction: "L'infogérance consiste à externaliser tout ou partie de la gestion du SI auprès d'un prestataire spécialisé. Elle se décline en trois grandes formes : l'infogérance totale, où le prestataire prend en charge l'ensemble du SI ; l'infogérance partielle, qui ne couvre qu'un périmètre défini (exploitation, support, infrastructure) ; et l'infogérance applicative, ou TMA (Tierce Maintenance Applicative), qui assure le maintien en condition opérationnelle (MCO) et la maintenance évolutive (MEV) des applications. Avec le cloud, ces formes d'infogérance se déclinent selon trois modèles de déploiement — cloud public (mutualisé : AWS, Azure, GCP, OVHcloud), cloud privé (dédié), cloud hybride (combinaison) — et trois niveaux de service : IaaS (Infrastructure as a Service, qui fournit machines virtuelles, stockage et réseau), PaaS (Platform as a Service, un environnement de développement et de déploiement), et SaaS (Software as a Service, applications prêtes à l'emploi comme Office 365 ou Salesforce). Les avantages sont nombreux : recentrage sur le cœur de métier, accès à l'expertise et aux dernières technologies, mutualisation des coûts d'infrastructure, flexibilité et scalabilité grâce au modèle pay-as-you-go, et continuité d'activité renforcée par les SLA et la redondance des datacenters. Mais les risques sont à la mesure des avantages : perte de maîtrise technique et vendor lock-in, problématiques de sécurité et de confidentialité — les données étant stockées chez un tiers, parfois hors UE, exposées au Cloud Act américain —, conformité réglementaire (RGPD, souveraineté), coûts cachés (sortie, intégration, customisation), réversibilité difficile et dépendance à la qualité du réseau. À cela s'ajoute un risque social interne : déqualification des équipes et externalisation des emplois. Les bonnes pratiques imposent des SLA précis, des clauses de réversibilité robustes, l'audit régulier du prestataire et l'existence d'un plan B."
   },
   {
     id: 'cosos_controle',
     theme: '✅ Contrôle interne',
     q: "Présentez le référentiel COSO et son application au contrôle interne des SI. Quels sont les liens avec la loi SOX ?",
     points: [
-      "COSO — Committee of Sponsoring Organizations of the Treadway Commission, créé en 1985",
-      "COSO 1 (1992) — Internal Control — Integrated Framework : référentiel mondial du contrôle interne",
-      "COSO 2 (2004) — Enterprise Risk Management (ERM) : extension aux risques",
-      "COSO ERM 2017 — Aligning Risk with Strategy and Performance",
-      "5 composantes du contrôle interne (COSO 1) :",
-      "1. Environnement de contrôle — éthique, gouvernance, structure organisationnelle",
-      "2. Évaluation des risques — identification et analyse des risques métier",
-      "3. Activités de contrôle — politiques et procédures (autorisations, séparations de tâches, contrôles)",
-      "4. Information et communication — qualité, pertinence, fluidité",
-      "5. Pilotage / Monitoring — évaluations continues et périodiques",
-      "Application aux SI — Contrôles généraux IT (ITGC) : accès, changements, exploitation, sauvegardes",
-      "Application aux SI — Contrôles applicatifs : intégrité des données, autorisations, séparation des tâches",
-      "Application aux SI — Audit IT régulier, ségrégation rôles (admin vs utilisateur)",
-      "SOX (Sarbanes-Oxley 2002) — Loi américaine après scandales Enron, WorldCom",
-      "SOX — Section 404 : évaluation et certification du contrôle interne par la direction et l'auditeur",
-      "SOX — S'applique aux entreprises cotées au NYSE/NASDAQ (y compris filiales étrangères)",
-      "SOX — Repose largement sur le référentiel COSO comme cadre de référence",
-      "SOX — Sanctions : amendes, prison pour les dirigeants, dépôt des comptes contesté",
-      "Lien France — LSF (Loi de Sécurité Financière 2003) — équivalent français, moins prescriptif"
-    ]
+      "COSO — Committee of Sponsoring Organizations of the Treadway Commission (1985) ; COSO 1 (1992) = référentiel mondial du contrôle interne ; COSO 2 (2004, mis à jour 2017 — Aligning Risk with Strategy and Performance) étend à l'ERM",
+      "5 composantes du contrôle interne — Environnement de contrôle (éthique, gouvernance), évaluation des risques, activités de contrôle (autorisations, séparation des tâches), information et communication, pilotage / monitoring",
+      "Application aux SI — Contrôles généraux IT (ITGC) : gestion des accès, des changements, de l'exploitation, des sauvegardes",
+      "Application aux SI (suite) — Contrôles applicatifs : intégrité des données, autorisations, séparation des tâches",
+      "SOX (Sarbanes-Oxley 2002) — Loi américaine adoptée après les scandales Enron et WorldCom, applicable aux entreprises cotées aux US (NYSE / NASDAQ) y compris à leurs filiales étrangères",
+      "SOX section 404 — Évaluation et certification du contrôle interne par la direction et l'auditeur externe ; sanctions pénales pour les dirigeants en cas de fausse certification",
+      "Lien France — La LSF (Loi de Sécurité Financière, 2003) est l'équivalent français, moins prescriptif ; SOX s'appuie largement sur COSO comme cadre de référence"
+    ],
+    correction: "Le référentiel COSO — Committee of Sponsoring Organizations of the Treadway Commission, créé en 1985 — est le cadre de référence mondial du contrôle interne. La première version, COSO 1 publiée en 1992 sous le titre Internal Control — Integrated Framework, structure le contrôle interne autour de cinq composantes complémentaires : l'environnement de contrôle (éthique, gouvernance, structure organisationnelle), l'évaluation des risques (identification et analyse des risques métier), les activités de contrôle (politiques et procédures, autorisations, séparation des tâches), l'information et la communication (qualité, pertinence, fluidité), et le pilotage par des évaluations continues ou périodiques. Une seconde version étendue, COSO 2 ou ERM (2004, mise à jour en 2017 sous le titre Aligning Risk with Strategy and Performance), élargit le cadre à la gestion globale des risques. Appliqué aux systèmes d'information, COSO se traduit par deux familles de contrôles : les contrôles généraux IT (ITGC) qui couvrent la gestion des accès, des changements, de l'exploitation et des sauvegardes ; et les contrôles applicatifs qui garantissent l'intégrité des données, les autorisations et la séparation des tâches. La loi américaine Sarbanes-Oxley (SOX, 2002), adoptée après les scandales Enron et WorldCom, s'impose aux entreprises cotées aux NYSE et NASDAQ — y compris à leurs filiales étrangères. Sa section 404, particulièrement structurante, impose à la direction et à l'auditeur externe d'évaluer et de certifier le contrôle interne ; les sanctions vont jusqu'à des peines de prison pour les dirigeants en cas de fausse certification. SOX s'appuie largement sur COSO comme cadre de référence. En France, l'équivalent — moins prescriptif — est la Loi de Sécurité Financière (LSF, 2003), qui impose elle aussi un rapport du président sur le contrôle interne, lié à la gestion des risques SI."
   },
   {
     id: 'tma',
     theme: '🛠️ TMA',
     q: "Définissez la TMA (Tierce Maintenance Applicative) et présentez ses trois domaines principaux. Quels enjeux pour le donneur d'ordre ?",
     points: [
-      "TMA — Tierce Maintenance Applicative : externalisation de la maintenance d'applications informatiques",
-      "TMA — Le prestataire prend en charge le maintien en condition opérationnelle (MCO) et l'évolution",
-      "Domaine 1 — MCO (Maintien en Condition Opérationnelle) : correction des anomalies, support utilisateurs",
-      "Domaine 1 — Engagements SLA : délai de prise en compte, délai de résolution par criticité",
-      "Domaine 2 — MEV (Maintenance Évolutive) : adaptations mineures (champs, écrans, états)",
-      "Domaine 2 — Souvent forfaitaire (X jours-homme par an) ou à la demande",
-      "Domaine 3 — Maintenance évolutive majeure / projet d'évolution",
-      "Domaine 3 — Projets versionnés, planifiés, méthodologie projet (V, agile)",
-      "Enjeu 1 — Maîtrise des coûts : forfait global vs régie, indicateurs de productivité",
-      "Enjeu 2 — Qualité et SLA : disponibilité, taux d'incidents résolus, NPS",
-      "Enjeu 3 — Transfert de connaissances : initial (start) et continu (formation, documentation)",
-      "Enjeu 4 — Réversibilité : capacité de reprise interne ou auprès d'un autre prestataire",
-      "Enjeu 5 — Sécurité et confidentialité : accès aux données métier sensibles",
-      "Enjeu 6 — Pilotage : COPIL régulier, indicateurs partagés, gouvernance contractuelle",
-      "Enjeu 7 — Innovation : capacité du prestataire à proposer des évolutions à valeur ajoutée",
-      "Bonnes pratiques — Contrat clair (périmètre, SLA, pénalités), VABF (Vérification d'Aptitude au Bon Fonctionnement), réversibilité dès le départ"
-    ]
+      "TMA — Tierce Maintenance Applicative : externalisation de la maintenance d'applications informatiques chez un prestataire spécialisé (maintien en condition opérationnelle + évolution)",
+      "Domaine 1 — MCO (Maintien en Condition Opérationnelle) : correction des anomalies et support utilisateurs, encadré par des SLA (délai de prise en compte, délai de résolution par criticité)",
+      "Domaine 2 — MEV (Maintenance Évolutive) : adaptations mineures (champs, écrans, états) en mode forfaitaire (X jours-homme par an) ou à la demande",
+      "Domaine 3 — Maintenance évolutive majeure ou projets d'évolution : versionnés et planifiés, conduits selon une méthodologie projet (cycle en V, agile)",
+      "Enjeu 1 — Maîtrise des coûts (forfait vs régie, indicateurs de productivité) et qualité (SLA, taux d'incidents résolus, NPS)",
+      "Enjeu 2 — Réversibilité (capacité de reprise interne ou auprès d'un autre prestataire), transfert de connaissances (initial et continu)",
+      "Enjeu 3 — Sécurité / confidentialité (accès aux données métier sensibles), pilotage (COPIL régulier, gouvernance contractuelle) et capacité d'innovation du prestataire"
+    ],
+    correction: "La TMA (Tierce Maintenance Applicative) consiste à confier à un prestataire spécialisé la maintenance d'applications informatiques après leur mise en production. Elle couvre à la fois le maintien en condition opérationnelle (MCO) et l'évolution. Trois domaines la structurent. Le MCO assure la correction des anomalies et le support aux utilisateurs ; il est encadré par des SLA précis qui fixent le délai de prise en compte et le délai de résolution selon la criticité (P1 / P2 / P3). La MEV — Maintenance Évolutive — concerne les adaptations mineures, comme l'ajout de champs, d'écrans ou d'états ; elle est soit forfaitaire (un volume de jours-homme contractualisé chaque année), soit facturée à la demande. La maintenance évolutive majeure ou projet d'évolution porte sur des changements plus importants : ils sont versionnés, planifiés, et conduits selon une méthodologie projet (cycle en V ou agile). Pour le donneur d'ordre, plusieurs enjeux structurent la relation. Le premier est la maîtrise des coûts (arbitrage forfait / régie, suivi d'indicateurs de productivité) et de la qualité (SLA, taux d'incidents résolus, NPS utilisateur). Le deuxième est la réversibilité : il faut conserver la capacité de reprendre la TMA en interne ou de la confier à un autre prestataire, ce qui suppose un transfert de connaissances initial (au démarrage) et continu (documentation, formation). Le troisième est la sécurité et la confidentialité, le prestataire accédant à des données métier sensibles, ainsi que le pilotage de la relation (COPIL régulier, gouvernance contractuelle). Enfin, la TMA peut être un levier d'innovation si le prestataire est en capacité de proposer des évolutions à valeur ajoutée. Les bonnes pratiques imposent un contrat clair (périmètre, SLA, pénalités), une VABF (Vérification d'Aptitude au Bon Fonctionnement) en début de contrat et des clauses de réversibilité dès le départ."
   },
   {
     id: 'ia_act',
     theme: '⚖️ IA & SI',
     q: "Présentez l'IA Act européen : objectifs, classification des systèmes IA et obligations associées.",
     points: [
-      "Cadre — Règlement européen sur l'IA (AI Act), adopté en mars 2024, entrée en vigueur progressive 2024-2026",
-      "Cadre — Premier cadre juridique mondial complet sur l'IA",
-      "Objectif 1 — Garantir la sécurité et les droits fondamentaux face aux systèmes IA",
-      "Objectif 2 — Créer un marché unique européen de l'IA digne de confiance",
-      "Objectif 3 — Encourager l'innovation tout en encadrant les risques",
-      "Approche — Pyramide des risques en 4 niveaux",
-      "Niveau 1 — Risque inacceptable : pratiques interdites (scoring social, manipulation cognitive, biométrie en temps réel sauf exceptions)",
-      "Niveau 2 — Haut risque : systèmes encadrés strictement (RH, éducation, santé, infrastructure critique, justice)",
-      "Niveau 2 — Obligations : gestion des risques, qualité des données, documentation, supervision humaine, robustesse, transparence",
-      "Niveau 2 — Marquage CE, déclaration de conformité, registre européen",
-      "Niveau 3 — Risque limité : obligations de transparence (chatbots, deepfakes étiquetés)",
-      "Niveau 4 — Risque minimal : pas d'obligation spécifique (la majorité des cas)",
-      "Cas particulier — Modèles d'IA à usage général (GPAI) — obligations dédiées (transparence, copyright, sécurité)",
-      "Cas particulier — Modèles à risque systémique (très puissants) — exigences renforcées",
-      "Sanctions — Jusqu'à 35 M€ ou 7 % du CA mondial (pratiques interdites)",
-      "Sanctions — Jusqu'à 15 M€ ou 3 % du CA mondial (autres infractions)",
-      "Gouvernance — Autorités nationales + Bureau européen de l'IA",
-      "Implications entreprise — Cartographier les usages IA, classifier selon risque, mettre en place gouvernance dédiée (comité IA, AIPD)"
-    ]
+      "Cadre — Règlement européen sur l'IA (AI Act), adopté en mars 2024, premier cadre juridique mondial complet sur l'IA ; entrée en vigueur progressive 2024-2026",
+      "Objectifs — Garantir la sécurité et les droits fondamentaux face aux systèmes IA, créer un marché unique européen de l'IA digne de confiance, encourager l'innovation tout en encadrant les risques",
+      "Approche — Pyramide des risques en 4 niveaux (inacceptable, haut, limité, minimal)",
+      "Risque inacceptable — Pratiques interdites : scoring social, manipulation cognitive, biométrie en temps réel dans l'espace public (sauf exceptions)",
+      "Haut risque — Systèmes strictement encadrés (RH, éducation, santé, infrastructure critique, justice) ; obligations : gestion des risques, qualité des données, documentation, supervision humaine, robustesse, transparence, marquage CE, registre européen",
+      "Risque limité et minimal — Risque limité : obligations de transparence (chatbots, deepfakes étiquetés) ; risque minimal : pas d'obligation spécifique (majorité des cas)",
+      "Cas particuliers et sanctions — Modèles d'IA à usage général (GPAI) : obligations dédiées (transparence, copyright, sécurité) ; modèles à risque systémique : exigences renforcées ; sanctions jusqu'à 35 M€ ou 7 % du CA mondial (pratiques interdites) ou 15 M€ / 3 % (autres infractions)"
+    ],
+    correction: "L'AI Act européen, adopté en mars 2024 et entrant en vigueur de manière progressive entre 2024 et 2026, est le premier cadre juridique mondial complet consacré à l'intelligence artificielle. Il poursuit trois objectifs : garantir la sécurité et les droits fondamentaux face aux systèmes IA, créer un marché unique européen de l'IA digne de confiance, et encourager l'innovation tout en encadrant les risques. Son architecture repose sur une pyramide des risques en quatre niveaux. Au sommet, les pratiques à risque inacceptable sont purement interdites : scoring social, manipulation cognitive, identification biométrique en temps réel dans l'espace public (sauf exceptions limitées comme la recherche de victimes). Le deuxième niveau — haut risque — concerne les systèmes utilisés dans des domaines sensibles (recrutement et RH, éducation, santé, infrastructures critiques, justice). Ces systèmes sont autorisés mais strictement encadrés : gestion des risques, qualité des données d'entraînement, documentation technique, supervision humaine, robustesse et transparence, marquage CE, déclaration de conformité, inscription dans un registre européen. Le troisième niveau — risque limité — impose principalement des obligations de transparence : les chatbots doivent indiquer qu'ils ne sont pas humains, les deepfakes doivent être étiquetés. Le quatrième niveau — risque minimal — couvre la majorité des cas d'usage courants (filtres anti-spam, jeux vidéo) et n'impose pas d'obligation spécifique. À côté de cette pyramide, l'AI Act traite à part les modèles d'IA à usage général (GPAI, comme GPT, Claude ou Mistral) avec des obligations dédiées de transparence, de respect du copyright et de sécurité, et impose des exigences renforcées aux modèles à risque systémique (très puissants). Les sanctions sont sévères : jusqu'à 35 M€ ou 7 % du chiffre d'affaires mondial pour les pratiques interdites, et 15 M€ ou 3 % pour les autres infractions. Pour les entreprises, l'implication pratique est de cartographier leurs usages IA, de les classer selon le niveau de risque et d'installer une gouvernance dédiée (comité IA, AIPD)."
   },
   {
     id: 'cmmi_niveaux',
     theme: '📈 Maturité',
     q: "Présentez les 5 niveaux de maturité du modèle CMMI. Quel intérêt pour une organisation de viser un niveau élevé ?",
     points: [
-      "CMMI — Capability Maturity Model Integration, édité par le CMMI Institute (Carnegie Mellon)",
-      "CMMI — Modèle évaluant la maturité des processus de développement et de gestion",
-      "Niveau 1 — Initial : processus chaotique, dépendant des individus, résultats imprévisibles",
-      "Niveau 1 — Caractérisé par les héros (firefighting), pas de standardisation",
-      "Niveau 2 — Reproductible (Managed) : processus documentés et reproductibles sur des projets similaires",
-      "Niveau 2 — Gestion des exigences, planification, mesure, contrôle qualité, gestion de configuration",
-      "Niveau 3 — Défini (Defined) : processus standardisés, documentés et appliqués à toute l'organisation",
-      "Niveau 3 — Méthodologie projet harmonisée, gestion des risques, formation, revue par les pairs",
-      "Niveau 4 — Quantitativement géré (Quantitatively Managed) : processus mesurés statistiquement, pilotage par les chiffres",
-      "Niveau 4 — Performance prévisible, données quantitatives, indicateurs SMART",
-      "Niveau 5 — Optimisé (Optimizing) : amélioration continue basée sur les données, innovation, optimisation",
-      "Niveau 5 — Causes des défauts analysées et traitées, expérimentation contrôlée",
-      "Intérêt 1 — Prévisibilité des projets (délais, coûts, qualité) → confiance client",
-      "Intérêt 2 — Qualité des livrables, réduction des défauts et reprises",
-      "Intérêt 3 — Différenciation commerciale (atout en appel d'offres, notamment offshore Inde)",
-      "Intérêt 4 — Conditions favorables à l'innovation (processus maîtrisés libèrent du temps)",
-      "Intérêt 5 — Amélioration continue ancrée dans la culture",
-      "Limites — Coûts d'évaluation et de certification, risque de bureaucratisation, applicabilité aux PME limitée"
-    ]
+      "CMMI — Capability Maturity Model Integration, édité par le CMMI Institute (Carnegie Mellon) ; modèle évaluant la maturité des processus",
+      "Niveau 1 — Initial : processus chaotique, dépendant des individus (firefighting, héros), résultats imprévisibles, pas de standardisation",
+      "Niveau 2 — Reproductible (Managed) : processus documentés et reproductibles sur des projets similaires (gestion des exigences, planification, mesure, contrôle qualité)",
+      "Niveau 3 — Défini : processus standardisés à l'échelle de l'organisation (méthodologie projet harmonisée, gestion des risques, formation, revue par les pairs)",
+      "Niveau 4 — Quantitativement géré : processus mesurés statistiquement, pilotage par les chiffres, performance prévisible, indicateurs SMART",
+      "Niveau 5 — Optimisé : amélioration continue basée sur les données, causes des défauts analysées, expérimentation contrôlée, innovation",
+      "Intérêts — Prévisibilité des projets (délais, coûts, qualité) → confiance client ; qualité accrue, réduction des défauts ; différenciation commerciale en appel d'offres (notamment SSII offshore) ; culture d'amélioration continue",
+      "Limites — Coûts d'évaluation et de certification élevés, risque de bureaucratisation, applicabilité aux PME limitée"
+    ],
+    correction: "Le modèle CMMI (Capability Maturity Model Integration), édité par le CMMI Institute de Carnegie Mellon, évalue la maturité des processus d'une organisation en cinq niveaux progressifs. Au niveau 1 — Initial — les processus sont chaotiques et dépendent des individus : ce sont les héros et le firefighting qui font avancer les projets, sans aucune standardisation ; les résultats sont par nature imprévisibles. Au niveau 2 — Reproductible (ou Managed) — les processus sont documentés et reproductibles sur des projets similaires, avec une gestion structurée des exigences, une planification, des mesures et un contrôle qualité. Au niveau 3 — Défini — les processus sont standardisés à l'échelle de toute l'organisation, avec une méthodologie projet harmonisée, une gestion des risques explicite, des programmes de formation et la pratique systématique de la revue par les pairs. Au niveau 4 — Quantitativement géré — les processus sont mesurés statistiquement et pilotés par les chiffres ; la performance devient prévisible, et les indicateurs SMART permettent un contrôle quantitatif. Au niveau 5 — Optimisé — l'amélioration continue est ancrée dans la culture : les causes des défauts sont systématiquement analysées et traitées, l'expérimentation contrôlée et l'innovation sont encouragées. Atteindre un niveau élevé présente plusieurs intérêts : la prévisibilité des projets (en délais, en coûts, en qualité) renforce la confiance des clients ; la qualité des livrables s'élève et les défauts se réduisent ; en commercial, c'est un atout différenciant dans les appels d'offres — notamment pour les SSII offshore (Inde, Europe de l'Est) — ; enfin, une culture d'amélioration continue s'installe durablement. Les limites tiennent au coût élevé de l'évaluation et de la certification, au risque de bureaucratisation et à une applicabilité limitée aux PME, pour lesquelles le modèle est souvent trop lourd."
   },
   {
     id: 'val_it_risk_it',
     theme: '🏛️ Gouvernance SI',
     q: "Présentez les référentiels Val IT et Risk IT (ISACA). En quoi complètent-ils COBIT dans la gouvernance des SI ?",
     points: [
-      "Val IT — Édité par ISACA en 2008, référentiel sur la création de valeur des investissements SI",
-      "Val IT — 3 domaines : gouvernance de la valeur, gestion du portefeuille d'investissements, gestion des investissements individuels",
-      "Val IT — Objectif : maximiser le retour sur investissement (ROI) des projets IT, éviter les projets non alignés ou non rentables",
+      "Val IT (ISACA, 2008) — Référentiel sur la création de valeur des investissements SI, structuré en 3 domaines : gouvernance de la valeur, gestion du portefeuille d'investissements, gestion des investissements individuels",
       "Val IT — 4 questions clés : Faisons-nous les bonnes choses ? Le faisons-nous bien ? Le faisons-nous correctement ? En tirons-nous les bénéfices ?",
-      "Risk IT — Édité par ISACA en 2009, référentiel sur la gestion des risques liés aux SI",
-      "Risk IT — 3 domaines : gouvernance des risques, évaluation des risques, réponse aux risques",
-      "Risk IT — Aligné sur ISO 31000 et complémentaire d'ISO 27005",
-      "Risk IT — Objectif : intégrer la gestion des risques SI dans la gouvernance globale et la stratégie",
-      "Tryptique ISACA — COBIT + Val IT + Risk IT = approche complète de la gouvernance SI",
-      "COBIT — Contrôle et gouvernance opérationnelle des SI (le QUOI)",
-      "Val IT — Création de valeur des investissements (la VALEUR)",
-      "Risk IT — Gestion des risques (le RISQUE)",
-      "Évolution — COBIT 5 (2012) puis COBIT 2019 ont intégré Val IT et Risk IT (les 3 référentiels fusionnés dans le cadre unifié)",
-      "Intérêt — Vue cohérente : on ne fait pas que des projets (Val IT) ni que des contrôles (COBIT) ni que de la gestion de risques (Risk IT), mais l'ensemble en harmonie",
-      "Adoption — Référentiels surtout déployés dans les grandes organisations, secteur public, secteurs régulés (banque, énergie)"
-    ]
+      "Risk IT (ISACA, 2009) — Référentiel sur la gestion des risques liés aux SI, structuré en 3 domaines : gouvernance des risques, évaluation des risques, réponse aux risques ; aligné sur ISO 31000 et complémentaire d'ISO 27005",
+      "Triptyque ISACA — COBIT (contrôle, gouvernance opérationnelle = le QUOI) + Val IT (création de valeur = la VALEUR) + Risk IT (gestion des risques = le RISQUE) : approche complète et cohérente",
+      "Évolution — COBIT 5 (2012) puis COBIT 2019 ont intégré Val IT et Risk IT dans un cadre unifié de gouvernance ; les trois référentiels y sont désormais fusionnés",
+      "Adoption — Référentiels surtout déployés dans les grandes organisations, le secteur public et les secteurs régulés (banque, énergie)"
+    ],
+    correction: "Val IT et Risk IT sont deux référentiels publiés par l'ISACA pour compléter COBIT. Val IT, paru en 2008, est consacré à la création de valeur des investissements SI. Il s'articule autour de trois domaines — gouvernance de la valeur, gestion du portefeuille d'investissements, gestion des investissements individuels — et de quatre questions structurantes : faisons-nous les bonnes choses ? le faisons-nous bien ? le faisons-nous correctement ? en tirons-nous les bénéfices ? Son objectif est de maximiser le retour sur investissement des projets IT et d'éviter les projets non alignés ou non rentables. Risk IT, publié en 2009, est dédié à la gestion des risques liés aux systèmes d'information. Il s'organise lui aussi en trois domaines — gouvernance des risques, évaluation des risques, réponse aux risques — et s'aligne sur la norme ISO 31000, en complément de l'ISO 27005 plus spécialisée sur la sécurité. Son ambition est d'intégrer la gestion des risques SI dans la gouvernance globale et la stratégie de l'entreprise. Ensemble, ces trois référentiels forment un triptyque cohérent : COBIT répond au QUOI en posant les contrôles et la gouvernance opérationnelle, Val IT répond à la VALEUR en orientant les investissements, Risk IT répond au RISQUE en cadrant les menaces. L'intérêt est de s'assurer qu'on ne fait pas que des projets sans contrôle (Val IT seul), pas que du contrôle sans création de valeur (COBIT seul), ni que de la gestion de risques sans pilotage (Risk IT seul), mais l'ensemble en harmonie. Avec COBIT 5 publié en 2012 puis COBIT 2019, l'ISACA a fusionné Val IT et Risk IT dans un cadre unifié de gouvernance ; les trois référentiels y sont désormais intégrés. Leur adoption est surtout le fait des grandes organisations, du secteur public et des secteurs régulés (banque, énergie)."
   },
   {
     id: 'shadow_byod',
     theme: '🔍 Nouveaux usages',
     q: "Expliquez les phénomènes de Shadow IT (SI fantômes) et BYOD (Bring Your Own Device). Présentez les enjeux et les bonnes pratiques pour les encadrer.",
     points: [
-      "Shadow IT — Utilisation par les métiers d'outils, applications ou services IT hors du contrôle de la DSI",
-      "Shadow IT — Exemples : Dropbox, WhatsApp, ChatGPT, applications SaaS souscrites par CB métier",
-      "Shadow IT — Causes : DSI perçue comme lente, besoins métier non couverts, démocratisation du cloud",
-      "BYOD — Bring Your Own Device : utilisation des terminaux personnels (smartphone, tablette, PC) pour des usages professionnels",
-      "BYOD — Variantes : COPE (Corporate Owned, Personally Enabled), CYOD (Choose Your Own Device)",
-      "BYOD — Causes : flexibilité, satisfaction collaborateur, économies (entreprise n'achète plus)",
-      "Enjeu 1 — Sécurité : fuite de données, infections virales, accès non contrôlés",
-      "Enjeu 2 — Conformité : RGPD (données personnelles sur terminal personnel), secret professionnel",
-      "Enjeu 3 — Coûts cachés : doublons d'outils, support, intégration",
-      "Enjeu 4 — Perte de visibilité de la DSI : cartographie SI incomplète",
-      "Enjeu 5 — Gouvernance des données : où sont stockées les données critiques ?",
-      "Enjeu 6 — Continuité : que se passe-t-il en cas de départ du salarié, perte/vol du device ?",
-      "Bonnes pratiques Shadow IT 1 — Inventaire des usages (CASB — Cloud Access Security Broker)",
-      "Bonnes pratiques Shadow IT 2 — Catalogue d'applications validées (App Store interne)",
-      "Bonnes pratiques Shadow IT 3 — DSI plus agile et plus à l'écoute des métiers",
-      "Bonnes pratiques BYOD 1 — Charte d'utilisation acceptable (signée)",
-      "Bonnes pratiques BYOD 2 — MDM (Mobile Device Management) : conteneurisation pro/perso",
-      "Bonnes pratiques BYOD 3 — Effacement à distance, chiffrement, MFA",
-      "Bonnes pratiques BYOD 4 — Politique RGPD : information du salarié, base légale, droit à la déconnexion"
-    ]
+      "Shadow IT — Utilisation par les métiers d'outils, applications ou services IT hors du contrôle de la DSI (Dropbox, WhatsApp, ChatGPT, SaaS souscrits par CB métier) ; causes : DSI perçue comme lente, besoins métier non couverts, démocratisation du cloud",
+      "BYOD — Bring Your Own Device : utilisation des terminaux personnels (smartphone, tablette, PC) à des fins professionnelles ; variantes COPE (Corporate Owned, Personally Enabled), CYOD (Choose Your Own Device) ; causes : flexibilité, satisfaction collaborateur, économies",
+      "Enjeu sécurité — Fuite de données, infections virales, accès non contrôlés, perte de visibilité de la DSI (cartographie SI incomplète)",
+      "Enjeu conformité — RGPD (données personnelles sur terminal personnel), secret professionnel, gouvernance des données critiques",
+      "Enjeu opérationnel — Continuité (départ du salarié, perte / vol du device), coûts cachés (doublons, support, intégration)",
+      "Bonnes pratiques Shadow IT — Inventaire des usages via un CASB (Cloud Access Security Broker), catalogue d'applications validées (App Store interne), DSI plus agile et à l'écoute des métiers",
+      "Bonnes pratiques BYOD — Charte d'utilisation acceptable signée, MDM (Mobile Device Management) avec conteneurisation pro / perso, chiffrement et MFA, effacement à distance en cas de perte",
+      "Bonnes pratiques BYOD (suite) — Politique RGPD claire (information du salarié, base légale, droit à la déconnexion)"
+    ],
+    correction: "Le Shadow IT (ou SI fantôme) désigne l'utilisation par les métiers d'outils, applications ou services IT en dehors du contrôle de la DSI : un commercial qui partage des fichiers via Dropbox, un manager qui souscrit à un SaaS par carte bancaire, un collaborateur qui utilise ChatGPT pour rédiger un mail. Ses causes sont structurelles : DSI perçue comme trop lente, besoins métier mal couverts, démocratisation du cloud qui rend chaque outil accessible en quelques clics. Le BYOD — Bring Your Own Device — désigne quant à lui l'utilisation des terminaux personnels (smartphone, tablette, PC) à des fins professionnelles, avec ses variantes COPE (Corporate Owned, Personally Enabled) et CYOD (Choose Your Own Device). Il est porté par la recherche de flexibilité, la satisfaction des collaborateurs et l'économie pour l'entreprise. Ces deux phénomènes posent les mêmes familles d'enjeux. D'abord la sécurité : fuite de données, infections virales, accès non contrôlés, perte de visibilité de la DSI dont la cartographie SI devient incomplète. Ensuite la conformité : risques RGPD lorsque des données personnelles transitent par un terminal personnel, secret professionnel, gouvernance des données critiques. Enfin des enjeux opérationnels : continuité en cas de départ du salarié ou de perte du device, coûts cachés liés aux doublons d'outils, au support et à l'intégration. Pour encadrer le Shadow IT, les bonnes pratiques associent l'inventaire continu des usages via un CASB (Cloud Access Security Broker), la mise en place d'un catalogue d'applications validées (App Store interne) et un effort de la DSI pour devenir plus agile et plus à l'écoute des métiers. Pour le BYOD, il faut une charte d'utilisation acceptable signée, un MDM (Mobile Device Management) avec conteneurisation des espaces pro et perso, le chiffrement et la double authentification, l'effacement à distance en cas de perte ou de vol, et une politique RGPD claire incluant l'information du salarié, la base légale et le droit à la déconnexion."
   }
 ];
 
@@ -5560,6 +5385,15 @@ function renderExamenResult() {
                 <span class="exam-eval-pts">+${ptPerPoint.toFixed(2)} pt</span>
               </label>`).join('')}
           </div>
+          ${c.q.correction ? `
+            <details class="exam-correction-block">
+              <summary class="exam-correction-summary">
+                <span>✍️ Voir la correction type</span>
+                <span class="exam-correction-hint">cliquer pour développer</span>
+              </summary>
+              <div class="exam-correction-text">${eEscape(c.q.correction)}</div>
+            </details>
+          ` : ''}
         </div>
       </div>`;
   }).join('');
