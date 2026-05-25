@@ -4204,19 +4204,24 @@ function d9Generate() {
   // FRA durée
   const dAttente = ePick([3, 6]); // mois avant départ
   const dPeriode = ePick([3, 6]); // durée du prêt/placement couvert
+  const jPeriode = dPeriode * 30; // approximation jours (le cours utilise parfois jours, on reste sur mois pour la simplicité)
   // Taux FRA donné (le cours donne le taux directement, pas de calcul de FRA)
   const tFRAPct = ePick([2.5, 2.75, 2.8, 3, 3.25, 3.5, 3.75, 4]);
   // Scénario Euribor à l'échéance
   const tEuriborPct = eRound(tFRAPct + eRandFloat(-0.80, 0.80, 2), 2);
-  // Compensation = |tEuribor − tFRA| × montant × dPeriode/12
-  const compensation = Math.abs(tEuriborPct - tFRAPct) / 100 * montant * dPeriode / 12;
+  // Différentiel brut sur la période (intérêts qui auraient été dus/perçus)
+  const differentielBrut = Math.abs(tEuriborPct - tFRAPct) / 100 * montant * dPeriode / 12;
+  // Compensation actualisée (réglée en début de période, cf. cours Robin)
+  // Compensation = différentiel brut / (1 + t_Euribor × J/360)
+  const compensation = differentielBrut / (1 + tEuriborPct/100 * dPeriode / 12);
   // Distracteurs Q1
-  const wrong1 = eRound(Math.abs(tEuriborPct - tFRAPct) / 100 * montant, 2); // oublie prorata temporis
-  const wrong2 = eRound(Math.abs(tEuriborPct - tFRAPct) / 100 * montant * dPeriode, 2); // dpériode au lieu de dpériode/12
-  const wrong3 = eRound(tFRAPct / 100 * montant * dPeriode / 12, 2); // utilise tFRA seul (faux)
+  const wrong1 = eRound(differentielBrut, 2); // différentiel non actualisé (erreur classique)
+  const wrong2 = eRound(Math.abs(tEuriborPct - tFRAPct) / 100 * montant, 2); // oublie prorata temporis
+  const wrong3 = eRound(differentielBrut * (1 + tEuriborPct/100 * dPeriode / 12), 2); // multiplie au lieu de diviser
   const qA = eMakeDistractors(eRound(compensation, 2), 2, [wrong1, wrong2, wrong3]);
   return {
-    society, montant, position, dAttente, dPeriode, tFRAPct, tEuriborPct, compensation,
+    society, montant, position, dAttente, dPeriode, tFRAPct, tEuriborPct,
+    differentielBrut, compensation,
     qAOpts: qA.opts, qACorrect: qA.correctIdx
   };
 }
@@ -4270,7 +4275,7 @@ function d9Render(p, ans) {
           : `Au 1<sup>er</sup> décembre N, suite à son budget de trésorerie, la société <strong>${p.society}</strong> a mis en évidence qu'elle devra emprunter <strong>${eFmtEur(p.montant, 0)}</strong> dans <strong>${p.dAttente} mois</strong> pour une durée de <strong>${p.dPeriode} mois</strong>. <strong>Redoutant une hausse des taux à venir</strong>, le trésorier cherche à fixer maintenant le taux de son emprunt futur.`}</p>
         <p>Sa banque lui propose un contrat <strong>FRA ${p.dPeriode} mois dans ${p.dAttente} mois</strong> au taux de <strong>${eFmtPct(p.tFRAPct)}</strong> (taux de référence Euribor ${p.dPeriode} mois).</p>
         <p>À l'échéance (dans ${p.dAttente} mois), le taux Euribor ${p.dPeriode} mois constaté est de <strong>${eFmtPct(p.tEuriborPct)}</strong>.</p>
-        <div class="exam-formule">Compensation FRA = |t<sub>Euribor</sub> − t<sub>FRA</sub>| × Montant × J<sub>période</sub> / 12</div>
+        <div class="exam-formule">Compensation FRA (réglée en début de période, <strong>actualisée</strong>) = [ |t<sub>Euribor</sub> − t<sub>FRA</sub>| × Montant × J<sub>période</sub> / 12 ] / [ 1 + t<sub>Euribor</sub> × J<sub>période</sub> / 12 ]</div>
       </div>
       <div class="exam-q">
         <div class="exam-q-prompt"><strong>a)</strong> Calculez le montant de la compensation versée entre la banque et l'entreprise à l'échéance. <span class="exam-q-pts">2 pts</span></div>
@@ -4322,11 +4327,11 @@ function d9Correct(p, ans) {
     pts: (okA ? 2 : 0) + (okB ? 2 : 0), total: 4,
     details: [
       {
-        q: 'a) Montant de la compensation',
+        q: 'a) Montant de la compensation actualisée',
         userOk: okA, points: okA ? 2 : 0, max: 2,
         userAnswer: ans['d9a'] != null ? `${String.fromCharCode(65 + ans['d9a'])}. ${eFmtEur(p.qAOpts[ans['d9a']], 2)}` : '—',
         correctAnswer: eFmtEur(p.compensation, 2),
-        explain: `Compensation = |t<sub>Euribor</sub> − t<sub>FRA</sub>| × Montant × J<sub>période</sub> / 12<br>= |${eFmtPct(p.tEuriborPct)} − ${eFmtPct(p.tFRAPct)}| × ${eFmtEur(p.montant, 0)} × ${p.dPeriode} / 12<br>= ${eFmtPct(Math.abs(p.tEuriborPct - p.tFRAPct), 3)} × ${eFmtEur(p.montant, 0)} × ${eFmtNum(p.dPeriode/12, 4)}<br>= <strong>${eFmtEur(p.compensation, 2)}</strong>.`
+        explain: `Le différentiel d'intérêts du FRA est réglé en début de période et donc <strong>actualisé</strong> au taux de référence Euribor (cf. cours Robin).<br>Différentiel brut = |t<sub>Euribor</sub> − t<sub>FRA</sub>| × Montant × J<sub>période</sub> / 12<br>= |${eFmtPct(p.tEuriborPct)} − ${eFmtPct(p.tFRAPct)}| × ${eFmtEur(p.montant, 0)} × ${p.dPeriode}/12 = ${eFmtEur(p.differentielBrut, 2)}.<br>Compensation actualisée = Différentiel brut / (1 + t<sub>Euribor</sub> × J/12)<br>= ${eFmtEur(p.differentielBrut, 2)} / (1 + ${eFmtNum(p.tEuriborPct/100, 4)} × ${p.dPeriode}/12)<br>= ${eFmtEur(p.differentielBrut, 2)} / ${eFmtNum(1 + p.tEuriborPct/100 * p.dPeriode/12, 6)}<br>= <strong>${eFmtEur(p.compensation, 2)}</strong>.`
       },
       {
         q: 'b) Sens de la compensation',
@@ -4429,6 +4434,465 @@ function d10Correct(p, ans) {
   };
 }
 
+/* ═══════════════════════════════════════════════════════════
+   DOSSIER 11 — COUPON COURU + VALEUR DE REVENTE (4 pts)
+   Format Apps 3, 4, 8 du cours Robin (base 365 jours)
+   ═══════════════════════════════════════════════════════════ */
+const D11_SOCIETIES = ['ADP', 'Bonduelle', 'Richar-Dassot', 'Yseult', 'Tristan', 'Carrefour Finance', 'Veolia Bonds'];
+const D11_MOIS = [
+  { lbl: 'janvier', j: 31 }, { lbl: 'février', j: 28 }, { lbl: 'mars', j: 31 },
+  { lbl: 'avril', j: 30 }, { lbl: 'mai', j: 31 }, { lbl: 'juin', j: 30 },
+  { lbl: 'juillet', j: 31 }, { lbl: 'août', j: 31 }, { lbl: 'septembre', j: 30 },
+  { lbl: 'octobre', j: 31 }, { lbl: 'novembre', j: 30 }, { lbl: 'décembre', j: 31 }
+];
+
+function d11Generate() {
+  const society = ePick(D11_SOCIETIES);
+  const valNominale = ePick([100, 500, 762.50, 1000, 1500, 2000]);
+  const tauxPct = ePick([2.5, 3, 3.125, 3.5, 3.75, 4, 4.5, 5]);
+  // Nombre de jours écoulés depuis le détachement précédent
+  const joursEcoules = eRandInt(60, 320);
+  // Cours coté au pied du coupon (en % de la valeur nominale)
+  const coursPiedPct = eRound(eRandFloat(95, 105, 2), 2);
+  // Coupon couru en % du nominal : taux × jours/365
+  const couponCouruPct = eRound(tauxPct * joursEcoules / 365, 4);
+  // Valeur totale de revente = cours pied + coupon couru (en %), puis × valeur nominale
+  const coursTotalPct = eRound(coursPiedPct + couponCouruPct, 4);
+  const valeurRevente = eRound(coursTotalPct / 100 * valNominale, 2);
+  // Distracteurs Q1 (coupon couru en %)
+  const wrongA1 = eRound(tauxPct * joursEcoules / 360, 4); // base 360 (erreur monétaire)
+  const wrongA2 = eRound(tauxPct, 4); // taux annuel complet
+  const wrongA3 = eRound(tauxPct * joursEcoules / 12, 4); // confusion mois/jours
+  const qA = eMakeDistractors(couponCouruPct, 4, [wrongA1, wrongA2, wrongA3]);
+  // Distracteurs Q2 (valeur de revente en €)
+  const wrongB1 = eRound(coursPiedPct / 100 * valNominale, 2); // oublie le coupon couru
+  const wrongB2 = eRound(valNominale, 2); // valeur nominale
+  const wrongB3 = eRound(couponCouruPct / 100 * valNominale, 2); // juste le coupon couru
+  const qB = eMakeDistractors(valeurRevente, 2, [wrongB1, wrongB2, wrongB3]);
+  return {
+    society, valNominale, tauxPct, joursEcoules, coursPiedPct,
+    couponCouruPct, coursTotalPct, valeurRevente,
+    qAOpts: qA.opts, qACorrect: qA.correctIdx,
+    qBOpts: qB.opts, qBCorrect: qB.correctIdx
+  };
+}
+
+function d11Render(p, ans) {
+  ans = ans || {};
+  const optsHTML = (qid, opts, fmt) => opts.map((v, i) => {
+    const sel = ans[qid] === i;
+    return `<button type="button" class="exam-opt${sel ? ' selected' : ''}" data-q="${qid}" data-i="${i}" onclick="examPick('${qid}', ${i})">${String.fromCharCode(65 + i)}. ${fmt(v)}</button>`;
+  }).join('');
+  return `
+    <div class="exam-dossier" id="exam-d11">
+      <div class="exam-dossier-head">
+        <div class="exam-dossier-num">Dossier 11</div>
+        <div class="exam-dossier-title">Coupon couru + valeur de revente</div>
+        <div class="exam-dossier-pts">4 points</div>
+      </div>
+      <div class="exam-context">
+        <p>L'obligation <strong>${p.society}</strong> présente les caractéristiques suivantes :</p>
+        <ul style="margin:0.3rem 0 0.6rem 1.3rem">
+          <li>Valeur nominale : <strong>${eFmtEur(p.valNominale, 2)}</strong></li>
+          <li>Taux d'intérêt nominal annuel : <strong>${eFmtPct(p.tauxPct)}</strong></li>
+          <li>Coupon détaché annuellement ; <strong>${p.joursEcoules} jours</strong> se sont écoulés depuis le dernier détachement</li>
+          <li>Cours coté au pied du coupon à cette date : <strong>${eFmtPct(p.coursPiedPct, 2)}</strong> de la valeur nominale</li>
+        </ul>
+        <div class="exam-formule">Coupon couru (en % du nominal) = Taux nominal × Nb jours écoulés / <strong>365</strong></div>
+      </div>
+      <div class="exam-q">
+        <div class="exam-q-prompt"><strong>a)</strong> Calculez le coupon couru exprimé en pourcentage de la valeur nominale. <span class="exam-q-pts">2 pts</span></div>
+        <div class="exam-opts">${optsHTML('d11a', p.qAOpts, v => eFmtPct(v, 4))}</div>
+      </div>
+      <div class="exam-q">
+        <div class="exam-q-prompt"><strong>b)</strong> Quelle est la valeur totale de revente de l'obligation à cette date (en euros) ? <span class="exam-q-pts">2 pts</span></div>
+        <div class="exam-opts">${optsHTML('d11b', p.qBOpts, v => eFmtEur(v, 2))}</div>
+      </div>
+    </div>
+  `;
+}
+
+function d11Correct(p, ans) {
+  ans = ans || {};
+  const okA = ans['d11a'] === p.qACorrect;
+  const okB = ans['d11b'] === p.qBCorrect;
+  return {
+    pts: (okA ? 2 : 0) + (okB ? 2 : 0), total: 4,
+    details: [
+      {
+        q: 'a) Coupon couru en % du nominal',
+        userOk: okA, points: okA ? 2 : 0, max: 2,
+        userAnswer: ans['d11a'] != null ? `${String.fromCharCode(65 + ans['d11a'])}. ${eFmtPct(p.qAOpts[ans['d11a']], 4)}` : '—',
+        correctAnswer: eFmtPct(p.couponCouruPct, 4),
+        explain: `Coupon couru = Taux nominal × Nb jours / 365<br>= ${eFmtPct(p.tauxPct)} × ${p.joursEcoules} / 365 = <strong>${eFmtPct(p.couponCouruPct, 4)}</strong>.<br>Attention : le marché obligataire utilise la base <strong>365 jours</strong> (et non 360 comme pour le monétaire).`
+      },
+      {
+        q: 'b) Valeur de revente totale',
+        userOk: okB, points: okB ? 2 : 0, max: 2,
+        userAnswer: ans['d11b'] != null ? `${String.fromCharCode(65 + ans['d11b'])}. ${eFmtEur(p.qBOpts[ans['d11b']], 2)}` : '—',
+        correctAnswer: eFmtEur(p.valeurRevente, 2),
+        explain: `Cotation totale (cours coupon attaché) = Cours pied du coupon + Coupon couru<br>= ${eFmtPct(p.coursPiedPct, 2)} + ${eFmtPct(p.couponCouruPct, 4)} = <strong>${eFmtPct(p.coursTotalPct, 4)}</strong>.<br>Valeur de revente = Cours total × Valeur nominale = ${eFmtPct(p.coursTotalPct, 4)} × ${eFmtEur(p.valNominale, 2)} = <strong>${eFmtEur(p.valeurRevente, 2)}</strong>.<br>${p.coursPiedPct > 100 ? "Le cours pied du coupon est supérieur à 100 % car les taux du marché ont baissé depuis l'émission (l'obligation devient relativement plus attrayante)." : "Le cours pied du coupon est inférieur à 100 % car les taux du marché ont monté depuis l'émission (l'obligation devient relativement moins attrayante)."}`
+      }
+    ]
+  };
+}
+
+/* ═══════════════════════════════════════════════════════════
+   DOSSIER 12 — DURATION D'UNE OBLIGATION (4 pts)
+   Format Apps 5, 9 du cours Robin
+   ═══════════════════════════════════════════════════════════ */
+const D12_SOCIETIES = ['Tristan', 'Gargouille', 'Mosaïque Bonds', 'Aurélia', 'Voltaire Finance'];
+
+function d12Generate() {
+  const society = ePick(D12_SOCIETIES);
+  const valNominale = ePick([1000, 1500, 2000]);
+  const tauxNominalPct = ePick([2.5, 3, 3.5, 4, 4.5]);
+  const coupon = eRound(valNominale * tauxNominalPct / 100, 2);
+  const dureeRestante = ePick([3, 4, 5]); // durée restante (calcul lourd pour 5+, donc max 5)
+  // Prime de remboursement (0 ou positive)
+  const primePct = ePick([0, 0, 1, 2]);
+  const prixRemb = eRound(valNominale * (1 + primePct/100), 2);
+  // Taux du marché à la date d'évaluation
+  const tauxMarchePct = eRound(eRandFloat(tauxNominalPct - 0.5, tauxNominalPct + 0.5, 2), 2);
+  const t = tauxMarchePct / 100;
+  // Calcul de la valeur actuelle et de la duration
+  let valeur = 0, sommePondPrix = 0;
+  for (let k = 1; k < dureeRestante; k++) {
+    const fact = Math.pow(1 + t, -k);
+    valeur += coupon * fact;
+    sommePondPrix += k * coupon * fact;
+  }
+  // Dernière période : coupon + remboursement
+  const factN = Math.pow(1 + t, -dureeRestante);
+  valeur += (coupon + prixRemb) * factN;
+  sommePondPrix += dureeRestante * (coupon + prixRemb) * factN;
+  const duration = sommePondPrix / valeur;
+  const durationRound = eRound(duration, 3);
+  // Distracteurs Q
+  const wrong1 = eRound(dureeRestante, 3); // donne juste la durée (faux)
+  const wrong2 = eRound(dureeRestante - 1, 3); // durée moins 1
+  const wrong3 = eRound(duration + 0.5, 3); // erreur de calcul typique
+  const qA = eMakeDistractors(durationRound, 3, [wrong1, wrong2, wrong3]);
+  // Détail des calculs pour l'explication
+  const lignes = [];
+  for (let k = 1; k <= dureeRestante; k++) {
+    const flux = (k < dureeRestante) ? coupon : (coupon + prixRemb);
+    const fact = Math.pow(1 + t, -k);
+    const fluxAct = flux * fact;
+    lignes.push({ k, flux, fact, fluxAct, kxFluxAct: k * fluxAct });
+  }
+  return {
+    society, valNominale, tauxNominalPct, coupon, dureeRestante, primePct, prixRemb,
+    tauxMarchePct, valeur, sommePondPrix, duration: durationRound, lignes,
+    qAOpts: qA.opts, qACorrect: qA.correctIdx
+  };
+}
+
+function d12Render(p, ans) {
+  ans = ans || {};
+  const optsHTML = (qid, opts, fmt) => opts.map((v, i) => {
+    const sel = ans[qid] === i;
+    return `<button type="button" class="exam-opt${sel ? ' selected' : ''}" data-q="${qid}" data-i="${i}" onclick="examPick('${qid}', ${i})">${String.fromCharCode(65 + i)}. ${fmt(v)}</button>`;
+  }).join('');
+  const bChoices = [
+    "La duration mesure la durée moyenne pondérée de récupération des flux futurs, exprimée en années.",
+    "La duration correspond à la durée de détention pour laquelle le portefeuille obligataire est <strong>immunisé</strong> contre les variations de taux d'intérêt.",
+    "La duration est égale à la durée restante de l'obligation.",
+    "La duration est uniquement utile pour calculer le coupon couru."
+  ];
+  const bHTML = bChoices.map((c, i) => {
+    const sel = ans['d12b'] === i;
+    return `<button type="button" class="exam-opt exam-opt-wide${sel ? ' selected' : ''}" data-q="d12b" data-i="${i}" onclick="examPick('d12b', ${i})">${String.fromCharCode(65 + i)}. ${c}</button>`;
+  }).join('');
+  return `
+    <div class="exam-dossier" id="exam-d12">
+      <div class="exam-dossier-head">
+        <div class="exam-dossier-num">Dossier 12</div>
+        <div class="exam-dossier-title">Duration d'une obligation</div>
+        <div class="exam-dossier-pts">4 points</div>
+      </div>
+      <div class="exam-context">
+        <p>L'obligation <strong>${p.society}</strong> est cotée à une date donnée :</p>
+        <ul style="margin:0.3rem 0 0.6rem 1.3rem">
+          <li>Valeur nominale : <strong>${eFmtEur(p.valNominale, 2)}</strong> · taux d'intérêt nominal : <strong>${eFmtPct(p.tauxNominalPct)}</strong> · coupon annuel : <strong>${eFmtEur(p.coupon, 2)}</strong></li>
+          <li>Durée restante avant échéance : <strong>${p.dureeRestante} ans</strong>, remboursement in fine à <strong>${eFmtEur(p.prixRemb, 2)}</strong></li>
+          <li>Taux du marché à la date d'évaluation : <strong>${eFmtPct(p.tauxMarchePct)}</strong></li>
+        </ul>
+        <div class="exam-formule">Duration D = Σ (k × Flux<sub>k</sub> × (1+t)<sup>−k</sup>) / Σ (Flux<sub>k</sub> × (1+t)<sup>−k</sup>)</div>
+      </div>
+      <div class="exam-q">
+        <div class="exam-q-prompt"><strong>a)</strong> Calculez la duration de cette obligation à la date d'évaluation. <span class="exam-q-pts">2 pts</span></div>
+        <div class="exam-opts">${optsHTML('d12a', p.qAOpts, v => eFmtNum(v, 3) + ' ans')}</div>
+      </div>
+      <div class="exam-q">
+        <div class="exam-q-prompt"><strong>b)</strong> Quelle est la signification financière de la duration ? <span class="exam-q-pts">2 pts</span></div>
+        <div class="exam-opts">${bHTML}</div>
+      </div>
+    </div>
+  `;
+}
+
+function d12Correct(p, ans) {
+  ans = ans || {};
+  const okA = ans['d12a'] === p.qACorrect;
+  const okB = ans['d12b'] === 1; // option B : immunisation
+  // Détail du calcul
+  let detail = '<table class="exam-table" style="font-size:0.78rem;margin-top:0.4rem"><thead><tr><th>k</th><th>Flux</th><th>(1+t)<sup>−k</sup></th><th>Flux act.</th><th>k × Flux act.</th></tr></thead><tbody>';
+  p.lignes.forEach(l => {
+    detail += `<tr><td>${l.k}</td><td>${eFmtEur(l.flux, 2)}</td><td>${eFmtNum(l.fact, 4)}</td><td>${eFmtEur(l.fluxAct, 2)}</td><td>${eFmtNum(l.kxFluxAct, 2)}</td></tr>`;
+  });
+  detail += `<tr style="background:rgba(61,114,180,0.06);font-weight:600"><td>Σ</td><td>—</td><td>—</td><td>${eFmtEur(p.valeur, 2)}</td><td>${eFmtNum(p.sommePondPrix, 2)}</td></tr></tbody></table>`;
+  return {
+    pts: (okA ? 2 : 0) + (okB ? 2 : 0), total: 4,
+    details: [
+      {
+        q: 'a) Duration',
+        userOk: okA, points: okA ? 2 : 0, max: 2,
+        userAnswer: ans['d12a'] != null ? `${String.fromCharCode(65 + ans['d12a'])}. ${eFmtNum(p.qAOpts[ans['d12a']], 3)} ans` : '—',
+        correctAnswer: eFmtNum(p.duration, 3) + ' ans',
+        explain: `On calcule pour chaque année k la valeur actuelle du flux puis k × flux actualisé.${detail}Duration = Σ(k × Flux act.) / Σ(Flux act.) = ${eFmtNum(p.sommePondPrix, 2)} / ${eFmtEur(p.valeur, 2)} = <strong>${eFmtNum(p.duration, 3)} ans</strong>.`
+      },
+      {
+        q: 'b) Signification de la duration',
+        userOk: okB, points: okB ? 2 : 0, max: 2,
+        userAnswer: ans['d12b'] != null ? String.fromCharCode(65 + ans['d12b']) : '—',
+        correctAnswer: 'B — Durée d\'immunisation',
+        explain: "Cf. cours Robin : « La duration représente la durée de détention du titre pour n'avoir aucune incidence en termes de variation des taux. Le portefeuille est alors dit immunisé. ». La proposition A (moyenne pondérée des flux) est mathématiquement vraie mais incomplète — elle ne capture pas la notion d'immunisation qui fait toute la valeur du concept. C est faux (la duration est inférieure à la durée restante). D est hors-sujet."
+      }
+    ]
+  };
+}
+
+/* ═══════════════════════════════════════════════════════════
+   DOSSIER 13 — COÛT DE LA DETTE PAR INTERPOLATION LINÉAIRE (4 pts)
+   Format App 1 chap 1 du cours Robin (exemple Innovis explicite)
+   ═══════════════════════════════════════════════════════════ */
+const D13_SOCIETIES = ['Innovis', 'Asteria Capital', 'Bélénos', 'Stellaria', 'Voltinéa'];
+
+function d13Generate() {
+  const society = ePick(D13_SOCIETIES);
+  const nominal = ePick([50000, 60000, 80000, 100000, 150000, 200000]);
+  const tauxInteretPct = ePick([5, 6, 7, 8, 9, 10]);
+  const duree = ePick([5, 6, 7, 8]);
+  const interetAnnuel = nominal * tauxInteretPct / 100;
+  // Valeur actuelle de marché (différente du nominal, car taux marché ≠ taux nominal)
+  const valeurActuelle = eRound(nominal + eRandFloat(-nominal * 0.05, nominal * 0.05, 0), 0);
+  // VAN(t) = Σ (intérêt × (1+t)^-k) + nominal × (1+t)^-n
+  function van(t) {
+    let v = 0;
+    for (let k = 1; k <= duree; k++) v += interetAnnuel / Math.pow(1 + t, k);
+    v += nominal / Math.pow(1 + t, duree);
+    return v;
+  }
+  // 2 taux d'essai encadrant la valeur actuelle
+  let t1Pct, t2Pct;
+  if (valeurActuelle > nominal) {
+    // valeur actuelle > nominal → taux actuariel < taux nominal
+    t1Pct = eRound(tauxInteretPct - 2, 1);
+    t2Pct = eRound(tauxInteretPct, 1);
+  } else {
+    // valeur actuelle ≤ nominal → taux actuariel ≥ taux nominal
+    t1Pct = eRound(tauxInteretPct, 1);
+    t2Pct = eRound(tauxInteretPct + 2, 1);
+  }
+  const v1 = eRound(van(t1Pct/100), 0);
+  const v2 = eRound(van(t2Pct/100), 0);
+  // Interpolation linéaire : t = t1 + (t2 - t1) × (v1 - valeurActuelle) / (v1 - v2)
+  const tInterp = t1Pct + (t2Pct - t1Pct) * (v1 - valeurActuelle) / (v1 - v2);
+  const tInterpRound = eRound(tInterp, 3);
+  // Coût de la dette après IS (typique : 25%)
+  const tauxIS = 25;
+  const coutDetteNetPct = eRound(tInterpRound * (1 - tauxIS/100), 3);
+  // Distracteurs Q1 (taux brut par interpolation)
+  const wrong1 = eRound(tauxInteretPct, 3); // donne le taux d'intérêt nominal
+  const wrong2 = eRound((t1Pct + t2Pct) / 2, 3); // moyenne (faux)
+  const wrong3 = eRound(t1Pct + (t2Pct - t1Pct) * (valeurActuelle - v2) / (v1 - v2), 3); // inversion du sens
+  const qA = eMakeDistractors(tInterpRound, 3, [wrong1, wrong2, wrong3]);
+  // Distracteurs Q2 (coût après IS)
+  const wrongB1 = eRound(tInterpRound, 3); // oublie le retraitement IS
+  const wrongB2 = eRound(tInterpRound * (1 - 33.33/100), 3); // ancien taux IS 33%
+  const wrongB3 = eRound(tInterpRound + tauxIS/100, 3); // additionne IS (faux)
+  const qB = eMakeDistractors(coutDetteNetPct, 3, [wrongB1, wrongB2, wrongB3]);
+  return {
+    society, nominal, tauxInteretPct, duree, interetAnnuel, valeurActuelle,
+    t1Pct, t2Pct, v1, v2, tInterp: tInterpRound, tauxIS, coutDetteNetPct,
+    qAOpts: qA.opts, qACorrect: qA.correctIdx,
+    qBOpts: qB.opts, qBCorrect: qB.correctIdx
+  };
+}
+
+function d13Render(p, ans) {
+  ans = ans || {};
+  const optsHTML = (qid, opts, fmt) => opts.map((v, i) => {
+    const sel = ans[qid] === i;
+    return `<button type="button" class="exam-opt${sel ? ' selected' : ''}" data-q="${qid}" data-i="${i}" onclick="examPick('${qid}', ${i})">${String.fromCharCode(65 + i)}. ${fmt(v)}</button>`;
+  }).join('');
+  return `
+    <div class="exam-dossier" id="exam-d13">
+      <div class="exam-dossier-head">
+        <div class="exam-dossier-num">Dossier 13</div>
+        <div class="exam-dossier-title">Coût de la dette par interpolation linéaire</div>
+        <div class="exam-dossier-pts">4 points</div>
+      </div>
+      <div class="exam-context">
+        <p>La société <strong>${p.society}</strong> a contracté un emprunt aux caractéristiques suivantes :</p>
+        <ul style="margin:0.3rem 0 0.6rem 1.3rem">
+          <li>Valeur nominale : <strong>${eFmtEur(p.nominal, 0)}</strong></li>
+          <li>Valeur actuelle de marché : <strong>${eFmtEur(p.valeurActuelle, 0)}</strong></li>
+          <li>Remboursement <strong>in fine</strong> au bout de <strong>${p.duree} ans</strong></li>
+          <li>Taux d'intérêt nominal : <strong>${eFmtPct(p.tauxInteretPct)}</strong> (intérêt annuel ${eFmtEur(p.interetAnnuel, 0)})</li>
+        </ul>
+        <p>Pour le calcul par interpolation linéaire, deux taux d'essai ont été testés et donnent les sommes actualisées suivantes :</p>
+        <table class="exam-table">
+          <thead><tr><th>Taux testé</th><th>Σ flux actualisés</th></tr></thead>
+          <tbody>
+            <tr><td>${eFmtPct(p.t1Pct, 1)}</td><td>${eFmtEur(p.v1, 0)}</td></tr>
+            <tr><td>${eFmtPct(p.t2Pct, 1)}</td><td>${eFmtEur(p.v2, 0)}</td></tr>
+          </tbody>
+        </table>
+        <div class="exam-formule">Interpolation : t = t<sub>1</sub> + (t<sub>2</sub> − t<sub>1</sub>) × (Σ<sub>1</sub> − Valeur actuelle) / (Σ<sub>1</sub> − Σ<sub>2</sub>)</div>
+      </div>
+      <div class="exam-q">
+        <div class="exam-q-prompt"><strong>a)</strong> Par interpolation linéaire, déterminez le taux actuariel (taux de revient brut de la dette). <span class="exam-q-pts">2 pts</span></div>
+        <div class="exam-opts">${optsHTML('d13a', p.qAOpts, v => eFmtPct(v, 3))}</div>
+      </div>
+      <div class="exam-q">
+        <div class="exam-q-prompt"><strong>b)</strong> Quel est le coût de la dette <strong>après IS</strong> (taux d'IS = ${eFmtPct(p.tauxIS, 0)}) ? <span class="exam-q-pts">2 pts</span></div>
+        <div class="exam-opts">${optsHTML('d13b', p.qBOpts, v => eFmtPct(v, 3))}</div>
+      </div>
+    </div>
+  `;
+}
+
+function d13Correct(p, ans) {
+  ans = ans || {};
+  const okA = ans['d13a'] === p.qACorrect;
+  const okB = ans['d13b'] === p.qBCorrect;
+  return {
+    pts: (okA ? 2 : 0) + (okB ? 2 : 0), total: 4,
+    details: [
+      {
+        q: 'a) Taux actuariel par interpolation linéaire',
+        userOk: okA, points: okA ? 2 : 0, max: 2,
+        userAnswer: ans['d13a'] != null ? `${String.fromCharCode(65 + ans['d13a'])}. ${eFmtPct(p.qAOpts[ans['d13a']], 3)}` : '—',
+        correctAnswer: eFmtPct(p.tInterp, 3),
+        explain: `t = t<sub>1</sub> + (t<sub>2</sub> − t<sub>1</sub>) × (Σ<sub>1</sub> − Valeur actuelle) / (Σ<sub>1</sub> − Σ<sub>2</sub>)<br>= ${eFmtPct(p.t1Pct, 1)} + (${eFmtPct(p.t2Pct, 1)} − ${eFmtPct(p.t1Pct, 1)}) × (${eFmtEur(p.v1, 0)} − ${eFmtEur(p.valeurActuelle, 0)}) / (${eFmtEur(p.v1, 0)} − ${eFmtEur(p.v2, 0)})<br>= ${eFmtPct(p.t1Pct, 1)} + ${eFmtPct(p.t2Pct - p.t1Pct, 1)} × (${eFmtEur(p.v1 - p.valeurActuelle, 0)} / ${eFmtEur(p.v1 - p.v2, 0)})<br>= ${eFmtPct(p.t1Pct, 1)} + ${eFmtPct(p.t2Pct - p.t1Pct, 1)} × ${eFmtNum((p.v1 - p.valeurActuelle)/(p.v1 - p.v2), 4)}<br>= <strong>${eFmtPct(p.tInterp, 3)}</strong>.`
+      },
+      {
+        q: 'b) Coût net après IS',
+        userOk: okB, points: okB ? 2 : 0, max: 2,
+        userAnswer: ans['d13b'] != null ? `${String.fromCharCode(65 + ans['d13b'])}. ${eFmtPct(p.qBOpts[ans['d13b']], 3)}` : '—',
+        correctAnswer: eFmtPct(p.coutDetteNetPct, 3),
+        explain: `Les intérêts de la dette sont déductibles fiscalement, ce qui réduit le coût réel pour l'entreprise.<br>Coût net de la dette = Taux brut × (1 − IS)<br>= ${eFmtPct(p.tInterp, 3)} × (1 − ${eFmtPct(p.tauxIS, 0)}) = <strong>${eFmtPct(p.coutDetteNetPct, 3)}</strong>.<br>C'est ce coût net (R<sub>d</sub>) qui sera utilisé dans la formule du CMPC.`
+      }
+    ]
+  };
+}
+
+/* ═══════════════════════════════════════════════════════════
+   DOSSIER 14 — PROCÉDURES D'INTRODUCTION EN BOURSE (4 pts)
+   Format Apps 10-11 du cours Robin (OPO, OPM, placement garanti)
+   ═══════════════════════════════════════════════════════════ */
+
+function d14Shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function d14Generate() {
+  // 4 procédures du cours
+  const procedures = [
+    { id: 'opo', label: 'OPO — Offre à Prix Ouvert', def: "Une fourchette de prix est annoncée (min/max). Les investisseurs passent des ordres dans cette fourchette ; Euronext SA détermine le prix d'introduction à partir des demandes recensées." },
+    { id: 'opm', label: 'OPM — Offre à Prix Minimum', def: "Un prix minimum est annoncé. Seuls les ordres au-dessus de ce prix sont acceptés ; le premier cours est fixé par confrontation offre/demande, sans excéder un prix maximum acceptable." },
+    { id: 'opf', label: 'OPF — Offre à Prix Ferme', def: "Le prix est annoncé fermement à l'avance. Les investisseurs achètent ou non à ce prix. L'attribution se fait au prorata des demandes si elles excèdent l'offre." },
+    { id: 'placement', label: 'Placement garanti', def: "Pré-placement d'une partie des titres auprès d'investisseurs institutionnels avant la première cotation, généralement par une banque introductrice. Le reste fait l'objet d'une procédure publique." },
+    { id: 'directe', label: 'Cotation directe', def: "Mise sur le marché sans procédure préalable de placement. La première cotation se fait par confrontation des ordres le jour de l'introduction." }
+  ];
+  // Tirer une procédure cible pour la Q2 (identification d'une procédure d'après sa définition)
+  const cible = ePick(procedures);
+  // Mélanger pour les options Q2
+  const otherProcs = procedures.filter(p => p.id !== cible.id);
+  const distractors2 = d14Shuffle(otherProcs).slice(0, 3);
+  const allOpts2 = d14Shuffle([cible, ...distractors2]);
+  const correctIdx2 = allOpts2.findIndex(o => o.id === cible.id);
+  // Q1 : calcul d'attribution simple en OPF (offre = X, demande totale = Y > X, taux d'attribution = X/Y)
+  const offre = ePick([50000, 60000, 70000, 80000, 100000]);
+  const demande = eRound(offre * eRandFloat(1.2, 3.0, 2), 0);
+  const tauxAttributionPct = eRound(offre / demande * 100, 2);
+  // Distracteurs Q1
+  const wrong1 = eRound(demande / offre * 100, 2); // ratio inversé
+  const wrong2 = eRound((demande - offre) / demande * 100, 2); // pourcentage non servi
+  const wrong3 = 100; // 100% de servi (faux car oversouscrit)
+  const qA = eMakeDistractors(tauxAttributionPct, 2, [wrong1, wrong2, wrong3]);
+  return {
+    procedures, cible, allOpts2, correctIdx2,
+    offre, demande, tauxAttributionPct,
+    qAOpts: qA.opts, qACorrect: qA.correctIdx
+  };
+}
+
+function d14Render(p, ans) {
+  ans = ans || {};
+  const optsHTML = (qid, opts, fmt) => opts.map((v, i) => {
+    const sel = ans[qid] === i;
+    return `<button type="button" class="exam-opt${sel ? ' selected' : ''}" data-q="${qid}" data-i="${i}" onclick="examPick('${qid}', ${i})">${String.fromCharCode(65 + i)}. ${fmt(v)}</button>`;
+  }).join('');
+  const bHTML = p.allOpts2.map((proc, i) => {
+    const sel = ans['d14b'] === i;
+    return `<button type="button" class="exam-opt exam-opt-wide${sel ? ' selected' : ''}" data-q="d14b" data-i="${i}" onclick="examPick('d14b', ${i})">${String.fromCharCode(65 + i)}. ${proc.label}</button>`;
+  }).join('');
+  return `
+    <div class="exam-dossier" id="exam-d14">
+      <div class="exam-dossier-head">
+        <div class="exam-dossier-num">Dossier 14</div>
+        <div class="exam-dossier-title">Procédures d'introduction en bourse</div>
+        <div class="exam-dossier-pts">4 points</div>
+      </div>
+      <div class="exam-context">
+        <p>Une société souhaite s'introduire sur Euronext et offre <strong>${p.offre.toLocaleString('fr-FR')} titres</strong> à un prix ferme connu à l'avance (procédure OPF — Offre à Prix Ferme).</p>
+        <p>À la clôture des ordres, Euronext recense une demande totale de <strong>${p.demande.toLocaleString('fr-FR')} titres</strong>. L'attribution se fait au prorata des demandes.</p>
+      </div>
+      <div class="exam-q">
+        <div class="exam-q-prompt"><strong>a)</strong> Quel sera le taux d'attribution (pourcentage des demandes effectivement servi) pour chaque investisseur ? <span class="exam-q-pts">2 pts</span></div>
+        <div class="exam-opts">${optsHTML('d14a', p.qAOpts, v => eFmtPct(v, 2))}</div>
+      </div>
+      <div class="exam-q">
+        <div class="exam-q-prompt"><strong>b)</strong> Identifiez la procédure d'introduction décrite : <em>« ${p.cible.def} »</em> <span class="exam-q-pts">2 pts</span></div>
+        <div class="exam-opts">${bHTML}</div>
+      </div>
+    </div>
+  `;
+}
+
+function d14Correct(p, ans) {
+  ans = ans || {};
+  const okA = ans['d14a'] === p.qACorrect;
+  const okB = ans['d14b'] === p.correctIdx2;
+  return {
+    pts: (okA ? 2 : 0) + (okB ? 2 : 0), total: 4,
+    details: [
+      {
+        q: 'a) Taux d\'attribution',
+        userOk: okA, points: okA ? 2 : 0, max: 2,
+        userAnswer: ans['d14a'] != null ? `${String.fromCharCode(65 + ans['d14a'])}. ${eFmtPct(p.qAOpts[ans['d14a']], 2)}` : '—',
+        correctAnswer: eFmtPct(p.tauxAttributionPct, 2),
+        explain: `Quand la demande excède l'offre (sursouscription), Euronext attribue les titres au prorata. Chaque investisseur reçoit :<br>Taux d'attribution = Offre / Demande × 100 = ${p.offre.toLocaleString('fr-FR')} / ${p.demande.toLocaleString('fr-FR')} × 100 = <strong>${eFmtPct(p.tauxAttributionPct, 2)}</strong>.<br>Par exemple, un investisseur ayant demandé 1 000 titres recevra ${Math.round(1000 * p.tauxAttributionPct / 100).toLocaleString('fr-FR')} titres.`
+      },
+      {
+        q: 'b) Identification de la procédure',
+        userOk: okB, points: okB ? 2 : 0, max: 2,
+        userAnswer: ans['d14b'] != null ? `${String.fromCharCode(65 + ans['d14b'])}. ${p.allOpts2[ans['d14b']].label}` : '—',
+        correctAnswer: `${String.fromCharCode(65 + p.correctIdx2)} — ${p.cible.label}`,
+        explain: `<strong>${p.cible.label}</strong> : ${p.cible.def}<br><br>Rappel des 5 procédures du cours Robin :<ul>${p.procedures.map(proc => `<li><strong>${proc.label}</strong> : ${proc.def}</li>`).join('')}</ul>`
+      }
+    ]
+  };
+}
+
 function examGenerate(includeMask) {
   return {
     d1: includeMask.d1 ? d1Generate() : null,
@@ -4440,7 +4904,11 @@ function examGenerate(includeMask) {
     d7: includeMask.d7 ? d7Generate() : null,
     d8: includeMask.d8 ? d8Generate() : null,
     d9: includeMask.d9 ? d9Generate() : null,
-    d10: includeMask.d10 ? d10Generate() : null
+    d10: includeMask.d10 ? d10Generate() : null,
+    d11: includeMask.d11 ? d11Generate() : null,
+    d12: includeMask.d12 ? d12Generate() : null,
+    d13: includeMask.d13 ? d13Generate() : null,
+    d14: includeMask.d14 ? d14Generate() : null
   };
 }
 
@@ -4450,7 +4918,7 @@ function examPick(qid, value) {
   // re-render seulement la case concernée pour les opts (optimisation faible mais utile pour la fluidité visuelle)
   if (qid === 'd5_text') return; // textarea : pas de re-render
   // Pour QCM bouton : on met juste à jour la classe selected
-  if (qid.indexOf('_') === -1 || qid.startsWith('d1') || qid.startsWith('d2a') || qid.startsWith('d2b') || qid.startsWith('d3a') || qid.startsWith('d3b') || qid.startsWith('d3c') || qid.startsWith('d4_beta') || qid.startsWith('d4_rcp') || qid.startsWith('d4_vd') || qid.startsWith('d4_cmpc') || qid.startsWith('d6') || qid.startsWith('d7') || qid.startsWith('d8') || qid.startsWith('d9') || qid.startsWith('d10')) {
+  if (qid.indexOf('_') === -1 || qid.startsWith('d1') || qid.startsWith('d2a') || qid.startsWith('d2b') || qid.startsWith('d3a') || qid.startsWith('d3b') || qid.startsWith('d3c') || qid.startsWith('d4_beta') || qid.startsWith('d4_rcp') || qid.startsWith('d4_vd') || qid.startsWith('d4_cmpc') || qid.startsWith('d6') || qid.startsWith('d7') || qid.startsWith('d8') || qid.startsWith('d9') || qid.startsWith('d10') || qid.startsWith('d11') || qid.startsWith('d12') || qid.startsWith('d13') || qid.startsWith('d14')) {
     document.querySelectorAll(`[data-q="${qid}"], .exam-opt[onclick*="'${qid}'"]`).forEach(el => {
       const i = parseInt(el.getAttribute('data-i') ?? (el.getAttribute('onclick').match(/,\s*(\d+)\)/) || [])[1]);
       el.classList.toggle('selected', i === value);
@@ -4482,6 +4950,10 @@ function examRecomputeScore() {
   if (ds.d8) { const r = d8Correct(ds.d8, a); total += r.pts; max += r.total; }
   if (ds.d9) { const r = d9Correct(ds.d9, a); total += r.pts; max += r.total; }
   if (ds.d10) { const r = d10Correct(ds.d10, a); total += r.pts; max += r.total; }
+  if (ds.d11) { const r = d11Correct(ds.d11, a); total += r.pts; max += r.total; }
+  if (ds.d12) { const r = d12Correct(ds.d12, a); total += r.pts; max += r.total; }
+  if (ds.d13) { const r = d13Correct(ds.d13, a); total += r.pts; max += r.total; }
+  if (ds.d14) { const r = d14Correct(ds.d14, a); total += r.pts; max += r.total; }
   const rounded = eRound(total, 2);
   const el = document.getElementById('exam-score-live');
   if (el) el.textContent = eFmtNum(rounded);
@@ -4587,6 +5059,10 @@ function renderExamenConfig() {
               <label><input type="checkbox" id="ck-d8" checked onchange="examUpdateDurationLabel()"> Dossier 8 — Swap de taux</label>
               <label><input type="checkbox" id="ck-d9" checked onchange="examUpdateDurationLabel()"> Dossier 9 — FRA</label>
               <label><input type="checkbox" id="ck-d10" checked onchange="examUpdateDurationLabel()"> Dossier 10 — Gordon-Shapiro</label>
+              <label><input type="checkbox" id="ck-d11" checked onchange="examUpdateDurationLabel()"> Dossier 11 — Coupon couru + valeur de revente</label>
+              <label><input type="checkbox" id="ck-d12" checked onchange="examUpdateDurationLabel()"> Dossier 12 — Duration</label>
+              <label><input type="checkbox" id="ck-d13" checked onchange="examUpdateDurationLabel()"> Dossier 13 — Coût dette par interpolation</label>
+              <label><input type="checkbox" id="ck-d14" checked onchange="examUpdateDurationLabel()"> Dossier 14 — Procédures d'introduction en bourse</label>
             </div>
             <div class="exam-setup-hint" style="margin-top:0.5rem">Le tirage se fait <strong>au hasard</strong> parmi les dossiers cochés.</div>
           </div>
@@ -4604,7 +5080,7 @@ function examUpdateDurationLabel(val) {
   const lbl = document.getElementById('exam-duration-label');
   if (lbl) lbl.textContent = dur + ' min';
   const targetN = examDossiersFromDuration(dur);
-  const checked = ['d1','d2','d3','d4','d5','d6','d7','d8','d9','d10'].filter(k => {
+  const checked = ['d1','d2','d3','d4','d5','d6','d7','d8','d9','d10','d11','d12','d13','d14'].filter(k => {
     const el = document.getElementById('ck-' + k);
     return el && el.checked;
   }).length;
@@ -4623,7 +5099,7 @@ function examUpdateDurationLabel(val) {
 
 function examStart() {
   const dur = parseInt(document.getElementById('exam-duration').value, 10) * 60;
-  const pool = ['d1','d2','d3','d4','d5','d6','d7','d8','d9','d10'].filter(k => {
+  const pool = ['d1','d2','d3','d4','d5','d6','d7','d8','d9','d10','d11','d12','d13','d14'].filter(k => {
     const el = document.getElementById('ck-' + k);
     return el && el.checked;
   });
@@ -4641,7 +5117,7 @@ function examStart() {
   }
   // tri canonique : d1, d2, ... d10 (ordre numérique)
   const picked = shuffled.slice(0, n).sort((a, b) => parseInt(a.slice(1), 10) - parseInt(b.slice(1), 10));
-  const mask = { d1: false, d2: false, d3: false, d4: false, d5: false, d6: false, d7: false, d8: false, d9: false, d10: false };
+  const mask = { d1: false, d2: false, d3: false, d4: false, d5: false, d6: false, d7: false, d8: false, d9: false, d10: false, d11: false, d12: false, d13: false, d14: false };
   picked.forEach(k => { mask[k] = true; });
   examState = {
     startedAt: Date.now(),
@@ -4669,6 +5145,10 @@ function renderExamenRunning() {
   if (ds.d8) body += d8Render(ds.d8, a);
   if (ds.d9) body += d9Render(ds.d9, a);
   if (ds.d10) body += d10Render(ds.d10, a);
+  if (ds.d11) body += d11Render(ds.d11, a);
+  if (ds.d12) body += d12Render(ds.d12, a);
+  if (ds.d13) body += d13Render(ds.d13, a);
+  if (ds.d14) body += d14Render(ds.d14, a);
   return `
     <div class="exam-timer-bar" id="exam-timer-bar">
       <span class="exam-timer-icon">⏱</span>
@@ -4727,11 +5207,15 @@ function renderExamenResult() {
   if (ds.d3) corrs.push({ key: 'd3', label: 'Dossier 3 — Options de change', r: d3Correct(ds.d3, a) });
   if (ds.d4) corrs.push({ key: 'd4', label: 'Dossier 4 — Bêta + CMPC', r: d4Correct(ds.d4, a) });
   if (ds.d5) corrs.push({ key: 'd5', label: 'Dossier 5 — Rédaction', r: d5Correct(ds.d5, a) });
-  if (ds.d6) corrs.push({ key: 'd6', label: 'Dossier 6 — Emprunt obligataire', r: d6Correct(ds.d6, a) });
-  if (ds.d7) corrs.push({ key: 'd7', label: 'Dossier 7 — NEU CP', r: d7Correct(ds.d7, a) });
-  if (ds.d8) corrs.push({ key: 'd8', label: 'Dossier 8 — Swap de taux', r: d8Correct(ds.d8, a) });
-  if (ds.d9) corrs.push({ key: 'd9', label: 'Dossier 9 — FRA', r: d9Correct(ds.d9, a) });
+  if (ds.d6) corrs.push({ key: 'd6', label: 'Dossier 6 — Obligation : taux actuariel + revente', r: d6Correct(ds.d6, a) });
+  if (ds.d7) corrs.push({ key: 'd7', label: 'Dossier 7 — NEU CP précompté', r: d7Correct(ds.d7, a) });
+  if (ds.d8) corrs.push({ key: 'd8', label: 'Dossier 8 — Swap (différentiel)', r: d8Correct(ds.d8, a) });
+  if (ds.d9) corrs.push({ key: 'd9', label: 'Dossier 9 — FRA (compensation actualisée)', r: d9Correct(ds.d9, a) });
   if (ds.d10) corrs.push({ key: 'd10', label: 'Dossier 10 — Gordon-Shapiro', r: d10Correct(ds.d10, a) });
+  if (ds.d11) corrs.push({ key: 'd11', label: 'Dossier 11 — Coupon couru + valeur de revente', r: d11Correct(ds.d11, a) });
+  if (ds.d12) corrs.push({ key: 'd12', label: 'Dossier 12 — Duration', r: d12Correct(ds.d12, a) });
+  if (ds.d13) corrs.push({ key: 'd13', label: 'Dossier 13 — Coût dette par interpolation', r: d13Correct(ds.d13, a) });
+  if (ds.d14) corrs.push({ key: 'd14', label: 'Dossier 14 — Procédures d\'introduction en bourse', r: d14Correct(ds.d14, a) });
   const total = eRound(corrs.reduce((s, c) => s + c.r.pts, 0), 2);
   const max = corrs.reduce((s, c) => s + c.r.total, 0);
   const pct = max > 0 ? Math.round(total / max * 100) : 0;
