@@ -1353,3 +1353,103 @@ mark.search-hit {
 .m2-pdf-btn:active{transform:translateY(1px);}
 .m2-pdf-hint{color:var(--text3);font-size:0.78rem;}
 @media print{.m2-pdf-bar{display:none !important;}}
+
+
+/* ═══════════════════════════════════════════════════════════
+   ADAPTATIONS MOBILE (≤ 768 / ≤ 480)
+   — Restructure la nav en 2 rangées (brand / onglets)
+   — Tables larges scrollables horizontalement
+   — Touch targets agrandis, paddings allégés
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Nav : brand sur la 1re rangée, onglets pleine largeur sur la 2e */
+  .nav {
+    flex-wrap: wrap;
+    height: auto;
+    min-height: 58px;
+    padding: 0;
+    gap: 0;
+  }
+  .nav-brand { padding: 10px 1rem 8px; flex: 0 0 auto; }
+  .nav-right { margin-left: auto; padding: 10px 1rem 8px; }
+  .nav-tabs {
+    flex: 0 0 100%;
+    order: 99;
+    width: 100%;
+    padding: 4px 0.9rem 8px;
+    border-top: 1px solid var(--border);
+    gap: 4px;
+    /* fondu progressif sur les bords pour signaler la possibilité de scroller */
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 18px, #000 calc(100% - 18px), transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0, #000 18px, #000 calc(100% - 18px), transparent 100%);
+  }
+  .nav-tab { padding: 7px 12px; font-size: 0.78rem; min-height: 32px; }
+
+  /* La barre de progression (ligne 2px sous la nav) chevauche les onglets en mobile */
+  .progress-line { display: none; }
+
+  /* Décale le contenu pour ne pas passer derrière la nav désormais plus haute */
+  .main { margin-top: 104px; padding: 1.2rem 1rem 4rem; }
+
+  /* Tables comparatives : scroll horizontal interne, le tableau ne déborde plus du conteneur */
+  .comp-table {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Schémas / SVG : ne dépassent jamais le conteneur */
+  .schema-card svg, .sch-svg, svg { max-width: 100%; height: auto; }
+
+  /* Code/pré-formaté : scroll interne */
+  pre, code { max-width: 100%; overflow-x: auto; word-break: break-word; }
+
+  /* Items de checklist + cartes : marges et tailles réduites */
+  .cl-item { padding: 11px 14px; font-size: 0.88rem; }
+  .course-chapter { padding: 1.2rem 1rem; }
+
+  /* Boutons d'examen : pleine largeur, meilleure cible tactile */
+  .exam-eval-item { min-width: 0; flex-basis: 100%; padding: 0.7rem 0.9rem; }
+
+  /* Cartes de résultats : padding plus dense */
+  .exam-result-q-body { padding-left: 0; }
+  .exam-result-dossier-head { padding: 0.8rem 1rem; }
+  .exam-result-q { padding: 0.7rem 1rem; }
+
+  /* Recherche globale (accueil) : place pour le doigt */
+  .gs-input-wrap { padding: 12px 14px; }
+  .gs-input { font-size: 16px; } /* ≥ 16px : iOS ne zoome plus au focus */
+
+  /* Allège les blobs de fond (perf) */
+  .blob { opacity: 0.06; filter: blur(60px); }
+}
+
+@media (max-width: 480px) {
+  .nav-brand { padding: 8px 0.9rem 6px; }
+  .nav-right { padding: 8px 0.9rem 6px; }
+  .nav-tabs { padding: 4px 0.8rem 6px; }
+  .nav-tab { padding: 6px 10px; font-size: 0.74rem; }
+  .main { margin-top: 96px; padding: 1rem 0.8rem 3rem; }
+
+  .page-title { font-size: 1.55rem; }
+  .page-subtitle { font-size: 0.85rem; }
+
+  /* Tables : police plus dense */
+  .comp-table th, .comp-table td { padding: 7px 9px; font-size: 0.78rem; }
+
+  /* Onglets annales : empilement vertical en très petit écran */
+  .annale-tabs { flex-wrap: wrap; }
+
+  /* Boutons d'action flashcards : pleine largeur, empilés (déjà via 768 mais on renforce) */
+  .fc-btn-known, .fc-btn-review, .fc-btn-easy { width: 100%; max-width: none; }
+
+  /* Quiz : carte plus dense */
+  .quiz-card { padding: 1.1rem 1rem; }
+  .quiz-q-text { font-size: 0.95rem; }
+
+  /* Recherche : un peu plus compact mais sans bloquer le focus iOS */
+  .gs-result { padding: 10px 12px; gap: 10px; }
+  .gs-r-icon { font-size: 1.2rem; }
+}
