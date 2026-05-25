@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calcul de moyenne — M2 CCA</title>
+<meta name="description" content="Calcul de moyenne M2 CCA — saisis tes notes et obtiens ta moyenne par UE et générale, pondérée par les coefficients d'UE.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%2280%22 font-size=%2290%22>🧮</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="shared.css?v=202605251030">
+<style>
+  /* ── Spécifique calcul de moyenne ── */
+  .moy-intro {
+    background: var(--glass); border: 1px solid var(--glass-b);
+    border-left: 3px solid var(--accent3);
+    padding: 1rem 1.2rem; border-radius: 10px;
+    margin-bottom: 1.4rem; font-size: 0.88rem;
+    color: var(--text2); line-height: 1.55;
+  }
+  .moy-intro b { color: var(--text); }
+
+  .moy-toolbar {
+    display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.4rem;
+  }
+  .moy-btn {
+    background: var(--bg3); border: 1px solid var(--border); color: var(--text2);
+    border-radius: 8px; padding: 7px 14px; font-size: 0.82rem; cursor: pointer;
+    font-family: inherit; transition: all 0.2s;
+  }
+  .moy-btn:hover { background: var(--card-hover); color: var(--text); border-color: var(--accent); }
+  .moy-btn.danger { color: var(--red); border-color: rgba(176,90,71,0.4); }
+  .moy-btn.danger:hover { background: var(--red); color: #fff; border-color: var(--red); }
+
+  .moy-sem {
+    font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700;
+    color: var(--text); margin: 2.4rem 0 1rem;
+    padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);
+    display: flex; align-items: baseline; gap: 0.7rem;
+  }
+  .moy-sem:first-of-type { margin-top: 1rem; }
+  .moy-sem-sub {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
+    color: var(--text3); letter-spacing: 1px; text-transform: uppercase; font-weight: 500;
+  }
+
+  .moy-ue {
+    background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+    margin-bottom: 1.1rem; overflow: hidden;
+  }
+  .moy-ue-head {
+    padding: 0.95rem 1.3rem;
+    background: linear-gradient(90deg, rgba(61,114,180,0.10), transparent);
+    border-bottom: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap;
+  }
+  .moy-ue-label { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: var(--text); }
+  .moy-ue-meta { font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; color: var(--copper); white-space: nowrap; }
+  .moy-ue-rem {
+    padding: 0.55rem 1.3rem; font-size: 0.78rem; color: var(--text3);
+    background: var(--bg2); border-bottom: 1px solid var(--border); font-style: italic;
+  }
+  .moy-matieres { padding: 0.5rem 1.2rem; }
+
+  .moy-matiere {
+    display: flex; align-items: center; gap: 0.7rem; flex-wrap: wrap;
+    padding: 0.6rem 0.2rem; border-bottom: 1px dashed var(--border);
+  }
+  .moy-matiere:last-child { border-bottom: none; }
+  .moy-matiere-check {
+    width: 18px; height: 18px; accent-color: var(--accent);
+    cursor: pointer; flex-shrink: 0;
+  }
+  .moy-matiere-info { flex: 1 1 200px; min-width: 0; }
+  .moy-matiere-label { font-size: 0.92rem; color: var(--text); line-height: 1.35; }
+  .moy-matiere-meta { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--text3); margin-top: 2px; }
+  .moy-matiere-grade-wrap {
+    display: flex; align-items: center; gap: 0.3rem; flex-shrink: 0;
+    margin-left: auto;
+  }
+  .moy-matiere-grade {
+    width: 76px; padding: 7px 10px; border-radius: 8px;
+    background: var(--bg); border: 1px solid var(--border); color: var(--text);
+    font-family: 'JetBrains Mono', monospace; text-align: center; font-size: 1rem;
+    transition: border-color 0.2s;
+  }
+  .moy-matiere-grade:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(61,114,180,0.18); }
+  .moy-matiere-grade.lo { border-color: var(--red); color: var(--red); }
+  .moy-matiere-grade.hi { border-color: var(--green); }
+  .moy-matiere-suffix { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--text3); }
+  .moy-matiere.disabled { opacity: 0.45; }
+  .moy-matiere.disabled .moy-matiere-grade { pointer-events: none; }
+  .moy-matiere.opt {
+    background: rgba(200,131,70,0.05);
+    border-left: 2px solid var(--copper);
+    padding-left: 0.6rem; margin: 0 -0.6rem;
+    border-radius: 0 6px 6px 0;
+  }
+
+  .moy-group-head {
+    margin: 0.4rem -0.6rem 0.2rem;
+    padding: 0.5rem 0.8rem;
+    background: rgba(200,131,70,0.08);
+    border-left: 2px solid var(--copper);
+    border-radius: 0 6px 6px 0;
+    display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap;
+  }
+  .moy-group-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
+    color: var(--copper); text-transform: uppercase; letter-spacing: 1px; font-weight: 600;
+  }
+  .moy-group-state {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.7rem;
+    padding: 2px 8px; border-radius: 10px;
+    background: var(--bg3); color: var(--text3);
+  }
+  .moy-group-state.ok { color: var(--green); background: var(--green-bg); }
+  .moy-group-state.warn { color: var(--orange); background: var(--orange-bg); }
+
+  .moy-assid {
+    padding: 0.75rem 1.3rem; background: var(--bg2);
+    font-size: 0.8rem; color: var(--text3); line-height: 1.6;
+    border-top: 1px solid var(--border);
+  }
+  .moy-assid b { color: var(--text2); }
+  .moy-assid ul { margin: 0.3rem 0 0 1.2rem; }
+  .moy-assid li { margin-bottom: 0.2rem; }
+
+  .moy-ue-result {
+    display: flex; justify-content: flex-end; align-items: baseline; gap: 0.8rem;
+    padding: 0.85rem 1.3rem;
+    background: rgba(61,114,180,0.05); border-top: 1px solid var(--border);
+  }
+  .moy-ue-result-label { color: var(--text3); font-size: 0.85rem; font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 1px; }
+  .moy-ue-result-value {
+    font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; font-weight: 700;
+    color: var(--accent3);
+  }
+  .moy-ue-result-value.pending { color: var(--text3); opacity: 0.5; }
+  .moy-ue-result-value.lo { color: var(--red); }
+  .moy-ue-result-suffix { color: var(--text3); font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; }
+
+  /* Bandeau résultat global, sticky en bas */
+  .moy-global {
+    position: sticky; bottom: 12px; z-index: 50;
+    background: linear-gradient(135deg, rgba(19,26,38,0.95), rgba(24,33,48,0.95));
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--accent);
+    border-radius: 18px; padding: 1.3rem 1.6rem;
+    margin: 2.5rem 0 1rem;
+    box-shadow: 0 12px 40px rgba(61,114,180,0.28), inset 0 0 0 1px rgba(255,255,255,0.04);
+  }
+  .moy-global-grid {
+    display: grid; grid-template-columns: 1fr auto; gap: 1.2rem; align-items: center;
+  }
+  .moy-global-left { min-width: 0; }
+  .moy-global-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.7rem;
+    text-transform: uppercase; letter-spacing: 2.5px; color: var(--accent3); font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  .moy-global-val {
+    font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 800; line-height: 1;
+    background: linear-gradient(135deg, #fff, var(--accent3) 50%, var(--copper));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .moy-global-val.pending { opacity: 0.3; }
+  .moy-global-suffix { font-family: 'JetBrains Mono', monospace; color: var(--text3); font-size: 0.95rem; margin-left: 0.3rem; vertical-align: middle; }
+  .moy-global-status {
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; font-weight: 600;
+  }
+  .moy-global-status.ok { color: var(--green); }
+  .moy-global-status.ko { color: var(--red); }
+  .moy-global-detail {
+    margin-top: 0.8rem; padding-top: 0.8rem; border-top: 1px solid var(--border);
+    font-size: 0.78rem; color: var(--text2); line-height: 1.55;
+  }
+  .moy-global-detail b { color: var(--text); font-family: 'JetBrains Mono', monospace; }
+
+  @media (max-width: 640px) {
+    .moy-matiere-info { flex: 1 1 calc(100% - 28px - 0.7rem); }
+    .moy-matiere-grade-wrap { flex-basis: 100%; justify-content: flex-end; margin-left: 28px; }
+    .moy-global { padding: 1.1rem 1.2rem; }
+    .moy-global-grid { grid-template-columns: 1fr; }
+    .moy-global-status { text-align: left; }
+    .moy-global-val { font-size: 2.4rem; }
+    .moy-ue-head { padding: 0.85rem 1rem; }
+    .moy-matieres { padding: 0.4rem 0.9rem; }
+    .moy-ue-result { padding: 0.75rem 1rem; }
+    .moy-assid { padding: 0.7rem 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="blobs">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<nav class="nav">
+  <div class="nav-brand" onclick="window.location.href='index.html'">
+    <div class="nav-logo">M2 CCA</div>
+    <div class="nav-sub">By Mathieu Belloir</div>
+  </div>
+  <div class="nav-tabs">
+    <a class="nav-tab" href="index.html" style="text-decoration:none;">← Accueil</a>
+    <a class="nav-tab active" href="moyenne.html" style="text-decoration:none;">🧮 Calcul de moyenne</a>
+  </div>
+</nav>
+
+<div class="main">
+  <div class="page-header">
+    <h1 class="page-title">Calcul de moyenne</h1>
+    <p class="page-subtitle">Saisis tes notes sur 20 pour estimer ta moyenne par UE puis ta moyenne générale.</p>
+  </div>
+
+  <div class="moy-intro">
+    <b>Méthode.</b> Moyenne d'UE = moyenne des notes pondérée par la <b>durée d'épreuve</b>. Moyenne générale = moyenne des UE pondérée par le <b>coefficient d'UE</b>.<br>
+    Les matières marquées « au choix — tirage au sort » sont <b>décochées par défaut</b> : coche uniquement celle que tu as effectivement passée.
+    Les matières en assiduité (UE 4, Usage et outils numériques) ne sont pas comptées dans la moyenne.<br>
+    <span style="color:var(--text3);font-size:0.78rem;">Notes enregistrées automatiquement dans ton navigateur (localStorage).</span>
+  </div>
+
+  <div class="moy-toolbar">
+    <button class="moy-btn" id="exampleBtn">▷ Remplir avec un exemple</button>
+    <button class="moy-btn danger" id="resetBtn">↺ Tout réinitialiser</button>
+  </div>
+
+  <div id="moyContent"></div>
+
+  <div class="moy-global">
+    <div class="moy-global-grid">
+      <div class="moy-global-left">
+        <div class="moy-global-label">Moyenne générale</div>
+        <div>
+          <span class="moy-global-val pending" id="globalAvg">—</span><span class="moy-global-suffix">/20</span>
+        </div>
+      </div>
+      <div class="moy-global-status" id="statusLine">Saisis tes notes</div>
+    </div>
+    <div class="moy-global-detail" id="globalDetail">
+      Aucune UE renseignée pour le moment.
+    </div>
+  </div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════
+   Données MCC M2 CCA FA/FC 2024/2025
+   Format mat : [id, label, weight, group?]
+   weight = minutes (durée d'examen) sauf indication
+   group = identifiant de groupe « au choix » (tirage au sort)
+   ═══════════════════════════════════════════════════════════ */
+const MCC = [
+  { sem: 'Semestre 1', label: 'Septembre — Janvier', ues: [
+    {
+      id: 'ue1', label: 'UE 1 — Gestion juridique, fiscale et sociale',
+      coef: 4, ects: 9,
+      remarque: "Épreuve écrite de 4 h (implication, restructuration, fiscalité + 1 matière au choix).",
+      matieres: [
+        ['ue1_implications', 'Implications juridiques fiscales et sociales', 70],
+        ['ue1_restructuration', "La restructuration de l'entreprise", 70],
+        ['ue1_fiscalite', 'Fiscalité des groupes', 70],
+        ['ue1_perennite', "La pérennité de l'entreprise", 30, 'ue1_choix'],
+        ['ue1_concentrations', 'Le contrôle des concentrations', 30, 'ue1_choix']
+      ],
+      groups: { 'ue1_choix': { label: 'Au choix — tirage au sort (1 matière sur 2)', expected: 1 } }
+    },
+    {
+      id: 'ue2', label: 'UE 2 — Management et contrôle de gestion',
+      coef: 4, ects: 6,
+      remarque: 'Épreuve écrite de 3 h.',
+      matieres: [
+        ['ue2_cg1', 'Contrôle de gestion 1', 120],
+        ['ue2_cg2', 'Contrôle de gestion 2 (2 écrits de 1 h)', 120],
+        ['ue2_grh', 'GRH et contrôle de gestion', 60]
+      ]
+    },
+    {
+      id: 'ue3', label: 'UE 3 — Comptabilité et Audit',
+      coef: 4, ects: 15,
+      remarque: 'Épreuve écrite de 2 h.',
+      matieres: [
+        ['ue3_fusion', 'Fusion', 40],
+        ['ue3_conso', 'Consolidation', 80]
+      ]
+    },
+    {
+      id: 'ue4', label: 'UE 4 — Dév. et intégration de savoir hautement spécialisé',
+      coef: 0, ects: null,
+      remarque: 'Assiduité — ne compte pas dans la moyenne.',
+      matieres: [],
+      assiduite: [
+        'Préparation mémoire — présence obligatoire, absence injustifiée pénalisée de 2 points sur la note de mémoire',
+        'Méthodologie de la recherche — présence obligatoire, sans pénalité'
+      ]
+    }
+  ]},
+  { sem: 'Semestre 2', label: 'Février — Juin', ues: [
+    {
+      id: 'ue5', label: 'UE 5 — Finance',
+      coef: 3, ects: 9,
+      remarque: 'CC : travail de groupe (oral, 15 min) — 25 %. CT : écrit 2 h — 75 %.',
+      matieres: [
+        ['ue5_inge_cc', 'Ingénierie financière — CC (oral de groupe)', 25],
+        ['ue5_inge_ct', 'Ingénierie financière — CT (écrit 2 h)', 75]
+      ]
+    },
+    {
+      id: 'ue6', label: 'UE 6 — Management et contrôle de gestion',
+      coef: 1.5, ects: 9,
+      remarque: 'Épreuve écrite de 2 h.',
+      matieres: [
+        ['ue6_evo_orga', "Évolution des modèles d'organisation", 60],
+        ['ue6_strat', 'Management stratégique', 60]
+      ]
+    },
+    {
+      id: 'ue7', label: "UE 7 — Management des systèmes d'information",
+      coef: 2, ects: 6,
+      remarque: 'Épreuve écrite de 2 h.',
+      matieres: [
+        ['ue7_si', "Système d'information", 120]
+      ]
+    },
+    {
+      id: 'ue8', label: 'UE 8 — Communication spécialisée',
+      coef: 1, ects: 3,
+      remarque: 'Épreuve écrite de 1 h.',
+      matieres: [
+        ['ue8_anglais', 'Anglais', 60]
+      ]
+    },
+    {
+      id: 'ue9', label: 'UE 9 — Développement des savoirs',
+      coef: 1, ects: null,
+      remarque: 'Épreuve écrite de 2 h.',
+      matieres: [
+        ['ue9_conduite', 'Conduite du changement et gestion des compétences', 60],
+        ['ue9_rse', 'RSE et CSRD', 60]
+      ],
+      assiduite: ['Usage et outils numériques — présence obligatoire, sans pénalité']
+    },
+    {
+      id: 'ue10', label: 'UE 10 — Appui à la transformation',
+      coef: 3.5, ects: 3,
+      remarque: 'Mémoire (oral, 30 min) — sous-coef 1,75. Oral individuel — sous-coef 1,75.',
+      matieres: [
+        ['ue10_memoire', 'Mémoire — écrit + soutenance orale', 1.75],
+        ['ue10_oral', 'Oral individuel', 1.75]
+      ]
+    }
+  ]}
+];
+
+const STORAGE_KEY = 'm2cca_grades_v1';
+
+const load = () => { try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch { return {}; } };
+const save = s => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); } catch {} };
+
+let state = load();
+
+const fmtDuree = (m, ue) => {
+  if (ue.id === 'ue5') return `${m} %`;
+  if (ue.id === 'ue10') return `sous-coef ${String(m).replace('.', ',')}`;
+  if (m < 60) return `${m} min`;
+  const h = Math.floor(m / 60), mn = m % 60;
+  return mn ? `${h} h ${String(mn).padStart(2, '0')}` : `${h} h`;
+};
+
+const escapeHtml = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function render() {
+  const root = document.getElementById('moyContent');
+  root.innerHTML = '';
+  MCC.forEach(sem => {
+    const wrap = document.createElement('div');
+    wrap.innerHTML = `<div class="moy-sem">${escapeHtml(sem.sem)} <span class="moy-sem-sub">${escapeHtml(sem.label)}</span></div>`;
+    sem.ues.forEach(ue => wrap.appendChild(renderUE(ue)));
+    root.appendChild(wrap);
+  });
+  attachListeners();
+  recompute();
+}
+
+function renderUE(ue) {
+  const card = document.createElement('div');
+  card.className = 'moy-ue';
+  card.id = `card_${ue.id}`;
+
+  const meta = [
+    ue.coef ? `coef ${String(ue.coef).replace('.', ',')}` : 'sans coef',
+    ue.ects ? `${ue.ects} ECTS` : null
+  ].filter(Boolean).join(' · ');
+
+  let html = `<div class="moy-ue-head">
+    <div class="moy-ue-label">${escapeHtml(ue.label)}</div>
+    <div class="moy-ue-meta">${meta}</div>
+  </div>`;
+  if (ue.remarque) html += `<div class="moy-ue-rem">${escapeHtml(ue.remarque)}</div>`;
+
+  if (ue.matieres && ue.matieres.length) {
+    html += '<div class="moy-matieres" data-ue="' + ue.id + '">';
+    // Regroupement : matières « au choix »
+    const seen = new Set();
+    ue.matieres.forEach(m => {
+      const grp = m[3];
+      if (grp && !seen.has(grp)) {
+        seen.add(grp);
+        const g = (ue.groups || {})[grp] || { label: 'Au choix', expected: 1 };
+        html += `<div class="moy-group-head" data-group="${grp}">
+          <span class="moy-group-label">⚄ ${escapeHtml(g.label)}</span>
+          <span class="moy-group-state" id="grpstate_${grp}">— / ${g.expected}</span>
+        </div>`;
+        // toutes les matières du groupe
+        ue.matieres.filter(x => x[3] === grp).forEach(x => html += renderMatiere(x, ue));
+      } else if (!grp) {
+        html += renderMatiere(m, ue);
+      }
+    });
+    html += '</div>';
+  }
+
+  if (ue.assiduite && ue.assiduite.length) {
+    html += '<div class="moy-assid"><b>Assiduité (non notée) :</b><ul>' +
+      ue.assiduite.map(a => '<li>' + escapeHtml(a) + '</li>').join('') +
+      '</ul></div>';
+  }
+
+  if (ue.coef) {
+    html += `<div class="moy-ue-result">
+      <span class="moy-ue-result-label">Moyenne UE</span>
+      <span class="moy-ue-result-value pending" id="avg_${ue.id}">—</span>
+      <span class="moy-ue-result-suffix">/20</span>
+    </div>`;
+  }
+
+  card.innerHTML = html;
+  return card;
+}
+
+function renderMatiere(m, ue) {
+  const [id, label, weight, grp] = m;
+  const st = state[id] || {};
+  const isOpt = !!grp;
+  const enabled = st.enabled !== undefined ? st.enabled : !isOpt;
+  const grade = st.grade !== undefined && st.grade !== '' ? st.grade : '';
+  return `<div class="moy-matiere ${isOpt ? 'opt' : ''} ${!enabled ? 'disabled' : ''}" data-id="${id}">
+    <input type="checkbox" class="moy-matiere-check" data-id="${id}" data-field="enabled" ${enabled ? 'checked' : ''} aria-label="Activer ${escapeHtml(label)}">
+    <div class="moy-matiere-info">
+      <div class="moy-matiere-label">${escapeHtml(label)}</div>
+      <div class="moy-matiere-meta">${fmtDuree(weight, ue)}</div>
+    </div>
+    <div class="moy-matiere-grade-wrap">
+      <input type="number" inputmode="decimal" min="0" max="20" step="0.25" placeholder="—"
+             class="moy-matiere-grade" data-id="${id}" data-field="grade" value="${grade !== '' ? grade : ''}"
+             aria-label="Note pour ${escapeHtml(label)}">
+      <span class="moy-matiere-suffix">/20</span>
+    </div>
+  </div>`;
+}
+
+function attachListeners() {
+  document.querySelectorAll('.moy-matiere-check, .moy-matiere-grade').forEach(inp => {
+    inp.addEventListener('input', onInput);
+    inp.addEventListener('change', onInput);
+  });
+}
+
+function onInput(e) {
+  const id = e.target.dataset.id;
+  const field = e.target.dataset.field;
+  if (!state[id]) state[id] = {};
+  if (field === 'enabled') {
+    state[id].enabled = e.target.checked;
+    const row = document.querySelector('.moy-matiere[data-id="' + id + '"]');
+    if (row) row.classList.toggle('disabled', !e.target.checked);
+  } else if (field === 'grade') {
+    const raw = e.target.value;
+    const v = parseFloat(raw);
+    state[id].grade = (raw === '' || isNaN(v)) ? '' : Math.max(0, Math.min(20, v));
+    // Couleur du champ
+    e.target.classList.remove('lo', 'hi');
+    if (!isNaN(v)) e.target.classList.add(v < 10 ? 'lo' : 'hi');
+  }
+  save(state);
+  recompute();
+}
+
+function recompute() {
+  let totalWeightedAvg = 0, totalCoef = 0;
+  let ueRenseignees = 0, ueTotales = 0;
+  let allMatGrades = [];
+
+  MCC.forEach(sem => sem.ues.forEach(ue => {
+    if (!ue.coef) return;
+    ueTotales++;
+    let num = 0, den = 0;
+    (ue.matieres || []).forEach(m => {
+      const [id, , w] = m;
+      const st = state[id];
+      if (!st || !st.enabled) return;
+      const g = (typeof st.grade === 'number') ? st.grade : parseFloat(st.grade);
+      if (isNaN(g)) return;
+      num += g * w;
+      den += w;
+      allMatGrades.push({ id, g, w, ue: ue.id });
+    });
+    const avgEl = document.getElementById('avg_' + ue.id);
+    if (!avgEl) return;
+    if (den > 0) {
+      const avg = num / den;
+      avgEl.textContent = avg.toFixed(2).replace('.', ',');
+      avgEl.classList.remove('pending');
+      avgEl.classList.toggle('lo', avg < 10);
+      totalWeightedAvg += avg * ue.coef;
+      totalCoef += ue.coef;
+      ueRenseignees++;
+    } else {
+      avgEl.textContent = '—';
+      avgEl.classList.add('pending');
+      avgEl.classList.remove('lo');
+    }
+  }));
+
+  // état des groupes « au choix »
+  MCC.forEach(sem => sem.ues.forEach(ue => {
+    if (!ue.groups) return;
+    Object.entries(ue.groups).forEach(([gid, g]) => {
+      const checked = ue.matieres.filter(m => m[3] === gid && state[m[0]] && state[m[0]].enabled).length;
+      const stateEl = document.getElementById('grpstate_' + gid);
+      if (!stateEl) return;
+      stateEl.textContent = `${checked} / ${g.expected}`;
+      stateEl.classList.toggle('ok', checked === g.expected);
+      stateEl.classList.toggle('warn', checked !== g.expected);
+    });
+  }));
+
+  // bandeau global
+  const globalEl = document.getElementById('globalAvg');
+  const statusEl = document.getElementById('statusLine');
+  const detailEl = document.getElementById('globalDetail');
+  const allUesCoef = MCC.flatMap(s => s.ues).filter(u => u.coef).reduce((a, u) => a + u.coef, 0);
+
+  if (totalCoef > 0) {
+    const g = totalWeightedAvg / totalCoef;
+    globalEl.textContent = g.toFixed(2).replace('.', ',');
+    globalEl.classList.remove('pending');
+    if (ueRenseignees === ueTotales) {
+      statusEl.textContent = g >= 10 ? '✓ Admis (≥ 10/20)' : '✗ Insuffisant (< 10/20)';
+      statusEl.classList.remove('ok', 'ko');
+      statusEl.classList.add(g >= 10 ? 'ok' : 'ko');
+    } else {
+      statusEl.textContent = `Estimation partielle (${ueRenseignees}/${ueTotales} UE)`;
+      statusEl.classList.remove('ok', 'ko');
+    }
+    const totalCoefFmt = String(allUesCoef).replace('.', ',');
+    const renseignesFmt = String(totalCoef).replace('.', ',');
+    detailEl.innerHTML = `Coefficients renseignés : <b>${renseignesFmt}</b> / ${totalCoefFmt} · UE évaluées : <b>${ueRenseignees}</b> / ${ueTotales}.`;
+  } else {
+    globalEl.textContent = '—';
+    globalEl.classList.add('pending');
+    statusEl.textContent = 'Saisis tes notes';
+    statusEl.classList.remove('ok', 'ko');
+    detailEl.textContent = 'Aucune UE renseignée pour le moment.';
+  }
+}
+
+document.getElementById('resetBtn').addEventListener('click', () => {
+  if (confirm('Réinitialiser toutes les notes et tous les choix ?')) {
+    state = {};
+    save(state);
+    render();
+  }
+});
+
+document.getElementById('exampleBtn').addEventListener('click', () => {
+  state = {};
+  const example = {
+    'ue1_implications': 14, 'ue1_restructuration': 13, 'ue1_fiscalite': 15, 'ue1_perennite': 12,
+    'ue2_cg1': 12, 'ue2_cg2': 13, 'ue2_grh': 14,
+    'ue3_fusion': 11, 'ue3_conso': 13.5,
+    'ue5_inge_cc': 15, 'ue5_inge_ct': 13,
+    'ue6_evo_orga': 14, 'ue6_strat': 13,
+    'ue7_si': 14,
+    'ue8_anglais': 12,
+    'ue9_conduite': 14, 'ue9_rse': 13,
+    'ue10_memoire': 14, 'ue10_oral': 15
+  };
+  Object.entries(example).forEach(([id, g]) => state[id] = { grade: g, enabled: true });
+  // décoche l'option non tirée au sort
+  state['ue1_concentrations'] = { grade: '', enabled: false };
+  save(state);
+  render();
+});
+
+render();
+</script>
+
+</body>
+</html>
