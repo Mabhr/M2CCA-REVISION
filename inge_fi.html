@@ -3848,27 +3848,68 @@ function d5Correct(p, ans) {
    ORCHESTRATION
    ═══════════════════════════════════════════════════════════ */
 /* ═══════════════════════════════════════════════════════════
-   DOSSIER 6 — EMPRUNT OBLIGATAIRE (4 pts)
-   2 sous-questions : annuité constante + identification mode
+   DOSSIER 6 — TAUX ACTUARIEL + VALEUR DE REVENTE D'UNE OBLIGATION (4 pts)
+   Format Apps 3, 6, 8 du cours Robin
+   2 sous-questions : taux actuariel brut + valeur de revente à un taux donné
    ═══════════════════════════════════════════════════════════ */
-const D6_SOCIETIES = ['Solaria', 'Borealis', 'Helvète Group', 'Côtière Capital', 'Aurore Industrie', 'Atlantia', 'Trimaran'];
+const D6_SOCIETIES = ['ADP', 'Bonduelle', 'Tristan', 'Yseult', 'Tromboli', 'Richar-Dassot', 'Gargouille', 'Solaria'];
+
+// VAN d'une obligation in fine : Σ (C × (1+t)^-k) pour k=1..n + (PR × (1+t)^-n)
+function d6Van(coupon, prixRemb, n, t) {
+  let v = 0;
+  for (let k = 1; k <= n; k++) v += coupon / Math.pow(1 + t, k);
+  v += prixRemb / Math.pow(1 + t, n);
+  return v;
+}
+
+// Calcul TRI par dichotomie
+function d6Tri(coupon, prixRemb, n, prixEmission) {
+  let low = 0.001, high = 0.30;
+  for (let i = 0; i < 80; i++) {
+    const mid = (low + high) / 2;
+    const v = d6Van(coupon, prixRemb, n, mid);
+    if (v > prixEmission) low = mid; else high = mid;
+  }
+  return (low + high) / 2;
+}
 
 function d6Generate() {
   const society = ePick(D6_SOCIETIES);
-  const nominal = ePick([1000000, 2000000, 5000000, 10000000, 15000000, 20000000]);
-  const tauxPct = ePick([2, 2.5, 3, 3.5, 4, 4.5, 5]);
-  const duree = ePick([4, 5, 6, 7, 8, 10]);
-  const i = tauxPct / 100;
-  // Annuité constante : a = C × i / [1 − (1+i)⁻ⁿ]
-  const annuite = nominal * i / (1 - Math.pow(1 + i, -duree));
-  // Distracteurs : erreurs typiques
-  const wrong1 = nominal / duree + nominal * i; // amortissement constant + intérêts période 1
-  const wrong2 = nominal * (1 + i * duree) / duree; // erreur capitalisation simple
-  const wrong3 = nominal * i; // juste les intérêts annuels
-  const qA = eMakeDistractors(eRound(annuite, 2), 2, [eRound(wrong1, 2), eRound(wrong2, 2), eRound(wrong3, 2)]);
+  const valNominale = ePick([100, 500, 1000, 1500, 2000]);
+  const tauxNominalPct = ePick([2.5, 3, 3.25, 3.5, 4, 4.5, 5, 5.25, 5.5]);
+  const duree = ePick([5, 6, 7, 8, 10]);
+  const coupon = eRound(valNominale * tauxNominalPct / 100, 2);
+  // Prix d'émission < valeur nominale (obligation au pair ou sous le pair)
+  const prixEmissionPct = eRound(eRandFloat(96, 99.5, 3), 3);
+  const prixEmission = eRound(valNominale * prixEmissionPct / 100, 2);
+  // Prix de remboursement >= valeur nominale
+  const primeRemboursementPct = ePick([0, 0, 1, 2, 3]); // 0 = au pair (le plus fréquent)
+  const prixRemboursement = eRound(valNominale * (1 + primeRemboursementPct / 100), 2);
+  // Taux actuariel brut à l'émission par dichotomie
+  const tauxActuariel = d6Tri(coupon, prixRemboursement, duree, prixEmission);
+  const tauxActuarielPct = eRound(tauxActuariel * 100, 3);
+  // Distracteurs Q1 : erreurs typiques
+  const wrongA1 = tauxNominalPct; // donne juste le taux nominal (faux car prix d'émission < pair)
+  const wrongA2 = eRound((coupon * duree + prixRemboursement - prixEmission) / (prixEmission * duree) * 100, 3); // taux moyen simple
+  const wrongA3 = eRound(tauxNominalPct + primeRemboursementPct / duree, 3); // taux nominal + prime/n
+  const qA = eMakeDistractors(tauxActuarielPct, 3, [wrongA1, wrongA2, wrongA3]);
+  // Q2 : valeur de revente à une date intermédiaire et taux marché donné
+  const dureeRestante = ePick([Math.max(2, duree - 5), Math.max(2, duree - 4), Math.max(2, duree - 3)]);
+  const tauxMarchePct = eRound(tauxNominalPct + eRandFloat(-1.0, 1.0, 2), 2);
+  // Valeur de revente = Σ (C × (1+t)^-k) + PR × (1+t)^-n
+  const valeurRevente = d6Van(coupon, prixRemboursement, dureeRestante, tauxMarchePct / 100);
+  const valeurReventeArrondi = eRound(valeurRevente, 2);
+  // Distracteurs Q2
+  const wrongB1 = eRound(prixRemboursement, 2); // valeur nominale (faux)
+  const wrongB2 = eRound(coupon * dureeRestante + prixRemboursement, 2); // somme non actualisée
+  const wrongB3 = eRound(d6Van(coupon, prixRemboursement, dureeRestante, tauxNominalPct / 100), 2); // actualisé au taux nominal (faux)
+  const qB = eMakeDistractors(valeurReventeArrondi, 2, [wrongB1, wrongB2, wrongB3]);
   return {
-    society, nominal, tauxPct, duree, annuite,
-    qAOpts: qA.opts, qACorrect: qA.correctIdx
+    society, valNominale, tauxNominalPct, duree, coupon,
+    prixEmissionPct, prixEmission, primeRemboursementPct, prixRemboursement,
+    tauxActuarielPct, dureeRestante, tauxMarchePct, valeurRevente: valeurReventeArrondi,
+    qAOpts: qA.opts, qACorrect: qA.correctIdx,
+    qBOpts: qB.opts, qBCorrect: qB.correctIdx
   };
 }
 
@@ -3878,34 +3919,31 @@ function d6Render(p, ans) {
     const sel = ans[qid] === i;
     return `<button type="button" class="exam-opt${sel ? ' selected' : ''}" data-q="${qid}" data-i="${i}" onclick="examPick('${qid}', ${i})">${String.fromCharCode(65 + i)}. ${fmt(v)}</button>`;
   }).join('');
-  const bChoices = [
-    'In fine — le capital est remboursé en totalité à la dernière échéance, seuls les intérêts sont versés sur les périodes intermédiaires.',
-    'Amortissement constant — chaque échéance comprend une fraction égale du capital (nominal / n) et les intérêts décroissants calculés sur le capital restant dû.',
-    'Annuité constante — chaque échéance verse un montant identique combinant capital amorti croissant et intérêts décroissants.',
-    'Coupon zéro — aucun coupon versé, le rendement provient de l\'écart entre prix d\'émission et prix de remboursement.'
-  ];
-  const bHTML = bChoices.map((c, i) => {
-    const sel = ans['d6b'] === i;
-    return `<button type="button" class="exam-opt exam-opt-wide${sel ? ' selected' : ''}" data-q="d6b" data-i="${i}" onclick="examPick('d6b', ${i})">${String.fromCharCode(65 + i)}. ${c}</button>`;
-  }).join('');
   return `
     <div class="exam-dossier" id="exam-d6">
       <div class="exam-dossier-head">
         <div class="exam-dossier-num">Dossier 6</div>
-        <div class="exam-dossier-title">Emprunt obligataire</div>
+        <div class="exam-dossier-title">Emprunt obligataire — taux actuariel et valeur de revente</div>
         <div class="exam-dossier-pts">4 points</div>
       </div>
       <div class="exam-context">
-        <p>La société <strong>${p.society}</strong> émet un emprunt obligataire de nominal total <strong>${eFmtEur(p.nominal, 0)}</strong>, au taux nominal de <strong>${eFmtPct(p.tauxPct)}</strong>, sur une durée de <strong>${p.duree} ans</strong>. L'emprunt est remboursé selon le mode <strong>annuité constante</strong>.</p>
-        <div class="exam-formule">Formule : a = C × i / [1 − (1+i)<sup>−n</sup>]</div>
+        <p>La société <strong>${p.society}</strong> émet un emprunt obligataire aux caractéristiques suivantes :</p>
+        <ul style="margin:0.3rem 0 0.6rem 1.3rem">
+          <li>Valeur nominale : <strong>${eFmtEur(p.valNominale, 2)}</strong></li>
+          <li>Taux d'intérêt nominal annuel : <strong>${eFmtPct(p.tauxNominalPct)}</strong> (coupon annuel ${eFmtEur(p.coupon, 2)})</li>
+          <li>Durée : <strong>${p.duree} ans</strong></li>
+          <li>Remboursement <strong>in fine</strong> à <strong>${eFmtEur(p.prixRemboursement, 2)}</strong>${p.primeRemboursementPct > 0 ? ` (soit ${eFmtPct(100 + p.primeRemboursementPct, 0)} de la valeur nominale)` : ' (au pair)'}</li>
+          <li>Prix d'émission : <strong>${eFmtPct(p.prixEmissionPct, 3)}</strong> de la valeur nominale, soit <strong>${eFmtEur(p.prixEmission, 2)}</strong></li>
+        </ul>
+        <div class="exam-formule">Taux actuariel brut t : taux pour lequel Prix d'émission = Σ<sub>k=1..n</sub> Coupon × (1+t)<sup>−k</sup> + Prix remb × (1+t)<sup>−n</sup></div>
       </div>
       <div class="exam-q">
-        <div class="exam-q-prompt"><strong>a)</strong> Calculez l'annuité constante versée chaque année. <span class="exam-q-pts">2 pts</span></div>
-        <div class="exam-opts">${optsHTML('d6a', p.qAOpts, v => eFmtEur(v, 2))}</div>
+        <div class="exam-q-prompt"><strong>a)</strong> Calculez le taux actuariel brut à l'émission. <span class="exam-q-pts">2 pts</span></div>
+        <div class="exam-opts">${optsHTML('d6a', p.qAOpts, v => eFmtPct(v, 3))}</div>
       </div>
       <div class="exam-q">
-        <div class="exam-q-prompt"><strong>b)</strong> Caractérisez le mode de remboursement choisi (description correcte du fonctionnement). <span class="exam-q-pts">2 pts</span></div>
-        <div class="exam-opts">${bHTML}</div>
+        <div class="exam-q-prompt"><strong>b)</strong> Le détenteur d'une obligation souhaite la revendre alors qu'il reste <strong>${p.dureeRestante} ans</strong> avant l'échéance. Le taux du marché à cette date est de <strong>${eFmtPct(p.tauxMarchePct)}</strong>. Quelle est la valeur théorique de revente de l'obligation ? <span class="exam-q-pts">2 pts</span></div>
+        <div class="exam-opts">${optsHTML('d6b', p.qBOpts, v => eFmtEur(v, 2))}</div>
       </div>
     </div>
   `;
@@ -3914,63 +3952,72 @@ function d6Render(p, ans) {
 function d6Correct(p, ans) {
   ans = ans || {};
   const okA = ans['d6a'] === p.qACorrect;
-  const okB = ans['d6b'] === 2; // bonne réponse = annuité constante
+  const okB = ans['d6b'] === p.qBCorrect;
+  // Détail du calcul Q2 affiché
+  let calcDetail = '';
+  for (let k = 1; k <= p.dureeRestante; k++) {
+    const fact = Math.pow(1 + p.tauxMarchePct/100, -k);
+    calcDetail += `${eFmtEur(p.coupon, 2)} × ${eFmtNum(fact, 4)} = ${eFmtEur(p.coupon * fact, 2)}<br>`;
+  }
+  const factPR = Math.pow(1 + p.tauxMarchePct/100, -p.dureeRestante);
+  calcDetail += `+ ${eFmtEur(p.prixRemboursement, 2)} × ${eFmtNum(factPR, 4)} = ${eFmtEur(p.prixRemboursement * factPR, 2)}`;
   return {
     pts: (okA ? 2 : 0) + (okB ? 2 : 0), total: 4,
     details: [
       {
-        q: 'a) Annuité constante',
+        q: 'a) Taux actuariel brut à l\'émission',
         userOk: okA, points: okA ? 2 : 0, max: 2,
-        userAnswer: ans['d6a'] != null ? `${String.fromCharCode(65 + ans['d6a'])}. ${eFmtEur(p.qAOpts[ans['d6a']], 2)}` : '—',
-        correctAnswer: eFmtEur(p.annuite, 2),
-        explain: `a = C × i / [1 − (1+i)<sup>−n</sup>] = ${eFmtEur(p.nominal, 0)} × ${eFmtNum(p.tauxPct/100, 4)} / [1 − (1 + ${eFmtNum(p.tauxPct/100, 4)})<sup>−${p.duree}</sup>]<br>= ${eFmtNum(p.nominal * p.tauxPct/100, 2)} / [1 − ${eFmtNum(Math.pow(1 + p.tauxPct/100, -p.duree), 6)}]<br>= ${eFmtNum(p.nominal * p.tauxPct/100, 2)} / ${eFmtNum(1 - Math.pow(1 + p.tauxPct/100, -p.duree), 6)}<br>= <strong>${eFmtEur(p.annuite, 2)}</strong>`
+        userAnswer: ans['d6a'] != null ? `${String.fromCharCode(65 + ans['d6a'])}. ${eFmtPct(p.qAOpts[ans['d6a']], 3)}` : '—',
+        correctAnswer: eFmtPct(p.tauxActuarielPct, 3),
+        explain: `Le taux actuariel brut t est solution de l'équation : ${eFmtEur(p.prixEmission, 2)} = Σ<sub>k=1..${p.duree}</sub> ${eFmtEur(p.coupon, 2)} × (1+t)<sup>−k</sup> + ${eFmtEur(p.prixRemboursement, 2)} × (1+t)<sup>−${p.duree}</sup>.<br>Résolution par interpolation linéaire (ou itération) ⇒ t = <strong>${eFmtPct(p.tauxActuarielPct, 3)}</strong>.<br>${p.tauxActuarielPct > p.tauxNominalPct ? 'Le taux actuariel est supérieur au taux nominal car le prix d\'émission est inférieur à la valeur nominale (décote à l\'émission) et/ou le prix de remboursement est supérieur (prime de remboursement).' : 'Le taux actuariel correspond au taux nominal car l\'obligation est émise au pair sans prime de remboursement.'}`
       },
       {
-        q: 'b) Mode de remboursement',
+        q: 'b) Valeur de revente à ' + p.dureeRestante + ' ans avant échéance',
         userOk: okB, points: okB ? 2 : 0, max: 2,
-        userAnswer: ans['d6b'] != null ? String.fromCharCode(65 + ans['d6b']) : '—',
-        correctAnswer: 'C — Annuité constante',
-        explain: "L'annuité constante (option C) signifie que l'emprunteur verse chaque année le même montant. Ce montant combine une part de capital remboursé (croissante au fil du temps) et des intérêts (décroissants car calculés sur le capital restant dû). Les 3 modes de remboursement obligataire du cours sont : (1) in fine (capital remboursé en bloc à l'échéance, intérêts seuls sur les périodes), (2) amortissement constant (fraction de capital = nominal/n, intérêts décroissants), (3) annuité constante (formule a = C×i/[1−(1+i)⁻ⁿ])."
+        userAnswer: ans['d6b'] != null ? `${String.fromCharCode(65 + ans['d6b'])}. ${eFmtEur(p.qBOpts[ans['d6b']], 2)}` : '—',
+        correctAnswer: eFmtEur(p.valeurRevente, 2),
+        explain: `V<sub>revente</sub> = Σ<sub>k=1..${p.dureeRestante}</sub> Coupon × (1+t<sub>marché</sub>)<sup>−k</sup> + Prix<sub>remb</sub> × (1+t<sub>marché</sub>)<sup>−${p.dureeRestante}</sup>, avec t<sub>marché</sub> = ${eFmtPct(p.tauxMarchePct)}.<br>${calcDetail}<br>= <strong>${eFmtEur(p.valeurRevente, 2)}</strong>.<br>${p.tauxMarchePct > p.tauxNominalPct ? 'Le taux du marché ayant monté au-dessus du taux nominal, la valeur de l\'obligation est inférieure au prix de remboursement (cours décoté).' : p.tauxMarchePct < p.tauxNominalPct ? 'Le taux du marché ayant baissé sous le taux nominal, la valeur de l\'obligation est supérieure au prix de remboursement (cours surcoté).' : 'Au taux du marché égal au taux nominal, la valeur se rapproche du prix de remboursement.'}`
       }
     ]
   };
 }
 
 /* ═══════════════════════════════════════════════════════════
-   DOSSIER 7 — NEU CP (4 pts)
-   2 sous-questions : intérêts post-comptés + cession avant échéance
+   DOSSIER 7 — NEU CP INTÉRÊTS PRÉCOMPTÉS (4 pts)
+   Format App 2 du cours Robin
+   2 sous-questions : prix d'émission + taux réel après cession
    ═══════════════════════════════════════════════════════════ */
-const D7_SOCIETIES = ['Cortina', 'Marengo', 'Albéria', 'Pacifia', 'Sextant Industrie', 'Iridia', 'Verseau Group'];
+const D7_SOCIETIES = ['Abys', 'ADP', 'Cortina', 'Marengo', 'Albéria', 'Pacifia', 'Sextant Industrie'];
 
 function d7Generate() {
   const society = ePick(D7_SOCIETIES);
-  const nominal = ePick([500000, 1000000, 2000000, 5000000]);
-  const tauxPct = ePick([2.5, 3, 3.5, 4, 4.5]);
-  const dureeTotale = ePick([90, 120, 180]); // durée totale en jours
-  const jcession = ePick([30, 45, 60]); // cession après j jours
-  // Intérêts post-comptés sur la durée totale : valeur de remboursement = nominal × (1 + t × J / 360)
-  const valRemboursement = nominal * (1 + tauxPct/100 * dureeTotale / 360);
-  // Taux du marché au jour de cession (différent du taux initial, génère une plus/moins value)
-  const tauxMarchePct = eRound(tauxPct + eRandFloat(-0.50, 0.50, 2), 2);
+  const nominal = ePick([1000000, 2000000, 3000000, 5000000, 10000000]);
+  const tauxPct = ePick([2.5, 2.75, 3, 3.125, 3.25, 3.5, 3.75, 4]);
+  const dureeTotale = ePick([30, 40, 60, 90, 120]);
+  const jcession = Math.max(10, Math.floor(dureeTotale / 3)); // cession environ au tiers de la durée
   const jourRestants = dureeTotale - jcession;
-  // Prix de cession = valRemboursement / (1 + tauxMarche × jrest / 360)
-  const prixCession = valRemboursement / (1 + tauxMarchePct/100 * jourRestants / 360);
-  // Rendement réel du cédant sur la période détention = ((prixCession - nominal) / nominal) × (360 / jcession)
-  const rendCedantPct = (prixCession - nominal) / nominal * 360 / jcession * 100;
-  // Distracteurs Q1 (rendement post-compté = nominal × t × J / 360)
-  const interets = nominal * tauxPct/100 * dureeTotale / 360;
-  const wrongA1 = nominal * tauxPct/100 * dureeTotale / 365; // bases 365 au lieu de 360
-  const wrongA2 = nominal * tauxPct/100; // oublie la prorata temporis
-  const wrongA3 = nominal * (1 + tauxPct/100 * dureeTotale / 360); // donne la valeur totale au lieu des intérêts
-  const qA = eMakeDistractors(eRound(interets, 2), 2, [eRound(wrongA1, 2), eRound(wrongA2, 2), eRound(wrongA3, 2)]);
-  // Distracteurs Q2 (rendement réel du cédant)
-  const wrongB1 = eRound((prixCession - nominal) / nominal * 100, 3); // oublie l'annualisation
-  const wrongB2 = eRound((valRemboursement - nominal) / nominal * 360 / dureeTotale * 100, 3); // ignore la cession
-  const wrongB3 = eRound(tauxPct, 3); // donne le taux nominal initial
-  const qB = eMakeDistractors(eRound(rendCedantPct, 3), 3, [wrongB1, wrongB2, wrongB3]);
+  // Intérêts précomptés : prix d'émission V0 = N × (1 − t × J / 360)
+  const prixEmission = nominal * (1 - tauxPct/100 * dureeTotale / 360);
+  // Taux du marché à la cession (différent du taux initial → plus/moins value)
+  const tauxMarchePct = eRound(tauxPct + eRandFloat(-0.50, 0.50, 2), 2);
+  // Prix de cession (intérêts précomptés sur jours restants) = N × (1 − t_marché × j_restants / 360)
+  const prixCession = nominal * (1 - tauxMarchePct/100 * jourRestants / 360);
+  // Taux réel annualisé du cédant sur les jours de détention
+  // (Prix cession − Prix émission) / Prix émission × 360 / j_cession × 100
+  const tauxReelPct = (prixCession - prixEmission) / prixEmission * 360 / jcession * 100;
+  // Distracteurs Q1 (prix d'émission précompté)
+  const wrongA1 = nominal * (1 + tauxPct/100 * dureeTotale / 360); // donne la valeur post-compté à échéance
+  const wrongA2 = nominal * tauxPct/100 * dureeTotale / 360; // donne juste les intérêts
+  const wrongA3 = nominal * (1 - tauxPct/100 * dureeTotale / 365); // base 365 (faux pour monétaire)
+  const qA = eMakeDistractors(eRound(prixEmission, 2), 2, [eRound(wrongA1, 2), eRound(wrongA2, 2), eRound(wrongA3, 2)]);
+  // Distracteurs Q2 (taux réel du cédant)
+  const wrongB1 = eRound(tauxPct, 3); // donne juste le taux nominal initial
+  const wrongB2 = eRound(tauxMarchePct, 3); // donne le taux du marché
+  const wrongB3 = eRound((prixCession - prixEmission) / prixEmission * 100, 3); // oublie l'annualisation
+  const qB = eMakeDistractors(eRound(tauxReelPct, 3), 3, [wrongB1, wrongB2, wrongB3]);
   return {
     society, nominal, tauxPct, dureeTotale, jcession, jourRestants,
-    tauxMarchePct, valRemboursement, prixCession, rendCedantPct, interets,
+    tauxMarchePct, prixEmission, prixCession, tauxReelPct,
     qAOpts: qA.opts, qACorrect: qA.correctIdx,
     qBOpts: qB.opts, qBCorrect: qB.correctIdx
   };
@@ -3986,19 +4033,20 @@ function d7Render(p, ans) {
     <div class="exam-dossier" id="exam-d7">
       <div class="exam-dossier-head">
         <div class="exam-dossier-num">Dossier 7</div>
-        <div class="exam-dossier-title">NEU CP (marché monétaire)</div>
+        <div class="exam-dossier-title">NEU CP — intérêts précomptés</div>
         <div class="exam-dossier-pts">4 points</div>
       </div>
       <div class="exam-context">
-        <p>La société <strong>${p.society}</strong> souscrit un NEU CP de nominal <strong>${eFmtEur(p.nominal, 0)}</strong>, à taux d'intérêt <strong>post-compté</strong> de <strong>${eFmtPct(p.tauxPct)}</strong>, sur une durée de <strong>${p.dureeTotale} jours</strong>. Après <strong>${p.jcession} jours</strong>, le détenteur décide de céder le titre sur le marché ; à cette date, le taux du marché est de <strong>${eFmtPct(p.tauxMarchePct)}</strong> sur les <strong>${p.jourRestants} jours restants</strong>.</p>
-        <div class="exam-formule">Rappel : base de calcul des intérêts monétaires = 360 jours. Valeur remboursement = N × (1 + t × J / 360). Prix de cession = VR / (1 + t<sub>marché</sub> × j<sub>restants</sub> / 360).</div>
+        <p>Le trésorier de la société <strong>${p.society}</strong> souscrit un NEU CP de nominal <strong>${eFmtEur(p.nominal, 0)}</strong> à taux d'intérêt <strong>précompté</strong> de <strong>${eFmtPct(p.tauxPct)}</strong>, sur une durée de <strong>${p.dureeTotale} jours</strong>.</p>
+        <p>Après <strong>${p.jcession} jours</strong>, le souscripteur souhaite récupérer ses fonds. Sa banque lui trouve une contrepartie au taux de <strong>${eFmtPct(p.tauxMarchePct)}</strong> sur les <strong>${p.jourRestants} jours restants</strong>.</p>
+        <div class="exam-formule">Intérêts précomptés (base 360 jours) : V<sub>0</sub> = N × (1 − t × J / 360). Cession : V<sub>cession</sub> = N × (1 − t<sub>marché</sub> × j<sub>restants</sub> / 360).</div>
       </div>
       <div class="exam-q">
-        <div class="exam-q-prompt"><strong>a)</strong> Si le NEU CP était conservé jusqu'à l'échéance, quel serait le montant des intérêts perçus ? <span class="exam-q-pts">2 pts</span></div>
+        <div class="exam-q-prompt"><strong>a)</strong> Quelle somme le souscripteur doit-il verser à la banque le jour de l'émission ? <span class="exam-q-pts">2 pts</span></div>
         <div class="exam-opts">${optsHTML('d7a', p.qAOpts, v => eFmtEur(v, 2))}</div>
       </div>
       <div class="exam-q">
-        <div class="exam-q-prompt"><strong>b)</strong> Quel est le rendement réel annualisé obtenu par le cédant à la suite de la cession après ${p.jcession} jours ? <span class="exam-q-pts">2 pts</span></div>
+        <div class="exam-q-prompt"><strong>b)</strong> Quel est le taux réel annualisé du placement obtenu par le cédant sur la période de détention (${p.jcession} jours) ? <span class="exam-q-pts">2 pts</span></div>
         <div class="exam-opts">${optsHTML('d7b', p.qBOpts, v => eFmtPct(v, 3))}</div>
       </div>
     </div>
@@ -4013,56 +4061,57 @@ function d7Correct(p, ans) {
     pts: (okA ? 2 : 0) + (okB ? 2 : 0), total: 4,
     details: [
       {
-        q: 'a) Intérêts si conservé à échéance',
+        q: 'a) Somme versée à l\'émission',
         userOk: okA, points: okA ? 2 : 0, max: 2,
         userAnswer: ans['d7a'] != null ? `${String.fromCharCode(65 + ans['d7a'])}. ${eFmtEur(p.qAOpts[ans['d7a']], 2)}` : '—',
-        correctAnswer: eFmtEur(p.interets, 2),
-        explain: `Intérêts post-comptés = N × t × J / 360 = ${eFmtEur(p.nominal, 0)} × ${eFmtNum(p.tauxPct/100, 4)} × ${p.dureeTotale} / 360 = <strong>${eFmtEur(p.interets, 2)}</strong>.<br>Valeur de remboursement totale = N + intérêts = ${eFmtEur(p.valRemboursement, 2)}.`
+        correctAnswer: eFmtEur(p.prixEmission, 2),
+        explain: `Avec des intérêts <strong>précomptés</strong>, le souscripteur paie un prix d'émission inférieur au nominal, et perçoit le nominal complet à l'échéance.<br>V<sub>0</sub> = N × (1 − t × J / 360) = ${eFmtEur(p.nominal, 0)} × (1 − ${eFmtNum(p.tauxPct/100, 4)} × ${p.dureeTotale} / 360)<br>= ${eFmtEur(p.nominal, 0)} × ${eFmtNum(1 - p.tauxPct/100 * p.dureeTotale/360, 6)}<br>= <strong>${eFmtEur(p.prixEmission, 2)}</strong>.<br>Les intérêts précomptés (${eFmtEur(p.nominal - p.prixEmission, 2)}) sont déduits dès l'émission.`
       },
       {
-        q: 'b) Rendement réel du cédant',
+        q: 'b) Taux réel annualisé du cédant',
         userOk: okB, points: okB ? 2 : 0, max: 2,
         userAnswer: ans['d7b'] != null ? `${String.fromCharCode(65 + ans['d7b'])}. ${eFmtPct(p.qBOpts[ans['d7b']], 3)}` : '—',
-        correctAnswer: eFmtPct(p.rendCedantPct, 3),
-        explain: `Prix de cession = VR / (1 + t<sub>marché</sub> × j<sub>restants</sub> / 360) = ${eFmtEur(p.valRemboursement, 2)} / (1 + ${eFmtNum(p.tauxMarchePct/100, 4)} × ${p.jourRestants} / 360) = <strong>${eFmtEur(p.prixCession, 2)}</strong>.<br>Rendement réel annualisé = (prix cession − nominal) / nominal × 360 / j<sub>détenu</sub> × 100<br>= (${eFmtEur(p.prixCession, 2)} − ${eFmtEur(p.nominal, 0)}) / ${eFmtEur(p.nominal, 0)} × 360 / ${p.jcession} × 100<br>= <strong>${eFmtPct(p.rendCedantPct, 3)}</strong>.<br>${p.tauxMarchePct > p.tauxPct ? 'Le taux du marché ayant monté, le prix de cession est plus bas que prévu : le rendement réel du cédant est inférieur au taux nominal initial.' : 'Le taux du marché ayant baissé, le prix de cession est plus élevé que prévu : le rendement réel du cédant est supérieur au taux nominal initial.'}`
+        correctAnswer: eFmtPct(p.tauxReelPct, 3),
+        explain: `Prix de cession (lui aussi en intérêts précomptés sur jours restants) = N × (1 − t<sub>marché</sub> × j<sub>restants</sub> / 360) = ${eFmtEur(p.nominal, 0)} × (1 − ${eFmtNum(p.tauxMarchePct/100, 4)} × ${p.jourRestants}/360) = <strong>${eFmtEur(p.prixCession, 2)}</strong>.<br>Taux réel annualisé = (V<sub>cession</sub> − V<sub>0</sub>) / V<sub>0</sub> × 360 / j<sub>détenus</sub> × 100<br>= (${eFmtEur(p.prixCession, 2)} − ${eFmtEur(p.prixEmission, 2)}) / ${eFmtEur(p.prixEmission, 2)} × 360 / ${p.jcession} × 100<br>= <strong>${eFmtPct(p.tauxReelPct, 3)}</strong>.<br>${p.tauxMarchePct > p.tauxPct ? "Le taux du marché ayant monté, le prix de cession est plus bas que ce que le cédant aurait obtenu en conservant : son taux réel est inférieur au taux nominal initial." : "Le taux du marché ayant baissé, le prix de cession est plus élevé : le cédant obtient un taux réel supérieur au taux nominal initial."}`
       }
     ]
   };
 }
 
 /* ═══════════════════════════════════════════════════════════
-   DOSSIER 8 — SWAP DE TAUX (4 pts)
-   2 sous-questions : économie via swap + identification de la stratégie
+   DOSSIER 8 — SWAP DE TAUX : DIFFÉRENTIEL + PARTAGE (4 pts)
+   Format Apps 12-13 du cours Robin
+   2 sous-questions : différentiel d'avantage comparatif + résultat du swap
    ═══════════════════════════════════════════════════════════ */
-const D8_SOCIETIES = ['Falcon Industries', 'Mistral Capital', 'Ravello', 'Cassiopée', 'Berlioz', 'Lugano Group'];
 
 function d8Generate() {
-  const society = ePick(D8_SOCIETIES);
-  const nominal = ePick([5000000, 10000000, 15000000, 20000000]);
-  const duree = ePick([3, 4, 5, 6]);
-  // Taux variable initial Euribor + spread (l'entreprise a une dette à taux variable et craint la hausse)
-  const euriborSpot = eRandFloat(2.50, 4.50, 2);
-  const spreadEntreprise = ePick([0.50, 0.75, 1.00, 1.25]);
-  // Taux fixe offert par la banque pour le swap (fait l'arbitrage)
-  const tauxFixeSwap = eRound(euriborSpot + eRandFloat(-0.30, 0.30, 2), 2);
-  // Scénario de hausse de l'Euribor sur la période
-  const euriborMoyen = eRound(euriborSpot + eRandFloat(0.40, 1.50, 2), 2);
-  const tauxVariableMoyen = eRound(euriborMoyen + spreadEntreprise, 2);
-  // Coût annuel sans swap (taux variable moyen sur le nominal)
-  const coutSansSwap = nominal * tauxVariableMoyen / 100;
-  // Coût annuel avec swap (taux fixe + spread)
-  const coutAvecSwap = nominal * (tauxFixeSwap + spreadEntreprise) / 100;
-  // Économie annuelle réalisée (positive si swap avantageux)
-  const economie = coutSansSwap - coutAvecSwap;
-  const economieTotale = economie * duree;
-  // Distracteurs Q1
-  const wrong1 = nominal * (tauxVariableMoyen - tauxFixeSwap) / 100; // oublie le spread des 2 côtés (s'annule donc même formule, mais raisonnement différent)
-  const wrong2 = nominal * (euriborMoyen - tauxFixeSwap) / 100 * duree; // sans le spread
-  const wrong3 = nominal * tauxFixeSwap / 100; // donne juste le coût fixe
-  const qA = eMakeDistractors(eRound(economieTotale, 0), 0, [eRound(wrong1 * duree, 0), eRound(wrong2, 0), eRound(wrong3, 0)]);
+  const tauxFixeA = eRound(eRandFloat(5.5, 7.5, 2), 2);
+  const spreadA = eRound(eRandFloat(0.30, 0.80, 2), 2); // A : Euribor + spreadA
+  // B est moins bien noté, donc taux plus élevés des 2 côtés
+  const ecartFixe = eRound(eRandFloat(0.75, 1.50, 2), 2);
+  const ecartVar = eRound(eRandFloat(0.30, 0.80, 2), 2); // B a un écart variable plus faible (avantage relatif en variable)
+  const tauxFixeB = eRound(tauxFixeA + ecartFixe, 2);
+  const spreadB = eRound(spreadA + ecartVar, 2);
+  // Différentiel d'avantage comparatif = écart fixe − écart variable
+  const differentiel = eRound(ecartFixe - ecartVar, 2);
+  // Préférences : A veut taux variable, B veut taux fixe (l'inverse de leur avantage absolu)
+  // Stratégie : A emprunte là où elle est meilleure en relatif (en fixe), B en variable. Puis swap.
+  // Coût final A après swap = tauxFixeA + (variable reçu de B − fixe payé à B) = en pratique = tauxFixeA + (Euribor + spread − tauxSwapFixe)
+  // Pour simplifier, on propose un swap symétrique : A et B se partagent le différentiel à 50/50
+  const gainParPartie = eRound(differentiel / 2, 3);
+  // Sans swap : A paierait directement en variable Euribor + spreadA
+  // Avec swap (et partage 50/50) : A paie Euribor + spreadA − gainParPartie
+  const coutFinalA = eRound(spreadA - gainParPartie, 3); // sur le spread, A bénéficie du gain
+  const coutFinalB = eRound(tauxFixeB - gainParPartie, 3); // sur le fixe, B bénéficie du gain
+  // Distracteurs Q1 (différentiel)
+  const wrongA1 = ecartFixe; // confond avec l'écart absolu fixe
+  const wrongA2 = ecartVar; // confond avec l'écart variable
+  const wrongA3 = eRound(ecartFixe + ecartVar, 2); // somme
+  const qA = eMakeDistractors(differentiel, 2, [wrongA1, wrongA2, wrongA3]);
   return {
-    society, nominal, duree, euriborSpot, spreadEntreprise, tauxFixeSwap,
-    euriborMoyen, tauxVariableMoyen, coutSansSwap, coutAvecSwap, economie, economieTotale,
+    tauxFixeA, spreadA, tauxFixeB, spreadB,
+    ecartFixe, ecartVar, differentiel, gainParPartie,
+    coutFinalA, coutFinalB,
     qAOpts: qA.opts, qACorrect: qA.correctIdx
   };
 }
@@ -4074,10 +4123,10 @@ function d8Render(p, ans) {
     return `<button type="button" class="exam-opt${sel ? ' selected' : ''}" data-q="${qid}" data-i="${i}" onclick="examPick('${qid}', ${i})">${String.fromCharCode(65 + i)}. ${fmt(v)}</button>`;
   }).join('');
   const bChoices = [
-    'L\'entreprise reçoit le taux fixe et paie le taux variable — elle parie sur une baisse de l\'Euribor.',
-    'L\'entreprise paie le taux fixe et reçoit le taux variable — elle se protège contre une hausse de l\'Euribor.',
-    'L\'entreprise et la banque échangent leurs principaux respectifs en plus des intérêts.',
-    'L\'entreprise rembourse sa dette par anticipation et contracte un nouvel emprunt à taux fixe.'
+    'A emprunte en taux variable (Euribor + spread) et B emprunte en taux fixe : chacun emprunte dans le sens de sa préférence finale, sans swap nécessaire.',
+    'A emprunte en taux fixe et B emprunte en taux variable : chacun choisit son avantage absolu, puis ils échangent les flux via le swap (A paie variable à B et reçoit fixe ; B paie fixe à A et reçoit variable). Chacun atteint sa préférence et partage le différentiel.',
+    'A et B empruntent tous deux en taux variable, puis seul B convertit sa dette en fixe par le swap avec la banque.',
+    'A et B échangent leurs nominaux ; le swap correspond à un transfert pur et simple de la dette de l\'un vers l\'autre.'
   ];
   const bHTML = bChoices.map((c, i) => {
     const sel = ans['d8b'] === i;
@@ -4087,19 +4136,27 @@ function d8Render(p, ans) {
     <div class="exam-dossier" id="exam-d8">
       <div class="exam-dossier-head">
         <div class="exam-dossier-num">Dossier 8</div>
-        <div class="exam-dossier-title">Swap de taux</div>
+        <div class="exam-dossier-title">Swap de taux — différentiel et partage</div>
         <div class="exam-dossier-pts">4 points</div>
       </div>
       <div class="exam-context">
-        <p>La société <strong>${p.society}</strong> dispose d'une dette à taux variable indexée sur l'Euribor (spot ${eFmtPct(p.euriborSpot)}) majoré d'un spread de <strong>${eFmtPct(p.spreadEntreprise)}</strong>. Le nominal de la dette est de <strong>${eFmtEur(p.nominal, 0)}</strong>, sur une durée résiduelle de <strong>${p.duree} ans</strong>. Craignant une hausse des taux, elle négocie un swap de taux avec sa banque (échange du taux variable contre un taux fixe de <strong>${eFmtPct(p.tauxFixeSwap)}</strong>).</p>
-        <p>Sur la période, l'Euribor connaît effectivement une hausse, et le taux moyen constaté est de <strong>${eFmtPct(p.euriborMoyen)}</strong>.</p>
+        <p>Deux entreprises envisagent de réaliser un emprunt mais bénéficient de conditions d'accès au marché différentes (notations différentes). L'entreprise <strong>A</strong> souhaiterait s'endetter à <strong>taux variable</strong>, alors que <strong>B</strong> préférerait un taux <strong>fixe</strong>.</p>
+        <table class="exam-table">
+          <thead><tr><th></th><th>Taux fixe disponible</th><th>Taux variable disponible</th></tr></thead>
+          <tbody>
+            <tr><th>Entreprise A</th><td>${eFmtPct(p.tauxFixeA)}</td><td>Euribor + ${eFmtPct(p.spreadA)}</td></tr>
+            <tr><th>Entreprise B</th><td>${eFmtPct(p.tauxFixeB)}</td><td>Euribor + ${eFmtPct(p.spreadB)}</td></tr>
+            <tr style="background:rgba(61,114,180,0.06)"><th>Écart B − A</th><td><strong>+${eFmtPct(p.ecartFixe)}</strong></td><td><strong>+${eFmtPct(p.ecartVar)}</strong></td></tr>
+          </tbody>
+        </table>
+        <div class="exam-formule">Différentiel de taux (avantage comparatif) = écart fixe − écart variable</div>
       </div>
       <div class="exam-q">
-        <div class="exam-q-prompt"><strong>a)</strong> Quelle est l'économie totale réalisée grâce au swap sur les ${p.duree} ans (cumul) ? <span class="exam-q-pts">2 pts</span></div>
-        <div class="exam-opts">${optsHTML('d8a', p.qAOpts, v => eFmtEur(v, 0))}</div>
+        <div class="exam-q-prompt"><strong>a)</strong> Calculez le différentiel de taux qui peut être partagé entre les deux entreprises via un swap. <span class="exam-q-pts">2 pts</span></div>
+        <div class="exam-opts">${optsHTML('d8a', p.qAOpts, v => eFmtPct(v, 2))}</div>
       </div>
       <div class="exam-q">
-        <div class="exam-q-prompt"><strong>b)</strong> Comment caractériser correctement la stratégie de swap retenue par ${p.society} ? <span class="exam-q-pts">2 pts</span></div>
+        <div class="exam-q-prompt"><strong>b)</strong> Caractérisez correctement la mise en place du swap entre A et B. <span class="exam-q-pts">2 pts</span></div>
         <div class="exam-opts">${bHTML}</div>
       </div>
     </div>
@@ -4109,57 +4166,57 @@ function d8Render(p, ans) {
 function d8Correct(p, ans) {
   ans = ans || {};
   const okA = ans['d8a'] === p.qACorrect;
-  const okB = ans['d8b'] === 1; // option B : paie fixe, reçoit variable
+  const okB = ans['d8b'] === 1; // option B : chacun emprunte là où il a son avantage absolu, puis swap
   return {
     pts: (okA ? 2 : 0) + (okB ? 2 : 0), total: 4,
     details: [
       {
-        q: 'a) Économie totale réalisée',
+        q: 'a) Différentiel d\'avantage comparatif',
         userOk: okA, points: okA ? 2 : 0, max: 2,
-        userAnswer: ans['d8a'] != null ? `${String.fromCharCode(65 + ans['d8a'])}. ${eFmtEur(p.qAOpts[ans['d8a']], 0)}` : '—',
-        correctAnswer: eFmtEur(p.economieTotale, 0),
-        explain: `Coût sans swap (taux variable moyen ${eFmtPct(p.tauxVariableMoyen)}) = ${eFmtEur(p.nominal, 0)} × ${eFmtNum(p.tauxVariableMoyen/100, 4)} = ${eFmtEur(p.coutSansSwap, 0)} par an.<br>Coût avec swap (taux fixe ${eFmtPct(p.tauxFixeSwap)} + spread ${eFmtPct(p.spreadEntreprise)}) = ${eFmtEur(p.nominal, 0)} × ${eFmtNum((p.tauxFixeSwap + p.spreadEntreprise)/100, 4)} = ${eFmtEur(p.coutAvecSwap, 0)} par an.<br>Économie annuelle = ${eFmtEur(p.economie, 0)} × ${p.duree} ans = <strong>${eFmtEur(p.economieTotale, 0)}</strong>.${p.economie >= 0 ? '' : ' (négatif : le swap a coûté plus cher car l\'Euribor n\'a pas monté autant que prévu)'}`
+        userAnswer: ans['d8a'] != null ? `${String.fromCharCode(65 + ans['d8a'])}. ${eFmtPct(p.qAOpts[ans['d8a']], 2)}` : '—',
+        correctAnswer: eFmtPct(p.differentiel, 2),
+        explain: `A est meilleure que B des deux côtés (avantage absolu) : écart de ${eFmtPct(p.ecartFixe)} en fixe et ${eFmtPct(p.ecartVar)} en variable. Mais A est <strong>relativement</strong> meilleure en fixe (où l'écart est plus grand). Le différentiel exploitable est : écart fixe − écart variable = ${eFmtPct(p.ecartFixe)} − ${eFmtPct(p.ecartVar)} = <strong>${eFmtPct(p.differentiel, 2)}</strong>. C'est le gain total qui peut être partagé entre A et B grâce au swap (typiquement à 50/50, soit ${eFmtPct(p.gainParPartie, 3)} chacun).`
       },
       {
-        q: 'b) Caractérisation du swap',
+        q: 'b) Mécanique du swap',
         userOk: okB, points: okB ? 2 : 0, max: 2,
         userAnswer: ans['d8b'] != null ? String.fromCharCode(65 + ans['d8b']) : '—',
-        correctAnswer: 'B — Paie le fixe, reçoit le variable',
-        explain: "Dans un coupon swap, deux parties échangent des flux d'intérêts sur un même nominal sans échange de principal (contrairement à l'option C qui est fausse). L'entreprise endettée à taux variable et craignant la hausse PAIE le fixe à la banque et REÇOIT le variable, qui lui sert à honorer sa dette. Résultat : elle s'est transformée économiquement en emprunteur à taux fixe et est protégée contre la hausse de l'Euribor."
+        correctAnswer: 'B — Chacun emprunte sur son avantage absolu, puis swap',
+        explain: `Pour exploiter l'avantage comparatif : A emprunte en taux fixe à ${eFmtPct(p.tauxFixeA)} (où elle a le plus gros avantage), B emprunte en taux variable à Euribor + ${eFmtPct(p.spreadB)} (sa meilleure option relative). Puis elles échangent via le swap : A paie le variable à B et reçoit le fixe, B paie le fixe et reçoit le variable. Résultat : chacune obtient le type de taux qu'elle préférait initialement (A en variable, B en fixe), mais à un coût plus faible que si elle avait emprunté directement dans ce type de taux. Avec partage 50/50 du différentiel : A finit à Euribor + ${eFmtPct(p.coutFinalA, 3)} (au lieu de Euribor + ${eFmtPct(p.spreadA)} directement), B finit à ${eFmtPct(p.coutFinalB, 3)} (au lieu de ${eFmtPct(p.tauxFixeB)} directement). Chacune gagne ${eFmtPct(p.gainParPartie, 3)}.`
       }
     ]
   };
 }
 
 /* ═══════════════════════════════════════════════════════════
-   DOSSIER 9 — FRA (Forward Rate Agreement, 4 pts)
-   2 sous-questions : taux FRA garanti + qui paie à l'échéance
+   DOSSIER 9 — FRA : COMPENSATION À L'ÉCHÉANCE (4 pts)
+   Format App 14 du cours Robin
+   Taux FRA donné, scénarios Euribor à l'échéance, calcul de la
+   compensation et identification de qui paie qui.
    ═══════════════════════════════════════════════════════════ */
-const D9_SOCIETIES = ['Tritia', 'Auralis', 'Sandar', 'Volubilis', 'Nimbus Capital', 'Calypso Finance'];
+const D9_SOCIETIES = ['Erida', 'Volubilis', 'Calypso', 'Sandar', 'Tritia', 'Auralis'];
 
 function d9Generate() {
   const society = ePick(D9_SOCIETIES);
-  const montant = ePick([500000, 1000000, 2000000, 5000000, 10000000]);
-  // FRA 3 contre 9 : départ dans 3 mois, durée 6 mois (donc 9-3 = 6)
-  const dCourt = ePick([3, 6]); // mois avant départ
-  const dLong = dCourt + ePick([6, 9, 12]); // total
-  const dPeriode = dLong - dCourt; // durée du prêt couvert
-  // Taux spot du marché
-  const tCourtPct = eRandFloat(2.50, 4.50, 2);
-  const tLongPct = eRound(tCourtPct + eRandFloat(0.10, 0.80, 2), 2);
-  // Calcul du taux FRA : tFRA = ((1 + tLong × dLong/12) / (1 + tCourt × dCourt/12) - 1) × (12/dPeriode)
-  const factor = (1 + tLongPct/100 * dLong/12) / (1 + tCourtPct/100 * dCourt/12);
-  const tFRA = (factor - 1) * (12 / dPeriode) * 100;
-  // Taux Euribor à l'échéance (scénario qui peut être > ou < au tFRA)
-  const tRefEcheancePct = eRound(tFRA + eRandFloat(-1.5, 1.5, 2), 2);
+  const montant = ePick([500000, 1000000, 2000000, 5000000]);
+  // Position : placeur (craint baisse) ou emprunteur (craint hausse)
+  const position = ePick(['placeur', 'emprunteur']);
+  // FRA durée
+  const dAttente = ePick([3, 6]); // mois avant départ
+  const dPeriode = ePick([3, 6]); // durée du prêt/placement couvert
+  // Taux FRA donné (le cours donne le taux directement, pas de calcul de FRA)
+  const tFRAPct = ePick([2.5, 2.75, 2.8, 3, 3.25, 3.5, 3.75, 4]);
+  // Scénario Euribor à l'échéance
+  const tEuriborPct = eRound(tFRAPct + eRandFloat(-0.80, 0.80, 2), 2);
+  // Compensation = |tEuribor − tFRA| × montant × dPeriode/12
+  const compensation = Math.abs(tEuriborPct - tFRAPct) / 100 * montant * dPeriode / 12;
   // Distracteurs Q1
-  const wrong1 = eRound(tLongPct - tCourtPct, 3); // erreur courante : simple différence
-  const wrong2 = eRound((tLongPct * dLong - tCourtPct * dCourt) / dPeriode, 3); // oublie le terme correctif
-  const wrong3 = eRound((tLongPct + tCourtPct) / 2, 3); // moyenne (faux)
-  const qA = eMakeDistractors(eRound(tFRA, 3), 3, [wrong1, wrong2, wrong3]);
+  const wrong1 = eRound(Math.abs(tEuriborPct - tFRAPct) / 100 * montant, 2); // oublie prorata temporis
+  const wrong2 = eRound(Math.abs(tEuriborPct - tFRAPct) / 100 * montant * dPeriode, 2); // dpériode au lieu de dpériode/12
+  const wrong3 = eRound(tFRAPct / 100 * montant * dPeriode / 12, 2); // utilise tFRA seul (faux)
+  const qA = eMakeDistractors(eRound(compensation, 2), 2, [wrong1, wrong2, wrong3]);
   return {
-    society, montant, dCourt, dLong, dPeriode, tCourtPct, tLongPct, tFRA,
-    tRefEcheancePct,
+    society, montant, position, dAttente, dPeriode, tFRAPct, tEuriborPct, compensation,
     qAOpts: qA.opts, qACorrect: qA.correctIdx
   };
 }
@@ -4170,12 +4227,32 @@ function d9Render(p, ans) {
     const sel = ans[qid] === i;
     return `<button type="button" class="exam-opt${sel ? ' selected' : ''}" data-q="${qid}" data-i="${i}" onclick="examPick('${qid}', ${i})">${String.fromCharCode(65 + i)}. ${fmt(v)}</button>`;
   }).join('');
-  const bChoices = [
-    'C\'est la banque qui verse la différence à l\'entreprise (l\'entreprise est gagnante).',
-    'C\'est l\'entreprise qui verse la différence à la banque (l\'entreprise est perdante).',
-    'Aucun versement n\'a lieu : seul le taux garanti s\'applique.',
-    'L\'entreprise rembourse intégralement le contrat à l\'échéance.'
-  ];
+  // Pour la Q2 : qui verse à qui ?
+  const isPlaceur = p.position === 'placeur';
+  const bChoices = isPlaceur
+    ? [
+        "L'entreprise verse la différence à la banque (l'Euribor a baissé en dessous du FRA, mais c'est la banque qui paie).",
+        "La banque verse la différence à l'entreprise (l'Euribor a baissé sous le FRA et l'entreprise placeuse est gagnante).",
+        "L'entreprise verse la différence à la banque (l'Euribor a monté au-dessus du FRA et l'entreprise placeuse ne bénéficie plus du FRA).",
+        "La banque verse la différence à l'entreprise (l'Euribor a monté au-dessus du FRA et l'entreprise placeuse en profite)."
+      ]
+    : [
+        "L'entreprise verse la différence à la banque (l'Euribor a monté au-dessus du FRA, donc l'entreprise emprunteur ne bénéficie plus du FRA).",
+        "La banque verse la différence à l'entreprise (l'Euribor a monté au-dessus du FRA, donc l'entreprise emprunteur est gagnante de la couverture).",
+        "La banque verse la différence à l'entreprise (l'Euribor a baissé sous le FRA, donc l'entreprise emprunteur en profite).",
+        "L'entreprise verse la différence à la banque (l'Euribor a baissé sous le FRA, et l'entreprise verse la perte du FRA à la banque)."
+      ];
+  // Détermination de la bonne réponse selon le scénario
+  let correctB;
+  if (isPlaceur) {
+    // Placeur : si Euribor < FRA → placeur est gagnant (FRA > taux marché) → banque verse à entreprise
+    // Placeur : si Euribor > FRA → placeur aurait pu placer mieux sur marché → entreprise verse à banque
+    correctB = p.tEuriborPct < p.tFRAPct ? 1 : 2;
+  } else {
+    // Emprunteur : si Euribor > FRA → emprunteur gagne (banque verse à entreprise)
+    // Emprunteur : si Euribor < FRA → entreprise verse à banque
+    correctB = p.tEuriborPct > p.tFRAPct ? 1 : 3;
+  }
   const bHTML = bChoices.map((c, i) => {
     const sel = ans['d9b'] === i;
     return `<button type="button" class="exam-opt exam-opt-wide${sel ? ' selected' : ''}" data-q="d9b" data-i="${i}" onclick="examPick('d9b', ${i})">${String.fromCharCode(65 + i)}. ${c}</button>`;
@@ -4184,20 +4261,23 @@ function d9Render(p, ans) {
     <div class="exam-dossier" id="exam-d9">
       <div class="exam-dossier-head">
         <div class="exam-dossier-num">Dossier 9</div>
-        <div class="exam-dossier-title">FRA — Forward Rate Agreement</div>
+        <div class="exam-dossier-title">FRA — compensation à l'échéance</div>
         <div class="exam-dossier-pts">4 points</div>
       </div>
       <div class="exam-context">
-        <p>La société <strong>${p.society}</strong> sait qu'elle devra emprunter <strong>${eFmtEur(p.montant, 0)}</strong> dans <strong>${p.dCourt} mois</strong> pour une durée de <strong>${p.dPeriode} mois</strong>. Pour se protéger contre une hausse des taux, elle souscrit aujourd'hui un FRA ${p.dCourt} contre ${p.dLong} (départ ${p.dCourt} mois, échéance ${p.dLong} mois).</p>
-        <p>Conditions du marché aujourd'hui : taux ${p.dCourt} mois = <strong>${eFmtPct(p.tCourtPct)}</strong>, taux ${p.dLong} mois = <strong>${eFmtPct(p.tLongPct)}</strong>.</p>
-        <div class="exam-formule">Formule FRA : t<sub>FRA</sub> = [(1 + t<sub>long</sub> × J<sub>long</sub>/12) / (1 + t<sub>court</sub> × J<sub>court</sub>/12) − 1] × (12 / J<sub>période</sub>)</div>
+        <p>${isPlaceur
+          ? `Au 1<sup>er</sup> décembre N, suite à son budget de trésorerie, la société <strong>${p.society}</strong> a mis en évidence qu'elle disposera d'une somme de <strong>${eFmtEur(p.montant, 0)}</strong> dans <strong>${p.dAttente} mois</strong> pour une durée de <strong>${p.dPeriode} mois</strong>. <strong>Redoutant une baisse des taux à venir</strong>, le trésorier cherche à fixer maintenant le taux de son placement futur.`
+          : `Au 1<sup>er</sup> décembre N, suite à son budget de trésorerie, la société <strong>${p.society}</strong> a mis en évidence qu'elle devra emprunter <strong>${eFmtEur(p.montant, 0)}</strong> dans <strong>${p.dAttente} mois</strong> pour une durée de <strong>${p.dPeriode} mois</strong>. <strong>Redoutant une hausse des taux à venir</strong>, le trésorier cherche à fixer maintenant le taux de son emprunt futur.`}</p>
+        <p>Sa banque lui propose un contrat <strong>FRA ${p.dPeriode} mois dans ${p.dAttente} mois</strong> au taux de <strong>${eFmtPct(p.tFRAPct)}</strong> (taux de référence Euribor ${p.dPeriode} mois).</p>
+        <p>À l'échéance (dans ${p.dAttente} mois), le taux Euribor ${p.dPeriode} mois constaté est de <strong>${eFmtPct(p.tEuriborPct)}</strong>.</p>
+        <div class="exam-formule">Compensation FRA = |t<sub>Euribor</sub> − t<sub>FRA</sub>| × Montant × J<sub>période</sub> / 12</div>
       </div>
       <div class="exam-q">
-        <div class="exam-q-prompt"><strong>a)</strong> Calculez le taux FRA garanti par la banque pour la période de ${p.dPeriode} mois. <span class="exam-q-pts">2 pts</span></div>
-        <div class="exam-opts">${optsHTML('d9a', p.qAOpts, v => eFmtPct(v, 3))}</div>
+        <div class="exam-q-prompt"><strong>a)</strong> Calculez le montant de la compensation versée entre la banque et l'entreprise à l'échéance. <span class="exam-q-pts">2 pts</span></div>
+        <div class="exam-opts">${optsHTML('d9a', p.qAOpts, v => eFmtEur(v, 2))}</div>
       </div>
       <div class="exam-q">
-        <div class="exam-q-prompt"><strong>b)</strong> À l'échéance du FRA, le taux Euribor ${p.dPeriode} mois constaté est de <strong>${eFmtPct(p.tRefEcheancePct)}</strong>. Que se passe-t-il ? <span class="exam-q-pts">2 pts</span></div>
+        <div class="exam-q-prompt"><strong>b)</strong> Quel est le sens du versement de cette compensation ? <span class="exam-q-pts">2 pts</span></div>
         <div class="exam-opts">${bHTML}</div>
       </div>
     </div>
@@ -4207,26 +4287,53 @@ function d9Render(p, ans) {
 function d9Correct(p, ans) {
   ans = ans || {};
   const okA = ans['d9a'] === p.qACorrect;
-  // À l'échéance : si taux constaté > tFRA, la banque verse la différence à l'entreprise (qui est gagnante) → option A
-  // Si taux constaté < tFRA, l'entreprise verse la différence à la banque → option B
-  const correctB = p.tRefEcheancePct > p.tFRA ? 0 : 1;
+  const isPlaceur = p.position === 'placeur';
+  let correctB;
+  if (isPlaceur) {
+    correctB = p.tEuriborPct < p.tFRAPct ? 1 : 2;
+  } else {
+    correctB = p.tEuriborPct > p.tFRAPct ? 1 : 3;
+  }
   const okB = ans['d9b'] === correctB;
+  // Texte de la réponse correcte
+  const correctText = isPlaceur
+    ? (p.tEuriborPct < p.tFRAPct
+        ? "B — La banque verse à l'entreprise placeuse (Euribor < FRA)"
+        : "C — L'entreprise placeuse verse à la banque (Euribor > FRA)")
+    : (p.tEuriborPct > p.tFRAPct
+        ? "B — La banque verse à l'entreprise emprunteur (Euribor > FRA)"
+        : "D — L'entreprise emprunteur verse à la banque (Euribor < FRA)");
+  // Explication du sens
+  let senExpl;
+  if (isPlaceur) {
+    if (p.tEuriborPct < p.tFRAPct) {
+      senExpl = "La société est <strong>placeuse</strong> et redoutait une baisse des taux. À l'échéance, l'Euribor est effectivement <strong>inférieur</strong> au FRA : sans couverture, elle aurait placé à un taux plus faible. <strong>Le FRA joue : la banque verse le différentiel à l'entreprise</strong>, qui obtient un taux de placement effectif égal au taux FRA.";
+    } else {
+      senExpl = "La société est <strong>placeuse</strong> et craignait une baisse. À l'échéance, l'Euribor est <strong>supérieur</strong> au FRA : elle aurait pu placer à un meilleur taux sans couverture. Le FRA joue en sens inverse : <strong>l'entreprise verse le différentiel à la banque</strong>. Au final son taux de placement effectif est toujours le FRA (couverture exacte).";
+    }
+  } else {
+    if (p.tEuriborPct > p.tFRAPct) {
+      senExpl = "La société est <strong>emprunteur</strong> et craignait une hausse. À l'échéance, l'Euribor est effectivement <strong>supérieur</strong> au FRA : sans couverture, elle paierait un taux plus élevé. <strong>Le FRA joue : la banque verse le différentiel à l'entreprise</strong>, ce qui ramène son taux d'emprunt effectif au taux FRA.";
+    } else {
+      senExpl = "La société est <strong>emprunteur</strong> et craignait une hausse. À l'échéance, l'Euribor est <strong>inférieur</strong> au FRA : elle aurait pu emprunter à un meilleur taux sans couverture. Le FRA joue en sens inverse : <strong>l'entreprise verse le différentiel à la banque</strong>. Son taux d'emprunt effectif reste le FRA (couverture exacte).";
+    }
+  }
   return {
     pts: (okA ? 2 : 0) + (okB ? 2 : 0), total: 4,
     details: [
       {
-        q: 'a) Taux FRA garanti',
+        q: 'a) Montant de la compensation',
         userOk: okA, points: okA ? 2 : 0, max: 2,
-        userAnswer: ans['d9a'] != null ? `${String.fromCharCode(65 + ans['d9a'])}. ${eFmtPct(p.qAOpts[ans['d9a']], 3)}` : '—',
-        correctAnswer: eFmtPct(p.tFRA, 3),
-        explain: `t<sub>FRA</sub> = [(1 + ${eFmtNum(p.tLongPct/100, 4)} × ${p.dLong}/12) / (1 + ${eFmtNum(p.tCourtPct/100, 4)} × ${p.dCourt}/12) − 1] × (12 / ${p.dPeriode})<br>= [${eFmtNum(1 + p.tLongPct/100 * p.dLong/12, 6)} / ${eFmtNum(1 + p.tCourtPct/100 * p.dCourt/12, 6)} − 1] × ${eFmtNum(12/p.dPeriode, 4)}<br>= [${eFmtNum((1 + p.tLongPct/100 * p.dLong/12) / (1 + p.tCourtPct/100 * p.dCourt/12), 6)} − 1] × ${eFmtNum(12/p.dPeriode, 4)}<br>= <strong>${eFmtPct(p.tFRA, 3)}</strong>.`
+        userAnswer: ans['d9a'] != null ? `${String.fromCharCode(65 + ans['d9a'])}. ${eFmtEur(p.qAOpts[ans['d9a']], 2)}` : '—',
+        correctAnswer: eFmtEur(p.compensation, 2),
+        explain: `Compensation = |t<sub>Euribor</sub> − t<sub>FRA</sub>| × Montant × J<sub>période</sub> / 12<br>= |${eFmtPct(p.tEuriborPct)} − ${eFmtPct(p.tFRAPct)}| × ${eFmtEur(p.montant, 0)} × ${p.dPeriode} / 12<br>= ${eFmtPct(Math.abs(p.tEuriborPct - p.tFRAPct), 3)} × ${eFmtEur(p.montant, 0)} × ${eFmtNum(p.dPeriode/12, 4)}<br>= <strong>${eFmtEur(p.compensation, 2)}</strong>.`
       },
       {
-        q: 'b) Échéance du FRA',
+        q: 'b) Sens de la compensation',
         userOk: okB, points: okB ? 2 : 0, max: 2,
         userAnswer: ans['d9b'] != null ? String.fromCharCode(65 + ans['d9b']) : '—',
-        correctAnswer: correctB === 0 ? 'A — La banque verse à l\'entreprise' : 'B — L\'entreprise verse à la banque',
-        explain: `À l'échéance, le taux Euribor constaté (${eFmtPct(p.tRefEcheancePct)}) est ${p.tRefEcheancePct > p.tFRA ? 'supérieur' : 'inférieur'} au taux FRA garanti (${eFmtPct(p.tFRA, 3)}). ${p.tRefEcheancePct > p.tFRA ? 'L\'entreprise emprunteur a donc gagné à se couvrir : la banque lui verse le différentiel calculé sur le montant et la période, ce qui compense le surcoût de l\'emprunt au taux Euribor.' : 'L\'entreprise emprunteur aurait pu emprunter à un meilleur taux sur le marché : elle verse le différentiel à la banque (coût d\'opportunité d\'avoir bloqué le taux à l\'avance).'} Dans tous les cas, l'entreprise emprunte effectivement au taux FRA garanti, indépendamment du taux constaté.`
+        correctAnswer: correctText,
+        explain: senExpl + " Dans tous les cas, l'objectif du FRA est atteint : le taux effectif final est toujours le taux FRA garanti, indépendamment du taux constaté sur le marché."
       }
     ]
   };
