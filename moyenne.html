@@ -264,7 +264,10 @@
   </div>
 
   <div class="moy-intro">
-    <b>Méthode.</b> Moyenne d'UE = <b>moyenne simple</b> des notes des matières (chaque matière compte autant). Exception : <b>UE 5 — Finance</b>, où la note suit la pondération du MCC (CC 25 % / CT 75 %).<br>
+    <b>Méthode.</b> Moyenne d'UE selon la structure du MCC :<br>
+    • <b>UE 1 et UE 3</b> — une seule épreuve avec sous-parties → <b>pondération par durée</b> de chaque partie.<br>
+    • <b>UE 5</b> — <b>CC 25 % / CT 75 %</b> (imposé par le MCC).<br>
+    • <b>Autres UE</b> — moyenne simple (chaque matière compte autant).<br>
     Moyenne de semestre = moyenne des UE du semestre pondérée par leur <b>coefficient d'UE</b>. Moyenne générale = idem sur toutes les UE.<br>
     Les matières marquées « au choix — tirage au sort » sont <b>décochées par défaut</b> : coche uniquement celle que tu as effectivement passée. Les matières en assiduité (UE 4, Usage et outils numériques) ne sont pas comptées dans la moyenne.<br>
     <span style="color:var(--text3);font-size:0.78rem;">Notes enregistrées automatiquement dans ton navigateur (localStorage).</span>
@@ -307,7 +310,7 @@ const MCC = [
     {
       id: 'ue1', label: 'UE 1 — Gestion juridique, fiscale et sociale',
       coef: 4, ects: 9,
-      remarque: "Épreuve écrite de 4 h (implication, restructuration, fiscalité + 1 matière au choix).",
+      remarque: "Épreuve écrite de 4 h (implication, restructuration, fiscalité + 1 matière au choix). Pondération par durée d'épreuve.",
       matieres: [
         ['ue1_implications', 'Implications juridiques fiscales et sociales', '1 h 10'],
         ['ue1_restructuration', "La restructuration de l'entreprise", '1 h 10'],
@@ -315,7 +318,8 @@ const MCC = [
         ['ue1_perennite', "La pérennité de l'entreprise", '30 min', 'ue1_choix'],
         ['ue1_concentrations', 'Le contrôle des concentrations', '30 min', 'ue1_choix']
       ],
-      groups: { 'ue1_choix': { label: 'Au choix — tirage au sort (1 matière sur 2)', expected: 1 } }
+      groups: { 'ue1_choix': { label: 'Au choix — tirage au sort (1 matière sur 2)', expected: 1 } },
+      weights: { 'ue1_implications': 70, 'ue1_restructuration': 70, 'ue1_fiscalite': 70, 'ue1_perennite': 30, 'ue1_concentrations': 30 }
     },
     {
       id: 'ue2', label: 'UE 2 — Management et contrôle de gestion',
@@ -330,11 +334,12 @@ const MCC = [
     {
       id: 'ue3', label: 'UE 3 — Comptabilité et Audit',
       coef: 4, ects: 15,
-      remarque: 'Épreuve écrite de 2 h.',
+      remarque: "Épreuve écrite de 2 h. Pondération par durée d'épreuve.",
       matieres: [
         ['ue3_fusion', 'Fusion', '40 min'],
         ['ue3_conso', 'Consolidation', '1 h 20']
-      ]
+      ],
+      weights: { 'ue3_fusion': 40, 'ue3_conso': 80 }
     },
     {
       id: 'ue4', label: 'UE 4 — Dév. et intégration de savoir hautement spécialisé',
