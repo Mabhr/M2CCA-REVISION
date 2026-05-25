@@ -146,6 +146,38 @@
   .moy-ue-result-value.lo { color: var(--red); }
   .moy-ue-result-suffix { color: var(--text3); font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; }
 
+  /* Bandeau moyenne de semestre */
+  .moy-sem-avg {
+    margin: 0.4rem 0 1.6rem;
+    padding: 1rem 1.3rem;
+    background: linear-gradient(90deg, rgba(200,131,70,0.10), rgba(200,131,70,0.02));
+    border: 1px solid rgba(200,131,70,0.30);
+    border-left: 3px solid var(--copper);
+    border-radius: 12px;
+  }
+  .moy-sem-avg-row {
+    display: flex; align-items: baseline; gap: 0.7rem;
+  }
+  .moy-sem-avg-label {
+    flex: 1;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase; letter-spacing: 1.5px;
+    font-size: 0.78rem; color: var(--copper); font-weight: 600;
+  }
+  .moy-sem-avg-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.55rem; font-weight: 700;
+    color: var(--copper);
+  }
+  .moy-sem-avg-val.pending { opacity: 0.45; }
+  .moy-sem-avg-val.lo { color: var(--red); }
+  .moy-sem-avg-suffix { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; color: var(--text3); }
+  .moy-sem-avg-det {
+    margin-top: 0.35rem;
+    font-size: 0.74rem; color: var(--text3);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
   /* Bandeau résultat global, sticky en bas */
   .moy-global {
     position: sticky; bottom: 12px; z-index: 50;
@@ -232,9 +264,9 @@
   </div>
 
   <div class="moy-intro">
-    <b>Méthode.</b> Moyenne d'UE = moyenne des notes pondérée par la <b>durée d'épreuve</b>. Moyenne générale = moyenne des UE pondérée par le <b>coefficient d'UE</b>.<br>
-    Les matières marquées « au choix — tirage au sort » sont <b>décochées par défaut</b> : coche uniquement celle que tu as effectivement passée.
-    Les matières en assiduité (UE 4, Usage et outils numériques) ne sont pas comptées dans la moyenne.<br>
+    <b>Méthode.</b> Moyenne d'UE = <b>moyenne simple</b> des notes des matières (chaque matière compte autant). Exception : <b>UE 5 — Finance</b>, où la note suit la pondération du MCC (CC 25 % / CT 75 %).<br>
+    Moyenne de semestre = moyenne des UE du semestre pondérée par leur <b>coefficient d'UE</b>. Moyenne générale = idem sur toutes les UE.<br>
+    Les matières marquées « au choix — tirage au sort » sont <b>décochées par défaut</b> : coche uniquement celle que tu as effectivement passée. Les matières en assiduité (UE 4, Usage et outils numériques) ne sont pas comptées dans la moyenne.<br>
     <span style="color:var(--text3);font-size:0.78rem;">Notes enregistrées automatiquement dans ton navigateur (localStorage).</span>
   </div>
 
@@ -264,9 +296,11 @@
 <script>
 /* ═══════════════════════════════════════════════════════════
    Données MCC M2 CCA FA/FC 2024/2025
-   Format mat : [id, label, weight, group?]
-   weight = minutes (durée d'examen) sauf indication
-   group = identifiant de groupe « au choix » (tirage au sort)
+   Format matière : [id, label, infoString, group?]
+   infoString : texte d'info (durée, % …) affiché à côté du libellé
+   group : identifiant de groupe « au choix » (tirage au sort)
+   ue.weights (optionnel) : pondération explicite par id si l'UE en a une
+                           (sinon, moyenne simple : chaque matière = 1)
    ═══════════════════════════════════════════════════════════ */
 const MCC = [
   { sem: 'Semestre 1', label: 'Septembre — Janvier', ues: [
@@ -275,11 +309,11 @@ const MCC = [
       coef: 4, ects: 9,
       remarque: "Épreuve écrite de 4 h (implication, restructuration, fiscalité + 1 matière au choix).",
       matieres: [
-        ['ue1_implications', 'Implications juridiques fiscales et sociales', 70],
-        ['ue1_restructuration', "La restructuration de l'entreprise", 70],
-        ['ue1_fiscalite', 'Fiscalité des groupes', 70],
-        ['ue1_perennite', "La pérennité de l'entreprise", 30, 'ue1_choix'],
-        ['ue1_concentrations', 'Le contrôle des concentrations', 30, 'ue1_choix']
+        ['ue1_implications', 'Implications juridiques fiscales et sociales', '1 h 10'],
+        ['ue1_restructuration', "La restructuration de l'entreprise", '1 h 10'],
+        ['ue1_fiscalite', 'Fiscalité des groupes', '1 h 10'],
+        ['ue1_perennite', "La pérennité de l'entreprise", '30 min', 'ue1_choix'],
+        ['ue1_concentrations', 'Le contrôle des concentrations', '30 min', 'ue1_choix']
       ],
       groups: { 'ue1_choix': { label: 'Au choix — tirage au sort (1 matière sur 2)', expected: 1 } }
     },
@@ -288,9 +322,9 @@ const MCC = [
       coef: 4, ects: 6,
       remarque: 'Épreuve écrite de 3 h.',
       matieres: [
-        ['ue2_cg1', 'Contrôle de gestion 1', 120],
-        ['ue2_cg2', 'Contrôle de gestion 2 (2 écrits de 1 h)', 120],
-        ['ue2_grh', 'GRH et contrôle de gestion', 60]
+        ['ue2_cg1', 'Contrôle de gestion 1', '2 h'],
+        ['ue2_cg2', 'Contrôle de gestion 2', '2 h'],
+        ['ue2_grh', 'GRH et contrôle de gestion', '1 h']
       ]
     },
     {
@@ -298,8 +332,8 @@ const MCC = [
       coef: 4, ects: 15,
       remarque: 'Épreuve écrite de 2 h.',
       matieres: [
-        ['ue3_fusion', 'Fusion', 40],
-        ['ue3_conso', 'Consolidation', 80]
+        ['ue3_fusion', 'Fusion', '40 min'],
+        ['ue3_conso', 'Consolidation', '1 h 20']
       ]
     },
     {
@@ -317,19 +351,20 @@ const MCC = [
     {
       id: 'ue5', label: 'UE 5 — Finance',
       coef: 3, ects: 9,
-      remarque: 'CC : travail de groupe (oral, 15 min) — 25 %. CT : écrit 2 h — 75 %.',
+      remarque: 'CC : travail de groupe (oral, 15 min) — 25 %. CT : écrit 2 h — 75 %. Pondération CC/CT appliquée.',
       matieres: [
-        ['ue5_inge_cc', 'Ingénierie financière — CC (oral de groupe)', 25],
-        ['ue5_inge_ct', 'Ingénierie financière — CT (écrit 2 h)', 75]
-      ]
+        ['ue5_inge_cc', 'Ingénierie financière — CC (oral de groupe)', 'oral · 25 %'],
+        ['ue5_inge_ct', 'Ingénierie financière — CT (écrit 2 h)', 'écrit · 75 %']
+      ],
+      weights: { 'ue5_inge_cc': 25, 'ue5_inge_ct': 75 }
     },
     {
       id: 'ue6', label: 'UE 6 — Management et contrôle de gestion',
       coef: 1.5, ects: 9,
       remarque: 'Épreuve écrite de 2 h.',
       matieres: [
-        ['ue6_evo_orga', "Évolution des modèles d'organisation", 60],
-        ['ue6_strat', 'Management stratégique', 60]
+        ['ue6_evo_orga', "Évolution des modèles d'organisation", '1 h'],
+        ['ue6_strat', 'Management stratégique', '1 h']
       ]
     },
     {
@@ -337,7 +372,7 @@ const MCC = [
       coef: 2, ects: 6,
       remarque: 'Épreuve écrite de 2 h.',
       matieres: [
-        ['ue7_si', "Système d'information", 120]
+        ['ue7_si', "Système d'information", '2 h']
       ]
     },
     {
@@ -345,7 +380,7 @@ const MCC = [
       coef: 1, ects: 3,
       remarque: 'Épreuve écrite de 1 h.',
       matieres: [
-        ['ue8_anglais', 'Anglais', 60]
+        ['ue8_anglais', 'Anglais', '1 h']
       ]
     },
     {
@@ -353,8 +388,8 @@ const MCC = [
       coef: 1, ects: null,
       remarque: 'Épreuve écrite de 2 h.',
       matieres: [
-        ['ue9_conduite', 'Conduite du changement et gestion des compétences', 60],
-        ['ue9_rse', 'RSE et CSRD', 60]
+        ['ue9_conduite', 'Conduite du changement et gestion des compétences', '1 h'],
+        ['ue9_rse', 'RSE et CSRD', '1 h']
       ],
       assiduite: ['Usage et outils numériques — présence obligatoire, sans pénalité']
     },
@@ -363,8 +398,8 @@ const MCC = [
       coef: 3.5, ects: 3,
       remarque: 'Mémoire (oral, 30 min) — sous-coef 1,75. Oral individuel — sous-coef 1,75.',
       matieres: [
-        ['ue10_memoire', 'Mémoire — écrit + soutenance orale', 1.75],
-        ['ue10_oral', 'Oral individuel', 1.75]
+        ['ue10_memoire', 'Mémoire — écrit + soutenance orale', 'sous-coef 1,75'],
+        ['ue10_oral', 'Oral individuel', 'sous-coef 1,75']
       ]
     }
   ]}
@@ -381,23 +416,35 @@ const save = s => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); 
 
 let state = load();
 
-const fmtDuree = (m, ue) => {
-  if (ue.id === 'ue5') return `${m} %`;
-  if (ue.id === 'ue10') return `sous-coef ${String(m).replace('.', ',')}`;
-  if (m < 60) return `${m} min`;
-  const h = Math.floor(m / 60), mn = m % 60;
-  return mn ? `${h} h ${String(mn).padStart(2, '0')}` : `${h} h`;
-};
+// Retourne le poids effectif d'une matière dans son UE
+// (explicite si l'UE a un map ue.weights, sinon 1 → moyenne simple)
+function matiereWeight(ue, id) {
+  if (ue.weights && ue.weights[id] !== undefined) return ue.weights[id];
+  return 1;
+}
 
 const escapeHtml = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 function render() {
   const root = document.getElementById('moyContent');
   root.innerHTML = '';
-  MCC.forEach(sem => {
+  MCC.forEach((sem, sIdx) => {
     const wrap = document.createElement('div');
     wrap.innerHTML = `<div class="moy-sem">${escapeHtml(sem.sem)} <span class="moy-sem-sub">${escapeHtml(sem.label)}</span></div>`;
     sem.ues.forEach(ue => wrap.appendChild(renderUE(ue)));
+    // bandeau moyenne de semestre
+    const semBlock = document.createElement('div');
+    semBlock.className = 'moy-sem-avg';
+    semBlock.id = 'semAvg_' + sIdx;
+    semBlock.innerHTML = `
+      <div class="moy-sem-avg-row">
+        <span class="moy-sem-avg-label">Moyenne ${escapeHtml(sem.sem)}</span>
+        <span class="moy-sem-avg-val pending">—</span>
+        <span class="moy-sem-avg-suffix">/20</span>
+      </div>
+      <div class="moy-sem-avg-det">—</div>
+    `;
+    wrap.appendChild(semBlock);
     root.appendChild(wrap);
   });
   attachListeners();
@@ -461,7 +508,7 @@ function renderUE(ue) {
 }
 
 function renderMatiere(m, ue) {
-  const [id, label, weight, grp] = m;
+  const [id, label, info, grp] = m;
   const st = state[id] || {};
   const isOpt = !!grp;
   const enabled = st.enabled !== undefined ? st.enabled : !isOpt;
@@ -470,7 +517,7 @@ function renderMatiere(m, ue) {
     <input type="checkbox" class="moy-matiere-check" data-id="${id}" data-field="enabled" ${enabled ? 'checked' : ''} aria-label="Activer ${escapeHtml(label)}">
     <div class="moy-matiere-info">
       <div class="moy-matiere-label">${escapeHtml(label)}</div>
-      <div class="moy-matiere-meta">${fmtDuree(weight, ue)}</div>
+      <div class="moy-matiere-meta">${escapeHtml(info)}</div>
     </div>
     <div class="moy-matiere-grade-wrap">
       <input type="number" inputmode="decimal" min="0" max="20" step="0.25" placeholder="—"
@@ -523,22 +570,23 @@ function onInput(e) {
 function recompute() {
   let totalWeightedAvg = 0, totalCoef = 0;
   let ueRenseignees = 0, ueTotales = 0;
-  let allMatGrades = [];
+  const semStats = MCC.map(() => ({ num: 0, den: 0, ueRens: 0, ueTot: 0 }));
 
-  MCC.forEach(sem => sem.ues.forEach(ue => {
+  MCC.forEach((sem, sIdx) => sem.ues.forEach(ue => {
     if (!ue.coef) return;
     ueTotales++;
+    semStats[sIdx].ueTot++;
     let num = 0, den = 0;
     (ue.matieres || []).forEach(m => {
-      const [id, , w] = m;
+      const [id] = m;
       if (!effectiveEnabled(id)) return;
       const st = state[id];
       if (!st) return;
       const g = (typeof st.grade === 'number') ? st.grade : parseFloat(st.grade);
       if (isNaN(g)) return;
+      const w = matiereWeight(ue, id);
       num += g * w;
       den += w;
-      allMatGrades.push({ id, g, w, ue: ue.id });
     });
     const avgEl = document.getElementById('avg_' + ue.id);
     if (!avgEl) return;
@@ -550,12 +598,36 @@ function recompute() {
       totalWeightedAvg += avg * ue.coef;
       totalCoef += ue.coef;
       ueRenseignees++;
+      semStats[sIdx].num += avg * ue.coef;
+      semStats[sIdx].den += ue.coef;
+      semStats[sIdx].ueRens++;
     } else {
       avgEl.textContent = '—';
       avgEl.classList.add('pending');
       avgEl.classList.remove('lo');
     }
   }));
+
+  // moyennes de semestre
+  MCC.forEach((sem, sIdx) => {
+    const el = document.getElementById('semAvg_' + sIdx);
+    if (!el) return;
+    const s = semStats[sIdx];
+    const valEl = el.querySelector('.moy-sem-avg-val');
+    const detEl = el.querySelector('.moy-sem-avg-det');
+    if (s.den > 0) {
+      const avg = s.num / s.den;
+      valEl.textContent = avg.toFixed(2).replace('.', ',');
+      valEl.classList.remove('pending');
+      valEl.classList.toggle('lo', avg < 10);
+      detEl.textContent = `${s.ueRens} / ${s.ueTot} UE renseignées · coef cumulé ${String(s.den).replace('.', ',')}`;
+    } else {
+      valEl.textContent = '—';
+      valEl.classList.add('pending');
+      valEl.classList.remove('lo');
+      detEl.textContent = `${s.ueTot} UE à renseigner`;
+    }
+  });
 
   // état des groupes « au choix »
   MCC.forEach(sem => sem.ues.forEach(ue => {
