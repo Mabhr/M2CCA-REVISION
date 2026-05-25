@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
-<link rel="stylesheet" href="shared.css?v=202605221400">
+<link rel="stylesheet" href="shared.css?v=202605251100">
 <style>
 /* ── Spécifique accueil ── */
 .hero { text-align: center; padding: 3.5rem 1rem 2.5rem; }
@@ -120,23 +120,6 @@
 .rev-empty { color: var(--green); font-size: 0.88rem; }
 .row-rev { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; font-weight: 700; color: var(--copper); background: rgba(200,131,70,0.12); border: 1px solid rgba(200,131,70,0.3); padding: 3px 9px; border-radius: 12px; white-space: nowrap; }
 
-/* ── Simulateur de moyenne ── */
-.simu { margin-top: 2.5rem; background: var(--glass); border: 1px solid var(--glass-b); border-radius: var(--radius); backdrop-filter: blur(12px); overflow: hidden; }
-.simu-head { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 1.4rem; background: none; border: none; cursor: pointer; color: var(--text); font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; }
-.simu-head:hover { background: var(--card-hover); }
-.simu-chevron { color: var(--text3); font-size: 0.85rem; }
-.simu-body { padding: 0 1.4rem 1.4rem; }
-.simu-intro { color: var(--text3); font-size: 0.8rem; margin-bottom: 0.6rem; }
-.simu-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.65rem 0; border-top: 1px solid var(--border); }
-.simu-ue { display: flex; flex-direction: column; min-width: 0; }
-.simu-ue-name { font-size: 0.86rem; color: var(--text); font-weight: 500; }
-.simu-ue-coef { font-size: 0.68rem; color: var(--text3); font-family: 'JetBrains Mono', monospace; }
-.simu-input { width: 96px; padding: 7px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg3); color: var(--text); font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; text-align: center; flex-shrink: 0; }
-.simu-input:focus { outline: none; border-color: var(--accent); }
-.simu-result { margin-top: 1rem; padding: 0.9rem 1.1rem; border-radius: 10px; background: var(--bg3); border: 1px solid var(--border); font-size: 0.98rem; text-align: center; color: var(--text2); }
-.simu-empty { color: var(--text3); font-size: 0.85rem; }
-.simu-reset { margin-top: 0.9rem; padding: 6px 14px; border-radius: 8px; border: 1px solid var(--border); background: none; color: var(--text3); cursor: pointer; font-size: 0.78rem; }
-.simu-reset:hover { color: var(--text); border-color: var(--accent); }
 .gs-r-kind { font-size: 0.62rem; font-weight: 600; padding: 1px 7px; border-radius: 4px; font-family: 'JetBrains Mono', monospace; white-space: nowrap; }
 .gs-r-kind-flash { background: rgba(200,131,70,0.15); color: var(--copper); }
 .gs-r-kind-quiz { background: rgba(77,154,168,0.15); color: var(--cyan); }
@@ -209,8 +192,6 @@
   </div>
 
   <div id="coursesRoot" class="fade-up-stagger"></div>
-
-  <section class="simu" id="simuSection"></section>
 </div>
 
 <script src="engine.js?v=202605221400"></script>
@@ -364,7 +345,6 @@ function render() {
   }).join('');
 
   renderRevBoard();
-  renderSimu();
 }
 
 /* ═══════ TABLEAU DE BORD RÉVISION ═══════ */
@@ -403,62 +383,6 @@ function renderRevBoard() {
           + '<span class="rev-count">' + it.due + '</span></a>';
       }).join('')
     + '</div>';
-}
-
-/* ═══════ SIMULATEUR DE MOYENNE ═══════ */
-const SIMU_KEY = 'm2cca_simu';
-let simuOpen = false;
-function loadSimu() { try { return JSON.parse(localStorage.getItem(SIMU_KEY)) || {}; } catch (e) { return {}; } }
-function saveSimu(s) { try { localStorage.setItem(SIMU_KEY, JSON.stringify(s)); } catch (e) { /* ignoré */ } }
-function toggleSimu() { simuOpen = !simuOpen; renderSimu(); }
-function resetSimu() { saveSimu({}); renderSimu(); }
-function computeSimuHTML(simu) {
-  let sumW = 0, sumC = 0, n = 0;
-  UE_GROUPS.forEach(function (ue, i) {
-    if (simu[i] != null) { sumW += simu[i] * ue.coef; sumC += ue.coef; n++; }
-  });
-  if (n === 0) return '<span class="simu-empty">Saisis tes notes pour voir ta moyenne projetée.</span>';
-  const avg = sumW / sumC;
-  const col = avg >= 10 ? 'var(--green)' : 'var(--red)';
-  const verdict = n === UE_GROUPS.length
-    ? (avg >= 10 ? ' · 🎓 Admis' : ' · Ajourné')
-    : ' · sur ' + n + '/' + UE_GROUPS.length + ' UE renseignées';
-  return 'Moyenne pondérée : <strong style="color:' + col + '">'
-    + avg.toFixed(2).replace('.', ',') + ' / 20</strong>' + verdict;
-}
-function onSimuInput(i, val) {
-  const simu = loadSimu();
-  const n = parseFloat(String(val).replace(',', '.'));
-  if (val === '' || isNaN(n)) delete simu[i];
-  else simu[i] = Math.max(0, Math.min(20, n));
-  saveSimu(simu);
-  const r = document.getElementById('simuResult');
-  if (r) r.innerHTML = computeSimuHTML(simu);
-}
-function renderSimu() {
-  const el = document.getElementById('simuSection');
-  if (!el) return;
-  const simu = loadSimu();
-  const rows = UE_GROUPS.map(function (ue, i) {
-    const v = simu[i] != null ? simu[i] : '';
-    return '<div class="simu-row"><div class="simu-ue">'
-      + '<span class="simu-ue-name">' + ue.ue + '</span>'
-      + '<span class="simu-ue-coef">Coefficient ' + ue.coef + '</span></div>'
-      + '<input class="simu-input" type="number" min="0" max="20" step="0.25" value="' + v + '"'
-      + ' placeholder="– / 20" oninput="onSimuInput(' + i + ', this.value)"'
-      + ' aria-label="Note sur 20 pour ' + ue.ue + '"></div>';
-  }).join('');
-  el.innerHTML =
-    '<button class="simu-head" onclick="toggleSimu()" aria-expanded="' + simuOpen + '">'
-    + '<span>🎓 Simulateur de moyenne</span>'
-    + '<span class="simu-chevron">' + (simuOpen ? '▾' : '▸') + '</span></button>'
-    + (simuOpen
-      ? '<div class="simu-body"><p class="simu-intro">Saisis une note sur 20 par UE — '
-        + 'la moyenne est pondérée par les coefficients.</p>'
-        + rows
-        + '<div class="simu-result" id="simuResult">' + computeSimuHTML(simu) + '</div>'
-        + '<button class="simu-reset" onclick="resetSimu()">Effacer les notes</button></div>'
-      : '');
 }
 
 /* ═══════ MODAL ═══════ */
