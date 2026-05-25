@@ -3847,13 +3847,493 @@ function d5Correct(p, ans) {
 /* ═══════════════════════════════════════════════════════════
    ORCHESTRATION
    ═══════════════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════════
+   DOSSIER 6 — EMPRUNT OBLIGATAIRE (4 pts)
+   2 sous-questions : annuité constante + identification mode
+   ═══════════════════════════════════════════════════════════ */
+const D6_SOCIETIES = ['Solaria', 'Borealis', 'Helvète Group', 'Côtière Capital', 'Aurore Industrie', 'Atlantia', 'Trimaran'];
+
+function d6Generate() {
+  const society = ePick(D6_SOCIETIES);
+  const nominal = ePick([1000000, 2000000, 5000000, 10000000, 15000000, 20000000]);
+  const tauxPct = ePick([2, 2.5, 3, 3.5, 4, 4.5, 5]);
+  const duree = ePick([4, 5, 6, 7, 8, 10]);
+  const i = tauxPct / 100;
+  // Annuité constante : a = C × i / [1 − (1+i)⁻ⁿ]
+  const annuite = nominal * i / (1 - Math.pow(1 + i, -duree));
+  // Distracteurs : erreurs typiques
+  const wrong1 = nominal / duree + nominal * i; // amortissement constant + intérêts période 1
+  const wrong2 = nominal * (1 + i * duree) / duree; // erreur capitalisation simple
+  const wrong3 = nominal * i; // juste les intérêts annuels
+  const qA = eMakeDistractors(eRound(annuite, 2), 2, [eRound(wrong1, 2), eRound(wrong2, 2), eRound(wrong3, 2)]);
+  return {
+    society, nominal, tauxPct, duree, annuite,
+    qAOpts: qA.opts, qACorrect: qA.correctIdx
+  };
+}
+
+function d6Render(p, ans) {
+  ans = ans || {};
+  const optsHTML = (qid, opts, fmt) => opts.map((v, i) => {
+    const sel = ans[qid] === i;
+    return `<button type="button" class="exam-opt${sel ? ' selected' : ''}" data-q="${qid}" data-i="${i}" onclick="examPick('${qid}', ${i})">${String.fromCharCode(65 + i)}. ${fmt(v)}</button>`;
+  }).join('');
+  const bChoices = [
+    'In fine — le capital est remboursé en totalité à la dernière échéance, seuls les intérêts sont versés sur les périodes intermédiaires.',
+    'Amortissement constant — chaque échéance comprend une fraction égale du capital (nominal / n) et les intérêts décroissants calculés sur le capital restant dû.',
+    'Annuité constante — chaque échéance verse un montant identique combinant capital amorti croissant et intérêts décroissants.',
+    'Coupon zéro — aucun coupon versé, le rendement provient de l\'écart entre prix d\'émission et prix de remboursement.'
+  ];
+  const bHTML = bChoices.map((c, i) => {
+    const sel = ans['d6b'] === i;
+    return `<button type="button" class="exam-opt exam-opt-wide${sel ? ' selected' : ''}" data-q="d6b" data-i="${i}" onclick="examPick('d6b', ${i})">${String.fromCharCode(65 + i)}. ${c}</button>`;
+  }).join('');
+  return `
+    <div class="exam-dossier" id="exam-d6">
+      <div class="exam-dossier-head">
+        <div class="exam-dossier-num">Dossier 6</div>
+        <div class="exam-dossier-title">Emprunt obligataire</div>
+        <div class="exam-dossier-pts">4 points</div>
+      </div>
+      <div class="exam-context">
+        <p>La société <strong>${p.society}</strong> émet un emprunt obligataire de nominal total <strong>${eFmtEur(p.nominal, 0)}</strong>, au taux nominal de <strong>${eFmtPct(p.tauxPct)}</strong>, sur une durée de <strong>${p.duree} ans</strong>. L'emprunt est remboursé selon le mode <strong>annuité constante</strong>.</p>
+        <div class="exam-formule">Formule : a = C × i / [1 − (1+i)<sup>−n</sup>]</div>
+      </div>
+      <div class="exam-q">
+        <div class="exam-q-prompt"><strong>a)</strong> Calculez l'annuité constante versée chaque année. <span class="exam-q-pts">2 pts</span></div>
+        <div class="exam-opts">${optsHTML('d6a', p.qAOpts, v => eFmtEur(v, 2))}</div>
+      </div>
+      <div class="exam-q">
+        <div class="exam-q-prompt"><strong>b)</strong> Caractérisez le mode de remboursement choisi (description correcte du fonctionnement). <span class="exam-q-pts">2 pts</span></div>
+        <div class="exam-opts">${bHTML}</div>
+      </div>
+    </div>
+  `;
+}
+
+function d6Correct(p, ans) {
+  ans = ans || {};
+  const okA = ans['d6a'] === p.qACorrect;
+  const okB = ans['d6b'] === 2; // bonne réponse = annuité constante
+  return {
+    pts: (okA ? 2 : 0) + (okB ? 2 : 0), total: 4,
+    details: [
+      {
+        q: 'a) Annuité constante',
+        userOk: okA, points: okA ? 2 : 0, max: 2,
+        userAnswer: ans['d6a'] != null ? `${String.fromCharCode(65 + ans['d6a'])}. ${eFmtEur(p.qAOpts[ans['d6a']], 2)}` : '—',
+        correctAnswer: eFmtEur(p.annuite, 2),
+        explain: `a = C × i / [1 − (1+i)<sup>−n</sup>] = ${eFmtEur(p.nominal, 0)} × ${eFmtNum(p.tauxPct/100, 4)} / [1 − (1 + ${eFmtNum(p.tauxPct/100, 4)})<sup>−${p.duree}</sup>]<br>= ${eFmtNum(p.nominal * p.tauxPct/100, 2)} / [1 − ${eFmtNum(Math.pow(1 + p.tauxPct/100, -p.duree), 6)}]<br>= ${eFmtNum(p.nominal * p.tauxPct/100, 2)} / ${eFmtNum(1 - Math.pow(1 + p.tauxPct/100, -p.duree), 6)}<br>= <strong>${eFmtEur(p.annuite, 2)}</strong>`
+      },
+      {
+        q: 'b) Mode de remboursement',
+        userOk: okB, points: okB ? 2 : 0, max: 2,
+        userAnswer: ans['d6b'] != null ? String.fromCharCode(65 + ans['d6b']) : '—',
+        correctAnswer: 'C — Annuité constante',
+        explain: "L'annuité constante (option C) signifie que l'emprunteur verse chaque année le même montant. Ce montant combine une part de capital remboursé (croissante au fil du temps) et des intérêts (décroissants car calculés sur le capital restant dû). Les 3 modes de remboursement obligataire du cours sont : (1) in fine (capital remboursé en bloc à l'échéance, intérêts seuls sur les périodes), (2) amortissement constant (fraction de capital = nominal/n, intérêts décroissants), (3) annuité constante (formule a = C×i/[1−(1+i)⁻ⁿ])."
+      }
+    ]
+  };
+}
+
+/* ═══════════════════════════════════════════════════════════
+   DOSSIER 7 — NEU CP (4 pts)
+   2 sous-questions : intérêts post-comptés + cession avant échéance
+   ═══════════════════════════════════════════════════════════ */
+const D7_SOCIETIES = ['Cortina', 'Marengo', 'Albéria', 'Pacifia', 'Sextant Industrie', 'Iridia', 'Verseau Group'];
+
+function d7Generate() {
+  const society = ePick(D7_SOCIETIES);
+  const nominal = ePick([500000, 1000000, 2000000, 5000000]);
+  const tauxPct = ePick([2.5, 3, 3.5, 4, 4.5]);
+  const dureeTotale = ePick([90, 120, 180]); // durée totale en jours
+  const jcession = ePick([30, 45, 60]); // cession après j jours
+  // Intérêts post-comptés sur la durée totale : valeur de remboursement = nominal × (1 + t × J / 360)
+  const valRemboursement = nominal * (1 + tauxPct/100 * dureeTotale / 360);
+  // Taux du marché au jour de cession (différent du taux initial, génère une plus/moins value)
+  const tauxMarchePct = eRound(tauxPct + eRandFloat(-0.50, 0.50, 2), 2);
+  const jourRestants = dureeTotale - jcession;
+  // Prix de cession = valRemboursement / (1 + tauxMarche × jrest / 360)
+  const prixCession = valRemboursement / (1 + tauxMarchePct/100 * jourRestants / 360);
+  // Rendement réel du cédant sur la période détention = ((prixCession - nominal) / nominal) × (360 / jcession)
+  const rendCedantPct = (prixCession - nominal) / nominal * 360 / jcession * 100;
+  // Distracteurs Q1 (rendement post-compté = nominal × t × J / 360)
+  const interets = nominal * tauxPct/100 * dureeTotale / 360;
+  const wrongA1 = nominal * tauxPct/100 * dureeTotale / 365; // bases 365 au lieu de 360
+  const wrongA2 = nominal * tauxPct/100; // oublie la prorata temporis
+  const wrongA3 = nominal * (1 + tauxPct/100 * dureeTotale / 360); // donne la valeur totale au lieu des intérêts
+  const qA = eMakeDistractors(eRound(interets, 2), 2, [eRound(wrongA1, 2), eRound(wrongA2, 2), eRound(wrongA3, 2)]);
+  // Distracteurs Q2 (rendement réel du cédant)
+  const wrongB1 = eRound((prixCession - nominal) / nominal * 100, 3); // oublie l'annualisation
+  const wrongB2 = eRound((valRemboursement - nominal) / nominal * 360 / dureeTotale * 100, 3); // ignore la cession
+  const wrongB3 = eRound(tauxPct, 3); // donne le taux nominal initial
+  const qB = eMakeDistractors(eRound(rendCedantPct, 3), 3, [wrongB1, wrongB2, wrongB3]);
+  return {
+    society, nominal, tauxPct, dureeTotale, jcession, jourRestants,
+    tauxMarchePct, valRemboursement, prixCession, rendCedantPct, interets,
+    qAOpts: qA.opts, qACorrect: qA.correctIdx,
+    qBOpts: qB.opts, qBCorrect: qB.correctIdx
+  };
+}
+
+function d7Render(p, ans) {
+  ans = ans || {};
+  const optsHTML = (qid, opts, fmt) => opts.map((v, i) => {
+    const sel = ans[qid] === i;
+    return `<button type="button" class="exam-opt${sel ? ' selected' : ''}" data-q="${qid}" data-i="${i}" onclick="examPick('${qid}', ${i})">${String.fromCharCode(65 + i)}. ${fmt(v)}</button>`;
+  }).join('');
+  return `
+    <div class="exam-dossier" id="exam-d7">
+      <div class="exam-dossier-head">
+        <div class="exam-dossier-num">Dossier 7</div>
+        <div class="exam-dossier-title">NEU CP (marché monétaire)</div>
+        <div class="exam-dossier-pts">4 points</div>
+      </div>
+      <div class="exam-context">
+        <p>La société <strong>${p.society}</strong> souscrit un NEU CP de nominal <strong>${eFmtEur(p.nominal, 0)}</strong>, à taux d'intérêt <strong>post-compté</strong> de <strong>${eFmtPct(p.tauxPct)}</strong>, sur une durée de <strong>${p.dureeTotale} jours</strong>. Après <strong>${p.jcession} jours</strong>, le détenteur décide de céder le titre sur le marché ; à cette date, le taux du marché est de <strong>${eFmtPct(p.tauxMarchePct)}</strong> sur les <strong>${p.jourRestants} jours restants</strong>.</p>
+        <div class="exam-formule">Rappel : base de calcul des intérêts monétaires = 360 jours. Valeur remboursement = N × (1 + t × J / 360). Prix de cession = VR / (1 + t<sub>marché</sub> × j<sub>restants</sub> / 360).</div>
+      </div>
+      <div class="exam-q">
+        <div class="exam-q-prompt"><strong>a)</strong> Si le NEU CP était conservé jusqu'à l'échéance, quel serait le montant des intérêts perçus ? <span class="exam-q-pts">2 pts</span></div>
+        <div class="exam-opts">${optsHTML('d7a', p.qAOpts, v => eFmtEur(v, 2))}</div>
+      </div>
+      <div class="exam-q">
+        <div class="exam-q-prompt"><strong>b)</strong> Quel est le rendement réel annualisé obtenu par le cédant à la suite de la cession après ${p.jcession} jours ? <span class="exam-q-pts">2 pts</span></div>
+        <div class="exam-opts">${optsHTML('d7b', p.qBOpts, v => eFmtPct(v, 3))}</div>
+      </div>
+    </div>
+  `;
+}
+
+function d7Correct(p, ans) {
+  ans = ans || {};
+  const okA = ans['d7a'] === p.qACorrect;
+  const okB = ans['d7b'] === p.qBCorrect;
+  return {
+    pts: (okA ? 2 : 0) + (okB ? 2 : 0), total: 4,
+    details: [
+      {
+        q: 'a) Intérêts si conservé à échéance',
+        userOk: okA, points: okA ? 2 : 0, max: 2,
+        userAnswer: ans['d7a'] != null ? `${String.fromCharCode(65 + ans['d7a'])}. ${eFmtEur(p.qAOpts[ans['d7a']], 2)}` : '—',
+        correctAnswer: eFmtEur(p.interets, 2),
+        explain: `Intérêts post-comptés = N × t × J / 360 = ${eFmtEur(p.nominal, 0)} × ${eFmtNum(p.tauxPct/100, 4)} × ${p.dureeTotale} / 360 = <strong>${eFmtEur(p.interets, 2)}</strong>.<br>Valeur de remboursement totale = N + intérêts = ${eFmtEur(p.valRemboursement, 2)}.`
+      },
+      {
+        q: 'b) Rendement réel du cédant',
+        userOk: okB, points: okB ? 2 : 0, max: 2,
+        userAnswer: ans['d7b'] != null ? `${String.fromCharCode(65 + ans['d7b'])}. ${eFmtPct(p.qBOpts[ans['d7b']], 3)}` : '—',
+        correctAnswer: eFmtPct(p.rendCedantPct, 3),
+        explain: `Prix de cession = VR / (1 + t<sub>marché</sub> × j<sub>restants</sub> / 360) = ${eFmtEur(p.valRemboursement, 2)} / (1 + ${eFmtNum(p.tauxMarchePct/100, 4)} × ${p.jourRestants} / 360) = <strong>${eFmtEur(p.prixCession, 2)}</strong>.<br>Rendement réel annualisé = (prix cession − nominal) / nominal × 360 / j<sub>détenu</sub> × 100<br>= (${eFmtEur(p.prixCession, 2)} − ${eFmtEur(p.nominal, 0)}) / ${eFmtEur(p.nominal, 0)} × 360 / ${p.jcession} × 100<br>= <strong>${eFmtPct(p.rendCedantPct, 3)}</strong>.<br>${p.tauxMarchePct > p.tauxPct ? 'Le taux du marché ayant monté, le prix de cession est plus bas que prévu : le rendement réel du cédant est inférieur au taux nominal initial.' : 'Le taux du marché ayant baissé, le prix de cession est plus élevé que prévu : le rendement réel du cédant est supérieur au taux nominal initial.'}`
+      }
+    ]
+  };
+}
+
+/* ═══════════════════════════════════════════════════════════
+   DOSSIER 8 — SWAP DE TAUX (4 pts)
+   2 sous-questions : économie via swap + identification de la stratégie
+   ═══════════════════════════════════════════════════════════ */
+const D8_SOCIETIES = ['Falcon Industries', 'Mistral Capital', 'Ravello', 'Cassiopée', 'Berlioz', 'Lugano Group'];
+
+function d8Generate() {
+  const society = ePick(D8_SOCIETIES);
+  const nominal = ePick([5000000, 10000000, 15000000, 20000000]);
+  const duree = ePick([3, 4, 5, 6]);
+  // Taux variable initial Euribor + spread (l'entreprise a une dette à taux variable et craint la hausse)
+  const euriborSpot = eRandFloat(2.50, 4.50, 2);
+  const spreadEntreprise = ePick([0.50, 0.75, 1.00, 1.25]);
+  // Taux fixe offert par la banque pour le swap (fait l'arbitrage)
+  const tauxFixeSwap = eRound(euriborSpot + eRandFloat(-0.30, 0.30, 2), 2);
+  // Scénario de hausse de l'Euribor sur la période
+  const euriborMoyen = eRound(euriborSpot + eRandFloat(0.40, 1.50, 2), 2);
+  const tauxVariableMoyen = eRound(euriborMoyen + spreadEntreprise, 2);
+  // Coût annuel sans swap (taux variable moyen sur le nominal)
+  const coutSansSwap = nominal * tauxVariableMoyen / 100;
+  // Coût annuel avec swap (taux fixe + spread)
+  const coutAvecSwap = nominal * (tauxFixeSwap + spreadEntreprise) / 100;
+  // Économie annuelle réalisée (positive si swap avantageux)
+  const economie = coutSansSwap - coutAvecSwap;
+  const economieTotale = economie * duree;
+  // Distracteurs Q1
+  const wrong1 = nominal * (tauxVariableMoyen - tauxFixeSwap) / 100; // oublie le spread des 2 côtés (s'annule donc même formule, mais raisonnement différent)
+  const wrong2 = nominal * (euriborMoyen - tauxFixeSwap) / 100 * duree; // sans le spread
+  const wrong3 = nominal * tauxFixeSwap / 100; // donne juste le coût fixe
+  const qA = eMakeDistractors(eRound(economieTotale, 0), 0, [eRound(wrong1 * duree, 0), eRound(wrong2, 0), eRound(wrong3, 0)]);
+  return {
+    society, nominal, duree, euriborSpot, spreadEntreprise, tauxFixeSwap,
+    euriborMoyen, tauxVariableMoyen, coutSansSwap, coutAvecSwap, economie, economieTotale,
+    qAOpts: qA.opts, qACorrect: qA.correctIdx
+  };
+}
+
+function d8Render(p, ans) {
+  ans = ans || {};
+  const optsHTML = (qid, opts, fmt) => opts.map((v, i) => {
+    const sel = ans[qid] === i;
+    return `<button type="button" class="exam-opt${sel ? ' selected' : ''}" data-q="${qid}" data-i="${i}" onclick="examPick('${qid}', ${i})">${String.fromCharCode(65 + i)}. ${fmt(v)}</button>`;
+  }).join('');
+  const bChoices = [
+    'L\'entreprise reçoit le taux fixe et paie le taux variable — elle parie sur une baisse de l\'Euribor.',
+    'L\'entreprise paie le taux fixe et reçoit le taux variable — elle se protège contre une hausse de l\'Euribor.',
+    'L\'entreprise et la banque échangent leurs principaux respectifs en plus des intérêts.',
+    'L\'entreprise rembourse sa dette par anticipation et contracte un nouvel emprunt à taux fixe.'
+  ];
+  const bHTML = bChoices.map((c, i) => {
+    const sel = ans['d8b'] === i;
+    return `<button type="button" class="exam-opt exam-opt-wide${sel ? ' selected' : ''}" data-q="d8b" data-i="${i}" onclick="examPick('d8b', ${i})">${String.fromCharCode(65 + i)}. ${c}</button>`;
+  }).join('');
+  return `
+    <div class="exam-dossier" id="exam-d8">
+      <div class="exam-dossier-head">
+        <div class="exam-dossier-num">Dossier 8</div>
+        <div class="exam-dossier-title">Swap de taux</div>
+        <div class="exam-dossier-pts">4 points</div>
+      </div>
+      <div class="exam-context">
+        <p>La société <strong>${p.society}</strong> dispose d'une dette à taux variable indexée sur l'Euribor (spot ${eFmtPct(p.euriborSpot)}) majoré d'un spread de <strong>${eFmtPct(p.spreadEntreprise)}</strong>. Le nominal de la dette est de <strong>${eFmtEur(p.nominal, 0)}</strong>, sur une durée résiduelle de <strong>${p.duree} ans</strong>. Craignant une hausse des taux, elle négocie un swap de taux avec sa banque (échange du taux variable contre un taux fixe de <strong>${eFmtPct(p.tauxFixeSwap)}</strong>).</p>
+        <p>Sur la période, l'Euribor connaît effectivement une hausse, et le taux moyen constaté est de <strong>${eFmtPct(p.euriborMoyen)}</strong>.</p>
+      </div>
+      <div class="exam-q">
+        <div class="exam-q-prompt"><strong>a)</strong> Quelle est l'économie totale réalisée grâce au swap sur les ${p.duree} ans (cumul) ? <span class="exam-q-pts">2 pts</span></div>
+        <div class="exam-opts">${optsHTML('d8a', p.qAOpts, v => eFmtEur(v, 0))}</div>
+      </div>
+      <div class="exam-q">
+        <div class="exam-q-prompt"><strong>b)</strong> Comment caractériser correctement la stratégie de swap retenue par ${p.society} ? <span class="exam-q-pts">2 pts</span></div>
+        <div class="exam-opts">${bHTML}</div>
+      </div>
+    </div>
+  `;
+}
+
+function d8Correct(p, ans) {
+  ans = ans || {};
+  const okA = ans['d8a'] === p.qACorrect;
+  const okB = ans['d8b'] === 1; // option B : paie fixe, reçoit variable
+  return {
+    pts: (okA ? 2 : 0) + (okB ? 2 : 0), total: 4,
+    details: [
+      {
+        q: 'a) Économie totale réalisée',
+        userOk: okA, points: okA ? 2 : 0, max: 2,
+        userAnswer: ans['d8a'] != null ? `${String.fromCharCode(65 + ans['d8a'])}. ${eFmtEur(p.qAOpts[ans['d8a']], 0)}` : '—',
+        correctAnswer: eFmtEur(p.economieTotale, 0),
+        explain: `Coût sans swap (taux variable moyen ${eFmtPct(p.tauxVariableMoyen)}) = ${eFmtEur(p.nominal, 0)} × ${eFmtNum(p.tauxVariableMoyen/100, 4)} = ${eFmtEur(p.coutSansSwap, 0)} par an.<br>Coût avec swap (taux fixe ${eFmtPct(p.tauxFixeSwap)} + spread ${eFmtPct(p.spreadEntreprise)}) = ${eFmtEur(p.nominal, 0)} × ${eFmtNum((p.tauxFixeSwap + p.spreadEntreprise)/100, 4)} = ${eFmtEur(p.coutAvecSwap, 0)} par an.<br>Économie annuelle = ${eFmtEur(p.economie, 0)} × ${p.duree} ans = <strong>${eFmtEur(p.economieTotale, 0)}</strong>.${p.economie >= 0 ? '' : ' (négatif : le swap a coûté plus cher car l\'Euribor n\'a pas monté autant que prévu)'}`
+      },
+      {
+        q: 'b) Caractérisation du swap',
+        userOk: okB, points: okB ? 2 : 0, max: 2,
+        userAnswer: ans['d8b'] != null ? String.fromCharCode(65 + ans['d8b']) : '—',
+        correctAnswer: 'B — Paie le fixe, reçoit le variable',
+        explain: "Dans un coupon swap, deux parties échangent des flux d'intérêts sur un même nominal sans échange de principal (contrairement à l'option C qui est fausse). L'entreprise endettée à taux variable et craignant la hausse PAIE le fixe à la banque et REÇOIT le variable, qui lui sert à honorer sa dette. Résultat : elle s'est transformée économiquement en emprunteur à taux fixe et est protégée contre la hausse de l'Euribor."
+      }
+    ]
+  };
+}
+
+/* ═══════════════════════════════════════════════════════════
+   DOSSIER 9 — FRA (Forward Rate Agreement, 4 pts)
+   2 sous-questions : taux FRA garanti + qui paie à l'échéance
+   ═══════════════════════════════════════════════════════════ */
+const D9_SOCIETIES = ['Tritia', 'Auralis', 'Sandar', 'Volubilis', 'Nimbus Capital', 'Calypso Finance'];
+
+function d9Generate() {
+  const society = ePick(D9_SOCIETIES);
+  const montant = ePick([500000, 1000000, 2000000, 5000000, 10000000]);
+  // FRA 3 contre 9 : départ dans 3 mois, durée 6 mois (donc 9-3 = 6)
+  const dCourt = ePick([3, 6]); // mois avant départ
+  const dLong = dCourt + ePick([6, 9, 12]); // total
+  const dPeriode = dLong - dCourt; // durée du prêt couvert
+  // Taux spot du marché
+  const tCourtPct = eRandFloat(2.50, 4.50, 2);
+  const tLongPct = eRound(tCourtPct + eRandFloat(0.10, 0.80, 2), 2);
+  // Calcul du taux FRA : tFRA = ((1 + tLong × dLong/12) / (1 + tCourt × dCourt/12) - 1) × (12/dPeriode)
+  const factor = (1 + tLongPct/100 * dLong/12) / (1 + tCourtPct/100 * dCourt/12);
+  const tFRA = (factor - 1) * (12 / dPeriode) * 100;
+  // Taux Euribor à l'échéance (scénario qui peut être > ou < au tFRA)
+  const tRefEcheancePct = eRound(tFRA + eRandFloat(-1.5, 1.5, 2), 2);
+  // Distracteurs Q1
+  const wrong1 = eRound(tLongPct - tCourtPct, 3); // erreur courante : simple différence
+  const wrong2 = eRound((tLongPct * dLong - tCourtPct * dCourt) / dPeriode, 3); // oublie le terme correctif
+  const wrong3 = eRound((tLongPct + tCourtPct) / 2, 3); // moyenne (faux)
+  const qA = eMakeDistractors(eRound(tFRA, 3), 3, [wrong1, wrong2, wrong3]);
+  return {
+    society, montant, dCourt, dLong, dPeriode, tCourtPct, tLongPct, tFRA,
+    tRefEcheancePct,
+    qAOpts: qA.opts, qACorrect: qA.correctIdx
+  };
+}
+
+function d9Render(p, ans) {
+  ans = ans || {};
+  const optsHTML = (qid, opts, fmt) => opts.map((v, i) => {
+    const sel = ans[qid] === i;
+    return `<button type="button" class="exam-opt${sel ? ' selected' : ''}" data-q="${qid}" data-i="${i}" onclick="examPick('${qid}', ${i})">${String.fromCharCode(65 + i)}. ${fmt(v)}</button>`;
+  }).join('');
+  const bChoices = [
+    'C\'est la banque qui verse la différence à l\'entreprise (l\'entreprise est gagnante).',
+    'C\'est l\'entreprise qui verse la différence à la banque (l\'entreprise est perdante).',
+    'Aucun versement n\'a lieu : seul le taux garanti s\'applique.',
+    'L\'entreprise rembourse intégralement le contrat à l\'échéance.'
+  ];
+  const bHTML = bChoices.map((c, i) => {
+    const sel = ans['d9b'] === i;
+    return `<button type="button" class="exam-opt exam-opt-wide${sel ? ' selected' : ''}" data-q="d9b" data-i="${i}" onclick="examPick('d9b', ${i})">${String.fromCharCode(65 + i)}. ${c}</button>`;
+  }).join('');
+  return `
+    <div class="exam-dossier" id="exam-d9">
+      <div class="exam-dossier-head">
+        <div class="exam-dossier-num">Dossier 9</div>
+        <div class="exam-dossier-title">FRA — Forward Rate Agreement</div>
+        <div class="exam-dossier-pts">4 points</div>
+      </div>
+      <div class="exam-context">
+        <p>La société <strong>${p.society}</strong> sait qu'elle devra emprunter <strong>${eFmtEur(p.montant, 0)}</strong> dans <strong>${p.dCourt} mois</strong> pour une durée de <strong>${p.dPeriode} mois</strong>. Pour se protéger contre une hausse des taux, elle souscrit aujourd'hui un FRA ${p.dCourt} contre ${p.dLong} (départ ${p.dCourt} mois, échéance ${p.dLong} mois).</p>
+        <p>Conditions du marché aujourd'hui : taux ${p.dCourt} mois = <strong>${eFmtPct(p.tCourtPct)}</strong>, taux ${p.dLong} mois = <strong>${eFmtPct(p.tLongPct)}</strong>.</p>
+        <div class="exam-formule">Formule FRA : t<sub>FRA</sub> = [(1 + t<sub>long</sub> × J<sub>long</sub>/12) / (1 + t<sub>court</sub> × J<sub>court</sub>/12) − 1] × (12 / J<sub>période</sub>)</div>
+      </div>
+      <div class="exam-q">
+        <div class="exam-q-prompt"><strong>a)</strong> Calculez le taux FRA garanti par la banque pour la période de ${p.dPeriode} mois. <span class="exam-q-pts">2 pts</span></div>
+        <div class="exam-opts">${optsHTML('d9a', p.qAOpts, v => eFmtPct(v, 3))}</div>
+      </div>
+      <div class="exam-q">
+        <div class="exam-q-prompt"><strong>b)</strong> À l'échéance du FRA, le taux Euribor ${p.dPeriode} mois constaté est de <strong>${eFmtPct(p.tRefEcheancePct)}</strong>. Que se passe-t-il ? <span class="exam-q-pts">2 pts</span></div>
+        <div class="exam-opts">${bHTML}</div>
+      </div>
+    </div>
+  `;
+}
+
+function d9Correct(p, ans) {
+  ans = ans || {};
+  const okA = ans['d9a'] === p.qACorrect;
+  // À l'échéance : si taux constaté > tFRA, la banque verse la différence à l'entreprise (qui est gagnante) → option A
+  // Si taux constaté < tFRA, l'entreprise verse la différence à la banque → option B
+  const correctB = p.tRefEcheancePct > p.tFRA ? 0 : 1;
+  const okB = ans['d9b'] === correctB;
+  return {
+    pts: (okA ? 2 : 0) + (okB ? 2 : 0), total: 4,
+    details: [
+      {
+        q: 'a) Taux FRA garanti',
+        userOk: okA, points: okA ? 2 : 0, max: 2,
+        userAnswer: ans['d9a'] != null ? `${String.fromCharCode(65 + ans['d9a'])}. ${eFmtPct(p.qAOpts[ans['d9a']], 3)}` : '—',
+        correctAnswer: eFmtPct(p.tFRA, 3),
+        explain: `t<sub>FRA</sub> = [(1 + ${eFmtNum(p.tLongPct/100, 4)} × ${p.dLong}/12) / (1 + ${eFmtNum(p.tCourtPct/100, 4)} × ${p.dCourt}/12) − 1] × (12 / ${p.dPeriode})<br>= [${eFmtNum(1 + p.tLongPct/100 * p.dLong/12, 6)} / ${eFmtNum(1 + p.tCourtPct/100 * p.dCourt/12, 6)} − 1] × ${eFmtNum(12/p.dPeriode, 4)}<br>= [${eFmtNum((1 + p.tLongPct/100 * p.dLong/12) / (1 + p.tCourtPct/100 * p.dCourt/12), 6)} − 1] × ${eFmtNum(12/p.dPeriode, 4)}<br>= <strong>${eFmtPct(p.tFRA, 3)}</strong>.`
+      },
+      {
+        q: 'b) Échéance du FRA',
+        userOk: okB, points: okB ? 2 : 0, max: 2,
+        userAnswer: ans['d9b'] != null ? String.fromCharCode(65 + ans['d9b']) : '—',
+        correctAnswer: correctB === 0 ? 'A — La banque verse à l\'entreprise' : 'B — L\'entreprise verse à la banque',
+        explain: `À l'échéance, le taux Euribor constaté (${eFmtPct(p.tRefEcheancePct)}) est ${p.tRefEcheancePct > p.tFRA ? 'supérieur' : 'inférieur'} au taux FRA garanti (${eFmtPct(p.tFRA, 3)}). ${p.tRefEcheancePct > p.tFRA ? 'L\'entreprise emprunteur a donc gagné à se couvrir : la banque lui verse le différentiel calculé sur le montant et la période, ce qui compense le surcoût de l\'emprunt au taux Euribor.' : 'L\'entreprise emprunteur aurait pu emprunter à un meilleur taux sur le marché : elle verse le différentiel à la banque (coût d\'opportunité d\'avoir bloqué le taux à l\'avance).'} Dans tous les cas, l'entreprise emprunte effectivement au taux FRA garanti, indépendamment du taux constaté.`
+      }
+    ]
+  };
+}
+
+/* ═══════════════════════════════════════════════════════════
+   DOSSIER 10 — GORDON-SHAPIRO (4 pts)
+   2 sous-questions : coût des fonds propres + cours théorique
+   ═══════════════════════════════════════════════════════════ */
+const D10_SOCIETIES = ['Galilée Capital', 'Phaéton', 'Iberica', 'Sorbus', 'Théora Industrie', 'Acropole'];
+
+function d10Generate() {
+  const society = ePick(D10_SOCIETIES);
+  const dividendeN = eRandFloat(1.50, 5.00, 2); // dividende versé l'année N
+  const tauxCroissancePct = eRandFloat(1.5, 5.0, 2); // g
+  const coursActuel = ePick([30, 40, 50, 60, 75, 90, 100]); // cours actuel P0
+  // Dividende attendu D1 = D0 × (1 + g)
+  const dividendeN1 = dividendeN * (1 + tauxCroissancePct/100);
+  // Coût des fonds propres : R = D1/P0 + g
+  const coutFP = dividendeN1 / coursActuel * 100 + tauxCroissancePct;
+  // Distracteurs Q1
+  const wrong1 = eRound(dividendeN / coursActuel * 100 + tauxCroissancePct, 3); // utilise D0 au lieu de D1
+  const wrong2 = eRound(dividendeN1 / coursActuel * 100, 3); // oublie g
+  const wrong3 = eRound(tauxCroissancePct, 3); // donne juste g
+  const qA = eMakeDistractors(eRound(coutFP, 3), 3, [wrong1, wrong2, wrong3]);
+  // Q2 : si le marché révise le coût des fonds propres à un nouveau taux R', quel est le nouveau cours théorique ?
+  const nouveauR = eRound(coutFP + eRandFloat(-1.5, 1.5, 2), 3);
+  const nouveauCours = dividendeN1 / ((nouveauR - tauxCroissancePct) / 100);
+  // Distracteurs Q2
+  const wrongB1 = eRound(dividendeN1 / (nouveauR / 100), 2); // oublie g au dénominateur
+  const wrongB2 = eRound(dividendeN / ((nouveauR - tauxCroissancePct) / 100), 2); // utilise D0
+  const wrongB3 = eRound(coursActuel * (1 + tauxCroissancePct/100), 2); // suppose simple croissance du cours
+  const qB = eMakeDistractors(eRound(nouveauCours, 2), 2, [wrongB1, wrongB2, wrongB3]);
+  return {
+    society, dividendeN, tauxCroissancePct, coursActuel, dividendeN1, coutFP,
+    nouveauR, nouveauCours,
+    qAOpts: qA.opts, qACorrect: qA.correctIdx,
+    qBOpts: qB.opts, qBCorrect: qB.correctIdx
+  };
+}
+
+function d10Render(p, ans) {
+  ans = ans || {};
+  const optsHTML = (qid, opts, fmt) => opts.map((v, i) => {
+    const sel = ans[qid] === i;
+    return `<button type="button" class="exam-opt${sel ? ' selected' : ''}" data-q="${qid}" data-i="${i}" onclick="examPick('${qid}', ${i})">${String.fromCharCode(65 + i)}. ${fmt(v)}</button>`;
+  }).join('');
+  return `
+    <div class="exam-dossier" id="exam-d10">
+      <div class="exam-dossier-head">
+        <div class="exam-dossier-num">Dossier 10</div>
+        <div class="exam-dossier-title">Modèle de Gordon-Shapiro</div>
+        <div class="exam-dossier-pts">4 points</div>
+      </div>
+      <div class="exam-context">
+        <p>La société cotée <strong>${p.society}</strong> a versé un dividende de <strong>${eFmtEur(p.dividendeN, 2)}</strong> par action lors du dernier exercice (D<sub>0</sub>). Les analystes anticipent une croissance constante du dividende au taux annuel de <strong>${eFmtPct(p.tauxCroissancePct)}</strong>. Le cours actuel de l'action est de <strong>${eFmtEur(p.coursActuel, 2)}</strong>.</p>
+        <div class="exam-formule">Modèle de Gordon-Shapiro : P<sub>0</sub> = D<sub>1</sub> / (R − g) ⇒ R = D<sub>1</sub>/P<sub>0</sub> + g avec D<sub>1</sub> = D<sub>0</sub> × (1 + g)</div>
+      </div>
+      <div class="exam-q">
+        <div class="exam-q-prompt"><strong>a)</strong> Calculez le coût des fonds propres (R) impliqué par le cours de marché actuel. <span class="exam-q-pts">2 pts</span></div>
+        <div class="exam-opts">${optsHTML('d10a', p.qAOpts, v => eFmtPct(v, 3))}</div>
+      </div>
+      <div class="exam-q">
+        <div class="exam-q-prompt"><strong>b)</strong> Le marché révise sa perception du risque et le coût des fonds propres exigé devient <strong>${eFmtPct(p.nouveauR, 3)}</strong>. Quel serait alors le cours théorique de l'action (g inchangé) ? <span class="exam-q-pts">2 pts</span></div>
+        <div class="exam-opts">${optsHTML('d10b', p.qBOpts, v => eFmtEur(v, 2))}</div>
+      </div>
+    </div>
+  `;
+}
+
+function d10Correct(p, ans) {
+  ans = ans || {};
+  const okA = ans['d10a'] === p.qACorrect;
+  const okB = ans['d10b'] === p.qBCorrect;
+  return {
+    pts: (okA ? 2 : 0) + (okB ? 2 : 0), total: 4,
+    details: [
+      {
+        q: 'a) Coût des fonds propres R',
+        userOk: okA, points: okA ? 2 : 0, max: 2,
+        userAnswer: ans['d10a'] != null ? `${String.fromCharCode(65 + ans['d10a'])}. ${eFmtPct(p.qAOpts[ans['d10a']], 3)}` : '—',
+        correctAnswer: eFmtPct(p.coutFP, 3),
+        explain: `D<sub>1</sub> = D<sub>0</sub> × (1 + g) = ${eFmtEur(p.dividendeN, 2)} × ${eFmtNum(1 + p.tauxCroissancePct/100, 4)} = ${eFmtEur(p.dividendeN1, 3)}.<br>R = D<sub>1</sub>/P<sub>0</sub> + g = ${eFmtEur(p.dividendeN1, 3)} / ${eFmtEur(p.coursActuel, 2)} + ${eFmtNum(p.tauxCroissancePct/100, 4)} = ${eFmtNum(p.dividendeN1/p.coursActuel, 6)} + ${eFmtNum(p.tauxCroissancePct/100, 4)} = <strong>${eFmtPct(p.coutFP, 3)}</strong>.`
+      },
+      {
+        q: 'b) Nouveau cours théorique P\'<sub>0</sub>',
+        userOk: okB, points: okB ? 2 : 0, max: 2,
+        userAnswer: ans['d10b'] != null ? `${String.fromCharCode(65 + ans['d10b'])}. ${eFmtEur(p.qBOpts[ans['d10b']], 2)}` : '—',
+        correctAnswer: eFmtEur(p.nouveauCours, 2),
+        explain: `P'<sub>0</sub> = D<sub>1</sub> / (R' − g) = ${eFmtEur(p.dividendeN1, 3)} / (${eFmtNum(p.nouveauR/100, 4)} − ${eFmtNum(p.tauxCroissancePct/100, 4)}) = ${eFmtEur(p.dividendeN1, 3)} / ${eFmtNum((p.nouveauR - p.tauxCroissancePct)/100, 4)} = <strong>${eFmtEur(p.nouveauCours, 2)}</strong>.<br>${p.nouveauR > p.coutFP ? 'Le marché exigeant un rendement plus élevé (risque perçu en hausse), le cours théorique baisse.' : 'Le marché exigeant un rendement plus faible (risque perçu en baisse), le cours théorique monte.'}`
+      }
+    ]
+  };
+}
+
 function examGenerate(includeMask) {
   return {
     d1: includeMask.d1 ? d1Generate() : null,
     d2: includeMask.d2 ? d2Generate() : null,
     d3: includeMask.d3 ? d3Generate() : null,
     d4: includeMask.d4 ? d4Generate() : null,
-    d5: includeMask.d5 ? d5Generate() : null
+    d5: includeMask.d5 ? d5Generate() : null,
+    d6: includeMask.d6 ? d6Generate() : null,
+    d7: includeMask.d7 ? d7Generate() : null,
+    d8: includeMask.d8 ? d8Generate() : null,
+    d9: includeMask.d9 ? d9Generate() : null,
+    d10: includeMask.d10 ? d10Generate() : null
   };
 }
 
@@ -3863,7 +4343,7 @@ function examPick(qid, value) {
   // re-render seulement la case concernée pour les opts (optimisation faible mais utile pour la fluidité visuelle)
   if (qid === 'd5_text') return; // textarea : pas de re-render
   // Pour QCM bouton : on met juste à jour la classe selected
-  if (qid.indexOf('_') === -1 || qid.startsWith('d1') || qid.startsWith('d2a') || qid.startsWith('d2b') || qid.startsWith('d3a') || qid.startsWith('d3b') || qid.startsWith('d3c') || qid.startsWith('d4_beta') || qid.startsWith('d4_rcp') || qid.startsWith('d4_vd') || qid.startsWith('d4_cmpc')) {
+  if (qid.indexOf('_') === -1 || qid.startsWith('d1') || qid.startsWith('d2a') || qid.startsWith('d2b') || qid.startsWith('d3a') || qid.startsWith('d3b') || qid.startsWith('d3c') || qid.startsWith('d4_beta') || qid.startsWith('d4_rcp') || qid.startsWith('d4_vd') || qid.startsWith('d4_cmpc') || qid.startsWith('d6') || qid.startsWith('d7') || qid.startsWith('d8') || qid.startsWith('d9') || qid.startsWith('d10')) {
     document.querySelectorAll(`[data-q="${qid}"], .exam-opt[onclick*="'${qid}'"]`).forEach(el => {
       const i = parseInt(el.getAttribute('data-i') ?? (el.getAttribute('onclick').match(/,\s*(\d+)\)/) || [])[1]);
       el.classList.toggle('selected', i === value);
@@ -3890,6 +4370,11 @@ function examRecomputeScore() {
   if (ds.d3) { const r = d3Correct(ds.d3, a); total += r.pts; max += r.total; }
   if (ds.d4) { const r = d4Correct(ds.d4, a); total += r.pts; max += r.total; }
   if (ds.d5) { const r = d5Correct(ds.d5, a); total += r.pts; max += r.total; }
+  if (ds.d6) { const r = d6Correct(ds.d6, a); total += r.pts; max += r.total; }
+  if (ds.d7) { const r = d7Correct(ds.d7, a); total += r.pts; max += r.total; }
+  if (ds.d8) { const r = d8Correct(ds.d8, a); total += r.pts; max += r.total; }
+  if (ds.d9) { const r = d9Correct(ds.d9, a); total += r.pts; max += r.total; }
+  if (ds.d10) { const r = d10Correct(ds.d10, a); total += r.pts; max += r.total; }
   const rounded = eRound(total, 2);
   const el = document.getElementById('exam-score-live');
   if (el) el.textContent = eFmtNum(rounded);
@@ -3987,9 +4472,14 @@ function renderExamenConfig() {
             <div class="exam-setup-checks">
               <label><input type="checkbox" id="ck-d1" checked onchange="examUpdateDurationLabel()"> Dossier 1 — Forward/Forward</label>
               <label><input type="checkbox" id="ck-d2" checked onchange="examUpdateDurationLabel()"> Dossier 2 — Collar</label>
-              <label><input type="checkbox" id="ck-d3" checked onchange="examUpdateDurationLabel()"> Dossier 3 — Options</label>
+              <label><input type="checkbox" id="ck-d3" checked onchange="examUpdateDurationLabel()"> Dossier 3 — Options de change</label>
               <label><input type="checkbox" id="ck-d4" checked onchange="examUpdateDurationLabel()"> Dossier 4 — Bêta + CMPC</label>
               <label><input type="checkbox" id="ck-d5" checked onchange="examUpdateDurationLabel()"> Dossier 5 — Rédaction</label>
+              <label><input type="checkbox" id="ck-d6" checked onchange="examUpdateDurationLabel()"> Dossier 6 — Emprunt obligataire</label>
+              <label><input type="checkbox" id="ck-d7" checked onchange="examUpdateDurationLabel()"> Dossier 7 — NEU CP</label>
+              <label><input type="checkbox" id="ck-d8" checked onchange="examUpdateDurationLabel()"> Dossier 8 — Swap de taux</label>
+              <label><input type="checkbox" id="ck-d9" checked onchange="examUpdateDurationLabel()"> Dossier 9 — FRA</label>
+              <label><input type="checkbox" id="ck-d10" checked onchange="examUpdateDurationLabel()"> Dossier 10 — Gordon-Shapiro</label>
             </div>
             <div class="exam-setup-hint" style="margin-top:0.5rem">Le tirage se fait <strong>au hasard</strong> parmi les dossiers cochés.</div>
           </div>
@@ -4007,7 +4497,7 @@ function examUpdateDurationLabel(val) {
   const lbl = document.getElementById('exam-duration-label');
   if (lbl) lbl.textContent = dur + ' min';
   const targetN = examDossiersFromDuration(dur);
-  const checked = ['d1','d2','d3','d4','d5'].filter(k => {
+  const checked = ['d1','d2','d3','d4','d5','d6','d7','d8','d9','d10'].filter(k => {
     const el = document.getElementById('ck-' + k);
     return el && el.checked;
   }).length;
@@ -4026,7 +4516,7 @@ function examUpdateDurationLabel(val) {
 
 function examStart() {
   const dur = parseInt(document.getElementById('exam-duration').value, 10) * 60;
-  const pool = ['d1','d2','d3','d4','d5'].filter(k => {
+  const pool = ['d1','d2','d3','d4','d5','d6','d7','d8','d9','d10'].filter(k => {
     const el = document.getElementById('ck-' + k);
     return el && el.checked;
   });
@@ -4042,8 +4532,9 @@ function examStart() {
     const j = Math.floor(Math.random() * (i + 1));
     [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
   }
-  const picked = shuffled.slice(0, n).sort(); // ordre canonique d1 < d2 < ...
-  const mask = { d1: false, d2: false, d3: false, d4: false, d5: false };
+  // tri canonique : d1, d2, ... d10 (ordre numérique)
+  const picked = shuffled.slice(0, n).sort((a, b) => parseInt(a.slice(1), 10) - parseInt(b.slice(1), 10));
+  const mask = { d1: false, d2: false, d3: false, d4: false, d5: false, d6: false, d7: false, d8: false, d9: false, d10: false };
   picked.forEach(k => { mask[k] = true; });
   examState = {
     startedAt: Date.now(),
@@ -4066,6 +4557,11 @@ function renderExamenRunning() {
   if (ds.d3) body += d3Render(ds.d3, a);
   if (ds.d4) body += d4Render(ds.d4, a);
   if (ds.d5) body += d5Render(ds.d5, a);
+  if (ds.d6) body += d6Render(ds.d6, a);
+  if (ds.d7) body += d7Render(ds.d7, a);
+  if (ds.d8) body += d8Render(ds.d8, a);
+  if (ds.d9) body += d9Render(ds.d9, a);
+  if (ds.d10) body += d10Render(ds.d10, a);
   return `
     <div class="exam-timer-bar" id="exam-timer-bar">
       <span class="exam-timer-icon">⏱</span>
@@ -4121,9 +4617,14 @@ function renderExamenResult() {
   const corrs = [];
   if (ds.d1) corrs.push({ key: 'd1', label: 'Dossier 1 — Forward/Forward', r: d1Correct(ds.d1, a) });
   if (ds.d2) corrs.push({ key: 'd2', label: 'Dossier 2 — Collar', r: d2Correct(ds.d2, a) });
-  if (ds.d3) corrs.push({ key: 'd3', label: 'Dossier 3 — Options', r: d3Correct(ds.d3, a) });
+  if (ds.d3) corrs.push({ key: 'd3', label: 'Dossier 3 — Options de change', r: d3Correct(ds.d3, a) });
   if (ds.d4) corrs.push({ key: 'd4', label: 'Dossier 4 — Bêta + CMPC', r: d4Correct(ds.d4, a) });
   if (ds.d5) corrs.push({ key: 'd5', label: 'Dossier 5 — Rédaction', r: d5Correct(ds.d5, a) });
+  if (ds.d6) corrs.push({ key: 'd6', label: 'Dossier 6 — Emprunt obligataire', r: d6Correct(ds.d6, a) });
+  if (ds.d7) corrs.push({ key: 'd7', label: 'Dossier 7 — NEU CP', r: d7Correct(ds.d7, a) });
+  if (ds.d8) corrs.push({ key: 'd8', label: 'Dossier 8 — Swap de taux', r: d8Correct(ds.d8, a) });
+  if (ds.d9) corrs.push({ key: 'd9', label: 'Dossier 9 — FRA', r: d9Correct(ds.d9, a) });
+  if (ds.d10) corrs.push({ key: 'd10', label: 'Dossier 10 — Gordon-Shapiro', r: d10Correct(ds.d10, a) });
   const total = eRound(corrs.reduce((s, c) => s + c.r.pts, 0), 2);
   const max = corrs.reduce((s, c) => s + c.r.total, 0);
   const pct = max > 0 ? Math.round(total / max * 100) : 0;
